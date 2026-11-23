@@ -1,9 +1,9 @@
 {
   "meta": {
-    "last_successful_run": "2026-11-23T18:26:49Z",
-    "total_active": 12,
+    "last_successful_run": "2026-11-23T18:36:55Z",
+    "total_active": 17,
     "source_stats": {
-      "linkedin_egypt": 10,
+      "linkedin_egypt": 12,
       "wuzzuf_egypt": 0,
       "egypt_companies": 0,
       "remotive_global": 2,
@@ -11,6 +11,184 @@
     }
   },
   "jobs": {
+    "li-4492369051": {
+      "id": "li-4492369051",
+      "company": "PwC Egypt Technology and Innovation Centre (ETIC)",
+      "title": "ETIC, BI Engineer Associate",
+      "work_mode": "LinkedIn Jobs (Egypt)",
+      "location": "Cairo, Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/etic-bi-engineer-associate-at-pwc-egypt-technology-and-innovation-centre-etic-4492369051",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:36:55Z",
+      "fit": {
+        "score": 87,
+        "summary": "يتضمن مهام تحليل بيانات أو تقارير. مناسب لحديثي التخرج / Junior / Associate.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Data & Reporting Tasks",
+            "cv": "خبرة عملية في SQL, Excel, Power BI, Python"
+          },
+          {
+            "req": "Entry / Junior Level",
+            "cv": "خريج 2026 بتقدير امتياز مع مرتبة الشرف (GPA 3.67)"
+          }
+        ]
+      },
+      "commute": {
+        "score": 80,
+        "summary": "داخل القاهرة الكبرى — راجع الحي الدقيق وأيام الحضور من شبرا مصر"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt",
+        "first_published": "2026-11-22",
+        "last_verified": "2026-11-23T18:36:55Z"
+      }
+    },
+    "li-4493373253": {
+      "id": "li-4493373253",
+      "company": "PwC",
+      "title": "ETIC, BI Engineer Associate",
+      "work_mode": "LinkedIn Jobs (Egypt)",
+      "location": "Cairo, Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/etic-bi-engineer-associate-at-pwc-4493373253",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:36:55Z",
+      "fit": {
+        "score": 87,
+        "summary": "يتضمن مهام تحليل بيانات أو تقارير. مناسب لحديثي التخرج / Junior / Associate.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Data & Reporting Tasks",
+            "cv": "خبرة عملية في SQL, Excel, Power BI, Python"
+          },
+          {
+            "req": "Entry / Junior Level",
+            "cv": "خريج 2026 بتقدير امتياز مع مرتبة الشرف (GPA 3.67)"
+          }
+        ]
+      },
+      "commute": {
+        "score": 80,
+        "summary": "داخل القاهرة الكبرى — راجع الحي الدقيق وأيام الحضور من شبرا مصر"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt",
+        "first_published": "2026-11-22",
+        "last_verified": "2026-11-23T18:36:55Z"
+      }
+    },
+    "li-4492606495": {
+      "id": "li-4492606495",
+      "company": "PepsiCo",
+      "title": "Control & Reporting Coordinator",
+      "work_mode": "LinkedIn Jobs (Egypt)",
+      "location": "Sawhāj, Suhaj, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/control-reporting-coordinator-at-pepsico-4492606495",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:36:55Z",
+      "fit": {
+        "score": 79,
+        "summary": "يتضمن مهام تحليل بيانات أو تقارير.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Data & Reporting Tasks",
+            "cv": "خبرة عملية في SQL, Excel, Power BI, Python"
+          }
+        ]
+      },
+      "commute": {
+        "score": 80,
+        "summary": "داخل القاهرة الكبرى — راجع الحي الدقيق وأيام الحضور من شبرا مصر"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Sawhāj, Suhaj, Egypt",
+        "first_published": "2026-11-23",
+        "last_verified": "2026-11-23T18:36:55Z"
+      }
+    },
+    "li-4404318316": {
+      "id": "li-4404318316",
+      "company": "Arrow Electronics",
+      "title": "Analytics Product Owner",
+      "work_mode": "LinkedIn Jobs (Egypt)",
+      "location": "Cairo, Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/analytics-product-owner-at-arrow-electronics-4404318316",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:36:55Z",
+      "fit": {
+        "score": 79,
+        "summary": "يتضمن مهام تحليل بيانات أو تقارير.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Data & Reporting Tasks",
+            "cv": "خبرة عملية في SQL, Excel, Power BI, Python"
+          }
+        ]
+      },
+      "commute": {
+        "score": 80,
+        "summary": "داخل القاهرة الكبرى — راجع الحي الدقيق وأيام الحضور من شبرا مصر"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt",
+        "first_published": "2026-11-21",
+        "last_verified": "2026-11-23T18:36:55Z"
+      }
+    },
+    "li-4492011198": {
+      "id": "li-4492011198",
+      "company": "Nissan Motor Corporation",
+      "title": "Market Analysis & reporting Supervisor - NMEG",
+      "work_mode": "LinkedIn Jobs (Egypt)",
+      "location": "6th of October, Al Jizah, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/market-analysis-reporting-supervisor-nmeg-at-nissan-motor-corporation-4492011198",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:36:55Z",
+      "fit": {
+        "score": 76,
+        "summary": "يتضمن مهام تحليل بيانات أو تقارير.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Data & Reporting Tasks",
+            "cv": "خبرة عملية في SQL, Excel, Power BI, Python"
+          }
+        ]
+      },
+      "commute": {
+        "score": 68,
+        "summary": "~75–85 دقيقة من شبرا مصر (مناسب لو Hybrid أو بباصات الشركة)"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: 6th of October, Al Jizah, Egypt",
+        "first_published": "2026-11-18",
+        "last_verified": "2026-11-23T18:36:55Z"
+      }
+    },
     "li-4493624720": {
       "id": "li-4493624720",
       "company": "TP",
@@ -42,7 +220,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Egypt",
         "first_published": "2026-11-23",
-        "last_verified": "2026-11-23T18:26:49Z"
+        "last_verified": "2026-11-23T18:36:55Z"
       }
     },
     "li-4493336336": {
@@ -76,7 +254,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt",
         "first_published": "2026-11-22",
-        "last_verified": "2026-11-23T18:26:49Z"
+        "last_verified": "2026-11-23T18:36:55Z"
       }
     },
     "li-4492043540": {
@@ -110,7 +288,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Egypt",
         "first_published": "2026-11-18",
-        "last_verified": "2026-11-23T18:26:49Z"
+        "last_verified": "2026-11-23T18:36:55Z"
       }
     },
     "li-4440393391": {
@@ -144,7 +322,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt",
         "first_published": "2026-11-19",
-        "last_verified": "2026-11-23T18:26:49Z"
+        "last_verified": "2026-11-23T18:36:55Z"
       }
     },
     "li-4493326479": {
@@ -261,8 +439,8 @@
       ],
       "discovered_at": "2026-11-23T18:26:49Z",
       "fit": {
-        "score": 86,
-        "summary": "يتضمن مهام تحليل بيانات أو تقارير. مناسب لحديثي التخرج / Junior / Trainee.",
+        "score": 87,
+        "summary": "يتضمن مهام تحليل بيانات أو تقارير. مناسب لحديثي التخرج / Junior / Associate.",
         "recommended_project": "مشروع DEPI لتحليل البيانات (Python, SQL, Tableau).",
         "evidence_pairs": [
           {
@@ -270,7 +448,7 @@
             "cv": "خبرة عملية في SQL, Excel, Power BI, Python"
           },
           {
-            "req": "Entry / Fresh Graduate Level",
+            "req": "Entry / Junior Level",
             "cv": "خريج 2026 بتقدير امتياز مع مرتبة الشرف (GPA 3.67)"
           }
         ]
@@ -284,7 +462,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "متاح: Worldwide",
         "first_published": "2026-11-11",
-        "last_verified": "2026-11-23T18:26:49Z"
+        "last_verified": "2026-11-23T18:36:55Z"
       }
     },
     "li-4484449012": {
@@ -318,7 +496,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: New Cairo, Cairo, Egypt",
         "first_published": "2026-11-18",
-        "last_verified": "2026-11-23T18:26:49Z"
+        "last_verified": "2026-11-23T18:36:55Z"
       }
     },
     "li-4490422002": {
@@ -333,7 +511,7 @@
       ],
       "discovered_at": "2026-11-23T18:26:49Z",
       "fit": {
-        "score": 77,
+        "score": 79,
         "summary": "يتضمن مهام تحليل بيانات أو تقارير.",
         "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
         "evidence_pairs": [
@@ -352,7 +530,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt",
         "first_published": "2026-11-17",
-        "last_verified": "2026-11-23T18:26:49Z"
+        "last_verified": "2026-11-23T18:36:55Z"
       }
     },
     "c565926d93842a90": {
