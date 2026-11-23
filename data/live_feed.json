@@ -1,17 +1,739 @@
 {
   "meta": {
-    "last_successful_run": "2026-11-23T19:08:19Z",
-    "total_active": 17,
+    "last_successful_run": "2026-11-23T19:24:18Z",
+    "total_active": 35,
     "source_stats": {
       "ai_google_search": 0,
-      "linkedin_egypt": 12,
+      "gemini_status": "0 نتائج (HTTP Error 404: Not Found)",
+      "linkedin_egypt": 18,
       "wuzzuf_egypt": 0,
       "egypt_companies": 0,
-      "remotive_global": 0,
+      "remotive_global": 2,
       "gmail_alerts": 0
     }
   },
   "jobs": {
+    "d03a92fcd96b27c2": {
+      "id": "d03a92fcd96b27c2",
+      "family_id": "d03a92fcd96b",
+      "company": "Tabby | تابي",
+      "title": "Risk Data Analyst",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/risk-data-analyst-at-tabby-%D8%AA%D8%A7%D8%A8%D9%8A-4484449012"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/risk-data-analyst-at-tabby-%D8%AA%D8%A7%D8%A8%D9%8A-4484449012",
+      "location": "New Cairo, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-18",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: New Cairo, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Risk Data Analyst",
+        "evidence_pairs": [
+          {
+            "req": "Risk Data Analyst",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: New Cairo, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "646f51d946f4ba7d": {
+      "id": "646f51d946f4ba7d",
+      "family_id": "646f51d946f4",
+      "company": "J&T Express",
+      "title": "Chinese Speaker- Data analysis",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/chinese-speaker-data-analysis-at-j-t-express-4490422002"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/chinese-speaker-data-analysis-at-j-t-express-4490422002",
+      "location": "Qesm El Maadi, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-17",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Chinese Speaker- Data analysis",
+        "evidence_pairs": [
+          {
+            "req": "Chinese Speaker- Data analysis",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Qesm El Maadi, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "abd380b90ef39279": {
+      "id": "abd380b90ef39279",
+      "family_id": "abd380b90ef3",
+      "company": "TP",
+      "title": "Business Intelligence Analyst",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-at-tp-4493624720",
+        "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-at-tp-4491577020"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-at-tp-4493624720",
+      "location": "Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-23",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Business Intelligence Analyst",
+        "evidence_pairs": [
+          {
+            "req": "Business Intelligence Analyst",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "b68b1cdb9532982b": {
+      "id": "b68b1cdb9532982b",
+      "family_id": "b68b1cdb9532",
+      "company": "PwC Egypt Technology and Innovation Centre (ETIC)",
+      "title": "ETIC, BI Engineer Associate",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/etic-bi-engineer-associate-at-pwc-egypt-technology-and-innovation-centre-etic-4492369051"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/etic-bi-engineer-associate-at-pwc-egypt-technology-and-innovation-centre-etic-4492369051",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-22",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "ETIC, BI Engineer Associate",
+        "evidence_pairs": [
+          {
+            "req": "ETIC, BI Engineer Associate",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Cairo, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "f578f5214738797f": {
+      "id": "f578f5214738797f",
+      "family_id": "f578f5214738",
+      "company": "PwC",
+      "title": "ETIC, BI Engineer Associate",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/etic-bi-engineer-associate-at-pwc-4493373253"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/etic-bi-engineer-associate-at-pwc-4493373253",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-22",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "ETIC, BI Engineer Associate",
+        "evidence_pairs": [
+          {
+            "req": "ETIC, BI Engineer Associate",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Cairo, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "82f8f62a849a4295": {
+      "id": "82f8f62a849a4295",
+      "family_id": "82f8f62a849a",
+      "company": "Henkel",
+      "title": "Data Analytics Engineer (Evening Shift)",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/data-analytics-engineer-evening-shift-at-henkel-4440393391"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/data-analytics-engineer-evening-shift-at-henkel-4440393391",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-19",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Data Analytics Engineer (Evening Shift)",
+        "evidence_pairs": [
+          {
+            "req": "Data Analytics Engineer (Evening Shift)",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Cairo, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "24d21e78709513f6": {
+      "id": "24d21e78709513f6",
+      "family_id": "24d21e787095",
+      "company": "Tawzef for Recruitment & HR Consultancy",
+      "title": "Business Analyst",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/business-analyst-at-tawzef-for-recruitment-hr-consultancy-4492043540"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/business-analyst-at-tawzef-for-recruitment-hr-consultancy-4492043540",
+      "location": "Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-18",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Business Analyst",
+        "evidence_pairs": [
+          {
+            "req": "Business Analyst",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "c15a8578a7d5cf36": {
+      "id": "c15a8578a7d5cf36",
+      "family_id": "c15a8578a7d5",
+      "company": "Nissan Motor Corporation",
+      "title": "Market Analysis & reporting Supervisor - NMEG",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/market-analysis-reporting-supervisor-nmeg-at-nissan-motor-corporation-4492011198"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/market-analysis-reporting-supervisor-nmeg-at-nissan-motor-corporation-4492011198",
+      "location": "6th of October, Al Jizah, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-18",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: 6th of October, Al Jizah, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Market Analysis & reporting Supervisor - NMEG",
+        "evidence_pairs": [
+          {
+            "req": "Market Analysis & reporting Supervisor - NMEG",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: 6th of October, Al Jizah, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "43ea1d4856e9b348": {
+      "id": "43ea1d4856e9b348",
+      "family_id": "43ea1d4856e9",
+      "company": "TP",
+      "title": "Business Intelligence Analyst BPO experience is a MUST",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-bpo-experience-is-a-must-at-tp-4493336336"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-bpo-experience-is-a-must-at-tp-4493336336",
+      "location": "Qesm El Maadi, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-22",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Business Intelligence Analyst BPO experience is a MUST",
+        "evidence_pairs": [
+          {
+            "req": "Business Intelligence Analyst BPO experience is a MUST",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Qesm El Maadi, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "c7abb643d03eb04b": {
+      "id": "c7abb643d03eb04b",
+      "family_id": "c7abb643d03e",
+      "company": "PepsiCo",
+      "title": "Control & Reporting Coordinator",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/control-reporting-coordinator-at-pepsico-4492606495"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/control-reporting-coordinator-at-pepsico-4492606495",
+      "location": "Sawhāj, Suhaj, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-23",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Sawhāj, Suhaj, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Control & Reporting Coordinator",
+        "evidence_pairs": [
+          {
+            "req": "Control & Reporting Coordinator",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Sawhāj, Suhaj, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "32bb0495c0fe54cf": {
+      "id": "32bb0495c0fe54cf",
+      "family_id": "32bb0495c0fe",
+      "company": "The HR Game",
+      "title": "Business Analyst",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/business-analyst-at-the-hr-game-4493326479"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/business-analyst-at-the-hr-game-4493326479",
+      "location": "Qesm El Maadi, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-22",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Business Analyst",
+        "evidence_pairs": [
+          {
+            "req": "Business Analyst",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Qesm El Maadi, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "5bd1111b3f523713": {
+      "id": "5bd1111b3f523713",
+      "family_id": "5bd1111b3f52",
+      "company": "DXC Technology",
+      "title": "Payments Business Analyst ( TPH )",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/payments-business-analyst-tph-at-dxc-technology-4485446607"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/payments-business-analyst-tph-at-dxc-technology-4485446607",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-23",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Payments Business Analyst ( TPH )",
+        "evidence_pairs": [
+          {
+            "req": "Payments Business Analyst ( TPH )",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Cairo, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "97a26cd56a5b550b": {
+      "id": "97a26cd56a5b550b",
+      "family_id": "97a26cd56a5b",
+      "company": "Deloitte",
+      "title": "Deloitte Innovation Hub | Pharma Manufacturing Technology Business Analyst, Consultant level, Cairo, Egypt.",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/deloitte-innovation-hub-pharma-manufacturing-technology-business-analyst-consultant-level-cairo-egypt-at-deloitte-4493370791"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/deloitte-innovation-hub-pharma-manufacturing-technology-business-analyst-consultant-level-cairo-egypt-at-deloitte-4493370791",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-22",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Deloitte Innovation Hub | Pharma Manufacturing Technology Business Analyst, Consultant level, Cairo, Egypt.",
+        "evidence_pairs": [
+          {
+            "req": "Deloitte Innovation Hub | Pharma Manufacturing Technology Business Analyst, Consultant level, Cairo, Egypt.",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Cairo, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "d6b18ce1cf1b51df": {
+      "id": "d6b18ce1cf1b51df",
+      "family_id": "d6b18ce1cf1b",
+      "company": "Socium - Teams Done Differently",
+      "title": "Business Analyst (Temenos)",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/business-analyst-temenos-at-socium-teams-done-differently-4492376698"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/business-analyst-temenos-at-socium-teams-done-differently-4492376698",
+      "location": "Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-23",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Business Analyst (Temenos)",
+        "evidence_pairs": [
+          {
+            "req": "Business Analyst (Temenos)",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "2631986fe5986297": {
+      "id": "2631986fe5986297",
+      "family_id": "2631986fe598",
+      "company": "Coca-Cola HBC",
+      "title": "Data Engineer",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/data-engineer-at-coca-cola-hbc-4449601286"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/data-engineer-at-coca-cola-hbc-4449601286",
+      "location": "New Cairo, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-17",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: New Cairo, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Data Engineer",
+        "evidence_pairs": [
+          {
+            "req": "Data Engineer",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: New Cairo, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "4b34c56054560a17": {
+      "id": "4b34c56054560a17",
+      "family_id": "4b34c5605456",
+      "company": "Property Finder",
+      "title": "Professional Data Engineer",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/professional-data-engineer-at-property-finder-4473293724"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/professional-data-engineer-at-property-finder-4473293724",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-19",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Professional Data Engineer",
+        "evidence_pairs": [
+          {
+            "req": "Professional Data Engineer",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Cairo, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "c8b9149d2dbb9931": {
+      "id": "c8b9149d2dbb9931",
+      "family_id": "c8b9149d2dbb",
+      "company": "Arrow Electronics",
+      "title": "Analytics Product Owner",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/analytics-product-owner-at-arrow-electronics-4404318316"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/analytics-product-owner-at-arrow-electronics-4404318316",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-21",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Analytics Product Owner",
+        "evidence_pairs": [
+          {
+            "req": "Analytics Product Owner",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Cairo, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
+    "5d5aefaba2de161e": {
+      "id": "5d5aefaba2de161e",
+      "family_id": "5d5aefaba2de",
+      "company": "Coalition Technologies ",
+      "title": "Remote Office Assistant",
+      "sources": [
+        "Remotive Live API"
+      ],
+      "all_urls": [
+        "https://remotive.com/remote-jobs/marketing/remote-office-assistant-1680495"
+      ],
+      "primary_url": "https://remotive.com/remote-jobs/marketing/remote-office-assistant-1680495",
+      "location": "Remote (Worldwide)",
+      "work_mode": "Remote",
+      "receipt": {
+        "first_published": "2026-11-11",
+        "discovered_at": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:24:18Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Remote (Worldwide)"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Coalition Technologies is seeking a reliable, detail-oriented, and highly organized Remote Office Assistant to support administrative, bookkeeping, billing, reporting, data entry, and internal operations tasks. This role is ideal for someone with strong communication skills, discretion, attention to detail, and a willingness to learn and grow within a fast-paced remote work environment. As an Offi",
+        "evidence_pairs": [
+          {
+            "req": "Remote Office Assistant",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Remote (Worldwide) — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:24:18Z"
+    },
     "li-4492369051": {
       "id": "li-4492369051",
       "company": "PwC Egypt Technology and Innovation Centre (ETIC)",
