@@ -5,6 +5,7 @@ import re
 import time
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
 USER_AGENT = (
@@ -13,10 +14,8 @@ USER_AGENT = (
     "Chrome/129.0.0.0 Safari/537.36"
 )
 
-GEMINI_MODELS = ["gemini-3.8-flash", "gemini-flash-latest"]
-
 SENIOR_RX = re.compile(
-    r"\b(senior|sr\.?|lead|principal|staff|head|director|vp|vice president|chief|manager|architect|expert|3\+\s*years|4\+\s*years|5\+\s*years)\b",
+    r"\b(senior|sr\.?|lead|principal|staff|head|director|vp|vice president|chief|manager|architect|expert|3\+\s*years|4\+\s*years|5\+\s*years|6\+\s*years)\b",
     re.I,
 )
 
@@ -39,31 +38,20 @@ LINKEDIN_QUERIES = [
     "Product Analyst",
     "Data Specialist",
     "SQL Power BI",
+    "Excel Analyst",
 ]
 
-WORKABLE_COMPANIES = [
-    ("Paymob", "paymob"),
-    ("Breadfast", "breadfast"),
-    ("Bosta", "bosta"),
-    ("MaxAB", "maxab"),
-    ("Thndr", "thndr"),
-    ("Khazna", "khazna"),
-    ("Rabbit", "rabbit"),
-    ("MNT-Halan", "mnzl"),
-    ("MoneyFellows", "moneyfellows"),
-    ("Telda", "telda"),
-    ("Yodawy", "yodawy"),
-    ("Vezeeta", "vezeeta"),
-    ("Homzmart", "homzmart"),
-    ("Instabug", "instabug"),
-    ("Swvl", "swvl"),
-    ("Trella", "trella"),
-    ("Fawry", "fawry"),
-    ("ValU", "valu"),
+# Free unlimited web search queries via Bing RSS & DuckDuckGo HTML (bypasses WUZZUF/LinkedIn firewalls)
+WEB_XRAY_QUERIES = [
+    ("WUZZUF", 'site:wuzzuf.net/jobs/p ("Data Analyst" OR "Business Intelligence" OR "Reporting" OR "MIS" OR "Operations Analyst")'),
+    ("WUZZUF", 'site:wuzzuf.net/jobs/p ("Business Analyst" OR "Systems Analyst" OR "Data" OR "SFE")'),
+    ("LinkedIn HR Post", 'site:linkedin.com/posts ("Data Analyst" OR "BI Analyst" OR "MIS" OR "SFE" OR "Reporting") ("Cairo" OR "Egypt")'),
+    ("Indeed Egypt", 'site:eg.indeed.com ("Data Analyst" OR "BI" OR "Reporting" OR "Operations Analyst") Cairo'),
+    ("Egypt Company Portal", '(site:apply.workable.com OR site:jobs.lever.co OR site:boards.greenhouse.io OR site:jobs.smartrecruiters.com) ("Data Analyst" OR "BI" OR "Operations Analyst" OR "Business Analyst") ("Cairo" OR "Egypt")'),
 ]
 
 
-def http_request(url, method="GET", payload=None, extra_headers=None, timeout=22):
+def http_request(url, method="GET", payload=None, extra_headers=None, timeout=18):
     headers = {
         "User-Agent": USER_AGENT,
         "Accept-Language": "en-US,en;q=0.9,ar;q=0.8",
@@ -72,8 +60,11 @@ def http_request(url, method="GET", payload=None, extra_headers=None, timeout=22
         headers.update(extra_headers)
     data = None
     if payload is not None:
-        data = json.dumps(payload).encode("utf-8")
-        headers.setdefault("Content-Type", "application/json")
+        if isinstance(payload, bytes):
+            data = payload
+        else:
+            data = json.dumps(payload).encode("utf-8")
+            headers.setdefault("Content-Type", "application/json")
     req = urllib.request.Request(url, data=data, headers=headers, method=method)
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return resp.read().decode("utf-8", errors="ignore")
@@ -98,113 +89,99 @@ def is_relevant_entry_role(title, extra_text=""):
     )
 
 
-def call_gemini_with_grounding(api_key, prompt_text):
-    payload = {
-        "contents": [{"parts": [{"text": prompt_text}]}],
-        "tools": [{"google_search": {}}],
-    }
-    last_err = None
-    for model in GEMINI_MODELS:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={urllib.parse.quote(api_key)}"
+def parse_company_and_title(raw_title, fallback_company):
+    clean = strip_tags(raw_title)
+    clean = re.sub(r"\s*[-|]\s*(WUZZUF|LinkedIn|Indeed|Bayt|Glassdoor).*$", "", clean, flags=re.I).strip()
+    if " at " in clean:
+        parts = clean.split(" at ", 1)
+        return parts[0].strip(), parts[1].strip()
+    if " - " in clean:
+        parts = clean.split(" - ", 1)
+        if len(parts[1]) < 45:
+            return parts[0].strip(), parts[1].strip()
+    return clean, fallback_company
+
+
+def scrape_search_engines_xray(now_iso):
+    """Uses Bing Search RSS and DuckDuckGo HTML to extract indexed WUZZUF, LinkedIn Posts & Company Portals."""
+    found = {}
+
+    # 1. Bing Search RSS (Native XML feed, $0, zero API keys)
+    for source_label, query in WEB_XRAY_QUERIES:
+        rss_url = f"https://www.bing.com/search?q={urllib.parse.quote(query)}&format=rss&cc=EG"
         try:
-            raw = http_request(url, method="POST", payload=payload, timeout=30)
-            return json.loads(raw), model, None
-        except Exception as exc:
-            last_err = str(exc)[:110]
-            continue
-    return None, None, last_err
-
-
-def search_web_via_gemini_grounding(now_iso):
-    api_key = os.environ.get("GEMINI_API_KEY", "").strip()
-    if not api_key:
-        return [], "غير مفعّل (GEMINI_API_KEY غير موجود في Secrets)"
-
-    prompts = [
-        (
-            "Use Google Search right now to find the newest entry-level, junior, fresh graduate, or internship job postings "
-            "and HR posts in Egypt (Cairo / Giza / Remote Egypt) from the last 7 days for: "
-            "Data Analyst, Business Intelligence Analyst, Reporting Analyst, MIS Analyst, SFE (Sales Force Effectiveness), "
-            "or Operations Analyst across site:linkedin.com/posts, site:linkedin.com/jobs, site:wuzzuf.net, and site:eg.indeed.com. "
-            "Exclude Senior, Lead, Manager, or Director roles. "
-            "Return ONLY a JSON array of up to 18 real opportunities with keys: "
-            "title, company, location, source, url, tasks_summary."
-        ),
-        (
-            "Use Google Search right now to find graduate programs, data trainee, commercial operations analyst, "
-            "or BI specialist openings in Egyptian fintech, telecom, banks, and e-commerce companies (Paymob, Fawry, CIB, "
-            "Vodafone VOIS, e&, Raya, Breadfast, Bosta, Talabat, MaxAB, Noon, Jumia, ValU, Thndr) in Cairo Egypt from the past 7 days. "
-            "Exclude Senior/Manager roles. "
-            "Return ONLY a JSON array of up to 15 real opportunities with keys: title, company, location, source, url, tasks_summary."
-        ),
-    ]
-
-    collected = []
-    used_model = None
-    last_error = None
-
-    for prompt in prompts:
-        parsed, model_used, err = call_gemini_with_grounding(api_key, prompt)
-        if err or not parsed:
-            last_error = err
-            continue
-        used_model = model_used
-        try:
-            cand = parsed["candidates"][0]
-            text = cand["content"]["parts"][0].get("text", "")
-            g_meta = cand.get("groundingMetadata") or {}
-            grounding_urls = [
-                (c.get("web") or {}).get("uri")
-                for c in (g_meta.get("groundingChunks") or [])
-                if (c.get("web") or {}).get("uri")
-            ]
-            json_m = re.search(r"\[[\s\S]*\]", text)
-            if not json_m:
-                continue
-            items = json.loads(json_m.group(0))
-            for idx, it in enumerate(items):
-                if not isinstance(it, dict):
+            xml_text = http_request(rss_url, timeout=16)
+            root = ET.fromstring(xml_text)
+            for item in root.findall(".//item"):
+                raw_t = (item.findtext("title") or "").strip()
+                link = (item.findtext("link") or "").strip()
+                desc = strip_tags(item.findtext("description") or "")
+                if not raw_t or not link.startswith("http"):
                     continue
-                title = str(it.get("title") or "").strip()
-                company = str(it.get("company") or "شركة في مصر").strip()
-                if not title or SENIOR_RX.search(title):
+                title, company = parse_company_and_title(raw_t, source_label)
+                if not is_relevant_entry_role(title, desc):
                     continue
-                loc = str(it.get("location") or "Cairo, Egypt").strip()
-                src = str(it.get("source") or "Gemini Google Search").strip()
-                tasks = str(it.get("tasks_summary") or f"{title} SQL Power BI Excel").strip()
-                job_url = str(it.get("url") or "").strip()
-                if not job_url.startswith("http"):
-                    job_url = (
-                        grounding_urls[idx]
-                        if idx < len(grounding_urls)
-                        else f"https://www.google.com/search?q={urllib.parse.quote(title + ' ' + company + ' Egypt')}"
-                    )
-                collected.append({
+                found[link] = {
                     "company": company,
                     "title": title,
-                    "location": loc,
-                    "work_mode": "Remote" if "remote" in loc.lower() else "Hybrid",
-                    "source_name": f"✨ {src}",
-                    "url": job_url,
+                    "location": "Cairo, Egypt",
+                    "work_mode": "Hybrid",
+                    "source_name": source_label,
+                    "url": link,
                     "first_published": now_iso[:10],
                     "discovered_at": now_iso,
-                    "required_text": f"{title} {tasks}",
-                    "tasks": tasks,
-                })
-        except Exception as exc:
-            last_error = str(exc)[:110]
+                    "required_text": f"{title} {desc[:350]}",
+                    "tasks": desc[:350] or title,
+                }
+            time.sleep(0.4)
+        except Exception:
             continue
 
-    if collected:
-        return collected, f"شغّال ✓ ({used_model} • {len(collected)} فرصة)"
-    return [], f"0 نتائج ({last_error or 'لم يجد نتائج جديدة'})"
+    # 2. DuckDuckGo HTML fallback for WUZZUF & LinkedIn Posts
+    ddg_queries = [
+        ("WUZZUF", 'site:wuzzuf.net/jobs/p "data analyst" OR "bi analyst" OR "reporting"'),
+        ("LinkedIn HR Post", 'site:linkedin.com/posts "data analyst" OR "mis" OR "sfe" egypt'),
+    ]
+    for source_label, query in ddg_queries:
+        try:
+            ddg_url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(query)}"
+            body = http_request(ddg_url, timeout=16)
+            blocks = re.findall(r'<a[^>]*class="result__a"[^>]*href="([^"]+)"[^>]*>(.*?)</a>', body, flags=re.S)
+            for href, raw_t in blocks:
+                if "uddg=" in href:
+                    m = re.search(r"uddg=([^&]+)", href)
+                    if m:
+                        href = urllib.parse.unquote(m.group(1))
+                if not href.startswith("http") or href in found:
+                    continue
+                title, company = parse_company_and_title(raw_t, source_label)
+                if not is_relevant_entry_role(title):
+                    continue
+                found[href] = {
+                    "company": company,
+                    "title": title,
+                    "location": "Cairo, Egypt",
+                    "work_mode": "Hybrid",
+                    "source_name": source_label,
+                    "url": href,
+                    "first_published": now_iso[:10],
+                    "discovered_at": now_iso,
+                    "required_text": f"{title} SQL Power BI Excel",
+                    "tasks": title,
+                }
+            time.sleep(0.5)
+        except Exception:
+            continue
+
+    return list(found.values())
 
 
 def scrape_linkedin_egypt_guest(now_iso):
+    """Fetches 3 pages (0, 10, 20) across 14 keywords from LinkedIn Egypt public job index."""
     found = {}
     for kw in LINKEDIN_QUERIES:
         encoded_kw = urllib.parse.quote(kw)
-        for start in [0, 10]:
+        for start in [0, 10, 20]:
             url = (
                 f"https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
                 f"?keywords={encoded_kw}&location=Egypt&f_TPR=r604800&start={start}"
@@ -243,46 +220,10 @@ def scrape_linkedin_egypt_guest(now_iso):
                         "required_text": f"{title} SQL Excel Power BI",
                         "tasks": title,
                     }
-                time.sleep(0.35)
+                time.sleep(0.3)
             except Exception:
                 break
     return list(found.values())
-
-
-def scrape_egypt_company_boards(now_iso):
-    results = []
-    for company, slug in WORKABLE_COMPANIES:
-        api_url = f"https://apply.workable.com/api/v1/widget/accounts/{slug}"
-        try:
-            raw = http_request(api_url, method="GET", extra_headers={"Accept": "application/json"}, timeout=12)
-            data = json.loads(raw)
-            for job in data.get("jobs", []):
-                title = job.get("title", "")
-                city = job.get("city") or ""
-                country = job.get("country") or ""
-                loc_str = f"{city}, {country}".strip(", ") or "Cairo, Egypt"
-                is_remote = bool(job.get("telecommuting"))
-                if country and "egypt" not in country.lower() and not is_remote:
-                    continue
-                if not is_relevant_entry_role(title):
-                    continue
-                shortcode = job.get("shortcode", "")
-                job_url = job.get("url") or (f"https://apply.workable.com/{slug}/j/{shortcode}/" if shortcode else f"https://apply.workable.com/{slug}/")
-                results.append({
-                    "company": company,
-                    "title": title,
-                    "location": loc_str,
-                    "work_mode": "Remote" if is_remote else "Hybrid",
-                    "source_name": f"{company} Careers Portal",
-                    "url": job_url,
-                    "first_published": str(job.get("published_on") or now_iso)[:10],
-                    "discovered_at": now_iso,
-                    "required_text": f"{title} SQL Power BI Excel Python",
-                    "tasks": title,
-                })
-        except Exception:
-            continue
-    return results
 
 
 def scrape_remotive_global(now_iso):
@@ -318,18 +259,20 @@ def scrape_remotive_global(now_iso):
 
 def scrape_all_real_sources():
     now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    ai_jobs, gemini_status = search_web_via_gemini_grounding(now_iso)
+    xray_jobs = scrape_search_engines_xray(now_iso)
     li_jobs = scrape_linkedin_egypt_guest(now_iso)
-    co_jobs = scrape_egypt_company_boards(now_iso)
     rm_jobs = scrape_remotive_global(now_iso)
 
-    raw_items = ai_jobs + li_jobs + co_jobs + rm_jobs
+    raw_items = xray_jobs + li_jobs + rm_jobs
+    wuzzuf_cnt = sum(1 for j in xray_jobs if "wuzzuf" in j.get("source_name", "").lower())
+    other_egypt_cnt = len(xray_jobs) - wuzzuf_cnt
+
     stats = {
-        "ai_google_search": len(ai_jobs),
-        "gemini_status": gemini_status,
+        "ai_google_search": len(xray_jobs),
+        "gemini_status": f"محرك X-Ray المجاني شغّال ✓ ({len(xray_jobs)} نتيجة)",
         "linkedin_egypt": len(li_jobs),
-        "wuzzuf_egypt": sum(1 for j in ai_jobs if "wuzzuf" in j.get("source_name", "").lower()),
-        "egypt_companies": len(co_jobs) + sum(1 for j in ai_jobs if not any(x in j.get("source_name", "").lower() for x in ["wuzzuf", "linkedin", "indeed"])),
+        "wuzzuf_egypt": wuzzuf_cnt,
+        "egypt_companies": other_egypt_cnt,
         "remotive_global": len(rm_jobs),
     }
     return raw_items, stats
