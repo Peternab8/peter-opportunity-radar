@@ -1153,7 +1153,7 @@
 
         setDiagnosticHtml('⏳ <strong>الخطوة ١/٢:</strong> Gemini AI يبحث الآن في فهرس Google عن أحدث بوستات HR وإعلانات WUZZUF وIndeed في مصر...');
 
-        var apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' + encodeURIComponent(state.geminiApiKey);
+        var apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=' + encodeURIComponent(state.geminiApiKey);
         var queries = [
           'Use Google Search right now to find the newest entry-level, junior, fresh graduate, or internship job postings and HR posts in Egypt (Cairo / Giza / Remote Egypt) from the last 7 days for: Data Analyst, Business Intelligence Analyst, Reporting Analyst, MIS Analyst, SFE (Sales Force Effectiveness), or Operations Analyst across site:linkedin.com/posts, site:linkedin.com/jobs, site:wuzzuf.net, and site:eg.indeed.com. Exclude Senior, Lead, Manager, or Director roles. Return ONLY a JSON array of up to 15 real opportunities with keys: title, company, location, source, url, reason_ar (1 crisp Arabic sentence why it fits a BIS graduate skilled in SQL, Power BI, Excel, Python).',
           'Use Google Search right now to find graduate programs, data trainee, commercial operations analyst, or BI specialist openings in Egyptian fintech, telecom, banks, and e-commerce companies (Paymob, Fawry, CIB, Vodafone VOIS, e&, Raya, Breadfast, Bosta, Talabat, MaxAB, Noon, Jumia) in Cairo Egypt from the past 7 days. Exclude Senior/Manager roles. Return ONLY a JSON array of up to 12 real opportunities with keys: title, company, location, source, url, reason_ar.'
@@ -1533,7 +1533,7 @@
           var prompt = 'أنت مستشار توظيف لبيتر نبيل جرجس (خريج BIS حلوان بامتياز 3.67، يسكن في شبرا مصر، مهاراته SQL وExcel/VBA وPower BI وPython وتدريبات DEPI وNTI). ' +
             'للوظيفة التالية: ' + job.title + ' في ' + job.company + ' (' + job.location + '). ' +
             'اكتب في 4 سطور مختصرة بالعربية: 1) نسبة ملاءمتها الحقيقية لبيتر ولماذا 2) أهم 2 مشروع أو مهارة يركز عليهم 3) نصيحة سريعة للتقديم أو الانترفيو.';
-          fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' + encodeURIComponent(state.geminiApiKey), {
+          fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=' + encodeURIComponent(state.geminiApiKey), {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
