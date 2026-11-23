@@ -1,6 +1,14 @@
 self.addEventListener('install', (e) => self.skipWaiting());
 self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()));
 
+self.addEventListener('fetch', (event) => {
+  if (event.request.url.includes('live_feed.json')) {
+    event.respondWith(
+      fetch(event.request, { cache: 'no-store' }).catch(() => caches.match(event.request))
+    );
+  }
+});
+
 self.addEventListener('push', (event) => {
   const data = event.data ? event.data.json() : {
     title: 'فرصة جديدة مطابقة — رادار بيتر',
