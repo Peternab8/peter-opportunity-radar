@@ -20,11 +20,13 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install scraping engine
+        run: pip install --quiet python-jobspy
+
       - name: Run hourly opportunity radar
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           PWA_BASE_URL: ${{ secrets.PWA_BASE_URL }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python engine/hourly_runner.py
 
       - name: Commit and push updated feed
