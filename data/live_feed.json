@@ -1,12 +1,13 @@
 {
   "meta": {
-    "last_successful_run": "2026-11-23T18:36:55Z",
+    "last_successful_run": "2026-11-23T19:08:19Z",
     "total_active": 17,
     "source_stats": {
+      "ai_google_search": 0,
       "linkedin_egypt": 12,
       "wuzzuf_egypt": 0,
       "egypt_companies": 0,
-      "remotive_global": 2,
+      "remotive_global": 0,
       "gmail_alerts": 0
     }
   },
@@ -46,7 +47,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt",
         "first_published": "2026-11-22",
-        "last_verified": "2026-11-23T18:36:55Z"
+        "last_verified": "2026-11-23T19:08:19Z"
       }
     },
     "li-4493373253": {
@@ -84,7 +85,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt",
         "first_published": "2026-11-22",
-        "last_verified": "2026-11-23T18:36:55Z"
+        "last_verified": "2026-11-23T19:08:19Z"
       }
     },
     "li-4492606495": {
@@ -220,7 +221,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Egypt",
         "first_published": "2026-11-23",
-        "last_verified": "2026-11-23T18:36:55Z"
+        "last_verified": "2026-11-23T19:08:19Z"
       }
     },
     "li-4493336336": {
@@ -254,7 +255,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt",
         "first_published": "2026-11-22",
-        "last_verified": "2026-11-23T18:36:55Z"
+        "last_verified": "2026-11-23T19:08:19Z"
       }
     },
     "li-4492043540": {
@@ -288,7 +289,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Egypt",
         "first_published": "2026-11-18",
-        "last_verified": "2026-11-23T18:36:55Z"
+        "last_verified": "2026-11-23T19:08:19Z"
       }
     },
     "li-4440393391": {
@@ -322,7 +323,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt",
         "first_published": "2026-11-19",
-        "last_verified": "2026-11-23T18:36:55Z"
+        "last_verified": "2026-11-23T19:08:19Z"
       }
     },
     "li-4493326479": {
@@ -356,7 +357,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt",
         "first_published": "2026-11-22",
-        "last_verified": "2026-11-23T18:26:49Z"
+        "last_verified": "2026-11-23T19:08:19Z"
       }
     },
     "li-4485446607": {
@@ -390,7 +391,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt",
         "first_published": "2026-11-23",
-        "last_verified": "2026-11-23T18:26:49Z"
+        "last_verified": "2026-11-23T19:08:19Z"
       }
     },
     "li-4493370791": {
@@ -424,7 +425,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt",
         "first_published": "2026-11-22",
-        "last_verified": "2026-11-23T18:26:49Z"
+        "last_verified": "2026-11-23T19:08:19Z"
       }
     },
     "rem-1680495": {
@@ -477,7 +478,7 @@
       ],
       "discovered_at": "2026-11-23T18:26:49Z",
       "fit": {
-        "score": 84,
+        "score": 86,
         "summary": "مسمى مباشر لمسارات Data / BI / Reporting / MIS / SFE / Operations.",
         "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
         "evidence_pairs": [
@@ -496,7 +497,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: New Cairo, Cairo, Egypt",
         "first_published": "2026-11-18",
-        "last_verified": "2026-11-23T18:36:55Z"
+        "last_verified": "2026-11-23T19:08:19Z"
       }
     },
     "li-4490422002": {
@@ -530,7 +531,7 @@
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt",
         "first_published": "2026-11-17",
-        "last_verified": "2026-11-23T18:36:55Z"
+        "last_verified": "2026-11-23T19:08:19Z"
       }
     },
     "c565926d93842a90": {
