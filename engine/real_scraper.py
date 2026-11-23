@@ -10,21 +10,16 @@ from datetime import datetime, timezone
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/128.0.0.0 Safari/537.36"
+    "Chrome/129.0.0.0 Safari/537.36"
 )
 
 SENIOR_RX = re.compile(
-    r"\b(senior|sr\.?|lead|principal|staff|head|director|vp|vice president|chief|manager|architect|expert|3\+\s*years|4\+\s*years|5\+\s*years)\b",
-    re.I,
-)
-
-CORE_ROLE_RX = re.compile(
-    r"\b(data|bi|business intelligence|reporting|mis|sfe|sales force|operations analyst|business analyst|analytics|product analyst|systems analyst|sql|power bi|excel|tableau|python|junior|fresh|graduate|intern|trainee|specialist|coordinator)\b",
+    r"\b(senior|sr\.?|lead|principal|staff|head|director|vp|vice president|chief|manager|architect|expert|3\+\s*years|4\+\s*years|5\+\s*years|6\+\s*years)\b",
     re.I,
 )
 
 NEGATIVE_ROLE_RX = re.compile(
-    r"\b(telesales|tele-sales|call center|customer service agent|door to door|outdoor sales|real estate broker|driver|security guard|nurse|pharmacist|chef|graphic designer|video editor|frontend|backend|fullstack|ios|android|flutter|devops)\b",
+    r"\b(telesales|tele-sales|call center|customer service|customer support|door to door|outdoor sales|real estate|driver|security|nurse|pharmacist|chef|graphic designer|video editor|frontend|backend|fullstack|full stack|ios|android|flutter|devops|cybersecurity|network engineer)\b",
     re.I,
 )
 
@@ -33,19 +28,24 @@ LINKEDIN_QUERIES = [
     "Business Intelligence Analyst",
     "Reporting Analyst",
     "MIS Analyst",
-    "SFE Sales Force Effectiveness",
+    "SFE",
+    "Sales Force Effectiveness",
     "Operations Analyst",
     "Business Analyst",
-    "Junior Data SQL Power BI",
+    "Systems Analyst",
+    "Product Analyst",
+    "Data Specialist",
+    "SQL Power BI",
 ]
 
 WUZZUF_QUERIES = [
     "data analyst",
     "business intelligence",
-    "reporting analyst",
+    "reporting",
     "mis",
     "operations analyst",
     "business analyst",
+    "systems analyst",
 ]
 
 WORKABLE_COMPANIES = [
@@ -67,6 +67,8 @@ WORKABLE_COMPANIES = [
     ("Trella", "trella"),
     ("Taqneen", "taqneen"),
     ("Fawry", "fawry"),
+    ("Giza Systems", "giza-systems"),
+    ("ValU", "valu"),
 ]
 
 
@@ -108,7 +110,7 @@ def compute_commute_from_shubra(location_str, work_mode="", text=""):
         return 30, "محافظة أخرى خارج القاهرة الكبرى (يحتاج انتقال/سكن)"
     if any(k in blob for k in ["cairo", "egypt", "القاهرة", "مصر"]):
         return 80, "داخل القاهرة الكبرى — راجع الحي الدقيق وأيام الحضور من شبرا مصر"
-    return 65, "الموقع يحتاج تأكيد من نص الإعلان"
+    return 68, "الموقع يحتاج تأكيد من نص الإعلان"
 
 
 def evaluate_for_peter(title, company, location_str, snippet="", work_mode=""):
@@ -118,25 +120,29 @@ def evaluate_for_peter(title, company, location_str, snippet="", work_mode=""):
     if SENIOR_RX.search(t) or NEGATIVE_ROLE_RX.search(t):
         return None
 
-    score = 62
+    score = 64
     reasons = []
     evidence = []
 
-    if re.search(r"\b(data analyst|business intelligence|bi analyst|reporting analyst|mis|sfe|sales force|operations analyst|business analyst|data analytics|product analyst|systems analyst)\b", t, re.I):
-        score += 22
-        reasons.append("مسمى مباشر لمسارات Data / BI / Reporting / MIS / SFE / Operations.")
+    if re.search(
+        r"\b(data analyst|business intelligence|bi analyst|reporting analyst|mis|sfe|sales force|operations analyst|business analyst|data analytics|product analyst|systems analyst|data specialist|data science)\b",
+        t,
+        re.I,
+    ):
+        score += 20
+        reasons.append("مسمى مباشر لمسارات Data / BI / Reporting / MIS / SFE / Systems.")
         evidence.append({"req": t, "cv": "بكالوريوس BIS حلوان (امتياز 3.67) + مشاريع DEPI وNTI"})
-    elif re.search(r"\b(data|analytics|sql|power bi|excel|reporting)\b", combined, re.I):
+    elif re.search(r"\b(data|analytics|sql|power bi|excel|reporting|bi)\b", combined, re.I):
         score += 12
         reasons.append("يتضمن مهام تحليل بيانات أو تقارير.")
         evidence.append({"req": "Data & Reporting Tasks", "cv": "خبرة عملية في SQL, Excel, Power BI, Python"})
     else:
         return None
 
-    if re.search(r"\b(junior|fresh|entry|graduate|trainee|intern|associate|0-1|0 - 1|1 year)\b", combined, re.I):
-        score += 9
-        reasons.append("مناسب لحديثي التخرج / Junior / Trainee.")
-        evidence.append({"req": "Entry / Fresh Graduate Level", "cv": "خريج 2026 بتقدير امتياز مع مرتبة الشرف (GPA 3.67)"})
+    if re.search(r"\b(junior|fresh|entry|graduate|trainee|intern|associate|riser|0-1|0 - 1|1 year|2 years)\b", combined, re.I):
+        score += 8
+        reasons.append("مناسب لحديثي التخرج / Junior / Associate.")
+        evidence.append({"req": "Entry / Junior Level", "cv": "خريج 2026 بتقدير امتياز مع مرتبة الشرف (GPA 3.67)"})
 
     tools = []
     if re.search(r"\bsql\b", combined):
@@ -159,7 +165,7 @@ def evaluate_for_peter(title, company, location_str, snippet="", work_mode=""):
     if comm_score >= 80:
         score += 3
 
-    score = max(55, min(score, 98))
+    score = max(58, min(score, 98))
     return {
         "fit_score": score,
         "commute_score": comm_score,
@@ -170,51 +176,128 @@ def evaluate_for_peter(title, company, location_str, snippet="", work_mode=""):
 
 
 def scrape_linkedin_egypt_guest(now_iso):
+    """Fetch 2 pages (start=0, start=10) per query without f_E restriction so untagged Junior roles are included."""
     found = {}
     for kw in LINKEDIN_QUERIES:
         encoded_kw = urllib.parse.quote(kw)
-        # f_TPR=r604800 (last 7 days), f_E=1,2 (Internship & Entry level)
-        url = (
-            f"https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
-            f"?keywords={encoded_kw}&location=Egypt&f_TPR=r604800&f_E=1%2C2&start=0"
-        )
+        for start in [0, 10]:
+            url = (
+                f"https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
+                f"?keywords={encoded_kw}&location=Egypt&f_TPR=r604800&start={start}"
+            )
+            try:
+                body = http_request(url, timeout=14)
+                cards = re.findall(r"<li[^>]*>(.*?)</li>", body, flags=re.S)
+                if not cards:
+                    break
+                for card in cards:
+                    title_m = re.search(r'class="base-search-card__title[^"]*"[^>]*>(.*?)</', card, re.S)
+                    comp_m = re.search(r'class="base-search-card__subtitle[^"]*"[^>]*>(.*?)</', card, re.S)
+                    loc_m = re.search(r'class="job-search-card__location[^"]*"[^>]*>(.*?)</', card, re.S)
+                    link_m = re.search(r'href="(https://[^"]*linkedin\.com/jobs/view/[^"?]+)', card)
+                    time_m = re.search(r'<time[^>]*datetime="([^"]+)"', card)
+
+                    if not title_m or not link_m:
+                        continue
+                    title = strip_tags(title_m.group(1))
+                    company = strip_tags(comp_m.group(1)) if comp_m else "LinkedIn Employer"
+                    loc = strip_tags(loc_m.group(1)) if loc_m else "Egypt"
+                    clean_url = link_m.group(1).strip()
+                    pub_date = time_m.group(1)[:10] if time_m else now_iso[:10]
+
+                    ev = evaluate_for_peter(title, company, loc)
+                    if not ev:
+                        continue
+
+                    job_id_m = re.search(r"-(\d+)(?:/|$)", clean_url)
+                    jid = f"li-{job_id_m.group(1)}" if job_id_m else f"li-{abs(hash(clean_url))}"
+                    found[jid] = {
+                        "id": jid,
+                        "company": company,
+                        "title": title,
+                        "work_mode": "LinkedIn Jobs (Egypt)",
+                        "location": loc,
+                        "primary_url": clean_url,
+                        "sources": ["LinkedIn Jobs (Egypt)"],
+                        "discovered_at": now_iso,
+                        "fit": {
+                            "score": ev["fit_score"],
+                            "summary": ev["summary"],
+                            "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+                            "evidence_pairs": ev["evidence_pairs"],
+                        },
+                        "commute": {
+                            "score": ev["commute_score"],
+                            "summary": ev["commute_summary"],
+                        },
+                        "receipt": {
+                            "apply_state": "OPEN",
+                            "apply_state_ar": "مفتوح ومتحقق ✓",
+                            "egypt_eligibility": f"مؤكد: {loc}",
+                            "first_published": pub_date,
+                            "last_verified": now_iso,
+                        },
+                    }
+                time.sleep(0.45)
+            except Exception:
+                break
+    return list(found.values())
+
+
+def scrape_wuzzuf_egypt(now_iso):
+    """Query WUZZUF's actual JSON search backend endpoint."""
+    found = {}
+    api_url = "https://wuzzuf.net/api/search/job"
+    for kw in WUZZUF_QUERIES:
         try:
-            body = http_request(url, timeout=14)
-            cards = re.findall(r"<li[^>]*>(.*?)</li>", body, flags=re.S)
-            for card in cards:
-                title_m = re.search(r'class="base-search-card__title[^"]*"[^>]*>(.*?)</', card, re.S)
-                comp_m = re.search(r'class="base-search-card__subtitle[^"]*"[^>]*>(.*?)</', card, re.S)
-                loc_m = re.search(r'class="job-search-card__location[^"]*"[^>]*>(.*?)</', card, re.S)
-                link_m = re.search(r'href="(https://[^"]*linkedin\.com/jobs/view/[^"?]+)', card)
-                time_m = re.search(r'<time[^>]*datetime="([^"]+)"', card)
-
-                if not title_m or not link_m:
+            payload = {
+                "startIndex": 0,
+                "pageSize": 25,
+                "query": kw,
+                "filters": {},
+            }
+            raw = http_request(
+                api_url,
+                method="POST",
+                payload=payload,
+                extra_headers={"Accept": "application/json", "Referer": "https://wuzzuf.net/search/jobs/"},
+                timeout=15,
+            )
+            data = json.loads(raw)
+            jobs_list = data.get("data", []) if isinstance(data, dict) else []
+            for item in jobs_list:
+                attrs = item.get("attributes") if isinstance(item.get("attributes"), dict) else item
+                title = strip_tags(attrs.get("title") or "")
+                if not title:
                     continue
-                title = strip_tags(title_m.group(1))
-                company = strip_tags(comp_m.group(1)) if comp_m else "LinkedIn Employer"
-                loc = strip_tags(loc_m.group(1)) if loc_m else "Egypt"
-                clean_url = link_m.group(1).strip()
-                pub_date = time_m.group(1)[:10] if time_m else now_iso[:10]
+                company_obj = attrs.get("company") or {}
+                company = strip_tags(company_obj.get("name") if isinstance(company_obj, dict) else "شركة على WUZZUF")
+                loc_obj = attrs.get("location") or {}
+                city = loc_obj.get("city", {}).get("name", "") if isinstance(loc_obj.get("city"), dict) else ""
+                area = loc_obj.get("area", {}).get("name", "") if isinstance(loc_obj.get("area"), dict) else ""
+                loc = ", ".join([x for x in [area, city, "Egypt"] if x])
+                desc = strip_tags(attrs.get("description") or attrs.get("requirements") or "")
+                slug = attrs.get("slug") or item.get("id") or ""
+                job_url = f"https://wuzzuf.net/jobs/p/{slug}" if slug else "https://wuzzuf.net/search/jobs/"
 
-                ev = evaluate_for_peter(title, company, loc)
+                ev = evaluate_for_peter(title, company, loc, desc)
                 if not ev:
                     continue
 
-                job_id_m = re.search(r"-(\d+)(?:/|$)", clean_url)
-                jid = f"li-{job_id_m.group(1)}" if job_id_m else f"li-{abs(hash(clean_url))}"
+                jid = f"wz-{slug or abs(hash(title + company))}"
                 found[jid] = {
                     "id": jid,
-                    "company": company,
+                    "company": company or "شركة على WUZZUF",
                     "title": title,
-                    "work_mode": "Hybrid / On-site (LinkedIn Egypt)",
+                    "work_mode": "Full-time / Hybrid (WUZZUF)",
                     "location": loc,
-                    "primary_url": clean_url,
-                    "sources": ["LinkedIn Jobs (Egypt)"],
+                    "primary_url": job_url,
+                    "sources": ["WUZZUF"],
                     "discovered_at": now_iso,
                     "fit": {
                         "score": ev["fit_score"],
                         "summary": ev["summary"],
-                        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+                        "recommended_project": "مشروع NTI قواعد البيانات + لوحات Power BI التفاعلية.",
                         "evidence_pairs": ev["evidence_pairs"],
                     },
                     "commute": {
@@ -225,152 +308,44 @@ def scrape_linkedin_egypt_guest(now_iso):
                         "apply_state": "OPEN",
                         "apply_state_ar": "مفتوح ومتحقق ✓",
                         "egypt_eligibility": f"مؤكد: {loc}",
-                        "first_published": pub_date,
+                        "first_published": str(attrs.get("postedAt") or now_iso)[:10],
                         "last_verified": now_iso,
                     },
                 }
-            time.sleep(0.6)
-        except Exception:
-            continue
-    return list(found.values())
-
-
-def scrape_wuzzuf_egypt(now_iso):
-    found = {}
-    for kw in WUZZUF_QUERIES:
-        q = urllib.parse.quote(kw)
-        url = f"https://wuzzuf.net/search/jobs/?q={q}&a=hpb"
-        try:
-            body = http_request(url, timeout=15)
-            # Extract JSON-LD ItemList / JobPosting blocks if present
-            ld_blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', body, flags=re.S)
-            for block in ld_blocks:
-                try:
-                    parsed = json.loads(block.strip())
-                    items = parsed.get("itemListElement", []) if isinstance(parsed, dict) else []
-                    for el in items:
-                        item = el.get("item") if isinstance(el, dict) else None
-                        if not isinstance(item, dict):
-                            continue
-                        title = strip_tags(item.get("title") or item.get("name") or "")
-                        job_url = item.get("url") or url
-                        org = item.get("hiringOrganization") or {}
-                        company = strip_tags(org.get("name") if isinstance(org, dict) else "WUZZUF Employer")
-                        loc_obj = item.get("jobLocation") or {}
-                        addr = loc_obj.get("address") if isinstance(loc_obj, dict) else {}
-                        loc = strip_tags(addr.get("addressLocality") if isinstance(addr, dict) else "Cairo, Egypt")
-                        desc = strip_tags(item.get("description") or "")
-
-                        ev = evaluate_for_peter(title, company, loc, desc)
-                        if not ev:
-                            continue
-                        jid = f"wz-{abs(hash(job_url))}"
-                        found[jid] = {
-                            "id": jid,
-                            "company": company or "WUZZUF Employer",
-                            "title": title,
-                            "work_mode": "Full-time / Hybrid (WUZZUF)",
-                            "location": loc or "Cairo, Egypt",
-                            "primary_url": job_url,
-                            "sources": ["WUZZUF"],
-                            "discovered_at": now_iso,
-                            "fit": {
-                                "score": ev["fit_score"],
-                                "summary": ev["summary"],
-                                "recommended_project": "مشروع NTI قواعد البيانات + لوحات Power BI التفاعلية.",
-                                "evidence_pairs": ev["evidence_pairs"],
-                            },
-                            "commute": {
-                                "score": ev["commute_score"],
-                                "summary": ev["commute_summary"],
-                            },
-                            "receipt": {
-                                "apply_state": "OPEN",
-                                "apply_state_ar": "مفتوح ومتحقق ✓",
-                                "egypt_eligibility": f"مؤكد: {loc or 'مصر'}",
-                                "first_published": (item.get("datePosted") or now_iso)[:10],
-                                "last_verified": now_iso,
-                            },
-                        }
-                except Exception:
-                    continue
-
-            # Also parse direct job links in search HTML as fallback
-            anchors = re.findall(r'href="(https://wuzzuf\.net/jobs/p/[^"?]+)"[^>]*>(.*?)</a>', body, flags=re.S)
-            for href, raw_t in anchors:
-                title = strip_tags(raw_t)
-                if len(title) < 4:
-                    continue
-                ev = evaluate_for_peter(title, "WUZZUF Company", "Cairo, Egypt")
-                if not ev:
-                    continue
-                jid = f"wz-{abs(hash(href))}"
-                if jid not in found:
-                    found[jid] = {
-                        "id": jid,
-                        "company": "شركة على WUZZUF",
-                        "title": title,
-                        "work_mode": "Full-time / Hybrid (WUZZUF)",
-                        "location": "Cairo, Egypt",
-                        "primary_url": href,
-                        "sources": ["WUZZUF"],
-                        "discovered_at": now_iso,
-                        "fit": {
-                            "score": ev["fit_score"],
-                            "summary": ev["summary"],
-                            "recommended_project": "مشروع DEPI لتحليل البيانات + Excel/Power BI.",
-                            "evidence_pairs": ev["evidence_pairs"],
-                        },
-                        "commute": {
-                            "score": ev["commute_score"],
-                            "summary": ev["commute_summary"],
-                        },
-                        "receipt": {
-                            "apply_state": "OPEN",
-                            "apply_state_ar": "مفتوح ومتحقق ✓",
-                            "egypt_eligibility": "مؤكد: مصر",
-                            "first_published": now_iso[:10],
-                            "last_verified": now_iso,
-                        },
-                    }
-            time.sleep(0.5)
+            time.sleep(0.4)
         except Exception:
             continue
     return list(found.values())
 
 
 def scrape_egypt_company_boards(now_iso):
+    """Use Workable public v1 widget endpoint for direct Egyptian company career portals."""
     results = []
     for company, slug in WORKABLE_COMPANIES:
-        api_url = f"https://apply.workable.com/api/v3/accounts/{slug}/jobs"
+        api_url = f"https://apply.workable.com/api/v1/widget/accounts/{slug}"
         try:
-            raw = http_request(
-                api_url,
-                method="POST",
-                payload={"query": "", "location": [], "department": [], "worktype": []},
-                timeout=12,
-            )
+            raw = http_request(api_url, method="GET", extra_headers={"Accept": "application/json"}, timeout=12)
             data = json.loads(raw)
-            for job in data.get("results", []):
+            for job in data.get("jobs", []):
                 title = job.get("title", "")
-                loc_obj = job.get("location") or {}
-                city = loc_obj.get("city") or ""
-                country = loc_obj.get("country") or ""
+                city = job.get("city") or ""
+                country = job.get("country") or ""
                 loc_str = f"{city}, {country}".strip(", ") or "Cairo, Egypt"
-                if country and "egypt" not in country.lower() and not job.get("remote"):
+                is_remote = bool(job.get("telecommuting"))
+                if country and "egypt" not in country.lower() and not is_remote:
                     continue
 
-                ev = evaluate_for_peter(title, company, loc_str, work_mode="Remote" if job.get("remote") else "Hybrid")
+                ev = evaluate_for_peter(title, company, loc_str, work_mode="Remote" if is_remote else "Hybrid")
                 if not ev:
                     continue
 
                 shortcode = job.get("shortcode", "")
-                job_url = f"https://apply.workable.com/{slug}/j/{shortcode}/" if shortcode else f"https://apply.workable.com/{slug}/"
+                job_url = job.get("url") or (f"https://apply.workable.com/{slug}/j/{shortcode}/" if shortcode else f"https://apply.workable.com/{slug}/")
                 results.append({
                     "id": f"wk-{slug}-{shortcode or abs(hash(title))}",
                     "company": company,
                     "title": title,
-                    "work_mode": "Remote" if job.get("remote") else "Hybrid / On-site",
+                    "work_mode": "Remote" if is_remote else "Hybrid / On-site",
                     "location": loc_str,
                     "primary_url": job_url,
                     "sources": [f"{company} Careers Portal"],
@@ -389,7 +364,7 @@ def scrape_egypt_company_boards(now_iso):
                         "apply_state": "OPEN",
                         "apply_state_ar": "مفتوح ومتحقق ✓",
                         "egypt_eligibility": f"مؤكد: {loc_str}",
-                        "first_published": (job.get("published") or now_iso)[:10],
+                        "first_published": str(job.get("published_on") or now_iso)[:10],
                         "last_verified": now_iso,
                     },
                 })
@@ -446,12 +421,11 @@ def scrape_remotive_global(now_iso):
 
 
 def enrich_top_jobs_with_gemini(jobs):
-    """Optional free-tier Gemini 2.5 Flash enrichment if GEMINI_API_KEY secret is set."""
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not api_key or not jobs:
         return jobs
 
-    top_slice = jobs[:12]
+    top_slice = jobs[:15]
     compact = [
         {"id": j["id"], "title": j["title"], "company": j["company"], "location": j["location"]}
         for j in top_slice
