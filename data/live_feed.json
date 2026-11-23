@@ -1,42 +1,360 @@
 {
   "meta": {
-    "owner": "Peter Nabil Gerges",
-    "last_successful_run": "2026-11-23T17:21:15Z",
-    "total_runs": 4,
-    "source_health": {
-      "ats_career_pages": {
-        "label": "بوابات الشركات (Paymob, Breadfast, Thndr...)",
-        "status": "OK",
-        "found": 0,
-        "last_checked": "2026-11-23T17:21:15Z"
-      },
-      "linkedin_public_posts": {
-        "label": "LinkedIn Public Jobs & Posts",
-        "status": "OK",
-        "found": 0,
-        "last_checked": "2026-11-23T17:21:15Z"
-      },
-      "wuzzuf": {
-        "label": "WUZZUF Entry-Level",
-        "status": "OK",
-        "found": 0,
-        "last_checked": "2026-11-23T17:21:15Z"
-      },
-      "remote_apis": {
-        "label": "Remotive & Himalayas Remote",
-        "status": "OK",
-        "found": 0,
-        "last_checked": "2026-11-23T17:21:15Z"
-      },
-      "gmail_alerts_bridge": {
-        "label": "Gmail Alerts Bridge (OAuth)",
-        "status": "OK",
-        "found": 0,
-        "last_checked": "2026-11-23T17:21:15Z"
-      }
+    "last_successful_run": "2026-11-23T18:26:49Z",
+    "total_active": 12,
+    "source_stats": {
+      "linkedin_egypt": 10,
+      "wuzzuf_egypt": 0,
+      "egypt_companies": 0,
+      "remotive_global": 2,
+      "gmail_alerts": 0
     }
   },
   "jobs": {
+    "li-4493624720": {
+      "id": "li-4493624720",
+      "company": "TP",
+      "title": "Business Intelligence Analyst",
+      "work_mode": "Hybrid / On-site (LinkedIn Egypt)",
+      "location": "Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-at-tp-4493624720",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:26:49Z",
+      "fit": {
+        "score": 87,
+        "summary": "مسمى مباشر لمسارات Data / BI / Reporting / MIS / SFE / Operations.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Business Intelligence Analyst",
+            "cv": "بكالوريوس BIS حلوان (امتياز 3.67) + مشاريع DEPI وNTI"
+          }
+        ]
+      },
+      "commute": {
+        "score": 80,
+        "summary": "داخل القاهرة الكبرى — راجع الحي الدقيق وأيام الحضور من شبرا مصر"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Egypt",
+        "first_published": "2026-11-23",
+        "last_verified": "2026-11-23T18:26:49Z"
+      }
+    },
+    "li-4493336336": {
+      "id": "li-4493336336",
+      "company": "TP",
+      "title": "Business Intelligence Analyst BPO experience is a MUST",
+      "work_mode": "Hybrid / On-site (LinkedIn Egypt)",
+      "location": "Qesm El Maadi, Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-bpo-experience-is-a-must-at-tp-4493336336",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:26:49Z",
+      "fit": {
+        "score": 87,
+        "summary": "مسمى مباشر لمسارات Data / BI / Reporting / MIS / SFE / Operations.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Business Intelligence Analyst BPO experience is a MUST",
+            "cv": "بكالوريوس BIS حلوان (امتياز 3.67) + مشاريع DEPI وNTI"
+          }
+        ]
+      },
+      "commute": {
+        "score": 82,
+        "summary": "~45–55 دقيقة من شبرا مصر (مترو خط 2 مع تبديل خط 1 أو 3)"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt",
+        "first_published": "2026-11-22",
+        "last_verified": "2026-11-23T18:26:49Z"
+      }
+    },
+    "li-4492043540": {
+      "id": "li-4492043540",
+      "company": "Tawzef for Recruitment & HR Consultancy",
+      "title": "Business Analyst",
+      "work_mode": "Hybrid / On-site (LinkedIn Egypt)",
+      "location": "Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/business-analyst-at-tawzef-for-recruitment-hr-consultancy-4492043540",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:26:49Z",
+      "fit": {
+        "score": 87,
+        "summary": "مسمى مباشر لمسارات Data / BI / Reporting / MIS / SFE / Operations.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Business Analyst",
+            "cv": "بكالوريوس BIS حلوان (امتياز 3.67) + مشاريع DEPI وNTI"
+          }
+        ]
+      },
+      "commute": {
+        "score": 80,
+        "summary": "داخل القاهرة الكبرى — راجع الحي الدقيق وأيام الحضور من شبرا مصر"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Egypt",
+        "first_published": "2026-11-18",
+        "last_verified": "2026-11-23T18:26:49Z"
+      }
+    },
+    "li-4440393391": {
+      "id": "li-4440393391",
+      "company": "Henkel",
+      "title": "Data Analytics Engineer (Evening Shift)",
+      "work_mode": "Hybrid / On-site (LinkedIn Egypt)",
+      "location": "Cairo, Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/data-analytics-engineer-evening-shift-at-henkel-4440393391",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:26:49Z",
+      "fit": {
+        "score": 87,
+        "summary": "مسمى مباشر لمسارات Data / BI / Reporting / MIS / SFE / Operations.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Data Analytics Engineer (Evening Shift)",
+            "cv": "بكالوريوس BIS حلوان (امتياز 3.67) + مشاريع DEPI وNTI"
+          }
+        ]
+      },
+      "commute": {
+        "score": 80,
+        "summary": "داخل القاهرة الكبرى — راجع الحي الدقيق وأيام الحضور من شبرا مصر"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt",
+        "first_published": "2026-11-19",
+        "last_verified": "2026-11-23T18:26:49Z"
+      }
+    },
+    "li-4493326479": {
+      "id": "li-4493326479",
+      "company": "The HR Game",
+      "title": "Business Analyst",
+      "work_mode": "Hybrid / On-site (LinkedIn Egypt)",
+      "location": "Qesm El Maadi, Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/business-analyst-at-the-hr-game-4493326479",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:26:49Z",
+      "fit": {
+        "score": 87,
+        "summary": "مسمى مباشر لمسارات Data / BI / Reporting / MIS / SFE / Operations.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Business Analyst",
+            "cv": "بكالوريوس BIS حلوان (امتياز 3.67) + مشاريع DEPI وNTI"
+          }
+        ]
+      },
+      "commute": {
+        "score": 82,
+        "summary": "~45–55 دقيقة من شبرا مصر (مترو خط 2 مع تبديل خط 1 أو 3)"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt",
+        "first_published": "2026-11-22",
+        "last_verified": "2026-11-23T18:26:49Z"
+      }
+    },
+    "li-4485446607": {
+      "id": "li-4485446607",
+      "company": "DXC Technology",
+      "title": "Payments Business Analyst ( TPH )",
+      "work_mode": "Hybrid / On-site (LinkedIn Egypt)",
+      "location": "Cairo, Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/payments-business-analyst-tph-at-dxc-technology-4485446607",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:26:49Z",
+      "fit": {
+        "score": 87,
+        "summary": "مسمى مباشر لمسارات Data / BI / Reporting / MIS / SFE / Operations.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Payments Business Analyst ( TPH )",
+            "cv": "بكالوريوس BIS حلوان (امتياز 3.67) + مشاريع DEPI وNTI"
+          }
+        ]
+      },
+      "commute": {
+        "score": 80,
+        "summary": "داخل القاهرة الكبرى — راجع الحي الدقيق وأيام الحضور من شبرا مصر"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt",
+        "first_published": "2026-11-23",
+        "last_verified": "2026-11-23T18:26:49Z"
+      }
+    },
+    "li-4493370791": {
+      "id": "li-4493370791",
+      "company": "Deloitte",
+      "title": "Deloitte Innovation Hub | Pharma Manufacturing Technology Business Analyst, Consultant level, Cairo, Egypt.",
+      "work_mode": "Hybrid / On-site (LinkedIn Egypt)",
+      "location": "Cairo, Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/deloitte-innovation-hub-pharma-manufacturing-technology-business-analyst-consultant-level-cairo-egypt-at-deloitte-4493370791",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:26:49Z",
+      "fit": {
+        "score": 87,
+        "summary": "مسمى مباشر لمسارات Data / BI / Reporting / MIS / SFE / Operations.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Deloitte Innovation Hub | Pharma Manufacturing Technology Business Analyst, Consultant level, Cairo, Egypt.",
+            "cv": "بكالوريوس BIS حلوان (امتياز 3.67) + مشاريع DEPI وNTI"
+          }
+        ]
+      },
+      "commute": {
+        "score": 80,
+        "summary": "داخل القاهرة الكبرى — راجع الحي الدقيق وأيام الحضور من شبرا مصر"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt",
+        "first_published": "2026-11-22",
+        "last_verified": "2026-11-23T18:26:49Z"
+      }
+    },
+    "rem-1680495": {
+      "id": "rem-1680495",
+      "company": "Coalition Technologies ",
+      "title": "Remote Office Assistant",
+      "work_mode": "Remote",
+      "location": "Worldwide",
+      "primary_url": "https://remotive.com/remote-jobs/marketing/remote-office-assistant-1680495",
+      "sources": [
+        "Remotive Live API"
+      ],
+      "discovered_at": "2026-11-23T18:26:49Z",
+      "fit": {
+        "score": 86,
+        "summary": "يتضمن مهام تحليل بيانات أو تقارير. مناسب لحديثي التخرج / Junior / Trainee.",
+        "recommended_project": "مشروع DEPI لتحليل البيانات (Python, SQL, Tableau).",
+        "evidence_pairs": [
+          {
+            "req": "Data & Reporting Tasks",
+            "cv": "خبرة عملية في SQL, Excel, Power BI, Python"
+          },
+          {
+            "req": "Entry / Fresh Graduate Level",
+            "cv": "خريج 2026 بتقدير امتياز مع مرتبة الشرف (GPA 3.67)"
+          }
+        ]
+      },
+      "commute": {
+        "score": 96,
+        "summary": "عمل عن بُعد (Remote) — 0 دقيقة مشوار من شبرا مصر"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "متاح: Worldwide",
+        "first_published": "2026-11-11",
+        "last_verified": "2026-11-23T18:26:49Z"
+      }
+    },
+    "li-4484449012": {
+      "id": "li-4484449012",
+      "company": "Tabby | تابي",
+      "title": "Risk Data Analyst",
+      "work_mode": "Hybrid / On-site (LinkedIn Egypt)",
+      "location": "New Cairo, Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/risk-data-analyst-at-tabby-%D8%AA%D8%A7%D8%A8%D9%8A-4484449012",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:26:49Z",
+      "fit": {
+        "score": 84,
+        "summary": "مسمى مباشر لمسارات Data / BI / Reporting / MIS / SFE / Operations.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Risk Data Analyst",
+            "cv": "بكالوريوس BIS حلوان (امتياز 3.67) + مشاريع DEPI وNTI"
+          }
+        ]
+      },
+      "commute": {
+        "score": 74,
+        "summary": "~65–75 دقيقة من شبرا مصر (أفضل في نظام Hybrid)"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: New Cairo, Cairo, Egypt",
+        "first_published": "2026-11-18",
+        "last_verified": "2026-11-23T18:26:49Z"
+      }
+    },
+    "li-4490422002": {
+      "id": "li-4490422002",
+      "company": "J&T Express",
+      "title": "Chinese Speaker- Data analysis",
+      "work_mode": "Hybrid / On-site (LinkedIn Egypt)",
+      "location": "Qesm El Maadi, Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/chinese-speaker-data-analysis-at-j-t-express-4490422002",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "discovered_at": "2026-11-23T18:26:49Z",
+      "fit": {
+        "score": 77,
+        "summary": "يتضمن مهام تحليل بيانات أو تقارير.",
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + لوحات Power BI.",
+        "evidence_pairs": [
+          {
+            "req": "Data & Reporting Tasks",
+            "cv": "خبرة عملية في SQL, Excel, Power BI, Python"
+          }
+        ]
+      },
+      "commute": {
+        "score": 82,
+        "summary": "~45–55 دقيقة من شبرا مصر (مترو خط 2 مع تبديل خط 1 أو 3)"
+      },
+      "receipt": {
+        "apply_state": "OPEN",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt",
+        "first_published": "2026-11-17",
+        "last_verified": "2026-11-23T18:26:49Z"
+      }
+    },
     "c565926d93842a90": {
       "id": "c565926d93842a90",
       "family_id": "24a0705e5b29",
@@ -170,83 +488,5 @@
       },
       "discovered_at": "2026-11-23T15:51:39Z"
     }
-  },
-  "search_audit_log": [
-    {
-      "run_id": "run_1",
-      "completed_at": "2026-11-23T15:51:39Z",
-      "raw_fetched": 2,
-      "new_high_fit": 1,
-      "merged_duplicates": 0,
-      "closed_filtered": 0,
-      "queries_executed": [
-        "\"Data Analyst\" Cairo",
-        "\"BI Analyst\" Egypt",
-        "\"Reporting Analyst\" Cairo",
-        "\"MIS\" Egypt",
-        "\"SFE\" Egypt",
-        "\"Sales Force Effectiveness\" Cairo",
-        "\"Sales Operations\" Egypt",
-        "\"Business Analyst\" Cairo",
-        "\"Operations Analyst\" Egypt"
-      ]
-    },
-    {
-      "run_id": "run_2",
-      "completed_at": "2026-11-23T16:36:09Z",
-      "raw_fetched": 0,
-      "new_high_fit": 0,
-      "merged_duplicates": 0,
-      "closed_filtered": 0,
-      "queries_executed": [
-        "\"Data Analyst\" Cairo",
-        "\"BI Analyst\" Egypt",
-        "\"Reporting Analyst\" Cairo",
-        "\"MIS\" Egypt",
-        "\"SFE\" Egypt",
-        "\"Sales Force Effectiveness\" Cairo",
-        "\"Sales Operations\" Egypt",
-        "\"Business Analyst\" Cairo",
-        "\"Operations Analyst\" Egypt"
-      ]
-    },
-    {
-      "run_id": "run_3",
-      "completed_at": "2026-11-23T17:06:42Z",
-      "raw_fetched": 0,
-      "new_high_fit": 0,
-      "merged_duplicates": 0,
-      "closed_filtered": 0,
-      "queries_executed": [
-        "\"Data Analyst\" Cairo",
-        "\"BI Analyst\" Egypt",
-        "\"Reporting Analyst\" Cairo",
-        "\"MIS\" Egypt",
-        "\"SFE\" Egypt",
-        "\"Sales Force Effectiveness\" Cairo",
-        "\"Sales Operations\" Egypt",
-        "\"Business Analyst\" Cairo",
-        "\"Operations Analyst\" Egypt"
-      ]
-    },
-    {
-      "run_id": "run_4",
-      "completed_at": "2026-11-23T17:21:15Z",
-      "raw_fetched": 0,
-      "new_high_fit": 0,
-      "merged_duplicates": 0,
-      "closed_filtered": 0,
-      "queries_executed": [
-        "\"Data Analyst\" Cairo",
-        "\"BI Analyst\" Egypt",
-        "\"Reporting Analyst\" Cairo",
-        "\"MIS\" Egypt",
-        "\"SFE\" Egypt",
-        "\"Sales Force Effectiveness\" Cairo",
-        "\"Sales Operations\" Egypt",
-        "\"Business Analyst\" Cairo",
-        "\"Operations Analyst\" Egypt"
-      ]
-    }
-  ]
+  }
 }
