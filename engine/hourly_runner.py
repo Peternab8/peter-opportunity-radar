@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import sys
 import urllib.parse
 import urllib.request
@@ -7,7 +8,6 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# Point 13: Import matcher and run self-tests BEFORE evaluating or notifying
 try:
     from matcher import (
         PRIORITY_THRESHOLD,
@@ -44,7 +44,7 @@ def save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def send_ntfy_alert(job, ntfy_topic, pwa_base_url):    """Point 28, 29, 31, 32: Minimal PII payload, deep-link ?job=<id>, returns delivery status."""
+def send_ntfy_alert(job, ntfy_topic, pwa_base_url):
     if not ntfy_topic:
         return "UNCONFIGURED"
     url = f"https://ntfy.sh/{urllib.parse.quote(ntfy_topic)}"
@@ -75,8 +75,8 @@ def send_ntfy_alert(job, ntfy_topic, pwa_base_url):    """Point 28, 29, 31, 32: 
 def build_evaluated_card(raw_item, now_iso):
     company = raw_item.get("company") or "جهة معلنة"
     title = raw_item.get("title") or "فرصة عمل"
-    location = raw_item.get("location")  # None if unknown
-    work_mode = raw_item.get("work_mode")  # None if unknown
+    location = raw_item.get("location")
+    work_mode = raw_item.get("work_mode")
     source_name = raw_item.get("source_name") or "مصدر عام"
     source_category = raw_item.get("source_category") or "job_board"
     job_url = raw_item.get("url") or ""
@@ -122,7 +122,11 @@ def build_evaluated_card(raw_item, now_iso):
     )
 
     is_training = bool(
-        __import__("re").search(r"\b(intern|internship|trainee|graduate program|تدريب|متدرب)\b", f"{title} {raw_item.get('tasks', '')}", __import__("re").I)
+        re.search(
+            r"\b(intern|internship|trainee|graduate program|تدريب|متدرب)\b",
+            f"{title} {raw_item.get('tasks', '')}",
+            re.I,
+        )
     )
 
     return {
@@ -135,8 +139,8 @@ def build_evaluated_card(raw_item, now_iso):
         "source_category": source_category,
         "all_urls": [job_url] if job_url else [],
         "primary_url": job_url,
-        "location": location,  # None if missing (rendered as 'العنوان غير مذكور')
-        "work_mode": work_mode,  # None if missing (rendered as 'غير محدد')
+        "location": location,
+        "work_mode": work_mode,
         "is_training": is_training,
         "receipt": receipt,
         "fit": fit,
@@ -146,7 +150,6 @@ def build_evaluated_card(raw_item, now_iso):
 
 
 def read_local_gmail_queue_if_present(now_iso):
-    """Point 33: Reads local/private queue if available without ever committing it to public git."""
     if not os.path.exists(PRIVATE_GMAIL_QUEUE):
         return [], 0
     q_data = load_json(PRIVATE_GMAIL_QUEUE, {"items": []})
@@ -193,7 +196,6 @@ def main():
 
     incoming_cards = [build_evaluated_card(r, now_iso) for r in raw_items] + gmail_cards
 
-    # Index existing family IDs to flag probable duplicates across different districts (Point 22)
     family_index = {}
     for eid, ejob in existing_jobs.items():
         fid = ejob.get("family_id")
@@ -207,7 +209,6 @@ def main():
         seen_in_this_run.add(jid)
 
         if jid in existing_jobs:
-            # Point 23: Re-evaluate existing card with fresh evidence (including CLOSED state)
             old = existing_jobs[jid]
             card["discovered_at"] = old.get("discovered_at") or card["discovered_at"]
             card["sources"] = list(dict.fromkeys((old.get("sources") or []) + card["sources"]))
@@ -221,14 +222,11 @@ def main():
                 family_index[fid] = jid
             existing_jobs[jid] = card
 
-    # Point 23: Review older cards not seen in this run
     for jid, old in list(existing_jobs.items()):
         if jid not in seen_in_this_run:
-            # Keep closed cards marked CLOSED so user sees status in 'تقديماتي'
             if old.get("receipt", {}).get("apply_state") == "CLOSED":
                 continue
 
-    # Keep top 160 active/recent items sorted by discovery & fit
     sorted_pairs = sorted(
         existing_jobs.items(),
         key=lambda kv: (
@@ -240,7 +238,6 @@ def main():
     )[:160]
     trimmed_jobs = dict(sorted_pairs)
 
-    # Point 19 & 30: Sort eligible candidates by (fit_score, verification_confidence) BEFORE selecting top 3 alerts
     alert_candidates = []
     for jid, job in trimmed_jobs.items():
         if notif_log.get(jid, {}).get("status") == "ACCEPTED":
@@ -286,10 +283,8 @@ def main():
         "notification_log": notif_log,
         "audit_logs": audit_logs,
     }
-    # Publish feed BEFORE sending notifications so ?job=<id> is live immediately (Point 28)
     save_json(FEED_PATH, out_feed)
 
-    # Point 29: Track ntfy delivery status independently of job ingestion & retry if previously failed
     ntfy_topic = os.environ.get("NTFY_TOPIC", "").strip()
     pwa_base_url = os.environ.get("PWA_BASE_URL", "").strip()
     for top_job in alert_candidates[:3]:
