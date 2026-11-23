@@ -44,8 +44,7 @@ def save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def send_ntfy_alert(job, ntfy_topic, pwa_base_url) -> Tuple_status := str:
-    """Point 28, 29, 31, 32: Minimal PII payload, deep-link ?job=<id>, returns delivery status."""
+def send_ntfy_alert(job, ntfy_topic, pwa_base_url):    """Point 28, 29, 31, 32: Minimal PII payload, deep-link ?job=<id>, returns delivery status."""
     if not ntfy_topic:
         return "UNCONFIGURED"
     url = f"https://ntfy.sh/{urllib.parse.quote(ntfy_topic)}"
