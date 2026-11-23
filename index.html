@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <link rel="manifest" href="./manifest.json" />
-  <title>رادار فرص بيتر — Peter's Opportunity Radar v2.5</title>
+  <title>رادار فرص بيتر — Peter's Opportunity Radar v2.6</title>
   <style>
     :root {
       --bg-void: #070b14;
@@ -288,21 +288,6 @@
       justify-content: center;
       gap: 8px;
       box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
-    }
-
-    .btn-ai-cta {
-      width: 100%;
-      min-height: 46px;
-      padding: 10px 14px;
-      border-radius: var(--radius-md);
-      background: linear-gradient(90deg, #818cf8, #06b6d4);
-      color: #041019;
-      font-size: 13px;
-      font-weight: 900;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
     }
 
     .btn-secondary {
@@ -714,7 +699,7 @@
     <div class="container">
       <div class="brand-bar">
         <div class="brand-info">
-          <h1>🎯 رادار فرص بيتر <span class="badge badge-open ltr mono">v2.5 Live</span></h1>
+          <h1>🎯 رادار فرص بيتر <span class="badge badge-open ltr mono">v2.6 Final</span></h1>
           <p class="brand-sub"><span class="ltr">BIS</span> حلوان (<span class="ltr">3.67</span>) • <strong>شبرا مصر</strong> • <span class="ltr">SQL • Power BI • Excel • Python</span></p>
         </div>
         <button type="button" id="btnTopSync" class="btn-mini-emerald" data-action="sync-cloud-feed">🔄 تحديث من السحابة</button>
@@ -752,17 +737,20 @@
     <section id="panel-radar" class="panel-section" style="display: block;">
 
       <div class="sub-card" style="border-color: rgba(16, 185, 129, 0.45);">
-        <div style="display:grid;grid-template-columns:1fr;gap:8px;">
-          <button type="button" id="btnLiveGeminiSearch" class="btn-ai-cta" data-action="run-live-gemini-search">
-            <span>✨ بحث حي الآن في Google وLinkedIn وWUZZUF عبر Gemini AI</span>
+        <div class="cards-grid-2">
+          <button type="button" id="btnMainSync" class="btn-primary-cta" data-action="sync-cloud-feed">
+            <span>🔄 تحديث وسحب أحدث الفرص من السحابة</span>
           </button>
+          <a href="https://github.com/Peternab8/peter-opportunity-radar/actions/workflows/hourly_radar.yml" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="min-height:46px;">
+            <span>🚀 تشغيل جولة سحب جديدة على GitHub ↗</span>
+          </a>
         </div>
 
         <div id="syncDiagnosticBox" class="live-log-box">
           ⏳ جاري فحص الاتصال بالسحابة وتجهيز تقرير المصادر...
         </div>
 
-        <div style="font-size:12px;font-weight:800;color:#a7f3d0;margin-top:10px;">📡 تغطية المصادر:</div>
+        <div style="font-size:12px;font-weight:800;color:#a7f3d0;margin-top:10px;">📡 تغطية المصادر في آخر جولة:</div>
         <div id="sourceStatsBar" class="source-pills">
           <span class="badge">جاري قراءة بيانات السحابة...</span>
         </div>
@@ -791,14 +779,14 @@
         <input type="text"
                id="searchInput"
                class="text-input"
-               placeholder="ابحث بالمسمى، الشركة، أو المصدر (LinkedIn, WUZZUF, Paymob, BI, SFE, MIS...)" />
+               placeholder="ابحث بالمسمى، الشركة، أو المصدر (LinkedIn, Indeed, WUZZUF, Paymob, BI, SFE, MIS...)" />
       </div>
 
       <div class="chips-wrap">
         <button type="button" id="chip-all" class="chip-btn active" data-action="set-filter" data-filter="all">الكل</button>
-        <button type="button" id="chip-ai" class="chip-btn" data-action="set-filter" data-filter="ai">✨ نتائج Gemini AI</button>
         <button type="button" id="chip-priority" class="chip-btn" data-action="set-filter" data-filter="priority">🔥 ملاءمة ≥ 80%</button>
         <button type="button" id="chip-linkedin" class="chip-btn" data-action="set-filter" data-filter="linkedin">LinkedIn Egypt</button>
+        <button type="button" id="chip-indeed" class="chip-btn" data-action="set-filter" data-filter="indeed">Indeed & Google</button>
         <button type="button" id="chip-wuzzuf" class="chip-btn" data-action="set-filter" data-filter="wuzzuf">WUZZUF</button>
         <button type="button" id="chip-companies" class="chip-btn" data-action="set-filter" data-filter="companies">بوابات الشركات</button>
         <button type="button" id="chip-saved" class="chip-btn" data-action="set-filter" data-filter="saved">⭐ المحفوظة</button>
@@ -850,7 +838,7 @@
     <section id="panel-paste" class="panel-section" style="display: none;">
       <div class="panel-header-card">
         <h2>📲 لصق بوستات LinkedIn وتقييمها وتجهيز رسالة التقديم</h2>
-        <p>الصق نص بوست واحد أو عدة بوستات من LinkedIn (افصل بين كل بوست والتاني بسطر فاضي أو `---`) أو شارك أي بوست من الموبايل لأيقونة <strong>«رادار الفرص»</strong> مباشرة.</p>
+        <p>الصق نص بوست واحد أو عدة بوستات من LinkedIn (افصل بين كل بوست والتاني بسطر فاضي أو `---`) ليتم تقييمها على سيرتك الذاتية ومشوار شبرا مصر وتوليد مسودة التقديم.</p>
       </div>
 
       <div class="sub-card">
@@ -865,8 +853,8 @@
     <!-- TAB 4: الإشعارات وGemini -->
     <section id="panel-settings" class="panel-section" style="display: none;">
       <div class="panel-header-card">
-        <h2>⚙️ الإشعارات وربط Google Gemini API والنسخ الاحتياطي</h2>
-        <p>تحكم في قناة إشعارات الموبايل <span class="ltr mono">ntfy</span>، مفتاح <strong>Gemini API المجاني</strong>، والنسخ الاحتياطي لسجل تقديماتك.</p>
+        <h2>⚙️ الإشعارات وربط Gemini لتخصيص الرسائل والنسخ الاحتياطي</h2>
+        <p>تحكم في قناة إشعارات الموبايل <span class="ltr mono">ntfy</span>، مفتاح <strong>Gemini API المجاني</strong> لتخصيص رسائل التقديم داخل كل بطاقة، والنسخ الاحتياطي لسجل تقديماتك.</p>
       </div>
 
       <div class="sub-card">
@@ -878,8 +866,8 @@
       </div>
 
       <div class="sub-card" style="border-color: rgba(129, 140, 248, 0.55);">
-        <h3>✨ مفتاح Google Gemini API المجاني (محفوظ على جهازك)</h3>
-        <p>يُستخدم في زرار <strong>«✨ بحث حي الآن في Google وLinkedIn وWUZZUF»</strong> وفي استشارات البطاقات:</p>
+        <h3>✨ مفتاح Google Gemini API المجاني (لتخصيص رسائل التقديم داخل البطاقات)</h3>
+        <p>يُستخدم في زرار <strong>«✨ استشارة Gemini وتخصيص الرسالة»</strong> داخل أي بطاقة (مجاني 100% بدون حاجة لـ Billing):</p>
         <div class="input-row">
           <input type="password" id="geminiKeyInput" class="text-input ltr mono" placeholder="AIzaSy..." />
           <button type="button" class="btn-mini-emerald" data-action="save-gemini-key">حفظ المفتاح</button>
@@ -905,14 +893,13 @@
     (function () {
       'use strict';
 
-      /* Register Service Worker for PWA & Share Target */
       if ('serviceWorker' in navigator) {
         try {
           navigator.serviceWorker.register('./sw.js').catch(function () {});
         } catch (e) {}
       }
 
-      var STORAGE_KEY = 'peter_radar_v2_5_state';
+      var STORAGE_KEY = 'peter_radar_v2_6_state';
 
       function safeGet(k) {
         try { return window.localStorage.getItem(k); } catch (e) { return null; }
@@ -937,9 +924,8 @@
         ]
       };
 
-      /* Hydrate & migrate saved data from v2.4 / v2.3 if present */
       (function loadSaved() {
-        var raw = safeGet(STORAGE_KEY) || safeGet('peter_radar_v2_4_state') || safeGet('peter_radar_v2_3_state');
+        var raw = safeGet(STORAGE_KEY) || safeGet('peter_radar_v2_5_state') || safeGet('peter_radar_v2_4_state');
         if (!raw) return;
         try {
           var p = JSON.parse(raw);
@@ -967,10 +953,10 @@
 
       function esc(s) {
         return String(s == null ? '' : s)
-          .replace(/\x26/g, '\x26amp;')
-          .replace(/\x3c/g, '\x26lt;')
-          .replace(/\x3e/g, '\x26gt;')
-          .replace(/\x22/g, '\x26quot;');
+          .replace(/&/g, '&')
+          .replace(/</g, '<')
+          .replace(/>/g, '>')
+          .replace(/"/g, '"');
       }
 
       function setDiagnosticHtml(html) {
@@ -1028,15 +1014,14 @@
       }
 
       function syncLiveFeedFromRepo(silent) {
-        var btn = document.getElementById('btnTopSync');
-        if (btn) {
-          btn.disabled = true;
-          btn.textContent = '⏳ جاري الفحص...';
+        var btnTop = document.getElementById('btnTopSync');
+        var btnMain = document.getElementById('btnMainSync');
+        if (btnTop) btnTop.disabled = true;
+        if (btnMain) {
+          btnMain.disabled = true;
+          btnMain.textContent = '⏳ جاري المزامنة من السحابة...';
         }
         var nowCheck = new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-        if (!silent) {
-          setDiagnosticHtml('⏳ <strong>جاري الاتصال بالسحابة (<span class="ltr mono">live_feed.json</span>)...</strong>');
-        }
 
         fetch('./data/live_feed.json?nocache=' + Date.now(), { cache: 'no-store' })
           .then(function (r) {
@@ -1091,13 +1076,12 @@
               return item;
             });
 
-            /* Keep manual & browser-AI jobs, merge with cloud jobs without duplicates */
-            var localOnly = state.jobs.filter(function (j) {
-              return String(j.id).indexOf('manual-') === 0 || String(j.id).indexOf('browser-ai-') === 0;
+            var manualOnly = state.jobs.filter(function (j) {
+              return String(j.id).indexOf('manual-') === 0;
             });
             var seen = {};
             var merged = [];
-            localOnly.concat(cloudJobs).forEach(function (item) {
+            manualOnly.concat(cloudJobs).forEach(function (item) {
               var nk = normalizeTitleComp(item.title, item.company);
               if (seen[item.id] || seen[nk]) return;
               seen[item.id] = true;
@@ -1112,159 +1096,26 @@
 
             var sameTimestamp = (prevRun === newRun);
             var st = state.sourceStats || {};
-            var aiCount = st.ai_google_search || 0;
-            var statusMsg = '✓ <strong>تم فحص السحابة الساعة ' + esc(nowCheck) + ':</strong><br>' +
-              '• <strong>آخر جولة في GitHub Actions:</strong> <span class="ltr mono" style="color:#67e8f9;">' + esc(newRun) + '</span> ' +
-              (sameTimestamp ? '<span style="color:#fcd34d;">(نفس توقيت آخر مرة — السحابة بتشتغل كل ساعة عند الدقيقة :15 أو لما تشغّل Run workflow)</span>' : '<span style="color:#6ee7b7;">(تحديث جديد ✓)</span>') + '<br>' +
-              '• <strong>النتيجة:</strong> ' + (addedCount > 0 ? ('<span style="color:#6ee7b7;">تمت إضافة +' + addedCount + ' فرصة جديدة!</span>') : 'إجمالي ' + cloudJobs.length + ' فرصة سحابية محمّلة.') + '<br>' +
-              '• <strong>حالة Gemini في السحابة:</strong> <span style="color:#c7d2fe;">' + esc(st.gemini_status || 'في انتظار الجولة القادمة') + '</span><br>' +
-              '• <strong>توزيع المصادر:</strong> Gemini AI (' + aiCount + ') • LinkedIn (' + (st.linkedin_egypt || 0) + ') • WUZZUF (' + (st.wuzzuf_egypt || 0) + ') • شركات مصر (' + (st.egypt_companies || 0) + ')';
+            var statusMsg = '✅ <strong>تم تحديث البيانات من السحابة الساعة ' + esc(nowCheck) + ':</strong><br>' +
+              '• <strong>آخر جولة سحابية:</strong> <span class="ltr mono" style="color:#67e8f9;">' + esc(newRun) + '</span> ' +
+              (sameTimestamp ? '<span style="color:#fcd34d;">(نفس توقيت آخر مرة — لتشغيل جولة جديدة فورًا اضغط زرار GitHub المجاور)</span>' : '<span style="color:#6ee7b7;">(تحديث جديد ✓)</span>') + '<br>' +
+              '• <strong>الإجمالي المحمّل:</strong> <span style="color:#6ee7b7;">' + cloudJobs.length + ' فرصة حقيقية</span>' +
+              (addedCount > 0 ? (' (+' + addedCount + ' جديدة)') : '') + '<br>' +
+              '• <strong>التوزيع:</strong> LinkedIn (' + (st.linkedin_egypt || 0) + ') • Indeed & Google (' + (st.indeed_egypt || 0) + ') • WUZZUF (' + (st.wuzzuf_egypt || 0) + ') • شركات مصر (' + (st.egypt_companies || 0) + ')';
 
             setDiagnosticHtml(statusMsg);
             if (!silent) {
-              showToast(addedCount > 0 ? ('☁️ تمت إضافة ' + addedCount + ' فرصة جديدة!') : '✓ السحابة محدثة — اضغط زر البحث الحي بالذكاء الاصطناعي لنتائج فورية.');
+              showToast(addedCount > 0 ? ('☁️ تمت إضافة ' + addedCount + ' فرصة جديدة!') : '✅ تم تحديث ' + cloudJobs.length + ' فرصة من السحابة!');
             }
           })
           .catch(function (err) {
             setDiagnosticHtml('⚠️ <strong>تعذر قراءة ملف السحابة:</strong> ' + esc(err && err.message ? err.message : 'خطأ شبكة'));
-            if (!silent) showToast('⚠️ تعذر الاتصال بـ live_feed.json حاليًا.');
           })
           .finally(function () {
-            if (btn) {
-              btn.disabled = false;
-              btn.textContent = '🔄 تحديث من السحابة';
-            }
-          });
-      }
-
-      /* Direct Browser Gemini + Google Search Grounding (Instant Results on Phone) */
-      function runLiveGeminiSearch() {
-        if (!state.geminiApiKey) {
-          showToast('⚠️ الصق مفتاح Gemini API في تبويب «4. الإشعارات وGemini» أولاً.');
-          actions['switch-tab']({ getAttribute: function () { return 'settings'; } });
-          return;
-        }
-
-        var btn = document.getElementById('btnLiveGeminiSearch');
-        if (btn) {
-          btn.disabled = true;
-          btn.textContent = '⏳ جاري البحث الحي في Google وLinkedIn وWUZZUF...';
-        }
-
-        setDiagnosticHtml('⏳ <strong>الخطوة ١/٢:</strong> Gemini AI يبحث الآن في فهرس Google عن أحدث بوستات HR وإعلانات WUZZUF وIndeed في مصر...');
-
-        var apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=' + encodeURIComponent(state.geminiApiKey);
-        var queries = [
-          'Use Google Search right now to find the newest entry-level, junior, fresh graduate, or internship job postings and HR posts in Egypt (Cairo / Giza / Remote Egypt) from the last 7 days for: Data Analyst, Business Intelligence Analyst, Reporting Analyst, MIS Analyst, SFE (Sales Force Effectiveness), or Operations Analyst across site:linkedin.com/posts, site:linkedin.com/jobs, site:wuzzuf.net, and site:eg.indeed.com. Exclude Senior, Lead, Manager, or Director roles. Return ONLY a JSON array of up to 15 real opportunities with keys: title, company, location, source, url, reason_ar (1 crisp Arabic sentence why it fits a BIS graduate skilled in SQL, Power BI, Excel, Python).',
-          'Use Google Search right now to find graduate programs, data trainee, commercial operations analyst, or BI specialist openings in Egyptian fintech, telecom, banks, and e-commerce companies (Paymob, Fawry, CIB, Vodafone VOIS, e&, Raya, Breadfast, Bosta, Talabat, MaxAB, Noon, Jumia) in Cairo Egypt from the past 7 days. Exclude Senior/Manager roles. Return ONLY a JSON array of up to 12 real opportunities with keys: title, company, location, source, url, reason_ar.'
-        ];
-
-        function runSinglePrompt(promptText) {
-          return fetch(apiUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              contents: [{ parts: [{ text: promptText }] }],
-              tools: [{ google_search: {} }]
-            })
-          }).then(function (r) {
-            return r.json().then(function (data) {
-              if (!r.ok) {
-                var msg = (data && data.error && data.error.message) ? data.error.message : ('HTTP ' + r.status);
-                throw new Error(msg);
-              }
-              return data;
-            });
-          });
-        }
-
-        runSinglePrompt(queries[0])
-          .then(function (res1) {
-            setDiagnosticHtml('⏳ <strong>الخطوة ٢/٢:</strong> تم استلام نتائج منصات التوظيف، جاري فحص بوابات الشركات والبنوك في مصر...');
-            return runSinglePrompt(queries[1]).then(function (res2) {
-              return [res1, res2];
-            }).catch(function () {
-              return [res1];
-            });
-          })
-          .then(function (responses) {
-            var foundItems = [];
-            responses.forEach(function (res) {
-              var cand = res && res.candidates && res.candidates[0];
-              if (!cand) return;
-              var txt = (cand.content && cand.content.parts && cand.content.parts[0] && cand.content.parts[0].text) || '';
-              var gChunks = (cand.groundingMetadata && cand.groundingMetadata.groundingChunks) || [];
-              var gUrls = gChunks.map(function (c) { return c.web && c.web.uri; }).filter(Boolean);
-
-              var m = txt.match(/\[[\s\S]*\]/);
-              if (!m) return;
-              try {
-                var arr = JSON.parse(m[0]);
-                arr.forEach(function (it, idx) {
-                  if (!it || !it.title) return;
-                  if (/\b(senior|sr\.?|lead|principal|staff|head|director|manager)\b/i.test(it.title)) return;
-                  var jobUrl = (it.url && String(it.url).indexOf('http') === 0)
-                    ? it.url
-                    : (gUrls[idx] || ('https://www.google.com/search?q=' + encodeURIComponent(it.title + ' ' + (it.company || '') + ' Egypt')));
-                  foundItems.push({
-                    id: 'browser-ai-' + Date.now() + '-' + foundItems.length,
-                    company: it.company || 'شركة في مصر',
-                    title: it.title,
-                    roleType: it.source || 'Gemini Live Search',
-                    location: it.location || 'Cairo, Egypt',
-                    fitScore: 90,
-                    commuteScore: /remote/i.test(it.location || '') ? 96 : 84,
-                    commuteWeeklyLabel: /remote/i.test(it.location || '') ? 'عمل عن بُعد — 0 دقيقة مشوار من شبرا مصر' : ('الموقع: ' + (it.location || 'القاهرة') + ' — راجع الحي من شبرا مصر'),
-                    strongestReason: '✨ ' + (it.reason_ar || 'فرصة حديثة مستخرجة عبر بحث Google الحي ومطابقة لـCV بيتر.'),
-                    recommendedProject: 'مشروع DEPI لتحليل 5,000 معاملة + لوحات Power BI + Excel/VBA.',
-                    evidencePairs: [
-                      { req: 'تقييم Gemini الحي: ' + it.title, cv: 'بكالوريوس BIS حلوان (3.67) + SQL / Power BI / Excel / Python' }
-                    ],
-                    egyptEligibility: 'مؤكد: داخل مصر / عن بُعد',
-                    applyStateAr: 'مفتوح (بحث AI حي) ✓',
-                    lastVerified: 'الآن',
-                    mergedSources: ['✨ ' + (it.source || 'Gemini Web Search')],
-                    primaryUrl: jobUrl,
-                    firstPublished: 'بحث حي الآن',
-                    discoveredAt: new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' })
-                  });
-                });
-              } catch (e) {}
-            });
-
-            var seen = {};
-            state.jobs.forEach(function (j) {
-              seen[normalizeTitleComp(j.title, j.company)] = true;
-            });
-
-            var added = 0;
-            foundItems.forEach(function (item) {
-              var nk = normalizeTitleComp(item.title, item.company);
-              if (seen[nk]) return;
-              seen[nk] = true;
-              state.jobs.unshift(item);
-              added += 1;
-            });
-
-            state.sourceStats.ai_google_search = (state.sourceStats.ai_google_search || 0) + added;
-            saveState();
-            renderRadarPanel();
-
-            setDiagnosticHtml(
-              '✅ <strong>اكتمل البحث الحي بنجاح!</strong><br>' +
-              '• تم فحص نتائج Google Live عبر Gemini 2.5 Flash.<br>' +
-              '• <strong>الفرص الجديدة المضافة:</strong> <span style="color:#6ee7b7;">+' + added + ' فرصة حقيقية</span> (إجمالي المعروض الآن: ' + state.jobs.length + ').'
-            );
-            showToast(added > 0 ? ('✨ تم العثور على ' + added + ' فرصة جديدة!') : '✓ اكتمل البحث — كل الفرص المستخرجة موجودة بالفعل.');
-          })
-          .catch(function (err) {
-            setDiagnosticHtml('❌ <strong>تعذر إتمام بحث Gemini الحي:</strong> ' + esc(err && err.message ? err.message : 'خطأ غير معروف') + '<br>تأكد من صحة مفتاح API في تبويب «4. الإشعارات وGemini».');
-            showToast('⚠️ حدث خطأ أثناء البحث عبر Gemini.');
-          })
-          .finally(function () {
-            if (btn) {
-              btn.disabled = false;
-              btn.textContent = '✨ بحث حي الآن في Google وLinkedIn وWUZZUF عبر Gemini AI';
+            if (btnTop) btnTop.disabled = false;
+            if (btnMain) {
+              btnMain.disabled = false;
+              btnMain.textContent = '🔄 تحديث وسحب أحدث الفرص من السحابة';
             }
           });
       }
@@ -1284,10 +1135,9 @@
         var statsBar = document.getElementById('sourceStatsBar');
         if (statsBar) {
           var st = state.sourceStats || {};
-          var aiTotal = visibleJobs.filter(function (j) { return String(j.id).indexOf('ai-') === 0 || String(j.id).indexOf('browser-ai-') === 0; }).length;
           statsBar.innerHTML =
-            '<span class="badge badge-recruiter">✨ بحث Gemini AI: ' + Math.max(aiTotal, st.ai_google_search || 0) + '</span>' +
             '<span class="badge badge-open">LinkedIn مصر: ' + (st.linkedin_egypt || 0) + '</span>' +
+            '<span class="badge badge-recruiter">Indeed & Google: ' + (st.indeed_egypt || 0) + '</span>' +
             '<span class="badge badge-merged">WUZZUF: ' + (st.wuzzuf_egypt || 0) + '</span>' +
             '<span class="badge">شركات مصر: ' + (st.egypt_companies || 0) + '</span>' +
             '<span class="badge">Remotive: ' + (st.remotive_global || 0) + '</span>' +
@@ -1303,7 +1153,7 @@
         document.getElementById('countSaved').textContent = savedCount;
         document.getElementById('countApplied').textContent = appliedCount;
 
-        ['all', 'ai', 'priority', 'linkedin', 'wuzzuf', 'companies', 'saved', 'applied'].forEach(function (f) {
+        ['all', 'priority', 'linkedin', 'indeed', 'wuzzuf', 'companies', 'saved', 'applied'].forEach(function (f) {
           var chip = document.getElementById('chip-' + f);
           if (chip) chip.className = 'chip-btn' + (state.filter === f ? ' active' : '');
         });
@@ -1316,9 +1166,9 @@
         var filtered = visibleJobs.filter(function (job) {
           var meta = state.userMeta[job.id] || {};
           var srcText = (job.mergedSources || []).join(' ').toLowerCase();
-          if (state.filter === 'ai' && String(job.id).indexOf('ai-') !== 0 && String(job.id).indexOf('browser-ai-') !== 0) return false;
           if (state.filter === 'priority' && (job.fitScore || 0) < 80) return false;
           if (state.filter === 'linkedin' && srcText.indexOf('linkedin') === -1) return false;
+          if (state.filter === 'indeed' && srcText.indexOf('indeed') === -1 && srcText.indexOf('google') === -1) return false;
           if (state.filter === 'wuzzuf' && srcText.indexOf('wuzzuf') === -1) return false;
           if (state.filter === 'companies' && srcText.indexOf('careers') === -1 && srcText.indexOf('workable') === -1) return false;
           if (state.filter === 'saved' && !meta.saved) return false;
@@ -1336,7 +1186,7 @@
         if (filtered.length === 0) {
           container.innerHTML = '<div class="sub-card" style="text-align:center;padding:24px 14px;">' +
             '<h3>مفيش بطاقات تحت الفلتر ده حاليًا</h3>' +
-            '<p>اضغط <strong>«✨ بحث حي الآن في Google وLinkedIn وWUZZUF عبر Gemini AI»</strong> بالأعلى لجلب أحدث الفرص فورًا.</p>' +
+            '<p>اضغط <strong>«🚀 تشغيل جولة سحب جديدة على GitHub»</strong> بالأعلى ثم <strong>«🔄 تحديث»</strong>.</p>' +
             '</div>';
           return;
         }
@@ -1408,7 +1258,7 @@
               '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;">' +
                 '<button type="button" class="btn-mini-emerald" data-action="copy-email" data-id="' + esc(job.id) + '">📋 نسخ الإيميل</button>' +
                 '<button type="button" class="btn-mini-dark" data-action="copy-dm" data-id="' + esc(job.id) + '">💬 نسخ DM / واتساب</button>' +
-                '<button type="button" class="btn-secondary" style="min-height:36px;padding:5px 10px;" data-action="gemini-2.5-flash-lite" data-id="' + esc(job.id) + '">✨ استشارة Gemini AI</button>' +
+                '<button type="button" class="btn-secondary" style="min-height:36px;padding:5px 10px;" data-action="ask-gemini" data-id="' + esc(job.id) + '">✨ استشارة Gemini وتخصيص الرسالة</button>' +
               '</div>' +
               '<pre class="draft-pre ltr mono">' + esc(buildEmailDraft(job)) + '</pre>' +
             '</div>' +
@@ -1460,10 +1310,6 @@
 
         'sync-cloud-feed': function () {
           syncLiveFeedFromRepo(false);
-        },
-
-        'run-live-gemini-search': function () {
-          runLiveGeminiSearch();
         },
 
         'set-filter': function (el) {
@@ -1521,7 +1367,7 @@
           showToast('💬 تم نسخ رسالة DM / واتساب!');
         },
 
-        'gemini-2.5-flash-lite': function (el) {
+        'ask-gemini': function (el) {
           var id = el.getAttribute('data-id');
           var job = state.jobs.find(function (j) { return j.id === id; });
           if (!job) return;
@@ -1529,11 +1375,11 @@
             showToast('⚠️ أضف مفتاح Gemini API أولاً في تبويب «4. الإشعارات وGemini».');
             return;
           }
-          showToast('✨ جاري تحليل الفرصة بواسطة Gemini...');
+          showToast('✨ جاري كتابة نصيحة مخصصة من Gemini...');
           var prompt = 'أنت مستشار توظيف لبيتر نبيل جرجس (خريج BIS حلوان بامتياز 3.67، يسكن في شبرا مصر، مهاراته SQL وExcel/VBA وPower BI وPython وتدريبات DEPI وNTI). ' +
             'للوظيفة التالية: ' + job.title + ' في ' + job.company + ' (' + job.location + '). ' +
-            'اكتب في 4 سطور مختصرة بالعربية: 1) نسبة ملاءمتها الحقيقية لبيتر ولماذا 2) أهم 2 مشروع أو مهارة يركز عليهم 3) نصيحة سريعة للتقديم أو الانترفيو.';
-          fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=' + encodeURIComponent(state.geminiApiKey), {
+            'اكتب في 4 سطور مختصرة بالعربية: 1) نسبة ملاءمتها الحقيقية لبيتر ولماذا 2) أهم 2 مشروع أو مهارة يركز عليهم 3) جملة افتتاحية إنجليزية قصيرة يبعتها للـ HR.';
+          fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=' + encodeURIComponent(state.geminiApiKey), {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
@@ -1548,7 +1394,8 @@
                 renderRadarPanel();
                 showToast('✨ تم تجهيز نصيحة Gemini داخل البطاقة!');
               } else {
-                showToast('⚠️ تأكد من صحة مفتاح Gemini API.');
+                var errMsg = (res && res.error && res.error.message) ? res.error.message : 'تأكد من صحة المفتاح';
+                showToast('⚠️ ' + errMsg);
               }
             })
             .catch(function () {
@@ -1633,7 +1480,7 @@
           var topic = ((document.getElementById('ntfyTopicInput') || {}).value || 'peter-radar-a71-99').trim();
           fetch('https://ntfy.sh/' + encodeURIComponent(topic), {
             method: 'POST',
-            headers: { 'Title': 'Peter Radar v2.5 Test', 'Priority': 'high' },
+            headers: { 'Title': 'Peter Radar v2.6 Test', 'Priority': 'high' },
             body: 'اختبار إشعارات الرادار السحابي شغال بنجاح!'
           }).then(function () {
             showToast('🔔 تم إرسال إشعار تجربة إلى ' + topic);
@@ -1691,7 +1538,6 @@
         }
       });
 
-      /* Handle incoming Android PWA Share Target (manifest.json share_target) */
       (function handleIncomingWebShare() {
         try {
           var params = new URLSearchParams(window.location.search);
