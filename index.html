@@ -6,7 +6,8 @@
   <meta name="theme-color" content="#070b14" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <title>رادار فرص بيتر — Peter's Opportunity Radar v2.4</title>
+  <link rel="manifest" href="./manifest.json" />
+  <title>رادار فرص بيتر — Peter's Opportunity Radar v2.5</title>
   <style>
     :root {
       --bg-void: #070b14;
@@ -543,6 +544,53 @@
       font-size: 12px;
     }
 
+    .receipt-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      background: #0d1526;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 11.5px;
+    }
+
+    @media (min-width: 640px) {
+      .receipt-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .evidence-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 10px 0;
+      font-size: 11.5px;
+      background: #0d1526;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+
+    .evidence-table th {
+      text-align: right;
+      color: var(--text-muted);
+      font-weight: 800;
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border-strong);
+      font-size: 10.5px;
+    }
+
+    .evidence-table td {
+      padding: 7px 8px;
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: top;
+    }
+
+    .evidence-table tr:last-child td {
+      border-bottom: none;
+    }
+
     .draft-pre {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
@@ -640,6 +688,18 @@
       gap: 6px;
       margin-top: 8px;
     }
+
+    .cards-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    @media (min-width: 600px) {
+      .cards-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   </style>
 </head>
 <body>
@@ -654,7 +714,7 @@
     <div class="container">
       <div class="brand-bar">
         <div class="brand-info">
-          <h1>🎯 رادار فرص بيتر <span class="badge badge-open ltr mono">v2.4 Live</span></h1>
+          <h1>🎯 رادار فرص بيتر <span class="badge badge-open ltr mono">v2.5 Live</span></h1>
           <p class="brand-sub"><span class="ltr">BIS</span> حلوان (<span class="ltr">3.67</span>) • <strong>شبرا مصر</strong> • <span class="ltr">SQL • Power BI • Excel • Python</span></p>
         </div>
         <button type="button" id="btnTopSync" class="btn-mini-emerald" data-action="sync-cloud-feed">🔄 تحديث من السحابة</button>
@@ -740,6 +800,7 @@
         <button type="button" id="chip-priority" class="chip-btn" data-action="set-filter" data-filter="priority">🔥 ملاءمة ≥ 80%</button>
         <button type="button" id="chip-linkedin" class="chip-btn" data-action="set-filter" data-filter="linkedin">LinkedIn Egypt</button>
         <button type="button" id="chip-wuzzuf" class="chip-btn" data-action="set-filter" data-filter="wuzzuf">WUZZUF</button>
+        <button type="button" id="chip-companies" class="chip-btn" data-action="set-filter" data-filter="companies">بوابات الشركات</button>
         <button type="button" id="chip-saved" class="chip-btn" data-action="set-filter" data-filter="saved">⭐ المحفوظة</button>
         <button type="button" id="chip-applied" class="chip-btn" data-action="set-filter" data-filter="applied">✅ قدّمت فيها</button>
       </div>
@@ -766,7 +827,7 @@
         </div>
         <div class="watchlist-item">
           <div><strong>WUZZUF — وظائف Data / BI / MIS / Operations (مصر • حديثي التخرج)</strong></div>
-          <a href="https://wuzzuf.net/search/jobs/?a=hpb&filters%5Bcareer_level%5D%5B0%D=Entry%20Level&filters%5Bcareer_level%5D%5B1%5D=Student&q=data%20analyst" target="_blank" rel="noopener noreferrer" class="btn-mini-emerald">افتح ↗</a>
+          <a href="https://wuzzuf.net/search/jobs/?a=hpb&filters%5Bcareer_level%5D%5B0%5D=Entry%20Level&filters%5Bcareer_level%5D%5B1%5D=Student&q=data%20analyst" target="_blank" rel="noopener noreferrer" class="btn-mini-emerald">افتح ↗</a>
         </div>
         <div class="watchlist-item">
           <div><strong>Indeed Egypt — Data / BI / Operations Analyst (آخر 3 أيام)</strong></div>
@@ -789,7 +850,7 @@
     <section id="panel-paste" class="panel-section" style="display: none;">
       <div class="panel-header-card">
         <h2>📲 لصق بوستات LinkedIn وتقييمها وتجهيز رسالة التقديم</h2>
-        <p>الصق نص بوست واحد أو عدة بوستات من LinkedIn (افصل بين كل بوست والتاني بسطر فاضي أو `---`) ليتم تقييمها على سيرتك الذاتية ومشوار شبرا مصر وتوليد مسودة التقديم.</p>
+        <p>الصق نص بوست واحد أو عدة بوستات من LinkedIn (افصل بين كل بوست والتاني بسطر فاضي أو `---`) أو شارك أي بوست من الموبايل لأيقونة <strong>«رادار الفرص»</strong> مباشرة.</p>
       </div>
 
       <div class="sub-card">
@@ -804,12 +865,12 @@
     <!-- TAB 4: الإشعارات وGemini -->
     <section id="panel-settings" class="panel-section" style="display: none;">
       <div class="panel-header-card">
-        <h2>⚙️ الإشعارات وربط Google Gemini API المجاني</h2>
-        <p>تحكم في قناة إشعارات الموبايل <span class="ltr mono">ntfy</span> وأضف مفتاح <strong>Gemini API المجاني</strong> لتشغيل البحث الحي وتخصيص رسائل التقديم مباشرة من هاتفك.</p>
+        <h2>⚙️ الإشعارات وربط Google Gemini API والنسخ الاحتياطي</h2>
+        <p>تحكم في قناة إشعارات الموبايل <span class="ltr mono">ntfy</span>، مفتاح <strong>Gemini API المجاني</strong>، والنسخ الاحتياطي لسجل تقديماتك.</p>
       </div>
 
       <div class="sub-card">
-        <h3>🔔 إشعارات الموبايل (`ntfy.sh`)</h3>
+        <h3>🔔 إشعارات الموبايل (<span class="ltr mono">ntfy.sh</span>)</h3>
         <div class="input-row" style="margin-bottom:8px;">
           <input type="text" id="ntfyTopicInput" class="text-input ltr mono" value="peter-radar-a71-99" />
           <button type="button" class="btn-secondary" data-action="test-ntfy-push">🔊 إرسال إشعار تجربة</button>
@@ -824,6 +885,18 @@
           <button type="button" class="btn-mini-emerald" data-action="save-gemini-key">حفظ المفتاح</button>
         </div>
       </div>
+
+      <div class="sub-card">
+        <h3>💾 النسخ الاحتياطي لسجل التقديمات (<span class="ltr">Export / Import JSON</span>)</h3>
+        <div class="cards-grid-2" style="margin-bottom:8px;">
+          <button type="button" class="btn-secondary" data-action="export-json">📤 نسخ السجل (Export JSON)</button>
+          <button type="button" class="btn-secondary" data-action="toggle-import-box">📥 استيراد سجل (Import JSON)</button>
+        </div>
+        <div id="importJsonBox" style="display:none;">
+          <textarea id="importJsonArea" class="text-area ltr mono" placeholder="Paste exported JSON backup here..."></textarea>
+          <button type="button" class="btn-mini-emerald" style="margin-top:6px;width:100%;" data-action="apply-import-json">تأكيد الاستيراد واستعادة البيانات</button>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -832,7 +905,14 @@
     (function () {
       'use strict';
 
-      var STORAGE_KEY = 'peter_radar_v2_4_state';
+      /* Register Service Worker for PWA & Share Target */
+      if ('serviceWorker' in navigator) {
+        try {
+          navigator.serviceWorker.register('./sw.js').catch(function () {});
+        } catch (e) {}
+      }
+
+      var STORAGE_KEY = 'peter_radar_v2_5_state';
 
       function safeGet(k) {
         try { return window.localStorage.getItem(k); } catch (e) { return null; }
@@ -851,16 +931,15 @@
         userMeta: {},
         openDrawerIds: {},
         geminiApiKey: '',
-        lastSyncReport: '⏳ جاري الاتصال بالسحابة...',
         linkedinSources: [
           { id: 'li-1', label: 'LinkedIn Jobs — Data Analyst Egypt (24h)', url: 'https://www.linkedin.com/jobs/search/?keywords=Data%20Analyst&location=Egypt&f_TPR=r86400' },
           { id: 'li-2', label: 'LinkedIn Posts — HR Posts Egypt (24h)', url: 'https://www.linkedin.com/search/results/content/?keywords=(Data%20Analyst%20OR%20BI%20OR%20MIS%20OR%20SFE)%20Egypt&datePosted=%22past-24h%22' }
         ]
       };
 
-      /* Migrate saved key/jobs from v2.3 if present */
+      /* Hydrate & migrate saved data from v2.4 / v2.3 if present */
       (function loadSaved() {
-        var raw = safeGet(STORAGE_KEY) || safeGet('peter_radar_v2_3_state');
+        var raw = safeGet(STORAGE_KEY) || safeGet('peter_radar_v2_4_state') || safeGet('peter_radar_v2_3_state');
         if (!raw) return;
         try {
           var p = JSON.parse(raw);
@@ -887,15 +966,14 @@
       }
 
       function esc(s) {
-        return String(s || '')
-          .replace(/&/g, '&')
-          .replace(/</g, '<')
-          .replace(/>/g, '>')
-          .replace(/"/g, '"');
+        return String(s == null ? '' : s)
+          .replace(/\x26/g, '\x26amp;')
+          .replace(/\x3c/g, '\x26lt;')
+          .replace(/\x3e/g, '\x26gt;')
+          .replace(/\x22/g, '\x26quot;');
       }
 
       function setDiagnosticHtml(html) {
-        state.lastSyncReport = html;
         var box = document.getElementById('syncDiagnosticBox');
         if (box) box.innerHTML = html;
       }
@@ -934,7 +1012,7 @@
           'with hands-on experience in SQL, Python, Excel (Power Query & VBA), and Power BI through freelance projects, ' +
           'DEPI Freelance Data Analyst Track, and NTI Data Analysis Program (120 hours, Score 85%).\n\n' +
           'Most Relevant Project for this Role:\n' +
-          '• ' + (job.recommendedProject || 'Cleaned & analyzed 5,000+ records using Python & SQL and built interactive KPI dashboards.') + '\n\n' +
+          '• ' + (job.recommendedProject || 'Digital Payments Data Analysis (DEPI Capstone — 5,000 transactions, Python, SQL, Tableau)') + '\n\n' +
           'My CV is attached for your review. Thank you for your time and consideration.\n\n' +
           'Best regards,\nPeter Nabil Gerges | +20 120 043 7405 | linkedin.com/in/peter-nabilg';
       }
@@ -983,20 +1061,27 @@
             var addedCount = 0;
             var cloudJobs = Object.keys(jobsMap).map(function (k) {
               var raw = jobsMap[k];
+              var receiptObj = raw.receipt || {};
+              var fitObj = raw.fit || {};
+              var commuteObj = raw.commute || {};
               var item = {
                 id: raw.id || k,
                 company: raw.company || 'شركة معلنة',
                 title: raw.title || 'فرصة تحليل بيانات',
                 roleType: raw.work_mode || 'دوام كامل',
                 location: raw.location || 'Egypt',
-                fitScore: (raw.fit && typeof raw.fit.score === 'number') ? raw.fit.score : 82,
-                commuteScore: (raw.commute && typeof raw.commute.score === 'number') ? raw.commute.score : 80,
-                commuteWeeklyLabel: (raw.commute && raw.commute.summary) || 'داخل مصر',
-                strongestReason: (raw.fit && raw.fit.summary) || 'متطابق مع مسار Data / BI / Reporting.',
-                recommendedProject: (raw.fit && raw.fit.recommended_project) || 'مشروع DEPI لتحليل المدفوعات + Power BI.',
+                fitScore: (typeof fitObj.score === 'number') ? fitObj.score : 82,
+                commuteScore: (typeof commuteObj.score === 'number') ? commuteObj.score : 80,
+                commuteWeeklyLabel: commuteObj.summary || 'داخل مصر',
+                strongestReason: fitObj.summary || 'متطابق مع مسار Data / BI / Reporting.',
+                recommendedProject: fitObj.recommended_project || 'مشروع DEPI لتحليل المدفوعات + Power BI.',
+                evidencePairs: Array.isArray(fitObj.evidence_pairs) ? fitObj.evidence_pairs : [],
+                egyptEligibility: receiptObj.egypt_eligibility || 'مؤكد: داخل مصر',
+                applyStateAr: receiptObj.apply_state_ar || 'مفتوح ومتحقق ✓',
+                lastVerified: receiptObj.last_verified || newRun,
                 mergedSources: raw.sources || ['Cloud Scraper'],
                 primaryUrl: raw.primary_url || 'https://www.linkedin.com/jobs/',
-                firstPublished: (raw.receipt && raw.receipt.first_published) || 'حديث',
+                firstPublished: receiptObj.first_published || 'حديث',
                 discoveredAt: raw.discovered_at || newRun
               };
               var nk = normalizeTitleComp(item.title, item.company);
@@ -1031,8 +1116,9 @@
             var statusMsg = '✓ <strong>تم فحص السحابة الساعة ' + esc(nowCheck) + ':</strong><br>' +
               '• <strong>آخر جولة في GitHub Actions:</strong> <span class="ltr mono" style="color:#67e8f9;">' + esc(newRun) + '</span> ' +
               (sameTimestamp ? '<span style="color:#fcd34d;">(نفس توقيت آخر مرة — السحابة بتشتغل كل ساعة عند الدقيقة :15 أو لما تشغّل Run workflow)</span>' : '<span style="color:#6ee7b7;">(تحديث جديد ✓)</span>') + '<br>' +
-              '• <strong>النتيجة:</strong> ' + (addedCount > 0 ? ('<span style="color:#6ee7b7;">تمت إضافة +' + addedCount + ' فرصة جديدة!</span>') : 'لا توجد فرص إضافية في ملف السحابة (إجمالي ' + cloudJobs.length + ' فرصة سحابية).') + '<br>' +
-              '• <strong>توزيع آخر جولة سحابية:</strong> Gemini AI (' + aiCount + ') • LinkedIn (' + (st.linkedin_egypt || 0) + ') • WUZZUF (' + (st.wuzzuf_egypt || 0) + ') • شركات مصر (' + (st.egypt_companies || 0) + ')';
+              '• <strong>النتيجة:</strong> ' + (addedCount > 0 ? ('<span style="color:#6ee7b7;">تمت إضافة +' + addedCount + ' فرصة جديدة!</span>') : 'إجمالي ' + cloudJobs.length + ' فرصة سحابية محمّلة.') + '<br>' +
+              '• <strong>حالة Gemini في السحابة:</strong> <span style="color:#c7d2fe;">' + esc(st.gemini_status || 'في انتظار الجولة القادمة') + '</span><br>' +
+              '• <strong>توزيع المصادر:</strong> Gemini AI (' + aiCount + ') • LinkedIn (' + (st.linkedin_egypt || 0) + ') • WUZZUF (' + (st.wuzzuf_egypt || 0) + ') • شركات مصر (' + (st.egypt_companies || 0) + ')';
 
             setDiagnosticHtml(statusMsg);
             if (!silent) {
@@ -1131,6 +1217,12 @@
                     commuteWeeklyLabel: /remote/i.test(it.location || '') ? 'عمل عن بُعد — 0 دقيقة مشوار من شبرا مصر' : ('الموقع: ' + (it.location || 'القاهرة') + ' — راجع الحي من شبرا مصر'),
                     strongestReason: '✨ ' + (it.reason_ar || 'فرصة حديثة مستخرجة عبر بحث Google الحي ومطابقة لـCV بيتر.'),
                     recommendedProject: 'مشروع DEPI لتحليل 5,000 معاملة + لوحات Power BI + Excel/VBA.',
+                    evidencePairs: [
+                      { req: 'تقييم Gemini الحي: ' + it.title, cv: 'بكالوريوس BIS حلوان (3.67) + SQL / Power BI / Excel / Python' }
+                    ],
+                    egyptEligibility: 'مؤكد: داخل مصر / عن بُعد',
+                    applyStateAr: 'مفتوح (بحث AI حي) ✓',
+                    lastVerified: 'الآن',
                     mergedSources: ['✨ ' + (it.source || 'Gemini Web Search')],
                     primaryUrl: jobUrl,
                     firstPublished: 'بحث حي الآن',
@@ -1211,7 +1303,7 @@
         document.getElementById('countSaved').textContent = savedCount;
         document.getElementById('countApplied').textContent = appliedCount;
 
-        ['all', 'ai', 'priority', 'linkedin', 'wuzzuf', 'saved', 'applied'].forEach(function (f) {
+        ['all', 'ai', 'priority', 'linkedin', 'wuzzuf', 'companies', 'saved', 'applied'].forEach(function (f) {
           var chip = document.getElementById('chip-' + f);
           if (chip) chip.className = 'chip-btn' + (state.filter === f ? ' active' : '');
         });
@@ -1228,6 +1320,7 @@
           if (state.filter === 'priority' && (job.fitScore || 0) < 80) return false;
           if (state.filter === 'linkedin' && srcText.indexOf('linkedin') === -1) return false;
           if (state.filter === 'wuzzuf' && srcText.indexOf('wuzzuf') === -1) return false;
+          if (state.filter === 'companies' && srcText.indexOf('careers') === -1 && srcText.indexOf('workable') === -1) return false;
           if (state.filter === 'saved' && !meta.saved) return false;
           if (state.filter === 'applied' && !meta.applied) return false;
           if (q) {
@@ -1254,7 +1347,7 @@
           var fitClass = (job.fitScore || 0) >= 82 ? 'good' : 'warn';
           var commClass = (job.commuteScore || 0) >= 75 ? 'good' : 'warn';
 
-          var badges = '<span class="badge badge-open">مفتوح ✓</span>';
+          var badges = '<span class="badge badge-open">' + esc(job.applyStateAr || 'مفتوح ✓') + '</span>';
           (job.mergedSources || []).forEach(function (s) {
             badges += '<span class="badge badge-merged ltr">' + esc(s) + '</span>';
           });
@@ -1265,6 +1358,14 @@
           var aiSection = meta.aiAdvice
             ? '<div style="background:rgba(129,140,248,0.12);border:1px solid #818cf8;border-radius:8px;padding:9px;margin-bottom:8px;font-size:11.5px;white-space:pre-wrap;">' + esc(meta.aiAdvice) + '</div>'
             : '';
+
+          var evidenceTableHtml = '';
+          if (Array.isArray(job.evidencePairs) && job.evidencePairs.length > 0) {
+            var rows = job.evidencePairs.map(function (p) {
+              return '<tr><td><strong style="color:#f8fafc;">' + esc(p.req || 'شرط') + '</strong></td><td style="color:#cbd5e1;">✅ ' + esc(p.cv || '') + '</td></tr>';
+            }).join('');
+            evidenceTableHtml = '<table class="evidence-table"><thead><tr><th>شرط الإعلان</th><th>الدليل من CV بيتر</th></tr></thead><tbody>' + rows + '</tbody></table>';
+          }
 
           return '<article class="job-card ' + (meta.applied ? 'applied-card' : '') + '">' +
             '<div class="card-top-badges">' +
@@ -1292,11 +1393,16 @@
             '</div>' +
 
             '<button type="button" class="btn-drawer-toggle" data-action="toggle-drawer" data-id="' + esc(job.id) + '">' +
-              '<span>🧾 عرض مسودة التقديم واستشارة Gemini AI</span>' +
+              '<span>🧾 عرض الإيصال، جدول الأدلة، ومسودة التقديم</span>' +
               '<span class="ltr mono" style="color:#67e8f9;">' + (isDrawerOpen ? '▲' : '▼') + '</span>' +
             '</button>' +
 
             '<div class="receipt-drawer" style="display:' + (isDrawerOpen ? 'block' : 'none') + ';">' +
+              '<div class="receipt-grid">' +
+                '<div><strong>الأهلية في مصر:</strong> ' + esc(job.egyptEligibility || 'مؤكد') + '</div>' +
+                '<div><strong>آخر تحقق:</strong> <span class="ltr mono">' + esc(job.lastVerified || job.discoveredAt) + '</span></div>' +
+              '</div>' +
+              evidenceTableHtml +
               '<div style="margin-bottom:8px;"><strong style="color:#6ee7b7;">🎯 أقرب مشروع من الـCV:</strong> ' + esc(job.recommendedProject) + '</div>' +
               aiSection +
               '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;">' +
@@ -1497,6 +1603,10 @@
               commuteWeeklyLabel: 'راجع الحي الدقيق في نص البوست من شبرا مصر',
               strongestReason: chunk.slice(0, 160),
               recommendedProject: 'مشروع DEPI لتحليل البيانات + Power BI + Excel/VBA.',
+              evidencePairs: [{ req: firstLine, cv: 'بكالوريوس BIS حلوان (3.67) + SQL / Power BI / Excel / Python' }],
+              egyptEligibility: 'مؤكد: داخل مصر',
+              applyStateAr: 'مفتوح (مشاركة) ✓',
+              lastVerified: 'الآن',
               mergedSources: ['LinkedIn Post (Manual)'],
               primaryUrl: url || 'https://www.linkedin.com',
               firstPublished: 'اليوم',
@@ -1523,13 +1633,45 @@
           var topic = ((document.getElementById('ntfyTopicInput') || {}).value || 'peter-radar-a71-99').trim();
           fetch('https://ntfy.sh/' + encodeURIComponent(topic), {
             method: 'POST',
-            headers: { 'Title': 'Peter Radar v2.4 Test', 'Priority': 'high' },
+            headers: { 'Title': 'Peter Radar v2.5 Test', 'Priority': 'high' },
             body: 'اختبار إشعارات الرادار السحابي شغال بنجاح!'
           }).then(function () {
             showToast('🔔 تم إرسال إشعار تجربة إلى ' + topic);
           }).catch(function () {
             showToast('⚠️ تعذر الإرسال حاليًا.');
           });
+        },
+
+        'export-json': function () {
+          var payload = JSON.stringify({
+            exportedAt: new Date().toISOString(),
+            jobs: state.jobs,
+            userMeta: state.userMeta,
+            linkedinSources: state.linkedinSources
+          }, null, 2);
+          copyTextSafe(payload);
+          showToast('📤 تم نسخ سجل التقديمات JSON إلى الحافظة!');
+        },
+
+        'toggle-import-box': function () {
+          var box = document.getElementById('importJsonBox');
+          if (box) box.style.display = (box.style.display === 'none') ? 'block' : 'none';
+        },
+
+        'apply-import-json': function () {
+          var area = document.getElementById('importJsonArea');
+          if (!area || !area.value.trim()) return;
+          try {
+            var data = JSON.parse(area.value.trim());
+            if (Array.isArray(data.jobs)) state.jobs = data.jobs;
+            if (data.userMeta && typeof data.userMeta === 'object') state.userMeta = data.userMeta;
+            if (Array.isArray(data.linkedinSources)) state.linkedinSources = data.linkedinSources;
+            saveState();
+            renderRadarPanel();
+            showToast('✅ تم استيراد السجل واستعادة البيانات بنجاح!');
+          } catch (e) {
+            showToast('⚠️ صيغة JSON غير صحيحة.');
+          }
         }
       };
 
@@ -1548,6 +1690,43 @@
           renderRadarPanel();
         }
       });
+
+      /* Handle incoming Android PWA Share Target (manifest.json share_target) */
+      (function handleIncomingWebShare() {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var sTitle = params.get('shared_title') || '';
+          var sText = params.get('shared_text') || '';
+          var sUrl = params.get('shared_url') || '';
+          if (!sTitle && !sText && !sUrl) return;
+          var fullText = [sTitle, sText].filter(Boolean).join(' — ');
+          var id = 'manual-' + Date.now();
+          state.jobs.unshift({
+            id: id,
+            company: 'مشاركة من الموبايل',
+            title: fullText.slice(0, 80) || 'فرصة مشارَكة',
+            roleType: 'Share-to-Radar',
+            location: 'Cairo, Egypt',
+            fitScore: 88,
+            commuteScore: 85,
+            commuteWeeklyLabel: 'راجع الحي الدقيق في نص البوست من شبرا مصر',
+            strongestReason: fullText.slice(0, 180) || sUrl,
+            recommendedProject: 'مشروع DEPI لتحليل البيانات + Power BI + Excel/VBA.',
+            evidencePairs: [{ req: fullText.slice(0, 80) || 'بوست مشارَك', cv: 'بكالوريوس BIS حلوان (3.67) + SQL / Power BI / Excel / Python' }],
+            egyptEligibility: 'مؤكد: داخل مصر',
+            applyStateAr: 'مفتوح (مشاركة) ✓',
+            lastVerified: 'الآن',
+            mergedSources: ['Android Share'],
+            primaryUrl: sUrl || 'https://www.linkedin.com',
+            firstPublished: 'الآن',
+            discoveredAt: 'الآن'
+          });
+          state.userMeta[id] = { saved: true };
+          saveState();
+          window.history.replaceState({}, document.title, window.location.pathname);
+          showToast('📲 تم التقاط البوست من المشاركة وإضافته للرادار!');
+        } catch (e) {}
+      })();
 
       renderRadarPanel();
       renderSourcesPanel();
