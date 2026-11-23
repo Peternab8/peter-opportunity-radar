@@ -1,11 +1,10 @@
 {
   "meta": {
-    "last_successful_run": "2026-11-23T19:32:35Z",
-    "total_active": 37,
+    "last_successful_run": "2026-11-23T19:37:11Z",
+    "total_active": 47,
     "source_stats": {
-      "ai_google_search": 0,
-      "gemini_status": "محرك X-Ray المجاني شغّال ✓ (0 نتيجة)",
-      "linkedin_egypt": 19,
+      "linkedin_egypt": 41,
+      "indeed_egypt": 4,
       "wuzzuf_egypt": 0,
       "egypt_companies": 0,
       "remotive_global": 2,
@@ -13,6 +12,406 @@
     }
   },
   "jobs": {
+    "8cf5b2f5aa6a46d6": {
+      "id": "8cf5b2f5aa6a46d6",
+      "family_id": "8cf5b2f5aa6a",
+      "company": "Informa",
+      "title": "General Ledger Analyst",
+      "sources": [
+        "Indeed Egypt"
+      ],
+      "all_urls": [
+        "https://eg.indeed.com/viewjob?jk=371a8ccf7852d977"
+      ],
+      "primary_url": "https://eg.indeed.com/viewjob?jk=371a8ccf7852d977",
+      "location": "القاهرة, C, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-18",
+        "discovered_at": "2026-11-23T19:37:11Z",
+        "last_verified": "2026-11-23T19:37:11Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: القاهرة, C, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "**Company Description** At Informa, no two days and no two people are the same, and you'll find the freedom, opportunity and support of a fantastic community to make a real impact. We’re an international business that connects specialists with knowledge, helping them to learn more, know more and do more through live and on demand events, digital and data-driven services and academic research. We are home to over 14,000 colleagues across 30 countr",
+        "evidence_pairs": [
+          {
+            "req": "General Ledger Analyst",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: القاهرة, C, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:37:11Z"
+    },
+    "649f05f3b6183161": {
+      "id": "649f05f3b6183161",
+      "family_id": "649f05f3b618",
+      "company": "Nestlé",
+      "title": "Supply Modeler",
+      "sources": [
+        "Indeed Egypt"
+      ],
+      "all_urls": [
+        "https://eg.indeed.com/viewjob?jk=41719db75ad39ab0"
+      ],
+      "primary_url": "https://eg.indeed.com/viewjob?jk=41719db75ad39ab0",
+      "location": "القاهرة, C, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-17",
+        "discovered_at": "2026-11-23T19:37:11Z",
+        "last_verified": "2026-11-23T19:37:11Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: القاهرة, C, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Position: Supply Modeler Location: NBS Company: Nestlé Egypt Full-time **Purpose of Job:** To define planning and optimization strategies associated to model performance, design and deploy new functionalities and to update the Supply Model strategy based on the business requirements from different stakeholders. Moreover, the Supply Modeler is responsible to regularly update and evaluate supply network models for data-driven improvements and adapt",
+        "evidence_pairs": [
+          {
+            "req": "Supply Modeler",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: القاهرة, C, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:37:11Z"
+    },
+    "4895a78356283c2e": {
+      "id": "4895a78356283c2e",
+      "family_id": "4895a7835628",
+      "company": "Infomineo",
+      "title": "AI & Analytics - Data Governance Specialist - Freelance - Cairo",
+      "sources": [
+        "Indeed Egypt"
+      ],
+      "all_urls": [
+        "https://eg.indeed.com/viewjob?jk=2b8b614e7728b7bc"
+      ],
+      "primary_url": "https://eg.indeed.com/viewjob?jk=2b8b614e7728b7bc",
+      "location": "القاهرة, C, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-17",
+        "discovered_at": "2026-11-23T19:37:11Z",
+        "last_verified": "2026-11-23T19:37:11Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: القاهرة, C, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "**About us** Infomineo is a pioneering global AI-enhanced research company that transforms how businesses access, analyze, and act on critical intelligence. We’ve evolved from traditional business research outsourcing to become the strategic partner that combines cutting-edge artificial intelligence with deep human expertise. We offer 3 services to our global clients (leading consulting companies, Fortune 500 companies, and government entities): ",
+        "evidence_pairs": [
+          {
+            "req": "AI & Analytics - Data Governance Specialist - Freelance - Cairo",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: القاهرة, C, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:37:11Z"
+    },
+    "648de5348df49650": {
+      "id": "648de5348df49650",
+      "family_id": "648de5348df4",
+      "company": "Microsoft",
+      "title": "Snr Data & Applied Scientist (Shopping)",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/snr-data-applied-scientist-shopping-at-microsoft-4475315635"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/snr-data-applied-scientist-shopping-at-microsoft-4475315635",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-21",
+        "discovered_at": "2026-11-23T19:37:11Z",
+        "last_verified": "2026-11-23T19:37:11Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Snr Data & Applied Scientist (Shopping)",
+        "evidence_pairs": [
+          {
+            "req": "Snr Data & Applied Scientist (Shopping)",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Cairo, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:37:11Z"
+    },
+    "de0060a3eb6f2d1e": {
+      "id": "de0060a3eb6f2d1e",
+      "family_id": "de0060a3eb6f",
+      "company": "Archer Integrated Risk Management",
+      "title": "Full-Stack Data Engineer II",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/full-stack-data-engineer-ii-at-archer-integrated-risk-management-4491146999"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/full-stack-data-engineer-ii-at-archer-integrated-risk-management-4491146999",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-17",
+        "discovered_at": "2026-11-23T19:37:11Z",
+        "last_verified": "2026-11-23T19:37:11Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Full-Stack Data Engineer II",
+        "evidence_pairs": [
+          {
+            "req": "Full-Stack Data Engineer II",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Cairo, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:37:11Z"
+    },
+    "6e4c0a454328f3a7": {
+      "id": "6e4c0a454328f3a7",
+      "family_id": "6e4c0a454328",
+      "company": "Systems Limited - Egypt",
+      "title": "TPO (Data & AI)",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/tpo-data-ai-at-systems-limited-egypt-4492400510"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/tpo-data-ai-at-systems-limited-egypt-4492400510",
+      "location": "Al Jizah, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-19",
+        "discovered_at": "2026-11-23T19:37:11Z",
+        "last_verified": "2026-11-23T19:37:11Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Al Jizah, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "TPO (Data & AI)",
+        "evidence_pairs": [
+          {
+            "req": "TPO (Data & AI)",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Al Jizah, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:37:11Z"
+    },
+    "faca066e1241dc41": {
+      "id": "faca066e1241dc41",
+      "family_id": "faca066e1241",
+      "company": "Alignerr",
+      "title": "AI Data Quality Analyst",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/ai-data-quality-analyst-at-alignerr-4493395688"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/ai-data-quality-analyst-at-alignerr-4493395688",
+      "location": "Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-23",
+        "discovered_at": "2026-11-23T19:37:11Z",
+        "last_verified": "2026-11-23T19:37:11Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "AI Data Quality Analyst",
+        "evidence_pairs": [
+          {
+            "req": "AI Data Quality Analyst",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:37:11Z"
+    },
+    "ac3af8f84889c58f": {
+      "id": "ac3af8f84889c58f",
+      "family_id": "ac3af8f84889",
+      "company": "Arrow Electronics",
+      "title": "Data Automation Engineer",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/data-automation-engineer-at-arrow-electronics-4343211516"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/data-automation-engineer-at-arrow-electronics-4343211516",
+      "location": "Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-19",
+        "discovered_at": "2026-11-23T19:37:11Z",
+        "last_verified": "2026-11-23T19:37:11Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Data Automation Engineer",
+        "evidence_pairs": [
+          {
+            "req": "Data Automation Engineer",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:37:11Z"
+    },
+    "9833781bf03dd70e": {
+      "id": "9833781bf03dd70e",
+      "family_id": "9833781bf03d",
+      "company": "Kraft Heinz",
+      "title": "R&D Data & Systems Management",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/r-d-data-systems-management-at-kraft-heinz-4484826934"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/r-d-data-systems-management-at-kraft-heinz-4484826934",
+      "location": "El Tagamoa El Khames, Cairo, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-21",
+        "discovered_at": "2026-11-23T19:37:11Z",
+        "last_verified": "2026-11-23T19:37:11Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: El Tagamoa El Khames, Cairo, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "R&D Data & Systems Management",
+        "evidence_pairs": [
+          {
+            "req": "R&D Data & Systems Management",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: El Tagamoa El Khames, Cairo, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:37:11Z"
+    },
+    "98cdcd1f0ef72caa": {
+      "id": "98cdcd1f0ef72caa",
+      "family_id": "98cdcd1f0ef7",
+      "company": "IBM",
+      "title": "Package Consultant – SAP Ariba Data Migration",
+      "sources": [
+        "LinkedIn Jobs (Egypt)"
+      ],
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/package-consultant-%E2%80%93-sap-ariba-data-migration-at-ibm-4491603507"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/package-consultant-%E2%80%93-sap-ariba-data-migration-at-ibm-4491603507",
+      "location": "Giza, Al Jizah, Egypt",
+      "work_mode": "Hybrid",
+      "receipt": {
+        "first_published": "2026-11-19",
+        "discovered_at": "2026-11-23T19:37:11Z",
+        "last_verified": "2026-11-23T19:37:11Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق ✓",
+        "egypt_eligibility": "مؤكد: Giza, Al Jizah, Egypt"
+      },
+      "fit": {
+        "score": 85,
+        "confidence": "HIGH",
+        "summary": "Package Consultant – SAP Ariba Data Migration",
+        "evidence_pairs": [
+          {
+            "req": "Package Consultant – SAP Ariba Data Migration",
+            "cv": "BIS حلوان (3.67) + SQL / Power BI / Excel / Python"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع + Power BI"
+      },
+      "commute": {
+        "score": 82,
+        "summary": "الموقع: Giza, Al Jizah, Egypt — راجع أيام الحضور من شبرا مصر"
+      },
+      "discovered_at": "2026-11-23T19:37:11Z"
+    },
     "5fab4b5eebc71092": {
       "id": "5fab4b5eebc71092",
       "family_id": "5fab4b5eebc7",
@@ -22,7 +421,8 @@
         "LinkedIn Jobs (Egypt)"
       ],
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/data-acquisition-database-specialist-at-american-association-for-continuous-education-4493184173"
+        "https://eg.linkedin.com/jobs/view/data-acquisition-database-specialist-at-american-association-for-continuous-education-4493184173",
+        "https://www.linkedin.com/jobs/view/4493184173"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/data-acquisition-database-specialist-at-american-association-for-continuous-education-4493184173",
       "location": "Cairo, Cairo, Egypt",
@@ -30,7 +430,7 @@
       "receipt": {
         "first_published": "2026-11-22",
         "discovered_at": "2026-11-23T19:29:21Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -70,7 +470,7 @@
       "receipt": {
         "first_published": "2026-11-23",
         "discovered_at": "2026-11-23T19:29:21Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Giza, Al Jizah, Egypt"
@@ -102,7 +502,8 @@
         "LinkedIn Jobs (Egypt)"
       ],
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/risk-data-analyst-at-tabby-%D8%AA%D8%A7%D8%A8%D9%8A-4484449012"
+        "https://eg.linkedin.com/jobs/view/risk-data-analyst-at-tabby-%D8%AA%D8%A7%D8%A8%D9%8A-4484449012",
+        "https://www.linkedin.com/jobs/view/4484449012"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/risk-data-analyst-at-tabby-%D8%AA%D8%A7%D8%A8%D9%8A-4484449012",
       "location": "New Cairo, Cairo, Egypt",
@@ -110,7 +511,7 @@
       "receipt": {
         "first_published": "2026-11-18",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: New Cairo, Cairo, Egypt"
@@ -183,7 +584,9 @@
       ],
       "all_urls": [
         "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-at-tp-4493624720",
-        "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-at-tp-4491577020"
+        "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-at-tp-4491577020",
+        "https://www.linkedin.com/jobs/view/4493624720",
+        "https://www.linkedin.com/jobs/view/4491577020"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-at-tp-4493624720",
       "location": "Cairo, Egypt",
@@ -191,7 +594,7 @@
       "receipt": {
         "first_published": "2026-11-23",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Egypt"
@@ -223,7 +626,8 @@
         "LinkedIn Jobs (Egypt)"
       ],
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/etic-bi-engineer-associate-at-pwc-egypt-technology-and-innovation-centre-etic-4492369051"
+        "https://eg.linkedin.com/jobs/view/etic-bi-engineer-associate-at-pwc-egypt-technology-and-innovation-centre-etic-4492369051",
+        "https://www.linkedin.com/jobs/view/4492369051"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/etic-bi-engineer-associate-at-pwc-egypt-technology-and-innovation-centre-etic-4492369051",
       "location": "Cairo, Cairo, Egypt",
@@ -231,7 +635,7 @@
       "receipt": {
         "first_published": "2026-11-22",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -260,10 +664,13 @@
       "company": "PwC",
       "title": "ETIC, BI Engineer Associate",
       "sources": [
-        "LinkedIn Jobs (Egypt)"
+        "LinkedIn Jobs (Egypt)",
+        "Indeed Egypt"
       ],
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/etic-bi-engineer-associate-at-pwc-4493373253"
+        "https://eg.linkedin.com/jobs/view/etic-bi-engineer-associate-at-pwc-4493373253",
+        "https://eg.indeed.com/viewjob?jk=ce9e9aa5da3286c8",
+        "https://www.linkedin.com/jobs/view/4493373253"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/etic-bi-engineer-associate-at-pwc-4493373253",
       "location": "Cairo, Cairo, Egypt",
@@ -271,7 +678,7 @@
       "receipt": {
         "first_published": "2026-11-22",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -303,7 +710,8 @@
         "LinkedIn Jobs (Egypt)"
       ],
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/data-analytics-engineer-evening-shift-at-henkel-4440393391"
+        "https://eg.linkedin.com/jobs/view/data-analytics-engineer-evening-shift-at-henkel-4440393391",
+        "https://www.linkedin.com/jobs/view/4440393391"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/data-analytics-engineer-evening-shift-at-henkel-4440393391",
       "location": "Cairo, Cairo, Egypt",
@@ -311,7 +719,7 @@
       "receipt": {
         "first_published": "2026-11-19",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -343,7 +751,8 @@
         "LinkedIn Jobs (Egypt)"
       ],
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/business-analyst-at-tawzef-for-recruitment-hr-consultancy-4492043540"
+        "https://eg.linkedin.com/jobs/view/business-analyst-at-tawzef-for-recruitment-hr-consultancy-4492043540",
+        "https://www.linkedin.com/jobs/view/4492043540"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/business-analyst-at-tawzef-for-recruitment-hr-consultancy-4492043540",
       "location": "Cairo, Egypt",
@@ -351,7 +760,7 @@
       "receipt": {
         "first_published": "2026-11-18",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Egypt"
@@ -383,7 +792,8 @@
         "LinkedIn Jobs (Egypt)"
       ],
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/market-analysis-reporting-supervisor-nmeg-at-nissan-motor-corporation-4492011198"
+        "https://eg.linkedin.com/jobs/view/market-analysis-reporting-supervisor-nmeg-at-nissan-motor-corporation-4492011198",
+        "https://www.linkedin.com/jobs/view/4492011198"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/market-analysis-reporting-supervisor-nmeg-at-nissan-motor-corporation-4492011198",
       "location": "6th of October, Al Jizah, Egypt",
@@ -391,7 +801,7 @@
       "receipt": {
         "first_published": "2026-11-18",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: 6th of October, Al Jizah, Egypt"
@@ -423,7 +833,8 @@
         "LinkedIn Jobs (Egypt)"
       ],
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-bpo-experience-is-a-must-at-tp-4493336336"
+        "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-bpo-experience-is-a-must-at-tp-4493336336",
+        "https://www.linkedin.com/jobs/view/4493336336"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/business-intelligence-analyst-bpo-experience-is-a-must-at-tp-4493336336",
       "location": "Qesm El Maadi, Cairo, Egypt",
@@ -431,7 +842,7 @@
       "receipt": {
         "first_published": "2026-11-22",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt"
@@ -471,7 +882,7 @@
       "receipt": {
         "first_published": "2026-11-23",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Sawhāj, Suhaj, Egypt"
@@ -503,7 +914,8 @@
         "LinkedIn Jobs (Egypt)"
       ],
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/business-analyst-at-the-hr-game-4493326479"
+        "https://eg.linkedin.com/jobs/view/business-analyst-at-the-hr-game-4493326479",
+        "https://www.linkedin.com/jobs/view/4493326479"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/business-analyst-at-the-hr-game-4493326479",
       "location": "Qesm El Maadi, Cairo, Egypt",
@@ -511,7 +923,7 @@
       "receipt": {
         "first_published": "2026-11-22",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt"
@@ -543,7 +955,8 @@
         "LinkedIn Jobs (Egypt)"
       ],
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/payments-business-analyst-tph-at-dxc-technology-4485446607"
+        "https://eg.linkedin.com/jobs/view/payments-business-analyst-tph-at-dxc-technology-4485446607",
+        "https://www.linkedin.com/jobs/view/4485446607"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/payments-business-analyst-tph-at-dxc-technology-4485446607",
       "location": "Cairo, Cairo, Egypt",
@@ -551,7 +964,7 @@
       "receipt": {
         "first_published": "2026-11-23",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -583,7 +996,8 @@
         "LinkedIn Jobs (Egypt)"
       ],
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/deloitte-innovation-hub-pharma-manufacturing-technology-business-analyst-consultant-level-cairo-egypt-at-deloitte-4493370791"
+        "https://eg.linkedin.com/jobs/view/deloitte-innovation-hub-pharma-manufacturing-technology-business-analyst-consultant-level-cairo-egypt-at-deloitte-4493370791",
+        "https://www.linkedin.com/jobs/view/4493370791"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/deloitte-innovation-hub-pharma-manufacturing-technology-business-analyst-consultant-level-cairo-egypt-at-deloitte-4493370791",
       "location": "Cairo, Cairo, Egypt",
@@ -591,7 +1005,7 @@
       "receipt": {
         "first_published": "2026-11-22",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -623,7 +1037,8 @@
         "LinkedIn Jobs (Egypt)"
       ],
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/business-analyst-temenos-at-socium-teams-done-differently-4492376698"
+        "https://eg.linkedin.com/jobs/view/business-analyst-temenos-at-socium-teams-done-differently-4492376698",
+        "https://www.linkedin.com/jobs/view/4492376698"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/business-analyst-temenos-at-socium-teams-done-differently-4492376698",
       "location": "Cairo, Egypt",
@@ -631,7 +1046,7 @@
       "receipt": {
         "first_published": "2026-11-23",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Egypt"
@@ -663,7 +1078,8 @@
         "LinkedIn Jobs (Egypt)"
       ],
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/data-engineer-at-coca-cola-hbc-4449601286"
+        "https://eg.linkedin.com/jobs/view/data-engineer-at-coca-cola-hbc-4449601286",
+        "https://www.linkedin.com/jobs/view/4449601286"
       ],
       "primary_url": "https://eg.linkedin.com/jobs/view/data-engineer-at-coca-cola-hbc-4449601286",
       "location": "New Cairo, Cairo, Egypt",
@@ -671,7 +1087,7 @@
       "receipt": {
         "first_published": "2026-11-17",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: New Cairo, Cairo, Egypt"
@@ -711,7 +1127,7 @@
       "receipt": {
         "first_published": "2026-11-19",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -751,7 +1167,7 @@
       "receipt": {
         "first_published": "2026-11-21",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -791,7 +1207,7 @@
       "receipt": {
         "first_published": "2026-11-11",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:32:35Z",
+        "last_verified": "2026-11-23T19:37:11Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Remote (Worldwide)"
