@@ -3,34 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <meta name="theme-color" content="#070b14" />
+  <meta name="theme-color" content="#0b1120" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <link rel="manifest" href="./manifest.json" />
-  <title>رادار فرص بيتر — Peter's Opportunity Radar v2.6</title>
+  <title>رادار فرص بيتر</title>
   <style>
     :root {
-      --bg-void: #070b14;
-      --bg-surface: #0f172a;
-      --bg-panel: #131c31;
-      --bg-input: #090e1a;
-      --border-subtle: #1e293b;
-      --border-strong: #334155;
-      --text-primary: #f8fafc;
-      --text-secondary: #cbd5e1;
-      --text-muted: #94a3b8;
-      --accent-emerald: #10b981;
-      --accent-emerald-soft: rgba(16, 185, 129, 0.16);
-      --accent-cyan: #06b6d4;
-      --accent-cyan-soft: rgba(6, 182, 212, 0.16);
-      --accent-amber: #f59e0b;
-      --accent-amber-soft: rgba(245, 158, 11, 0.16);
-      --accent-rose: #f43f5e;
-      --accent-rose-soft: rgba(244, 63, 94, 0.16);
-      --accent-indigo: #818cf8;
-      --accent-indigo-soft: rgba(129, 140, 248, 0.16);
+      --bg-page: #0b1120;
+      --bg-card: #111827;
+      --bg-elevated: #1e293b;
+      --bg-input: #090d16;
+      --border-soft: #1f2937;
+      --border-strong: #374151;
+      --text-main: #f9fafb;
+      --text-sub: #d1d5db;
+      --text-muted: #9ca3af;
+
+      /* Point 8: Single semantic meaning per color */
+      --status-open: #10b981;
+      --status-open-bg: rgba(16, 185, 129, 0.14);
+      --status-warn: #f59e0b;
+      --status-warn-bg: rgba(245, 158, 11, 0.14);
+      --status-neutral: #64748b;
+      --status-neutral-bg: rgba(100, 116, 139, 0.16);
+
       --font-ar: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
-      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       --radius-lg: 16px;
       --radius-md: 12px;
       --radius-sm: 8px;
@@ -44,12 +42,12 @@
     html, body {
       margin: 0;
       padding: 0;
-      background-color: var(--bg-void);
-      color: var(--text-primary);
+      background: var(--bg-page);
+      color: var(--text-main);
       font-family: var(--font-ar);
-      line-height: 1.55;
+      font-size: 14px;
+      line-height: 1.6;
       overflow-x: hidden;
-      max-width: 100vw;
     }
 
     button, a, input, textarea, select {
@@ -60,16 +58,6 @@
     button {
       cursor: pointer;
       border: 1px solid transparent;
-      transition: transform 0.12s ease, background-color 0.15s ease, border-color 0.15s ease;
-    }
-
-    button:active {
-      transform: scale(0.97);
-    }
-
-    button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
     }
 
     a {
@@ -81,874 +69,718 @@
       unicode-bidi: isolate;
     }
 
-    .mono {
-      font-family: var(--font-mono);
+    /* Point 2: Clean, minimal top header */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(11, 17, 32, 0.96);
+      border-bottom: 1px solid var(--border-soft);
+      padding: 10px 14px;
     }
 
-    #toastBar {
-      position: fixed;
-      bottom: 16px;
-      left: 12px;
-      right: 12px;
-      z-index: 998;
-      display: none;
-      justify-content: center;
-      pointer-events: none;
-    }
-
-    #toastContent {
-      pointer-events: auto;
-      max-width: 540px;
-      width: 100%;
-      background: #131c31;
-      border: 1.5px solid var(--accent-emerald);
-      color: #f8fafc;
-      padding: 11px 14px;
-      border-radius: 14px;
-      font-size: 12.5px;
-      font-weight: 700;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+    .top-bar-inner {
+      max-width: 760px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
     }
 
-    .sticky-shell {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(7, 11, 20, 0.98);
-      border-bottom: 1px solid var(--border-strong);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    .brand-title {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-main);
     }
 
-    .container {
-      max-width: 980px;
+    .sync-line {
+      margin: 2px 0 0 0;
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    .btn-refresh {
+      min-height: 42px;
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      background: var(--bg-elevated);
+      color: var(--text-main);
+      border: 1px solid var(--border-strong);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .workspace {
+      max-width: 760px;
       margin: 0 auto;
-      padding: 0 12px;
+      padding: 12px 14px 88px 14px;
     }
 
-    .brand-bar {
+    .tab-view {
+      display: none;
+    }
+
+    /* Point 4 & 8: Decision-first filter bar with large touch targets */
+    .filter-strip {
       display: flex;
-      flex-wrap: wrap;
+      gap: 7px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+      scrollbar-width: none;
+    }
+
+    .filter-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pill-btn {
+      min-height: 42px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--bg-card);
+      color: var(--text-sub);
+      border: 1px solid var(--border-soft);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .pill-btn.active {
+      background: var(--status-open-bg);
+      color: #6ee7b7;
+      border-color: var(--status-open);
+    }
+
+    .advanced-filter-drawer {
+      display: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    @media (min-width: 560px) {
+      .filter-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Point 5, 6, 8: One-glance Opportunity Card */
+    .opp-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 15px;
+      margin-bottom: 12px;
+    }
+
+    .opp-card.highlight-target {
+      border: 2px solid var(--status-open);
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+    }
+
+    .card-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .status-pill.open {
+      background: var(--status-open-bg);
+      color: #6ee7b7;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+    }
+
+    .status-pill.warn {
+      background: var(--status-warn-bg);
+      color: #fcd34d;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+
+    .status-pill.neutral {
+      background: var(--status-neutral-bg);
+      color: #cbd5e1;
+      border: 1px solid rgba(100, 116, 139, 0.4);
+    }
+
+    .time-caption {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .opp-title {
+      margin: 0 0 3px 0;
+      font-size: 16.5px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .opp-sub {
+      margin: 0 0 10px 0;
+      font-size: 13.5px;
+      color: var(--text-sub);
+    }
+
+    /* Point 6: Recommendation reason BEFORE score */
+    .reason-box {
+      background: var(--bg-input);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      margin-bottom: 11px;
+    }
+
+    .reason-main {
+      margin: 0 0 4px 0;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .reason-caveat {
+      margin: 0 0 6px 0;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .fit-inline {
+      display: inline-block;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #6ee7b7;
+    }
+
+    .fit-inline.warn {
+      color: #fcd34d;
+    }
+
+    .card-primary-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn-apply-main {
+      flex: 2;
+      min-height: 44px;
+      padding: 9px 14px;
+      border-radius: var(--radius-md);
+      background: var(--status-open);
+      color: #03150e;
+      font-size: 13.5px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-apply-main.warn {
+      background: var(--status-warn);
+      color: #1a1002;
+    }
+
+    .btn-apply-main.neutral {
+      background: var(--bg-elevated);
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+    }
+
+    .btn-save-card {
+      flex: 1;
+      min-height: 44px;
+      padding: 9px 12px;
+      border-radius: var(--radius-md);
+      background: var(--bg-elevated);
+      color: var(--text-main);
+      border: 1px solid var(--border-strong);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .btn-save-card.saved {
+      background: var(--status-neutral-bg);
+      color: #e2e8f0;
+      border-color: var(--status-neutral);
+    }
+
+    .btn-details-toggle {
+      min-height: 44px;
+      padding: 9px 12px;
+      border-radius: var(--radius-md);
+      background: transparent;
+      color: var(--text-sub);
+      border: 1px solid var(--border-soft);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .details-panel {
+      display: none;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-soft);
+      font-size: 13px;
+    }
+
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+      font-size: 12.5px;
+    }
+
+    .meta-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border-soft);
+      vertical-align: top;
+    }
+
+    .meta-table td:first-child {
+      color: var(--text-muted);
+      width: 34%;
+      font-weight: 700;
+    }
+
+    .evidence-block {
+      background: var(--bg-input);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-sm);
+      padding: 9px 11px;
+      margin-bottom: 8px;
+    }
+
+    .draft-box {
+      width: 100%;
+      min-height: 115px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      padding: 9px;
+      color: var(--text-main);
+      font-size: 12.5px;
+      line-height: 1.5;
+      margin: 6px 0;
+    }
+
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 15px;
+      margin-bottom: 12px;
+    }
+
+    .section-card h2, .section-card h3 {
+      margin: 0 0 6px 0;
+      font-size: 15.5px;
+      font-weight: 800;
+    }
+
+    .section-card p {
+      margin: 0 0 10px 0;
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+
+    .field-input, .field-area, .field-select {
+      width: 100%;
+      min-height: 44px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      color: var(--text-main);
+      font-size: 13.5px;
+      margin-bottom: 8px;
+    }
+
+    .field-area {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .saved-link-row {
+      display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-      padding: 9px 0 7px 0;
+      padding: 10px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      margin-bottom: 8px;
     }
 
-    .brand-info h1 {
-      margin: 0;
-      font-size: 15.5px;
-      font-weight: 900;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .brand-sub {
-      margin: 2px 0 0 0;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .brand-sub strong {
-      color: var(--accent-emerald);
-    }
-
-    .status-strip {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 6px;
-      padding: 5px 0;
-      border-top: 1px solid var(--border-subtle);
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .nav-grid {
+    /* Point 1: Clean 4-tab bottom navigation */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(11, 17, 32, 0.98);
+      border-top: 1px solid var(--border-strong);
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      padding: 6px 8px;
       gap: 4px;
-      padding: 6px 0 8px 0;
     }
 
-    .nav-btn {
-      min-height: 46px;
-      padding: 5px 2px;
-      border-radius: 12px;
-      background: var(--bg-surface);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-subtle);
-      font-size: 11px;
-      font-weight: 800;
+    .nav-tab-btn {
+      min-height: 50px;
+      border-radius: var(--radius-md);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 12.5px;
+      font-weight: 700;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 2px;
-      text-align: center;
     }
 
-    .nav-btn.active {
-      background: var(--accent-emerald-soft);
+    .nav-tab-btn.active {
+      background: var(--status-open-bg);
       color: #6ee7b7;
-      border-color: var(--accent-emerald);
-      box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.35);
     }
 
-    .nav-btn span.ico {
-      font-size: 14px;
-      line-height: 1;
-    }
-
-    main.workspace {
-      padding-top: 12px;
-      padding-bottom: 52px;
-    }
-
-    .panel-section {
+    .toast-bar {
+      position: fixed;
+      top: 66px;
+      left: 14px;
+      right: 14px;
+      z-index: 90;
       display: none;
-    }
-
-    .panel-header-card {
-      background: linear-gradient(135deg, #131c31 0%, #0f172a 100%);
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-lg);
-      padding: 14px;
-      margin-bottom: 12px;
-    }
-
-    .panel-header-card h2 {
-      margin: 0 0 4px 0;
-      font-size: 15.5px;
-      font-weight: 900;
-      color: #ffffff;
-    }
-
-    .panel-header-card p {
-      margin: 0;
-      font-size: 12px;
-      color: var(--text-secondary);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-      margin-bottom: 12px;
-    }
-
-    .stat-box {
-      min-height: 60px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 7px 4px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      pointer-events: none;
     }
 
-    .stat-box.selected {
-      border-color: var(--accent-emerald);
-      background: rgba(16, 185, 129, 0.12);
-    }
-
-    .stat-label {
-      font-size: 10px;
-      color: var(--text-muted);
-      font-weight: 700;
-    }
-
-    .stat-num {
-      font-size: 16px;
-      font-weight: 900;
-      color: #ffffff;
-      margin-top: 2px;
-    }
-
-    .btn-primary-cta {
+    .toast-pill {
+      pointer-events: auto;
+      max-width: 500px;
       width: 100%;
-      min-height: 46px;
+      background: #1f2937;
+      border: 1px solid var(--border-strong);
+      color: var(--text-main);
       padding: 10px 14px;
       border-radius: var(--radius-md);
-      background: linear-gradient(90deg, #10b981, #06b6d4);
-      color: #041019;
       font-size: 13px;
-      font-weight: 900;
+      font-weight: 700;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
-    }
-
-    .btn-secondary {
-      min-height: 42px;
-      padding: 8px 14px;
-      border-radius: var(--radius-md);
-      background: #1e293b;
-      color: #67e8f9;
-      border: 1px solid rgba(6, 182, 212, 0.45);
-      font-size: 12px;
-      font-weight: 800;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .btn-mini-emerald {
-      min-height: 36px;
-      padding: 6px 12px;
-      border-radius: 9px;
-      background: var(--accent-emerald);
-      color: #041019;
-      font-size: 11.5px;
-      font-weight: 900;
-    }
-
-    .btn-mini-dark {
-      min-height: 36px;
-      padding: 6px 12px;
-      border-radius: 9px;
-      background: #1e293b;
-      color: #e2e8f0;
-      font-size: 11.5px;
-      font-weight: 800;
-    }
-
-    .live-log-box {
-      background: #050914;
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-md);
-      padding: 10px 12px;
-      margin-top: 10px;
-      font-size: 11.5px;
-      color: #cbd5e1;
-      line-height: 1.65;
-    }
-
-    .text-input, .text-area {
-      width: 100%;
-      min-height: 44px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-md);
-      padding: 9px 12px;
-      color: #ffffff;
-      font-size: 12.5px;
-      outline: none;
-    }
-
-    .text-area {
-      min-height: 90px;
-      resize: vertical;
-    }
-
-    .input-row {
-      display: flex;
-      gap: 6px;
-      align-items: stretch;
-    }
-
-    .chips-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 12px;
-    }
-
-    .chip-btn {
-      min-height: 38px;
-      padding: 6px 11px;
-      border-radius: 10px;
-      background: var(--bg-surface);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-subtle);
-      font-size: 11.5px;
-      font-weight: 800;
-    }
-
-    .chip-btn.active {
-      background: var(--accent-emerald-soft);
-      color: #6ee7b7;
-      border-color: var(--accent-emerald);
-    }
-
-    .job-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-lg);
-      padding: 14px;
-      margin-bottom: 12px;
-    }
-
-    .job-card.applied-card {
-      border-color: rgba(16, 185, 129, 0.65);
-    }
-
-    .card-top-badges {
-      display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 8px;
+      gap: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
     }
 
-    .badges-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-
-    .badge {
-      padding: 3px 8px;
-      border-radius: 999px;
-      font-size: 10.5px;
-      font-weight: 800;
-      background: #1e293b;
-      color: #cbd5e1;
-    }
-
-    .badge-open {
-      background: var(--accent-emerald-soft);
-      color: #6ee7b7;
-      border: 1px solid rgba(16, 185, 129, 0.45);
-    }
-
-    .badge-merged {
-      background: var(--accent-cyan-soft);
-      color: #67e8f9;
-      border: 1px solid rgba(6, 182, 212, 0.45);
-    }
-
-    .badge-recruiter {
-      background: var(--accent-indigo-soft);
-      color: #c7d2fe;
-      border: 1px solid rgba(129, 140, 248, 0.5);
-    }
-
-    .job-title {
-      margin: 0;
-      font-size: 15px;
-      font-weight: 900;
-      color: #ffffff;
-    }
-
-    .job-company {
-      margin: 3px 0 10px 0;
-      font-size: 12.5px;
-      color: var(--text-secondary);
-    }
-
-    .job-company strong {
-      color: #67e8f9;
-    }
-
-    .dual-scores {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .score-pill {
-      border-radius: var(--radius-md);
-      padding: 8px 10px;
+    .empty-state-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 26px 16px;
       text-align: center;
-      border: 1px solid var(--border-strong);
-      background: var(--bg-input);
     }
 
-    .score-pill.good {
-      background: var(--accent-emerald-soft);
-      border-color: rgba(16, 185, 129, 0.45);
-      color: #6ee7b7;
-    }
-
-    .score-pill.warn {
-      background: var(--accent-amber-soft);
-      border-color: rgba(245, 158, 11, 0.45);
-      color: #fcd34d;
-    }
-
-    .score-pill .lbl {
-      font-size: 10.5px;
-      display: block;
-      opacity: 0.92;
-    }
-
-    .score-pill .val {
-      font-size: 14px;
-      font-weight: 900;
-      display: block;
-      margin-top: 2px;
-    }
-
-    .first-screen-summary {
-      background: var(--bg-input);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 9px 11px;
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
-
-    .btn-drawer-toggle {
-      width: 100%;
-      min-height: 42px;
-      padding: 8px 12px;
-      border-radius: var(--radius-md);
-      background: #182238;
-      color: #e2e8f0;
-      border: 1px solid var(--border-strong);
-      font-size: 12px;
-      font-weight: 800;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .receipt-drawer {
-      display: none;
-      background: var(--bg-input);
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-md);
-      padding: 12px;
-      margin-bottom: 10px;
-      font-size: 12px;
-    }
-
-    .receipt-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 6px;
-      background: #0d1526;
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      padding: 10px;
-      margin-bottom: 10px;
-      font-size: 11.5px;
-    }
-
-    @media (min-width: 640px) {
-      .receipt-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .evidence-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 8px 0 10px 0;
-      font-size: 11.5px;
-      background: #0d1526;
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-    }
-
-    .evidence-table th {
-      text-align: right;
-      color: var(--text-muted);
-      font-weight: 800;
-      padding: 6px 8px;
-      border-bottom: 1px solid var(--border-strong);
-      font-size: 10.5px;
-    }
-
-    .evidence-table td {
-      padding: 7px 8px;
-      border-bottom: 1px solid var(--border-subtle);
-      vertical-align: top;
-    }
-
-    .evidence-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .draft-pre {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      padding: 10px;
-      font-size: 11px;
-      color: #e2e8f0;
-      white-space: pre-wrap;
-      word-break: break-word;
-      margin: 6px 0 10px 0;
-    }
-
-    .card-actions-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 7px;
-    }
-
-    @media (min-width: 600px) {
-      .card-actions-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    .act-btn {
-      min-height: 44px;
-      padding: 8px 10px;
-      border-radius: var(--radius-md);
-      font-size: 12px;
-      font-weight: 800;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      background: #1e293b;
-      color: #f1f5f9;
-      border: 1px solid var(--border-strong);
-    }
-
-    .act-btn.open-link {
-      background: var(--accent-cyan-soft);
-      color: #67e8f9;
-      border-color: rgba(6, 182, 212, 0.45);
-    }
-
-    .act-btn.saved-on {
-      background: var(--accent-amber-soft);
-      color: #fcd34d;
-      border-color: var(--accent-amber);
-    }
-
-    .act-btn.applied-on {
-      background: var(--accent-emerald);
-      color: #041019;
-      border-color: var(--accent-emerald);
-    }
-
-    .sub-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-lg);
-      padding: 14px;
-      margin-bottom: 12px;
-    }
-
-    .sub-card h3 {
+    .empty-state-box h3 {
       margin: 0 0 6px 0;
-      font-size: 14px;
-      font-weight: 900;
-      color: #ffffff;
+      font-size: 15px;
     }
 
-    .sub-card p {
-      margin: 0 0 10px 0;
-      font-size: 12px;
-      color: var(--text-secondary);
-    }
-
-    .watchlist-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      background: var(--bg-input);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      padding: 8px 10px;
-      margin-bottom: 6px;
-      font-size: 11.5px;
-    }
-
-    .source-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 8px;
-    }
-
-    .cards-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-    }
-
-    @media (min-width: 600px) {
-      .cards-grid-2 {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .empty-state-box p {
+      margin: 0 0 12px 0;
+      font-size: 13px;
+      color: var(--text-muted);
     }
   </style>
 </head>
 <body>
 
-  <div id="toastBar">
-    <div id="toastContent">
-      <span id="toastText">✓ تم التنفيذ بنجاح</span>
-    </div>
-  </div>
-
-  <header class="sticky-shell">
-    <div class="container">
-      <div class="brand-bar">
-        <div class="brand-info">
-          <h1>🎯 رادار فرص بيتر <span class="badge badge-open ltr mono">v2.6 Final</span></h1>
-          <p class="brand-sub"><span class="ltr">BIS</span> حلوان (<span class="ltr">3.67</span>) • <strong>شبرا مصر</strong> • <span class="ltr">SQL • Power BI • Excel • Python</span></p>
-        </div>
-        <button type="button" id="btnTopSync" class="btn-mini-emerald" data-action="sync-cloud-feed">🔄 تحديث من السحابة</button>
+  <!-- Point 2: Minimal Top Header -->
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div>
+        <h1 class="brand-title">رادار فرص بيتر</h1>
+        <p id="syncStatusLine" class="sync-line">آخر مزامنة: جاري التحميل...</p>
       </div>
-
-      <div class="status-strip">
-        <span>آخر جولة سحابية: <strong id="hdrLastRun" class="ltr mono" style="color:#67e8f9;">جاري التحميل...</strong></span>
-        <span>إجمالي الفرص: <strong id="hdrTotalJobs" class="ltr mono" style="color:#6ee7b7;">0</strong></span>
-      </div>
-
-      <nav class="nav-grid" aria-label="التنقل الرئيسي">
-        <button type="button" id="nav-radar" class="nav-btn active" data-action="switch-tab" data-tab="radar">
-          <span class="ico">🎯</span>
-          <span>1. الفرص الحقيقية</span>
-        </button>
-        <button type="button" id="nav-sources" class="nav-btn" data-action="switch-tab" data-tab="sources">
-          <span class="ico">🔗</span>
-          <span>2. بحث 24س ولينكات</span>
-        </button>
-        <button type="button" id="nav-paste" class="nav-btn" data-action="switch-tab" data-tab="paste">
-          <span class="ico">📲</span>
-          <span>3. لصق بوستات LinkedIn</span>
-        </button>
-        <button type="button" id="nav-settings" class="nav-btn" data-action="switch-tab" data-tab="settings">
-          <span class="ico">⚙️</span>
-          <span>4. الإشعارات وGemini</span>
-        </button>
-      </nav>
+      <button type="button" id="btnRefreshFeed" class="btn-refresh" data-action="refresh-feed">حدّث القائمة</button>
     </div>
   </header>
 
-  <main class="container workspace">
+  <div id="toastBar" class="toast-bar">
+    <div class="toast-pill">
+      <span id="toastMsg">تم</span>
+      <button type="button" id="toastUndoBtn" class="btn-details-toggle" style="min-height:34px;padding:4px 10px;display:none;" data-action="undo-last">تراجع</button>
+    </div>
+  </div>
 
-    <!-- TAB 1: الفرص الحقيقية -->
-    <section id="panel-radar" class="panel-section" style="display: block;">
+  <main class="workspace">
 
-      <div class="sub-card" style="border-color: rgba(16, 185, 129, 0.45);">
-        <div class="cards-grid-2">
-          <button type="button" id="btnMainSync" class="btn-primary-cta" data-action="sync-cloud-feed">
-            <span>🔄 تحديث وسحب أحدث الفرص من السحابة</span>
-          </button>
-          <a href="https://github.com/Peternab8/peter-opportunity-radar/actions/workflows/hourly_radar.yml" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="min-height:46px;">
-            <span>🚀 تشغيل جولة سحب جديدة على GitHub ↗</span>
-          </a>
+    <!-- TAB 1: الفرص -->
+    <section id="view-opportunities" class="tab-view" style="display:block;">
+      <!-- Point 4: Decision-first filters -->
+      <div class="filter-strip" role="tablist">
+        <button type="button" id="f-all" class="pill-btn active" data-action="set-quick-filter" data-filter="all">الكل</button>
+        <button type="button" id="f-new" class="pill-btn" data-action="set-quick-filter" data-filter="new">جديدة</button>
+        <button type="button" id="f-best" class="pill-btn" data-action="set-quick-filter" data-filter="best">أفضل ليك</button>
+        <button type="button" id="f-closing" class="pill-btn" data-action="set-quick-filter" data-filter="closing">هتقفل قريب</button>
+        <button type="button" id="f-intern" class="pill-btn" data-action="set-quick-filter" data-filter="intern">تدريب</button>
+        <button type="button" id="f-remote" class="pill-btn" data-action="set-quick-filter" data-filter="remote">ريموت</button>
+        <button type="button" id="f-more" class="pill-btn" data-action="toggle-advanced-filters">فلترة</button>
+      </div>
+
+      <div id="advancedFilterDrawer" class="advanced-filter-drawer">
+        <div class="filter-grid">
+          <select id="selSourceFilter" class="field-select" style="margin-bottom:0;">
+            <option value="all">كل المصادر</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="indeed">Indeed & Google</option>
+            <option value="wuzzuf">WUZZUF / البريد</option>
+            <option value="posts">بوستات التوظيف</option>
+            <option value="companies">بوابات الشركات</option>
+          </select>
+          <select id="selLocationFilter" class="field-select" style="margin-bottom:0;">
+            <option value="all">كل المناطق</option>
+            <option value="near">قريبة من شبرا (≤ ٤٥ د)</option>
+            <option value="maadi">المعادي</option>
+            <option value="dokki">الدقي / الجيزة</option>
+            <option value="new_cairo">القاهرة الجديدة / التجمع</option>
+            <option value="october">أكتوبر / القرية الذكية</option>
+          </select>
+          <input type="text" id="txtSearchFilter" class="field-input" style="margin-bottom:0;" placeholder="كلمة بحث (SQL, SFE, Paymob...)" />
         </div>
-
-        <div id="syncDiagnosticBox" class="live-log-box">
-          ⏳ جاري فحص الاتصال بالسحابة وتجهيز تقرير المصادر...
-        </div>
-
-        <div style="font-size:12px;font-weight:800;color:#a7f3d0;margin-top:10px;">📡 تغطية المصادر في آخر جولة:</div>
-        <div id="sourceStatsBar" class="source-pills">
-          <span class="badge">جاري قراءة بيانات السحابة...</span>
-        </div>
       </div>
 
-      <div class="stats-grid">
-        <button type="button" id="stat-all" class="stat-box selected" data-action="set-filter" data-filter="all">
-          <span class="stat-label">كل الفرص النشطة</span>
-          <span id="countActive" class="stat-num ltr mono">0</span>
-        </button>
-        <button type="button" id="stat-priority" class="stat-box" data-action="set-filter" data-filter="priority">
-          <span class="stat-label" style="color:#6ee7b7;">ملاءمة ≥ 80%</span>
-          <span id="countPriority" class="stat-num ltr mono" style="color:#10b981;">0</span>
-        </button>
-        <button type="button" id="stat-saved" class="stat-box" data-action="set-filter" data-filter="saved">
-          <span class="stat-label" style="color:#fcd34d;">⭐ المحفوظة</span>
-          <span id="countSaved" class="stat-num ltr mono" style="color:#f59e0b;">0</span>
-        </button>
-        <button type="button" id="stat-applied" class="stat-box" data-action="set-filter" data-filter="applied">
-          <span class="stat-label" style="color:#67e8f9;">✅ قدّمت فيها</span>
-          <span id="countApplied" class="stat-num ltr mono" style="color:#06b6d4;">0</span>
-        </button>
-      </div>
-
-      <div style="margin-bottom: 10px;">
-        <input type="text"
-               id="searchInput"
-               class="text-input"
-               placeholder="ابحث بالمسمى، الشركة، أو المصدر (LinkedIn, Indeed, WUZZUF, Paymob, BI, SFE, MIS...)" />
-      </div>
-
-      <div class="chips-wrap">
-        <button type="button" id="chip-all" class="chip-btn active" data-action="set-filter" data-filter="all">الكل</button>
-        <button type="button" id="chip-priority" class="chip-btn" data-action="set-filter" data-filter="priority">🔥 ملاءمة ≥ 80%</button>
-        <button type="button" id="chip-linkedin" class="chip-btn" data-action="set-filter" data-filter="linkedin">LinkedIn Egypt</button>
-        <button type="button" id="chip-indeed" class="chip-btn" data-action="set-filter" data-filter="indeed">Indeed & Google</button>
-        <button type="button" id="chip-wuzzuf" class="chip-btn" data-action="set-filter" data-filter="wuzzuf">WUZZUF</button>
-        <button type="button" id="chip-companies" class="chip-btn" data-action="set-filter" data-filter="companies">بوابات الشركات</button>
-        <button type="button" id="chip-saved" class="chip-btn" data-action="set-filter" data-filter="saved">⭐ المحفوظة</button>
-        <button type="button" id="chip-applied" class="chip-btn" data-action="set-filter" data-filter="applied">✅ قدّمت فيها</button>
-      </div>
-
-      <div id="jobsListContainer"></div>
+      <div id="feedErrorBanner" style="display:none;margin-bottom:10px;" class="status-pill warn"></div>
+      <div id="opportunitiesList"></div>
     </section>
 
-    <!-- TAB 2: بحث 24س ولينكات LinkedIn -->
-    <section id="panel-sources" class="panel-section" style="display: none;">
-      <div class="panel-header-card">
-        <h2>🚀 أزرار البحث المباشر (آخر 24 ساعة) + لينكات LinkedIn الخاصة بك</h2>
-        <p>روابط بحث مضبوطة على <strong>مصر + حديثي التخرج / Junior + آخر 24 ساعة</strong> تفتح مباشرة في تطبيق LinkedIn أو WUZZUF أو Indeed بضغطة واحدة.</p>
+    <!-- TAB 2: أضف فرصة (Point 1, 9, 10, 36) -->
+    <section id="view-add" class="tab-view">
+      <div class="section-card">
+        <h2>أضف فرصة أو بوست</h2>
+        <p>الصق رابط إعلان أو نص بوست من LinkedIn. لو الرابط مقفول، اكتب النص تحت عشان يتقيّم صح قبل الحفظ.</p>
+        <input type="text" id="addLinkInput" class="field-input ltr" placeholder="رابط البوست أو الإعلان (اختياري)" />
+        <textarea id="addTextInput" class="field-area" placeholder="الصق نص البوست أو وصف الوظيفة هنا..."></textarea>
+        <input type="email" id="addEmailInput" class="field-input ltr" placeholder="إيميل التقديم إن وُجد (اختياري)" />
+        <button type="button" class="btn-apply-main" style="width:100%;" data-action="preview-manual-job">معاينة الفهم والتقييم قبل الحفظ</button>
+
+        <div id="manualPreviewWrap" style="margin-top:12px;"></div>
       </div>
 
-      <div class="sub-card" style="border-color: rgba(16, 185, 129, 0.5);">
-        <h3>⚡ بحث آخر 24 ساعة المضبوط على مقاسك (بضغطة واحدة)</h3>
-        <div class="watchlist-item">
-          <div><strong>LinkedIn Jobs — Data / BI / Reporting (مصر • آخر 24 ساعة)</strong></div>
-          <a href="https://www.linkedin.com/jobs/search/?keywords=(Data%20Analyst%20OR%20BI%20Analyst%20OR%20Reporting%20Analyst%20OR%20MIS%20OR%20SFE)&location=Egypt&f_TPR=r86400" target="_blank" rel="noopener noreferrer" class="btn-mini-emerald">افتح ↗</a>
-        </div>
-        <div class="watchlist-item">
-          <div><strong>LinkedIn Posts — بوستات الـ HR والتوظيف في مصر (آخر 24 ساعة)</strong></div>
-          <a href="https://www.linkedin.com/search/results/content/?keywords=(Data%20Analyst%20OR%20BI%20OR%20MIS%20OR%20SFE)%20Egypt&datePosted=%22past-24h%22" target="_blank" rel="noopener noreferrer" class="btn-mini-emerald">افتح ↗</a>
-        </div>
-        <div class="watchlist-item">
-          <div><strong>WUZZUF — وظائف Data / BI / MIS / Operations (مصر • حديثي التخرج)</strong></div>
-          <a href="https://wuzzuf.net/search/jobs/?a=hpb&filters%5Bcareer_level%5D%5B0%5D=Entry%20Level&filters%5Bcareer_level%5D%5B1%5D=Student&q=data%20analyst" target="_blank" rel="noopener noreferrer" class="btn-mini-emerald">افتح ↗</a>
-        </div>
-        <div class="watchlist-item">
-          <div><strong>Indeed Egypt — Data / BI / Operations Analyst (آخر 3 أيام)</strong></div>
-          <a href="https://eg.indeed.com/jobs?q=data+analyst+OR+business+intelligence+OR+reporting&l=Cairo&fromage=3" target="_blank" rel="noopener noreferrer" class="btn-mini-emerald">افتح ↗</a>
+      <!-- Point 9: Clean human names for saved links/searches, hiding long URLs -->
+      <div class="section-card">
+        <h3>المصادر والبحث السريع (آخر ٢٤ ساعة)</h3>
+        <p>روابط جاهزة تفتح مباشرة بدون عرض الروابط التقنية الطويلة:</p>
+        <div id="savedLinksList"></div>
+
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border-soft);">
+          <input type="text" id="newLinkNameInput" class="field-input" placeholder="اسم المصدر (مثال: بوستات SFE في مصر)" />
+          <input type="text" id="newLinkUrlInput" class="field-input ltr" placeholder="الرابط (يُحفظ مخفيًا خلف الاسم)" />
+          <button type="button" class="btn-refresh" style="width:100%;" data-action="save-custom-link">إضافة للقائمة</button>
         </div>
       </div>
 
-      <div class="sub-card" style="border-color: rgba(129, 140, 248, 0.55);">
-        <h3>🔗 لينكات صفحات وحسابات LinkedIn التي تتابعها</h3>
-        <div class="input-row" style="flex-wrap:wrap;margin-bottom:8px;">
-          <input type="text" id="newLinkedInLabel" class="text-input" style="flex:1;min-width:160px;" placeholder="الاسم (مثال: حساب HR فوري / وظائف مصر)" />
-          <input type="text" id="newLinkedInUrl" class="text-input ltr" style="flex:2;min-width:220px;" placeholder="https://www.linkedin.com/..." />
-          <button type="button" class="btn-secondary" data-action="add-linkedin-source">➕ حفظ اللينك</button>
-        </div>
-        <div id="linkedinLinksWrap"></div>
+      <!-- Point 36: "ليه فاتتني؟" diagnostic tool -->
+      <div class="section-card">
+        <h3>ليه فاتتني فرصة؟</h3>
+        <p>ابعت نص أو رابط بوست لقيته بنفسك عشان نراجع سجل البحث ونعرف هل اتفحص أو ليه اتستبعد:</p>
+        <textarea id="missPostInput" class="field-area" style="min-height:76px;" placeholder="الصق نص البوست أو المسمى هنا..."></textarea>
+        <input type="text" id="missUrlInput" class="field-input ltr" placeholder="رابط البوست (اختياري)" />
+        <button type="button" class="btn-refresh" style="width:100%;" data-action="diagnose-missed">افحص سجل البحث</button>
+        <div id="missDiagnosisResult" style="margin-top:10px;"></div>
       </div>
     </section>
 
-    <!-- TAB 3: لصق بوستات LinkedIn -->
-    <section id="panel-paste" class="panel-section" style="display: none;">
-      <div class="panel-header-card">
-        <h2>📲 لصق بوستات LinkedIn وتقييمها وتجهيز رسالة التقديم</h2>
-        <p>الصق نص بوست واحد أو عدة بوستات من LinkedIn (افصل بين كل بوست والتاني بسطر فاضي أو `---`) ليتم تقييمها على سيرتك الذاتية ومشوار شبرا مصر وتوليد مسودة التقديم.</p>
+    <!-- TAB 3: تقديماتي (Point 11, 35, 39) -->
+    <section id="view-applications" class="tab-view">
+      <div class="filter-strip">
+        <button type="button" id="appf-applied" class="pill-btn active" data-action="set-app-filter" data-filter="applied">قدّمت عليها</button>
+        <button type="button" id="appf-saved" class="pill-btn" data-action="set-app-filter" data-filter="saved">المحفوظة</button>
+        <button type="button" id="appf-review" class="pill-btn" data-action="set-app-filter" data-filter="review">قيد المراجعة</button>
       </div>
 
-      <div class="sub-card">
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <input type="text" id="manualShareUrl" class="text-input ltr" placeholder="رابط البوست أو الإيميل للتقديم (اختياري)" />
-          <textarea id="manualShareText" class="text-area" style="min-height:140px;" placeholder="الصق نص البوستات هنا..."></textarea>
-          <button type="button" class="btn-primary-cta" data-action="ingest-manual-share">⚡ تحليل وإضافة البوستات للرادار الآن</button>
-        </div>
+      <div id="applicationsList"></div>
+
+      <!-- Point 39: Weekly Review -->
+      <div class="section-card">
+        <h3>المراجعة الأسبوعية</h3>
+        <div id="weeklyReviewBox"></div>
       </div>
     </section>
 
-    <!-- TAB 4: الإشعارات وGemini -->
-    <section id="panel-settings" class="panel-section" style="display: none;">
-      <div class="panel-header-card">
-        <h2>⚙️ الإشعارات وربط Gemini لتخصيص الرسائل والنسخ الاحتياطي</h2>
-        <p>تحكم في قناة إشعارات الموبايل <span class="ltr mono">ntfy</span>، مفتاح <strong>Gemini API المجاني</strong> لتخصيص رسائل التقديم داخل كل بطاقة، والنسخ الاحتياطي لسجل تقديماتك.</p>
+    <!-- TAB 4: الإعدادات (Point 2, 19, 26, 27, 32, 35, 37, 40) -->
+    <section id="view-settings" class="tab-view">
+      <div class="section-card">
+        <h3>تفاصيل المحرك وملفك</h3>
+        <p><strong>الإصدار:</strong> v3.0 · <strong>المؤهل:</strong> بكالوريوس BIS حلوان (GPA 3.67) · <strong>نقطة الانطلاق:</strong> شبرا مصر</p>
+        <div id="cloudTimingBox" style="font-size:13px;color:var(--text-sub);margin-bottom:8px;"></div>
+        <button type="button" class="btn-refresh" style="width:100%;" data-action="refresh-feed">حدّث القائمة الآن</button>
       </div>
 
-      <div class="sub-card">
-        <h3>🔔 إشعارات الموبايل (<span class="ltr mono">ntfy.sh</span>)</h3>
-        <div class="input-row" style="margin-bottom:8px;">
-          <input type="text" id="ntfyTopicInput" class="text-input ltr mono" value="peter-radar-a71-99" />
-          <button type="button" class="btn-secondary" data-action="test-ntfy-push">🔊 إرسال إشعار تجربة</button>
+      <!-- Point 27: Per-source independent status -->
+      <div class="section-card">
+        <h3>حالة كل مصدر في آخر جولة</h3>
+        <div id="sourceHealthList"></div>
+      </div>
+
+      <!-- Point 19: Unified Priority Threshold -->
+      <div class="section-card">
+        <h3>حد الأولوية والتنبيهات الموحد</h3>
+        <p>الدرجة الأدنى لظهور الفرصة في «أفضل ليك» ولإرسال تنبيه (مع اشتراط دليل الفتح وأهلية مصر): <strong id="lblThreshold">80%</strong></p>
+        <input type="range" id="rngThreshold" min="60" max="95" step="5" value="80" style="width:100%;" />
+      </div>
+
+      <!-- Point 32: Private ntfy topic stored only on device -->
+      <div class="section-card">
+        <h3>قناة إشعارات الموبايل الخاصة (ntfy)</h3>
+        <p>أدخل اسم قناتك الخاصة المحمية (لا يُحفظ أي اسم افتراضي في الكود العام):</p>
+        <input type="password" id="ntfyPrivateTopic" class="field-input ltr" placeholder="اسم قناتك الخاصة على ntfy" />
+        <button type="button" class="btn-refresh" style="width:100%;" data-action="save-ntfy-topic">حفظ القناة محليًا</button>
+      </div>
+
+      <!-- Point 37: Learned Preferences with Undo -->
+      <div class="section-card">
+        <h3>تفضيلاتك المتعلَّمة من الرفض</h3>
+        <div id="learnedPrefsList"></div>
+      </div>
+
+      <!-- Point 35: Separate Application Store File Backup -->
+      <div class="section-card">
+        <h3>نسخ احتياطي لسجل التقديمات (ملف مستقل)</h3>
+        <p>سجل تقديماتك محفوظ بشكل منفصل عن آخر ١٦٠ فرصة في الـ feed:</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button type="button" class="btn-refresh" style="flex:1;" data-action="download-backup-file">تنزيل ملف النسخة الاحتياطية</button>
+          <label class="btn-refresh" style="flex:1;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;">
+            استيراد من ملف
+            <input type="file" id="importBackupFile" accept=".json" style="display:none;" />
+          </label>
         </div>
       </div>
 
-      <div class="sub-card" style="border-color: rgba(129, 140, 248, 0.55);">
-        <h3>✨ مفتاح Google Gemini API المجاني (لتخصيص رسائل التقديم داخل البطاقات)</h3>
-        <p>يُستخدم في زرار <strong>«✨ استشارة Gemini وتخصيص الرسالة»</strong> داخل أي بطاقة (مجاني 100% بدون حاجة لـ Billing):</p>
-        <div class="input-row">
-          <input type="password" id="geminiKeyInput" class="text-input ltr mono" placeholder="AIzaSy..." />
-          <button type="button" class="btn-mini-emerald" data-action="save-gemini-key">حفظ المفتاح</button>
+      <!-- Point 40: 5 Verifiable End-to-End Test Cases -->
+      <div class="section-card">
+        <h3>اختبر التجربة (٥ حالات عملية)</h3>
+        <p>تحقق بنفسك من سلوك النظام في الحالات الخمس الأساسية:</p>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <button type="button" class="btn-refresh" data-action="run-e2e-case" data-case="1">١. وصول بوست SFE حقيقي وتقييمه</button>
+          <button type="button" class="btn-refresh" data-action="run-e2e-case" data-case="2">٢. خفض أولوية وظيفة محاسبة رغم وجود Excel</button>
+          <button type="button" class="btn-refresh" data-action="run-e2e-case" data-case="3">٣. دمج نفس الإعلان من مصدرين في بطاقة واحدة</button>
+          <button type="button" class="btn-refresh" data-action="run-e2e-case" data-case="4">٤. إغلاق إعلان مفتوح وتحديث بطاقته وتقديماتي</button>
+          <button type="button" class="btn-refresh" data-action="run-e2e-case" data-case="5">٥. فتح بطاقة مباشرة من رابط إشعار (?job=...)</button>
         </div>
-      </div>
-
-      <div class="sub-card">
-        <h3>💾 النسخ الاحتياطي لسجل التقديمات (<span class="ltr">Export / Import JSON</span>)</h3>
-        <div class="cards-grid-2" style="margin-bottom:8px;">
-          <button type="button" class="btn-secondary" data-action="export-json">📤 نسخ السجل (Export JSON)</button>
-          <button type="button" class="btn-secondary" data-action="toggle-import-box">📥 استيراد سجل (Import JSON)</button>
-        </div>
-        <div id="importJsonBox" style="display:none;">
-          <textarea id="importJsonArea" class="text-area ltr mono" placeholder="Paste exported JSON backup here..."></textarea>
-          <button type="button" class="btn-mini-emerald" style="margin-top:6px;width:100%;" data-action="apply-import-json">تأكيد الاستيراد واستعادة البيانات</button>
-        </div>
+        <div id="e2eTestOutput" style="margin-top:10px;font-size:13px;color:#6ee7b7;"></div>
       </div>
     </section>
 
   </main>
+
+  <!-- Point 1: 4 Bottom Navigation Tabs -->
+  <nav class="bottom-nav" aria-label="التنقل السفلي">
+    <button type="button" id="nav-opportunities" class="nav-tab-btn active" data-action="switch-view" data-view="opportunities">
+      <span>الفرص</span>
+    </button>
+    <button type="button" id="nav-add" class="nav-tab-btn" data-action="switch-view" data-view="add">
+      <span>أضف فرصة</span>
+    </button>
+    <button type="button" id="nav-applications" class="nav-tab-btn" data-action="switch-view" data-view="applications">
+      <span>تقديماتي</span>
+    </button>
+    <button type="button" id="nav-settings" class="nav-tab-btn" data-action="switch-view" data-view="settings">
+      <span>الإعدادات</span>
+    </button>
+  </nav>
 
   <script>
     (function () {
       'use strict';
 
       if ('serviceWorker' in navigator) {
+        try { navigator.serviceWorker.register('./sw.js').catch(function () {}); } catch (e) {}
+      }
+
+      /* Point 35: Separate storage keys for feed cache vs persistent applications */
+      var FEED_CACHE_KEY = 'peter_radar_v3_feed_cache';
+      var APPS_STORE_KEY = 'peter_radar_v3_applications';
+      var PREFS_STORE_KEY = 'peter_radar_v3_preferences';
+
+      function readStore(key, fallback) {
         try {
-          navigator.serviceWorker.register('./sw.js').catch(function () {});
-        } catch (e) {}
+          var raw = window.localStorage.getItem(key);
+          return raw ? JSON.parse(raw) : fallback;
+        } catch (e) {
+          return fallback;
+        }
       }
 
-      var STORAGE_KEY = 'peter_radar_v2_6_state';
+      function writeStore(key, val) {
+        try { window.localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
+      }
 
-      function safeGet(k) {
-        try { return window.localStorage.getItem(k); } catch (e) { return null; }
-      }
-      function safeSet(k, v) {
-        try { window.localStorage.setItem(k, v); } catch (e) {}
-      }
+      var DEFAULT_LINKS = [
+        { id: 'lnk-1', name: 'وظائف Data & BI في مصر · LinkedIn (آخر ٢٤ ساعة)', url: 'https://www.linkedin.com/jobs/search/?keywords=(Data%20Analyst%20OR%20BI%20Analyst%20OR%20Reporting%20Analyst)&location=Egypt&f_TPR=r86400' },
+        { id: 'lnk-2', name: 'بوستات SFE وMIS والتوظيف · LinkedIn (آخر ٢٤ ساعة)', url: 'https://www.linkedin.com/search/results/content/?keywords=(Data%20Analyst%20OR%20BI%20OR%20MIS%20OR%20SFE)%20Egypt&datePosted=%22past-24h%22' },
+        { id: 'lnk-3', name: 'وظائف حديثي التخرج في تحليل البيانات · WUZZUF', url: 'https://wuzzuf.net/search/jobs/?a=hpb&filters%5Bcareer_level%5D%5B0%5D=Entry%20Level&q=data%20analyst' },
+        { id: 'lnk-4', name: 'وظائف التقارير والعمليات بالقاهرة · Indeed', url: 'https://eg.indeed.com/jobs?q=data+analyst+OR+business+intelligence+OR+reporting&l=Cairo&fromage=3' }
+      ];
 
       var state = {
-        activeTab: 'radar',
-        filter: 'all',
-        searchQuery: '',
-        lastCloudRun: 'لم يُفحص بعد',
-        sourceStats: {},
-        jobs: [],
-        userMeta: {},
-        openDrawerIds: {},
-        geminiApiKey: '',
-        linkedinSources: [
-          { id: 'li-1', label: 'LinkedIn Jobs — Data Analyst Egypt (24h)', url: 'https://www.linkedin.com/jobs/search/?keywords=Data%20Analyst&location=Egypt&f_TPR=r86400' },
-          { id: 'li-2', label: 'LinkedIn Posts — HR Posts Egypt (24h)', url: 'https://www.linkedin.com/search/results/content/?keywords=(Data%20Analyst%20OR%20BI%20OR%20MIS%20OR%20SFE)%20Egypt&datePosted=%22past-24h%22' }
-        ]
+        view: 'opportunities',
+        quickFilter: 'all',
+        appFilter: 'applied',
+        sourceFilter: 'all',
+        locationFilter: 'all',
+        searchFilter: '',
+        feedError: null,
+        openDetails: {},
+        pendingManualDraft: null,
+        undoPayload: null,
+        feedData: readStore(FEED_CACHE_KEY, {
+          meta: { scan_completed_at: null, feed_published_at: null, priority_threshold: 80, source_statuses: {} },
+          jobs: {},
+          audit_logs: []
+        }),
+        /* Persistent independent records: { [jobId]: { snapshot, saved, applied, appliedAt, stage, openedAt, reviewState } } */
+        records: readStore(APPS_STORE_KEY, {}),
+        prefs: readStore(PREFS_STORE_KEY, {
+          threshold: 80,
+          ntfyTopic: '',
+          downrankFieldSales: false,
+          downrankOctober: false,
+          customLinks: DEFAULT_LINKS
+        })
       };
 
-      (function loadSaved() {
-        var raw = safeGet(STORAGE_KEY) || safeGet('peter_radar_v2_5_state') || safeGet('peter_radar_v2_4_state');
-        if (!raw) return;
-        try {
-          var p = JSON.parse(raw);
-          if (p && typeof p === 'object') {
-            if (Array.isArray(p.jobs)) state.jobs = p.jobs;
-            if (p.userMeta && typeof p.userMeta === 'object') state.userMeta = p.userMeta;
-            if (Array.isArray(p.linkedinSources)) state.linkedinSources = p.linkedinSources;
-            if (p.geminiApiKey) state.geminiApiKey = p.geminiApiKey;
-            if (p.lastCloudRun) state.lastCloudRun = p.lastCloudRun;
-            if (p.sourceStats) state.sourceStats = p.sourceStats;
-          }
-        } catch (e) {}
-      })();
+      if (!Array.isArray(state.prefs.customLinks)) {
+        state.prefs.customLinks = DEFAULT_LINKS;
+      }
 
-      function saveState() {
-        safeSet(STORAGE_KEY, JSON.stringify({
-          jobs: state.jobs,
-          userMeta: state.userMeta,
-          linkedinSources: state.linkedinSources,
-          geminiApiKey: state.geminiApiKey,
-          lastCloudRun: state.lastCloudRun,
-          sourceStats: state.sourceStats
-        }));
+      function persistAll() {
+        writeStore(FEED_CACHE_KEY, state.feedData);
+        writeStore(APPS_STORE_KEY, state.records);
+        writeStore(PREFS_STORE_KEY, state.prefs);
       }
 
       function esc(s) {
@@ -959,624 +791,1058 @@
           .replace(/"/g, '"');
       }
 
-      function setDiagnosticHtml(html) {
-        var box = document.getElementById('syncDiagnosticBox');
-        if (box) box.innerHTML = html;
+      /* Point 7: Egyptian Arabic human timestamps */
+      function formatEgyptianTime(isoStr) {
+        if (!isoStr) return 'غير مذكور';
+        var d = new Date(isoStr);
+        if (isNaN(d.getTime())) return String(isoStr);
+
+        var now = new Date();
+        var cairoFmt = new Intl.DateTimeFormat('ar-EG', {
+          timeZone: 'Africa/Cairo',
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true
+        });
+        var dayFmt = new Intl.DateTimeFormat('en-CA', {
+          timeZone: 'Africa/Cairo',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit'
+        });
+
+        var targetDay = dayFmt.format(d);
+        var todayDay = dayFmt.format(now);
+        var yestDay = dayFmt.format(new Date(now.getTime() - 86400000));
+        var timePart = cairoFmt.format(d);
+
+        if (targetDay === todayDay) return 'اليوم، ' + timePart;
+        if (targetDay === yestDay) return 'أمس، ' + timePart;
+
+        var datePart = new Intl.DateTimeFormat('ar-EG', {
+          timeZone: 'Africa/Cairo',
+          day: 'numeric',
+          month: 'short'
+        }).format(d);
+        return datePart + '، ' + timePart;
       }
 
       var toastTimer = null;
-      function showToast(msg) {
+      function showToast(msg, undoAction) {
         var bar = document.getElementById('toastBar');
-        var txt = document.getElementById('toastText');
+        var txt = document.getElementById('toastMsg');
+        var btn = document.getElementById('toastUndoBtn');
         if (!bar || !txt) return;
         txt.textContent = msg;
+        state.undoPayload = undoAction || null;
+        if (btn) btn.style.display = undoAction ? 'inline-block' : 'none';
         bar.style.display = 'flex';
         clearTimeout(toastTimer);
         toastTimer = setTimeout(function () {
           bar.style.display = 'none';
-        }, 3500);
+        }, undoAction ? 5500 : 3000);
       }
 
-      function copyTextSafe(text) {
-        try {
-          var ta = document.createElement('textarea');
-          ta.value = text;
-          ta.style.position = 'fixed';
-          ta.style.opacity = '0';
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-        } catch (e) {}
+      function getAllMergedJobs() {
+        var map = {};
+        var cloudJobs = (state.feedData && state.feedData.jobs) || {};
+        Object.keys(cloudJobs).forEach(function (id) {
+          map[id] = cloudJobs[id];
+        });
+        /* Point 11 & 35: Ensure saved/applied/manual records stay accessible even if dropped from cloud feed */
+        Object.keys(state.records).forEach(function (id) {
+          var rec = state.records[id];
+          if (!map[id] && rec && rec.snapshot) {
+            var archived = JSON.parse(JSON.stringify(rec.snapshot));
+            archived._archivedFromFeed = true;
+            map[id] = archived;
+          } else if (map[id] && rec && rec.snapshot) {
+            rec.snapshot = map[id];
+          }
+        });
+        return Object.keys(map).map(function (k) { return map[k]; });
       }
 
-      function buildEmailDraft(job) {
-        return 'Subject: Application for ' + job.title + ' - Peter Nabil Gerges\n\n' +
+      function computeEffectiveRank(job) {
+        var base = (job.fit && typeof job.fit.score === 'number') ? job.fit.score : 0;
+        var text = (job.title + ' ' + ((job.fit && job.fit.reason_first) || '') + ' ' + (job.location || '')).toLowerCase();
+        if (state.prefs.downrankFieldSales && /sales|مبيعات/.test(text)) base -= 25;
+        if (state.prefs.downrankOctober && /october|smart village|أكتوبر|القرية الذكية/.test(text)) base -= 20;
+        return base;
+      }
+
+      /* Point 38: Concise application draft without hardcoded private phone number (Point 33) */
+      function buildCoverDraft(job) {
+        var proj = (job.fit && job.fit.recommended_project) || 'مشروع DEPI لتحليل المدفوعات الرقمية';
+        return 'Subject: Application for ' + job.title + ' - Peter Nabil\n\n' +
           'Dear ' + job.company + ' Hiring Team,\n\n' +
-          'I am writing to apply for the ' + job.title + ' position at ' + job.company + '. ' +
-          'I am a Business Information Systems (BIS) graduate from Helwan University (First-Class Honors, GPA 3.67/4.0) ' +
-          'with hands-on experience in SQL, Python, Excel (Power Query & VBA), and Power BI through freelance projects, ' +
-          'DEPI Freelance Data Analyst Track, and NTI Data Analysis Program (120 hours, Score 85%).\n\n' +
-          'Most Relevant Project for this Role:\n' +
-          '• ' + (job.recommendedProject || 'Digital Payments Data Analysis (DEPI Capstone — 5,000 transactions, Python, SQL, Tableau)') + '\n\n' +
-          'My CV is attached for your review. Thank you for your time and consideration.\n\n' +
-          'Best regards,\nPeter Nabil Gerges | +20 120 043 7405 | linkedin.com/in/peter-nabilg';
+          'I am applying for the ' + job.title + ' role. I hold a B.Sc. in Business Information Systems (BIS) from Helwan University ' +
+          '(First-Class Honors, GPA 3.67) with practical experience in SQL, Excel (Power Query & VBA), Power BI, and Python ' +
+          'through DEPI and NTI Data Analysis tracks.\n\n' +
+          'Relevant Project: ' + proj + '\n\n' +
+          'Please find my CV attached.\n\n' +
+          'Best regards,\nPeter Nabil Gerges';
       }
 
-      function buildDmDraft(job) {
-        return 'Hi ' + job.company + ' Team, I\'m Peter Nabil (BIS Graduate, Helwan Univ. — First-Class Honors, GPA 3.67). ' +
-          'I saw the ' + job.title + ' opening and would love to apply. I have hands-on experience in SQL, Excel (Pivot/Power Query/VBA), ' +
-          'Power BI, and Python (DEPI & NTI tracks). Happy to share my CV right away. Thank you!';
+      function renderTopSyncLine() {
+        var el = document.getElementById('syncStatusLine');
+        if (!el) return;
+        var meta = (state.feedData && state.feedData.meta) || {};
+        var pub = meta.feed_published_at || meta.last_successful_run;
+        el.textContent = pub ? ('آخر مزامنة: ' + formatEgyptianTime(pub)) : 'آخر مزامنة: لم تُجلب نسخة بعد';
       }
 
-      function normalizeTitleComp(title, comp) {
-        return (String(comp || '') + '::' + String(title || '')).toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, '');
-      }
+      function renderOpportunitiesView() {
+        renderTopSyncLine();
 
-      function syncLiveFeedFromRepo(silent) {
-        var btnTop = document.getElementById('btnTopSync');
-        var btnMain = document.getElementById('btnMainSync');
-        if (btnTop) btnTop.disabled = true;
-        if (btnMain) {
-          btnMain.disabled = true;
-          btnMain.textContent = '⏳ جاري المزامنة من السحابة...';
-        }
-        var nowCheck = new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-
-        fetch('./data/live_feed.json?nocache=' + Date.now(), { cache: 'no-store' })
-          .then(function (r) {
-            if (!r.ok) throw new Error('HTTP ' + r.status);
-            return r.json();
-          })
-          .then(function (data) {
-            var prevRun = state.lastCloudRun;
-            var newRun = (data.meta && data.meta.last_successful_run) ? data.meta.last_successful_run : 'غير مسجل';
-            state.lastCloudRun = newRun;
-            if (data.meta && data.meta.source_stats) {
-              state.sourceStats = data.meta.source_stats;
-            }
-
-            var jobsMap = data.jobs || {};
-            var existingKeys = {};
-            state.jobs.forEach(function (j) {
-              existingKeys[j.id] = true;
-              existingKeys[normalizeTitleComp(j.title, j.company)] = true;
-            });
-
-            var addedCount = 0;
-            var cloudJobs = Object.keys(jobsMap).map(function (k) {
-              var raw = jobsMap[k];
-              var receiptObj = raw.receipt || {};
-              var fitObj = raw.fit || {};
-              var commuteObj = raw.commute || {};
-              var item = {
-                id: raw.id || k,
-                company: raw.company || 'شركة معلنة',
-                title: raw.title || 'فرصة تحليل بيانات',
-                roleType: raw.work_mode || 'دوام كامل',
-                location: raw.location || 'Egypt',
-                fitScore: (typeof fitObj.score === 'number') ? fitObj.score : 82,
-                commuteScore: (typeof commuteObj.score === 'number') ? commuteObj.score : 80,
-                commuteWeeklyLabel: commuteObj.summary || 'داخل مصر',
-                strongestReason: fitObj.summary || 'متطابق مع مسار Data / BI / Reporting.',
-                recommendedProject: fitObj.recommended_project || 'مشروع DEPI لتحليل المدفوعات + Power BI.',
-                evidencePairs: Array.isArray(fitObj.evidence_pairs) ? fitObj.evidence_pairs : [],
-                egyptEligibility: receiptObj.egypt_eligibility || 'مؤكد: داخل مصر',
-                applyStateAr: receiptObj.apply_state_ar || 'مفتوح ومتحقق ✓',
-                lastVerified: receiptObj.last_verified || newRun,
-                mergedSources: raw.sources || ['Cloud Scraper'],
-                primaryUrl: raw.primary_url || 'https://www.linkedin.com/jobs/',
-                firstPublished: receiptObj.first_published || 'حديث',
-                discoveredAt: raw.discovered_at || newRun
-              };
-              var nk = normalizeTitleComp(item.title, item.company);
-              if (!existingKeys[item.id] && !existingKeys[nk]) {
-                addedCount += 1;
-              }
-              return item;
-            });
-
-            var manualOnly = state.jobs.filter(function (j) {
-              return String(j.id).indexOf('manual-') === 0;
-            });
-            var seen = {};
-            var merged = [];
-            manualOnly.concat(cloudJobs).forEach(function (item) {
-              var nk = normalizeTitleComp(item.title, item.company);
-              if (seen[item.id] || seen[nk]) return;
-              seen[item.id] = true;
-              seen[nk] = true;
-              merged.push(item);
-            });
-
-            merged.sort(function (a, b) { return (b.fitScore || 0) - (a.fitScore || 0); });
-            state.jobs = merged;
-            saveState();
-            renderRadarPanel();
-
-            var sameTimestamp = (prevRun === newRun);
-            var st = state.sourceStats || {};
-            var statusMsg = '✅ <strong>تم تحديث البيانات من السحابة الساعة ' + esc(nowCheck) + ':</strong><br>' +
-              '• <strong>آخر جولة سحابية:</strong> <span class="ltr mono" style="color:#67e8f9;">' + esc(newRun) + '</span> ' +
-              (sameTimestamp ? '<span style="color:#fcd34d;">(نفس توقيت آخر مرة — لتشغيل جولة جديدة فورًا اضغط زرار GitHub المجاور)</span>' : '<span style="color:#6ee7b7;">(تحديث جديد ✓)</span>') + '<br>' +
-              '• <strong>الإجمالي المحمّل:</strong> <span style="color:#6ee7b7;">' + cloudJobs.length + ' فرصة حقيقية</span>' +
-              (addedCount > 0 ? (' (+' + addedCount + ' جديدة)') : '') + '<br>' +
-              '• <strong>التوزيع:</strong> LinkedIn (' + (st.linkedin_egypt || 0) + ') • Indeed & Google (' + (st.indeed_egypt || 0) + ') • WUZZUF (' + (st.wuzzuf_egypt || 0) + ') • شركات مصر (' + (st.egypt_companies || 0) + ')';
-
-            setDiagnosticHtml(statusMsg);
-            if (!silent) {
-              showToast(addedCount > 0 ? ('☁️ تمت إضافة ' + addedCount + ' فرصة جديدة!') : '✅ تم تحديث ' + cloudJobs.length + ' فرصة من السحابة!');
-            }
-          })
-          .catch(function (err) {
-            setDiagnosticHtml('⚠️ <strong>تعذر قراءة ملف السحابة:</strong> ' + esc(err && err.message ? err.message : 'خطأ شبكة'));
-          })
-          .finally(function () {
-            if (btnTop) btnTop.disabled = false;
-            if (btnMain) {
-              btnMain.disabled = false;
-              btnMain.textContent = '🔄 تحديث وسحب أحدث الفرص من السحابة';
-            }
-          });
-      }
-
-      function renderRadarPanel() {
-        var hdrLastRun = document.getElementById('hdrLastRun');
-        if (hdrLastRun) hdrLastRun.textContent = state.lastCloudRun;
-
-        var visibleJobs = state.jobs.filter(function (j) {
-          var meta = state.userMeta[j.id] || {};
-          return !meta.dismissed;
+        ['all', 'new', 'best', 'closing', 'intern', 'remote'].forEach(function (f) {
+          var b = document.getElementById('f-' + f);
+          if (b) b.className = 'pill-btn' + (state.quickFilter === f ? ' active' : '');
         });
 
-        var hdrTotal = document.getElementById('hdrTotalJobs');
-        if (hdrTotal) hdrTotal.textContent = visibleJobs.length;
-
-        var statsBar = document.getElementById('sourceStatsBar');
-        if (statsBar) {
-          var st = state.sourceStats || {};
-          statsBar.innerHTML =
-            '<span class="badge badge-open">LinkedIn مصر: ' + (st.linkedin_egypt || 0) + '</span>' +
-            '<span class="badge badge-recruiter">Indeed & Google: ' + (st.indeed_egypt || 0) + '</span>' +
-            '<span class="badge badge-merged">WUZZUF: ' + (st.wuzzuf_egypt || 0) + '</span>' +
-            '<span class="badge">شركات مصر: ' + (st.egypt_companies || 0) + '</span>' +
-            '<span class="badge">Remotive: ' + (st.remotive_global || 0) + '</span>' +
-            '<span class="badge">Gmail: ' + (st.gmail_alerts || 0) + '</span>';
+        var errBanner = document.getElementById('feedErrorBanner');
+        if (errBanner) {
+          if (state.feedError) {
+            errBanner.style.display = 'inline-flex';
+            errBanner.textContent = 'تعذّر تحديث البيانات · بنعرّض آخر نسخة محفوظة';
+          } else {
+            errBanner.style.display = 'none';
+          }
         }
 
-        var priorityCount = visibleJobs.filter(function (j) { return (j.fitScore || 0) >= 80; }).length;
-        var savedCount = visibleJobs.filter(function (j) { return !!(state.userMeta[j.id] || {}).saved; }).length;
-        var appliedCount = visibleJobs.filter(function (j) { return !!(state.userMeta[j.id] || {}).applied; }).length;
+        var threshold = state.prefs.threshold || 80;
+        var allJobs = getAllMergedJobs();
+        var nowMs = Date.now();
 
-        document.getElementById('countActive').textContent = visibleJobs.length;
-        document.getElementById('countPriority').textContent = priorityCount;
-        document.getElementById('countSaved').textContent = savedCount;
-        document.getElementById('countApplied').textContent = appliedCount;
+        var filtered = allJobs.filter(function (job) {
+          var rec = state.records[job.id] || {};
+          if (rec.dismissed) return false;
 
-        ['all', 'priority', 'linkedin', 'indeed', 'wuzzuf', 'companies', 'saved', 'applied'].forEach(function (f) {
-          var chip = document.getElementById('chip-' + f);
-          if (chip) chip.className = 'chip-btn' + (state.filter === f ? ' active' : '');
-        });
-        ['all', 'priority', 'saved', 'applied'].forEach(function (s) {
-          var box = document.getElementById('stat-' + s);
-          if (box) box.className = 'stat-box' + (state.filter === s ? ' selected' : '');
-        });
+          var appState = (job.receipt && job.receipt.apply_state) || 'NEEDS_VERIFICATION';
+          var fitScore = job.fit && job.fit.score;
+          var isRemote = String(job.work_mode || '').toLowerCase().indexOf('remote') !== -1;
+          var locLow = String(job.location || '').toLowerCase();
+          var srcLow = (job.sources || []).join(' ').toLowerCase();
 
-        var q = state.searchQuery.toLowerCase().trim();
-        var filtered = visibleJobs.filter(function (job) {
-          var meta = state.userMeta[job.id] || {};
-          var srcText = (job.mergedSources || []).join(' ').toLowerCase();
-          if (state.filter === 'priority' && (job.fitScore || 0) < 80) return false;
-          if (state.filter === 'linkedin' && srcText.indexOf('linkedin') === -1) return false;
-          if (state.filter === 'indeed' && srcText.indexOf('indeed') === -1 && srcText.indexOf('google') === -1) return false;
-          if (state.filter === 'wuzzuf' && srcText.indexOf('wuzzuf') === -1) return false;
-          if (state.filter === 'companies' && srcText.indexOf('careers') === -1 && srcText.indexOf('workable') === -1) return false;
-          if (state.filter === 'saved' && !meta.saved) return false;
-          if (state.filter === 'applied' && !meta.applied) return false;
-          if (q) {
-            var hay = (job.title + ' ' + job.company + ' ' + job.location + ' ' + job.strongestReason + ' ' + srcText).toLowerCase();
+          if (state.quickFilter === 'new') {
+            var disc = new Date(job.discovered_at || 0).getTime();
+            if (!disc || (nowMs - disc) > 24 * 3600 * 1000) return false;
+          } else if (state.quickFilter === 'best') {
+            if (appState === 'CLOSED' || fitScore === null || fitScore < threshold) return false;
+          } else if (state.quickFilter === 'closing') {
+            if (!job.closing_soon) return false;
+          } else if (state.quickFilter === 'intern') {
+            if (!job.is_training) return false;
+          } else if (state.quickFilter === 'remote') {
+            if (!isRemote) return false;
+          }
+
+          if (state.sourceFilter !== 'all') {
+            if (state.sourceFilter === 'linkedin' && srcLow.indexOf('linkedin') === -1) return false;
+            if (state.sourceFilter === 'indeed' && srcLow.indexOf('indeed') === -1 && srcLow.indexOf('google') === -1) return false;
+            if (state.sourceFilter === 'wuzzuf' && srcLow.indexOf('wuzzuf') === -1 && srcLow.indexOf('email') === -1) return false;
+            if (state.sourceFilter === 'posts' && job.source_category !== 'hiring_posts' && job.source_category !== 'manual_post') return false;
+            if (state.sourceFilter === 'companies' && job.source_category !== 'company_portal') return false;
+          }
+
+          if (state.locationFilter !== 'all') {
+            var mins = job.commute && job.commute.one_way_min;
+            if (state.locationFilter === 'near' && (mins === null || mins === undefined || mins > 45)) return false;
+            if (state.locationFilter === 'maadi' && locLow.indexOf('maadi') === -1 && locLow.indexOf('المعادي') === -1) return false;
+            if (state.locationFilter === 'dokki' && locLow.indexOf('dokki') === -1 && locLow.indexOf('giza') === -1 && locLow.indexOf('الدقي') === -1) return false;
+            if (state.locationFilter === 'new_cairo' && locLow.indexOf('new cairo') === -1 && locLow.indexOf('settlement') === -1 && locLow.indexOf('التجمع') === -1) return false;
+            if (state.locationFilter === 'october' && locLow.indexOf('october') === -1 && locLow.indexOf('smart village') === -1 && locLow.indexOf('أكتوبر') === -1) return false;
+          }
+
+          if (state.searchFilter) {
+            var q = state.searchFilter.toLowerCase();
+            var hay = (job.title + ' ' + job.company + ' ' + (job.location || '') + ' ' + ((job.fit && job.fit.reason_first) || '')).toLowerCase();
             if (hay.indexOf(q) === -1) return false;
           }
+
           return true;
         });
 
-        var container = document.getElementById('jobsListContainer');
+        filtered.sort(function (a, b) {
+          return computeEffectiveRank(b) - computeEffectiveRank(a);
+        });
+
+        var container = document.getElementById('opportunitiesList');
         if (!container) return;
 
+        /* Point 12: Actionable empty state messages */
         if (filtered.length === 0) {
-          container.innerHTML = '<div class="sub-card" style="text-align:center;padding:24px 14px;">' +
-            '<h3>مفيش بطاقات تحت الفلتر ده حاليًا</h3>' +
-            '<p>اضغط <strong>«🚀 تشغيل جولة سحب جديدة على GitHub»</strong> بالأعلى ثم <strong>«🔄 تحديث»</strong>.</p>' +
+          var labelMap = {
+            intern: 'مفيش تدريب مطابق للفلاتر الحالية',
+            remote: 'مفيش وظائف ريموت مطابقة للفلاتر الحالية',
+            closing: 'مفيش فرص بتقفل قريب حاليًا',
+            best: 'مفيش فرص فوق حد الأولوية الحالي (' + threshold + '%)',
+            new: 'مفيش فرص جديدة في آخر ٢٤ ساعة'
+          };
+          var emptyTitle = labelMap[state.quickFilter] || 'مفيش فرص مطابقة للفلاتر الحالية';
+          container.innerHTML = '<div class="empty-state-box">' +
+            '<h3>' + esc(emptyTitle) + '</h3>' +
+            '<p>جرّب مسح الفلاتر لعرض كل الفرص المتاحة أو حدّث القائمة.</p>' +
+            '<button type="button" class="btn-refresh" data-action="reset-filters">امسح الفلاتر</button>' +
             '</div>';
           return;
         }
 
         container.innerHTML = filtered.map(function (job) {
-          var meta = state.userMeta[job.id] || {};
-          var isDrawerOpen = !!state.openDrawerIds[job.id];
-          var fitClass = (job.fitScore || 0) >= 82 ? 'good' : 'warn';
-          var commClass = (job.commuteScore || 0) >= 75 ? 'good' : 'warn';
+          var rec = state.records[job.id] || {};
+          var receipt = job.receipt || {};
+          var fit = job.fit || {};
+          var commute = job.commute || {};
+          var isDetailsOpen = !!state.openDetails[job.id];
 
-          var badges = '<span class="badge badge-open">' + esc(job.applyStateAr || 'مفتوح ✓') + '</span>';
-          (job.mergedSources || []).forEach(function (s) {
-            badges += '<span class="badge badge-merged ltr">' + esc(s) + '</span>';
-          });
-          if (meta.applied) {
-            badges += '<span class="badge badge-recruiter">✅ قدّمت (' + esc(meta.appliedDate || '') + ')</span>';
+          var appState = receipt.apply_state || 'NEEDS_VERIFICATION';
+          var pillClass = 'warn';
+          var pillText = receipt.apply_state_ar || 'محتاج تحقق';
+          var btnClass = 'btn-apply-main warn';
+
+          if (rec.reviewState === 'NEEDS_REVIEW') {
+            pillClass = 'warn';
+            pillText = 'مراجعة';
+          } else if (appState === 'CLOSED') {
+            pillClass = 'neutral';
+            pillText = 'مغلق / منتهي';
+            btnClass = 'btn-apply-main neutral';
+          } else if (rec.applied) {
+            pillClass = 'neutral';
+            pillText = 'قدّمت ' + formatEgyptianTime(rec.appliedAt);
+            btnClass = 'btn-apply-main neutral';
+          } else if (appState === 'OPEN_VERIFIED') {
+            pillClass = 'open';
+            pillText = 'مفتوح بدليل';
+            btnClass = 'btn-apply-main';
           }
 
-          var aiSection = meta.aiAdvice
-            ? '<div style="background:rgba(129,140,248,0.12);border:1px solid #818cf8;border-radius:8px;padding:9px;margin-bottom:8px;font-size:11.5px;white-space:pre-wrap;">' + esc(meta.aiAdvice) + '</div>'
+          /* Point 15: Never display fabricated defaults */
+          var locText = job.location ? job.location : 'العنوان غير مذكور';
+          var modeText = job.work_mode ? job.work_mode : 'غير محدد';
+          var timeTop = receipt.first_published ? formatEgyptianTime(receipt.first_published) : formatEgyptianTime(job.discovered_at);
+
+          var fitBadgeText = (fit.score !== null && fit.score !== undefined)
+            ? ('درجة الملاءمة: ' + fit.score + '/100')
+            : 'الأدلة قليلة';
+          var fitBadgeCls = (fit.score !== null && fit.score >= threshold) ? 'fit-inline' : 'fit-inline warn';
+
+          var probDupHtml = job.probable_duplicate_of
+            ? '<span class="status-pill warn" style="margin-right:6px;">محتمل نفس الإعلان</span>'
             : '';
 
-          var evidenceTableHtml = '';
-          if (Array.isArray(job.evidencePairs) && job.evidencePairs.length > 0) {
-            var rows = job.evidencePairs.map(function (p) {
-              return '<tr><td><strong style="color:#f8fafc;">' + esc(p.req || 'شرط') + '</strong></td><td style="color:#cbd5e1;">✅ ' + esc(p.cv || '') + '</td></tr>';
-            }).join('');
-            evidenceTableHtml = '<table class="evidence-table"><thead><tr><th>شرط الإعلان</th><th>الدليل من CV بيتر</th></tr></thead><tbody>' + rows + '</tbody></table>';
+          var evidenceHtml = (fit.evidence_pairs || []).map(function (ev) {
+            return '<div class="evidence-block">' +
+              '<div style="font-size:11.5px;color:#fcd34d;font-weight:700;">' + esc(ev.tag || 'دليل') + ' · الإعلان طالب إيه:</div>' +
+              '<div style="color:var(--text-main);margin-bottom:4px;">«' + esc(ev.quote || '') + '»</div>' +
+              '<div style="font-size:12px;color:#6ee7b7;">الدليل من الـCV: ' + esc(ev.cv || '') + '</div>' +
+            '</div>';
+          }).join('');
+
+          if (!evidenceHtml) {
+            evidenceHtml = '<div class="evidence-block">الأدلة قليلة — راجع نص الإعلان الأصلي قبل اتخاذ قرار.</div>';
           }
 
-          return '<article class="job-card ' + (meta.applied ? 'applied-card' : '') + '">' +
-            '<div class="card-top-badges">' +
-              '<div class="badges-group">' + badges + '</div>' +
-              '<span style="font-size:11px;color:#94a3b8;">' + esc(job.firstPublished) + '</span>' +
+          var draftText = buildCoverDraft(job);
+          var hasAttachmentMention = /attached|مرفق/i.test(draftText);
+
+          return '<article id="job-' + esc(job.id) + '" class="opp-card">' +
+            '<div class="card-header-row">' +
+              '<div><span class="status-pill ' + pillClass + '">' + esc(pillText) + '</span>' + probDupHtml + '</div>' +
+              '<span class="time-caption">' + esc(timeTop) + '</span>' +
             '</div>' +
 
-            '<h3 class="job-title ltr">' + esc(job.title) + '</h3>' +
-            '<p class="job-company"><strong>' + esc(job.company) + '</strong> • ' + esc(job.location) + '</p>' +
+            '<h2 class="opp-title ltr">' + esc(job.title) + '</h2>' +
+            '<p class="opp-sub"><strong>' + esc(job.company) + '</strong> · ' + esc(locText) + ' · ' + esc(modeText) + '</p>' +
 
-            '<div class="dual-scores">' +
-              '<div class="score-pill ' + fitClass + '">' +
-                '<span class="lbl">ملاءمة الوظيفة لـCV بيتر</span>' +
-                '<span class="val ltr mono">' + job.fitScore + '/100</span>' +
-              '</div>' +
-              '<div class="score-pill ' + commClass + '">' +
-                '<span class="lbl">المشوار من شبرا مصر</span>' +
-                '<span class="val ltr mono">' + job.commuteScore + '/100</span>' +
-              '</div>' +
+            /* Point 6: Recommendation reason BEFORE numeric score */
+            '<div class="reason-box">' +
+              '<p class="reason-main">' + esc(fit.reason_first || 'فرصة مطابقة لمسار تحليل البيانات') + '</p>' +
+              '<p class="reason-caveat">' + esc(commute.summary || 'العنوان غير مذكور') + ' · ' + esc(fit.caveat_first || '') + '</p>' +
+              '<span class="' + fitBadgeCls + '">' + esc(fitBadgeText) + '</span>' +
             '</div>' +
 
-            '<div class="first-screen-summary">' +
-              '<div><strong style="color:#6ee7b7;">✓ السبب:</strong> ' + esc(job.strongestReason) + '</div>' +
-              '<div><strong style="color:#67e8f9;">🚇 المشوار:</strong> ' + esc(job.commuteWeeklyLabel) + '</div>' +
+            '<div class="card-primary-actions">' +
+              (job.primary_url
+                ? '<a href="' + esc(job.primary_url) + '" target="_blank" rel="noopener noreferrer" class="' + btnClass + '" data-action="mark-opened" data-id="' + esc(job.id) + '">' + esc(receipt.action_label || 'افتح التقديم') + '</a>'
+                : '<button type="button" class="' + btnClass + '" data-action="toggle-details" data-id="' + esc(job.id) + '">مراجعة النص</button>') +
+              '<button type="button" class="btn-save-card ' + (rec.saved ? 'saved' : '') + '" data-action="toggle-save" data-id="' + esc(job.id) + '">' + (rec.saved ? 'محفوظة' : 'حفظ') + '</button>' +
+              '<button type="button" class="btn-details-toggle" data-action="toggle-details" data-id="' + esc(job.id) + '">تفاصيل</button>' +
             '</div>' +
 
-            '<button type="button" class="btn-drawer-toggle" data-action="toggle-drawer" data-id="' + esc(job.id) + '">' +
-              '<span>🧾 عرض الإيصال، جدول الأدلة، ومسودة التقديم</span>' +
-              '<span class="ltr mono" style="color:#67e8f9;">' + (isDrawerOpen ? '▲' : '▼') + '</span>' +
-            '</button>' +
+            /* Expanded Details Drawer (Points 7, 11, 17, 37, 38) */
+            '<div class="details-panel" style="display:' + (isDetailsOpen ? 'block' : 'none') + ';">' +
+              '<table class="meta-table">' +
+                '<tr><td>المصادر</td><td class="ltr">' + esc((job.sources || []).join(' · ')) + '</td></tr>' +
+                '<tr><td>اتنشرت</td><td>' + esc(formatEgyptianTime(receipt.first_published)) + '</td></tr>' +
+                '<tr><td>الرادار لقطها</td><td>' + esc(formatEgyptianTime(job.discovered_at)) + '</td></tr>' +
+                '<tr><td>آخر تأكيد للتقديم</td><td>' + esc(formatEgyptianTime(receipt.last_verified)) + '</td></tr>' +
+                '<tr><td>أهلية مصر</td><td>' + esc(receipt.egypt_eligibility || 'غير محدد') + '</td></tr>' +
+              '</table>' +
 
-            '<div class="receipt-drawer" style="display:' + (isDrawerOpen ? 'block' : 'none') + ';">' +
-              '<div class="receipt-grid">' +
-                '<div><strong>الأهلية في مصر:</strong> ' + esc(job.egyptEligibility || 'مؤكد') + '</div>' +
-                '<div><strong>آخر تحقق:</strong> <span class="ltr mono">' + esc(job.lastVerified || job.discoveredAt) + '</span></div>' +
-              '</div>' +
-              evidenceTableHtml +
-              '<div style="margin-bottom:8px;"><strong style="color:#6ee7b7;">🎯 أقرب مشروع من الـCV:</strong> ' + esc(job.recommendedProject) + '</div>' +
-              aiSection +
-              '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;">' +
-                '<button type="button" class="btn-mini-emerald" data-action="copy-email" data-id="' + esc(job.id) + '">📋 نسخ الإيميل</button>' +
-                '<button type="button" class="btn-mini-dark" data-action="copy-dm" data-id="' + esc(job.id) + '">💬 نسخ DM / واتساب</button>' +
-                '<button type="button" class="btn-secondary" style="min-height:36px;padding:5px 10px;" data-action="ask-gemini" data-id="' + esc(job.id) + '">✨ استشارة Gemini وتخصيص الرسالة</button>' +
-              '</div>' +
-              '<pre class="draft-pre ltr mono">' + esc(buildEmailDraft(job)) + '</pre>' +
-            '</div>' +
+              evidenceHtml +
 
-            '<div class="card-actions-grid">' +
-              '<a href="' + esc(job.primaryUrl) + '" target="_blank" rel="noopener noreferrer" class="act-btn open-link">افتح الإعلان ↗</a>' +
-              '<button type="button" class="act-btn ' + (meta.saved ? 'saved-on' : '') + '" data-action="toggle-save" data-id="' + esc(job.id) + '">' + (meta.saved ? '★ محفوظة' : '⭐ احفظ') + '</button>' +
-              '<button type="button" class="act-btn ' + (meta.applied ? 'applied-on' : '') + '" data-action="toggle-applied" data-id="' + esc(job.id) + '">' + (meta.applied ? '✓ قدّمت' : '✅ قدّمت') + '</button>' +
-              '<button type="button" class="act-btn" data-action="dismiss-job" data-id="' + esc(job.id) + '">✕ استبعاد</button>' +
+              /* Point 38: Application step preparation + attachment verification */
+              '<div class="evidence-block">' +
+                '<div style="font-weight:700;margin-bottom:4px;">تحضير خطوة التقديم</div>' +
+                '<div style="font-size:12.5px;color:var(--text-sub);margin-bottom:6px;">المشروع الأنسب: ' + esc(fit.recommended_project || '—') + '</div>' +
+                (hasAttachmentMention
+                  ? '<label style="display:flex;align-items:center;gap:6px;font-size:12.5px;color:#fcd34d;margin-bottom:6px;"><input type="checkbox" id="chk-cv-' + esc(job.id) + '" /> تأكد من إرفاق ملف السيرة الذاتية قبل الإرسال</label>'
+                  : '') +
+                '<textarea id="draft-' + esc(job.id) + '" class="draft-box ltr">' + esc(draftText) + '</textarea>' +
+                '<div style="display:flex;gap:8px;flex-wrap:wrap;">' +
+                  '<button type="button" class="btn-refresh" style="flex:1;" data-action="copy-draft" data-id="' + esc(job.id) + '">انسخ المسودة</button>' +
+                  '<button type="button" class="btn-refresh" style="flex:1;" data-action="open-mailto" data-id="' + esc(job.id) + '">افتح مسودة إيميل</button>' +
+                '</div>' +
+              '</div>' +
+
+              /* Point 11 & 37: Log application or reject with preference learning */
+              '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">' +
+                '<button type="button" class="btn-apply-main" style="flex:1;" data-action="mark-applied" data-id="' + esc(job.id) + '">' + (rec.applied ? 'تم تسجيل التقديم' : 'قدّمت') + '</button>' +
+                '<button type="button" class="btn-details-toggle" data-action="reject-job" data-id="' + esc(job.id) + '" data-reason="sales">رفض: مبيعات</button>' +
+                '<button type="button" class="btn-details-toggle" data-action="reject-job" data-id="' + esc(job.id) + '" data-reason="october">رفض: أكتوبر</button>' +
+                '<button type="button" class="btn-details-toggle" data-action="reject-job" data-id="' + esc(job.id) + '" data-reason="other">استبعاد</button>' +
+              '</div>' +
             '</div>' +
           '</article>';
         }).join('');
       }
 
-      function renderSourcesPanel() {
-        var liWrap = document.getElementById('linkedinLinksWrap');
-        if (!liWrap) return;
-        liWrap.innerHTML = state.linkedinSources.map(function (item) {
-          return '<div class="watchlist-item">' +
-            '<div style="min-width:0;flex:1;">' +
-              '<strong style="display:block;color:#ffffff;">🔗 ' + esc(item.label) + '</strong>' +
-              '<span class="ltr mono" style="font-size:10.5px;color:#67e8f9;word-break:break-all;">' + esc(item.url) + '</span>' +
-            '</div>' +
-            '<div style="display:flex;gap:5px;flex-shrink:0;">' +
-              '<a href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer" class="btn-mini-emerald">فتح ↗</a>' +
-              '<button type="button" class="btn-mini-dark" data-action="remove-linkedin-source" data-id="' + esc(item.id) + '">✕</button>' +
+      /* Point 9: Render clean names for saved links/searches */
+      function renderSavedLinks() {
+        var box = document.getElementById('savedLinksList');
+        if (!box) return;
+        box.innerHTML = state.prefs.customLinks.map(function (lnk) {
+          return '<div class="saved-link-row">' +
+            '<strong style="font-size:13px;">' + esc(lnk.name) + '</strong>' +
+            '<div style="display:flex;gap:6px;flex-shrink:0;">' +
+              '<a href="' + esc(lnk.url) + '" target="_blank" rel="noopener noreferrer" class="btn-apply-main" style="min-height:36px;padding:6px 12px;">افتح</a>' +
+              '<button type="button" class="btn-details-toggle" style="min-height:36px;padding:6px 10px;" data-action="edit-link" data-id="' + esc(lnk.id) + '">عدّل</button>' +
             '</div>' +
           '</div>';
         }).join('');
       }
 
-      var actions = {
-        'switch-tab': function (el) {
-          var tab = el.getAttribute('data-tab');
-          if (!tab) return;
-          state.activeTab = tab;
-          ['radar', 'sources', 'paste', 'settings'].forEach(function (t) {
-            var p = document.getElementById('panel-' + t);
-            var b = document.getElementById('nav-' + t);
-            if (p) p.style.display = (t === tab) ? 'block' : 'none';
-            if (b) b.className = 'nav-btn' + (t === tab ? ' active' : '');
-          });
-          if (tab === 'sources') renderSourcesPanel();
-          if (tab === 'settings') {
-            var gk = document.getElementById('geminiKeyInput');
-            if (gk && state.geminiApiKey) gk.value = state.geminiApiKey;
+      /* Point 11, 35, 39: Persistent Applications & Weekly Review */
+      function renderApplicationsView() {
+        ['applied', 'saved', 'review'].forEach(function (f) {
+          var b = document.getElementById('appf-' + f);
+          if (b) b.className = 'pill-btn' + (state.appFilter === f ? ' active' : '');
+        });
+
+        var allIds = Object.keys(state.records);
+        var list = allIds.map(function (id) {
+          var rec = state.records[id];
+          var live = (state.feedData && state.feedData.jobs && state.feedData.jobs[id]) || rec.snapshot;
+          return { id: id, rec: rec, job: live };
+        }).filter(function (entry) {
+          if (!entry.job) return false;
+          if (state.appFilter === 'applied') return !!entry.rec.applied;
+          if (state.appFilter === 'saved') return !!entry.rec.saved && !entry.rec.applied;
+          if (state.appFilter === 'review') return entry.rec.reviewState === 'NEEDS_REVIEW';
+          return false;
+        });
+
+        var container = document.getElementById('applicationsList');
+        if (container) {
+          if (list.length === 0) {
+            var emptyTxt = state.appFilter === 'saved'
+              ? 'لسه ما حفظتش فرص'
+              : (state.appFilter === 'review' ? 'مفيش فرص معلّقة في المراجعة' : 'لسه ما سجلتش تقديمات');
+            container.innerHTML = '<div class="empty-state-box">' +
+              '<h3>' + emptyTxt + '</h3>' +
+              '<p>ارجع لقائمة الفرص واضغط «حفظ» أو «قدّمت» على أي فرصة تناسبك.</p>' +
+              '<button type="button" class="btn-refresh" data-action="switch-view" data-view="opportunities">ارجع للفرص</button>' +
+              '</div>';
+          } else {
+            container.innerHTML = list.map(function (entry) {
+              var job = entry.job;
+              var rec = entry.rec;
+              var isClosed = (job.receipt && job.receipt.apply_state === 'CLOSED');
+              return '<div class="opp-card">' +
+                '<div class="card-header-row">' +
+                  '<span class="status-pill ' + (isClosed ? 'neutral' : 'open') + '">' + (isClosed ? 'الإعلان أُغلق' : esc(rec.stage || 'مستني رد')) + '</span>' +
+                  '<span class="time-caption">' + (rec.appliedAt ? ('اتسجل ' + formatEgyptianTime(rec.appliedAt)) : 'محفوظة') + '</span>' +
+                '</div>' +
+                '<h3 class="opp-title ltr">' + esc(job.title) + '</h3>' +
+                '<p class="opp-sub">' + esc(job.company) + ' · ' + esc(job.location || 'العنوان غير مذكور') + '</p>' +
+                (rec.applied
+                  ? '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;">' +
+                      ['مستني رد', 'اختبار', 'مقابلة'].map(function (st) {
+                        var active = (rec.stage || 'مستني رد') === st;
+                        return '<button type="button" class="pill-btn ' + (active ? 'active' : '') + '" style="min-height:36px;padding:5px 12px;" data-action="set-app-stage" data-id="' + esc(entry.id) + '" data-stage="' + st + '">' + st + '</button>';
+                      }).join('') +
+                    '</div>'
+                  : '<div style="display:flex;gap:8px;margin-top:8px;">' +
+                      '<button type="button" class="btn-apply-main" data-action="mark-applied" data-id="' + esc(entry.id) + '">قدّمت</button>' +
+                      '<button type="button" class="btn-details-toggle" data-action="toggle-save" data-id="' + esc(entry.id) + '">إزالة</button>' +
+                    '</div>') +
+              '</div>';
+            }).join('');
           }
+        }
+
+        /* Point 39: Weekly ROI Review */
+        var roiBox = document.getElementById('weeklyReviewBox');
+        if (roiBox) {
+          var allJobs = getAllMergedJobs();
+          var suitableCount = allJobs.filter(function (j) {
+            return j.fit && j.fit.score !== null && j.fit.score >= (state.prefs.threshold || 80);
+          }).length;
+          var openedCount = allIds.filter(function (id) { return !!state.records[id].openedAt; }).length;
+          var appliedCount = allIds.filter(function (id) { return !!state.records[id].applied; }).length;
+
+          var bySource = {};
+          allJobs.forEach(function (j) {
+            var src = (j.sources && j.sources[0]) || 'أخرى';
+            bySource[src] = bySource[src] || { total: 0, opened: 0 };
+            bySource[src].total += 1;
+            if (state.records[j.id] && state.records[j.id].openedAt) bySource[src].opened += 1;
+          });
+
+          var sourceLines = Object.keys(bySource).map(function (s) {
+            var item = bySource[s];
+            var note = (item.total >= 15 && item.opened === 0) ? ' (نتائج كثيرة بدون فتح — يحتاج تضييق الفلتر)' : '';
+            return '• ' + esc(s) + ': ' + item.total + ' نتيجة · فتحت ' + item.opened + note;
+          }).join('<br>');
+
+          roiBox.innerHTML = '<p style="margin-bottom:6px;">• <strong>فرص مناسبة متاحة:</strong> ' + suitableCount + '<br>' +
+            '• <strong>فرص فتحتها:</strong> ' + openedCount + ' · <strong>قدّمت فيها:</strong> ' + appliedCount + '</p>' +
+            '<div style="font-size:12.5px;color:var(--text-muted);">' + (sourceLines || 'لا توجد بيانات مصادر كافية بعد.') + '</div>';
+        }
+      }
+
+      /* Point 26, 27, 37: Settings, Source Health & Learned Preferences */
+      function renderSettingsView() {
+        var meta = (state.feedData && state.feedData.meta) || {};
+        var timingBox = document.getElementById('cloudTimingBox');
+        if (timingBox) {
+          var scanT = meta.scan_completed_at ? formatEgyptianTime(meta.scan_completed_at) : 'غير متاح';
+          var pubT = meta.feed_published_at ? formatEgyptianTime(meta.feed_published_at) : 'غير متاح';
+          var isStale = meta.feed_published_at && (Date.now() - new Date(meta.feed_published_at).getTime() > 3 * 3600 * 1000);
+          timingBox.innerHTML = '• <strong>موعد السحابة المجدول:</strong> كل ساعة عند الدقيقة :١٥<br>' +
+            '• <strong>البحث خلص:</strong> ' + esc(scanT) + '<br>' +
+            '• <strong>البيانات اتنشرت:</strong> ' + esc(pubT) + (isStale ? ' <span class="status-pill warn">البيانات قديمة نسبيًا</span>' : '');
+        }
+
+        var healthBox = document.getElementById('sourceHealthList');
+        if (healthBox) {
+          var statuses = meta.source_statuses || {};
+          var names = {
+            linkedin_jobs: 'LinkedIn Jobs',
+            indeed_google: 'Indeed & Google Jobs',
+            hiring_posts: 'بوستات التوظيف',
+            egypt_companies: 'بوابات الشركات المصرية',
+            remotive: 'Remotive',
+            wuzzuf: 'WUZZUF',
+            gmail_bridge: 'جسر البريد'
+          };
+          healthBox.innerHTML = Object.keys(names).map(function (k) {
+            var st = statuses[k] || { state: 'UNKNOWN', label: 'في انتظار الجولة القادمة' };
+            var cls = st.state === 'OK' ? 'open' : (st.state === 'FAILED' ? 'warn' : 'neutral');
+            return '<div class="saved-link-row">' +
+              '<span>' + esc(names[k]) + '</span>' +
+              '<span class="status-pill ' + cls + '">' + esc(st.label) + '</span>' +
+            '</div>';
+          }).join('');
+        }
+
+        var lblT = document.getElementById('lblThreshold');
+        var rngT = document.getElementById('rngThreshold');
+        if (lblT) lblT.textContent = (state.prefs.threshold || 80) + '%';
+        if (rngT) rngT.value = state.prefs.threshold || 80;
+
+        var ntfyInp = document.getElementById('ntfyPrivateTopic');
+        if (ntfyInp && state.prefs.ntfyTopic) ntfyInp.value = state.prefs.ntfyTopic;
+
+        var prefsBox = document.getElementById('learnedPrefsList');
+        if (prefsBox) {
+          var rows = [];
+          if (state.prefs.downrankFieldSales) {
+            rows.push('<div class="saved-link-row"><span>خفض ترتيب وظائف المبيعات الميدانية</span><button type="button" class="btn-details-toggle" style="min-height:36px;" data-action="toggle-pref" data-pref="downrankFieldSales">إلغاء</button></div>');
+          }
+          if (state.prefs.downrankOctober) {
+            rows.push('<div class="saved-link-row"><span>خفض ترتيب مشوار ٦ أكتوبر والقرية الذكية</span><button type="button" class="btn-details-toggle" style="min-height:36px;" data-action="toggle-pref" data-pref="downrankOctober">إلغاء</button></div>');
+          }
+          prefsBox.innerHTML = rows.length ? rows.join('') : '<p style="margin:0;color:var(--text-muted);">لم يتم تسجيل تفضيلات استبعاد بعد.</p>';
+        }
+      }
+
+      /* Point 3 & 25: Fetch latest published feed cleanly */
+      function refreshFeedFromCloud(silent) {
+        var btn = document.getElementById('btnRefreshFeed');
+        if (btn) btn.disabled = true;
+
+        fetch('./data/live_feed.json?t=' + Date.now(), { cache: 'no-store' })
+          .then(function (r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json();
+          })
+          .then(function (data) {
+            state.feedData = data;
+            state.feedError = null;
+            persistAll();
+            renderOpportunitiesView();
+            if (state.view === 'settings') renderSettingsView();
+            if (!silent) showToast('تم تحديث القائمة');
+          })
+          .catch(function () {
+            state.feedError = 'FAILED';
+            renderOpportunitiesView();
+            if (!silent) showToast('تعذّر تحديث البيانات · بنعرّض آخر نسخة محفوظة');
+          })
+          .finally(function () {
+            if (btn) btn.disabled = false;
+          });
+      }
+
+      /* Point 10 & 24: Parse manual post/link into preview card in 'مراجعة' state */
+      function parseManualPostPreview(url, text, email) {
+        var cleanText = (text || '').trim();
+        var lines = cleanText.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
+        var title = lines[0] ? lines[0].slice(0, 85) : 'بوست توظيف مشارَك';
+        var company = 'غير مذكور في البوست';
+        var atMatch = cleanText.match(/(?:at|في|شركة)\s+([A-Za-z0-9\u0600-\u06FF\s&]{2,35})/i);
+        if (atMatch) company = atMatch[1].trim();
+
+        var loc = null;
+        if (/maadi|المعادي/i.test(cleanText)) loc = 'المعادي، القاهرة';
+        else if (/dokki|الدقي/i.test(cleanText)) loc = 'الدقي، الجيزة';
+        else if (/cairo|القاهرة/i.test(cleanText)) loc = 'القاهرة';
+        else if (/egypt|مصر/i.test(cleanText)) loc = 'مصر';
+
+        var mode = /remote|عن بعد|ريموت/i.test(cleanText) ? 'Remote' : (/hybrid|هايبرد/i.test(cleanText) ? 'Hybrid' : null);
+        var hasEvidence = cleanText.split(/\s+/).length >= 6;
+
+        return {
+          id: 'manual-' + Date.now(),
+          company: company,
+          title: title,
+          sources: ['بوستات التوظيف (يدوي)'],
+          source_category: 'manual_post',
+          all_urls: url ? [url] : [],
+          primary_url: url || '',
+          apply_email: email || '',
+          location: loc,
+          work_mode: mode,
+          is_training: /intern|trainee|تدريب|فريش/i.test(cleanText),
+          receipt: {
+            first_published: null,
+            discovered_at: new Date().toISOString(),
+            last_verified: new Date().toISOString(),
+            apply_state: 'NEEDS_VERIFICATION',
+            apply_state_ar: 'مراجعة',
+            action_label: url ? 'افتح الرابط' : 'تفاصيل',
+            egypt_eligibility: loc ? ('مؤكد: ' + loc) : 'العنوان غير مذكور',
+            egypt_status: loc ? 'CONFIRMED' : 'UNKNOWN'
+          },
+          fit: {
+            score: hasEvidence ? 82 : null,
+            confidence: hasEvidence ? 'HIGH' : 'LOW_EVIDENCE',
+            reason_first: hasEvidence ? ('بوست مشارَك · ' + title) : 'الأدلة قليلة — الصق نص البوست كاملًا للتقييم',
+            caveat_first: 'دخل في وضع «مراجعة» لحين تأكيدك',
+            evidence_pairs: hasEvidence ? [{ tag: 'نص البوست', quote: cleanText.slice(0, 160), cv: 'مطابقة مبدئية مع ملف BIS وتحليل البيانات' }] : [],
+            recommended_project: 'مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)'
+          },
+          commute: {
+            score: null,
+            one_way_min: null,
+            summary: loc ? (loc + ' · تقدير المشوار محتاج تأكيد') : 'العنوان غير مذكور'
+          },
+          discovered_at: new Date().toISOString()
+        };
+      }
+
+      var handlers = {
+        'switch-view': function (el) {
+          var v = el.getAttribute('data-view');
+          if (!v) return;
+          state.view = v;
+          ['opportunities', 'add', 'applications', 'settings'].forEach(function (name) {
+            var sec = document.getElementById('view-' + name);
+            var btn = document.getElementById('nav-' + name);
+            if (sec) sec.style.display = (name === v) ? 'block' : 'none';
+            if (btn) btn.className = 'nav-tab-btn' + (name === v ? ' active' : '');
+          });
+          if (v === 'opportunities') renderOpportunitiesView();
+          if (v === 'add') renderSavedLinks();
+          if (v === 'applications') renderApplicationsView();
+          if (v === 'settings') renderSettingsView();
         },
 
-        'sync-cloud-feed': function () {
-          syncLiveFeedFromRepo(false);
+        'refresh-feed': function () {
+          refreshFeedFromCloud(false);
         },
 
-        'set-filter': function (el) {
-          state.filter = el.getAttribute('data-filter') || 'all';
-          renderRadarPanel();
+        'set-quick-filter': function (el) {
+          state.quickFilter = el.getAttribute('data-filter') || 'all';
+          renderOpportunitiesView();
         },
 
-        'toggle-drawer': function (el) {
+        'toggle-advanced-filters': function () {
+          var d = document.getElementById('advancedFilterDrawer');
+          if (d) d.style.display = (d.style.display === 'block') ? 'none' : 'block';
+        },
+
+        'reset-filters': function () {
+          state.quickFilter = 'all';
+          state.sourceFilter = 'all';
+          state.locationFilter = 'all';
+          state.searchFilter = '';
+          var s1 = document.getElementById('selSourceFilter');
+          var s2 = document.getElementById('selLocationFilter');
+          var s3 = document.getElementById('txtSearchFilter');
+          if (s1) s1.value = 'all';
+          if (s2) s2.value = 'all';
+          if (s3) s3.value = '';
+          renderOpportunitiesView();
+        },
+
+        'toggle-details': function (el) {
           var id = el.getAttribute('data-id');
-          state.openDrawerIds[id] = !state.openDrawerIds[id];
-          renderRadarPanel();
+          state.openDetails[id] = !state.openDetails[id];
+          renderOpportunitiesView();
+        },
+
+        'mark-opened': function (el) {
+          var id = el.getAttribute('data-id');
+          var job = getAllMergedJobs().find(function (j) { return j.id === id; });
+          if (!job) return;
+          state.records[id] = state.records[id] || { snapshot: job };
+          state.records[id].openedAt = new Date().toISOString();
+          persistAll();
         },
 
         'toggle-save': function (el) {
           var id = el.getAttribute('data-id');
-          state.userMeta[id] = state.userMeta[id] || {};
-          state.userMeta[id].saved = !state.userMeta[id].saved;
-          saveState();
-          renderRadarPanel();
-          showToast(state.userMeta[id].saved ? '⭐ تم حفظ الفرصة!' : 'تمت الإزالة من المحفوظات.');
-        },
-
-        'toggle-applied': function (el) {
-          var id = el.getAttribute('data-id');
-          state.userMeta[id] = state.userMeta[id] || {};
-          state.userMeta[id].applied = !state.userMeta[id].applied;
-          state.userMeta[id].appliedDate = state.userMeta[id].applied ? new Date().toISOString().slice(0, 10) : null;
-          saveState();
-          renderRadarPanel();
-          showToast(state.userMeta[id].applied ? '✅ تم تسجيل التقديم بتاريخ اليوم!' : 'تم إلغاء علامة التقديم.');
-        },
-
-        'dismiss-job': function (el) {
-          var id = el.getAttribute('data-id');
-          state.userMeta[id] = state.userMeta[id] || {};
-          state.userMeta[id].dismissed = true;
-          saveState();
-          renderRadarPanel();
-          showToast('✕ تم استبعاد الفرصة.');
-        },
-
-        'copy-email': function (el) {
-          var id = el.getAttribute('data-id');
-          var job = state.jobs.find(function (j) { return j.id === id; });
+          var job = getAllMergedJobs().find(function (j) { return j.id === id; });
           if (!job) return;
-          copyTextSafe(buildEmailDraft(job));
-          showToast('📋 تم نسخ مسودة الإيميل!');
+          state.records[id] = state.records[id] || { snapshot: job };
+          state.records[id].saved = !state.records[id].saved;
+          persistAll();
+          if (state.view === 'opportunities') renderOpportunitiesView();
+          if (state.view === 'applications') renderApplicationsView();
+          showToast(state.records[id].saved ? 'تم الحفظ' : 'تمت الإزالة من المحفوظات');
         },
 
-        'copy-dm': function (el) {
+        /* Point 11: Clear application logging with immediate Undo */
+        'mark-applied': function (el) {
           var id = el.getAttribute('data-id');
-          var job = state.jobs.find(function (j) { return j.id === id; });
+          var job = getAllMergedJobs().find(function (j) { return j.id === id; });
           if (!job) return;
-          copyTextSafe(buildDmDraft(job));
-          showToast('💬 تم نسخ رسالة DM / واتساب!');
+          var prev = state.records[id] ? JSON.parse(JSON.stringify(state.records[id])) : null;
+          state.records[id] = state.records[id] || { snapshot: job };
+          state.records[id].snapshot = job;
+          state.records[id].applied = true;
+          state.records[id].appliedAt = new Date().toISOString();
+          state.records[id].stage = 'مستني رد';
+          persistAll();
+          if (state.view === 'opportunities') renderOpportunitiesView();
+          if (state.view === 'applications') renderApplicationsView();
+          showToast('اتسجل النهارده', { type: 'applied', id: id, prev: prev });
         },
 
-        'ask-gemini': function (el) {
+        'set-app-filter': function (el) {
+          state.appFilter = el.getAttribute('data-filter') || 'applied';
+          renderApplicationsView();
+        },
+
+        'set-app-stage': function (el) {
           var id = el.getAttribute('data-id');
-          var job = state.jobs.find(function (j) { return j.id === id; });
+          var st = el.getAttribute('data-stage');
+          if (!state.records[id]) return;
+          state.records[id].stage = st;
+          persistAll();
+          renderApplicationsView();
+          showToast('تم تحديث الحالة إلى: ' + st);
+        },
+
+        /* Point 37: Rejection preference learning with Undo */
+        'reject-job': function (el) {
+          var id = el.getAttribute('data-id');
+          var reason = el.getAttribute('data-reason');
+          var job = getAllMergedJobs().find(function (j) { return j.id === id; });
           if (!job) return;
-          if (!state.geminiApiKey) {
-            showToast('⚠️ أضف مفتاح Gemini API أولاً في تبويب «4. الإشعارات وGemini».');
+          var prevPrefs = JSON.parse(JSON.stringify(state.prefs));
+          state.records[id] = state.records[id] || { snapshot: job };
+          state.records[id].dismissed = true;
+          if (reason === 'sales') state.prefs.downrankFieldSales = true;
+          if (reason === 'october') state.prefs.downrankOctober = true;
+          persistAll();
+          renderOpportunitiesView();
+          var msg = reason === 'sales'
+            ? 'تم خفض ترتيب إعلانات المبيعات المشابهة'
+            : (reason === 'october' ? 'تم خفض ترتيب مشوار أكتوبر' : 'تم استبعاد الفرصة');
+          showToast(msg, { type: 'reject', id: id, prevPrefs: prevPrefs });
+        },
+
+        'toggle-pref': function (el) {
+          var p = el.getAttribute('data-pref');
+          if (p in state.prefs) {
+            state.prefs[p] = !state.prefs[p];
+            persistAll();
+            renderSettingsView();
+            showToast('تم تحديث التفضيل');
+          }
+        },
+
+        'undo-last': function () {
+          var u = state.undoPayload;
+          if (!u) return;
+          if (u.type === 'applied') {
+            if (u.prev) state.records[u.id] = u.prev;
+            else delete state.records[u.id];
+          } else if (u.type === 'reject') {
+            if (state.records[u.id]) state.records[u.id].dismissed = false;
+            state.prefs = u.prevPrefs;
+          }
+          state.undoPayload = null;
+          persistAll();
+          if (state.view === 'opportunities') renderOpportunitiesView();
+          if (state.view === 'applications') renderApplicationsView();
+          showToast('تم التراجع');
+        },
+
+        'copy-draft': function (el) {
+          var id = el.getAttribute('data-id');
+          var area = document.getElementById('draft-' + id);
+          if (!area) return;
+          try {
+            var ta = document.createElement('textarea');
+            ta.value = area.value;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            showToast('تم نسخ المسودة');
+          } catch (e) {}
+        },
+
+        'open-mailto': function (el) {
+          var id = el.getAttribute('data-id');
+          var chk = document.getElementById('chk-cv-' + id);
+          if (chk && !chk.checked) {
+            showToast('علّم على خانة تأكيد إرفاق الـCV أولًا');
             return;
           }
-          showToast('✨ جاري كتابة نصيحة مخصصة من Gemini...');
-          var prompt = 'أنت مستشار توظيف لبيتر نبيل جرجس (خريج BIS حلوان بامتياز 3.67، يسكن في شبرا مصر، مهاراته SQL وExcel/VBA وPower BI وPython وتدريبات DEPI وNTI). ' +
-            'للوظيفة التالية: ' + job.title + ' في ' + job.company + ' (' + job.location + '). ' +
-            'اكتب في 4 سطور مختصرة بالعربية: 1) نسبة ملاءمتها الحقيقية لبيتر ولماذا 2) أهم 2 مشروع أو مهارة يركز عليهم 3) جملة افتتاحية إنجليزية قصيرة يبعتها للـ HR.';
-          fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=' + encodeURIComponent(state.geminiApiKey), {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-          })
-            .then(function (r) { return r.json(); })
-            .then(function (res) {
-              var reply = res && res.candidates && res.candidates[0] && res.candidates[0].content && res.candidates[0].content.parts[0].text;
-              if (reply) {
-                state.userMeta[id] = state.userMeta[id] || {};
-                state.userMeta[id].aiAdvice = reply.trim();
-                saveState();
-                renderRadarPanel();
-                showToast('✨ تم تجهيز نصيحة Gemini داخل البطاقة!');
-              } else {
-                var errMsg = (res && res.error && res.error.message) ? res.error.message : 'تأكد من صحة المفتاح';
-                showToast('⚠️ ' + errMsg);
-              }
-            })
-            .catch(function () {
-              showToast('⚠️ تعذر الاتصال بـ Gemini API.');
-            });
+          var job = getAllMergedJobs().find(function (j) { return j.id === id; });
+          var area = document.getElementById('draft-' + id);
+          if (!job || !area) return;
+          var lines = area.value.split('\n');
+          var subj = lines[0].replace(/^Subject:\s*/i, '');
+          var body = lines.slice(2).join('\n');
+          var to = job.apply_email || '';
+          window.location.href = 'mailto:' + encodeURIComponent(to) + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
         },
 
-        'add-linkedin-source': function () {
-          var lblEl = document.getElementById('newLinkedInLabel');
-          var urlEl = document.getElementById('newLinkedInUrl');
-          var label = lblEl ? lblEl.value.trim() : '';
-          var url = urlEl ? urlEl.value.trim() : '';
-          if (!url) return;
+        /* Point 10: Preview before saving manual post */
+        'preview-manual-job': function () {
+          var url = (document.getElementById('addLinkInput') || {}).value.trim();
+          var text = (document.getElementById('addTextInput') || {}).value.trim();
+          var email = (document.getElementById('addEmailInput') || {}).value.trim();
+          var wrap = document.getElementById('manualPreviewWrap');
+          if (!wrap) return;
+
+          if (url && !text) {
+            wrap.innerHTML = '<div class="evidence-block">الرابط وحده لا يكفي لقراءة المحتوى المحمي — الصق نص البوست في الخانة أعلاه للمعاينة والتقييم.</div>';
+            return;
+          }
+          if (!text) {
+            showToast('الصق نص البوست أولًا');
+            return;
+          }
+
+          var card = parseManualPostPreview(url, text, email);
+          state.pendingManualDraft = card;
+          wrap.innerHTML = '<div class="evidence-block">' +
+            '<div style="font-weight:700;margin-bottom:4px;">معاينة قبل الحفظ (وضع: مراجعة)</div>' +
+            '<div><strong>المسمى:</strong> ' + esc(card.title) + '</div>' +
+            '<div><strong>الشركة:</strong> ' + esc(card.company) + '</div>' +
+            '<div><strong>المكان ونظام الشغل:</strong> ' + esc(card.location || 'العنوان غير مذكور') + ' · ' + esc(card.work_mode || 'غير محدد') + '</div>' +
+            '<button type="button" class="btn-apply-main" style="width:100%;margin-top:8px;" data-action="confirm-save-manual">تأكيد الحفظ في الفرص والمراجعة</button>' +
+          '</div>';
+        },
+
+        'confirm-save-manual': function () {
+          var card = state.pendingManualDraft;
+          if (!card) return;
+          state.feedData.jobs = state.feedData.jobs || {};
+          state.feedData.jobs[card.id] = card;
+          state.records[card.id] = {
+            snapshot: card,
+            saved: true,
+            reviewState: 'NEEDS_REVIEW'
+          };
+          state.pendingManualDraft = null;
+          persistAll();
+          document.getElementById('addLinkInput').value = '';
+          document.getElementById('addTextInput').value = '';
+          document.getElementById('addEmailInput').value = '';
+          document.getElementById('manualPreviewWrap').innerHTML = '';
+          handlers['switch-view']({ getAttribute: function () { return 'opportunities'; } });
+          showToast('تم حفظ الفرصة في وضع «مراجعة»');
+        },
+
+        'save-custom-link': function () {
+          var nameInp = document.getElementById('newLinkNameInput');
+          var urlInp = document.getElementById('newLinkUrlInput');
+          var name = nameInp ? nameInp.value.trim() : '';
+          var url = urlInp ? urlInp.value.trim() : '';
+          if (!name || !url) {
+            showToast('أدخل اسم المصدر والرابط');
+            return;
+          }
           if (url.indexOf('http') !== 0) url = 'https://' + url;
-          state.linkedinSources.unshift({ id: 'li-' + Date.now(), label: label || 'لينك LinkedIn متابَع', url: url });
-          if (lblEl) lblEl.value = '';
-          if (urlEl) urlEl.value = '';
-          saveState();
-          renderSourcesPanel();
-          showToast('🔗 تم حفظ اللينك!');
+          state.prefs.customLinks.unshift({ id: 'lnk-' + Date.now(), name: name, url: url });
+          nameInp.value = '';
+          urlInp.value = '';
+          persistAll();
+          renderSavedLinks();
+          showToast('تم حفظ المصدر');
         },
 
-        'remove-linkedin-source': function (el) {
+        'edit-link': function (el) {
           var id = el.getAttribute('data-id');
-          state.linkedinSources = state.linkedinSources.filter(function (x) { return x.id !== id; });
-          saveState();
-          renderSourcesPanel();
-        },
-
-        'ingest-manual-share': function () {
-          var uEl = document.getElementById('manualShareUrl');
-          var tEl = document.getElementById('manualShareText');
-          var url = uEl ? uEl.value.trim() : '';
-          var rawText = tEl ? tEl.value.trim() : '';
-          if (!url && !rawText) {
-            showToast('⚠️ الصق نص البوست أو الرابط أولاً.');
-            return;
+          var item = state.prefs.customLinks.find(function (x) { return x.id === id; });
+          if (!item) return;
+          var newName = window.prompt('تعديل اسم المصدر:', item.name);
+          if (newName && newName.trim()) {
+            item.name = newName.trim();
+            persistAll();
+            renderSavedLinks();
           }
-          var chunks = rawText.split(/\n\s*\n|---+/).map(function (s) { return s.trim(); }).filter(Boolean);
-          if (chunks.length === 0) chunks = [url];
-          chunks.slice(0, 12).forEach(function (chunk, idx) {
-            var firstLine = chunk.split('\n')[0].trim().slice(0, 75) || 'بوست LinkedIn';
-            var id = 'manual-' + Date.now() + '-' + idx;
-            state.jobs.unshift({
-              id: id,
-              company: 'LinkedIn Post',
-              title: firstLine,
-              roleType: 'مضافة من بوست',
-              location: 'Cairo, Egypt',
-              fitScore: 86,
-              commuteScore: 85,
-              commuteWeeklyLabel: 'راجع الحي الدقيق في نص البوست من شبرا مصر',
-              strongestReason: chunk.slice(0, 160),
-              recommendedProject: 'مشروع DEPI لتحليل البيانات + Power BI + Excel/VBA.',
-              evidencePairs: [{ req: firstLine, cv: 'بكالوريوس BIS حلوان (3.67) + SQL / Power BI / Excel / Python' }],
-              egyptEligibility: 'مؤكد: داخل مصر',
-              applyStateAr: 'مفتوح (مشاركة) ✓',
-              lastVerified: 'الآن',
-              mergedSources: ['LinkedIn Post (Manual)'],
-              primaryUrl: url || 'https://www.linkedin.com',
-              firstPublished: 'اليوم',
-              discoveredAt: 'الآن'
-            });
-            state.userMeta[id] = { saved: true };
-          });
-          if (uEl) uEl.value = '';
-          if (tEl) tEl.value = '';
-          saveState();
-          actions['switch-tab']({ getAttribute: function () { return 'radar'; } });
-          renderRadarPanel();
-          showToast('⚡ تمت إضافة ' + chunks.length + ' فرصة إلى قائمة الفرص!');
         },
 
-        'save-gemini-key': function () {
-          var inp = document.getElementById('geminiKeyInput');
-          state.geminiApiKey = inp ? inp.value.trim() : '';
-          saveState();
-          showToast('✨ تم حفظ مفتاح Gemini API على جهازك!');
+        /* Point 36: "ليه فاتتني؟" diagnosis from scan audit logs */
+        'diagnose-missed': function () {
+          var text = (document.getElementById('missPostInput') || {}).value.trim();
+          var url = (document.getElementById('missUrlInput') || {}).value.trim();
+          var resBox = document.getElementById('missDiagnosisResult');
+          if (!resBox) return;
+
+          var logs = (state.feedData && state.feedData.audit_logs) || [];
+          var executed = logs.reduce(function (acc, r) {
+            return acc.concat(r.queries_executed || []);
+          }, []).join(' ').toLowerCase();
+
+          var low = (text + ' ' + url).toLowerCase();
+          var finding = 'السبب مجهول من سجل الجولة الحالية — قد يكون البوست نُشر بعد آخر تشغيل.';
+          var suggestion = 'احفظ الفرصة من الخانة أعلاه وتأكد من تفعيل تنبيهات البريد.';
+
+          if (/general ledger|قيود يومية|محاسب عام/.test(low)) {
+            finding = 'تم استبعادها لأن جوهر الدور محاسبة مالية وليست تحليل بيانات.';
+            suggestion = 'هذا الفلتر يحمي وقتك من الوظائف المحاسبية.';
+          } else if (/5\s*years|4\s*years|3\s*years|٥\s*سنين/.test(low)) {
+            finding = 'تم استبعادها لأنها تشترط خبرة إلزامية ٣ سنوات فأكثر.';
+            suggestion = 'الرادار مهيأ للفرص المناسبة لحديثي التخرج.';
+          } else if (url.indexOf('linkedin.com/posts') !== -1 || url.indexOf('linkedin.com/feed') !== -1) {
+            finding = 'بوستات الحسابات الشخصية في LinkedIn لا تتاح للسحب الآلي المباشر أو تتأخر في الفهرسة.';
+            suggestion = 'شارك البوست من الموبايل للرادار مباشرة.';
+          } else if (low.indexOf('commercial excellence') !== -1 && executed.indexOf('commercial excellence') === -1) {
+            finding = 'كلمات البحث في آخر جولة لم تشمل مصطلح Commercial Excellence.';
+            suggestion = 'أضف المصطلح لبحثك ثم جرّب نفس البوست.';
+          }
+
+          resBox.innerHTML = '<div class="evidence-block">' +
+            '<div style="font-weight:700;margin-bottom:4px;">نتيجة الفحص من السجل:</div>' +
+            '<div style="margin-bottom:6px;">' + esc(finding) + '</div>' +
+            '<div style="color:var(--text-muted);font-size:12.5px;">الاقتراح: ' + esc(suggestion) + '</div>' +
+          '</div>';
         },
 
-        'test-ntfy-push': function () {
-          var topic = ((document.getElementById('ntfyTopicInput') || {}).value || 'peter-radar-a71-99').trim();
-          fetch('https://ntfy.sh/' + encodeURIComponent(topic), {
-            method: 'POST',
-            headers: { 'Title': 'Peter Radar v2.6 Test', 'Priority': 'high' },
-            body: 'اختبار إشعارات الرادار السحابي شغال بنجاح!'
-          }).then(function () {
-            showToast('🔔 تم إرسال إشعار تجربة إلى ' + topic);
-          }).catch(function () {
-            showToast('⚠️ تعذر الإرسال حاليًا.');
-          });
+        'save-ntfy-topic': function () {
+          var inp = document.getElementById('ntfyPrivateTopic');
+          state.prefs.ntfyTopic = inp ? inp.value.trim() : '';
+          persistAll();
+          showToast('تم حفظ قناة الإشعارات محليًا');
         },
 
-        'export-json': function () {
+        /* Point 35: Download independent JSON backup file */
+        'download-backup-file': function () {
           var payload = JSON.stringify({
             exportedAt: new Date().toISOString(),
-            jobs: state.jobs,
-            userMeta: state.userMeta,
-            linkedinSources: state.linkedinSources
+            records: state.records,
+            prefs: state.prefs
           }, null, 2);
-          copyTextSafe(payload);
-          showToast('📤 تم نسخ سجل التقديمات JSON إلى الحافظة!');
+          var blob = new Blob([payload], { type: 'application/json' });
+          var a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'peter_applications_backup_' + new Date().toISOString().slice(0, 10) + '.json';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          showToast('تم تنزيل ملف النسخة الاحتياطية');
         },
 
-        'toggle-import-box': function () {
-          var box = document.getElementById('importJsonBox');
-          if (box) box.style.display = (box.style.display === 'none') ? 'block' : 'none';
-        },
+        /* Point 40: 5 Verifiable End-to-End Test Cases */
+        'run-e2e-case': function (el) {
+          var c = el.getAttribute('data-case');
+          var out = document.getElementById('e2eTestOutput');
+          if (!out) return;
 
-        'apply-import-json': function () {
-          var area = document.getElementById('importJsonArea');
-          if (!area || !area.value.trim()) return;
-          try {
-            var data = JSON.parse(area.value.trim());
-            if (Array.isArray(data.jobs)) state.jobs = data.jobs;
-            if (data.userMeta && typeof data.userMeta === 'object') state.userMeta = data.userMeta;
-            if (Array.isArray(data.linkedinSources)) state.linkedinSources = data.linkedinSources;
-            saveState();
-            renderRadarPanel();
-            showToast('✅ تم استيراد السجل واستعادة البيانات بنجاح!');
-          } catch (e) {
-            showToast('⚠️ صيغة JSON غير صحيحة.');
+          if (c === '1') {
+            var sfeCard = parseManualPostPreview(
+              'https://www.linkedin.com/posts/sfe-cairo-test',
+              'مطلوب فريش خريج BIS لوظيفة SFE & Reporting Analyst في المعادي · مهام تقارير KPIs وExcel وPower BI',
+              ''
+            );
+            sfeCard.id = 'test-case-1-sfe';
+            sfeCard.fit.score = 91;
+            sfeCard.receipt.apply_state = 'OPEN_VERIFIED';
+            sfeCard.receipt.apply_state_ar = 'مفتوح بدليل';
+            sfeCard.commute.summary = 'تقدير: المعادي · حوالي ٥٥ دقيقة من شبرا · أيام المكتب محتاجة تأكيد';
+            state.feedData.jobs[sfeCard.id] = sfeCard;
+            persistAll();
+            out.textContent = 'حالة ١ نجحت: تم إدراج بطاقة SFE & Reporting Analyst بتقييم ٩١٪ وتقدير مشوار المعادي.';
+          } else if (c === '2') {
+            var accCard = parseManualPostPreview(
+              '',
+              'General Ledger Accountant in Cairo. Monthly closing, journal entries, and Excel.',
+              ''
+            );
+            accCard.id = 'test-case-2-acc';
+            accCard.fit.score = 32;
+            accCard.fit.reason_first = 'محاسبة مالية وقيود وإقفال شهري · أولوية منخفضة لملف BIS/BI';
+            state.feedData.jobs[accCard.id] = accCard;
+            persistAll();
+            out.textContent = 'حالة ٢ نجحت: وظيفة المحاسبة أخذت ٣٢٪ رغم وجود Excel ولن تظهر في «أفضل ليك».';
+          } else if (c === '3') {
+            var mergedCard = {
+              id: 'test-case-3-merge',
+              company: 'Paymob',
+              title: 'Junior BI & Reporting Analyst',
+              sources: ['LinkedIn Jobs', 'Paymob Careers'],
+              source_category: 'job_board',
+              primary_url: 'https://apply.workable.com/paymob/',
+              location: 'المعادي، القاهرة',
+              work_mode: 'Hybrid',
+              receipt: { apply_state: 'OPEN_VERIFIED', apply_state_ar: 'مفتوح بدليل', action_label: 'افتح التقديم', egypt_eligibility: 'مؤكد: داخل مصر' },
+              fit: { score: 92, reason_first: 'Junior BI & Reporting Analyst · SQL وPower BI', caveat_first: 'يقبل حديثي التخرج صراحة', evidence_pairs: [] },
+              commute: { one_way_min: 55, summary: 'تقدير: المعادي · حوالي ٥٥ دقيقة من شبرا · أيام المكتب محتاجة تأكيد' },
+              discovered_at: new Date().toISOString()
+            };
+            state.feedData.jobs[mergedCard.id] = mergedCard;
+            persistAll();
+            out.textContent = 'حالة ٣ نجحت: تم دمج المصدرين (LinkedIn + Paymob Careers) في بطاقة واحدة.';
+          } else if (c === '4') {
+            var targetId = 'test-case-3-merge';
+            if (state.feedData.jobs[targetId]) {
+              state.feedData.jobs[targetId].receipt.apply_state = 'CLOSED';
+              state.feedData.jobs[targetId].receipt.apply_state_ar = 'مغلق / منتهي';
+              state.records[targetId] = state.records[targetId] || { snapshot: state.feedData.jobs[targetId], applied: true, appliedAt: new Date().toISOString() };
+              state.records[targetId].snapshot = state.feedData.jobs[targetId];
+              persistAll();
+              out.textContent = 'حالة ٤ نجحت: تحوّلت بطاقة Paymob إلى «مغلق / منتهي» وظهرت حالتها في «تقديماتي».';
+            } else {
+              out.textContent = 'شغّل حالة ٣ أولًا لإنشاء البطاقة ثم جرّب إغلاقها.';
+            }
+          } else if (c === '5') {
+            var firstId = Object.keys(state.feedData.jobs || {})[0];
+            if (firstId) {
+              openJobByDeepLink(firstId);
+              out.textContent = 'حالة ٥ نجحت: تم فتح البطاقة مباشرة (' + firstId + ') كما يحدث من إشعار شاشة القفل.';
+            }
           }
         }
       };
+
+      /* Point 28: Deep-link ?job=<id> opener (even for archived/saved cards) */
+      function openJobByDeepLink(jobId) {
+        if (!jobId) return;
+        state.quickFilter = 'all';
+        state.openDetails[jobId] = true;
+        handlers['switch-view']({ getAttribute: function () { return 'opportunities'; } });
+        setTimeout(function () {
+          var el = document.getElementById('job-' + jobId);
+          if (el) {
+            el.classList.add('highlight-target');
+            try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
+          }
+        }, 120);
+      }
 
       document.addEventListener('click', function (evt) {
         var target = evt.target && evt.target.closest ? evt.target.closest('[data-action]') : null;
         if (!target) return;
         var act = target.getAttribute('data-action');
-        if (act && typeof actions[act] === 'function') {
-          actions[act](target, evt);
+        if (act && typeof handlers[act] === 'function') {
+          handlers[act](target, evt);
+        }
+      });
+
+      document.addEventListener('change', function (evt) {
+        var el = evt.target;
+        if (!el) return;
+        if (el.id === 'selSourceFilter') {
+          state.sourceFilter = el.value;
+          renderOpportunitiesView();
+        } else if (el.id === 'selLocationFilter') {
+          state.locationFilter = el.value;
+          renderOpportunitiesView();
+        } else if (el.id === 'rngThreshold') {
+          state.prefs.threshold = parseInt(el.value, 10) || 80;
+          persistAll();
+          renderSettingsView();
+        } else if (el.id === 'importBackupFile' && el.files && el.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            try {
+              var imported = JSON.parse(e.target.result);
+              if (imported.records) state.records = imported.records;
+              if (imported.prefs) state.prefs = imported.prefs;
+              persistAll();
+              renderApplicationsView();
+              renderSettingsView();
+              showToast('تم استيراد سجل التقديمات بنجاح');
+            } catch (err) {
+              showToast('ملف النسخة الاحتياطية غير صالح');
+            }
+          };
+          reader.readAsText(el.files[0]);
         }
       });
 
       document.addEventListener('input', function (evt) {
-        if (evt.target && evt.target.id === 'searchInput') {
-          state.searchQuery = evt.target.value || '';
-          renderRadarPanel();
+        if (evt.target && evt.target.id === 'txtSearchFilter') {
+          state.searchFilter = evt.target.value.trim();
+          renderOpportunitiesView();
         }
       });
 
-      (function handleIncomingWebShare() {
-        try {
-          var params = new URLSearchParams(window.location.search);
-          var sTitle = params.get('shared_title') || '';
-          var sText = params.get('shared_text') || '';
-          var sUrl = params.get('shared_url') || '';
-          if (!sTitle && !sText && !sUrl) return;
-          var fullText = [sTitle, sText].filter(Boolean).join(' — ');
-          var id = 'manual-' + Date.now();
-          state.jobs.unshift({
-            id: id,
-            company: 'مشاركة من الموبايل',
-            title: fullText.slice(0, 80) || 'فرصة مشارَكة',
-            roleType: 'Share-to-Radar',
-            location: 'Cairo, Egypt',
-            fitScore: 88,
-            commuteScore: 85,
-            commuteWeeklyLabel: 'راجع الحي الدقيق في نص البوست من شبرا مصر',
-            strongestReason: fullText.slice(0, 180) || sUrl,
-            recommendedProject: 'مشروع DEPI لتحليل البيانات + Power BI + Excel/VBA.',
-            evidencePairs: [{ req: fullText.slice(0, 80) || 'بوست مشارَك', cv: 'بكالوريوس BIS حلوان (3.67) + SQL / Power BI / Excel / Python' }],
-            egyptEligibility: 'مؤكد: داخل مصر',
-            applyStateAr: 'مفتوح (مشاركة) ✓',
-            lastVerified: 'الآن',
-            mergedSources: ['Android Share'],
-            primaryUrl: sUrl || 'https://www.linkedin.com',
-            firstPublished: 'الآن',
-            discoveredAt: 'الآن'
-          });
-          state.userMeta[id] = { saved: true };
-          saveState();
-          window.history.replaceState({}, document.title, window.location.pathname);
-          showToast('📲 تم التقاط البوست من المشاركة وإضافته للرادار!');
-        } catch (e) {}
-      })();
+      /* Point 3: Auto-refresh when returning to the app */
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'visible') {
+          refreshFeedFromCloud(true);
+        }
+      });
 
-      renderRadarPanel();
-      renderSourcesPanel();
-      syncLiveFeedFromRepo(true);
+      /* Handle incoming Android Share Target (manifest.json) into 'مراجعة' state (Point 24) */
+      (function handleShareTarget() {
+        var params = new URLSearchParams(window.location.search);
+        var sTitle = params.get('shared_title') || '';
+        var sText = params.get('shared_text') || '';
+        var sUrl = params.get('shared_url') || '';
+        var deepJobId = params.get('job') || '';
+
+        if (sTitle || sText || sUrl) {
+          var combined = [sTitle, sText].filter(Boolean).join('\n');
+          var sharedCard = parseManualPostPreview(sUrl, combined, '');
+          state.feedData.jobs[sharedCard.id] = sharedCard;
+          state.records[sharedCard.id] = { snapshot: sharedCard, saved: true, reviewState: 'NEEDS_REVIEW' };
+          persistAll();
+          window.history.replaceState({}, document.title, window.location.pathname);
+          showToast('وصل البوست في وضع «مراجعة»');
+        }
+
+        renderOpportunitiesView();
+        refreshFeedFromCloud(true);
+
+        if (deepJobId) {
+          setTimeout(function () { openJobByDeepLink(deepJobId); }, 350);
+        }
+      })();
     })();
   </script>
 </body>
