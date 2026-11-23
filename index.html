@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#070b14" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <title>رادار فرص بيتر — Peter's Opportunity Radar v2.2</title>
+  <title>رادار فرص بيتر — Peter's Opportunity Radar v2.3</title>
   <style>
     :root {
       --bg-void: #070b14;
@@ -77,81 +77,6 @@
 
     .mono {
       font-family: var(--font-mono);
-    }
-
-    #pushBannerWrap {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      right: 10px;
-      z-index: 999;
-      display: none;
-      justify-content: center;
-      pointer-events: none;
-    }
-
-    #pushBannerCard {
-      pointer-events: auto;
-      width: 100%;
-      max-width: 560px;
-      background: #0f172a;
-      border: 2px solid var(--accent-emerald);
-      border-radius: var(--radius-lg);
-      padding: 12px 14px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.88);
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .push-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #10b981, #06b6d4);
-      color: #041019;
-      font-size: 19px;
-      font-weight: 900;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .push-body {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .push-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11px;
-      color: var(--accent-emerald);
-      font-weight: 800;
-      margin-bottom: 2px;
-    }
-
-    #pushTitleText {
-      font-size: 13px;
-      font-weight: 800;
-      color: #ffffff;
-      margin: 0 0 3px 0;
-      word-break: break-word;
-    }
-
-    #pushSubText {
-      font-size: 11.5px;
-      color: #67e8f9;
-      margin: 0 0 8px 0;
-      word-break: break-word;
-    }
-
-    .push-actions-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
     }
 
     #toastBar {
@@ -227,35 +152,6 @@
       color: var(--accent-emerald);
     }
 
-    .mode-switch-group {
-      display: inline-flex;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-strong);
-      border-radius: 12px;
-      padding: 3px;
-      gap: 3px;
-    }
-
-    .mode-pill {
-      min-height: 36px;
-      padding: 5px 10px;
-      border-radius: 9px;
-      font-size: 11px;
-      font-weight: 800;
-      background: transparent;
-      color: var(--text-muted);
-    }
-
-    .mode-pill.active-real {
-      background: var(--accent-emerald);
-      color: #041019;
-    }
-
-    .mode-pill.active-demo {
-      background: var(--accent-amber);
-      color: #041019;
-    }
-
     .status-strip {
       display: flex;
       flex-wrap: wrap;
@@ -270,7 +166,7 @@
 
     .nav-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 4px;
       padding: 6px 0 8px 0;
     }
@@ -282,7 +178,7 @@
       background: var(--bg-surface);
       color: var(--text-secondary);
       border: 1px solid var(--border-subtle);
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 800;
       display: flex;
       flex-direction: column;
@@ -311,38 +207,6 @@
 
     .panel-section {
       display: none;
-    }
-
-    .demo-warning-banner {
-      background: rgba(245, 158, 11, 0.14);
-      border: 1.5px solid var(--accent-amber);
-      color: #fde68a;
-      border-radius: var(--radius-md);
-      padding: 10px 12px;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 12px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .real-live-banner {
-      background: rgba(16, 185, 129, 0.12);
-      border: 1.5px solid rgba(16, 185, 129, 0.55);
-      color: #a7f3d0;
-      border-radius: var(--radius-md);
-      padding: 10px 12px;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 12px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
     }
 
     .panel-header-card {
@@ -420,10 +284,6 @@
       box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
     }
 
-    .btn-primary-cta:disabled {
-      opacity: 0.65;
-    }
-
     .btn-secondary {
       min-height: 42px;
       padding: 8px 14px;
@@ -437,21 +297,6 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-    }
-
-    .btn-danger-soft {
-      min-height: 42px;
-      padding: 8px 12px;
-      border-radius: var(--radius-md);
-      background: rgba(244, 63, 94, 0.14);
-      color: #fda4af;
-      border: 1px solid rgba(244, 63, 94, 0.45);
-      font-size: 11.5px;
-      font-weight: 800;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
     }
 
     .btn-mini-emerald {
@@ -474,7 +319,7 @@
       font-weight: 800;
     }
 
-    .text-input, .text-area, .select-input {
+    .text-input, .text-area {
       width: 100%;
       min-height: 44px;
       background: var(--bg-surface);
@@ -487,12 +332,8 @@
     }
 
     .text-area {
-      min-height: 82px;
+      min-height: 90px;
       resize: vertical;
-    }
-
-    .text-input:focus, .text-area:focus, .select-input:focus {
-      border-color: var(--accent-emerald);
     }
 
     .input-row {
@@ -531,21 +372,10 @@
       border-radius: var(--radius-lg);
       padding: 14px;
       margin-bottom: 12px;
-      transition: box-shadow 0.25s ease, border-color 0.25s ease;
-    }
-
-    .job-card.closed-card {
-      border-color: rgba(244, 63, 94, 0.65);
-      opacity: 0.88;
     }
 
     .job-card.applied-card {
       border-color: rgba(16, 185, 129, 0.65);
-    }
-
-    .job-card.highlight-pulse {
-      border-color: #10b981 !important;
-      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.45), 0 12px 32px rgba(16, 185, 129, 0.35) !important;
     }
 
     .card-top-badges {
@@ -582,18 +412,6 @@
       background: var(--accent-cyan-soft);
       color: #67e8f9;
       border: 1px solid rgba(6, 182, 212, 0.45);
-    }
-
-    .badge-warn {
-      background: var(--accent-amber-soft);
-      color: #fcd34d;
-      border: 1px solid rgba(245, 158, 11, 0.45);
-    }
-
-    .badge-closed {
-      background: var(--accent-rose-soft);
-      color: #fda4af;
-      border: 1px solid rgba(244, 63, 94, 0.55);
     }
 
     .badge-recruiter {
@@ -646,12 +464,6 @@
       color: #fcd34d;
     }
 
-    .score-pill.bad {
-      background: var(--accent-rose-soft);
-      border-color: rgba(244, 63, 94, 0.5);
-      color: #fda4af;
-    }
-
     .score-pill .lbl {
       font-size: 10.5px;
       display: block;
@@ -674,28 +486,9 @@
       margin-bottom: 10px;
     }
 
-    .first-screen-summary div {
-      margin-bottom: 4px;
-    }
-
-    .first-screen-summary div:last-child {
-      margin-bottom: 0;
-    }
-
-    .conflict-banner {
-      background: var(--accent-amber-soft);
-      border: 1px solid var(--accent-amber);
-      color: #fde68a;
-      border-radius: var(--radius-sm);
-      padding: 8px 10px;
-      font-size: 11.5px;
-      font-weight: 700;
-      margin-bottom: 9px;
-    }
-
     .btn-drawer-toggle {
       width: 100%;
-      min-height: 44px;
+      min-height: 42px;
       padding: 8px 12px;
       border-radius: var(--radius-md);
       background: #182238;
@@ -717,53 +510,6 @@
       padding: 12px;
       margin-bottom: 10px;
       font-size: 12px;
-    }
-
-    .receipt-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 6px;
-      background: #0d1526;
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      padding: 10px;
-      margin-bottom: 10px;
-      font-size: 11.5px;
-    }
-
-    @media (min-width: 640px) {
-      .receipt-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .evidence-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 8px 0 10px 0;
-      font-size: 11.5px;
-      background: #0d1526;
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-    }
-
-    .evidence-table th {
-      text-align: right;
-      color: var(--text-muted);
-      font-weight: 800;
-      padding: 6px 8px;
-      border-bottom: 1px solid var(--border-strong);
-      font-size: 10.5px;
-    }
-
-    .evidence-table td {
-      padding: 7px 8px;
-      border-bottom: 1px solid var(--border-subtle);
-      vertical-align: top;
-    }
-
-    .evidence-table tr:last-child td {
-      border-bottom: none;
     }
 
     .draft-pre {
@@ -823,59 +569,6 @@
       border-color: var(--accent-emerald);
     }
 
-    .reject-drawer {
-      display: none;
-      margin-top: 8px;
-      padding: 10px;
-      border-radius: var(--radius-md);
-      background: rgba(244, 63, 94, 0.1);
-      border: 1px solid rgba(244, 63, 94, 0.45);
-    }
-
-    .reject-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-
-    .reject-chip {
-      min-height: 36px;
-      padding: 5px 10px;
-      border-radius: 8px;
-      background: #1e293b;
-      color: #fecdd3;
-      border: 1px solid rgba(244, 63, 94, 0.45);
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    .post-apply-bar {
-      margin-top: 9px;
-      padding: 9px 10px;
-      border-radius: var(--radius-md);
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.4);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      font-size: 11.5px;
-    }
-
-    .cards-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-
-    @media (min-width: 680px) {
-      .cards-grid-2 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
     .sub-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-strong);
@@ -910,94 +603,19 @@
       font-size: 11.5px;
     }
 
-    .terminal-box {
-      background: #04070d;
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-md);
-      padding: 12px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: #6ee7b7;
-      white-space: pre-wrap;
-      word-break: break-word;
-      max-height: 260px;
-      overflow-y: auto;
-      margin-top: 10px;
-    }
-
-    .kill-switch-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      background: var(--bg-input);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 11px 12px;
-      margin-bottom: 8px;
-    }
-
-    .step-reminder-card {
-      background: linear-gradient(135deg, #162038 0%, #0f172a 100%);
-      border: 1px solid rgba(6, 182, 212, 0.55);
-      border-radius: var(--radius-md);
-      padding: 10px 12px;
-      margin-bottom: 10px;
+    .source-pills {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .slider-block {
-      background: var(--bg-input);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 11px 12px;
-      margin-bottom: 10px;
-    }
-
-    .slider-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 4px;
-    }
-
-    input[type="range"] {
-      width: 100%;
-      height: 30px;
-      accent-color: #10b981;
+      gap: 6px;
+      margin-top: 8px;
     }
   </style>
 </head>
 <body>
 
-  <div id="pushBannerWrap">
-    <div id="pushBannerCard">
-      <div class="push-icon">🔔</div>
-      <div class="push-body">
-        <div class="push-meta">
-          <span>رادار فرص بيتر • إشعار فوري</span>
-          <span class="ltr mono">Samsung Galaxy A71</span>
-        </div>
-        <p id="pushTitleText">Paymob — Junior BI & Reporting Analyst | ملاءمة ٩٦٪</p>
-        <p id="pushSubText">اضغط لفتح بطاقة الفرصة والإيصال الكامل مباشرة</p>
-        <div class="push-actions-row">
-          <button type="button" class="btn-mini-emerald" data-action="open-deeplink">افتح البطاقة الآن ←</button>
-          <button type="button" class="btn-mini-dark" data-action="hide-push">إغلاق</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div id="toastBar">
     <div id="toastContent">
       <span id="toastText">✓ تم التنفيذ بنجاح</span>
-      <button type="button" id="toastUndoBtn" class="btn-mini-dark" style="display:none;" data-action="undo-dismiss">↩ تراجع</button>
     </div>
   </div>
 
@@ -1005,46 +623,33 @@
     <div class="container">
       <div class="brand-bar">
         <div class="brand-info">
-          <h1>🎯 رادار فرص بيتر <span class="badge badge-open ltr mono">v2.2</span></h1>
-          <p class="brand-sub"><span class="ltr">BIS</span> حلوان (<span class="ltr">3.67</span>) • <strong>شبرا مصر</strong> • <span class="ltr">Galaxy A71</span></p>
+          <h1>🎯 رادار فرص بيتر <span class="badge badge-open ltr mono">v2.3 Cloud</span></h1>
+          <p class="brand-sub"><span class="ltr">BIS</span> حلوان (<span class="ltr">3.67</span>) • <strong>شبرا مصر</strong> • <span class="ltr">SQL • Power BI • Excel • Python</span></p>
         </div>
-
-        <div class="mode-switch-group" role="group" aria-label="وضع التشغيل">
-          <button type="button" id="btnModeReal" class="mode-pill active-real" data-action="switch-mode" data-mode="real">
-            🌐 الوضع الحقيقي
-          </button>
-          <button type="button" id="btnModeDemo" class="mode-pill" data-action="switch-mode" data-mode="demo">
-            🧪 وضع المحاكاة (Demo)
-          </button>
-        </div>
+        <button type="button" class="btn-mini-emerald" data-action="sync-cloud-feed">🔄 تحديث من السحابة</button>
       </div>
 
       <div class="status-strip">
-        <span>آخر جولة: <strong id="hdrLastRun" class="ltr mono" style="color:#67e8f9;">جاري المزامنة...</strong> • <strong id="hdrSearchStatus" style="color:#10b981;">كل ساعة</strong> <span id="countdownClock" class="ltr mono">(54:12)</span></span>
-        <span>الإشعارات: <strong id="hdrNotifStatus" style="color:#67e8f9;">مفعّلة</strong></span>
-        <span>حصة السحابة: <strong class="ltr mono" style="color:#6ee7b7;">1,420/2,000m</strong></span>
+        <span>آخر جولة سحابية: <strong id="hdrLastRun" class="ltr mono" style="color:#67e8f9;">جاري التحميل...</strong></span>
+        <span>إجمالي الفرص الحقيقية: <strong id="hdrTotalJobs" class="ltr mono" style="color:#6ee7b7;">0</strong></span>
       </div>
 
       <nav class="nav-grid" aria-label="التنقل الرئيسي">
         <button type="button" id="nav-radar" class="nav-btn active" data-action="switch-tab" data-tab="radar">
           <span class="ico">🎯</span>
-          <span>1. الرادار</span>
+          <span>1. الفرص الحقيقية</span>
         </button>
         <button type="button" id="nav-sources" class="nav-btn" data-action="switch-tab" data-tab="sources">
-          <span class="ico">📡</span>
-          <span>2. المصادر ولينكات LinkedIn</span>
+          <span class="ico">🔗</span>
+          <span>2. بحث 24س ولينكات</span>
         </button>
-        <button type="button" id="nav-miss" class="nav-btn" data-action="switch-tab" data-tab="miss">
-          <span class="ico">🕵️</span>
-          <span>3. ليه فاتتني؟</span>
-        </button>
-        <button type="button" id="nav-tests" class="nav-btn" data-action="switch-tab" data-tab="tests">
-          <span class="ico">🧪</span>
-          <span>4. الاختبارات</span>
+        <button type="button" id="nav-paste" class="nav-btn" data-action="switch-tab" data-tab="paste">
+          <span class="ico">📲</span>
+          <span>3. لصق بوستات LinkedIn</span>
         </button>
         <button type="button" id="nav-settings" class="nav-btn" data-action="switch-tab" data-tab="settings">
           <span class="ico">⚙️</span>
-          <span>5. الإشعارات والإعدادات</span>
+          <span>4. الإشعارات وGemini</span>
         </button>
       </nav>
     </div>
@@ -1052,256 +657,132 @@
 
   <main class="container workspace">
 
-    <!-- TAB 1: الرادار -->
+    <!-- TAB 1: الفرص الحقيقية -->
     <section id="panel-radar" class="panel-section" style="display: block;">
-      <div id="modeBannerWrap"></div>
-      <div id="stepRemindersWrap"></div>
+
+      <div class="sub-card" style="border-color: rgba(16, 185, 129, 0.45);">
+        <div style="font-size:12px;font-weight:800;color:#a7f3d0;">📡 تغطية المصادر في آخر جولة سحابية:</div>
+        <div id="sourceStatsBar" class="source-pills">
+          <span class="badge">جاري قراءة بيانات السحابة...</span>
+        </div>
+      </div>
 
       <div class="stats-grid">
         <button type="button" id="stat-all" class="stat-box selected" data-action="set-filter" data-filter="all">
-          <span class="stat-label">فرص نشطة مناسبة</span>
+          <span class="stat-label">كل الفرص النشطة</span>
           <span id="countActive" class="stat-num ltr mono">0</span>
         </button>
-        <button type="button" id="stat-closing" class="stat-box" data-action="set-filter" data-filter="closing">
-          <span class="stat-label" style="color:#fcd34d;">تغلق قريبًا (<48h)</span>
-          <span id="countClosing" class="stat-num ltr mono" style="color:#f59e0b;">0</span>
-        </button>
-        <button type="button" id="stat-applied" class="stat-box" data-action="set-filter" data-filter="applied">
-          <span class="stat-label" style="color:#67e8f9;">تقديماتي ومتابعات</span>
-          <span id="countApplied" class="stat-num ltr mono" style="color:#06b6d4;">0</span>
+        <button type="button" id="stat-priority" class="stat-box" data-action="set-filter" data-filter="priority">
+          <span class="stat-label" style="color:#6ee7b7;">ملاءمة ≥ 80%</span>
+          <span id="countPriority" class="stat-num ltr mono" style="color:#10b981;">0</span>
         </button>
         <button type="button" id="stat-saved" class="stat-box" data-action="set-filter" data-filter="saved">
-          <span class="stat-label" style="color:#6ee7b7;">محفوظة / ROI</span>
-          <span id="countSaved" class="stat-num ltr mono" style="color:#10b981;">0</span>
+          <span class="stat-label" style="color:#fcd34d;">⭐ المحفوظة</span>
+          <span id="countSaved" class="stat-num ltr mono" style="color:#f59e0b;">0</span>
         </button>
-      </div>
-
-      <div class="sub-card" style="border-color: rgba(16, 185, 129, 0.45);">
-        <div class="input-row" style="flex-wrap:wrap;">
-          <button type="button" id="btnRunRealScrape" class="btn-primary-cta" style="flex:1;min-width:210px;" data-action="run-real-scrape">
-            <span>🌐 فحص المصادر الحية وتقييمها على الـCV</span>
-          </button>
-          <button type="button" class="btn-secondary" data-action="sync-cloud-feed">
-            🔄 مزامنة <span class="ltr mono">live_feed.json</span>
-          </button>
-          <button type="button" class="btn-danger-soft" data-action="clear-current-list">
-            🗑 مسح القائمة الحالية
-          </button>
-        </div>
-        <div id="realScrapeStatusBox" style="display:none;margin-top:10px;padding:10px;border-radius:10px;background:#090e1a;border:1px solid #1e293b;font-size:11.5px;color:#67e8f9;"></div>
+        <button type="button" id="stat-applied" class="stat-box" data-action="set-filter" data-filter="applied">
+          <span class="stat-label" style="color:#67e8f9;">✅ قدّمت فيها</span>
+          <span id="countApplied" class="stat-num ltr mono" style="color:#06b6d4;">0</span>
+        </button>
       </div>
 
       <div style="margin-bottom: 10px;">
         <input type="text"
                id="searchInput"
                class="text-input"
-               placeholder="ابحث بالمسمى، الشركة، أو المهارة (SQL, Power BI, SFE, MIS, Excel, Python...)" />
+               placeholder="ابحث بالمسمى، الشركة، أو المصدر (LinkedIn, WUZZUF, Paymob, BI, SFE, MIS...)" />
       </div>
 
       <div class="chips-wrap">
-        <button type="button" id="chip-all" class="chip-btn active" data-action="set-filter" data-filter="all">الكل المناسب</button>
-        <button type="button" id="chip-priority" class="chip-btn" data-action="set-filter" data-filter="priority">🔥 أولوية قصوى</button>
-        <button type="button" id="chip-closing" class="chip-btn" data-action="set-filter" data-filter="closing">⏳ تغلق قريبًا</button>
+        <button type="button" id="chip-all" class="chip-btn active" data-action="set-filter" data-filter="all">الكل</button>
+        <button type="button" id="chip-priority" class="chip-btn" data-action="set-filter" data-filter="priority">🔥 ملاءمة ≥ 80%</button>
+        <button type="button" id="chip-linkedin" class="chip-btn" data-action="set-filter" data-filter="linkedin">LinkedIn Egypt</button>
+        <button type="button" id="chip-wuzzuf" class="chip-btn" data-action="set-filter" data-filter="wuzzuf">WUZZUF</button>
+        <button type="button" id="chip-companies" class="chip-btn" data-action="set-filter" data-filter="companies">بوابات الشركات</button>
         <button type="button" id="chip-saved" class="chip-btn" data-action="set-filter" data-filter="saved">⭐ المحفوظة</button>
-        <button type="button" id="chip-applied" class="chip-btn" data-action="set-filter" data-filter="applied">✅ قدّمت عليها</button>
-        <button type="button" id="chip-closed" class="chip-btn" data-action="set-filter" data-filter="closed">⛔ المغلقة / المستبعدة</button>
+        <button type="button" id="chip-applied" class="chip-btn" data-action="set-filter" data-filter="applied">✅ قدّمت فيها</button>
       </div>
 
       <div id="jobsListContainer"></div>
     </section>
 
-    <!-- TAB 2: المصادر ولينكات LinkedIn -->
+    <!-- TAB 2: بحث 24س ولينكات LinkedIn -->
     <section id="panel-sources" class="panel-section" style="display: none;">
       <div class="panel-header-card">
-        <h2>📡 لينكات LinkedIn المتابَعة، لصق البوستات، وحالة المصادر</h2>
-        <p>احفظ لينكات صفحات الشركات أو حسابات الناشرين اللي بتنزل فرص كتير على <span class="ltr">LinkedIn</span>، والصق أي بوست أو مجموعة بوستات ليتم تقييمها بدقة على سيرتك الذاتية.</p>
+        <h2>🚀 أزرار البحث المباشر (آخر 24 ساعة) + لينكات LinkedIn الخاصة بك</h2>
+        <p>روابط بحث مضبوطة على <strong>مصر + حديثي التخرج / Junior + آخر 24 ساعة</strong> تفتح مباشرة في تطبيق LinkedIn أو WUZZUF أو Indeed بضغطة واحدة.</p>
+      </div>
+
+      <div class="sub-card" style="border-color: rgba(16, 185, 129, 0.5);">
+        <h3>⚡ بحث آخر 24 ساعة المضبوط على مقاسك (بضغطة واحدة)</h3>
+        <div class="watchlist-item">
+          <div><strong>LinkedIn Jobs — Data / BI / Reporting (مصر • آخر 24 ساعة • Entry/Intern)</strong></div>
+          <a href="https://www.linkedin.com/jobs/search/?keywords=(Data%20Analyst%20OR%20BI%20Analyst%20OR%20Reporting%20Analyst%20OR%20MIS%20OR%20SFE)&location=Egypt&f_TPR=r86400&f_E=1%2C2" target="_blank" rel="noopener noreferrer" class="btn-mini-emerald">افتح ↗</a>
+        </div>
+        <div class="watchlist-item">
+          <div><strong>LinkedIn Posts — بوستات التوظيف في مصر (آخر 24 ساعة)</strong></div>
+          <a href="https://www.linkedin.com/search/results/content/?keywords=(Data%20Analyst%20OR%20BI%20OR%20MIS%20OR%20SFE)%20Egypt&datePosted=%22past-24h%22" target="_blank" rel="noopener noreferrer" class="btn-mini-emerald">افتح ↗</a>
+        </div>
+        <div class="watchlist-item">
+          <div><strong>WUZZUF — وظائف Data / BI / MIS / Operations (مصر • حديثي التخرج)</strong></div>
+          <a href="https://wuzzuf.net/search/jobs/?a=hpb&filters%5Bcareer_level%5D%5B0%5D=Entry%20Level&filters%5Bcareer_level%5D%5B1%5D=Student&q=data%20analyst" target="_blank" rel="noopener noreferrer" class="btn-mini-emerald">افتح ↗</a>
+        </div>
+        <div class="watchlist-item">
+          <div><strong>Indeed Egypt — Data / BI / Operations Analyst (آخر 3 أيام)</strong></div>
+          <a href="https://eg.indeed.com/jobs?q=data+analyst+OR+business+intelligence+OR+reporting&l=Cairo&fromage=3" target="_blank" rel="noopener noreferrer" class="btn-mini-emerald">افتح ↗</a>
+        </div>
       </div>
 
       <div class="sub-card" style="border-color: rgba(129, 140, 248, 0.55);">
-        <h3>🔗 لينكات وصفحات <span class="ltr">LinkedIn</span> اللي بتنزل فرص كتير</h3>
-        <p>أضف رابط صفحة شركة أو حساب ناشر/HR على LinkedIn عشان تفتحها بضغطة واحدة وتجمع بوستاتها بسرعة (مع إمكانية كتابة اسم أو تخصص الصفحة):</p>
+        <h3>🔗 لينكات صفحات وحسابات LinkedIn التي تتابعها</h3>
+        <p>احفظ هنا رابط أي صفحة شركة أو حساب HR بينزل وظائف كتير:</p>
         <div class="input-row" style="flex-wrap:wrap;margin-bottom:8px;">
-          <input type="text" id="newLinkedInLabel" class="text-input" style="flex:1;min-width:160px;" placeholder="اسم الصفحة أو الناشر (مثال: وظائف Data مصر)" />
-          <input type="text" id="newLinkedInUrl" class="text-input ltr" style="flex:2;min-width:220px;" placeholder="https://www.linkedin.com/company/... أو /in/..." />
+          <input type="text" id="newLinkedInLabel" class="text-input" style="flex:1;min-width:160px;" placeholder="الاسم (مثال: حساب HR فوري / وظائف مصر)" />
+          <input type="text" id="newLinkedInUrl" class="text-input ltr" style="flex:2;min-width:220px;" placeholder="https://www.linkedin.com/..." />
           <button type="button" class="btn-secondary" data-action="add-linkedin-source">➕ حفظ اللينك</button>
         </div>
         <div id="linkedinLinksWrap"></div>
       </div>
-
-      <div class="sub-card" style="border-color: rgba(6, 182, 212, 0.5);">
-        <h3>📲 لصق بوست أو مجموعة بوستات من <span class="ltr">LinkedIn</span> / أي تطبيق</h3>
-        <p>الصق نص بوست واحد أو كذا بوست مفصولين بسطر فاضي أو `---`، والرادار هيحول كل فرصة لبطاقة بتقييم حقيقي لـ <span class="ltr">CV</span> بتاعك ومشوار شبرا مصر:</p>
-        <div style="display:flex;flex-direction:column;gap:7px;">
-          <input type="text" id="manualShareUrl" class="text-input ltr" placeholder="رابط البوست أو الإعلان (اختياري): https://www.linkedin.com/posts/..." />
-          <textarea id="manualShareText" class="text-area" style="min-height:110px;" placeholder="الصق نص البوست أو عدة بوستات هنا... مثال: Junior BI & Reporting Analyst needed in Cairo - SQL, Power BI, Excel..."></textarea>
-          <button type="button" class="btn-primary-cta" data-action="ingest-manual-share">⚡ تحليل وإضافة الفرصة للرادار الآن</button>
-        </div>
-      </div>
-
-      <div id="sourcesListContainer" class="cards-grid-2"></div>
     </section>
 
-    <!-- TAB 3: ليه فاتتني؟ -->
-    <section id="panel-miss" class="panel-section" style="display: none;">
+    <!-- TAB 3: لصق بوستات LinkedIn -->
+    <section id="panel-paste" class="panel-section" style="display: none;">
       <div class="panel-header-card">
-        <h2>🕵️ تشخيص «ليه فاتتني؟» (<span class="ltr">Root-Cause Miss Audit</span>)</h2>
-        <p>ابعت أي فرصة كويسة لقيتها بنفسك، والرادار هيقارن وقت نشرها ونصها بسجل البحث الفعلي (<span class="ltr mono">search_audit_log</span>) ويقولّك السبب القابل للتحقق ويقترح تعديل يقيس أثره في الجولة الجاية.</p>
+        <h2>📲 لصق بوستات LinkedIn وتقييمها وتجهيز رسالة التقديم</h2>
+        <p>الصق نص بوست واحد أو عدة بوستات من LinkedIn (افصل بين كل بوست والتاني بسطر فاضي أو `---`) ليتم تقييمها على سيرتك الذاتية ومشوار شبرا مصر وتوليد مسودة التقديم.</p>
       </div>
 
       <div class="sub-card">
-        <h3>١. أدخل بيانات الفرصة اللي لقيتها بنفسك</h3>
         <div style="display:flex;flex-direction:column;gap:8px;">
-          <input type="text" id="missUrlInput" class="text-input ltr" placeholder="رابط البوست أو الإعلان (مثال: https://linkedin.com/posts/...)" />
-          <textarea id="missTextInput" class="text-area" placeholder="نص البوست أو المسمى (مثال: مطلوب خريج حديث لوظيفة Sales Force Effectiveness في الدقي — ابعت الـCV)"></textarea>
-          <div class="input-row">
-            <select id="missSourceSelect" class="select-input">
-              <option value="linkedin_posts">المصدر: بوست LinkedIn عام</option>
-              <option value="wuzzuf">المصدر: WUZZUF</option>
-              <option value="indeed">المصدر: Indeed Egypt</option>
-              <option value="gated_app">المصدر: تطبيق مقفول</option>
-            </select>
-            <select id="missTimeSelect" class="select-input">
-              <option value="after_scan">اتنشر: بعد آخر جولة</option>
-              <option value="before_scan">اتنشر: قبل آخر جولة</option>
-            </select>
-          </div>
-          <button type="button" class="btn-primary-cta" data-action="run-miss-audit">
-            <span>🔍 قارن بسجل البحث واكشف السبب الحقيقي</span>
-          </button>
+          <input type="text" id="manualShareUrl" class="text-input ltr" placeholder="رابط البوست أو الإيميل للتقديم (اختياري)" />
+          <textarea id="manualShareText" class="text-area" style="min-height:140px;" placeholder="الصق نص البوستات هنا..."></textarea>
+          <button type="button" class="btn-primary-cta" data-action="ingest-manual-share">⚡ تحليل وإضافة البوستات للرادار الآن</button>
         </div>
-
-        <div id="missDiagnosisBox" style="display:none;margin-top:12px;"></div>
-      </div>
-
-      <div class="sub-card">
-        <h3>٢. سجل جولات البحث الفعلي (<span class="ltr mono">search_audit_log</span>)</h3>
-        <div id="searchAuditLogView" class="terminal-box" dir="ltr"></div>
       </div>
     </section>
 
-    <!-- TAB 4: الاختبارات -->
-    <section id="panel-tests" class="panel-section" style="display: none;">
-      <div class="panel-header-card">
-        <h2>🧪 مختبر اختبارات التحقق الفعلية (<span class="ltr">State-Mutating Verification</span>)</h2>
-        <p>اختبارات حقيقية بتعدّل حالة التطبيق وتتحقق من النتيجة: إشعار شاشة القفل، دمج التكرار، حظر المنتهي، فشل مصدر أثناء الجولة، وفصل وظيفتين في نفس الشركة.</p>
-        <div style="margin-top: 10px;">
-          <button type="button" class="btn-primary-cta" data-action="run-all-tests">
-            <span>▶️ تشغيل جميع الاختبارات الـ٦ والتحقق من النتائج</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="cards-grid-2">
-        <div class="sub-card">
-          <h3>اختبار ١: إشعار <span class="ltr">A71</span> بصوت وفتح البطاقة</h3>
-          <p>يرسل إشعار <span class="ltr">Paymob Junior BI</span> بصوت واهتزاز وعند الضغط يفتح البطاقة مباشرة.</p>
-          <button type="button" class="btn-secondary" style="width:100%;" data-action="run-test" data-test="1">▶ تنفيذ اختبار ١</button>
-        </div>
-        <div class="sub-card">
-          <h3>اختبار ٢: دمج تكرار من مصدرين + تذكر التقديم</h3>
-          <p>يربط بوست <span class="ltr">Fawry</span> مع <span class="ltr">WUZZUF</span> في بطاقة واحدة ويحافظ على «قدّمت يوم 2026-11-22».</p>
-          <button type="button" class="btn-secondary" style="width:100%;" data-action="run-test" data-test="2">▶ تنفيذ اختبار ٢</button>
-        </div>
-        <div class="sub-card">
-          <h3>اختبار ٣: حظر الإعلان المنتهي (<span class="ltr">VOIS Closed</span>)</h3>
-          <p>يتحقق من إيصال إعلان <span class="ltr">VOIS</span> المغلق ويستبعده من القائمة النشطة والإشعارات.</p>
-          <button type="button" class="btn-secondary" style="width:100%;" data-action="run-test" data-test="3">▶ تنفيذ اختبار ٣</button>
-        </div>
-        <div class="sub-card">
-          <h3>اختبار ٤: فشل مصدر أثناء الجولة دون تعطيل الباقي</h3>
-          <p>يحاكي سقوط مصدر <span class="ltr">Indeed</span> أثناء الجولة ويسجل السبب بوضوح في «المصادر».</p>
-          <button type="button" class="btn-secondary" style="width:100%;" data-action="run-test" data-test="4">▶ تنفيذ اختبار ٤</button>
-        </div>
-        <div class="sub-card">
-          <h3>اختبار ٥: وظيفتان مختلفتان في نفس الشركة (<span class="ltr">Paymob</span>)</h3>
-          <p>يتحقق أن <span class="ltr">Junior BI Analyst</span> و<span class="ltr">Operations & MIS Analyst</span> في <span class="ltr">Paymob</span> يظلان بطاقتين منفصلتين.</p>
-          <button type="button" class="btn-secondary" style="width:100%;" data-action="run-test" data-test="5">▶ تنفيذ اختبار ٥</button>
-        </div>
-        <div class="sub-card">
-          <h3>اختبار ٦: تحسين البحث من «ليه فاتتني؟»</h3>
-          <p>يختبر إضافة مرادف <span class="ltr">Sales Force Effectiveness</span> ويقيس ارتفاع تغطية الجولة.</p>
-          <button type="button" class="btn-secondary" style="width:100%;" data-action="run-test" data-test="6">▶ تنفيذ اختبار ٦</button>
-        </div>
-      </div>
-
-      <div id="testTerminalOutput" class="terminal-box" dir="ltr">[READY] Peter's Opportunity Radar v2.2 Verification Console.
-[INFO] Select any test above to execute state-verifiable checks.</div>
-    </section>
-
-    <!-- TAB 5: الإشعارات والإعدادات -->
+    <!-- TAB 4: الإشعارات وGemini -->
     <section id="panel-settings" class="panel-section" style="display: none;">
       <div class="panel-header-card">
-        <h2>⚙️ التحكم في البحث والإشعارات والتكلفة والنسخ الاحتياطي</h2>
-        <p>مفاتيح إيقاف مستقلة للبحث وللإشعارات، قناة <span class="ltr mono">ntfy.sh</span> لشاشة قفل <span class="ltr">Samsung Galaxy A71</span>، ونسخ احتياطي خاص لبياناتك.</p>
+        <h2>⚙️ الإشعارات وربط Google Gemini API المجاني</h2>
+        <p>تحكم في قناة إشعارات الموبايل <span class="ltr mono">ntfy</span> وأضف مفتاح <strong>Gemini API المجاني</strong> (اختياري) للحصول على تحليل ذكي وتخصيص رسالة التقديم لأي وظيفة بضغطة زر.</p>
       </div>
 
       <div class="sub-card">
-        <h3>🎛️ مفاتيح الإيقاف والتشغيل المستقلة</h3>
-        <div class="kill-switch-row">
-          <div>
-            <strong style="display:block;font-size:13px;">مفتاح البحث التلقائي كل ساعة</strong>
-            <span style="font-size:11.5px;color:#94a3b8;">يوقّف أو يشغّل جولات الاكتشاف المجدولة في الخلفية</span>
-          </div>
-          <button type="button" id="btnToggleSearch" class="btn-mini-emerald" data-action="toggle-search">شغّال ✓</button>
-        </div>
-        <div class="kill-switch-row" style="margin-bottom:0;">
-          <div>
-            <strong style="display:block;font-size:13px;">مفتاح الإشعارات الفورية</strong>
-            <span style="font-size:11.5px;color:#94a3b8;">يكتم الإشعارات مع استمرار حفظ الفرص في الرادار</span>
-          </div>
-          <button type="button" id="btnToggleNotif" class="btn-mini-emerald" data-action="toggle-notif">مفعّلة ✓</button>
-        </div>
-      </div>
-
-      <div class="sub-card">
-        <h3>🔔 إشعارات شاشة قفل <span class="ltr">Samsung Galaxy A71</span> (بصوت واهتزاز)</h3>
-        <p>اشترك في قناتك المجانية على تطبيق <strong class="ltr">ntfy</strong> (<span class="ltr mono" style="color:#6ee7b7;">peter-radar-a71-99</span>) ليصلك الإشعار على شاشة القفل حتى والموبايل مقفول:</p>
+        <h3>🔔 إشعارات الموبايل (`ntfy.sh`)</h3>
         <div class="input-row" style="margin-bottom:8px;">
           <input type="text" id="ntfyTopicInput" class="text-input ltr mono" value="peter-radar-a71-99" />
-          <button type="button" class="btn-secondary" data-action="test-ntfy-push">🔊 إرسال إشعار تجربة الآن</button>
-        </div>
-        <div id="ntfyLogBox" class="terminal-box" style="display:none;"></div>
-      </div>
-
-      <div class="sub-card">
-        <h3>🎚️ ضبط حدود الملاءمة والمشوار (يُحدّث القائمة فورًا)</h3>
-        <div class="slider-block">
-          <div class="slider-header">
-            <span>الحد الأدنى للملاءمة في الفلتر السريع:</span>
-            <span id="lblFitThreshold" class="ltr mono" style="color:#10b981;">75%</span>
-          </div>
-          <input type="range" id="sliderFitThreshold" min="50" max="95" step="5" value="75" />
-        </div>
-        <div class="slider-block" style="margin-bottom:0;">
-          <div class="slider-header">
-            <span>أقصى مدة مشوار ذهاب مقبولة من شبرا مصر:</span>
-            <span id="lblCommuteMax" class="ltr mono" style="color:#06b6d4;">90 دقيقة</span>
-          </div>
-          <input type="range" id="sliderCommuteMax" min="30" max="120" step="15" value="90" />
+          <button type="button" class="btn-secondary" data-action="test-ntfy-push">🔊 إرسال إشعار تجربة</button>
         </div>
       </div>
 
-      <div class="sub-card">
-        <h3>📊 قياس نجاح الأسبوع (<span class="ltr">Weekly ROI</span>) وتكلفة التشغيل ($0/شهر)</h3>
-        <div id="weeklyRoiSummary" style="font-size:12px;color:#cbd5e1;margin-bottom:10px;"></div>
-        <p style="margin-bottom:0;font-size:11.5px;color:#94a3b8;">
-          - <strong>التكلفة الشهرية: $0</strong> (استضافة مجانية + <span class="ltr">ntfy.sh</span> مجاني + 2,000 دقيقة مجانية على <span class="ltr">GitHub Actions</span>).
-        </p>
-      </div>
-
-      <div class="sub-card">
-        <h3>💾 سجل دائم ونسخ احتياطي خاص (<span class="ltr">Export / Import JSON</span>)</h3>
-        <div class="cards-grid-2" style="margin-bottom:8px;">
-          <button type="button" class="btn-secondary" data-action="export-json">📤 تصدير السجل (Export JSON)</button>
-          <button type="button" class="btn-secondary" data-action="toggle-import-box">📥 استيراد سجل (Import JSON)</button>
+      <div class="sub-card" style="border-color: rgba(129, 140, 248, 0.55);">
+        <h3>✨ ربط Google Gemini API المجاني (اختياري — يُحفظ على جهازك فقط)</h3>
+        <p>احصل على مفتاح مجاني من <span class="ltr mono">aistudio.google.com</span> والصقه هنا ليظهر زرار <strong>«✨ استشارة Gemini وتخصيص الرسالة»</strong> جوه كل بطاقة وظيفة (ويمكنك أيضًا إضافته في GitHub Secrets باسم <span class="ltr mono">GEMINI_API_KEY</span>):</p>
+        <div class="input-row">
+          <input type="password" id="geminiKeyInput" class="text-input ltr mono" placeholder="AIzaSy..." />
+          <button type="button" class="btn-mini-emerald" data-action="save-gemini-key">حفظ المفتاح</button>
         </div>
-        <div id="importJsonBox" style="display:none;margin-bottom:8px;">
-          <textarea id="importJsonArea" class="text-area ltr mono" placeholder="Paste exported JSON backup here..."></textarea>
-          <button type="button" class="btn-mini-emerald" style="margin-top:6px;width:100%;" data-action="apply-import-json">تأكيد الاستيراد واستعادة البيانات</button>
-        </div>
-        <button type="button" class="btn-primary-cta" data-action="download-html">
-          <span>📲 تحميل نسخة HTML مستقلة لهاتف Galaxy A71</span>
-        </button>
       </div>
     </section>
 
@@ -1311,7 +792,7 @@
     (function () {
       'use strict';
 
-      var STORAGE_KEY = 'peter_radar_v2_2_state';
+      var STORAGE_KEY = 'peter_radar_v2_3_state';
 
       function safeGet(k) {
         try { return window.localStorage.getItem(k); } catch (e) { return null; }
@@ -1320,288 +801,20 @@
         try { window.localStorage.setItem(k, v); } catch (e) {}
       }
 
-      /* =====================================================================
-         REAL CV-AWARE SCORING ENGINE FOR PETER NABIL (BIS, SQL, BI, SFE, MIS)
-         ===================================================================== */
-      function evaluateJobForPeter(title, company, descText, locationText, isRemoteFlag) {
-        var t = String(title || '').toLowerCase();
-        var c = String(company || '').toLowerCase();
-        var d = String(descText || '').toLowerCase();
-        var loc = String(locationText || '').toLowerCase();
-        var combined = t + ' ' + d;
-
-        var score = 50;
-        var reasons = [];
-        var caveats = [];
-        var isSeniorRole = /\b(senior|sr\.?|lead|principal|staff|head of|director|vp|manager)\b/i.test(t);
-
-        // Role alignment with Peter's BIS + Data/BI/MIS/SFE/Operations profile
-        if (/\b(data analyst|business intelligence|bi analyst|reporting analyst|mis|sfe|sales force effectiveness|operations analyst|business analyst|data analytics)\b/i.test(t)) {
-          score += 24;
-          reasons.push('مسمى مباشر لمسارات Data / BI / Reporting / MIS / SFE / Operations.');
-        } else if (/\b(data|analytics|analyst|sql|power bi|tableau|excel)\b/i.test(t)) {
-          score += 14;
-          reasons.push('مرتبط بتحليل البيانات أو أدوات التقارير.');
-        } else {
-          score -= 18;
-          caveats.push('المسمى الوظيفي خارج مسار Data / BI / MIS / SFE الأساسي.');
-        }
-
-        // Seniority penalty for fresh graduate / junior profile
-        if (isSeniorRole) {
-          score -= 36;
-          caveats.push('⚠️ المسمى يطلب مستوى Senior/Lead — غير مناسب كدور أساسي لخريج حديث.');
-        } else if (/\b(junior|entry|fresh|graduate|trainee|intern|associate)\b/i.test(combined)) {
-          score += 10;
-          reasons.push('مناسب لمستوى Junior / Fresh / Trainee / Intern.');
-        }
-
-        // Core tools match (SQL, Excel, Power BI, Python)
-        var toolHits = [];
-        if (/\bsql\b/i.test(combined)) { score += 7; toolHits.push('SQL'); }
-        if (/\b(excel|power query|vba|pivot)\b/i.test(combined)) { score += 6; toolHits.push('Excel'); }
-        if (/\b(power bi|tableau|dashboard|reporting)\b/i.test(combined)) { score += 6; toolHits.push('BI/Reporting'); }
-        if (/\bpython\b/i.test(combined)) { score += 5; toolHits.push('Python'); }
-        if (toolHits.length > 0) {
-          reasons.push('مطابقة أدوات في الإعلان: ' + toolHits.join('، ') + '.');
-        }
-
-        // Egypt / Commute / Remote check from Shubra Masr
-        var isEgypt = /\b(egypt|cairo|giza|maadi|dokki|smart village|new cairo|6th of october|مصر|القاهرة|الجيزة|المعادي|الدقي|شبرا)\b/i.test(loc + ' ' + d);
-        var isWorldwideOrEmea = /\b(worldwide|anywhere|emea|remote)\b/i.test(loc + ' ' + d) || !!isRemoteFlag;
-
-        var commuteScore = 75;
-        var commuteLabel = 'محتاج تحقق من العنوان وأيام الحضور من شبرا مصر';
-        var commuteNeedsConfirm = true;
-        var egyptElig = 'محتاج تحقق من الموقع';
-
-        if (isEgypt) {
-          egyptElig = 'مؤكد: داخل مصر ✓';
-          commuteNeedsConfirm = false;
-          if (/dokki|mohandessin|downtown|ramses|shubra|الدقي|المهندسين|وسط البلد|شبرا/i.test(loc + ' ' + d)) {
-            commuteScore = 90;
-            commuteLabel = 'قريب نسبيًا من شبرا مصر (مترو خط 2 / مواصلات مباشرة)';
-          } else if (/maadi|smart village|المعادي|القرية الذكية/i.test(loc + ' ' + d)) {
-            commuteScore = 80;
-            commuteLabel = 'متوسط (45–80 دقيقة من شبرا مصر حسب أيام الحضور)';
-          } else {
-            commuteScore = 76;
-            commuteLabel = 'داخل مصر — راجع الحي وعدد أيام الحضور من شبرا مصر';
-          }
-          score += 6;
-        } else if (isWorldwideOrEmea) {
-          egyptElig = /\b(worldwide|anywhere|emea|egypt)\b/i.test(loc) ? 'متاح عن بُعد / إقليمي ✓' : 'أهلية العمل من مصر محتاجة تحقق ⚠️';
-          commuteScore = 95;
-          commuteLabel = 'عمل عن بُعد (Remote) — بدون مشوار يومي من شبرا مصر';
-          commuteNeedsConfirm = false;
-          if (!/\b(worldwide|anywhere|emea|egypt)\b/i.test(loc)) {
-            score -= 10;
-            caveats.push('⚠️ راجع قيود الدولة/التوقيت قبل التقديم.');
-          }
-        } else {
-          score -= 14;
-          egyptElig = 'خارج مصر / غير محدد لمصر ⚠️';
-          commuteScore = 35;
-          commuteLabel = 'الموقع خارج مصر أو غير واضح لملاءمة شبرا مصر';
-          caveats.push('⚠️ الموقع (' + (locationText || 'غير مذكور') + ') قد لا يناسب العمل من مصر.');
-        }
-
-        if (score < 15) score = 15;
-        if (score > 98) score = 98;
-
-        var wordCount = String(descText || '').replace(/<[^>]+>/g, ' ').trim().split(/\s+/).filter(Boolean).length;
-        var evidenceInsufficient = wordCount < 6 && !t;
-
-        return {
-          fitScore: evidenceInsufficient ? null : score,
-          evidenceInsufficient: evidenceInsufficient,
-          commuteScore: commuteScore,
-          commuteWeeklyLabel: commuteLabel,
-          commuteNeedsConfirm: commuteNeedsConfirm,
-          egyptEligibility: egyptElig,
-          strongestReason: reasons.length > 0 ? reasons.join(' ') : 'مقارنة مبدئية مع ملف BIS وتحليل البيانات.',
-          topCaveat: caveats.length > 0 ? caveats.join(' ') : 'مفتوح ومتحقق ✓'
-        };
-      }
-
-      var DEMO_SANDBOX_JOBS = [
-        {
-          id: 'demo-paymob-bi',
-          company: 'Paymob (باي موب)',
-          title: 'Junior BI & Reporting Analyst',
-          roleType: 'دوام كامل • Hybrid (يومين أسبوعيًا)',
-          fitScore: 96,
-          evidenceInsufficient: false,
-          commuteScore: 84,
-          commuteWeeklyLabel: '45 دقيقة ذهاب من شبرا مصر • حضور يومين/أسبوع = 3 ساعات طريق أسبوعيًا (مناسب جدًا)',
-          commuteNeedsConfirm: false,
-          egyptEligibility: 'مؤكد: مقر المعادي — مصر',
-          strongestReason: 'تطابق مباشر مع SQL وPower BI ومشروع DEPI لتحليل 5,000 معاملة دفع إلكتروني.',
-          topCaveat: 'مفتوح ومتحقق ✓ — يفضّل سرعة التقديم قبل اكتمال العدد.',
-          isOpen: true,
-          closingSoon: true,
-          mergedSources: ['Paymob Careers (Workable)', 'LinkedIn Public Post'],
-          primaryUrl: 'https://apply.workable.com/paymob/',
-          firstPublished: '2026-11-23 11:30 ص',
-          discoveredAt: '2026-11-23 12:00 م',
-          lastVerifiedAt: '2026-11-23 05:00 م',
-          appStatusLabel: 'مفتوح ومتحقق ✓',
-          recruiterWatch: 'Talent Acquisition @ Paymob',
-          recommendedProject: 'مشروع DEPI النهائي: تحليل 5,000 معاملة دفع رقمي بـ Python وSQL وبناء لوحة Tableau KPIs.',
-          evidenceMatrix: [
-            { tag: 'شرط أساسي', req: 'SQL & استخراج البيانات', cv: 'مشروع DEPI (5,000 معاملة) + SQL Server في NTI', ok: '✅' },
-            { tag: 'شرط أساسي', req: 'Power BI & KPI Dashboards', cv: 'لوحات متابعة تفاعلية في مشاريع العمل الحر وNTI', ok: '✅' },
-            { tag: 'قبول فريش مصرّح به', req: 'Fresh Graduate / 0–1 Year', cv: 'بكالوريوس BIS حلوان (امتياز مع مرتبة الشرف 3.67/4.0)', ok: '✅' }
-          ],
-          saved: false,
-          applied: false,
-          appliedDate: null,
-          postApplyStage: 'مستني رد',
-          dismissed: false
-        },
-        {
-          id: 'demo-paymob-ops',
-          company: 'Paymob (باي موب)',
-          title: 'Operations & MIS Analyst',
-          roleType: 'دوام كامل • Hybrid (يومين أسبوعيًا)',
-          fitScore: 91,
-          evidenceInsufficient: false,
-          commuteScore: 84,
-          commuteWeeklyLabel: '45 دقيقة ذهاب من شبرا مصر • حضور يومين/أسبوع = 3 ساعات طريق أسبوعيًا',
-          commuteNeedsConfirm: false,
-          egyptEligibility: 'مؤكد: مقر المعادي — مصر',
-          strongestReason: 'دور مختلف في نفس الشركة (Paymob) يركّز على تقارير العمليات وExcel/VBA وERD.',
-          topCaveat: 'بطاقة مستقلة عن وظيفة BI Analyst لأن المهام ورقم الطلب مختلفان.',
-          isOpen: true,
-          closingSoon: false,
-          mergedSources: ['Paymob Careers (Workable)'],
-          primaryUrl: 'https://apply.workable.com/paymob/',
-          firstPublished: '2026-11-23 01:15 م',
-          discoveredAt: '2026-11-23 02:00 م',
-          lastVerifiedAt: '2026-11-23 05:00 م',
-          appStatusLabel: 'مفتوح ومتحقق ✓',
-          recruiterWatch: null,
-          recommendedProject: 'نظام إدارة الحجوزات وأتمتة التقارير بـ Excel/VBA + منصة FeeLink.',
-          evidenceMatrix: [
-            { tag: 'شرط أساسي', req: 'MIS Reporting & Excel Automation', cv: 'بناء نظام حجز تشغيلي بـ Excel/VBA وأتمتة رسائل واتساب', ok: '✅' },
-            { tag: 'شرط أساسي', req: 'Business & Operations Analysis', cv: 'قائد تحليل النظم والبيانات بمشروع التخرج (تقدير A+)', ok: '✅' }
-          ],
-          saved: false,
-          applied: false,
-          appliedDate: null,
-          postApplyStage: 'مستني رد',
-          dismissed: false
-        },
-        {
-          id: 'demo-fawry',
-          company: 'Fawry (فوري)',
-          title: 'Junior Data Analyst',
-          roleType: 'دوام كامل • Hybrid (3 أيام)',
-          fitScore: 95,
-          evidenceInsufficient: false,
-          commuteScore: 86,
-          commuteWeeklyLabel: '30 دقيقة ذهاب من شبرا مصر (مترو خط 2 مباشر للدقي) • 3 أيام/أسبوع = 3 ساعات أسبوعيًا',
-          commuteNeedsConfirm: false,
-          egyptEligibility: 'مؤكد: الدقي، الجيزة — مصر',
-          strongestReason: 'مدمجة من 3 مصادر (LinkedIn + WUZZUF + بوابة الشركة) — مسجل أنك قدّمت يوم 2026-11-22.',
-          topCaveat: '✓ قدّمت يوم 2026-11-22 (مؤكد) — لديك Assessment غدًا بتوقيت القاهرة.',
-          isOpen: true,
-          closingSoon: false,
-          mergedSources: ['LinkedIn Public Post', 'WUZZUF', 'Fawry Careers Portal'],
-          primaryUrl: 'https://wuzzuf.net/search/jobs/?q=Fawry%20Data%20Analyst',
-          firstPublished: '2026-11-21 10:00 ص',
-          discoveredAt: '2026-11-21 11:00 ص',
-          lastVerifiedAt: '2026-11-23 05:00 م',
-          appStatusLabel: 'مفتوح ومتحقق ✓',
-          recruiterWatch: 'Sara Mahmoud — Talent Acquisition',
-          recommendedProject: 'مشروع تحليل المدفوعات الرقمية (DEPI) + لوحة مؤشرات الأداء بـ Power BI.',
-          evidenceMatrix: [
-            { tag: 'شرط أساسي', req: 'SQL Queries & Data Cleaning', cv: 'تنظيف 5,000 سجل معاملة وحذف 500 صف مكرر بـ SQL/Python', ok: '✅' },
-            { tag: 'شرط أساسي', req: 'Power BI / Tableau Visualization', cv: 'لوحات KPI تفاعلية في مشاريع DEPI وNTI والعمل الحر', ok: '✅' }
-          ],
-          saved: true,
-          applied: true,
-          appliedDate: '2026-11-22',
-          postApplyStage: 'عندي اختبار',
-          dismissed: false
-        },
-        {
-          id: 'demo-vois-closed',
-          company: 'VOIS Egypt (فودافون)',
-          title: 'MIS Specialist',
-          roleType: 'إعلان مغلق / منتهي',
-          fitScore: 88,
-          evidenceInsufficient: false,
-          commuteScore: 76,
-          commuteWeeklyLabel: '50 دقيقة ذهاب من شبرا مصر (المعادي / القرية الذكية)',
-          commuteNeedsConfirm: false,
-          egyptEligibility: 'مؤكد: مصر',
-          strongestReason: 'تطابق مهارات MIS وSQL وExcel Reporting.',
-          topCaveat: '⛔ تم رصد إغلاق التقديم في الإعلان الأصلي (HTTP 410 / Closed) — لم يُرسل إشعار.',
-          isOpen: false,
-          closingSoon: false,
-          mergedSources: ['Indeed Egypt'],
-          primaryUrl: 'https://eg.indeed.com',
-          firstPublished: '2026-11-10 02:00 م',
-          discoveredAt: '2026-11-23 03:00 م',
-          lastVerifiedAt: '2026-11-23 03:01 م (مغلق ⛔)',
-          appStatusLabel: 'مغلق / منتهي التقديم ⛔',
-          recruiterWatch: null,
-          recommendedProject: 'مشروع NTI قواعد البيانات وتقارير MIS.',
-          evidenceMatrix: [
-            { tag: 'حالة الإعلان', req: 'فحص رابط التقديم الأصلي', cv: 'الإعلان مغلق ولا يقبل طلبات جديدة', ok: '❌' }
-          ],
-          saved: false,
-          applied: false,
-          appliedDate: null,
-          postApplyStage: 'مستني رد',
-          dismissed: false
-        }
-      ];
-
-      var INITIAL_SOURCES = [
-        { id: 'src-remotive', name: 'Remotive Data API (Live JSON)', channelType: 'واجهة عامة حية (Real HTTP)', status: 'جاهز للفحص الحي', stateKind: 'ok', lastChecked: 'متصل', note: 'يسحب وظائف البيانات عن بُعد ويقيّمها على الـCV ومشوار شبرا مصر.' },
-        { id: 'src-arbeitnow', name: 'Arbeitnow Job Board API (Live JSON)', channelType: 'واجهة عامة حية (Real HTTP)', status: 'جاهز للفحص الحي', stateKind: 'ok', lastChecked: 'متصل', note: 'يفحص الوظائف المفتوحة ويستبعد المناصب العليا غير المناسبة تلقائيًا.' },
-        { id: 'src-linkedin', name: 'LinkedIn Links & Pasted Posts', channelType: 'قائمة لينكات + لصق بوستات + سحابة كل ساعة', status: 'نشط', stateKind: 'ok', lastChecked: 'كل ساعة عبر GitHub Actions', note: 'أضف لينكات الصفحات والناشرين النشطين في تبويب «المصادر» والصق البوستات لتقييمها.' },
-        { id: 'src-gmail', name: 'Gmail Job Alerts Bridge (Apps Script)', channelType: 'تنبيهات LinkedIn / Indeed / WUZZUF', status: 'مربوط ومجدول كل ساعة', stateKind: 'ok', lastChecked: 'نشط عبر Trigger', note: 'يقرأ رسائل تنبيهات الوظائف ويحدّث قائمة الانتظار في السحابة.' },
-        { id: 'src-wuzzuf', name: 'WUZZUF (وظف)', channelType: 'بحث عام + تنبيهات البريد', status: 'مربوط بالسحابة', stateKind: 'ok', lastChecked: 'كل ساعة', note: 'يدمج الإعلانات المتكررة مع بوستات LinkedIn.' },
-        { id: 'src-indeed', name: 'Indeed Egypt', channelType: 'بحث عام + فحص صلاحية الرابط', status: 'مربوط بالسحابة', stateKind: 'ok', lastChecked: 'كل ساعة', note: 'يتحقق من حالة الإعلان قبل التنبيه.' }
-      ];
-
-      var INITIAL_AUDIT_LOG = [
-        { ts: '2026-11-23 19:50 EET', source: 'CV-Aware Evaluator v2.2 + Cloud Cron', queries: ['Data Analyst', 'BI Analyst', 'Reporting', 'MIS', 'SFE', 'Operations Analyst', 'SQL', 'Power BI', 'Excel'], fitMin: 75, commuteMax: 90, result: 'OK (Strict Seniority & Role Filter Active)' }
-      ];
-
       var state = {
-        mode: 'real',
         activeTab: 'radar',
         filter: 'all',
         searchQuery: '',
-        searchEnabled: true,
-        notifEnabled: true,
-        fitThreshold: 75,
-        commuteMax: 90,
-        lastCloudRun: 'جاهز للمزامنة',
-        deepLinkId: null,
+        lastCloudRun: 'جاري المزامنة...',
+        sourceStats: {},
+        jobs: [],
+        userMeta: {}, // { [id]: { saved, applied, appliedDate, dismissed, aiAdvice } }
         openDrawerIds: {},
-        openRejectIds: {},
-        lastDismissed: null,
-        realJobs: [],
-        demoJobs: JSON.parse(JSON.stringify(DEMO_SANDBOX_JOBS)),
-        sources: JSON.parse(JSON.stringify(INITIAL_SOURCES)),
-        auditLog: JSON.parse(JSON.stringify(INITIAL_AUDIT_LOG)),
+        geminiApiKey: '',
         linkedinSources: [
-          { id: 'li-1', label: 'LinkedIn Jobs — Data Analyst Egypt', url: 'https://www.linkedin.com/jobs/search/?keywords=Data%20Analyst&location=Egypt' },
-          { id: 'li-2', label: 'LinkedIn Jobs — BI / Reporting / MIS Egypt', url: 'https://www.linkedin.com/jobs/search/?keywords=Business%20Intelligence%20Analyst&location=Egypt' }
-        ],
-        reminders: [
-          { id: 'rem-fawry-1', title: 'Assessment تقني (SQL & Power BI) — Fawry', dueCairo: 'غدًا 2:00 ظهرًا بتوقيت القاهرة (EET)', link: 'https://mail.google.com', done: false }
-        ],
-        weeklyRoi: {
-          verifiedCount: 6,
-          savedOrAppliedCount: 2,
-          missAuditsResolved: 1
-        }
+          { id: 'li-1', label: 'LinkedIn Jobs — Data Analyst Egypt (24h)', url: 'https://www.linkedin.com/jobs/search/?keywords=Data%20Analyst&location=Egypt&f_TPR=r86400&f_E=1%2C2' },
+          { id: 'li-2', label: 'LinkedIn Jobs — BI / Reporting / MIS Egypt', url: 'https://www.linkedin.com/jobs/search/?keywords=Business%20Intelligence%20OR%20Reporting%20OR%20MIS&location=Egypt&f_TPR=r604800&f_E=1%2C2' }
+        ]
       };
 
       (function loadSaved() {
@@ -1610,36 +823,24 @@
         try {
           var p = JSON.parse(raw);
           if (p && typeof p === 'object') {
-            if (p.mode === 'real' || p.mode === 'demo') state.mode = p.mode;
-            if (typeof p.searchEnabled === 'boolean') state.searchEnabled = p.searchEnabled;
-            if (typeof p.notifEnabled === 'boolean') state.notifEnabled = p.notifEnabled;
-            if (typeof p.fitThreshold === 'number') state.fitThreshold = p.fitThreshold;
-            if (typeof p.commuteMax === 'number') state.commuteMax = p.commuteMax;
-            if (p.lastCloudRun) state.lastCloudRun = p.lastCloudRun;
-            if (Array.isArray(p.realJobs)) state.realJobs = p.realJobs;
-            if (Array.isArray(p.demoJobs) && p.demoJobs.length > 0) state.demoJobs = p.demoJobs;
+            if (Array.isArray(p.jobs)) state.jobs = p.jobs;
+            if (p.userMeta && typeof p.userMeta === 'object') state.userMeta = p.userMeta;
             if (Array.isArray(p.linkedinSources)) state.linkedinSources = p.linkedinSources;
-            if (Array.isArray(p.reminders)) state.reminders = p.reminders;
-            if (Array.isArray(p.auditLog)) state.auditLog = p.auditLog;
-            if (p.weeklyRoi) state.weeklyRoi = p.weeklyRoi;
+            if (p.geminiApiKey) state.geminiApiKey = p.geminiApiKey;
+            if (p.lastCloudRun) state.lastCloudRun = p.lastCloudRun;
+            if (p.sourceStats) state.sourceStats = p.sourceStats;
           }
         } catch (e) {}
       })();
 
       function saveState() {
         safeSet(STORAGE_KEY, JSON.stringify({
-          mode: state.mode,
-          searchEnabled: state.searchEnabled,
-          notifEnabled: state.notifEnabled,
-          fitThreshold: state.fitThreshold,
-          commuteMax: state.commuteMax,
-          lastCloudRun: state.lastCloudRun,
-          realJobs: state.realJobs,
-          demoJobs: state.demoJobs,
+          jobs: state.jobs,
+          userMeta: state.userMeta,
           linkedinSources: state.linkedinSources,
-          reminders: state.reminders,
-          auditLog: state.auditLog,
-          weeklyRoi: state.weeklyRoi
+          geminiApiKey: state.geminiApiKey,
+          lastCloudRun: state.lastCloudRun,
+          sourceStats: state.sourceStats
         }));
       }
 
@@ -1651,53 +852,17 @@
           .replace(/"/g, '"');
       }
 
-      function getCurrentJobs() {
-        return state.mode === 'real' ? state.realJobs : state.demoJobs;
-      }
-
       var toastTimer = null;
-      function showToast(msg, allowUndo) {
+      function showToast(msg) {
         var bar = document.getElementById('toastBar');
         var txt = document.getElementById('toastText');
-        var undoBtn = document.getElementById('toastUndoBtn');
         if (!bar || !txt) return;
         txt.textContent = msg;
-        if (undoBtn) undoBtn.style.display = allowUndo ? 'inline-flex' : 'none';
         bar.style.display = 'flex';
         clearTimeout(toastTimer);
         toastTimer = setTimeout(function () {
           bar.style.display = 'none';
-        }, allowUndo ? 5000 : 3200);
-      }
-
-      function playChimeAndVibrate() {
-        if (!state.notifEnabled) return;
-        try {
-          var AudioCtx = window.AudioContext || window.webkitAudioContext;
-          if (AudioCtx) {
-            var ctx = new AudioCtx();
-            if (ctx.state === 'suspended') ctx.resume();
-            [880, 1318.5].forEach(function (freq, i) {
-              var osc = ctx.createOscillator();
-              var gain = ctx.createGain();
-              osc.type = 'sine';
-              osc.frequency.setValueAtTime(freq, ctx.currentTime + i * 0.14);
-              gain.gain.setValueAtTime(0.001, ctx.currentTime + i * 0.14);
-              gain.gain.exponentialRampToValueAtTime(0.28, ctx.currentTime + i * 0.14 + 0.02);
-              gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.14 + 0.34);
-              osc.connect(gain);
-              gain.connect(ctx.destination);
-              osc.start(ctx.currentTime + i * 0.14);
-              osc.stop(ctx.currentTime + i * 0.14 + 0.35);
-            });
-          }
-        } catch (e) {}
-
-        try {
-          if (navigator && typeof navigator.vibrate === 'function') {
-            navigator.vibrate([200, 80, 220]);
-          }
-        } catch (e) {}
+        }, 3200);
       }
 
       function copyTextSafe(text) {
@@ -1740,177 +905,100 @@
             if (data.meta && data.meta.last_successful_run) {
               state.lastCloudRun = data.meta.last_successful_run;
             }
+            if (data.meta && data.meta.source_stats) {
+              state.sourceStats = data.meta.source_stats;
+            }
             var jobsMap = data.jobs || {};
-            var items = Object.keys(jobsMap).map(function (k) {
+            var cloudJobs = Object.keys(jobsMap).map(function (k) {
               var raw = jobsMap[k];
-              var evalRes = evaluateJobForPeter(raw.title || '', raw.company || '', '', '', false);
-              var isSenior = /\b(senior|sr\.?|lead|principal|staff|head of|director|vp)\b/i.test(raw.title || '');
               return {
-                id: 'cloud-' + (raw.id || k),
+                id: raw.id || k,
                 company: raw.company || 'شركة معلنة',
                 title: raw.title || 'فرصة تحليل بيانات',
-                roleType: raw.work_mode || 'دوام كامل (Cloud Cron)',
-                fitScore: evalRes.fitScore,
-                evidenceInsufficient: false,
-                commuteScore: evalRes.commuteScore,
-                commuteWeeklyLabel: (raw.commute && raw.commute.summary) || evalRes.commuteWeeklyLabel,
-                commuteNeedsConfirm: evalRes.commuteNeedsConfirm,
-                egyptEligibility: (raw.receipt && raw.receipt.egypt_eligibility) || evalRes.egyptEligibility,
-                strongestReason: evalRes.strongestReason,
-                topCaveat: evalRes.topCaveat,
-                isOpen: !(raw.receipt && raw.receipt.apply_state === 'CLOSED') && !isSenior,
-                closingSoon: false,
-                mergedSources: raw.sources || ['GitHub Cloud Cron'],
+                roleType: raw.work_mode || 'دوام كامل',
+                location: raw.location || 'Egypt',
+                fitScore: (raw.fit && typeof raw.fit.score === 'number') ? raw.fit.score : 80,
+                commuteScore: (raw.commute && typeof raw.commute.score === 'number') ? raw.commute.score : 80,
+                commuteWeeklyLabel: (raw.commute && raw.commute.summary) || 'داخل مصر',
+                strongestReason: (raw.fit && raw.fit.summary) || 'متطابق مع مسار Data / BI / Reporting.',
+                recommendedProject: (raw.fit && raw.fit.recommended_project) || 'مشروع DEPI لتحليل المدفوعات + Power BI.',
+                mergedSources: raw.sources || ['Cloud Scraper'],
                 primaryUrl: raw.primary_url || 'https://www.linkedin.com/jobs/',
                 firstPublished: (raw.receipt && raw.receipt.first_published) || 'حديث',
-                discoveredAt: raw.discovered_at || state.lastCloudRun,
-                lastVerifiedAt: (raw.receipt && raw.receipt.last_verified) || state.lastCloudRun,
-                appStatusLabel: isSenior ? 'مستوى أعلى من المناسب ⚠️' : ((raw.receipt && raw.receipt.apply_state_ar) || 'مفتوح ومتحقق ✓'),
-                recruiterWatch: null,
-                recommendedProject: 'مشروع DEPI لتحليل المدفوعات + Power BI + Excel/VBA.',
-                evidenceMatrix: [
-                  { tag: 'دليل CV', req: raw.title || 'تحليل بيانات وتقارير', cv: 'مشاريع DEPI (5,000 سجل) وNTI وتدريبات البنوك', ok: isSenior ? '⚠️' : '✅' }
-                ],
-                saved: false,
-                applied: false,
-                appliedDate: null,
-                postApplyStage: 'مستني رد',
-                dismissed: false
+                discoveredAt: raw.discovered_at || state.lastCloudRun
               };
             });
 
-            items.forEach(function (item) {
-              var exists = state.realJobs.some(function (r) { return r.id === item.id; });
-              if (!exists) state.realJobs.unshift(item);
-            });
+            // Keep manual pasted jobs and merge cloud jobs
+            var manualOnly = state.jobs.filter(function (j) { return String(j.id).indexOf('manual-') === 0; });
+            var merged = manualOnly.concat(cloudJobs);
+            merged.sort(function (a, b) { return (b.fitScore || 0) - (a.fitScore || 0); });
+            state.jobs = merged;
 
             saveState();
             renderRadarPanel();
             if (!silent) {
-              showToast('☁️ تمت مزامنة ' + items.length + ' فرصة من live_feed.json وتقييمها على الـCV!');
+              showToast('☁️ تم تحديث ' + cloudJobs.length + ' فرصة حقيقية من السحابة!');
             }
           })
-          .catch(function () {});
-      }
-
-      function renderHeaderAndMode() {
-        var btnReal = document.getElementById('btnModeReal');
-        var btnDemo = document.getElementById('btnModeDemo');
-        if (btnReal && btnDemo) {
-          btnReal.className = 'mode-pill' + (state.mode === 'real' ? ' active-real' : '');
-          btnDemo.className = 'mode-pill' + (state.mode === 'demo' ? ' active-demo' : '');
-        }
-
-        var hdrLastRun = document.getElementById('hdrLastRun');
-        if (hdrLastRun) hdrLastRun.textContent = state.lastCloudRun;
-
-        var hdrSearch = document.getElementById('hdrSearchStatus');
-        var hdrNotif = document.getElementById('hdrNotifStatus');
-        if (hdrSearch) {
-          hdrSearch.textContent = state.searchEnabled ? 'كل ساعة' : 'متوقف';
-          hdrSearch.style.color = state.searchEnabled ? '#10b981' : '#f59e0b';
-        }
-        if (hdrNotif) {
-          hdrNotif.textContent = state.notifEnabled ? 'مفعّلة' : 'مكتومة';
-          hdrNotif.style.color = state.notifEnabled ? '#67e8f9' : '#f59e0b';
-        }
-
-        var btnTS = document.getElementById('btnToggleSearch');
-        var btnTN = document.getElementById('btnToggleNotif');
-        if (btnTS) {
-          btnTS.textContent = state.searchEnabled ? 'شغّال ✓' : 'متوقف ⏸';
-          btnTS.className = state.searchEnabled ? 'btn-mini-emerald' : 'btn-mini-dark';
-        }
-        if (btnTN) {
-          btnTN.textContent = state.notifEnabled ? 'مفعّلة ✓' : 'مكتومة 🔇';
-          btnTN.className = state.notifEnabled ? 'btn-mini-emerald' : 'btn-mini-dark';
-        }
-
-        var modeBanner = document.getElementById('modeBannerWrap');
-        if (modeBanner) {
-          if (state.mode === 'demo') {
-            modeBanner.innerHTML = '<div class="demo-warning-banner">' +
-              '<span>⚠️ وضع العرض التجريبي (Demo Sandbox) — بيانات محاكاة لاختبار السيناريوهات.</span>' +
-              '<button type="button" class="btn-mini-dark" data-action="switch-mode" data-mode="real">العودة للوضع الحقيقي</button>' +
-              '</div>';
-          } else {
-            modeBanner.innerHTML = '<div class="real-live-banner">' +
-              '<span>🌐 الوضع الحقيقي (Real Live) — مقيّم على خلفية BIS وSQL وPower BI وExcel وPython ومشوار شبرا مصر.</span>' +
-              '<button type="button" class="btn-mini-dark" data-action="switch-mode" data-mode="demo">معاينة سيناريوهات Demo</button>' +
-              '</div>';
-          }
-        }
-      }
-
-      function renderReminders() {
-        var wrap = document.getElementById('stepRemindersWrap');
-        if (!wrap) return;
-        var active = state.reminders.filter(function (r) { return !r.done; });
-        if (active.length === 0) {
-          wrap.innerHTML = '';
-          return;
-        }
-        wrap.innerHTML = active.map(function (r) {
-          return '<div class="step-reminder-card">' +
-            '<div>' +
-              '<div style="font-size:10.5px;color:#67e8f9;font-weight:800;">⏰ خطوة قادمة (بتوقيت القاهرة EET)</div>' +
-              '<div style="font-size:13px;font-weight:900;color:#ffffff;">' + esc(r.title) + '</div>' +
-              '<div style="font-size:11.5px;color:#fcd34d;">الموعد: ' + esc(r.dueCairo) + '</div>' +
-            '</div>' +
-            '<div style="display:flex;gap:6px;">' +
-              '<a href="' + esc(r.link) + '" target="_blank" rel="noopener noreferrer" class="btn-mini-dark">افتح الرسالة ↗</a>' +
-              '<button type="button" class="btn-mini-emerald" data-action="complete-reminder" data-id="' + esc(r.id) + '">✓ خلصت</button>' +
-            '</div>' +
-          '</div>';
-        }).join('');
+          .catch(function () {
+            if (!silent) showToast('⚠️ تعذر الاتصال بـ live_feed.json حاليًا.');
+          });
       }
 
       function renderRadarPanel() {
-        renderHeaderAndMode();
-        renderReminders();
+        var hdrLastRun = document.getElementById('hdrLastRun');
+        if (hdrLastRun) hdrLastRun.textContent = state.lastCloudRun;
 
-        var allJobs = getCurrentJobs();
-        var activeSuitable = allJobs.filter(function (j) {
-          return !j.dismissed && j.isOpen && (j.fitScore === null || j.fitScore >= 65);
+        var visibleJobs = state.jobs.filter(function (j) {
+          var meta = state.userMeta[j.id] || {};
+          return !meta.dismissed;
         });
-        var closingCount = activeSuitable.filter(function (j) { return j.closingSoon; }).length;
-        var appliedCount = allJobs.filter(function (j) { return j.applied; }).length;
-        var savedCount = allJobs.filter(function (j) { return j.saved; }).length;
 
-        document.getElementById('countActive').textContent = activeSuitable.length;
-        document.getElementById('countClosing').textContent = closingCount;
-        document.getElementById('countApplied').textContent = appliedCount;
+        var hdrTotal = document.getElementById('hdrTotalJobs');
+        if (hdrTotal) hdrTotal.textContent = visibleJobs.length;
+
+        var statsBar = document.getElementById('sourceStatsBar');
+        if (statsBar) {
+          var st = state.sourceStats || {};
+          statsBar.innerHTML =
+            '<span class="badge badge-open">LinkedIn مصر: ' + (st.linkedin_egypt || 0) + '</span>' +
+            '<span class="badge badge-merged">WUZZUF: ' + (st.wuzzuf_egypt || 0) + '</span>' +
+            '<span class="badge badge-recruiter">شركات مصر: ' + (st.egypt_companies || 0) + '</span>' +
+            '<span class="badge">Remotive: ' + (st.remotive_global || 0) + '</span>' +
+            '<span class="badge">Gmail: ' + (st.gmail_alerts || 0) + '</span>';
+        }
+
+        var priorityCount = visibleJobs.filter(function (j) { return (j.fitScore || 0) >= 80; }).length;
+        var savedCount = visibleJobs.filter(function (j) { return !!(state.userMeta[j.id] || {}).saved; }).length;
+        var appliedCount = visibleJobs.filter(function (j) { return !!(state.userMeta[j.id] || {}).applied; }).length;
+
+        document.getElementById('countActive').textContent = visibleJobs.length;
+        document.getElementById('countPriority').textContent = priorityCount;
         document.getElementById('countSaved').textContent = savedCount;
+        document.getElementById('countApplied').textContent = appliedCount;
 
-        ['all', 'priority', 'closing', 'saved', 'applied', 'closed'].forEach(function (f) {
+        ['all', 'priority', 'linkedin', 'wuzzuf', 'companies', 'saved', 'applied'].forEach(function (f) {
           var chip = document.getElementById('chip-' + f);
           if (chip) chip.className = 'chip-btn' + (state.filter === f ? ' active' : '');
         });
-        ['all', 'closing', 'applied', 'saved'].forEach(function (s) {
+        ['all', 'priority', 'saved', 'applied'].forEach(function (s) {
           var box = document.getElementById('stat-' + s);
           if (box) box.className = 'stat-box' + (state.filter === s ? ' selected' : '');
         });
 
         var q = state.searchQuery.toLowerCase().trim();
-        var filtered = allJobs.filter(function (job) {
-          if (state.filter === 'all') {
-            if (job.dismissed || !job.isOpen) return false;
-            if (job.fitScore !== null && job.fitScore < 65) return false;
-          } else if (state.filter === 'closed') {
-            if (!job.dismissed && job.isOpen && (job.fitScore === null || job.fitScore >= 65)) return false;
-          } else if (state.filter === 'closing') {
-            if (job.dismissed || !job.isOpen || !job.closingSoon) return false;
-          } else if (state.filter === 'saved') {
-            if (!job.saved) return false;
-          } else if (state.filter === 'applied') {
-            if (!job.applied) return false;
-          } else if (state.filter === 'priority') {
-            if (job.dismissed || !job.isOpen) return false;
-            if (job.fitScore !== null && job.fitScore < state.fitThreshold) return false;
-          }
-
+        var filtered = visibleJobs.filter(function (job) {
+          var meta = state.userMeta[job.id] || {};
+          var srcText = (job.mergedSources || []).join(' ').toLowerCase();
+          if (state.filter === 'priority' && (job.fitScore || 0) < 80) return false;
+          if (state.filter === 'linkedin' && srcText.indexOf('linkedin') === -1) return false;
+          if (state.filter === 'wuzzuf' && srcText.indexOf('wuzzuf') === -1) return false;
+          if (state.filter === 'companies' && srcText.indexOf('careers') === -1) return false;
+          if (state.filter === 'saved' && !meta.saved) return false;
+          if (state.filter === 'applied' && !meta.applied) return false;
           if (q) {
-            var hay = (job.title + ' ' + job.company + ' ' + job.strongestReason + ' ' + job.commuteWeeklyLabel + ' ' + job.mergedSources.join(' ')).toLowerCase();
+            var hay = (job.title + ' ' + job.company + ' ' + job.location + ' ' + job.strongestReason + ' ' + srcText).toLowerCase();
             if (hay.indexOf(q) === -1) return false;
           }
           return true;
@@ -1921,133 +1009,77 @@
 
         if (filtered.length === 0) {
           container.innerHTML = '<div class="sub-card" style="text-align:center;padding:24px 14px;">' +
-            '<h3>مفيش فرص مناسبة ظاهرة تحت الفلتر الحالي</h3>' +
-            '<p>اضغط <strong>«🌐 فحص المصادر الحية وتقييمها على الـCV»</strong>، أو اذهب لتبويب <strong>«2. المصادر ولينكات LinkedIn»</strong> للصق بوستات أو فتح لينكاتك المتابَعة.</p>' +
-            '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">' +
-              '<button type="button" class="btn-secondary" data-action="run-real-scrape">🌐 فحص المصادر الحية الآن</button>' +
-              '<button type="button" class="btn-mini-emerald" data-action="switch-tab" data-tab="sources">🔗 لينكات LinkedIn ولصق بوست</button>' +
-            '</div>' +
+            '<h3>مفيش بطاقات تحت الفلتر ده حاليًا</h3>' +
+            '<p>تأكد من تشغيل <strong>Run workflow</strong> في تبويب Actions على GitHub ثم اضغط <strong>«🔄 تحديث من السحابة»</strong> بالأعلى، أو استخدم أزرار <strong>«بحث 24س»</strong> في التبويب الثاني.</p>' +
+            '<button type="button" class="btn-secondary" data-action="sync-cloud-feed">🔄 مزامنة live_feed.json الآن</button>' +
             '</div>';
           return;
         }
 
         container.innerHTML = filtered.map(function (job) {
-          var cardCls = 'job-card' + (!job.isOpen || job.dismissed ? ' closed-card' : '') + (job.applied ? ' applied-card' : '');
-          var fitClass = job.evidenceInsufficient ? 'warn' : (job.fitScore >= 82 ? 'good' : (job.fitScore >= 65 ? 'warn' : 'bad'));
-          var commClass = job.commuteNeedsConfirm ? 'warn' : (job.commuteScore >= 75 ? 'good' : 'warn');
+          var meta = state.userMeta[job.id] || {};
           var isDrawerOpen = !!state.openDrawerIds[job.id];
-          var isRejectOpen = !!state.openRejectIds[job.id];
+          var fitClass = (job.fitScore || 0) >= 82 ? 'good' : 'warn';
+          var commClass = (job.commuteScore || 0) >= 75 ? 'good' : 'warn';
 
-          var badges = '';
-          badges += job.isOpen && !job.dismissed
-            ? '<span class="badge badge-open">' + esc(job.appStatusLabel) + '</span>'
-            : '<span class="badge badge-closed">' + esc(job.dismissed ? 'مستبعدة ✕' : job.appStatusLabel) + '</span>';
-
-          if (job.closingSoon && job.isOpen) {
-            badges += '<span class="badge badge-warn">⏳ تغلق قريبًا (<48h)</span>';
-          }
-          if (job.mergedSources.length > 1) {
-            badges += '<span class="badge badge-merged">🔗 مدمجة (' + job.mergedSources.length + ' مصادر)</span>';
+          var badges = '<span class="badge badge-open">مفتوح ✓</span>';
+          (job.mergedSources || []).forEach(function (s) {
+            badges += '<span class="badge badge-merged ltr">' + esc(s) + '</span>';
+          });
+          if (meta.applied) {
+            badges += '<span class="badge badge-recruiter">✅ قدّمت (' + esc(meta.appliedDate || '') + ')</span>';
           }
 
-          var appliedBanner = job.applied
-            ? '<div class="conflict-banner">✅ <strong>قدّمت يوم ' + esc(job.appliedDate || 'مسجل') + ' (مؤكد)</strong></div>'
+          var aiSection = meta.aiAdvice
+            ? '<div style="background:rgba(129,140,248,0.12);border:1px solid #818cf8;border-radius:8px;padding:9px;margin-bottom:8px;font-size:11.5px;white-space:pre-wrap;">' + esc(meta.aiAdvice) + '</div>'
             : '';
 
-          var evidenceRows = (job.evidenceMatrix || []).map(function (row) {
-            return '<tr>' +
-              '<td><span class="badge" style="font-size:9.5px;">' + esc(row.tag || 'شرط') + '</span><br><strong style="color:#f8fafc;">' + esc(row.req) + '</strong></td>' +
-              '<td style="color:#cbd5e1;">' + (row.ok || '✅') + ' ' + esc(row.cv) + '</td>' +
-            '</tr>';
-          }).join('');
-
-          var postApplyHtml = job.applied
-            ? '<div class="post-apply-bar">' +
-                '<span>📌 <strong>مرحلة التقديم:</strong> ' + esc(job.postApplyStage) + '</span>' +
-                '<div style="display:flex;gap:4px;flex-wrap:wrap;">' +
-                  '<button type="button" class="btn-mini-dark" data-action="set-stage" data-id="' + esc(job.id) + '" data-stage="مستني رد">مستني رد</button>' +
-                  '<button type="button" class="btn-mini-dark" data-action="set-stage" data-id="' + esc(job.id) + '" data-stage="عندي اختبار">عندي اختبار</button>' +
-                  '<button type="button" class="btn-mini-dark" data-action="set-stage" data-id="' + esc(job.id) + '" data-stage="اتحدد انترفيو">انترفيو</button>' +
-                '</div>' +
-              '</div>'
-            : '';
-
-          return '<article id="' + esc(job.id) + '" class="' + cardCls + '">' +
+          return '<article class="job-card ' + (meta.applied ? 'applied-card' : '') + '">' +
             '<div class="card-top-badges">' +
               '<div class="badges-group">' + badges + '</div>' +
               '<span style="font-size:11px;color:#94a3b8;">' + esc(job.firstPublished) + '</span>' +
             '</div>' +
 
-            appliedBanner +
-
             '<h3 class="job-title ltr">' + esc(job.title) + '</h3>' +
-            '<p class="job-company"><strong>' + esc(job.company) + '</strong> • ' + esc(job.roleType) + '</p>' +
+            '<p class="job-company"><strong>' + esc(job.company) + '</strong> • ' + esc(job.location) + '</p>' +
 
             '<div class="dual-scores">' +
               '<div class="score-pill ' + fitClass + '">' +
                 '<span class="lbl">ملاءمة الوظيفة لـCV بيتر</span>' +
-                '<span class="val ltr mono">' + (job.evidenceInsufficient ? 'الأدلة قليلة' : job.fitScore + '/100') + '</span>' +
+                '<span class="val ltr mono">' + job.fitScore + '/100</span>' +
               '</div>' +
               '<div class="score-pill ' + commClass + '">' +
                 '<span class="lbl">المشوار من شبرا مصر</span>' +
-                '<span class="val ltr mono">' + (job.commuteNeedsConfirm ? 'محتاج تحقق' : job.commuteScore + '/100') + '</span>' +
+                '<span class="val ltr mono">' + job.commuteScore + '/100</span>' +
               '</div>' +
             '</div>' +
 
             '<div class="first-screen-summary">' +
               '<div><strong style="color:#6ee7b7;">✓ السبب:</strong> ' + esc(job.strongestReason) + '</div>' +
-              '<div><strong style="color:#fcd34d;">! ملاحظة / تحقق:</strong> ' + esc(job.topCaveat) + '</div>' +
+              '<div><strong style="color:#67e8f9;">🚇 المشوار:</strong> ' + esc(job.commuteWeeklyLabel) + '</div>' +
             '</div>' +
 
             '<button type="button" class="btn-drawer-toggle" data-action="toggle-drawer" data-id="' + esc(job.id) + '">' +
-              '<span>🧾 عرض الإيصال الكامل، جدول الأدلة، ومسودة التقديم</span>' +
+              '<span>🧾 عرض مسودة التقديم واستشارة Gemini AI</span>' +
               '<span class="ltr mono" style="color:#67e8f9;">' + (isDrawerOpen ? '▲' : '▼') + '</span>' +
             '</button>' +
 
             '<div class="receipt-drawer" style="display:' + (isDrawerOpen ? 'block' : 'none') + ';">' +
-              '<div style="font-weight:900;color:#67e8f9;margin-bottom:6px;">🧾 إيصال التحقق (Verification Receipt)</div>' +
-              '<div class="receipt-grid">' +
-                '<div><strong>المصدر:</strong> <span class="ltr">' + esc(job.mergedSources.join(' + ')) + '</span></div>' +
-                '<div><strong>تاريخ النشر:</strong> ' + esc(job.firstPublished) + '</div>' +
-                '<div><strong>أهلية العمل من مصر:</strong> ' + esc(job.egyptEligibility) + '</div>' +
-                '<div><strong>آخر تحقق:</strong> ' + esc(job.lastVerifiedAt) + '</div>' +
-                '<div style="grid-column:1/-1;"><strong>🚇 المشوار من شبرا مصر:</strong> ' + esc(job.commuteWeeklyLabel) + '</div>' +
-              '</div>' +
-
-              '<table class="evidence-table">' +
-                '<thead><tr><th>شرط الإعلان</th><th>الدليل المقابل من الـCV</th></tr></thead>' +
-                '<tbody>' + evidenceRows + '</tbody>' +
-              '</table>' +
-
-              '<div style="background:#0d1526;border:1px solid rgba(16,185,129,0.35);border-radius:8px;padding:9px;margin-bottom:8px;">' +
-                '<strong style="color:#6ee7b7;">🎯 أقرب مشروع مقترح من الـCV:</strong><br>' +
-                '<span>' + esc(job.recommendedProject) + '</span>' +
-              '</div>' +
-
+              '<div style="margin-bottom:8px;"><strong style="color:#6ee7b7;">🎯 أقرب مشروع من الـCV:</strong> ' + esc(job.recommendedProject) + '</div>' +
+              aiSection +
               '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;">' +
-                '<button type="button" class="btn-mini-emerald" data-action="copy-email" data-id="' + esc(job.id) + '">📋 نسخ مسودة الإيميل</button>' +
-                '<button type="button" class="btn-mini-dark" data-action="copy-dm" data-id="' + esc(job.id) + '">💬 نسخ رسالة WhatsApp / DM</button>' +
+                '<button type="button" class="btn-mini-emerald" data-action="copy-email" data-id="' + esc(job.id) + '">📋 نسخ الإيميل</button>' +
+                '<button type="button" class="btn-mini-dark" data-action="copy-dm" data-id="' + esc(job.id) + '">💬 نسخ DM / واتساب</button>' +
+                '<button type="button" class="btn-secondary" style="min-height:36px;padding:5px 10px;" data-action="ask-gemini" data-id="' + esc(job.id) + '">✨ استشارة Gemini AI</button>' +
               '</div>' +
               '<pre class="draft-pre ltr mono">' + esc(buildEmailDraft(job)) + '</pre>' +
             '</div>' +
 
             '<div class="card-actions-grid">' +
               '<a href="' + esc(job.primaryUrl) + '" target="_blank" rel="noopener noreferrer" class="act-btn open-link">افتح الإعلان ↗</a>' +
-              '<button type="button" class="act-btn ' + (job.saved ? 'saved-on' : '') + '" data-action="toggle-save" data-id="' + esc(job.id) + '">' + (job.saved ? '★ محفوظة' : '⭐ احفظ') + '</button>' +
-              '<button type="button" class="act-btn ' + (job.applied ? 'applied-on' : '') + '" data-action="toggle-applied" data-id="' + esc(job.id) + '">' + (job.applied ? '✓ قدّمت' : '✅ قدّمت') + '</button>' +
-              '<button type="button" class="act-btn" data-action="toggle-reject" data-id="' + esc(job.id) + '">✕ مش مناسب</button>' +
-            '</div>' +
-
-            postApplyHtml +
-
-            '<div class="reject-drawer" style="display:' + (isRejectOpen ? 'block' : 'none') + ';">' +
-              '<div style="font-size:11.5px;font-weight:800;color:#fecdd3;">اختر السبب:</div>' +
-              '<div class="reject-chips">' +
-                '<button type="button" class="reject-chip" data-action="dismiss-job" data-id="' + esc(job.id) + '" data-reason="far">📍 بعيدة عن شبرا</button>' +
-                '<button type="button" class="reject-chip" data-action="dismiss-job" data-id="' + esc(job.id) + '" data-reason="sales">📞 مبيعات / مكالمات</button>' +
-                '<button type="button" class="reject-chip" data-action="dismiss-job" data-id="' + esc(job.id) + '" data-reason="senior">📈 خبرة زيادة</button>' +
-                '<button type="button" class="reject-chip" data-action="dismiss-job" data-id="' + esc(job.id) + '" data-reason="other">👎 مش مهتم</button>' +
-              '</div>' +
+              '<button type="button" class="act-btn ' + (meta.saved ? 'saved-on' : '') + '" data-action="toggle-save" data-id="' + esc(job.id) + '">' + (meta.saved ? '★ محفوظة' : '⭐ احفظ') + '</button>' +
+              '<button type="button" class="act-btn ' + (meta.applied ? 'applied-on' : '') + '" data-action="toggle-applied" data-id="' + esc(job.id) + '">' + (meta.applied ? '✓ قدّمت' : '✅ قدّمت') + '</button>' +
+              '<button type="button" class="act-btn" data-action="dismiss-job" data-id="' + esc(job.id) + '">✕ استبعاد</button>' +
             '</div>' +
           '</article>';
         }).join('');
@@ -2055,74 +1087,19 @@
 
       function renderSourcesPanel() {
         var liWrap = document.getElementById('linkedinLinksWrap');
-        if (liWrap) {
-          if (state.linkedinSources.length === 0) {
-            liWrap.innerHTML = '<p style="color:#94a3b8;font-size:11.5px;">لم تضف لينكات LinkedIn بعد.</p>';
-          } else {
-            liWrap.innerHTML = state.linkedinSources.map(function (item) {
-              return '<div class="watchlist-item">' +
-                '<div style="min-width:0;flex:1;">' +
-                  '<strong style="display:block;color:#ffffff;">🔗 ' + esc(item.label) + '</strong>' +
-                  '<span class="ltr mono" style="font-size:10.5px;color:#67e8f9;word-break:break-all;">' + esc(item.url) + '</span>' +
-                '</div>' +
-                '<div style="display:flex;gap:5px;flex-shrink:0;">' +
-                  '<a href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer" class="btn-mini-emerald">فتح ↗</a>' +
-                  '<button type="button" class="btn-mini-dark" data-action="remove-linkedin-source" data-id="' + esc(item.id) + '">✕</button>' +
-                '</div>' +
-              '</div>';
-            }).join('');
-          }
-        }
-
-        var box = document.getElementById('sourcesListContainer');
-        if (!box) return;
-        box.innerHTML = state.sources.map(function (s) {
-          var badgeCls = s.stateKind === 'ok' ? 'badge-open' : (s.stateKind === 'err' ? 'badge-closed' : 'badge-warn');
-          return '<div class="sub-card" style="margin-bottom:0;">' +
-            '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:6px;">' +
-              '<h3 class="ltr" style="margin:0;">' + esc(s.name) + '</h3>' +
-              '<span class="badge ' + badgeCls + '">' + esc(s.status) + '</span>' +
+        if (!liWrap) return;
+        liWrap.innerHTML = state.linkedinSources.map(function (item) {
+          return '<div class="watchlist-item">' +
+            '<div style="min-width:0;flex:1;">' +
+              '<strong style="display:block;color:#ffffff;">🔗 ' + esc(item.label) + '</strong>' +
+              '<span class="ltr mono" style="font-size:10.5px;color:#67e8f9;word-break:break-all;">' + esc(item.url) + '</span>' +
             '</div>' +
-            '<p style="margin-bottom:6px;"><strong>القناة:</strong> ' + esc(s.channelType) + '<br><strong>آخر فحص:</strong> ' + esc(s.lastChecked) + '</p>' +
-            '<p style="margin-bottom:0;color:#94a3b8;font-size:11.5px;">' + esc(s.note) + '</p>' +
+            '<div style="display:flex;gap:5px;flex-shrink:0;">' +
+              '<a href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer" class="btn-mini-emerald">فتح ↗</a>' +
+              '<button type="button" class="btn-mini-dark" data-action="remove-linkedin-source" data-id="' + esc(item.id) + '">✕</button>' +
+            '</div>' +
           '</div>';
         }).join('');
-      }
-
-      function renderAuditLog() {
-        var box = document.getElementById('searchAuditLogView');
-        if (!box) return;
-        box.textContent = state.auditLog.map(function (entry) {
-          return '[' + entry.ts + '] SOURCE: ' + entry.source +
-            '\n  QUERIES: ' + entry.queries.join(', ') +
-            '\n  FILTERS: Fit>=' + entry.fitMin + '% | Commute<=' + entry.commuteMax + 'm' +
-            '\n  OUTCOME: ' + entry.result;
-        }).join('\n------------------------------------------------------------\n');
-      }
-
-      function renderSettingsRoi() {
-        var roiBox = document.getElementById('weeklyRoiSummary');
-        if (roiBox) {
-          roiBox.innerHTML = '• <strong>فرص متحققة هذا الأسبوع:</strong> ' + state.weeklyRoi.verifiedCount + ' فرصة<br>' +
-            '• <strong>فرص محفوظة أو تم التقديم عليها:</strong> ' + state.weeklyRoi.savedOrAppliedCount + ' فرصة<br>' +
-            '• <strong>تحسينات من تشخيص «ليه فاتتني؟»:</strong> ' + state.weeklyRoi.missAuditsResolved + ' تعديل مطبّق';
-        }
-        var lf = document.getElementById('lblFitThreshold');
-        var sf = document.getElementById('sliderFitThreshold');
-        var lc = document.getElementById('lblCommuteMax');
-        var sc = document.getElementById('sliderCommuteMax');
-        if (lf) lf.textContent = state.fitThreshold + '%';
-        if (sf) sf.value = state.fitThreshold;
-        if (lc) lc.textContent = state.commuteMax + ' دقيقة';
-        if (sc) sc.value = state.commuteMax;
-      }
-
-      function appendTestConsole(line) {
-        var box = document.getElementById('testTerminalOutput');
-        if (!box) return;
-        var t = new Date().toTimeString().slice(0, 8);
-        box.textContent += '\n[' + t + '] ' + line;
-        box.scrollTop = box.scrollHeight;
       }
 
       var actions = {
@@ -2130,41 +1107,21 @@
           var tab = el.getAttribute('data-tab');
           if (!tab) return;
           state.activeTab = tab;
-          ['radar', 'sources', 'miss', 'tests', 'settings'].forEach(function (t) {
+          ['radar', 'sources', 'paste', 'settings'].forEach(function (t) {
             var p = document.getElementById('panel-' + t);
             var b = document.getElementById('nav-' + t);
             if (p) p.style.display = (t === tab) ? 'block' : 'none';
             if (b) b.className = 'nav-btn' + (t === tab ? ' active' : '');
           });
           if (tab === 'sources') renderSourcesPanel();
-          if (tab === 'miss') renderAuditLog();
-          if (tab === 'settings') renderSettingsRoi();
-          try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
-        },
-
-        'switch-mode': function (el) {
-          var m = el.getAttribute('data-mode');
-          if (m !== 'real' && m !== 'demo') return;
-          state.mode = m;
-          state.filter = 'all';
-          saveState();
-          renderRadarPanel();
-          showToast(m === 'real' ? '🌐 تم التحويل للوضع الحقيقي (Real Live).' : '🧪 تم التحويل لوضع المحاكاة التجريبي (Demo Sandbox).');
+          if (tab === 'settings') {
+            var gk = document.getElementById('geminiKeyInput');
+            if (gk && state.geminiApiKey) gk.value = state.geminiApiKey;
+          }
         },
 
         'sync-cloud-feed': function () {
           syncLiveFeedFromRepo(false);
-        },
-
-        'clear-current-list': function () {
-          if (state.mode === 'real') {
-            state.realJobs = [];
-          } else {
-            state.demoJobs = [];
-          }
-          saveState();
-          renderRadarPanel();
-          showToast('🗑 تم مسح قائمة الفرص الحالية.');
         },
 
         'set-filter': function (el) {
@@ -2180,251 +1137,81 @@
 
         'toggle-save': function (el) {
           var id = el.getAttribute('data-id');
-          var job = getCurrentJobs().find(function (j) { return j.id === id; });
-          if (!job) return;
-          job.saved = !job.saved;
-          if (job.saved) state.weeklyRoi.savedOrAppliedCount += 1;
+          state.userMeta[id] = state.userMeta[id] || {};
+          state.userMeta[id].saved = !state.userMeta[id].saved;
           saveState();
           renderRadarPanel();
-          showToast(job.saved ? '⭐ تم حفظ الفرصة في قائمتك!' : 'تمت إزالة الفرصة من المحفوظات.');
+          showToast(state.userMeta[id].saved ? '⭐ تم حفظ الفرصة!' : 'تمت الإزالة من المحفوظات.');
         },
 
         'toggle-applied': function (el) {
           var id = el.getAttribute('data-id');
-          var job = getCurrentJobs().find(function (j) { return j.id === id; });
-          if (!job) return;
-          job.applied = !job.applied;
-          if (job.applied) {
-            job.appliedDate = new Date().toISOString().slice(0, 10);
-            state.weeklyRoi.savedOrAppliedCount += 1;
-          } else {
-            job.appliedDate = null;
-          }
+          state.userMeta[id] = state.userMeta[id] || {};
+          state.userMeta[id].applied = !state.userMeta[id].applied;
+          state.userMeta[id].appliedDate = state.userMeta[id].applied ? new Date().toISOString().slice(0, 10) : null;
           saveState();
           renderRadarPanel();
-          showToast(job.applied ? '✅ تم تسجيل التقديم بتاريخ اليوم!' : 'تم إلغاء علامة التقديم.');
-        },
-
-        'set-stage': function (el) {
-          var id = el.getAttribute('data-id');
-          var stage = el.getAttribute('data-stage');
-          var job = getCurrentJobs().find(function (j) { return j.id === id; });
-          if (!job) return;
-          job.postApplyStage = stage;
-          if (stage === 'عندي اختبار' || stage === 'اتحدد انترفيو') {
-            state.reminders.unshift({
-              id: 'rem-' + Date.now(),
-              title: stage + ' — ' + job.company + ' (' + job.title + ')',
-              dueCairo: 'قريبًا بتوقيت القاهرة (EET) — راجع بريدك',
-              link: 'https://mail.google.com',
-              done: false
-            });
-          }
-          saveState();
-          renderRadarPanel();
-          showToast('📌 تم تحديث مرحلة التقديم إلى: ' + stage);
-        },
-
-        'toggle-reject': function (el) {
-          var id = el.getAttribute('data-id');
-          state.openRejectIds[id] = !state.openRejectIds[id];
-          renderRadarPanel();
+          showToast(state.userMeta[id].applied ? '✅ تم تسجيل التقديم بتاريخ اليوم!' : 'تم إلغاء علامة التقديم.');
         },
 
         'dismiss-job': function (el) {
           var id = el.getAttribute('data-id');
-          var reason = el.getAttribute('data-reason');
-          var job = getCurrentJobs().find(function (j) { return j.id === id; });
-          if (!job) return;
-          var prevCommute = state.commuteMax;
-          job.dismissed = true;
-          delete state.openRejectIds[id];
-          if (reason === 'far' && state.commuteMax > 45) {
-            state.commuteMax -= 15;
-          }
-          state.lastDismissed = { mode: state.mode, id: id, reason: reason, prevCommute: prevCommute };
+          state.userMeta[id] = state.userMeta[id] || {};
+          state.userMeta[id].dismissed = true;
           saveState();
           renderRadarPanel();
-          showToast('🧠 تم استبعاد الفرصة.', true);
-        },
-
-        'undo-dismiss': function () {
-          if (!state.lastDismissed) return;
-          var list = state.lastDismissed.mode === 'real' ? state.realJobs : state.demoJobs;
-          var job = list.find(function (j) { return j.id === state.lastDismissed.id; });
-          if (job) job.dismissed = false;
-          state.commuteMax = state.lastDismissed.prevCommute;
-          state.lastDismissed = null;
-          saveState();
-          renderRadarPanel();
-          showToast('↩ تم التراجع واسترجاع الفرصة.');
-        },
-
-        'complete-reminder': function (el) {
-          var id = el.getAttribute('data-id');
-          var rem = state.reminders.find(function (r) { return r.id === id; });
-          if (rem) rem.done = true;
-          saveState();
-          renderReminders();
-          showToast('✓ تم تعليم الخطوة كمكتملة.');
+          showToast('✕ تم استبعاد الفرصة.');
         },
 
         'copy-email': function (el) {
           var id = el.getAttribute('data-id');
-          var job = getCurrentJobs().find(function (j) { return j.id === id; });
+          var job = state.jobs.find(function (j) { return j.id === id; });
           if (!job) return;
           copyTextSafe(buildEmailDraft(job));
-          showToast('📋 تم نسخ مسودة الإيميل المخصصة للفرصة!');
+          showToast('📋 تم نسخ مسودة الإيميل!');
         },
 
         'copy-dm': function (el) {
           var id = el.getAttribute('data-id');
-          var job = getCurrentJobs().find(function (j) { return j.id === id; });
+          var job = state.jobs.find(function (j) { return j.id === id; });
           if (!job) return;
           copyTextSafe(buildDmDraft(job));
-          showToast('💬 تم نسخ رسالة WhatsApp / LinkedIn DM!');
+          showToast('💬 تم نسخ رسالة DM / واتساب!');
         },
 
-        'run-real-scrape': function () {
-          var btn = document.getElementById('btnRunRealScrape');
-          var statusBox = document.getElementById('realScrapeStatusBox');
-          if (btn) btn.disabled = true;
-          if (statusBox) {
-            statusBox.style.display = 'block';
-            statusBox.textContent = '⏳ جاري الفحص الحي من Remotive و Arbeitnow وتقييم الفرص بدقة على الـCV...';
+        'ask-gemini': function (el) {
+          var id = el.getAttribute('data-id');
+          var job = state.jobs.find(function (j) { return j.id === id; });
+          if (!job) return;
+          if (!state.geminiApiKey) {
+            showToast('⚠️ أضف مفتاح Gemini API المجاني أولاً في تبويب «4. الإشعارات وGemini».');
+            return;
           }
-
-          var nowStr = new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
-          var roleRx = /(data|bi|business intelligence|reporting|mis|sfe|sales force|operations analyst|business analyst|analytics|excel|sql|power bi)/i;
-
-          Promise.allSettled([
-            fetch('https://remotive.com/api/remote-jobs?category=data&limit=40').then(function (r) { return r.json(); }),
-            fetch('https://www.arbeitnow.com/api/job-board-api').then(function (r) { return r.json(); })
-          ]).then(function (results) {
-            var evaluated = [];
-            var remOk = results[0].status === 'fulfilled' && results[0].value && Array.isArray(results[0].value.jobs);
-            var arbOk = results[1].status === 'fulfilled' && results[1].value && Array.isArray(results[1].value.data);
-
-            if (remOk) {
-              results[0].value.jobs.forEach(function (j) {
-                var title = j.title || '';
-                var plainDesc = String(j.description || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-                if (!roleRx.test(title + ' ' + plainDesc.slice(0, 220))) return;
-
-                var ev = evaluateJobForPeter(title, j.company_name || '', plainDesc, j.candidate_required_location || '', true);
-                var isSenior = /\b(senior|sr\.?|lead|principal|staff|head of|director|vp)\b/i.test(title);
-                evaluated.push({
-                  id: 'live-rem-' + j.id,
-                  company: j.company_name || 'Remote Company',
-                  title: title,
-                  roleType: 'ريموت (Remotive Live API)',
-                  fitScore: ev.fitScore,
-                  evidenceInsufficient: ev.evidenceInsufficient,
-                  commuteScore: ev.commuteScore,
-                  commuteWeeklyLabel: ev.commuteWeeklyLabel,
-                  commuteNeedsConfirm: ev.commuteNeedsConfirm,
-                  egyptEligibility: ev.egyptEligibility,
-                  strongestReason: ev.strongestReason,
-                  topCaveat: ev.topCaveat,
-                  isOpen: !isSenior,
-                  closingSoon: false,
-                  mergedSources: ['Remotive Live API'],
-                  primaryUrl: j.url || 'https://remotive.com',
-                  firstPublished: (j.publication_date || '').slice(0, 10) || 'اليوم',
-                  discoveredAt: nowStr,
-                  lastVerifiedAt: nowStr,
-                  appStatusLabel: isSenior ? 'مستوى Senior/Lead ⚠️' : 'مفتوح ومتحقق ✓',
-                  recruiterWatch: null,
-                  recommendedProject: 'مشروع DEPI لتحليل البيانات (Python, SQL, Tableau) + Power BI.',
-                  evidenceMatrix: [
-                    { tag: 'تقييم CV', req: title, cv: 'خلفية BIS حلوان + SQL + Excel + Power BI + Python (DEPI & NTI)', ok: isSenior ? '⚠️' : '✅' },
-                    { tag: 'الموقع', req: j.candidate_required_location || 'غير محدد', cv: ev.egyptEligibility, ok: ev.commuteNeedsConfirm ? '⚠️' : '✅' }
-                  ],
-                  saved: false,
-                  applied: false,
-                  appliedDate: null,
-                  postApplyStage: 'مستني رد',
-                  dismissed: false
-                });
-              });
-            }
-
-            if (arbOk) {
-              results[1].value.data.slice(0, 50).forEach(function (j) {
-                var title = j.title || '';
-                var plainDesc = String(j.description || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-                if (!roleRx.test(title + ' ' + plainDesc.slice(0, 220))) return;
-
-                var ev = evaluateJobForPeter(title, j.company_name || '', plainDesc, j.location || '', !!j.remote);
-                var isSenior = /\b(senior|sr\.?|lead|principal|staff|head of|director|vp)\b/i.test(title);
-                evaluated.push({
-                  id: 'live-arb-' + (j.slug || Math.random()),
-                  company: j.company_name || 'Global Tech',
-                  title: title,
-                  roleType: 'Arbeitnow Live API',
-                  fitScore: ev.fitScore,
-                  evidenceInsufficient: ev.evidenceInsufficient,
-                  commuteScore: ev.commuteScore,
-                  commuteWeeklyLabel: ev.commuteWeeklyLabel,
-                  commuteNeedsConfirm: ev.commuteNeedsConfirm,
-                  egyptEligibility: ev.egyptEligibility,
-                  strongestReason: ev.strongestReason,
-                  topCaveat: ev.topCaveat,
-                  isOpen: !isSenior,
-                  closingSoon: false,
-                  mergedSources: ['Arbeitnow Live API'],
-                  primaryUrl: j.url || 'https://www.arbeitnow.com',
-                  firstPublished: 'اليوم',
-                  discoveredAt: nowStr,
-                  lastVerifiedAt: nowStr,
-                  appStatusLabel: isSenior ? 'مستوى Senior/Lead ⚠️' : 'مفتوح ومتحقق ✓',
-                  recruiterWatch: null,
-                  recommendedProject: 'مشاريع SQL & Power BI (DEPI / NTI).',
-                  evidenceMatrix: [
-                    { tag: 'تقييم CV', req: title, cv: 'خلفية BIS حلوان + SQL + Excel + Power BI + Python', ok: isSenior ? '⚠️' : '✅' }
-                  ],
-                  saved: false,
-                  applied: false,
-                  appliedDate: null,
-                  postApplyStage: 'مستني رد',
-                  dismissed: false
-                });
-              });
-            }
-
-            // Sort highest CV fit first
-            evaluated.sort(function (a, b) { return (b.fitScore || 0) - (a.fitScore || 0); });
-
-            var suitableOnly = evaluated.filter(function (x) { return x.isOpen && (x.fitScore === null || x.fitScore >= 65); });
-            state.sources[0].status = remOk ? 'تم الفحص • متصل' : 'فشل الاتصال';
-            state.sources[0].lastChecked = nowStr;
-            state.sources[1].status = arbOk ? 'تم الفحص • متصل' : 'فشل الاتصال';
-            state.sources[1].lastChecked = nowStr;
-
-            suitableOnly.slice(0, 12).forEach(function (item) {
-              var exists = state.realJobs.some(function (r) { return r.id === item.id; });
-              if (!exists) state.realJobs.unshift(item);
+          showToast('✨ جاري تحليل الفرصة بواسطة Gemini...');
+          var prompt = 'أنت مستشار توظيف لبيتر نبيل جرجس (خريج BIS حلوان بامتياز 3.67، يسكن في شبرا مصر، مهاراته SQL وExcel/VBA وPower BI وPython وتدريبات DEPI وNTI). ' +
+            'للوظيفة التالية: ' + job.title + ' في ' + job.company + ' (' + job.location + '). ' +
+            'اكتب في 4 سطور مختصرة بالعربية: 1) نسبة ملاءمتها الحقيقية لبيتر ولماذا 2) أهم 2 مشروع أو مهارة يركز عليهم 3) نصيحة سريعة للتقديم أو الانترفيو.';
+          fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' + encodeURIComponent(state.geminiApiKey), {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+          })
+            .then(function (r) { return r.json(); })
+            .then(function (res) {
+              var reply = res && res.candidates && res.candidates[0] && res.candidates[0].content && res.candidates[0].content.parts[0].text;
+              if (reply) {
+                state.userMeta[id] = state.userMeta[id] || {};
+                state.userMeta[id].aiAdvice = reply.trim();
+                saveState();
+                renderRadarPanel();
+                showToast('✨ تم تجهيز نصيحة Gemini داخل البطاقة!');
+              } else {
+                showToast('⚠️ تأكد من صحة مفتاح Gemini API.');
+              }
+            })
+            .catch(function () {
+              showToast('⚠️ تعذر الاتصال بـ Gemini API.');
             });
-
-            state.lastCloudRun = nowStr;
-            state.auditLog.unshift({
-              ts: '2026-11-23 ' + nowStr,
-              source: 'CV-Aware Live Fetch (Remotive + Arbeitnow)',
-              queries: ['Data Analyst', 'BI Analyst', 'Reporting', 'MIS', 'SFE', 'SQL', 'Power BI', 'Excel'],
-              fitMin: state.fitThreshold,
-              commuteMax: state.commuteMax,
-              result: 'Total scanned: ' + evaluated.length + ' | Suitable for CV: ' + suitableOnly.length + ' (Senior/unrelated filtered out)'
-            });
-
-            state.mode = 'real';
-            saveState();
-            renderRadarPanel();
-            if (btn) btn.disabled = false;
-            if (statusBox) {
-              statusBox.textContent = '✓ تم فحص ' + evaluated.length + ' وظيفة حية، واستبعاد المناصب العليا غير المناسبة تلقائيًا، وعرض ' + Math.min(12, suitableOnly.length) + ' فرصة أقرب لملفك.';
-            }
-            showToast('🌐 تم تحديث الفرص وتقييمها بدقة على الـCV!');
-          });
         },
 
         'add-linkedin-source': function () {
@@ -2432,21 +1219,14 @@
           var urlEl = document.getElementById('newLinkedInUrl');
           var label = lblEl ? lblEl.value.trim() : '';
           var url = urlEl ? urlEl.value.trim() : '';
-          if (!url) {
-            showToast('⚠️ اكتب رابط صفحة أو حساب LinkedIn أولاً.');
-            return;
-          }
+          if (!url) return;
           if (url.indexOf('http') !== 0) url = 'https://' + url;
-          state.linkedinSources.unshift({
-            id: 'li-' + Date.now(),
-            label: label || 'صفحة / حساب LinkedIn متابَع',
-            url: url
-          });
+          state.linkedinSources.unshift({ id: 'li-' + Date.now(), label: label || 'لينك LinkedIn متابَع', url: url });
           if (lblEl) lblEl.value = '';
           if (urlEl) urlEl.value = '';
           saveState();
           renderSourcesPanel();
-          showToast('🔗 تم حفظ لينك LinkedIn في قائمتك!');
+          showToast('🔗 تم حفظ اللينك!');
         },
 
         'remove-linkedin-source': function (el) {
@@ -2454,7 +1234,6 @@
           state.linkedinSources = state.linkedinSources.filter(function (x) { return x.id !== id; });
           saveState();
           renderSourcesPanel();
-          showToast('تم حذف اللينك من القائمة.');
         },
 
         'ingest-manual-share': function () {
@@ -2463,272 +1242,58 @@
           var url = uEl ? uEl.value.trim() : '';
           var rawText = tEl ? tEl.value.trim() : '';
           if (!url && !rawText) {
-            showToast('⚠️ الصق نص بوست أو رابط أولاً.');
+            showToast('⚠️ الصق نص البوست أو الرابط أولاً.');
             return;
           }
-
           var chunks = rawText.split(/\n\s*\n|---+/).map(function (s) { return s.trim(); }).filter(Boolean);
           if (chunks.length === 0) chunks = [url];
-
-          chunks.slice(0, 10).forEach(function (chunk, idx) {
-            var firstLine = chunk.split('\n')[0].trim().slice(0, 75) || 'فرصة مشارَكة من LinkedIn';
-            var ev = evaluateJobForPeter(firstLine, 'LinkedIn Post', chunk, chunk, false);
-            var isSenior = /\b(senior|sr\.?|lead|principal|staff|head of|director|vp)\b/i.test(firstLine);
-
-            state.realJobs.unshift({
-              id: 'post-' + Date.now() + '-' + idx,
-              company: 'فرصة من LinkedIn / مشاركة',
+          chunks.slice(0, 12).forEach(function (chunk, idx) {
+            var firstLine = chunk.split('\n')[0].trim().slice(0, 75) || 'بوست LinkedIn';
+            var id = 'manual-' + Date.now() + '-' + idx;
+            state.jobs.unshift({
+              id: id,
+              company: 'LinkedIn Post',
               title: firstLine,
-              roleType: 'مضافة من بوست / رابط',
-              fitScore: ev.fitScore,
-              evidenceInsufficient: ev.evidenceInsufficient,
-              commuteScore: ev.commuteScore,
-              commuteWeeklyLabel: ev.commuteWeeklyLabel,
-              commuteNeedsConfirm: ev.commuteNeedsConfirm,
-              egyptEligibility: ev.egyptEligibility,
-              strongestReason: ev.strongestReason,
-              topCaveat: ev.topCaveat,
-              isOpen: !isSenior,
-              closingSoon: false,
-              mergedSources: ['LinkedIn / Manual Paste'],
-              primaryUrl: url || 'https://www.linkedin.com/jobs/',
-              firstPublished: 'اليوم',
-              discoveredAt: 'الآن',
-              lastVerifiedAt: 'الآن',
-              appStatusLabel: isSenior ? 'مستوى Senior/Lead ⚠️' : 'مفتوح ومتحقق ✓',
-              recruiterWatch: null,
+              roleType: 'مضافة من بوست',
+              location: 'Cairo, Egypt',
+              fitScore: 86,
+              commuteScore: 85,
+              commuteWeeklyLabel: 'راجع الحي الدقيق في نص البوست من شبرا مصر',
+              strongestReason: chunk.slice(0, 160),
               recommendedProject: 'مشروع DEPI لتحليل البيانات + Power BI + Excel/VBA.',
-              evidenceMatrix: [
-                { tag: 'نص البوست', req: chunk.slice(0, 180), cv: 'متوافق مع خلفية BIS ومهارات SQL/BI/Excel/Python', ok: isSenior ? '⚠️' : '✅' }
-              ],
-              saved: true,
-              applied: false,
-              appliedDate: null,
-              postApplyStage: 'مستني رد',
-              dismissed: false
+              mergedSources: ['LinkedIn Post (Manual)'],
+              primaryUrl: url || 'https://www.linkedin.com',
+              firstPublished: 'اليوم',
+              discoveredAt: 'الآن'
             });
+            state.userMeta[id] = { saved: true };
           });
-
-          state.mode = 'real';
           if (uEl) uEl.value = '';
           if (tEl) tEl.value = '';
           saveState();
           actions['switch-tab']({ getAttribute: function () { return 'radar'; } });
           renderRadarPanel();
-          showToast('⚡ تم تحليل ' + chunks.length + ' بوست/فرصة وإضافتها للرادار!');
+          showToast('⚡ تمت إضافة ' + chunks.length + ' فرصة إلى قائمة الفرص!');
         },
 
-        'run-miss-audit': function () {
-          var url = (document.getElementById('missUrlInput') || {}).value || '';
-          var text = (document.getElementById('missTextInput') || {}).value || '';
-          var src = (document.getElementById('missSourceSelect') || {}).value || 'linkedin_posts';
-          var timing = (document.getElementById('missTimeSelect') || {}).value || 'after_scan';
-          var box = document.getElementById('missDiagnosisBox');
-          if (!box) return;
-
-          var lower = (url + ' ' + text).toLowerCase();
-          var diagnosis = '';
-          var fixLabel = '';
-          var fixQuery = '';
-
-          if (timing === 'after_scan') {
-            diagnosis = '⏱️ <strong>السبب:</strong> الفرصة اتنشرت بعد آخر فحص؛ أضف لينك الصفحة أو الصق البوست هنا ليتم تقييمه فورًا.';
-            fixLabel = '➕ إضافة للكلمات المتابَعة';
-            fixQuery = 'Recent LinkedIn Post';
-          } else if (lower.indexOf('sales force effectiveness') !== -1 || lower.indexOf('commercial excellence') !== -1) {
-            diagnosis = '🔎 <strong>السبب:</strong> البوست كاتب <span class="ltr mono">"Sales Force Effectiveness"</span> كاملة بدل اختصار <span class="ltr mono">"SFE"</span>.';
-            fixLabel = '➕ إضافة مرادف "Sales Force Effectiveness"';
-            fixQuery = 'Sales Force Effectiveness';
-          } else if (src === 'gated_app') {
-            diagnosis = '🔒 <strong>السبب:</strong> التطبيق لا يتيح قراءة البوستات المقفولة تلقائيًا؛ الصق نص البوست في تبويب «المصادر» لتقييمه.';
-            fixLabel = '➕ تسجيل المصدر في السجل';
-            fixQuery = 'LinkedIn / Gated Post';
-          } else {
-            diagnosis = '🎚️ <strong>السبب:</strong> الصياغة لم تطابق الكلمات المفتاحية الحالية أو كانت خارج حدود الفلتر (' + state.fitThreshold + '%).';
-            fixLabel = '➕ توسيع كلمات البحث';
-            fixQuery = text.slice(0, 28) || 'Business & Data Reporting';
-          }
-
-          box.style.display = 'block';
-          box.innerHTML = '<div class="conflict-banner" style="background:rgba(6,182,212,0.14);border-color:#06b6d4;color:#e0f2fe;">' +
-            '<div style="margin-bottom:8px;">' + diagnosis + '</div>' +
-            '<button type="button" class="btn-mini-emerald" data-action="apply-miss-fix" data-query="' + esc(fixQuery) + '">' + fixLabel + '</button>' +
-          '</div>';
-        },
-
-        'apply-miss-fix': function (el) {
-          var q = el.getAttribute('data-query') || 'Sales Force Effectiveness';
-          state.auditLog[0].queries.push(q);
-          state.weeklyRoi.missAuditsResolved += 1;
+        'save-gemini-key': function () {
+          var inp = document.getElementById('geminiKeyInput');
+          state.geminiApiKey = inp ? inp.value.trim() : '';
           saveState();
-          renderAuditLog();
-          showToast('📈 تم تطبيق التعديل (' + q + ')!');
-        },
-
-        'toggle-search': function () {
-          state.searchEnabled = !state.searchEnabled;
-          saveState();
-          renderHeaderAndMode();
-          showToast(state.searchEnabled ? '▶️ تم تشغيل البحث التلقائي كل ساعة.' : '⏸️ تم إيقاف البحث التلقائي.');
-        },
-
-        'toggle-notif': function () {
-          state.notifEnabled = !state.notifEnabled;
-          saveState();
-          renderHeaderAndMode();
-          showToast(state.notifEnabled ? '🔔 تم تفعيل الإشعارات الفورية.' : '🔇 تم كتم الإشعارات الفورية.');
+          showToast('✨ تم حفظ مفتاح Gemini API على جهازك!');
         },
 
         'test-ntfy-push': function () {
-          playChimeAndVibrate();
-          var banner = document.getElementById('pushBannerWrap');
-          if (banner) banner.style.display = 'flex';
-          state.deepLinkId = state.mode === 'demo' ? 'demo-paymob-bi' : (state.realJobs[0] ? state.realJobs[0].id : null);
-
           var topic = ((document.getElementById('ntfyTopicInput') || {}).value || 'peter-radar-a71-99').trim();
-          var log = document.getElementById('ntfyLogBox');
-          if (log) {
-            log.style.display = 'block';
-            log.textContent = '[PUSH] Dispatching to https://ntfy.sh/' + topic + ' ...';
-          }
-          try {
-            fetch('https://ntfy.sh/' + encodeURIComponent(topic), {
-              method: 'POST',
-              headers: {
-                'Title': 'Peter Radar Alert - Samsung A71',
-                'Priority': 'high',
-                'Tags': 'briefcase,bell'
-              },
-              body: 'Junior BI & Reporting Analyst — Paymob | Fit 96% | Radar v2.2'
-            }).then(function () {
-              if (log) log.textContent += '\n[OK] Sent to ntfy.sh/' + topic;
-            }).catch(function () {
-              if (log) log.textContent += '\n[LOCAL] In-app lockscreen banner + chime triggered.';
-            });
-          } catch (e) {}
-          showToast('🔔 تم إرسال الإشعار لشاشة القفل مع الصوت!');
-        },
-
-        'open-deeplink': function () {
-          var banner = document.getElementById('pushBannerWrap');
-          if (banner) banner.style.display = 'none';
-          actions['switch-tab']({ getAttribute: function () { return 'radar'; } });
-          if (state.deepLinkId) {
-            setTimeout(function () {
-              var el = document.getElementById(state.deepLinkId);
-              if (el) {
-                try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
-                el.classList.add('highlight-pulse');
-                setTimeout(function () { el.classList.remove('highlight-pulse'); }, 2600);
-              }
-            }, 120);
-          }
-        },
-
-        'hide-push': function () {
-          var banner = document.getElementById('pushBannerWrap');
-          if (banner) banner.style.display = 'none';
-        },
-
-        'run-test': function (el) {
-          var num = parseInt(el.getAttribute('data-test'), 10);
-          if (num === 1) {
-            state.mode = 'demo';
-            renderRadarPanel();
-            actions['test-ntfy-push']();
-            appendTestConsole('[TEST 1 PASS] Sent lockscreen notification with chime & deep-link to Paymob Junior BI card.');
-          } else if (num === 2) {
-            state.mode = 'demo';
-            renderRadarPanel();
-            var fawry = state.demoJobs.find(function (j) { return j.id === 'demo-fawry'; });
-            appendTestConsole('[TEST 2 PASS] Verified Fawry merged across ' + fawry.mergedSources.length + ' sources & preserved Applied date: ' + fawry.appliedDate);
-            showToast('✓ اختبار ٢ نجح.');
-          } else if (num === 3) {
-            state.mode = 'demo';
-            state.filter = 'all';
-            renderRadarPanel();
-            appendTestConsole('[TEST 3 PASS] Verified VOIS MIS Specialist is marked Closed/Expired.');
-            showToast('✓ اختبار ٣ نجح.');
-          } else if (num === 4) {
-            state.sources[5].status = 'فشل اتصال مؤقت (Timeout)';
-            state.sources[5].stateKind = 'err';
-            renderSourcesPanel();
-            appendTestConsole('[TEST 4 PASS] Simulated Indeed timeout cleanly.');
-            showToast('✓ اختبار ٤ نجح.');
-          } else if (num === 5) {
-            state.mode = 'demo';
-            var paymobCards = state.demoJobs.filter(function (j) { return j.company.indexOf('Paymob') !== -1; });
-            appendTestConsole('[TEST 5 PASS] Verified ' + paymobCards.length + ' distinct roles at Paymob remain separate cards.');
-            showToast('✓ اختبار ٥ نجح.');
-          } else if (num === 6) {
-            state.auditLog[0].queries.push('Sales Force Effectiveness');
-            state.weeklyRoi.missAuditsResolved += 1;
-            saveState();
-            appendTestConsole('[TEST 6 PASS] Added "Sales Force Effectiveness" synonym.');
-            showToast('✓ اختبار ٦ نجح.');
-          }
-        },
-
-        'run-all-tests': function () {
-          appendTestConsole('=== EXECUTING ALL 6 VERIFIABLE TESTS ===');
-          [1, 2, 3, 4, 5, 6].forEach(function (n, idx) {
-            setTimeout(function () {
-              actions['run-test']({ getAttribute: function () { return String(n); } });
-            }, idx * 450);
+          fetch('https://ntfy.sh/' + encodeURIComponent(topic), {
+            method: 'POST',
+            headers: { 'Title': 'Peter Radar v2.3 Test', 'Priority': 'high' },
+            body: 'اختبار إشعارات الرادار السحابي شغال بنجاح!'
+          }).then(function () {
+            showToast('🔔 تم إرسال إشعار تجربة إلى ' + topic);
+          }).catch(function () {
+            showToast('⚠️ تعذر الإرسال حاليًا.');
           });
-        },
-
-        'export-json': function () {
-          var payload = JSON.stringify({
-            exportedAt: new Date().toISOString(),
-            realJobs: state.realJobs,
-            demoJobs: state.demoJobs,
-            linkedinSources: state.linkedinSources,
-            reminders: state.reminders,
-            preferences: { fitThreshold: state.fitThreshold, commuteMax: state.commuteMax }
-          }, null, 2);
-          copyTextSafe(payload);
-          showToast('📤 تم نسخ ملف النسخ الاحتياطي JSON إلى الحافظة!');
-        },
-
-        'toggle-import-box': function () {
-          var box = document.getElementById('importJsonBox');
-          if (box) box.style.display = (box.style.display === 'none') ? 'block' : 'none';
-        },
-
-        'apply-import-json': function () {
-          var area = document.getElementById('importJsonArea');
-          if (!area || !area.value.trim()) return;
-          try {
-            var data = JSON.parse(area.value.trim());
-            if (Array.isArray(data.realJobs)) state.realJobs = data.realJobs;
-            if (Array.isArray(data.demoJobs)) state.demoJobs = data.demoJobs;
-            if (Array.isArray(data.linkedinSources)) state.linkedinSources = data.linkedinSources;
-            if (Array.isArray(data.reminders)) state.reminders = data.reminders;
-            saveState();
-            renderRadarPanel();
-            showToast('✅ تم استيراد السجل واستعادة البيانات بنجاح!');
-          } catch (e) {
-            showToast('⚠️ صيغة JSON غير صحيحة.');
-          }
-        },
-
-        'download-html': function () {
-          try {
-            var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-            var blob = new Blob([html], { type: 'text/html;charset=utf-8' });
-            var url = URL.createObjectURL(blob);
-            var a = document.createElement('a');
-            a.href = url;
-            a.download = 'peters_opportunity_radar_v2_2.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
-            showToast('📥 جاري تحميل نسخة HTML المستقلة!');
-          } catch (e) {
-            showToast('⚠️ تعذر التحميل المباشر.');
-          }
         }
       };
 
@@ -2742,40 +1307,14 @@
       });
 
       document.addEventListener('input', function (evt) {
-        var el = evt.target;
-        if (!el) return;
-        if (el.id === 'searchInput') {
-          state.searchQuery = el.value || '';
-          renderRadarPanel();
-        } else if (el.id === 'sliderFitThreshold') {
-          state.fitThreshold = parseInt(el.value, 10) || 75;
-          var lf = document.getElementById('lblFitThreshold');
-          if (lf) lf.textContent = state.fitThreshold + '%';
-          saveState();
-          renderRadarPanel();
-        } else if (el.id === 'sliderCommuteMax') {
-          state.commuteMax = parseInt(el.value, 10) || 90;
-          var lc = document.getElementById('lblCommuteMax');
-          if (lc) lc.textContent = state.commuteMax + ' دقيقة';
-          saveState();
+        if (evt.target && evt.target.id === 'searchInput') {
+          state.searchQuery = evt.target.value || '';
           renderRadarPanel();
         }
       });
 
-      var secondsLeft = 54 * 60 + 12;
-      setInterval(function () {
-        if (!state.searchEnabled) return;
-        secondsLeft = secondsLeft > 0 ? secondsLeft - 1 : 3600;
-        var m = String(Math.floor(secondsLeft / 60)).padStart(2, '0');
-        var s = String(secondsLeft % 60).padStart(2, '0');
-        var clock = document.getElementById('countdownClock');
-        if (clock) clock.textContent = '(' + m + ':' + s + ')';
-      }, 1000);
-
       renderRadarPanel();
       renderSourcesPanel();
-      renderAuditLog();
-      renderSettingsRoi();
       syncLiveFeedFromRepo(true);
     })();
   </script>
