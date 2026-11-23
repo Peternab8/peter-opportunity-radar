@@ -85,7 +85,8 @@ def strip_tags(raw_html):
     return re.sub(r"\s+", " ", html.unescape(text)).strip()
 
 
-def clean_field(val):    if val is None:
+def clean_field(val):
+    if val is None:
         return None
     s = str(val).strip()
     if not s or s.lower() in ("nan", "none", "null", "unknown"):
@@ -125,7 +126,7 @@ def scrape_linkedin_jobs_egypt(now_iso):
                     found[clean_url] = {
                         "company": company or "جهة معلنة على LinkedIn",
                         "title": title,
-                        "location": loc,  # None if missing (Point 15)
+                        "location": loc,
                         "work_mode": "Remote" if (loc and "remote" in loc.lower()) else None,
                         "source_name": "LinkedIn Jobs",
                         "source_category": "job_board",
@@ -213,7 +214,6 @@ def scrape_jobspy_indeed_google(now_iso):
 
 
 def scrape_public_hiring_posts(now_iso):
-    """Point 24: Dedicated Hiring Posts source searching public Arabic & English HR posts."""
     queries = [
         'site:linkedin.com/posts ("Data Analyst" OR "BI Analyst" OR "SFE" OR "Commercial Excellence" OR "MIS") ("Cairo" OR "Egypt")',
         'site:linkedin.com/posts ("مطلوب فريش" OR "ابعت الـCV" OR "تحليل بيانات" OR "تقارير") ("القاهرة" OR "مصر")',
