@@ -421,20 +421,24 @@ def scrape_remotive_global(now_iso):
 
 
 def enrich_top_jobs_with_gemini(jobs):
+    """Evaluate top 35 jobs using free-tier Gemini 2.5 Flash against Peter's CV and filter out poor fits."""
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not api_key or not jobs:
         return jobs
 
-    top_slice = jobs[:15]
+    top_slice = jobs[:35]
     compact = [
         {"id": j["id"], "title": j["title"], "company": j["company"], "location": j["location"]}
         for j in top_slice
     ]
     prompt = (
-        "You are a career advisor for Peter Nabil Gerges (BIS graduate from Helwan University, GPA 3.67, "
-        "lives in Shubra Masr Cairo, skilled in SQL, Excel/Power Query/VBA, Power BI, Python; DEPI & NTI Data Analysis tracks). "
-        "Evaluate these job openings for him. Return ONLY a JSON array of objects with keys: "
-        "id, fit_score (60-98 integer), reason_ar (1 concise Arabic sentence), project_ar (best project from his CV to highlight). "
+        "You are an expert technical recruiter for Peter Nabil Gerges: BIS graduate from Helwan University "
+        "(First-Class Honors, GPA 3.67), lives in Shubra Masr Cairo, Entry-Level/Junior, skilled in SQL, "
+        "Excel (Pivot, Power Query, VBA), Power BI, Python (DEPI & NTI Data Analysis tracks, CIB/EBI/Banque du Caire trainings). "
+        "Evaluate these jobs strictly for an entry-level/junior candidate in Data Analysis, BI, Reporting, MIS, SFE, Systems, or Operations Analysis. "
+        "Return ONLY a JSON array of objects with keys: "
+        "id, keep (boolean, false if senior/unrelated), fit_score (55-98 integer), "
+        "reason_ar (1 crisp Arabic sentence explaining fit), project_ar (best real project from DEPI/NTI/Graduation Project/Excel booking system). "
         f"Jobs: {json.dumps(compact, ensure_ascii=False)}"
     )
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={urllib.parse.quote(api_key)}"
@@ -443,23 +447,28 @@ def enrich_top_jobs_with_gemini(jobs):
         "generationConfig": {"responseMimeType": "application/json"},
     }
     try:
-        raw = http_request(url, method="POST", payload=payload, timeout=20)
+        raw = http_request(url, method="POST", payload=payload, timeout=25)
         parsed = json.loads(raw)
         txt = parsed["candidates"][0]["content"]["parts"][0]["text"]
         ai_list = json.loads(txt)
         by_id = {item["id"]: item for item in ai_list if isinstance(item, dict) and "id" in item}
+        filtered_jobs = []
         for j in jobs:
             if j["id"] in by_id:
                 ai = by_id[j["id"]]
+                if ai.get("keep") is False:
+                    continue
                 if isinstance(ai.get("fit_score"), (int, float)):
                     j["fit"]["score"] = max(55, min(98, int(ai["fit_score"])))
                 if ai.get("reason_ar"):
                     j["fit"]["summary"] = f"✨ {ai['reason_ar']}"
                 if ai.get("project_ar"):
                     j["fit"]["recommended_project"] = ai["project_ar"]
+            filtered_jobs.append(j)
+        filtered_jobs.sort(key=lambda x: x.get("fit", {}).get("score", 0), reverse=True)
+        return filtered_jobs
     except Exception:
-        pass
-    return jobs
+        return jobs
 
 
 def scrape_all_real_sources():
