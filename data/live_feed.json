@@ -1,38 +1,38 @@
 {
   "meta": {
     "owner": "Peter Nabil Gerges",
-    "last_successful_run": "2026-11-23T16:36:09Z",
-    "total_runs": 2,
+    "last_successful_run": "2026-11-23T17:06:42Z",
+    "total_runs": 3,
     "source_health": {
       "ats_career_pages": {
         "label": "بوابات الشركات (Paymob, Breadfast, Thndr...)",
         "status": "OK",
         "found": 0,
-        "last_checked": "2026-11-23T16:36:09Z"
+        "last_checked": "2026-11-23T17:06:42Z"
       },
       "linkedin_public_posts": {
         "label": "LinkedIn Public Jobs & Posts",
         "status": "OK",
         "found": 0,
-        "last_checked": "2026-11-23T16:36:09Z"
+        "last_checked": "2026-11-23T17:06:42Z"
       },
       "wuzzuf": {
         "label": "WUZZUF Entry-Level",
         "status": "OK",
         "found": 0,
-        "last_checked": "2026-11-23T16:36:09Z"
+        "last_checked": "2026-11-23T17:06:42Z"
       },
       "remote_apis": {
         "label": "Remotive & Himalayas Remote",
         "status": "OK",
         "found": 0,
-        "last_checked": "2026-11-23T16:36:09Z"
+        "last_checked": "2026-11-23T17:06:42Z"
       },
       "gmail_alerts_bridge": {
         "label": "Gmail Alerts Bridge (OAuth)",
         "status": "OK",
         "found": 0,
-        "last_checked": "2026-11-23T16:36:09Z"
+        "last_checked": "2026-11-23T17:06:42Z"
       }
     }
   },
@@ -194,6 +194,25 @@
     {
       "run_id": "run_2",
       "completed_at": "2026-11-23T16:36:09Z",
+      "raw_fetched": 0,
+      "new_high_fit": 0,
+      "merged_duplicates": 0,
+      "closed_filtered": 0,
+      "queries_executed": [
+        "\"Data Analyst\" Cairo",
+        "\"BI Analyst\" Egypt",
+        "\"Reporting Analyst\" Cairo",
+        "\"MIS\" Egypt",
+        "\"SFE\" Egypt",
+        "\"Sales Force Effectiveness\" Cairo",
+        "\"Sales Operations\" Egypt",
+        "\"Business Analyst\" Cairo",
+        "\"Operations Analyst\" Egypt"
+      ]
+    },
+    {
+      "run_id": "run_3",
+      "completed_at": "2026-11-23T17:06:42Z",
       "raw_fetched": 0,
       "new_high_fit": 0,
       "merged_duplicates": 0,
