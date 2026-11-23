@@ -85,8 +85,7 @@ def strip_tags(raw_html):
     return re.sub(r"\s+", " ", html.unescape(text)).strip()
 
 
-def clean_field(val) -> Optional_str := None:
-    if val is None:
+def clean_field(val):    if val is None:
         return None
     s = str(val).strip()
     if not s or s.lower() in ("nan", "none", "null", "unknown"):
