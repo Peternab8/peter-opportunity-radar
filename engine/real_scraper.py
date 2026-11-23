@@ -13,6 +13,8 @@ USER_AGENT = (
     "Chrome/129.0.0.0 Safari/537.36"
 )
 
+GEMINI_MODELS = ["gemini-3.8-flash", "gemini-flash-latest"]
+
 SENIOR_RX = re.compile(
     r"\b(senior|sr\.?|lead|principal|staff|head|director|vp|vice president|chief|manager|architect|expert|3\+\s*years|4\+\s*years|5\+\s*years)\b",
     re.I,
@@ -26,6 +28,7 @@ NEGATIVE_ROLE_RX = re.compile(
 LINKEDIN_QUERIES = [
     "Data Analyst",
     "Business Intelligence Analyst",
+    "BI Analyst",
     "Reporting Analyst",
     "MIS Analyst",
     "SFE",
@@ -33,16 +36,9 @@ LINKEDIN_QUERIES = [
     "Operations Analyst",
     "Business Analyst",
     "Systems Analyst",
+    "Product Analyst",
+    "Data Specialist",
     "SQL Power BI",
-]
-
-WUZZUF_QUERIES = [
-    "data analyst",
-    "business intelligence",
-    "reporting analyst",
-    "mis",
-    "operations analyst",
-    "business analyst",
 ]
 
 WORKABLE_COMPANIES = [
@@ -67,7 +63,7 @@ WORKABLE_COMPANIES = [
 ]
 
 
-def http_request(url, method="GET", payload=None, extra_headers=None, timeout=20):
+def http_request(url, method="GET", payload=None, extra_headers=None, timeout=22):
     headers = {
         "User-Agent": USER_AGENT,
         "Accept-Language": "en-US,en;q=0.9,ar;q=0.8",
@@ -102,8 +98,24 @@ def is_relevant_entry_role(title, extra_text=""):
     )
 
 
+def call_gemini_with_grounding(api_key, prompt_text):
+    payload = {
+        "contents": [{"parts": [{"text": prompt_text}]}],
+        "tools": [{"google_search": {}}],
+    }
+    last_err = None
+    for model in GEMINI_MODELS:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={urllib.parse.quote(api_key)}"
+        try:
+            raw = http_request(url, method="POST", payload=payload, timeout=30)
+            return json.loads(raw), model, None
+        except Exception as exc:
+            last_err = str(exc)[:110]
+            continue
+    return None, None, last_err
+
+
 def search_web_via_gemini_grounding(now_iso):
-    """Uses Gemini 2.5 Flash + Google Search Grounding and returns (jobs_list, status_string)."""
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not api_key:
         return [], "غير مفعّل (GEMINI_API_KEY غير موجود في Secrets)"
@@ -121,37 +133,33 @@ def search_web_via_gemini_grounding(now_iso):
         (
             "Use Google Search right now to find graduate programs, data trainee, commercial operations analyst, "
             "or BI specialist openings in Egyptian fintech, telecom, banks, and e-commerce companies (Paymob, Fawry, CIB, "
-            "Vodafone VOIS, e&, Raya, Breadfast, Bosta, Talabat, MaxAB, Noon, Jumia) in Cairo Egypt from the past 7 days. "
+            "Vodafone VOIS, e&, Raya, Breadfast, Bosta, Talabat, MaxAB, Noon, Jumia, ValU, Thndr) in Cairo Egypt from the past 7 days. "
             "Exclude Senior/Manager roles. "
             "Return ONLY a JSON array of up to 15 real opportunities with keys: title, company, location, source, url, tasks_summary."
         ),
     ]
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={urllib.parse.quote(api_key)}"
     collected = []
+    used_model = None
     last_error = None
 
     for prompt in prompts:
-        payload = {
-            "contents": [{"parts": [{"text": prompt}]}],
-            "tools": [{"google_search": {}}],
-        }
+        parsed, model_used, err = call_gemini_with_grounding(api_key, prompt)
+        if err or not parsed:
+            last_error = err
+            continue
+        used_model = model_used
         try:
-            raw = http_request(url, method="POST", payload=payload, timeout=30)
-            parsed = json.loads(raw)
             cand = parsed["candidates"][0]
             text = cand["content"]["parts"][0].get("text", "")
-
             g_meta = cand.get("groundingMetadata") or {}
             grounding_urls = [
                 (c.get("web") or {}).get("uri")
                 for c in (g_meta.get("groundingChunks") or [])
                 if (c.get("web") or {}).get("uri")
             ]
-
             json_m = re.search(r"\[[\s\S]*\]", text)
             if not json_m:
-                last_error = "Gemini لم يُرجع مصفوفة JSON"
                 continue
             items = json.loads(json_m.group(0))
             for idx, it in enumerate(items):
@@ -188,7 +196,7 @@ def search_web_via_gemini_grounding(now_iso):
             continue
 
     if collected:
-        return collected, f"شغّال ✓ ({len(collected)} فرصة)"
+        return collected, f"شغّال ✓ ({used_model} • {len(collected)} فرصة)"
     return [], f"0 نتائج ({last_error or 'لم يجد نتائج جديدة'})"
 
 
@@ -235,56 +243,9 @@ def scrape_linkedin_egypt_guest(now_iso):
                         "required_text": f"{title} SQL Excel Power BI",
                         "tasks": title,
                     }
-                time.sleep(0.4)
+                time.sleep(0.35)
             except Exception:
                 break
-    return list(found.values())
-
-
-def scrape_wuzzuf_egypt(now_iso):
-    found = {}
-    api_url = "https://wuzzuf.net/api/search/job"
-    for kw in WUZZUF_QUERIES:
-        try:
-            payload = {"startIndex": 0, "pageSize": 25, "query": kw, "filters": {}}
-            raw = http_request(
-                api_url,
-                method="POST",
-                payload=payload,
-                extra_headers={"Accept": "application/json", "Referer": "https://wuzzuf.net/search/jobs/"},
-                timeout=15,
-            )
-            data = json.loads(raw)
-            for item in data.get("data", []):
-                attrs = item.get("attributes") if isinstance(item.get("attributes"), dict) else item
-                title = strip_tags(attrs.get("title") or "")
-                desc = strip_tags(attrs.get("description") or attrs.get("requirements") or "")
-                if not is_relevant_entry_role(title, desc):
-                    continue
-                comp_obj = attrs.get("company") or {}
-                company = strip_tags(comp_obj.get("name") if isinstance(comp_obj, dict) else "شركة على WUZZUF")
-                loc_obj = attrs.get("location") or {}
-                city = loc_obj.get("city", {}).get("name", "") if isinstance(loc_obj.get("city"), dict) else ""
-                area = loc_obj.get("area", {}).get("name", "") if isinstance(loc_obj.get("area"), dict) else ""
-                loc = ", ".join([x for x in [area, city, "Egypt"] if x]) or "Cairo, Egypt"
-                slug = attrs.get("slug") or item.get("id") or ""
-                job_url = f"https://wuzzuf.net/jobs/p/{slug}" if slug else "https://wuzzuf.net/search/jobs/"
-
-                found[job_url] = {
-                    "company": company or "شركة على WUZZUF",
-                    "title": title,
-                    "location": loc,
-                    "work_mode": "Hybrid",
-                    "source_name": "WUZZUF",
-                    "url": job_url,
-                    "first_published": str(attrs.get("postedAt") or now_iso)[:10],
-                    "discovered_at": now_iso,
-                    "required_text": f"{title} {desc[:400]}",
-                    "tasks": desc[:400] or title,
-                }
-            time.sleep(0.35)
-        except Exception:
-            continue
     return list(found.values())
 
 
@@ -359,17 +320,16 @@ def scrape_all_real_sources():
     now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     ai_jobs, gemini_status = search_web_via_gemini_grounding(now_iso)
     li_jobs = scrape_linkedin_egypt_guest(now_iso)
-    wz_jobs = scrape_wuzzuf_egypt(now_iso)
     co_jobs = scrape_egypt_company_boards(now_iso)
     rm_jobs = scrape_remotive_global(now_iso)
 
-    raw_items = ai_jobs + li_jobs + wz_jobs + co_jobs + rm_jobs
+    raw_items = ai_jobs + li_jobs + co_jobs + rm_jobs
     stats = {
         "ai_google_search": len(ai_jobs),
         "gemini_status": gemini_status,
         "linkedin_egypt": len(li_jobs),
-        "wuzzuf_egypt": len(wz_jobs),
-        "egypt_companies": len(co_jobs),
+        "wuzzuf_egypt": sum(1 for j in ai_jobs if "wuzzuf" in j.get("source_name", "").lower()),
+        "egypt_companies": len(co_jobs) + sum(1 for j in ai_jobs if not any(x in j.get("source_name", "").lower() for x in ["wuzzuf", "linkedin", "indeed"])),
         "remotive_global": len(rm_jobs),
     }
     return raw_items, stats
