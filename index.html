@@ -1408,7 +1408,7 @@
               '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;">' +
                 '<button type="button" class="btn-mini-emerald" data-action="copy-email" data-id="' + esc(job.id) + '">📋 نسخ الإيميل</button>' +
                 '<button type="button" class="btn-mini-dark" data-action="copy-dm" data-id="' + esc(job.id) + '">💬 نسخ DM / واتساب</button>' +
-                '<button type="button" class="btn-secondary" style="min-height:36px;padding:5px 10px;" data-action="ask-gemini" data-id="' + esc(job.id) + '">✨ استشارة Gemini AI</button>' +
+                '<button type="button" class="btn-secondary" style="min-height:36px;padding:5px 10px;" data-action="gemini-2.5-flash-lite" data-id="' + esc(job.id) + '">✨ استشارة Gemini AI</button>' +
               '</div>' +
               '<pre class="draft-pre ltr mono">' + esc(buildEmailDraft(job)) + '</pre>' +
             '</div>' +
@@ -1521,7 +1521,7 @@
           showToast('💬 تم نسخ رسالة DM / واتساب!');
         },
 
-        'ask-gemini': function (el) {
+        'gemini-2.5-flash-lite': function (el) {
           var id = el.getAttribute('data-id');
           var job = state.jobs.find(function (j) { return j.id === id; });
           if (!job) return;
