@@ -9,27 +9,18 @@ self.addEventListener('fetch', (event) => {
   }
 });
 
-self.addEventListener('push', (event) => {
-  const data = event.data ? event.data.json() : {
-    title: 'فرصة جديدة مطابقة — رادار بيتر',
-    body: 'اضغط لفتح بطاقة الفرصة',
-    deep_link: './index.html'
-  };
-  event.waitUntil(
-    self.registration.showNotification(data.title, {
-      body: data.body,
-      tag: data.job_id || 'radar-alert',
-      data: { url: data.deep_link || './index.html' },
-      actions: [
-        { action: 'open', title: 'افتح الإعلان' },
-        { action: 'save', title: 'احفظ' }
-      ]
-    })
-  );
-});
-
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
   const targetUrl = (event.notification.data && event.notification.data.url) || './index.html';
-  event.waitUntil(clients.openWindow(targetUrl));
+  event.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then((windowClients) => {
+      for (const client of windowClients) {
+        if ('focus' in client) {
+          client.navigate(targetUrl);
+          return client.focus();
+        }
+      }
+      return clients.openWindow(targetUrl);
+    })
+  );
 });
