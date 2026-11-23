@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  scan-and-notify:
+  verify-and-scan:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -20,6 +20,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Run matcher verification gate before scraping
+        run: python engine/matcher.py --self-test
+
       - name: Install scraping engine
         run: pip install --quiet python-jobspy
 
@@ -27,11 +30,12 @@ jobs:
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           PWA_BASE_URL: ${{ secrets.PWA_BASE_URL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python engine/hourly_runner.py
 
-      - name: Commit and push updated feed
+      - name: Publish public feed only (excluding private queues)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/live_feed.json data/gmail_queue.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(radar): hourly opportunity scan update" && git push)
+          git add data/live_feed.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(radar): publish verified opportunity feed" && git push)
