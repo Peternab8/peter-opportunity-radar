@@ -1,11 +1,11 @@
 {
   "meta": {
-    "last_successful_run": "2026-11-23T19:29:21Z",
+    "last_successful_run": "2026-11-23T19:32:35Z",
     "total_active": 37,
     "source_stats": {
       "ai_google_search": 0,
-      "gemini_status": "0 نتائج (HTTP Error 429: Too Many Requests)",
-      "linkedin_egypt": 17,
+      "gemini_status": "محرك X-Ray المجاني شغّال ✓ (0 نتيجة)",
+      "linkedin_egypt": 19,
       "wuzzuf_egypt": 0,
       "egypt_companies": 0,
       "remotive_global": 2,
@@ -30,7 +30,7 @@
       "receipt": {
         "first_published": "2026-11-22",
         "discovered_at": "2026-11-23T19:29:21Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -110,7 +110,7 @@
       "receipt": {
         "first_published": "2026-11-18",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: New Cairo, Cairo, Egypt"
@@ -150,7 +150,7 @@
       "receipt": {
         "first_published": "2026-11-17",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt"
@@ -191,7 +191,7 @@
       "receipt": {
         "first_published": "2026-11-23",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Egypt"
@@ -231,7 +231,7 @@
       "receipt": {
         "first_published": "2026-11-22",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -271,7 +271,7 @@
       "receipt": {
         "first_published": "2026-11-22",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -311,7 +311,7 @@
       "receipt": {
         "first_published": "2026-11-19",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -351,7 +351,7 @@
       "receipt": {
         "first_published": "2026-11-18",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Egypt"
@@ -391,7 +391,7 @@
       "receipt": {
         "first_published": "2026-11-18",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: 6th of October, Al Jizah, Egypt"
@@ -431,7 +431,7 @@
       "receipt": {
         "first_published": "2026-11-22",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt"
@@ -471,7 +471,7 @@
       "receipt": {
         "first_published": "2026-11-23",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Sawhāj, Suhaj, Egypt"
@@ -511,7 +511,7 @@
       "receipt": {
         "first_published": "2026-11-22",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Qesm El Maadi, Cairo, Egypt"
@@ -551,7 +551,7 @@
       "receipt": {
         "first_published": "2026-11-23",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -591,7 +591,7 @@
       "receipt": {
         "first_published": "2026-11-22",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -631,7 +631,7 @@
       "receipt": {
         "first_published": "2026-11-23",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:24:18Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Egypt"
@@ -671,7 +671,7 @@
       "receipt": {
         "first_published": "2026-11-17",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: New Cairo, Cairo, Egypt"
@@ -711,7 +711,7 @@
       "receipt": {
         "first_published": "2026-11-19",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -751,7 +751,7 @@
       "receipt": {
         "first_published": "2026-11-21",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Cairo, Cairo, Egypt"
@@ -791,7 +791,7 @@
       "receipt": {
         "first_published": "2026-11-11",
         "discovered_at": "2026-11-23T19:24:18Z",
-        "last_verified": "2026-11-23T19:29:21Z",
+        "last_verified": "2026-11-23T19:32:35Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح ومتحقق ✓",
         "egypt_eligibility": "مؤكد: Remote (Worldwide)"
