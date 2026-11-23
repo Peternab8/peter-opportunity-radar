@@ -1,11 +1,16 @@
 import json
 import os
-import re
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
-from real_scraper import evaluate_for_peter, scrape_all_real_sources
+from matcher import (
+    compute_job_identity,
+    evaluate_evidence_fit,
+    evaluate_weekly_commute,
+    verify_receipt_and_status,
+)
+from real_scraper import scrape_all_real_sources
 
 FEED_PATH = os.path.join("data", "live_feed.json")
 GMAIL_QUEUE_PATH = os.path.join("data", "gmail_queue.json")
@@ -27,17 +32,12 @@ def save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def normalize_key(company, title):
-    c = re.sub(r"[^a-z0-9\u0600-\u06FF]+", "", str(company or "").lower())
-    t = re.sub(r"[^a-z0-9\u0600-\u06FF]+", "", str(title or "").lower())
-    return f"{c[:24]}::{t[:36]}"
-
-
 def send_ntfy_alert(job, ntfy_topic, pwa_base_url):
     if not ntfy_topic:
         return
     url = f"https://ntfy.sh/{urllib.parse.quote(ntfy_topic)}"
-    title = f"{job['company']} — {job['title']} ({job['fit']['score']}%)"
+    fit_score = job.get("fit", {}).get("score") or 80
+    title = f"{job['company']} — {job['title']} ({fit_score}%)"
     body = f"{job['fit']['summary']}\nالمشوار: {job['commute']['summary']}"
     headers = {
         "Title": title[:120].encode("utf-8"),
@@ -53,49 +53,78 @@ def send_ntfy_alert(job, ntfy_topic, pwa_base_url):
         pass
 
 
+def normalize_raw_item(raw_item, now_iso):
+    company = raw_item.get("company") or "شركة في مصر"
+    title = raw_item.get("title") or "فرصة تحليل بيانات"
+    location = raw_item.get("location") or "Cairo, Egypt"
+    work_mode = raw_item.get("work_mode") or "Hybrid"
+    source_name = raw_item.get("source_name") or "Web Source"
+    job_url = raw_item.get("url") or "https://www.linkedin.com/jobs/"
+
+    exact_id, family_id = compute_job_identity(company, title, location=location)
+    receipt = verify_receipt_and_status(
+        {
+            "url": job_url,
+            "location": location,
+            "work_mode": work_mode,
+            "first_published": raw_item.get("first_published"),
+            "discovered_at": raw_item.get("discovered_at") or now_iso,
+            "description": raw_item.get("tasks") or "",
+        },
+        now_iso,
+    )
+    fit = evaluate_evidence_fit(
+        {
+            "title": title,
+            "required_text": raw_item.get("required_text") or title,
+            "tasks": raw_item.get("tasks") or "",
+            "bonus_text": raw_item.get("bonus_text") or "",
+        }
+    )
+    commute = evaluate_weekly_commute(location, work_mode, None, None)
+
+    return {
+        "id": exact_id,
+        "family_id": family_id,
+        "company": company,
+        "title": title,
+        "sources": [source_name],
+        "all_urls": [job_url],
+        "primary_url": job_url,
+        "location": location,
+        "work_mode": work_mode,
+        "receipt": receipt,
+        "fit": fit,
+        "commute": commute,
+        "discovered_at": raw_item.get("discovered_at") or now_iso,
+    }
+
+
 def ingest_gmail_queue(now_iso):
     queue_data = load_json(GMAIL_QUEUE_PATH, {"items": []})
     raw_items = queue_data.get("items", []) if isinstance(queue_data, dict) else []
-    converted = []
-    for idx, item in enumerate(raw_items):
-        title = item.get("title") or "فرصة من تنبيهات Gmail"
-        company = item.get("company") or "Gmail Job Alert"
-        loc = item.get("location") or "Cairo, Egypt"
-        tasks = item.get("tasks") or ""
-        ev = evaluate_for_peter(title, company, loc, tasks)
-        if not ev:
-            continue
-        jid = f"gm-{abs(hash(item.get('url') or title))}-{idx}"
-        converted.append({
-            "id": jid,
-            "company": company,
-            "title": title,
-            "work_mode": "Gmail Job Alert",
-            "location": loc,
-            "primary_url": item.get("url") or "https://mail.google.com",
-            "sources": [item.get("source_name") or "Gmail Alert"],
-            "discovered_at": now_iso,
-            "fit": {
-                "score": ev["fit_score"],
-                "summary": ev["summary"],
-                "recommended_project": "مشروع DEPI لتحليل البيانات + Power BI.",
-                "evidence_pairs": ev["evidence_pairs"],
-            },
-            "commute": {
-                "score": ev["commute_score"],
-                "summary": ev["commute_summary"],
-            },
-            "receipt": {
-                "apply_state": "OPEN",
-                "apply_state_ar": "مفتوح ومتحقق ✓",
-                "egypt_eligibility": f"مؤكد: {loc}",
-                "first_published": (item.get("posted_at") or now_iso)[:10],
-                "last_verified": now_iso,
-            },
-        })
+    normalized = []
+    for item in raw_items:
+        normalized.append(
+            normalize_raw_item(
+                {
+                    "company": item.get("company") or "Gmail Job Alert",
+                    "title": item.get("title") or "فرصة من تنبيهات Gmail",
+                    "location": item.get("location") or "Cairo, Egypt",
+                    "work_mode": "Hybrid",
+                    "source_name": item.get("source_name") or "Gmail Alert",
+                    "url": item.get("url") or "https://mail.google.com",
+                    "first_published": item.get("posted_at") or now_iso,
+                    "discovered_at": now_iso,
+                    "required_text": f"{item.get('title', '')} {item.get('tasks', '')}",
+                    "tasks": item.get("tasks") or "",
+                },
+                now_iso,
+            )
+        )
     if raw_items:
         save_json(GMAIL_QUEUE_PATH, {"items": []})
-    return converted
+    return normalized
 
 
 def main():
@@ -103,42 +132,37 @@ def main():
     existing_feed = load_json(FEED_PATH, {"meta": {}, "jobs": {}})
     existing_jobs = existing_feed.get("jobs", {}) if isinstance(existing_feed, dict) else {}
 
-    scraped_list, source_stats = scrape_all_real_sources()
-    gmail_list = ingest_gmail_queue(now_iso)
-    source_stats["gmail_alerts"] = len(gmail_list)
+    scraped_raw, source_stats = scrape_all_real_sources()
+    scraped_normalized = [normalize_raw_item(r, now_iso) for r in scraped_raw]
+    gmail_normalized = ingest_gmail_queue(now_iso)
+    source_stats["gmail_alerts"] = len(gmail_normalized)
 
-    combined = scraped_list + gmail_list
-
-    # Index existing jobs by normalized (company, title) for deduplication
-    by_norm = {}
-    for jid, jdata in existing_jobs.items():
-        nk = normalize_key(jdata.get("company"), jdata.get("title"))
-        by_norm[nk] = jid
-
+    all_incoming = scraped_normalized + gmail_normalized
     new_high_fit = []
-    for item in combined:
-        nk = normalize_key(item.get("company"), item.get("title"))
-        if nk in by_norm:
-            old_id = by_norm[nk]
-            old_job = existing_jobs[old_id]
-            merged_sources = list(dict.fromkeys((old_job.get("sources") or []) + (item.get("sources") or [])))
-            old_job["sources"] = merged_sources
-            old_job["receipt"]["last_verified"] = now_iso
-            if item["fit"]["score"] > old_job.get("fit", {}).get("score", 0):
-                old_job["fit"] = item["fit"]
-        else:
-            jid = item["id"]
-            existing_jobs[jid] = item
-            by_norm[nk] = jid
-            if item["fit"]["score"] >= 78:
-                new_high_fit.append(item)
 
-    # Keep newest / highest scoring 120 jobs so feed stays fast on mobile
+    for job in all_incoming:
+        if job["receipt"]["apply_state"] == "CLOSED":
+            continue
+        fit_score = job["fit"].get("score")
+        if fit_score is not None and fit_score < 50:
+            continue
+
+        jid = job["id"]
+        if jid in existing_jobs:
+            old = existing_jobs[jid]
+            old["sources"] = list(dict.fromkeys((old.get("sources") or []) + job["sources"]))
+            old["all_urls"] = list(dict.fromkeys((old.get("all_urls") or []) + job["all_urls"]))
+            old["receipt"]["last_verified"] = now_iso
+        else:
+            existing_jobs[jid] = job
+            if fit_score is not None and fit_score >= 78:
+                new_high_fit.append(job)
+
     sorted_pairs = sorted(
         existing_jobs.items(),
-        key=lambda kv: (kv[1].get("discovered_at", ""), kv[1].get("fit", {}).get("score", 0)),
+        key=lambda kv: (kv[1].get("discovered_at", ""), kv[1].get("fit", {}).get("score") or 0),
         reverse=True,
-    )[:120]
+    )[:140]
     trimmed_jobs = dict(sorted_pairs)
 
     out_feed = {
@@ -156,7 +180,7 @@ def main():
     for top_job in new_high_fit[:3]:
         send_ntfy_alert(top_job, ntfy_topic, pwa_base_url)
 
-    print(f"Scan complete: {len(combined)} fetched, {len(trimmed_jobs)} total in live_feed.json, {len(new_high_fit)} new alerts.")
+    print(f"Scan complete: {len(all_incoming)} evaluated, {len(trimmed_jobs)} in live_feed.json, Gemini: {source_stats.get('gemini_status')}")
 
 
 if __name__ == "__main__":
