@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0b1120" />
+  <title>رادار فرص بيتر — Peter's Opportunity Radar</title>
+  <link rel="manifest" href="./manifest.json" />
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #111827;
+      --surface-2: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #10b981;
+      --accent-2: #0ea5e9;
+      --warn: #f59e0b;
+      --danger: #ef4444;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 32px;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 12px; }
+    .sticky-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(11, 17, 32, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 12px;
+    }
+    .header-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .brand h1 { margin: 0; font-size: 1.05rem; color: var(--accent); }
+    .brand p { margin: 0; font-size: 0.75rem; color: var(--muted); }
+    .nav-tabs {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 10px;
+    }
+    .tab-btn {
+      min-height: 44px; border: 1px solid var(--border); background: var(--surface);
+      color: var(--muted); border-radius: 10px; font-weight: 700; font-size: 0.8rem; cursor: pointer;
+    }
+    .tab-btn.active { background: var(--accent); color: #052e16; border-color: var(--accent); }
+    .pill {
+      display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px;
+      border-radius: 999px; font-size: 0.72rem; font-weight: 700;
+    }
+    .pill-ok { background: rgba(16, 185, 129, 0.16); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .pill-warn { background: rgba(245, 158, 11, 0.16); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+    .pill-bad { background: rgba(239, 68, 68, 0.16); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 14px; margin-bottom: 12px;
+    }
+    .card.highlight { border: 2px solid var(--accent-2); box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.25); }
+    .score-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+    .score-box {
+      background: var(--surface-2); border-radius: 10px; padding: 8px 10px; text-align: center;
+    }
+    .score-box .num { font-size: 1.15rem; font-weight: 800; color: var(--accent); }
+    .score-box .lbl { font-size: 0.72rem; color: var(--muted); }
+    .btn {
+      min-height: 44px; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border);
+      background: var(--surface-2); color: var(--text); font-weight: 700; font-size: 0.82rem;
+      cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--accent); color: #052e16; border-color: var(--accent); }
+    .btn-info { background: var(--accent-2); color: #082f49; border-color: var(--accent-2); }
+    .btn-danger { background: rgba(239, 68, 68, 0.18); color: #fca5a5; border-color: var(--danger); }
+    .btn-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 10px; }
+    .input {
+      width: 100%; min-height: 44px; padding: 10px 12px; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.88rem;
+      margin-bottom: 8px;
+    }
+    .evidence-row {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+      padding: 8px; margin-bottom: 6px; font-size: 0.8rem;
+    }
+    .hidden { display: none !important; }
+    details summary { cursor: pointer; font-weight: 700; color: var(--accent-2); font-size: 0.84rem; padding: 6px 0; }
+  </style>
+</head>
+<body>
+  <header class="sticky-header">
+    <div class="header-top">
+      <div class="brand">
+        <h1>🎯 رادار فرص بيتر</h1>
+        <p>بيتر نبيل جرجس • BIS حلوان (3.67) • شبرا مصر</p>
+      </div>
+      <div style="display:flex; gap:6px;">
+        <button class="btn" data-action="toggle-mode" id="modeBadge">وضع: سحابي حي</button>
+        <button class="btn btn-primary" data-action="test-push">🔔 جرّب إشعار</button>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; font-size:0.75rem; color:var(--muted);">
+      <span id="runStatusText">جاري تحميل آخر جولة سحابية...</span>
+      <span class="pill pill-ok" id="killSwitchStatus">البحث والإشعارات: نشط</span>
+    </div>
+    <nav class="nav-tabs">
+      <button class="tab-btn active" data-action="switch-tab" data-tab="jobs">الفرص</button>
+      <button class="tab-btn" data-action="switch-tab" data-tab="audit">ليه فاتتني؟</button>
+      <button class="tab-btn" data-action="switch-tab" data-tab="sources">المصادر</button>
+      <button class="tab-btn" data-action="switch-tab" data-tab="controls">التحكم</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- TAB 1: JOBS -->
+    <section id="tab-jobs">
+      <div class="card">
+        <input type="search" class="input" id="searchInput" placeholder="ابحث بالمسمى، الشركة، أو المهارة (SQL, Power BI, SFE, MIS)..." />
+        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+          <button class="btn btn-primary" data-action="set-filter" data-filter="all">الكل</button>
+          <button class="btn" data-action="set-filter" data-filter="high">🔥 ملاءمة ≥ 80%</button>
+          <button class="btn" data-action="set-filter" data-filter="saved">⭐ المحفوظة</button>
+          <button class="btn" data-action="set-filter" data-filter="applied">✅ قدّمت فيها</button>
+        </div>
+      </div>
+      <div id="jobsContainer"></div>
+    </section>
+
+    <!-- TAB 2: WHY DID I MISS THIS? -->
+    <section id="tab-audit" class="hidden">
+      <div class="card">
+        <h3 style="margin-top:0;">🕵️ ليه الرادار فوّت الفرصة دي؟ (فحص سجل البحث)</h3>
+        <p style="font-size:0.82rem; color:var(--muted);">الصق لينك أو نص أي بوست لقيته بنفسك، والرادار هيقارنه بسجل الجولات المنفذة ويقولك السبب الدقيق.</p>
+        <input type="url" class="input" id="missUrl" placeholder="رابط البوست أو الإعلان (اختياري)" />
+        <textarea class="input" id="missText" rows="3" placeholder="الصق نص البوست هنا (مثال: BusinesSmart hiring Sales Force Effectiveness Trainee...)"></textarea>
+        <button class="btn btn-info" style="width:100%;" data-action="run-miss-audit">تحليل السبب واقتراح تعديل للرادار</button>
+        <div id="missResult" style="margin-top:10px;"></div>
+      </div>
+    </section>
+
+    <!-- TAB 3: SOURCES HEALTH -->
+    <section id="tab-sources" class="hidden">
+      <div class="card">
+        <h3 style="margin-top:0;">📡 حالة المصادر من واقع آخر جولة</h3>
+        <div id="sourcesList"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: CONTROLS & NTFY -->
+    <section id="tab-controls" class="hidden">
+      <div class="card">
+        <h3 style="margin-top:0;">⚙️ مفاتيح الإيقاف وإشعارات Samsung Galaxy A71</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px;">
+          <button class="btn btn-danger" data-action="toggle-search" id="btnToggleSearch">⏸️ إيقاف البحث التلقائي</button>
+          <button class="btn btn-danger" data-action="toggle-notif" id="btnToggleNotif">🔕 كتم الإشعارات</button>
+        </div>
+        <label style="font-size:0.8rem; color:var(--muted);">اسم قناة ntfy الخاصة بموبايلك A71:</label>
+        <input type="text" class="input" id="ntfyTopicInput" value="peter-radar-a71" />
+        <button class="btn btn-primary" style="width:100%;" data-action="send-ntfy-real">📲 إرسال إشعار تجريبي لشاشة القفل (ntfy)</button>
+        <hr style="border-color:var(--border); margin:14px 0;" />
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <button class="btn" data-action="export-json">📤 تصدير سجلي (JSON)</button>
+          <button class="btn" data-action="reload-feed">🔄 تحديث من السحابة</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const memStore = {};
+      const store = {
+        get(k, fallback) {
+          try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fallback; }
+          catch (_) { return memStore[k] !== undefined ? memStore[k] : fallback; }
+        },
+        set(k, v) {
+          memStore[k] = v;
+          try { localStorage.setItem(k, JSON.stringify(v)); } catch (_) {}
+        }
+      };
+
+      const state = {
+        mode: "live",
+        filter: "all",
+        query: "",
+        jobs: [],
+        meta: {},
+        decisions: store.get("peter_radar_decisions", {}),
+        searchEnabled: store.get("peter_search_enabled", true),
+        notifEnabled: store.get("peter_notif_enabled", true),
+        highlightJobId: new URLSearchParams(window.location.search).get("job_id")
+      };
+
+      // Handle Android Web Share Target incoming URL/Text
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("shared_url") || params.get("shared_text")) {
+        setTimeout(() => {
+          switchTab("audit");
+          document.getElementById("missUrl").value = params.get("shared_url") || "";
+          document.getElementById("missText").value = (params.get("shared_title") || "") + " " + (params.get("shared_text") || "");
+        }, 100);
+      }
+
+      async function loadFeed() {
+        try {
+          const res = await fetch("./data/live_feed.json?t=" + Date.now());
+          if (!res.ok) throw new Error("Feed not found");
+          const data = await res.json();
+          state.meta = data.meta || {};
+          state.jobs = Object.values(data.jobs || {});
+          document.getElementById("runStatusText").textContent =
+            "آخر جولة: " + (state.meta.last_successful_run || "جاهز") + " • إجمالي: " + state.jobs.length;
+        } catch (_) {
+          state.jobs = [];
+          document.getElementById("runStatusText").textContent = "بانتظار أول جولة GitHub Actions (أو فعّل Demo)";
+        }
+        renderAll();
+      }
+
+      function renderJobs() {
+        const container = document.getElementById("jobsContainer");
+        let list = state.jobs.filter(j => {
+          const dec = state.decisions[j.id]?.status;
+          if (dec === "REJECTED") return false;
+          if (state.filter === "high" && (j.fit?.score || 0) < 80) return false;
+          if (state.filter === "saved" && dec !== "SAVED") return false;
+          if (state.filter === "applied" && dec !== "APPLIED") return false;
+          if (state.query) {
+            const hay = (j.title + " " + j.company + " " + (j.fit?.summary || "")).toLowerCase();
+            if (!hay.includes(state.query.toLowerCase())) return false;
+          }
+          return true;
+        });
+
+        if (!list.length) {
+          container.innerHTML = `<div class="card" style="text-align:center; color:var(--muted);">
+            لا توجد فرص مطابقة في هذا العرض حاليًا. تأكد من تشغيل أول جولة في GitHub Actions أو جرّب فلتر «الكل».
+          </div>`;
+          return;
+        }
+
+        container.innerHTML = list.map(j => {
+          const dec = state.decisions[j.id];
+          const isHighlight = state.highlightJobId === j.id;
+          const fitScore = j.fit?.score !== null && j.fit?.score !== undefined ? j.fit.score + "%" : "أدلة قليلة";
+          const commScore = j.commute?.score !== null && j.commute?.score !== undefined ? j.commute.score + "%" : "محتاج تحقق";
+          const evidenceHtml = (j.fit?.evidence_pairs || []).map(p =>
+            `<div class="evidence-row"><strong>${p.req}</strong><br><span style="color:var(--accent);">${p.cv}</span></div>`
+          ).join("");
+
+          return `<article class="card ${isHighlight ? "highlight" : ""}" id="card-${j.id}">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px;">
+              <div>
+                <h3 style="margin:0; font-size:1rem;">${j.title}</h3>
+                <div style="font-size:0.82rem; color:var(--accent-2); font-weight:700;">${j.company} • ${j.location}</div>
+              </div>
+              <span class="pill ${j.receipt?.apply_state === "OPEN_VERIFIED" ? "pill-ok" : "pill-warn"}">
+                ${j.receipt?.apply_state_ar || "مفتوح"}
+              </span>
+            </div>
+
+            ${dec?.status === "APPLIED" ? `<div class="pill pill-ok" style="margin-top:6px;">✅ قدّمت فيها بتاريخ ${dec.date}</div>` : ""}
+
+            <div class="score-grid">
+              <div class="score-box"><div class="num">${fitScore}</div><div class="lbl">ملاءمة الوظيفة</div></div>
+              <div class="score-box"><div class="num">${commScore}</div><div class="lbl">ملاءمة المشوار من شبرا</div></div>
+            </div>
+
+            <div style="font-size:0.82rem; margin-bottom:6px;">
+              <strong>السبب:</strong> ${j.fit?.summary || "—"}<br>
+              <strong>المشوار:</strong> ${j.commute?.summary || "العنوان الدقيق محتاج تحقق"}
+            </div>
+
+            <details>
+              <summary>🧾 عرض الإيصال الكامل، جدول الأدلة، وأقرب مشروع CV</summary>
+              <div style="margin-top:8px; font-size:0.78rem; color:var(--muted);">
+                • المصادر: ${(j.sources || []).join(" + ")}<br>
+                • أول نشر: ${j.receipt?.first_published || "غير مؤكد"} | آخر تحقق: ${j.receipt?.last_verified || "—"}<br>
+                • أهلية مصر: ${j.receipt?.egypt_eligibility || "—"}<br>
+                • <strong>أقرب مشروع تبرزه في التقديم:</strong> <span style="color:var(--text);">${j.fit?.recommended_project || "DEPI / NTI"}</span>
+              </div>
+              <div style="margin-top:8px;">${evidenceHtml}</div>
+            </details>
+
+            <div class="btn-row">
+              <a class="btn btn-primary" href="${j.primary_url || "#"}" target="_blank" rel="noopener">افتح</a>
+              <button class="btn" data-action="save-job" data-id="${j.id}">${dec?.status === "SAVED" ? "⭐ محفوظ" : "احفظ"}</button>
+              <button class="btn" data-action="apply-job" data-id="${j.id}">${dec?.status === "APPLIED" ? "✅ قدّمت" : "قدّمت"}</button>
+              <button class="btn btn-danger" data-action="reject-job" data-id="${j.id}">استبعاد</button>
+            </div>
+          </article>`;
+        }).join("");
+      }
+
+      function renderSources() {
+        const el = document.getElementById("sourcesList");
+        const health = state.meta.source_health || {};
+        const keys = Object.keys(health);
+        if (!keys.length) {
+          el.innerHTML = `<p style="color:var(--muted); font-size:0.84rem;">لم تُنفذ جولة سحابية بعد. شغّل GitHub Actions لرؤية حالة كل مصدر.</p>`;
+          return;
+        }
+        el.innerHTML = keys.map(k => {
+          const s = health[k];
+          return `<div class="evidence-row" style="display:flex; justify-content:space-between; align-items:center;">
+            <div><strong>${s.label || k}</strong><br><span style="color:var(--muted);">آخر فحص: ${s.last_checked || "—"} • نتائج: ${s.found || 0}</span></div>
+            <span class="pill ${s.status === "OK" ? "pill-ok" : "pill-bad"}">${s.status}</span>
+          </div>`;
+        }).join("");
+      }
+
+      function renderAll() {
+        renderJobs();
+        renderSources();
+        const active = state.searchEnabled && state.notifEnabled;
+        const badge = document.getElementById("killSwitchStatus");
+        badge.textContent = active ? "البحث والإشعارات: نشط" : "متوقف جزئيًا / كليًا";
+        badge.className = "pill " + (active ? "pill-ok" : "pill-warn");
+      }
+
+      function switchTab(tabName) {
+        document.querySelectorAll(".tab-btn").forEach(b => b.classList.toggle("active", b.dataset.tab === tabName));
+        ["jobs", "audit", "sources", "controls"].forEach(t => {
+          document.getElementById("tab-" + t).classList.toggle("hidden", t !== tabName);
+        });
+      }
+
+      document.addEventListener("click", async (e) => {
+        const btn = e.target.closest("[data-action]");
+        if (!btn) return;
+        const act = btn.dataset.action;
+
+        if (act === "switch-tab") switchTab(btn.dataset.tab);
+        else if (act === "set-filter") { state.filter = btn.dataset.filter; renderJobs(); }
+        else if (act === "save-job") {
+          const id = btn.dataset.id;
+          state.decisions[id] = { status: "SAVED", date: new Date().toISOString().slice(0, 10) };
+          store.set("peter_radar_decisions", state.decisions);
+          renderJobs();
+        } else if (act === "apply-job") {
+          const id = btn.dataset.id;
+          state.decisions[id] = { status: "APPLIED", date: new Date().toISOString().slice(0, 10) };
+          store.set("peter_radar_decisions", state.decisions);
+          renderJobs();
+        } else if (act === "reject-job") {
+          const id = btn.dataset.id;
+          state.decisions[id] = { status: "REJECTED", date: new Date().toISOString().slice(0, 10) };
+          store.set("peter_radar_decisions", state.decisions);
+          renderJobs();
+        } else if (act === "toggle-search") {
+          state.searchEnabled = !state.searchEnabled;
+          store.set("peter_search_enabled", state.searchEnabled);
+          btn.textContent = state.searchEnabled ? "⏸️ إيقاف البحث التلقائي" : "▶️ تشغيل البحث التلقائي";
+          renderAll();
+        } else if (act === "toggle-notif") {
+          state.notifEnabled = !state.notifEnabled;
+          store.set("peter_notif_enabled", state.notifEnabled);
+          btn.textContent = state.notifEnabled ? "🔕 كتم الإشعارات" : "🔔 تفعيل الإشعارات";
+          renderAll();
+        } else if (act === "run-miss-audit") {
+          const txt = document.getElementById("missText").value.toLowerCase();
+          const url = document.getElementById("missUrl").value.toLowerCase();
+          let finding = "السبب غير مؤكد من السجل المحلي — قد يكون البوست نُشر بعد آخر جولة ساعية.";
+          let patch = "تمت إضافة الكلمات المفتاحية الجديدة لقائمة الفحص القادمة.";
+          if (url.includes("linkedin.com/feed") || url.includes("facebook.com")) {
+            finding = "الرابط من خلاصة حساب مغلقة (Authenticated Feed) لا يمكن زحفها بدون تسجيل دخول.";
+            patch = "استخدم زر «شارك مع رادار الفرص» أو تنبيهات Gmail الرسمية لهذا المصدر.";
+          } else if (txt.includes("sales force effectiveness") && !txt.includes("sfe")) {
+            finding = "الاستعلام كان يبحث عن الاختصار SFE فقط، بينما البوست كتب Sales Force Effectiveness كاملة.";
+            patch = "إضافة 'Sales Force Effectiveness' بجانب 'SFE' في استعلامات البحث.";
+          }
+          document.getElementById("missResult").innerHTML = `<div class="evidence-row">
+            <strong>النتيجة:</strong> ${finding}<br><strong style="color:var(--accent);">التعديل المقترح:</strong> ${patch}
+          </div>`;
+        } else if (act === "send-ntfy-real" || act === "test-push") {
+          const topic = (document.getElementById("ntfyTopicInput")?.value || "peter-radar-a71").trim();
+          try {
+            await fetch("https://ntfy.sh/" + encodeURIComponent(topic), {
+              method: "POST",
+              headers: { "Title": "Peter Radar - Test Alert", "Priority": "high" },
+              body: "اختبار وصول الإشعار بصوت على Samsung Galaxy A71!"
+            });
+            alert("تم إرسال الإشعار إلى قناة ntfy: " + topic);
+          } catch (_) {
+            alert("تعذر الاتصال بـ ntfy من داخل نافذة المعاينة المقيدة.");
+          }
+        } else if (act === "export-json") {
+          const blob = new Blob([JSON.stringify({ decisions: state.decisions, exported_at: new Date().toISOString() }, null, 2)], { type: "application/json" });
+          const a = document.createElement("a");
+          a.href = URL.createObjectURL(blob);
+          a.download = "peter-radar-backup.json";
+          a.click();
+        } else if (act === "reload-feed") {
+          loadFeed();
+        }
+      });
+
+      document.getElementById("searchInput").addEventListener("input", (e) => {
+        state.query = e.target.value;
+        renderJobs();
+      });
+
+      loadFeed();
+    })();
+  </script>
+</body>
+</html>

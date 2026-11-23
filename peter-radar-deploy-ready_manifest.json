@@ -1,0 +1,19 @@
+{
+  "name": "رادار فرص بيتر — Peter's Opportunity Radar",
+  "short_name": "رادار الفرص",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b1120",
+  "theme_color": "#0ea5e9",
+  "dir": "rtl",
+  "lang": "ar",
+  "share_target": {
+    "action": "./index.html",
+    "method": "GET",
+    "params": {
+      "title": "shared_title",
+      "text": "shared_text",
+      "url": "shared_url"
+    }
+  }
+}

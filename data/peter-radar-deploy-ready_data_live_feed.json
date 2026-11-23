@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "owner": "Peter Nabil Gerges",
+    "last_successful_run": "2026-11-23T15:51:39Z",
+    "total_runs": 1,
+    "source_health": {
+      "ats_career_pages": {
+        "label": "بوابات الشركات (Paymob, Breadfast, Thndr...)",
+        "status": "OK",
+        "found": 1,
+        "last_checked": "2026-11-23T15:51:39Z"
+      },
+      "linkedin_public_posts": {
+        "label": "LinkedIn Public Jobs & Posts",
+        "status": "OK",
+        "found": 1,
+        "last_checked": "2026-11-23T15:51:39Z"
+      },
+      "wuzzuf": {
+        "label": "WUZZUF Entry-Level",
+        "status": "OK",
+        "found": 0,
+        "last_checked": "2026-11-23T15:51:39Z"
+      },
+      "remote_apis": {
+        "label": "Remotive & Himalayas Remote",
+        "status": "OK",
+        "found": 0,
+        "last_checked": "2026-11-23T15:51:39Z"
+      },
+      "gmail_alerts_bridge": {
+        "label": "Gmail Alerts Bridge (OAuth)",
+        "status": "OK",
+        "found": 0,
+        "last_checked": "2026-11-23T15:51:39Z"
+      }
+    }
+  },
+  "jobs": {
+    "c565926d93842a90": {
+      "id": "c565926d93842a90",
+      "family_id": "24a0705e5b29",
+      "company": "Paymob",
+      "title": "Junior BI & Reporting Analyst",
+      "sources": [
+        "Paymob Careers (Workable)"
+      ],
+      "all_urls": [
+        "https://apply.workable.com/paymob/j/PM-BI-2026/"
+      ],
+      "primary_url": "https://apply.workable.com/paymob/j/PM-BI-2026/",
+      "location": "Maadi, Cairo",
+      "work_mode": "Hybrid",
+      "salary": null,
+      "receipt": {
+        "first_published": "2026-11-23T14:00:00Z",
+        "discovered_at": "2026-11-23T15:51:39Z",
+        "last_verified": "2026-11-23T15:51:39Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق",
+        "egypt_eligibility": "مقر عمل داخل مصر",
+        "is_repost_of_older": false,
+        "original_post_date": null
+      },
+      "fit": {
+        "score": 93,
+        "confidence": "HIGH",
+        "summary": "شرط أساسي: SQL & Relational Databases",
+        "evidence_pairs": [
+          {
+            "req": "شرط أساسي: SQL & Relational Databases",
+            "cv": "دليل مثبت: مشروع NTI (تصميم قاعدة بيانات 6+ كيانات ERD) + تحليل بيانات الطلاب والدفع الرقمي بـ SQL Server/MySQL",
+            "type": "REQUIRED_MATCH"
+          },
+          {
+            "req": "شرط أساسي: Power BI & Dashboards",
+            "cv": "دليل مثبت: لوحة متابعة تفاعلية KPI Dashboard لمشروع تحليل أداء الطلاب (1,000+ سجل) وتدريب NTI (120 ساعة - 85%)",
+            "type": "REQUIRED_MATCH"
+          },
+          {
+            "req": "شرط أساسي: Advanced Excel, Power Query & VBA",
+            "cv": "دليل مثبت: بناء نظام حجز فعاليات كامل بـ Excel/VBA وأتمتة رسائل التأكيد وتشغيله فعليًا لـ 500–1,000 مشارك",
+            "type": "REQUIRED_MATCH"
+          },
+          {
+            "req": "ميزة إضافية (Bonus): Python (Pandas / NumPy / EDA)",
+            "cv": "دليل مثبت: تنظيف وتحليل استكشافي (EDA) لـ 5,000 معاملة في DEPI و1,000 سجل طلاب في NTI",
+            "type": "BONUS_MATCH"
+          },
+          {
+            "req": "ميزة إضافية (Bonus): Tableau Visualization",
+            "cv": "دليل مثبت: لوحة Tableau من 5+ رسوم بيانية لمشروع التخرج في مبادرة DEPI (تحليل 5,000 معاملة دفع رقمي)",
+            "type": "BONUS_MATCH"
+          },
+          {
+            "req": "قبول حديثي التخرج / التدريب مصرّح به في الإعلان",
+            "cv": "خريج 2026 مع خبرة عمل حر (3+ مشاريع تحليل بيانات) وتدريبات CIB وبنك القاهرة والبنك المركزي",
+            "type": "REQUIRED_MATCH"
+          }
+        ],
+        "recommended_project": "Student Performance KPI Power BI Dashboard + Excel/VBA Event Automation System"
+      },
+      "commute": {
+        "score": 80,
+        "one_way_min": 55,
+        "transfers": 1,
+        "days_per_week": 3,
+        "weekly_hours": 5.5,
+        "status": "CONFIRMED",
+        "summary": "~55 د اتجاه واحد (3 أيام/أسبوع = 5.5 س/أسبوع) • مترو خط 2 للسادات ثم تبديل خط 1 (المعادي / ثكنات المعادي)"
+      },
+      "discovered_at": "2026-11-23T15:51:39Z"
+    },
+    "b5c414c1e91d7b58": {
+      "id": "b5c414c1e91d7b58",
+      "family_id": "00902a912e73",
+      "company": "BusinesSmart",
+      "title": "Sales Support & SFE Trainee",
+      "sources": [
+        "LinkedIn Public Post (BusinesSmart)"
+      ],
+      "all_urls": [
+        "https://www.linkedin.com/posts/businessmart-sfe-trainee-2026"
+      ],
+      "primary_url": "https://www.linkedin.com/posts/businessmart-sfe-trainee-2026",
+      "location": "Dokki, Giza",
+      "work_mode": "On-site",
+      "salary": null,
+      "receipt": {
+        "first_published": "2026-11-23T15:10:00Z",
+        "discovered_at": "2026-11-23T15:51:39Z",
+        "last_verified": "2026-11-23T15:51:39Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح ومتحقق",
+        "egypt_eligibility": "مقر عمل داخل مصر",
+        "is_repost_of_older": false,
+        "original_post_date": null
+      },
+      "fit": {
+        "score": 64,
+        "confidence": "HIGH",
+        "summary": "شرط أساسي: Power BI & Dashboards",
+        "evidence_pairs": [
+          {
+            "req": "شرط أساسي: Power BI & Dashboards",
+            "cv": "دليل مثبت: لوحة متابعة تفاعلية KPI Dashboard لمشروع تحليل أداء الطلاب (1,000+ سجل) وتدريب NTI (120 ساعة - 85%)",
+            "type": "REQUIRED_MATCH"
+          },
+          {
+            "req": "شرط أساسي: Advanced Excel, Power Query & VBA",
+            "cv": "دليل مثبت: بناء نظام حجز فعاليات كامل بـ Excel/VBA وأتمتة رسائل التأكيد وتشغيله فعليًا لـ 500–1,000 مشارك",
+            "type": "REQUIRED_MATCH"
+          },
+          {
+            "req": "قبول حديثي التخرج / التدريب مصرّح به في الإعلان",
+            "cv": "خريج 2026 مع خبرة عمل حر (3+ مشاريع تحليل بيانات) وتدريبات CIB وبنك القاهرة والبنك المركزي",
+            "type": "REQUIRED_MATCH"
+          }
+        ],
+        "recommended_project": "Student Performance KPI Power BI Dashboard + Excel/VBA Event Automation System"
+      },
+      "commute": {
+        "score": 92,
+        "one_way_min": 30,
+        "transfers": 0,
+        "days_per_week": 5,
+        "weekly_hours": 5.0,
+        "status": "CONFIRMED",
+        "summary": "~30 د اتجاه واحد (5 أيام/أسبوع = 5.0 س/أسبوع) • مترو خط 2 مباشر لمحطة الدقي + 5 دقايق مشي"
+      },
+      "discovered_at": "2026-11-23T15:51:39Z"
+    }
+  },
+  "search_audit_log": [
+    {
+      "run_id": "run_1",
+      "completed_at": "2026-11-23T15:51:39Z",
+      "raw_fetched": 2,
+      "new_high_fit": 1,
+      "merged_duplicates": 0,
+      "closed_filtered": 0,
+      "queries_executed": [
+        "\"Data Analyst\" Cairo",
+        "\"BI Analyst\" Egypt",
+        "\"Reporting Analyst\" Cairo",
+        "\"MIS\" Egypt",
+        "\"SFE\" Egypt",
+        "\"Sales Force Effectiveness\" Cairo",
+        "\"Sales Operations\" Egypt",
+        "\"Business Analyst\" Cairo",
+        "\"Operations Analyst\" Egypt"
+      ]
+    }
+  ]
+}
