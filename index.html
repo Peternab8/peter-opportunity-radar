@@ -368,12 +368,16 @@
       color: #fcd34d;
     }
 
-    /* Clear 3-button decision row directly on card: قدّمت / مهتم / مش مهتم */
+    /* Decision row: قدّمت / مهتم / مش مهتم + minus button (بعد اختيار مهتم أو مش مهتم) */
     .decision-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 7px;
       margin-bottom: 8px;
+    }
+
+    .decision-grid.has-minus {
+      grid-template-columns: repeat(3, 1fr) 44px;
     }
 
     .dec-btn {
@@ -401,6 +405,20 @@
       background: var(--warn-bg);
       border-color: var(--warn);
       color: #fcd34d;
+    }
+
+    .minus-remove-btn {
+      min-height: 42px;
+      border-radius: var(--radius-md);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-strong);
+      color: var(--text-main);
+      font-size: 18px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
     }
 
     .reason-picker-box {
@@ -486,14 +504,6 @@
       color: var(--text-muted);
       width: 36%;
       font-weight: 700;
-    }
-
-    .evidence-block {
-      background: var(--bg-input);
-      border: 1px solid var(--border-soft);
-      border-radius: var(--radius-sm);
-      padding: 9px 11px;
-      margin-bottom: 8px;
     }
 
     .section-card {
@@ -684,6 +694,7 @@
           <button type="button" id="qf-needs_check" class="pill-btn" data-action="set-quick-filter" data-filter="needs_check">محتاجة تحقق</button>
           <button type="button" id="qf-intern" class="pill-btn" data-action="set-quick-filter" data-filter="intern">تدريب</button>
           <button type="button" id="qf-remote" class="pill-btn" data-action="set-quick-filter" data-filter="remote">ريموت</button>
+          <button type="button" id="qf-removed" class="pill-btn" data-action="set-quick-filter" data-filter="removed">المستبعدة من الليستة</button>
         </div>
       </div>
 
@@ -764,7 +775,7 @@
 
       <div class="section-card">
         <h3>بيانات المحرك</h3>
-        <p>الإصدار v3.2 · بكالوريوس BIS حلوان (GPA 3.67) · نقطة الانطلاق: شبرا مصر.</p>
+        <p>الإصدار v3.3 · بكالوريوس BIS حلوان (GPA 3.67) · نقطة الانطلاق: شبرا مصر[cite: 20, 21].</p>
       </div>
     </section>
 
@@ -785,9 +796,9 @@
         try { navigator.serviceWorker.register('./sw.js').catch(function () {}); } catch (e) {}
       }
 
-      var STORE_FEED = 'radar_v32_feed';
-      var STORE_USER = 'radar_v32_user_state';
-      var STORE_PREFS = 'radar_v32_prefs';
+      var STORE_FEED = 'radar_v33_feed';
+      var STORE_USER = 'radar_v33_user_state';
+      var STORE_PREFS = 'radar_v33_prefs';
 
       function loadJson(key, fallback) {
         try { var r = window.localStorage.getItem(key); return r ? JSON.parse(r) : fallback; } catch (e) { return fallback; }
@@ -818,6 +829,7 @@
           meta: { scan_completed_at: null, feed_published_at: null, source_statuses: {} },
           jobs: {}
         }),
+        /* userState per jobId: { seenAt, saved, applied, appliedAt, nextStep, interest, removedFromMain, dismissedReason, snapshot } */
         userState: loadJson(STORE_USER, {}),
         prefs: loadJson(STORE_PREFS, {
           ntfyTopic: '',
@@ -981,7 +993,7 @@
         var uniqueAll = getUniqueJobs();
         var newCnt = uniqueAll.filter(function (j) {
           var u = state.userState[j.id] || {};
-          return !u.seenAt && !u.dismissedReason && ((j.receipt && j.receipt.apply_state) !== 'CLOSED');
+          return !u.seenAt && !u.removedFromMain && ((j.receipt && j.receipt.apply_state) !== 'CLOSED');
         }).length;
 
         var outcomeText = 'الجولة الأخيرة جابت ' + newCnt + ' فرص جديدة ليك';
@@ -999,16 +1011,17 @@
         renderHeaderAndRunSummary();
 
         var uniqueJobs = getUniqueJobs();
-        var activeUnrejected = uniqueJobs.filter(function (j) {
+        var activeMainList = uniqueJobs.filter(function (j) {
           var u = state.userState[j.id] || {};
-          return !u.dismissedReason;
+          return !u.removedFromMain && ((j.receipt && j.receipt.apply_state) !== 'CLOSED');
+        });
+        var removedList = uniqueJobs.filter(function (j) {
+          var u = state.userState[j.id] || {};
+          return !!u.removedFromMain;
         });
 
-        var newForYouList = activeUnrejected.filter(function (j) {
-          return isNewForYou(j) && ((j.receipt && j.receipt.apply_state) !== 'CLOSED');
-        });
-        var availableList = activeUnrejected.filter(function (j) {
-          return (j.receipt && j.receipt.apply_state) !== 'CLOSED';
+        var newForYouList = activeMainList.filter(function (j) {
+          return isNewForYou(j);
         });
         var savedList = uniqueJobs.filter(function (j) {
           var u = state.userState[j.id] || {};
@@ -1016,7 +1029,7 @@
         });
 
         document.getElementById('kpiNumNew').textContent = newForYouList.length;
-        document.getElementById('kpiNumAvailable').textContent = availableList.length;
+        document.getElementById('kpiNumAvailable').textContent = activeMainList.length;
         document.getElementById('kpiNumSaved').textContent = savedList.length;
 
         ['new_for_you', 'available', 'saved'].forEach(function (k) {
@@ -1024,15 +1037,16 @@
           if (el) el.className = 'kpi-tile' + (state.quickFilter === k ? ' active' : '');
         });
 
-        ['new_for_you', 'best', 'all', 'needs_check', 'intern', 'remote'].forEach(function (f) {
+        ['new_for_you', 'best', 'all', 'needs_check', 'intern', 'remote', 'removed'].forEach(function (f) {
           var btn = document.getElementById('qf-' + f);
           if (btn) btn.className = 'pill-btn' + (state.quickFilter === f ? ' active' : '');
         });
 
+        var basePool = (state.quickFilter === 'removed') ? removedList : activeMainList;
         var minFit = state.fitFilter === 'all' ? 0 : parseInt(state.fitFilter, 10);
         var nowMs = Date.now();
 
-        var filtered = availableList.filter(function (job) {
+        var filtered = basePool.filter(function (job) {
           var u = state.userState[job.id] || {};
           var appState = (job.receipt && job.receipt.apply_state) || 'NEEDS_VERIFICATION';
           var score = getEffectiveScore(job);
@@ -1076,7 +1090,7 @@
 
         var scopeText = document.getElementById('scopeCountText');
         var clearBtn = document.getElementById('btnClearFilters');
-        if (scopeText) scopeText.textContent = 'بتشوف ' + filtered.length + ' من ' + availableList.length + ' فرصة';
+        if (scopeText) scopeText.textContent = 'بتشوف ' + filtered.length + ' من ' + basePool.length + ' فرصة';
         if (clearBtn) clearBtn.style.display = hasActiveFilter ? 'inline-block' : 'none';
 
         var container = document.getElementById('opportunitiesList');
@@ -1116,6 +1130,13 @@
           var intCls = (u.interest === 'interested') ? 'dec-btn active-interested' : 'dec-btn';
           var ignCls = (u.interest === 'not_interested') ? 'dec-btn active-ignored' : 'dec-btn';
 
+          /* Show minus button right next to decision row once user picked مهتم or مش مهتم */
+          var hasDecision = (u.interest === 'interested' || u.interest === 'not_interested');
+          var decisionGridCls = hasDecision ? 'decision-grid has-minus' : 'decision-grid';
+          var minusBtnHtml = hasDecision
+            ? '<button type="button" class="minus-remove-btn" title="شيل من الليستة الأساسية" aria-label="شيل من الليستة الأساسية" data-action="remove-from-main-list" data-id="' + esc(job.id) + '">−</button>'
+            : '';
+
           var commuteDetail = commute.summary ? commute.summary : 'غير مذكورة';
           var daysDetail = (commute.days_per_week !== null && commute.days_per_week !== undefined)
             ? (commute.days_per_week + ' أيام/أسبوع')
@@ -1127,6 +1148,7 @@
                 '<span class="' + badgeClass + '">' + esc(badgeLabel) + '</span>' +
                 (isUnseen ? '<span class="status-pill neutral">جديدة ليك</span>' : '') +
                 (u.applied ? '<span class="status-pill neutral">قدّمت</span>' : '') +
+                (u.removedFromMain ? '<span class="status-pill neutral">مُستبعد من الليستة</span>' : '') +
               '</div>' +
               '<span class="time-caption">' + esc(timeDisplay) + '</span>' +
             '</div>' +
@@ -1140,11 +1162,11 @@
               '<span class="fit-inline ' + (score < 80 ? 'warn' : '') + '">الملاءمة: ' + score + '%</span>' +
             '</div>' +
 
-            /* Direct decision buttons: قدّمت / مهتم / مش مهتم */
-            '<div class="decision-grid">' +
+            '<div class="' + decisionGridCls + '">' +
               '<button type="button" class="' + appliedCls + '" data-action="record-applied" data-id="' + esc(job.id) + '">' + (u.applied ? '✓ قدّمت' : 'قدّمت') + '</button>' +
               '<button type="button" class="' + intCls + '" data-action="mark-interested" data-id="' + esc(job.id) + '">' + (u.interest === 'interested' ? '✓ مهتم' : 'مهتم') + '</button>' +
               '<button type="button" class="' + ignCls + '" data-action="toggle-not-interested-picker" data-id="' + esc(job.id) + '">مش مهتم</button>' +
+              minusBtnHtml +
             '</div>' +
 
             '<div class="reason-picker-box" style="display:' + (isReasonOpen ? 'block' : 'none') + ';">' +
@@ -1355,7 +1377,7 @@
           state.userState[id].dismissedReason = null;
           persist();
           renderOpportunitiesView();
-          showToast(state.userState[id].interest === 'interested' ? 'تم التعليم: مهتم' : 'تم إلغاء الاهتمام', { type: 'user_rec', id: id, prev: prev });
+          showToast(state.userState[id].interest === 'interested' ? 'مهتم · دوس − لو عاوز تشيلها من الليستة' : 'تم إلغاء الاهتمام', { type: 'user_rec', id: id, prev: prev });
         },
         'toggle-not-interested-picker': function (el) {
           var id = el.getAttribute('data-id');
@@ -1377,7 +1399,20 @@
           state.openReasonPickerMap[id] = false;
           persist();
           renderOpportunitiesView();
-          showToast('اتسجل مش مهتم وهنقلل اللي شبهها', { type: 'dismiss', id: id, prevUser: prevUser, prevPen: prevPen });
+          showToast('اتسجل مش مهتم · دوس − لو عاوز تشيلها من الليستة', { type: 'dismiss', id: id, prevUser: prevUser, prevPen: prevPen });
+        },
+        /* Minus button after choosing مهتم or مش مهتم: removes card from main list while keeping decision */
+        'remove-from-main-list': function (el) {
+          var id = el.getAttribute('data-id');
+          var job = getUniqueJobs().find(function (j) { return j.id === id; });
+          if (!job) return;
+          var prevUser = state.userState[id] ? JSON.parse(JSON.stringify(state.userState[id])) : null;
+          state.userState[id] = state.userState[id] || { snapshot: job };
+          state.userState[id].snapshot = job;
+          state.userState[id].removedFromMain = true;
+          persist();
+          renderOpportunitiesView();
+          showToast('اتشالت من الليستة الأساسية', { type: 'remove_main', id: id, prevUser: prevUser });
         },
         'undo-last': function () {
           var u = state.undoAction;
@@ -1387,6 +1422,8 @@
           } else if (u.type === 'dismiss') {
             if (u.prevUser) state.userState[u.id] = u.prevUser;
             state.prefs.penalties = u.prevPen;
+          } else if (u.type === 'remove_main') {
+            if (u.prevUser) state.userState[u.id] = u.prevUser;
           }
           state.undoAction = null;
           persist();
@@ -1435,7 +1472,7 @@
             location: /cairo|القاهرة/i.test(text) ? 'القاهرة' : null,
             work_mode: /remote|ريموت/i.test(text) ? 'Remote' : null,
             is_training: /intern|trainee|تدريب/i.test(text),
-            receipt: { apply_state: 'NEEDS_VERIFICATION', apply_state_ar: 'محتاج تحقق', action_label: 'افتح التقديم', first_published: null, discovered_at: new Date().toISOString(), last_verified: new Date().toISOString() },
+            receipt: { apply_state: 'NEEDS_VERIFICATION', apply_state_ar: 'محتاج تحقق', action_label: url ? 'افتح التقديم' : 'تفاصيل', first_published: null, discovered_at: new Date().toISOString(), last_verified: new Date().toISOString() },
             fit: { score: 85, reason_first: firstLine, caveat_first: 'مضاف يدويًا' },
             commute: { summary: 'غير مذكورة' },
             discovered_at: new Date().toISOString()
