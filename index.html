@@ -117,12 +117,84 @@
       display: none;
     }
 
+    .summary-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .run-lines {
+      font-size: 12.5px;
+      color: var(--text-sub);
+      margin-bottom: 10px;
+    }
+
+    .run-outcome-btn {
+      display: block;
+      width: 100%;
+      text-align: right;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 12.5px;
+      padding: 2px 0;
+    }
+
+    .run-details-drawer {
+      display: none;
+      background: var(--bg-input);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-sm);
+      padding: 8px 10px;
+      margin: 6px 0 10px 0;
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .kpi-tile {
+      min-height: 58px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 8px 6px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .kpi-tile.active {
+      border-color: var(--ok);
+      background: var(--ok-bg);
+    }
+
+    .kpi-num {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .kpi-lbl {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
     .filter-controls-box {
       background: var(--bg-card);
       border: 1px solid var(--border-soft);
       border-radius: var(--radius-md);
       padding: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .filter-row {
@@ -173,6 +245,28 @@
       border-color: var(--ok);
     }
 
+    .active-scope-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 6px 10px;
+      margin-bottom: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-sm);
+      font-size: 12.5px;
+      color: var(--text-sub);
+    }
+
+    .link-inline-btn {
+      background: transparent;
+      color: #6ee7b7;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+    }
+
     .opp-card {
       background: var(--bg-card);
       border: 1px solid var(--border-soft);
@@ -181,12 +275,23 @@
       margin-bottom: 12px;
     }
 
+    .opp-card.unseen-card {
+      border-right: 3px solid var(--ok);
+    }
+
     .card-header-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 8px;
       margin-bottom: 8px;
+    }
+
+    .badges-cluster {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
     }
 
     .status-pill {
@@ -201,19 +306,19 @@
     .status-pill.open {
       background: var(--ok-bg);
       color: #6ee7b7;
-      border: 1px solid rgba(16, 185, 129, 0.4);
+      border: 1px solid rgba(16, 185, 129, 0.45);
     }
 
     .status-pill.warn {
       background: var(--warn-bg);
       color: #fcd34d;
-      border: 1px solid rgba(245, 158, 11, 0.4);
+      border: 1px solid rgba(245, 158, 11, 0.45);
     }
 
     .status-pill.neutral {
       background: var(--muted-bg);
       color: #cbd5e1;
-      border: 1px solid rgba(100, 116, 139, 0.4);
+      border: 1px solid rgba(100, 116, 139, 0.45);
     }
 
     .time-caption {
@@ -238,7 +343,7 @@
       border: 1px solid var(--border-soft);
       border-radius: var(--radius-md);
       padding: 10px 12px;
-      margin-bottom: 10px;
+      margin-bottom: 11px;
     }
 
     .reason-main {
@@ -260,47 +365,6 @@
     }
 
     .fit-inline.warn {
-      color: #fcd34d;
-    }
-
-    /* Direct Checkboxes: Applied / Interested / Not Interested */
-    .checks-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 7px;
-      margin-bottom: 10px;
-    }
-
-    .check-chip {
-      min-height: 42px;
-      border-radius: var(--radius-md);
-      background: var(--bg-input);
-      border: 1px solid var(--border-strong);
-      color: var(--text-sub);
-      font-size: 13px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 6px 8px;
-    }
-
-    .check-chip.is-applied {
-      background: var(--ok-bg);
-      border-color: var(--ok);
-      color: #6ee7b7;
-    }
-
-    .check-chip.is-interested {
-      background: var(--ok-bg);
-      border-color: var(--ok);
-      color: #6ee7b7;
-    }
-
-    .check-chip.is-not-interested {
-      background: var(--warn-bg);
-      border-color: var(--warn);
       color: #fcd34d;
     }
 
@@ -335,15 +399,51 @@
       border: 1px solid var(--border-strong);
     }
 
-    .btn-details-toggle {
+    .btn-secondary-card {
+      flex: 1;
       min-height: 44px;
-      padding: 9px 14px;
+      padding: 9px 12px;
       border-radius: var(--radius-md);
       background: var(--bg-elevated);
-      color: var(--text-sub);
+      color: var(--text-main);
       border: 1px solid var(--border-strong);
       font-size: 13px;
       font-weight: 700;
+    }
+
+    .btn-secondary-card.active-save {
+      background: var(--muted-bg);
+      color: #e2e8f0;
+      border-color: #94a3b8;
+    }
+
+    .btn-more-card {
+      min-height: 44px;
+      padding: 9px 12px;
+      border-radius: var(--radius-md);
+      background: transparent;
+      color: var(--text-sub);
+      border: 1px solid var(--border-soft);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .overflow-menu-box {
+      display: none;
+      margin-top: 8px;
+      padding: 8px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+    }
+
+    .reason-picker-box {
+      display: none;
+      margin-top: 8px;
+      padding: 10px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
     }
 
     .details-panel {
@@ -369,7 +469,7 @@
 
     .meta-table td:first-child {
       color: var(--text-muted);
-      width: 34%;
+      width: 36%;
       font-weight: 700;
     }
 
@@ -379,18 +479,6 @@
       border-radius: var(--radius-sm);
       padding: 9px 11px;
       margin-bottom: 8px;
-    }
-
-    .draft-box {
-      width: 100%;
-      min-height: 110px;
-      background: var(--bg-input);
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-sm);
-      padding: 9px;
-      color: var(--text-main);
-      font-size: 12.5px;
-      margin: 6px 0;
     }
 
     .section-card {
@@ -517,16 +605,16 @@
     <div class="top-bar-inner">
       <div>
         <h1 class="brand-title">رادار فرص بيتر</h1>
-        <p id="syncStatusLine" class="sync-line">آخر مزامنة: جاري التحميل...</p>
+        <p id="syncLineTop" class="sync-line">آخر تحديث للقائمة: جاري التحميل...</p>
       </div>
-      <button type="button" id="btnRefreshFeed" class="btn-refresh" data-action="refresh-feed">حدّث القائمة</button>
+      <button type="button" id="btnRefreshList" class="btn-refresh" data-action="refresh-feed">حدّث القائمة</button>
     </div>
   </header>
 
   <div id="toastBar" class="toast-bar">
     <div class="toast-pill">
       <span id="toastMsg">تم</span>
-      <button type="button" id="toastUndoBtn" class="btn-details-toggle" style="min-height:34px;padding:4px 10px;display:none;" data-action="undo-last">تراجع</button>
+      <button type="button" id="toastUndoBtn" class="btn-more-card" style="min-height:34px;padding:4px 10px;display:none;" data-action="undo-last">تراجع</button>
     </div>
   </div>
 
@@ -534,16 +622,39 @@
 
     <!-- TAB 1: الفرص -->
     <section id="view-opportunities" class="tab-view" style="display:block;">
+      <div class="summary-panel">
+        <div class="run-lines">
+          <div id="lastSearchLine">آخر بحث خلص: غير متاح</div>
+          <button type="button" id="runOutcomeBtn" class="run-outcome-btn" data-action="toggle-run-details">الجولة الأخيرة: جاري الفحص (اضغط للتفاصيل)</button>
+          <div id="runDetailsDrawer" class="run-details-drawer"></div>
+        </div>
+
+        <div class="kpi-row">
+          <button type="button" id="kpi-new" class="kpi-tile" data-action="set-quick-filter" data-filter="new_for_you">
+            <span id="kpiNumNew" class="kpi-num">0</span>
+            <span class="kpi-lbl">جديدة ليك</span>
+          </button>
+          <button type="button" id="kpi-available" class="kpi-tile" data-action="set-quick-filter" data-filter="available">
+            <span id="kpiNumAvailable" class="kpi-num">0</span>
+            <span class="kpi-lbl">فرصة متاحة</span>
+          </button>
+          <button type="button" id="kpi-saved" class="kpi-tile" data-action="set-quick-filter" data-filter="saved">
+            <span id="kpiNumSaved" class="kpi-num">0</span>
+            <span class="kpi-lbl">محفوظة</span>
+          </button>
+        </div>
+      </div>
+
       <div class="filter-controls-box">
         <div class="filter-row">
-          <select id="selTimeFilter" class="filter-select" aria-label="فلترة وقت النزول">
-            <option value="all">وقت النزول: الكل</option>
-            <option value="24h">آخر ٢٤ ساعة</option>
+          <select id="selPostedFilter" class="filter-select" aria-label="وقت النشر الأصلي">
+            <option value="all">النشر: الكل</option>
+            <option value="today">نزلت النهارده</option>
             <option value="3d">آخر ٣ أيام</option>
             <option value="7d">آخر ٧ أيام</option>
           </select>
 
-          <select id="selMatchFilter" class="filter-select" aria-label="فلترة نسبة الملاءمة">
+          <select id="selFitFilter" class="filter-select" aria-label="نسبة الملاءمة">
             <option value="all">الملاءمة: الكل</option>
             <option value="80">٨٠٪ فأعلى</option>
             <option value="85">٨٥٪ فأعلى</option>
@@ -552,12 +663,18 @@
         </div>
 
         <div class="filter-strip">
-          <button type="button" id="f-all" class="pill-btn active" data-action="set-quick-filter" data-filter="all">الكل</button>
-          <button type="button" id="f-interested" class="pill-btn" data-action="set-quick-filter" data-filter="interested">مهتم بيها</button>
-          <button type="button" id="f-best" class="pill-btn" data-action="set-quick-filter" data-filter="best">أفضل ليك</button>
-          <button type="button" id="f-intern" class="pill-btn" data-action="set-quick-filter" data-filter="intern">تدريب</button>
-          <button type="button" id="f-remote" class="pill-btn" data-action="set-quick-filter" data-filter="remote">ريموت</button>
+          <button type="button" id="qf-new_for_you" class="pill-btn" data-action="set-quick-filter" data-filter="new_for_you">الجديدة</button>
+          <button type="button" id="qf-best" class="pill-btn" data-action="set-quick-filter" data-filter="best">أفضل ليك</button>
+          <button type="button" id="qf-all" class="pill-btn active" data-action="set-quick-filter" data-filter="all">الكل</button>
+          <button type="button" id="qf-needs_check" class="pill-btn" data-action="set-quick-filter" data-filter="needs_check">محتاجة تحقق</button>
+          <button type="button" id="qf-intern" class="pill-btn" data-action="set-quick-filter" data-filter="intern">تدريب</button>
+          <button type="button" id="qf-remote" class="pill-btn" data-action="set-quick-filter" data-filter="remote">ريموت</button>
         </div>
+      </div>
+
+      <div id="scopeCountBar" class="active-scope-bar">
+        <span id="scopeCountText">بتشوف ٠ من ٠ فرصة</span>
+        <button type="button" id="btnClearFilters" class="link-inline-btn" style="display:none;" data-action="reset-filters">امسح الفلاتر</button>
       </div>
 
       <div id="opportunitiesList"></div>
@@ -566,54 +683,83 @@
     <!-- TAB 2: أضف فرصة -->
     <section id="view-add" class="tab-view">
       <div class="section-card">
-        <h2>أضف فرصة أو بوست</h2>
-        <p>الصق رابط إعلان أو نص بوست من LinkedIn، وعاينه قبل الحفظ.</p>
-        <input type="text" id="addLinkInput" class="field-input ltr" placeholder="رابط البوست أو الإعلان (اختياري)" />
-        <textarea id="addTextInput" class="field-area" placeholder="الصق نص البوست أو وصف الوظيفة هنا..."></textarea>
-        <input type="email" id="addEmailInput" class="field-input ltr" placeholder="إيميل التقديم إن وُجد (اختياري)" />
-        <button type="button" class="btn-open-main" style="width:100%;" data-action="preview-manual-job">معاينة الفهم والتقييم قبل الحفظ</button>
-        <div id="manualPreviewWrap" style="margin-top:12px;"></div>
+        <h2>أضف فرصة</h2>
+        <p>ابدأ بلصق لينك بوست أو إعلان. لو الرابط تعذّر فتحه، هيظهر لك مربع لصق النص.</p>
+        <input type="text" id="singleLinkInput" class="field-input ltr" placeholder="الصق لينك بوست أو إعلان" />
+        <button type="button" class="btn-refresh" style="width:100%;margin-bottom:8px;" data-action="check-link-and-inspect">افحص اللينك والمعاينة</button>
+
+        <div id="fallbackTextBox" style="display:none;">
+          <textarea id="fallbackPostText" class="field-area" placeholder="تعذّر فتح الرابط تلقائيًا — الصق نص البوست أو الإعلان هنا..."></textarea>
+          <button type="button" class="btn-open-main" style="width:100%;" data-action="build-preview-from-text">عاين النص قبل الحفظ</button>
+        </div>
+
+        <div id="addPreviewBox" style="margin-top:10px;"></div>
       </div>
 
       <div class="section-card">
-        <h3>المصادر والبحث السريع (آخر ٢٤ ساعة)</h3>
-        <div id="savedLinksList"></div>
+        <button type="button" class="btn-refresh" style="width:100%;justify-content:space-between;display:flex;" data-action="toggle-self-search">
+          <span>ابحث بنفسك</span>
+          <span id="selfSearchArrow">▼</span>
+        </button>
+        <div id="selfSearchDrawer" style="display:none;margin-top:10px;">
+          <div id="quickSearchLinksWrap"></div>
+        </div>
       </div>
     </section>
 
     <!-- TAB 3: تقديماتي -->
     <section id="view-applications" class="tab-view">
-      <div class="filter-strip" style="margin-bottom:10px;">
-        <button type="button" id="appf-applied" class="pill-btn active" data-action="set-app-filter" data-filter="applied">قدّمت عليها</button>
-        <button type="button" id="appf-interested" class="pill-btn" data-action="set-app-filter" data-filter="interested">مهتم بيها</button>
+      <div class="kpi-row" style="margin-bottom:10px;">
+        <button type="button" id="mtab-saved" class="kpi-tile" data-action="set-my-tab" data-tab="saved">
+          <span id="myCountSaved" class="kpi-num">0</span>
+          <span class="kpi-lbl">محفوظة</span>
+        </button>
+        <button type="button" id="mtab-applied" class="kpi-tile active" data-action="set-my-tab" data-tab="applied">
+          <span id="myCountApplied" class="kpi-num">0</span>
+          <span class="kpi-lbl">قدّمت عليها</span>
+        </button>
+        <button type="button" id="mtab-next" class="kpi-tile" data-action="set-my-tab" data-tab="next_step">
+          <span id="myCountNext" class="kpi-num">0</span>
+          <span class="kpi-lbl">عندي خطوة جاية</span>
+        </button>
       </div>
-      <div id="applicationsList"></div>
+
+      <div id="myApplicationsList"></div>
     </section>
 
     <!-- TAB 4: الإعدادات -->
     <section id="view-settings" class="tab-view">
       <div class="section-card">
-        <h3>تعلّم التفضيلات («مهتم» يكتّر · «مش مهتم» يقلّل)</h3>
-        <p>النظام بيتعلّم تلقائيًا من تشيك «مهتم» و«مش مهتم» على الكلمات والمسميات اللي بتختارها.</p>
-        <div id="learnedKeywordsBox"></div>
-        <button type="button" class="btn-refresh" style="width:100%;margin-top:8px;" data-action="reset-learned-weights">إعادة ضبط أوزان التعلّم</button>
+        <h3>الإشعارات</h3>
+        <p id="notifBindingStatus">الحالة: قناة محفوظة على الجهاز فقط — تأكد من مطابقتها لسر NTFY_TOPIC في السحابة.</p>
+        <input type="password" id="ntfyChannelInput" class="field-input ltr" placeholder="اسم قناة الإشعارات الخاصة" />
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button type="button" class="btn-refresh" style="flex:1;" data-action="save-ntfy-channel">احفظ القناة</button>
+          <button type="button" class="btn-open-main" style="flex:1;" data-action="test-ntfy-channel">جرّب إشعار</button>
+        </div>
+        <div id="ntfyTestResult" style="margin-top:8px;font-size:12.5px;color:var(--text-sub);"></div>
       </div>
 
       <div class="section-card">
-        <h3>ملفك وقناة الإشعارات</h3>
-        <p><strong>BIS حلوان (GPA 3.67)</strong> · SQL · Python · Power BI · Tableau · Excel/VBA</p>
-        <input type="password" id="ntfyPrivateTopic" class="field-input ltr" placeholder="اسم قناتك الخاصة على ntfy" />
-        <button type="button" class="btn-refresh" style="width:100%;" data-action="save-ntfy-topic">حفظ القناة محليًا</button>
+        <h3>تفضيلات الترشيح</h3>
+        <p>النظام بيعدّل الأولوية حسب «مش مناسب» (بعيدة · خبرة أعلى · شغل محاسبة)[cite: 20, 21].</p>
+        <div id="prefsPenaltySummary"></div>
+        <button type="button" class="btn-refresh" style="width:100%;margin-top:8px;" data-action="reset-preferences">إعادة ضبط التفضيلات</button>
+      </div>
+
+      <div class="section-card">
+        <h3>بيانات المحرك</h3>
+        <p>الإصدار v3.1 · بكالوريوس BIS حلوان (GPA 3.67) · نقطة الانطلاق: شبرا مصر[cite: 20, 21].</p>
       </div>
     </section>
 
   </main>
 
-  <nav class="bottom-nav">
-    <button type="button" id="nav-opportunities" class="nav-tab-btn active" data-action="switch-view" data-view="opportunities"><span>الفرص</span></button>
-    <button type="button" id="nav-add" class="nav-tab-btn" data-action="switch-view" data-view="add"><span>أضف فرصة</span></button>
-    <button type="button" id="nav-applications" class="nav-tab-btn" data-action="switch-view" data-view="applications"><span>تقديماتي</span></button>
-    <button type="button" id="nav-settings" class="nav-tab-btn" data-action="switch-view" data-view="settings"><span>الإعدادات</span></button>
+  <nav class="bottom-nav" aria-label="الأقسام الرئيسية">
+    <button type="button" id="bnav-opportunities" class="nav-tab-btn active" data-action="switch-view" data-view="opportunities"><span>الفرص</span></button>
+    <button type="button" id="bnav-add" class="nav-tab-btn" data-action="switch-view" data-view="add"><span>أضف فرصة</span></button>
+    <button type="button" id="bnav-applications" class="nav-tab-btn" data-action="switch-view" data-view="applications"><span>تقديماتي</span></button>
+    <button type="button" id="bnav-settings" class="nav-tab-btn" data-action="switch-view" data-view="settings"><span>الإعدادات</span></button>
   </nav>
 
   <script>
@@ -624,60 +770,53 @@
         try { navigator.serviceWorker.register('./sw.js').catch(function () {}); } catch (e) {}
       }
 
-      var FEED_CACHE_KEY = 'peter_radar_v3_1_feed';
-      var RECORDS_KEY = 'peter_radar_v3_1_records';
-      var PREFS_KEY = 'peter_radar_v3_1_prefs';
+      var STORE_FEED = 'radar_v31_feed';
+      var STORE_USER = 'radar_v31_user_state';
+      var STORE_PREFS = 'radar_v31_prefs';
 
-      function readStore(k, fb) {
-        try { var r = window.localStorage.getItem(k); return r ? JSON.parse(r) : fb; } catch (e) { return fb; }
+      function loadJson(key, fallback) {
+        try { var r = window.localStorage.getItem(key); return r ? JSON.parse(r) : fallback; } catch (e) { return fallback; }
       }
-      function writeStore(k, v) {
-        try { window.localStorage.setItem(k, JSON.stringify(v)); } catch (e) {}
+      function saveJson(key, val) {
+        try { window.localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
       }
 
-      var DEFAULT_LINKS = [
-        { id: 'lnk-1', name: 'وظائف Data & BI في مصر · LinkedIn (آخر ٢٤ ساعة)', url: 'https://www.linkedin.com/jobs/search/?keywords=(Data%20Analyst%20OR%20BI%20Analyst%20OR%20Reporting%20Analyst)&location=Egypt&f_TPR=r86400' },
-        { id: 'lnk-2', name: 'بوستات SFE وMIS والتوظيف · LinkedIn (آخر ٢٤ ساعة)', url: 'https://www.linkedin.com/search/results/content/?keywords=(Data%20Analyst%20OR%20BI%20OR%20MIS%20OR%20SFE)%20Egypt&datePosted=%22past-24h%22' },
-        { id: 'lnk-3', name: 'وظائف حديثي التخرج في تحليل البيانات · WUZZUF', url: 'https://wuzzuf.net/search/jobs/?a=hpb&filters%5Bcareer_level%5D%5B0%5D=Entry%20Level&q=data%20analyst' },
-        { id: 'lnk-4', name: 'وظائف التقارير والعمليات بالقاهرة · Indeed', url: 'https://eg.indeed.com/jobs?q=data+analyst+OR+business+intelligence+OR+reporting&l=Cairo&fromage=3' }
-      ];
-
-      /* CV-grounded skill/role tokens for preference learning */
-      var TRACKED_TOKENS = [
-        'data analyst', 'bi', 'business intelligence', 'reporting', 'analyst',
-        'sql', 'power bi', 'tableau', 'excel', 'python', 'sfe', 'mis',
-        'operations', 'business analyst', 'systems analyst', 'intern', 'trainee'
+      var SELF_SEARCH_LINKS = [
+        { id: 's1', title: 'وظائف Data & BI في مصر · LinkedIn (٢٤ ساعة)', url: 'https://www.linkedin.com/jobs/search/?keywords=(Data%20Analyst%20OR%20BI%20Analyst%20OR%20Reporting%20Analyst)&location=Egypt&f_TPR=r86400' },
+        { id: 's2', title: 'بوستات SFE وMIS والتوظيف · LinkedIn (٢٤ ساعة)', url: 'https://www.linkedin.com/search/results/content/?keywords=(Data%20Analyst%20OR%20BI%20OR%20MIS%20OR%20SFE)%20Egypt&datePosted=%22past-24h%22' },
+        { id: 's3', title: 'حديثي التخرج · تحليل البيانات · WUZZUF', url: 'https://wuzzuf.net/search/jobs/?a=hpb&filters%5Bcareer_level%5D%5B0%5D=Entry%20Level&q=data%20analyst' },
+        { id: 's4', title: 'تقارير وتشغيل بالقاهرة · Indeed', url: 'https://eg.indeed.com/jobs?q=data+analyst+OR+business+intelligence+OR+reporting&l=Cairo&fromage=3' }
       ];
 
       var state = {
         view: 'opportunities',
         quickFilter: 'all',
-        timeFilter: 'all',
-        matchFilter: 'all',
-        appFilter: 'applied',
-        openDetails: {},
-        pendingManualDraft: null,
-        lastUndo: null,
-        feedData: readStore(FEED_CACHE_KEY, { meta: {}, jobs: {} }),
-        records: readStore(RECORDS_KEY, {}),
-        prefs: readStore(PREFS_KEY, {
+        postedFilter: 'all',
+        fitFilter: 'all',
+        myTab: 'applied',
+        runDetailsOpen: false,
+        openDetailsMap: {},
+        openMenuMap: {},
+        openReasonPickerMap: {},
+        pendingAddCard: null,
+        undoAction: null,
+        feed: loadJson(STORE_FEED, {
+          meta: { scan_completed_at: null, feed_published_at: null, source_statuses: {} },
+          jobs: {}
+        }),
+        /* userState per jobId: { seenAt, saved, applied, appliedAt, nextStep, dismissedReason, snapshot } */
+        userState: loadJson(STORE_USER, {}),
+        prefs: loadJson(STORE_PREFS, {
           ntfyTopic: '',
-          tokenWeights: {},
-          customLinks: DEFAULT_LINKS
+          lastNotifTest: null,
+          penalties: { far_commute: false, higher_exp: false, accounting_role: false }
         })
       };
 
-      if (!state.prefs.tokenWeights || typeof state.prefs.tokenWeights !== 'object') {
-        state.prefs.tokenWeights = {};
-      }
-      if (!Array.isArray(state.prefs.customLinks)) {
-        state.prefs.customLinks = DEFAULT_LINKS;
-      }
-
-      function persistAll() {
-        writeStore(FEED_CACHE_KEY, state.feedData);
-        writeStore(RECORDS_KEY, state.records);
-        writeStore(PREFS_KEY, state.prefs);
+      function persist() {
+        saveJson(STORE_FEED, state.feed);
+        saveJson(STORE_USER, state.userState);
+        saveJson(STORE_PREFS, state.prefs);
       }
 
       function esc(s) {
@@ -688,19 +827,28 @@
           .replace(/"/g, '"');
       }
 
-      function formatEgyptianTime(isoStr) {
-        if (!isoStr) return 'غير مذكور';
-        var d = new Date(isoStr);
-        if (isNaN(d.getTime())) return String(isoStr);
+      /* Point 7: Egyptian Arabic times */
+      function formatArTime(iso) {
+        if (!iso) return 'غير مذكور';
+        var d = new Date(iso);
+        if (isNaN(d.getTime())) return String(iso);
         var now = new Date();
         var tFmt = new Intl.DateTimeFormat('ar-EG', { timeZone: 'Africa/Cairo', hour: 'numeric', minute: '2-digit', hour12: true });
         var dFmt = new Intl.DateTimeFormat('en-CA', { timeZone: 'Africa/Cairo', year: 'numeric', month: '2-digit', day: '2-digit' });
-        var targetDay = dFmt.format(d);
-        var todayDay = dFmt.format(now);
-        var yestDay = dFmt.format(new Date(now.getTime() - 86400000));
-        if (targetDay === todayDay) return 'اليوم، ' + tFmt.format(d);
-        if (targetDay === yestDay) return 'أمس، ' + tFmt.format(d);
+        var day = dFmt.format(d);
+        var today = dFmt.format(now);
+        var yest = dFmt.format(new Date(now.getTime() - 86400000));
+        if (day === today) return 'اليوم، ' + tFmt.format(d);
+        if (day === yest) return 'أمس، ' + tFmt.format(d);
         return new Intl.DateTimeFormat('ar-EG', { timeZone: 'Africa/Cairo', day: 'numeric', month: 'short' }).format(d) + '، ' + tFmt.format(d);
+      }
+
+      function isSameCairoDay(iso) {
+        if (!iso) return false;
+        var d = new Date(iso);
+        if (isNaN(d.getTime())) return false;
+        var fmt = new Intl.DateTimeFormat('en-CA', { timeZone: 'Africa/Cairo', year: 'numeric', month: '2-digit', day: '2-digit' });
+        return fmt.format(d) === fmt.format(new Date());
       }
 
       var toastTimer = null;
@@ -710,434 +858,827 @@
         var btn = document.getElementById('toastUndoBtn');
         if (!bar || !txt) return;
         txt.textContent = msg;
-        state.lastUndo = undoObj || null;
+        state.undoAction = undoObj || null;
         if (btn) btn.style.display = undoObj ? 'inline-block' : 'none';
         bar.style.display = 'flex';
         clearTimeout(toastTimer);
         toastTimer = setTimeout(function () { bar.style.display = 'none'; }, undoObj ? 5000 : 2800);
       }
 
-      function extractJobTokens(job) {
-        var hay = (job.title + ' ' + ((job.fit && job.fit.reason_first) || '') + ' ' + (job.location || '')).toLowerCase();
-        return TRACKED_TOKENS.filter(function (tok) { return hay.indexOf(tok) !== -1; });
-      }
+      /* Deduplicate by canonical URL or normalized (company + title + district) */
+      function getUniqueJobs() {
+        var cloudJobs = (state.feed && state.feed.jobs) || {};
+        var byKey = {};
 
-      function adjustWeightsForJob(job, deltaSign) {
-        var toks = extractJobTokens(job);
-        if (toks.length === 0) toks = ['analyst'];
-        toks.forEach(function (tok) {
-          var cur = state.prefs.tokenWeights[tok] || 0;
-          var next = cur + (deltaSign * 4);
-          if (next > 16) next = 16;
-          if (next < -24) next = -24;
-          state.prefs.tokenWeights[tok] = next;
-        });
-      }
+        Object.keys(cloudJobs).forEach(function (id) {
+          var j = cloudJobs[id];
+          var locKey = String(j.location || '').toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, ' ').trim().split(' ').slice(0, 2).join('_');
+          var titleKey = String(j.title || '').toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, '');
+          var compKey = String(j.company || '').toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, '');
+          var dedupKey = compKey + '::' + titleKey + '::' + (locKey || 'none');
 
-      function getAdjustedMatchScore(job) {
-        var base = (job.fit && typeof job.fit.score === 'number') ? job.fit.score : 60;
-        var toks = extractJobTokens(job);
-        var adj = 0;
-        toks.forEach(function (tok) {
-          adj += (state.prefs.tokenWeights[tok] || 0);
-        });
-        var finalScore = base + adj;
-        if (finalScore > 99) finalScore = 99;
-        if (finalScore < 10) finalScore = 10;
-        return finalScore;
-      }
-
-      function getAllJobs() {
-        var map = {};
-        var cloud = (state.feedData && state.feedData.jobs) || {};
-        Object.keys(cloud).forEach(function (id) { map[id] = cloud[id]; });
-        Object.keys(state.records).forEach(function (id) {
-          var r = state.records[id];
-          if (!map[id] && r && r.snapshot) map[id] = r.snapshot;
-        });
-        return Object.keys(map).map(function (id) { return map[id]; });
-      }
-
-      function renderTopSync() {
-        var el = document.getElementById('syncStatusLine');
-        if (!el) return;
-        var meta = (state.feedData && state.feedData.meta) || {};
-        var ts = meta.feed_published_at || meta.last_successful_run;
-        el.textContent = ts ? ('آخر مزامنة: ' + formatEgyptianTime(ts)) : 'آخر مزامنة: لم تُجلب نسخة بعد';
-      }
-
-      function renderOpportunitiesView() {
-        renderTopSync();
-        ['all', 'interested', 'best', 'intern', 'remote'].forEach(function (f) {
-          var b = document.getElementById('f-' + f);
-          if (b) b.className = 'pill-btn' + (state.quickFilter === f ? ' active' : '');
-        });
-
-        var nowMs = Date.now();
-        var maxAgeMs = null;
-        if (state.timeFilter === '24h') maxAgeMs = 24 * 3600 * 1000;
-        if (state.timeFilter === '3d') maxAgeMs = 3 * 24 * 3600 * 1000;
-        if (state.timeFilter === '7d') maxAgeMs = 7 * 24 * 3600 * 1000;
-
-        var minMatch = state.matchFilter === 'all' ? 0 : parseInt(state.matchFilter, 10);
-
-        var list = getAllJobs().filter(function (job) {
-          var rec = state.records[job.id] || {};
-          if (rec.interest === 'no') return false;
-
-          var score = getAdjustedMatchScore(job);
-          if (minMatch > 0 && score < minMatch) return false;
-
-          if (maxAgeMs) {
-            var pubRaw = (job.receipt && job.receipt.first_published) || job.discovered_at;
-            var pubMs = new Date(pubRaw || 0).getTime();
-            if (!pubMs || (nowMs - pubMs) > maxAgeMs) return false;
+          if (!byKey[dedupKey]) {
+            byKey[dedupKey] = Object.assign({}, j, { id: j.id || id, mergedSources: (j.sources || []).slice() });
+          } else {
+            var existing = byKey[dedupKey];
+            (j.sources || []).forEach(function (s) {
+              if (existing.mergedSources.indexOf(s) === -1) existing.mergedSources.push(s);
+            });
           }
+        });
 
-          if (state.quickFilter === 'interested' && rec.interest !== 'yes') return false;
+        /* Preserve saved/applied/manual items even if removed from feed */
+        Object.keys(state.userState).forEach(function (id) {
+          var u = state.userState[id];
+          if (!u || !u.snapshot) return;
+          var exists = Object.keys(byKey).some(function (k) { return byKey[k].id === id; });
+          if (!exists && (u.saved || u.applied || String(id).indexOf('manual-') === 0)) {
+            byKey['local::' + id] = Object.assign({}, u.snapshot, { id: id, mergedSources: (u.snapshot.sources || []).slice() });
+          }
+        });
+
+        return Object.keys(byKey).map(function (k) { return byKey[k]; });
+      }
+
+      /* Point 1: "جديدة ليك" = discovered and never seen yet */
+      function isNewForYou(job) {
+        var u = state.userState[job.id] || {};
+        return !u.seenAt;
+      }
+
+      function markJobSeen(job) {
+        if (!job || !job.id) return;
+        state.userState[job.id] = state.userState[job.id] || {};
+        if (!state.userState[job.id].seenAt) {
+          state.userState[job.id].seenAt = new Date().toISOString();
+          state.userState[job.id].snapshot = job;
+          persist();
+        }
+      }
+
+      function getEffectiveScore(job) {
+        var raw = (job.fit && typeof job.fit.score === 'number') ? job.fit.score : 65;
+        var titleLow = String(job.title || '').toLowerCase();
+        var reasonLow = String((job.fit && job.fit.reason_first) || '').toLowerCase();
+        var locLow = String(job.location || '').toLowerCase();
+        var adj = 0;
+        if (state.prefs.penalties.accounting_role && /account|audit|tax|محاسب|مراجع/.test(titleLow + ' ' + reasonLow)) adj -= 30;
+        if (state.prefs.penalties.higher_exp && /senior|lead|manager|3\+|4\+|5\+/.test(titleLow + ' ' + reasonLow)) adj -= 25;
+        if (state.prefs.penalties.far_commute && /october|smart village|أكتوبر|القرية الذكية/.test(locLow + ' ' + reasonLow)) adj -= 20;
+        return Math.max(10, Math.min(99, raw + adj));
+      }
+
+      /* Point 4: Specific recommendation reason grounded in role + CV evidence */
+      function buildSpecificReason(job) {
+        var fit = job.fit || {};
+        var evList = Array.isArray(fit.evidence_pairs) ? fit.evidence_pairs : [];
+        if (evList.length > 0 && evList[0].quote && evList[0].cv) {
+          var roleShort = String(evList[0].quote).slice(0, 65);
+          var cvShort = String(evList[0].cv).slice(0, 75);
+          return 'الدور فيه ' + roleShort + ' · عندك ' + cvShort;
+        }
+        return fit.reason_first || 'الدور مرتبط بتحليل البيانات والتقارير · راجع التفاصيل للتأكد';
+      }
+
+      function buildReviewNote(job) {
+        var fit = job.fit || {};
+        var parts = [];
+        if (fit.caveat_first) parts.push(fit.caveat_first);
+        if (!job.location) parts.push('المكان غير مذكور');
+        return parts.length ? parts.join(' · ') : 'راجع شروط الإعلان قبل التقديم';
+      }
+
+      function renderHeaderAndRunSummary() {
+        var meta = (state.feed && state.feed.meta) || {};
+        var syncEl = document.getElementById('syncLineTop');
+        var searchEl = document.getElementById('lastSearchLine');
+        var outcomeBtn = document.getElementById('runOutcomeBtn');
+        var drawerEl = document.getElementById('runDetailsDrawer');
+
+        var syncedAt = meta.feed_published_at || meta.last_successful_run;
+        if (syncEl) syncEl.textContent = 'آخر تحديث للقائمة: ' + formatArTime(syncedAt);
+        if (searchEl) searchEl.textContent = 'آخر بحث خلص: ' + formatArTime(meta.scan_completed_at || syncedAt);
+
+        var statuses = meta.source_statuses || {};
+        var srcKeys = Object.keys(statuses);
+        var failedCount = 0;
+        var okCount = 0;
+        var detailLines = [];
+
+        srcKeys.forEach(function (k) {
+          var st = statuses[k] || {};
+          if (st.state === 'FAILED') failedCount += 1;
+          else if (st.state === 'OK' || st.state === 'OK_ZERO') okCount += 1;
+          detailLines.push('• ' + esc(k) + ': ' + esc(st.label || 'غير متاح'));
+        });
+
+        var uniqueAll = getUniqueJobs();
+        var newCnt = uniqueAll.filter(function (j) {
+          var u = state.userState[j.id] || {};
+          return !u.seenAt && !u.dismissedReason && ((j.receipt && j.receipt.apply_state) !== 'CLOSED');
+        }).length;
+
+        var outcomeText = 'الجولة الأخيرة جابت ' + newCnt + ' فرص جديدة ليك';
+        if (failedCount > 0) {
+          outcomeText += ' · ' + failedCount + ' مصدر تعذّر';
+        } else if (srcKeys.length > 0) {
+          outcomeText += ' · ' + okCount + ' مصادر اتفحصوا';
+        }
+
+        if (outcomeBtn) {
+          outcomeBtn.textContent = outcomeText + (state.runDetailsOpen ? ' ▲' : ' ▼');
+        }
+        if (drawerEl) {
+          drawerEl.style.display = state.runDetailsOpen ? 'block' : 'none';
+          drawerEl.innerHTML = detailLines.length
+            ? detailLines.join('<br>')
+            : 'تفاصيل الفحص تظهر بعد اكتمال جولة السحب.';
+        }
+      }
+
+      /* Point 1, 2, 4, 5, 6: Render Opportunities View */
+      function renderOpportunitiesView() {
+        renderHeaderAndRunSummary();
+
+        var uniqueJobs = getUniqueJobs();
+        var activeUnrejected = uniqueJobs.filter(function (j) {
+          var u = state.userState[j.id] || {};
+          return !u.dismissedReason;
+        });
+
+        var newForYouList = activeUnrejected.filter(function (j) {
+          return isNewForYou(j) && ((j.receipt && j.receipt.apply_state) !== 'CLOSED');
+        });
+        var availableList = activeUnrejected.filter(function (j) {
+          return (j.receipt && j.receipt.apply_state) !== 'CLOSED';
+        });
+        var savedList = uniqueJobs.filter(function (j) {
+          var u = state.userState[j.id] || {};
+          return !!u.saved;
+        });
+
+        document.getElementById('kpiNumNew').textContent = newForYouList.length;
+        document.getElementById('kpiNumAvailable').textContent = availableList.length;
+        document.getElementById('kpiNumSaved').textContent = savedList.length;
+
+        ['new_for_you', 'available', 'saved'].forEach(function (k) {
+          var el = document.getElementById('kpi-' + k);
+          if (el) el.className = 'kpi-tile' + (state.quickFilter === k ? ' active' : '');
+        });
+
+        ['new_for_you', 'best', 'all', 'needs_check', 'intern', 'remote'].forEach(function (f) {
+          var btn = document.getElementById('qf-' + f);
+          if (btn) btn.className = 'pill-btn' + (state.quickFilter === f ? ' active' : '');
+        });
+
+        var minFit = state.fitFilter === 'all' ? 0 : parseInt(state.fitFilter, 10);
+        var nowMs = Date.now();
+
+        var filtered = availableList.filter(function (job) {
+          var u = state.userState[job.id] || {};
+          var appState = (job.receipt && job.receipt.apply_state) || 'NEEDS_VERIFICATION';
+          var score = getEffectiveScore(job);
+          var isRemote = String(job.work_mode || '').toLowerCase().indexOf('remote') !== -1;
+
+          if (state.quickFilter === 'new_for_you' && !isNewForYou(job)) return false;
+          if (state.quickFilter === 'saved' && !u.saved) return false;
           if (state.quickFilter === 'best' && score < 80) return false;
+          if (state.quickFilter === 'needs_check' && appState !== 'NEEDS_VERIFICATION') return false;
           if (state.quickFilter === 'intern' && !job.is_training) return false;
-          if (state.quickFilter === 'remote' && String(job.work_mode || '').toLowerCase().indexOf('remote') === -1) return false;
+          if (state.quickFilter === 'remote' && !isRemote) return false;
+
+          if (minFit > 0 && score < minFit) return false;
+
+          if (state.postedFilter !== 'all') {
+            var pubIso = (job.receipt && job.receipt.first_published) || job.discovered_at;
+            if (state.postedFilter === 'today') {
+              if (!isSameCairoDay(pubIso)) return false;
+            } else {
+              var days = state.postedFilter === '3d' ? 3 : 7;
+              var pubMs = new Date(pubIso || 0).getTime();
+              if (!pubMs || (nowMs - pubMs) > days * 86400000) return false;
+            }
+          }
 
           return true;
         });
 
-        list.sort(function (a, b) {
-          var aInt = ((state.records[a.id] || {}).interest === 'yes') ? 1 : 0;
-          var bInt = ((state.records[b.id] || {}).interest === 'yes') ? 1 : 0;
-          if (bInt !== aInt) return bInt - aInt;
-          return getAdjustedMatchScore(b) - getAdjustedMatchScore(a);
+        filtered.sort(function (a, b) {
+          var aNew = isNewForYou(a) ? 1 : 0;
+          var bNew = isNewForYou(b) ? 1 : 0;
+          if (bNew !== aNew) return bNew - aNew;
+          return getEffectiveScore(b) - getEffectiveScore(a);
         });
+
+        var hasActiveFilter = (
+          state.quickFilter !== 'all' ||
+          state.postedFilter !== 'all' ||
+          state.fitFilter !== 'all'
+        );
+
+        var scopeText = document.getElementById('scopeCountText');
+        var clearBtn = document.getElementById('btnClearFilters');
+        if (scopeText) {
+          scopeText.textContent = 'بتشوف ' + filtered.length + ' من ' + availableList.length + ' فرصة';
+        }
+        if (clearBtn) {
+          clearBtn.style.display = hasActiveFilter ? 'inline-block' : 'none';
+        }
 
         var container = document.getElementById('opportunitiesList');
         if (!container) return;
 
-        if (list.length === 0) {
+        if (filtered.length === 0) {
+          var msg = 'مفيش فرص مطابقة للفلاتر الحالية';
+          if (state.quickFilter === 'intern') msg = 'مفيش تدريب مطابق للفلاتر';
+          else if (state.quickFilter === 'new_for_you') msg = 'مفيش فرص جديدة ليك حاليًا';
+          else if (state.quickFilter === 'saved') msg = 'لسه ما حفظتش فرص';
+
           container.innerHTML = '<div class="empty-state-box">' +
-            '<h3>مفيش فرص مطابقة للفلاتر دي</h3>' +
-            '<p style="color:var(--text-muted);">غيّر وقت النزول أو نسبة الملاءمة أو امسح الفلاتر.</p>' +
+            '<h3>' + esc(msg) + '</h3>' +
+            '<p style="color:var(--text-muted);">جرّب مسح الفلاتر أو تحديث القائمة.</p>' +
             '<button type="button" class="btn-refresh" data-action="reset-filters">امسح الفلاتر</button>' +
             '</div>';
           return;
         }
 
-        container.innerHTML = list.map(function (job) {
-          var rec = state.records[job.id] || {};
+        container.innerHTML = filtered.map(function (job) {
+          var u = state.userState[job.id] || {};
           var receipt = job.receipt || {};
           var fit = job.fit || {};
           var commute = job.commute || {};
-          var isOpen = !!state.openDetails[job.id];
-          var score = getAdjustedMatchScore(job);
+          var isUnseen = isNewForYou(job);
+          var score = getEffectiveScore(job);
 
           var appState = receipt.apply_state || 'NEEDS_VERIFICATION';
-          var pillClass = appState === 'OPEN_VERIFIED' ? 'open' : (appState === 'CLOSED' ? 'neutral' : 'warn');
-          var pillText = rec.applied ? 'قدّمت ✓' : (receipt.apply_state_ar || 'محتاج تحقق');
+          var isOpenVerified = (appState === 'OPEN_VERIFIED');
+          var badgeClass = isOpenVerified ? 'status-pill open' : 'status-pill warn';
+          var badgeLabel = isOpenVerified ? 'مفتوح' : 'محتاج تحقق';
+          var ctaClass = isOpenVerified ? 'btn-open-main' : 'btn-open-main warn';
 
-          var locText = job.location ? job.location : 'العنوان غير مذكور';
-          var modeText = job.work_mode ? job.work_mode : 'غير محدد';
-          var timeLbl = receipt.first_published ? formatEgyptianTime(receipt.first_published) : formatEgyptianTime(job.discovered_at);
+          var locDisplay = job.location ? job.location : 'غير مذكور';
+          var modeDisplay = job.work_mode ? job.work_mode : 'غير محدد';
+          var timeDisplay = receipt.first_published ? formatArTime(receipt.first_published) : formatArTime(job.discovered_at);
 
-          var appliedCls = rec.applied ? 'check-chip is-applied' : 'check-chip';
-          var yesCls = rec.interest === 'yes' ? 'check-chip is-interested' : 'check-chip';
-          var noCls = rec.interest === 'no' ? 'check-chip is-not-interested' : 'check-chip';
+          var isDetailsOpen = !!state.openDetailsMap[job.id];
+          var isMenuOpen = !!state.openMenuMap[job.id];
+          var isReasonOpen = !!state.openReasonPickerMap[job.id];
 
-          var draft = 'Subject: Application for ' + job.title + ' - Peter Nabil\n\nDear Hiring Team,\nI am a BIS graduate (GPA 3.67, Helwan Univ.) experienced in SQL, Python, Excel, Power BI & Tableau applying for ' + job.title + '.\nBest regards,\nPeter Nabil Gerges';
+          var commuteDetail = commute.summary ? commute.summary : 'غير مذكورة';
+          var daysDetail = (commute.days_per_week !== null && commute.days_per_week !== undefined)
+            ? (commute.days_per_week + ' أيام/أسبوع')
+            : 'غير مذكورة';
 
-          return '<article class="opp-card">' +
+          var evRows = (fit.evidence_pairs || []).map(function (ev) {
+            return '<div class="evidence-block">' +
+              '<div style="color:#fcd34d;font-size:12px;font-weight:700;">' + esc(ev.tag || 'شرط') + '</div>' +
+              '<div>الإعلان: «' + esc(ev.quote || '') + '»</div>' +
+              '<div style="color:#6ee7b7;font-size:12.5px;">الـCV: ' + esc(ev.cv || '') + '</div>' +
+            '</div>';
+          }).join('');
+
+          return '<article class="opp-card ' + (isUnseen ? 'unseen-card' : '') + '">' +
             '<div class="card-header-row">' +
-              '<span class="status-pill ' + pillClass + '">' + esc(pillText) + '</span>' +
-              '<span class="time-caption">' + esc(timeLbl) + '</span>' +
+              '<div class="badges-cluster">' +
+                '<span class="' + badgeClass + '">' + esc(badgeLabel) + '</span>' +
+                (isUnseen ? '<span class="status-pill neutral">جديدة ليك</span>' : '') +
+                (u.applied ? '<span class="status-pill neutral">قدّمت</span>' : '') +
+              '</div>' +
+              '<span class="time-caption">' + esc(timeDisplay) + '</span>' +
             '</div>' +
 
             '<h2 class="opp-title ltr">' + esc(job.title) + '</h2>' +
-            '<p class="opp-sub"><strong>' + esc(job.company) + '</strong> · ' + esc(locText) + ' · ' + esc(modeText) + '</p>' +
+            '<p class="opp-sub"><strong>' + esc(job.company) + '</strong> · ' + esc(locDisplay) + ' · ' + esc(modeDisplay) + '</p>' +
 
             '<div class="reason-box">' +
-              '<p class="reason-main">' + esc(fit.reason_first || 'فرصة مطابقة لمسار تحليل البيانات') + '</p>' +
-              '<p class="reason-caveat">' + esc(commute.summary || 'العنوان غير مذكور') + ' · ' + esc(fit.caveat_first || '') + '</p>' +
-              '<span class="fit-inline ' + (score < 80 ? 'warn' : '') + '">نسبة الملاءمة: ' + score + '%</span>' +
-            '</div>' +
-
-            /* Direct 3-box check: قدّمت / مهتم / مش مهتم */
-            '<div class="checks-strip">' +
-              '<button type="button" class="' + appliedCls + '" data-action="check-applied" data-id="' + esc(job.id) + '">' +
-                '<span>' + (rec.applied ? '☑' : '☐') + '</span><span>قدّمت</span>' +
-              '</button>' +
-              '<button type="button" class="' + yesCls + '" data-action="check-interest" data-id="' + esc(job.id) + '" data-val="yes">' +
-                '<span>' + (rec.interest === 'yes' ? '☑' : '☐') + '</span><span>مهتم</span>' +
-              '</button>' +
-              '<button type="button" class="' + noCls + '" data-action="check-interest" data-id="' + esc(job.id) + '" data-val="no">' +
-                '<span>' + (rec.interest === 'no' ? '☑' : '☐') + '</span><span>مش مهتم</span>' +
-              '</button>' +
+              '<p class="reason-main">' + esc(buildSpecificReason(job)) + '</p>' +
+              '<p class="reason-caveat">' + esc(buildReviewNote(job)) + '</p>' +
+              '<span class="fit-inline ' + (score < 80 ? 'warn' : '') + '">الملاءمة: ' + score + '%</span>' +
             '</div>' +
 
             '<div class="card-primary-actions">' +
               (job.primary_url
-                ? '<a href="' + esc(job.primary_url) + '" target="_blank" rel="noopener noreferrer" class="btn-open-main ' + (pillClass === 'open' ? '' : pillClass) + '" data-action="mark-opened" data-id="' + esc(job.id) + '">' + esc(receipt.action_label || 'افتح التقديم') + '</a>'
-                : '') +
-              '<button type="button" class="btn-details-toggle" data-action="toggle-details" data-id="' + esc(job.id) + '">تفاصيل</button>' +
+                ? '<a href="' + esc(job.primary_url) + '" target="_blank" rel="noopener noreferrer" class="' + ctaClass + '" data-action="open-opportunity" data-id="' + esc(job.id) + '">' + esc(receipt.action_label || 'افتح التقديم') + '</a>'
+                : '<button type="button" class="' + ctaClass + '" data-action="toggle-details" data-id="' + esc(job.id) + '">تفاصيل</button>') +
+              '<button type="button" class="btn-secondary-card ' + (u.saved ? 'active-save' : '') + '" data-action="toggle-save" data-id="' + esc(job.id) + '">' + (u.saved ? 'محفوظة' : 'احفظ') + '</button>' +
+              '<button type="button" class="btn-more-card" data-action="toggle-menu" data-id="' + esc(job.id) + '">•••</button>' +
             '</div>' +
 
-            '<div class="details-panel" style="display:' + (isOpen ? 'block' : 'none') + ';">' +
-              '<table class="meta-table">' +
-                '<tr><td>المصادر</td><td class="ltr">' + esc((job.sources || []).join(' · ')) + '</td></tr>' +
-                '<tr><td>اتنشرت</td><td>' + esc(formatEgyptianTime(receipt.first_published)) + '</td></tr>' +
-                '<tr><td>الرادار لقطها</td><td>' + esc(formatEgyptianTime(job.discovered_at)) + '</td></tr>' +
-                '<tr><td>آخر تأكيد للتقديم</td><td>' + esc(formatEgyptianTime(receipt.last_verified)) + '</td></tr>' +
-              '</table>' +
-              '<div class="evidence-block">' +
-                '<div style="font-weight:700;margin-bottom:4px;">مسودة تقديم سريعة</div>' +
-                '<textarea class="draft-box ltr">' + esc(draft) + '</textarea>' +
+            /* Overflow menu: سجّل إني قدّمت / مش مناسب / تفاصيل */
+            '<div class="overflow-menu-box" style="display:' + (isMenuOpen ? 'block' : 'none') + ';">' +
+              '<div style="display:flex;gap:6px;flex-wrap:wrap;">' +
+                '<button type="button" class="btn-secondary-card" style="flex:1;" data-action="record-applied" data-id="' + esc(job.id) + '">' + (u.applied ? 'إلغاء تسجيل التقديم' : 'سجّل إني قدّمت') + '</button>' +
+                '<button type="button" class="btn-more-card" style="flex:1;" data-action="open-reason-picker" data-id="' + esc(job.id) + '">مش مناسب</button>' +
+                '<button type="button" class="btn-more-card" data-action="toggle-details" data-id="' + esc(job.id) + '">تفاصيل</button>' +
               '</div>' +
+
+              '<div class="reason-picker-box" style="display:' + (isReasonOpen ? 'block' : 'none') + ';">' +
+                '<div style="font-size:12.5px;font-weight:700;margin-bottom:6px;">إيه السبب؟</div>' +
+                '<div style="display:flex;gap:6px;flex-wrap:wrap;">' +
+                  '<button type="button" class="pill-btn" data-action="dismiss-with-reason" data-id="' + esc(job.id) + '" data-reason="far_commute">بعيدة</button>' +
+                  '<button type="button" class="pill-btn" data-action="dismiss-with-reason" data-id="' + esc(job.id) + '" data-reason="higher_exp">خبرة أعلى</button>' +
+                  '<button type="button" class="pill-btn" data-action="dismiss-with-reason" data-id="' + esc(job.id) + '" data-reason="accounting_role">شغل محاسبة</button>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+
+            /* Details drawer */
+            '<div class="details-panel" style="display:' + (isDetailsOpen ? 'block' : 'none') + ';">' +
+              '<table class="meta-table">' +
+                '<tr><td>المصادر</td><td class="ltr">' + esc((job.mergedSources || job.sources || []).join(' · ')) + '</td></tr>' +
+                '<tr><td>اتنشرت</td><td>' + esc(formatArTime(receipt.first_published)) + '</td></tr>' +
+                '<tr><td>الرادار لقطها</td><td>' + esc(formatArTime(job.discovered_at)) + '</td></tr>' +
+                '<tr><td>آخر تأكيد للتقديم</td><td>' + esc(formatArTime(receipt.last_verified)) + '</td></tr>' +
+                '<tr><td>تقدير الطريق</td><td>' + esc(commuteDetail) + '</td></tr>' +
+                '<tr><td>أيام الحضور</td><td>' + esc(daysDetail) + '</td></tr>' +
+              '</table>' +
+              evRows +
             '</div>' +
           '</article>';
         }).join('');
       }
 
-      function renderApplicationsView() {
-        ['applied', 'interested'].forEach(function (f) {
-          var b = document.getElementById('appf-' + f);
-          if (b) b.className = 'pill-btn' + (state.appFilter === f ? ' active' : '');
-        });
-        var rows = Object.keys(state.records).map(function (id) {
-          var r = state.records[id];
-          var j = (state.feedData && state.feedData.jobs && state.feedData.jobs[id]) || r.snapshot;
-          return { id: id, rec: r, job: j };
-        }).filter(function (e) {
-          if (!e.job) return false;
-          if (state.appFilter === 'applied') return !!e.rec.applied;
-          return e.rec.interest === 'yes';
+      /* Point 7: "تقديماتي" daily hub */
+      function renderApplicationsTab() {
+        var ids = Object.keys(state.userState);
+        var savedItems = [];
+        var appliedItems = [];
+        var nextStepItems = [];
+
+        ids.forEach(function (id) {
+          var u = state.userState[id];
+          if (!u) return;
+          var live = (state.feed && state.feed.jobs && state.feed.jobs[id]) || u.snapshot;
+          if (!live) return;
+          if (u.saved) savedItems.push({ id: id, u: u, job: live });
+          if (u.applied) appliedItems.push({ id: id, u: u, job: live });
+          if (u.applied && u.nextStep) nextStepItems.push({ id: id, u: u, job: live });
         });
 
-        var box = document.getElementById('applicationsList');
+        document.getElementById('myCountSaved').textContent = savedItems.length;
+        document.getElementById('myCountApplied').textContent = appliedItems.length;
+        document.getElementById('myCountNext').textContent = nextStepItems.length;
+
+        ['saved', 'applied', 'next_step'].forEach(function (t) {
+          var b = document.getElementById('mtab-' + (t === 'next_step' ? 'next' : t));
+          if (b) b.className = 'kpi-tile' + (state.myTab === t ? ' active' : '');
+        });
+
+        var currentList = state.myTab === 'saved'
+          ? savedItems
+          : (state.myTab === 'next_step' ? nextStepItems : appliedItems);
+
+        var box = document.getElementById('myApplicationsList');
         if (!box) return;
-        if (rows.length === 0) {
-          box.innerHTML = '<div class="empty-state-box"><h3>القائمة فاضية حاليًا</h3><p style="color:var(--text-muted);">علّم «قدّمت» أو «مهتم» على أي فرصة من شاشة الفرص.</p></div>';
+
+        if (currentList.length === 0) {
+          var emptyMsg = state.myTab === 'saved'
+            ? 'مفيش فرص محفوظة حاليًا'
+            : (state.myTab === 'next_step' ? 'مفيش اختبار أو مقابلة مسجّلة دلوقتي' : 'لسه ما سجلتش تقديمات');
+          box.innerHTML = '<div class="empty-state-box">' +
+            '<h3>' + esc(emptyMsg) + '</h3>' +
+            '<p style="color:var(--text-muted);">افتح الفرص عشان تحفظ أو تسجّل تقديمك.</p>' +
+            '<button type="button" class="btn-refresh" data-action="switch-view" data-view="opportunities">شوف الفرص</button>' +
+            '</div>';
           return;
         }
-        box.innerHTML = rows.map(function (e) {
+
+        box.innerHTML = currentList.map(function (entry) {
+          var job = entry.job;
+          var u = entry.u;
+          var isClosed = (job.receipt && job.receipt.apply_state === 'CLOSED');
           return '<div class="opp-card">' +
-            '<div class="card-header-row"><span class="status-pill open">' + (e.rec.applied ? 'قدّمت' : 'مهتم') + '</span><span class="time-caption">' + (e.rec.appliedAt ? formatEgyptianTime(e.rec.appliedAt) : '') + '</span></div>' +
-            '<h3 class="opp-title ltr">' + esc(e.job.title) + '</h3>' +
-            '<p class="opp-sub">' + esc(e.job.company) + ' · ' + esc(e.job.location || 'العنوان غير مذكور') + '</p>' +
+            '<div class="card-header-row">' +
+              '<span class="status-pill ' + (isClosed ? 'neutral' : 'open') + '">' + (isClosed ? 'الإعلان اتقفل' : esc(u.nextStep || (u.applied ? 'قدّمت' : 'محفوظة'))) + '</span>' +
+              '<span class="time-caption">' + (u.appliedAt ? ('قدّمت: ' + formatArTime(u.appliedAt)) : 'محفوظة') + '</span>' +
+            '</div>' +
+            '<h3 class="opp-title ltr">' + esc(job.title) + '</h3>' +
+            '<p class="opp-sub"><strong>' + esc(job.company) + '</strong> · ' + esc(job.location || 'غير مذكور') + '</p>' +
+
+            (u.applied
+              ? '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">' +
+                  ['اختبار', 'مقابلة'].map(function (step) {
+                    var active = u.nextStep === step;
+                    return '<button type="button" class="pill-btn ' + (active ? 'active' : '') + '" data-action="set-next-step" data-id="' + esc(entry.id) + '" data-step="' + step + '">' + step + '</button>';
+                  }).join('') +
+                '</div>'
+              : '') +
+
+            '<div class="card-primary-actions">' +
+              (job.primary_url
+                ? '<a href="' + esc(job.primary_url) + '" target="_blank" rel="noopener noreferrer" class="btn-open-main">رابط الإعلان</a>'
+                : '') +
+              (!u.applied
+                ? '<button type="button" class="btn-secondary-card" data-action="record-applied" data-id="' + esc(entry.id) + '">سجّل إني قدّمت</button>'
+                : '') +
+            '</div>' +
           '</div>';
         }).join('');
       }
 
-      function renderSettingsView() {
-        var kwBox = document.getElementById('learnedKeywordsBox');
-        if (kwBox) {
-          var keys = Object.keys(state.prefs.tokenWeights).filter(function (k) { return state.prefs.tokenWeights[k] !== 0; });
-          if (!keys.length) {
-            kwBox.innerHTML = '<p style="margin:0;color:var(--text-muted);">لم يتم تسجيل تفضيلات بعد — اضغط «مهتم» أو «مش مهتم» على أي بطاقة.</p>';
-          } else {
-            kwBox.innerHTML = keys.map(function (k) {
-              var w = state.prefs.tokenWeights[k];
-              return '<div class="saved-link-row"><strong class="ltr">' + esc(k) + '</strong><span class="status-pill ' + (w > 0 ? 'open' : 'warn') + '">' + (w > 0 ? ('يكتّر (+' + w + ')') : ('يقلّل (' + w + ')')) + '</span></div>';
-            }).join('');
-          }
-        }
-        var ntfy = document.getElementById('ntfyPrivateTopic');
-        if (ntfy && state.prefs.ntfyTopic) ntfy.value = state.prefs.ntfyTopic;
-      }
-
-      function renderSavedLinks() {
-        var box = document.getElementById('savedLinksList');
-        if (!box) return;
-        box.innerHTML = state.prefs.customLinks.map(function (lnk) {
-          return '<div class="saved-link-row"><strong>' + esc(lnk.name) + '</strong><a href="' + esc(lnk.url) + '" target="_blank" rel="noopener noreferrer" class="btn-open-main" style="flex:0;min-height:36px;padding:6px 12px;">افتح</a></div>';
+      /* Point 8: Quick search links inside collapsible "ابحث بنفسك" */
+      function renderSelfSearchLinks() {
+        var wrap = document.getElementById('quickSearchLinksWrap');
+        if (!wrap) return;
+        wrap.innerHTML = SELF_SEARCH_LINKS.map(function (item) {
+          return '<div class="saved-link-row">' +
+            '<strong style="font-size:13px;">' + esc(item.title) + '</strong>' +
+            '<a href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer" class="btn-open-main" style="flex:0;min-height:36px;padding:6px 12px;">افتح</a>' +
+          '</div>';
         }).join('');
       }
 
-      function refreshFeedFromCloud(silent) {
+      /* Point 9: Settings with notification test result & local binding clarity */
+      function renderSettingsTab() {
+        var inp = document.getElementById('ntfyChannelInput');
+        if (inp && state.prefs.ntfyTopic) inp.value = state.prefs.ntfyTopic;
+
+        var statusEl = document.getElementById('notifBindingStatus');
+        if (statusEl) {
+          statusEl.textContent = state.prefs.ntfyTopic
+            ? 'القناة محفوظة على الجهاز فقط؛ الإرسال من السحابة يعتمد على ضبط نفس الاسم في NTFY_TOPIC بأسرار GitHub.'
+            : 'لم يتم إدخال قناة بعد؛ الإشعارات السحابية تتطلب ضبط NTFY_TOPIC في أسرار GitHub.';
+        }
+
+        var testRes = document.getElementById('ntfyTestResult');
+        if (testRes) {
+          testRes.textContent = state.prefs.lastNotifTest
+            ? ('آخر اختبار: ' + state.prefs.lastNotifTest.summary + ' (' + formatArTime(state.prefs.lastNotifTest.at) + ')')
+            : 'لم يتم إجراء اختبار إشعار بعد.';
+        }
+
+        var penBox = document.getElementById('prefsPenaltySummary');
+        if (penBox) {
+          var p = state.prefs.penalties || {};
+          var lines = [];
+          if (p.far_commute) lines.push('• تقليل أولوية المشاوير البعيدة (أكتوبر / القرية الذكية)');
+          if (p.higher_exp) lines.push('• تقليل أولوية الإعلانات التي تطلب خبرة أعلى');
+          if (p.accounting_role) lines.push('• تقليل أولوية أدوار المحاسبة والقيود');
+          penBox.innerHTML = lines.length
+            ? '<div style="font-size:13px;color:var(--text-sub);">' + lines.join('<br>') + '</div>'
+            : '<p style="margin:0;color:var(--text-muted);">لا توجد قيود مفعّلة حاليًا.</p>';
+        }
+      }
+
+      /* Point 1 & 2: Refresh list without wiping "جديدة ليك" */
+      function refreshListFromCloud(silent) {
         fetch('./data/live_feed.json?t=' + Date.now(), { cache: 'no-store' })
           .then(function (r) { if (!r.ok) throw new Error('err'); return r.json(); })
           .then(function (data) {
-            state.feedData = data;
-            persistAll();
-            renderOpportunitiesView();
+            state.feed = data;
+            persist();
+            if (state.view === 'opportunities') renderOpportunitiesView();
+            if (state.view === 'applications') renderApplicationsTab();
+            if (state.view === 'settings') renderSettingsTab();
             if (!silent) showToast('تم تحديث القائمة');
           })
           .catch(function () {
-            if (!silent) showToast('تعذّر التحديث · بنعرّض آخر نسخة محفوظة');
+            if (!silent) showToast('تعذّر تحديث البيانات · بنعرّض آخر نسخة محفوظة');
           });
       }
 
       var handlers = {
         'switch-view': function (el) {
           var v = el.getAttribute('data-view');
+          if (!v) return;
           state.view = v;
           ['opportunities', 'add', 'applications', 'settings'].forEach(function (name) {
             document.getElementById('view-' + name).style.display = (name === v) ? 'block' : 'none';
-            document.getElementById('nav-' + name).className = 'nav-tab-btn' + (name === v ? ' active' : '');
+            document.getElementById('bnav-' + name).className = 'nav-tab-btn' + (name === v ? ' active' : '');
           });
           if (v === 'opportunities') renderOpportunitiesView();
-          if (v === 'add') renderSavedLinks();
-          if (v === 'applications') renderApplicationsView();
-          if (v === 'settings') renderSettingsView();
+          if (v === 'add') renderSelfSearchLinks();
+          if (v === 'applications') renderApplicationsTab();
+          if (v === 'settings') renderSettingsTab();
         },
-        'refresh-feed': function () { refreshFeedFromCloud(false); },
+
+        'refresh-feed': function () {
+          refreshListFromCloud(false);
+        },
+
+        'toggle-run-details': function () {
+          state.runDetailsOpen = !state.runDetailsOpen;
+          renderHeaderAndRunSummary();
+        },
+
         'set-quick-filter': function (el) {
           state.quickFilter = el.getAttribute('data-filter') || 'all';
           renderOpportunitiesView();
         },
+
         'reset-filters': function () {
           state.quickFilter = 'all';
-          state.timeFilter = 'all';
-          state.matchFilter = 'all';
-          document.getElementById('selTimeFilter').value = 'all';
-          document.getElementById('selMatchFilter').value = 'all';
+          state.postedFilter = 'all';
+          state.fitFilter = 'all';
+          document.getElementById('selPostedFilter').value = 'all';
+          document.getElementById('selFitFilter').value = 'all';
           renderOpportunitiesView();
         },
+
+        'open-opportunity': function (el) {
+          var id = el.getAttribute('data-id');
+          var job = getUniqueJobs().find(function (j) { return j.id === id; });
+          if (job) markJobSeen(job);
+          renderOpportunitiesView();
+        },
+
+        'toggle-save': function (el) {
+          var id = el.getAttribute('data-id');
+          var job = getUniqueJobs().find(function (j) { return j.id === id; });
+          if (!job) return;
+          markJobSeen(job);
+          state.userState[id] = state.userState[id] || { snapshot: job };
+          state.userState[id].snapshot = job;
+          state.userState[id].saved = !state.userState[id].saved;
+          persist();
+          renderOpportunitiesView();
+          showToast(state.userState[id].saved ? 'اتحفظت في تقديماتي' : 'اتشالت من المحفوظة');
+        },
+
+        'toggle-menu': function (el) {
+          var id = el.getAttribute('data-id');
+          var job = getUniqueJobs().find(function (j) { return j.id === id; });
+          if (job) markJobSeen(job);
+          state.openMenuMap[id] = !state.openMenuMap[id];
+          renderOpportunitiesView();
+        },
+
         'toggle-details': function (el) {
           var id = el.getAttribute('data-id');
-          state.openDetails[id] = !state.openDetails[id];
+          var job = getUniqueJobs().find(function (j) { return j.id === id; });
+          if (job) markJobSeen(job);
+          state.openDetailsMap[id] = !state.openDetailsMap[id];
           renderOpportunitiesView();
         },
-        'mark-opened': function (el) {
+
+        /* Point 6: Explicit application logging only on user click */
+        'record-applied': function (el) {
           var id = el.getAttribute('data-id');
-          var job = getAllJobs().find(function (j) { return j.id === id; });
+          var job = getUniqueJobs().find(function (j) { return j.id === id; });
           if (!job) return;
-          state.records[id] = state.records[id] || { snapshot: job };
-          state.records[id].openedAt = new Date().toISOString();
-          persistAll();
+          markJobSeen(job);
+          var prev = state.userState[id] ? JSON.parse(JSON.stringify(state.userState[id])) : null;
+          state.userState[id] = state.userState[id] || { snapshot: job };
+          state.userState[id].snapshot = job;
+          var nextApplied = !state.userState[id].applied;
+          state.userState[id].applied = nextApplied;
+          state.userState[id].appliedAt = nextApplied ? new Date().toISOString() : null;
+          if (!nextApplied) state.userState[id].nextStep = null;
+          state.openMenuMap[id] = false;
+          persist();
+          if (state.view === 'opportunities') renderOpportunitiesView();
+          if (state.view === 'applications') renderApplicationsTab();
+          showToast(nextApplied ? 'اتسجل إنك قدّمت' : 'تم إلغاء تسجيل التقديم', { type: 'user_rec', id: id, prev: prev });
         },
-        'check-applied': function (el) {
+
+        'open-reason-picker': function (el) {
           var id = el.getAttribute('data-id');
-          var job = getAllJobs().find(function (j) { return j.id === id; });
-          if (!job) return;
-          var prev = state.records[id] ? JSON.parse(JSON.stringify(state.records[id])) : null;
-          state.records[id] = state.records[id] || { snapshot: job };
-          state.records[id].snapshot = job;
-          var nowApplied = !state.records[id].applied;
-          state.records[id].applied = nowApplied;
-          state.records[id].appliedAt = nowApplied ? new Date().toISOString() : null;
-          persistAll();
+          state.openReasonPickerMap[id] = !state.openReasonPickerMap[id];
           renderOpportunitiesView();
-          showToast(nowApplied ? 'تم التعليم: قدّمت' : 'تم إلغاء: قدّمت', { type: 'rec', id: id, prev: prev });
         },
-        'check-interest': function (el) {
+
+        /* Point 6: "مش مناسب" asks reason and adjusts similarity priority */
+        'dismiss-with-reason': function (el) {
           var id = el.getAttribute('data-id');
-          var val = el.getAttribute('data-val');
-          var job = getAllJobs().find(function (j) { return j.id === id; });
-          if (!job) return;
-          var prevRec = state.records[id] ? JSON.parse(JSON.stringify(state.records[id])) : null;
-          var prevWeights = JSON.parse(JSON.stringify(state.prefs.tokenWeights));
+          var reason = el.getAttribute('data-reason');
+          var job = getUniqueJobs().find(function (j) { return j.id === id; });
+          if (!job || !reason) return;
+          markJobSeen(job);
+          var prevUser = state.userState[id] ? JSON.parse(JSON.stringify(state.userState[id])) : null;
+          var prevPen = JSON.parse(JSON.stringify(state.prefs.penalties));
 
-          state.records[id] = state.records[id] || { snapshot: job };
-          state.records[id].snapshot = job;
-          var current = state.records[id].interest;
-          var nextVal = (current === val) ? null : val;
-          state.records[id].interest = nextVal;
-
-          if (nextVal === 'yes') {
-            adjustWeightsForJob(job, +1);
-            persistAll();
-            renderOpportunitiesView();
-            showToast('مهتم · هنكتّر ونقدّم اللي شبهها', { type: 'int', id: id, prevRec: prevRec, prevWeights: prevWeights });
-          } else if (nextVal === 'no') {
-            adjustWeightsForJob(job, -1);
-            persistAll();
-            renderOpportunitiesView();
-            showToast('مش مهتم · هنقلّل من اللي شبهها', { type: 'int', id: id, prevRec: prevRec, prevWeights: prevWeights });
-          } else {
-            state.prefs.tokenWeights = prevWeights;
-            persistAll();
-            renderOpportunitiesView();
-            showToast('تم إلغاء التحديد');
-          }
+          state.userState[id] = state.userState[id] || { snapshot: job };
+          state.userState[id].dismissedReason = reason;
+          state.prefs.penalties[reason] = true;
+          state.openMenuMap[id] = false;
+          state.openReasonPickerMap[id] = false;
+          persist();
+          renderOpportunitiesView();
+          showToast('تم تسجيل السبب وتقليل المشابه', { type: 'dismiss', id: id, prevUser: prevUser, prevPen: prevPen });
         },
+
         'undo-last': function () {
-          var u = state.lastUndo;
+          var u = state.undoAction;
           if (!u) return;
-          if (u.type === 'rec') {
-            if (u.prev) state.records[u.id] = u.prev; else delete state.records[u.id];
-          } else if (u.type === 'int') {
-            if (u.prevRec) state.records[u.id] = u.prevRec; else delete state.records[u.id];
-            state.prefs.tokenWeights = u.prevWeights;
+          if (u.type === 'user_rec') {
+            if (u.prev) state.userState[u.id] = u.prev;
+            else delete state.userState[u.id];
+          } else if (u.type === 'dismiss') {
+            if (u.prevUser) state.userState[u.id] = u.prevUser;
+            state.prefs.penalties = u.prevPen;
           }
-          state.lastUndo = null;
-          persistAll();
+          state.undoAction = null;
+          persist();
           renderOpportunitiesView();
           showToast('تم التراجع');
         },
-        'set-app-filter': function (el) {
-          state.appFilter = el.getAttribute('data-filter') || 'applied';
-          renderApplicationsView();
+
+        'set-my-tab': function (el) {
+          state.myTab = el.getAttribute('data-tab') || 'applied';
+          renderApplicationsTab();
         },
-        'preview-manual-job': function () {
-          var url = (document.getElementById('addLinkInput') || {}).value.trim();
-          var text = (document.getElementById('addTextInput') || {}).value.trim();
-          var email = (document.getElementById('addEmailInput') || {}).value.trim();
-          var wrap = document.getElementById('manualPreviewWrap');
-          if (!text) { showToast('الصق نص البوست أولًا'); return; }
-          var firstLine = text.split('\n')[0].trim().slice(0, 80);
+
+        'set-next-step': function (el) {
+          var id = el.getAttribute('data-id');
+          var step = el.getAttribute('data-step');
+          if (!state.userState[id]) return;
+          state.userState[id].nextStep = (state.userState[id].nextStep === step) ? null : step;
+          persist();
+          renderApplicationsTab();
+        },
+
+        'toggle-self-search': function () {
+          var d = document.getElementById('selfSearchDrawer');
+          var arr = document.getElementById('selfSearchArrow');
+          if (!d) return;
+          var open = d.style.display === 'none';
+          d.style.display = open ? 'block' : 'none';
+          if (arr) arr.textContent = open ? '▲' : '▼';
+          if (open) renderSelfSearchLinks();
+        },
+
+        /* Point 8: Single link input first; reveal text box if link cannot be fetched/inspected */
+        'check-link-and-inspect': function () {
+          var urlInp = document.getElementById('singleLinkInput');
+          var url = urlInp ? urlInp.value.trim() : '';
+          var fbBox = document.getElementById('fallbackTextBox');
+          var prevBox = document.getElementById('addPreviewBox');
+          if (!url) {
+            showToast('الصق لينك بوست أو إعلان أولًا');
+            return;
+          }
+          if (url.indexOf('http') !== 0) url = 'https://' + url;
+          if (urlInp) urlInp.value = url;
+
+          /* Cross-origin pages like LinkedIn cannot be read directly from browser -> prompt for text */
+          if (fbBox) fbBox.style.display = 'block';
+          if (prevBox) {
+            prevBox.innerHTML = '<div class="evidence-block">الرابط مقفول للقراءة المباشرة من المتصفح — الصق نص البوست في المربع تحت عشان نعاينه ونشوف هل هو موجود أو قدمت عليه.</div>';
+          }
+        },
+
+        'build-preview-from-text': function () {
+          var url = (document.getElementById('singleLinkInput') || {}).value.trim();
+          var text = (document.getElementById('fallbackPostText') || {}).value.trim();
+          var prevBox = document.getElementById('addPreviewBox');
+          if (!text) {
+            showToast('الصق نص البوست أولًا');
+            return;
+          }
+          var firstLine = text.split('\n')[0].trim().slice(0, 80) || 'فرصة مضافة';
+          var normTarget = firstLine.toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, '');
+
+          var existingMatch = null;
+          getUniqueJobs().forEach(function (j) {
+            var k = String(j.title || '').toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, '');
+            if (k && normTarget && (k.indexOf(normTarget) !== -1 || normTarget.indexOf(k) !== -1)) {
+              existingMatch = j;
+            }
+          });
+
+          var alreadyApplied = false;
+          if (existingMatch && state.userState[existingMatch.id] && state.userState[existingMatch.id].applied) {
+            alreadyApplied = true;
+          }
+
           var card = {
-            id: 'manual-' + Date.now(),
-            company: 'بوست مضاف يدويًا',
-            title: firstLine,
-            sources: ['إضافة يدوية'],
-            primary_url: url || '',
-            apply_email: email || '',
-            location: /cairo|القاهرة/i.test(text) ? 'القاهرة' : null,
-            work_mode: /remote|ريموت/i.test(text) ? 'Remote' : null,
+            id: existingMatch ? existingMatch.id : ('manual-' + Date.now()),
+            company: existingMatch ? existingMatch.company : 'مضاف من بوست',
+            title: existingMatch ? existingMatch.title : firstLine,
+            sources: existingMatch ? (existingMatch.sources || ['بوستات']) : ['بوست مضاف'],
+            primary_url: url || (existingMatch && existingMatch.primary_url) || '',
+            location: existingMatch ? existingMatch.location : (/cairo|القاهرة/i.test(text) ? 'القاهرة' : null),
+            work_mode: existingMatch ? existingMatch.work_mode : (/remote|ريموت/i.test(text) ? 'Remote' : null),
             is_training: /intern|trainee|تدريب/i.test(text),
-            receipt: { apply_state: 'NEEDS_VERIFICATION', apply_state_ar: 'مراجعة', action_label: url ? 'افتح الرابط' : 'تفاصيل', first_published: null },
-            fit: { score: 85, reason_first: firstLine, caveat_first: 'مضاف من جانبك' },
-            commute: { summary: 'تقدير المشوار محتاج تأكيد' },
+            receipt: {
+              apply_state: 'NEEDS_VERIFICATION',
+              apply_state_ar: 'محتاج تحقق',
+              action_label: 'افتح التقديم',
+              first_published: null,
+              discovered_at: new Date().toISOString(),
+              last_verified: new Date().toISOString()
+            },
+            fit: {
+              score: existingMatch && existingMatch.fit ? existingMatch.fit.score : 84,
+              reason_first: 'بوست مضاف · ' + firstLine,
+              caveat_first: 'راجع تفاصيل الإعلان'
+            },
+            commute: { summary: 'غير مذكورة' },
             discovered_at: new Date().toISOString()
           };
-          state.pendingManualDraft = card;
-          wrap.innerHTML = '<div class="evidence-block"><div><strong>المسمى:</strong> ' + esc(card.title) + '</div><button type="button" class="btn-open-main" style="width:100%;margin-top:8px;" data-action="confirm-save-manual">حفظ في القائمة</button></div>';
+
+          state.pendingAddCard = card;
+          var statusNote = existingMatch
+            ? ('الوظيفة موجودة بالفعل في السجل (' + esc(existingMatch.company) + ') · ' + (alreadyApplied ? 'سبق وقدّمت عليها' : 'لم يتم التقديم عليها بعد'))
+            : 'وظيفة جديدة غير موجودة في السجل · لم يتم التقديم عليها';
+
+          prevBox.innerHTML = '<div class="evidence-block">' +
+            '<div style="font-weight:700;margin-bottom:4px;">معاينة قبل الحفظ</div>' +
+            '<div><strong>المسمى:</strong> ' + esc(card.title) + '</div>' +
+            '<div><strong>الشركة:</strong> ' + esc(card.company) + '</div>' +
+            '<div style="color:#fcd34d;margin:6px 0;">' + esc(statusNote) + '</div>' +
+            '<button type="button" class="btn-open-main" style="width:100%;" data-action="confirm-add-card">تأكيد الحفظ</button>' +
+          '</div>';
         },
-        'confirm-save-manual': function () {
-          var c = state.pendingManualDraft;
-          if (!c) return;
-          state.feedData.jobs = state.feedData.jobs || {};
-          state.feedData.jobs[c.id] = c;
-          state.records[c.id] = { snapshot: c, interest: 'yes' };
-          state.pendingManualDraft = null;
-          persistAll();
-          document.getElementById('addLinkInput').value = '';
-          document.getElementById('addTextInput').value = '';
-          document.getElementById('addEmailInput').value = '';
-          document.getElementById('manualPreviewWrap').innerHTML = '';
+
+        'confirm-add-card': function () {
+          var card = state.pendingAddCard;
+          if (!card) return;
+          state.feed.jobs = state.feed.jobs || {};
+          state.feed.jobs[card.id] = card;
+          state.userState[card.id] = state.userState[card.id] || {};
+          state.userState[card.id].snapshot = card;
+          state.userState[card.id].saved = true;
+          state.pendingAddCard = null;
+          persist();
+          document.getElementById('singleLinkInput').value = '';
+          document.getElementById('fallbackPostText').value = '';
+          document.getElementById('fallbackTextBox').style.display = 'none';
+          document.getElementById('addPreviewBox').innerHTML = '';
           handlers['switch-view']({ getAttribute: function () { return 'opportunities'; } });
-          showToast('تمت الإضافة');
+          showToast('تم الحفظ في الفرص');
         },
-        'save-ntfy-topic': function () {
-          state.prefs.ntfyTopic = (document.getElementById('ntfyPrivateTopic') || {}).value.trim();
-          persistAll();
-          showToast('تم الحفظ');
+
+        'save-ntfy-channel': function () {
+          var val = (document.getElementById('ntfyChannelInput') || {}).value.trim();
+          state.prefs.ntfyTopic = val;
+          persist();
+          renderSettingsTab();
+          showToast('تم حفظ القناة على الجهاز');
         },
-        'reset-learned-weights': function () {
-          state.prefs.tokenWeights = {};
-          persistAll();
-          renderSettingsView();
-          showToast('تمت إعادة الضبط');
+
+        'test-ntfy-channel': function () {
+          var topic = (document.getElementById('ntfyChannelInput') || {}).value.trim() || state.prefs.ntfyTopic;
+          if (!topic) {
+            showToast('اكتب اسم القناة أولًا');
+            return;
+          }
+          state.prefs.ntfyTopic = topic;
+          fetch('https://ntfy.sh/' + encodeURIComponent(topic), {
+            method: 'POST',
+            headers: { 'Title': 'Peter Radar Test', 'Priority': 'high' },
+            body: 'اختبار وصول الإشعارات'
+          })
+            .then(function (r) {
+              state.prefs.lastNotifTest = {
+                at: new Date().toISOString(),
+                summary: r.ok ? 'الخدمة قبلت الإرسال' : ('رفضت الخدمة (' + r.status + ')')
+              };
+              persist();
+              renderSettingsTab();
+              showToast(r.ok ? 'الخدمة قبلت الإرسال' : 'تعذّر إرسال الاختبار');
+            })
+            .catch(function () {
+              state.prefs.lastNotifTest = { at: new Date().toISOString(), summary: 'تعذّر الاتصال بالخدمة' };
+              persist();
+              renderSettingsTab();
+              showToast('تعذّر الاتصال بالخدمة');
+            });
+        },
+
+        'reset-preferences': function () {
+          state.prefs.penalties = { far_commute: false, higher_exp: false, accounting_role: false };
+          persist();
+          renderSettingsTab();
+          showToast('تمت إعادة ضبط التفضيلات');
         }
       };
 
       document.addEventListener('click', function (evt) {
-        var t = evt.target && evt.target.closest ? evt.target.closest('[data-action]') : null;
-        if (!t) return;
-        var act = t.getAttribute('data-action');
-        if (handlers[act]) handlers[act](t, evt);
+        var el = evt.target && evt.target.closest ? evt.target.closest('[data-action]') : null;
+        if (!el) return;
+        var act = el.getAttribute('data-action');
+        if (handlers[act]) handlers[act](el, evt);
       });
 
       document.addEventListener('change', function (evt) {
         var el = evt.target;
         if (!el) return;
-        if (el.id === 'selTimeFilter') { state.timeFilter = el.value; renderOpportunitiesView(); }
-        if (el.id === 'selMatchFilter') { state.matchFilter = el.value; renderOpportunitiesView(); }
+        if (el.id === 'selPostedFilter') {
+          state.postedFilter = el.value;
+          renderOpportunitiesView();
+        } else if (el.id === 'selFitFilter') {
+          state.fitFilter = el.value;
+          renderOpportunitiesView();
+        }
       });
 
       document.addEventListener('visibilitychange', function () {
-        if (document.visibilityState === 'visible') refreshFeedFromCloud(true);
+        if (document.visibilityState === 'visible') {
+          refreshListFromCloud(true);
+        }
       });
 
-      renderOpportunitiesView();
-      refreshFeedFromCloud(true);
+      /* Support opening a specific job from ?job=<id> */
+      (function boot() {
+        renderOpportunitiesView();
+        refreshListFromCloud(true);
+        var qJob = new URLSearchParams(window.location.search).get('job');
+        if (qJob) {
+          state.openDetailsMap[qJob] = true;
+          renderOpportunitiesView();
+        }
+      })();
     })();
   </script>
 </body>
