@@ -1,19 +1,19 @@
 {
   "meta": {
-    "scan_completed_at": "2026-11-24T11:21:29Z",
-    "feed_published_at": "2026-11-24T11:21:29Z",
+    "scan_completed_at": "2026-11-24T11:50:08Z",
+    "feed_published_at": "2026-11-24T11:50:08Z",
     "priority_threshold": 80,
     "total_active": 160,
     "source_statuses": {
       "linkedin_jobs": {
         "state": "OK",
-        "label": "نجح (118 إعلان)",
-        "count": 118
+        "label": "نجح (107 إعلان)",
+        "count": 107
       },
       "indeed_google": {
         "state": "OK",
-        "label": "نجح (36 إعلان)",
-        "count": 36
+        "label": "نجح (35 إعلان)",
+        "count": 35
       },
       "hiring_posts": {
         "state": "OK_ZERO",
@@ -1993,8 +1993,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-17",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2051,8 +2051,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-19",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2109,8 +2109,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-17",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2167,8 +2167,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-17",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2225,8 +2225,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-21",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2283,8 +2283,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-19",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2341,8 +2341,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-19",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2399,8 +2399,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-21",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2457,8 +2457,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2496,64 +2496,6 @@
       },
       "discovered_at": "2026-11-24T11:21:06Z"
     },
-    "10858032ee84c018": {
-      "id": "10858032ee84c018",
-      "family_id": "eb5008955c68",
-      "probable_duplicate_of": null,
-      "company": "Property Finder",
-      "title": "Head of Partner Support",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/head-of-partner-support-at-property-finder-4492908851"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/head-of-partner-support-at-property-finder-4492908851",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-20",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 57,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Head of Partner Support (Cairo, Cairo, Egypt) · SQL & قواعد البيانات العلائقية · Power BI & لوحات المؤشرات",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Head of Partner Support SQL Power BI",
-            "cv": "تصميم قاعدة بيانات 6+ كيانات (ERD) في مشروع NTI + تحليل 5,000 معاملة دفع رقمي بـ SQL"
-          },
-          {
-            "tag": "شرط أساسي",
-            "quote": "Head of Partner Support SQL Power BI",
-            "cv": "بناء KPI Dashboard تفاعلية لمشروع أداء الطلاب (1,000+ سجل) وتدريب NTI (120 ساعة)"
-          }
-        ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-24T11:21:06Z"
-    },
     "ded503c7493fa0f5": {
       "id": "ded503c7493fa0f5",
       "family_id": "71f29f30b3f3",
@@ -2573,8 +2515,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2631,8 +2573,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-24",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2689,8 +2631,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-19",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2747,8 +2689,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-24",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2805,8 +2747,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-17",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -2844,180 +2786,6 @@
       },
       "discovered_at": "2026-11-24T11:09:58Z"
     },
-    "e14d6024df7fef39": {
-      "id": "e14d6024df7fef39",
-      "family_id": "083606476705",
-      "probable_duplicate_of": null,
-      "company": "Arrow Electronics",
-      "title": "Senior Data Engineer",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/senior-data-engineer-at-arrow-electronics-4421873218"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/senior-data-engineer-at-arrow-electronics-4421873218",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-21",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 57,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Senior Data Engineer (Cairo, Cairo, Egypt) · SQL & قواعد البيانات العلائقية · Power BI & لوحات المؤشرات",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Senior Data Engineer SQL Power BI",
-            "cv": "تصميم قاعدة بيانات 6+ كيانات (ERD) في مشروع NTI + تحليل 5,000 معاملة دفع رقمي بـ SQL"
-          },
-          {
-            "tag": "شرط أساسي",
-            "quote": "Senior Data Engineer SQL Power BI",
-            "cv": "بناء KPI Dashboard تفاعلية لمشروع أداء الطلاب (1,000+ سجل) وتدريب NTI (120 ساعة)"
-          }
-        ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-24T11:09:58Z"
-    },
-    "eec0b93745150cd9": {
-      "id": "eec0b93745150cd9",
-      "family_id": "a3b4e7503c97",
-      "probable_duplicate_of": null,
-      "company": "TRU",
-      "title": "CVM & Consumer Analytics Manager",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/cvm-consumer-analytics-manager-at-tru-4492159486"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/cvm-consumer-analytics-manager-at-tru-4492159486",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-19",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 57,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "CVM & Consumer Analytics Manager (Cairo, Cairo, Egypt) · SQL & قواعد البيانات العلائقية · Power BI & لوحات المؤشرات",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "CVM & Consumer Analytics Manager SQL Power BI",
-            "cv": "تصميم قاعدة بيانات 6+ كيانات (ERD) في مشروع NTI + تحليل 5,000 معاملة دفع رقمي بـ SQL"
-          },
-          {
-            "tag": "شرط أساسي",
-            "quote": "CVM & Consumer Analytics Manager SQL Power BI",
-            "cv": "بناء KPI Dashboard تفاعلية لمشروع أداء الطلاب (1,000+ سجل) وتدريب NTI (120 ساعة)"
-          }
-        ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-23T20:35:29Z"
-    },
-    "13ce971436f0581c": {
-      "id": "13ce971436f0581c",
-      "family_id": "32248eb5c919",
-      "probable_duplicate_of": null,
-      "company": "Kake",
-      "title": "Senior Data Engineer (Analyst/Scientist) - Remote",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/senior-data-engineer-analyst-scientist-remote-at-kake-4492650292"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/senior-data-engineer-analyst-scientist-remote-at-kake-4492650292",
-      "location": "Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 57,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Senior Data Engineer (Analyst/Scientist) - Remote (Cairo, Egypt) · SQL & قواعد البيانات العلائقية · Power BI & لوحات المؤشرات",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Remote SQL Power BI",
-            "cv": "تصميم قاعدة بيانات 6+ كيانات (ERD) في مشروع NTI + تحليل 5,000 معاملة دفع رقمي بـ SQL"
-          },
-          {
-            "tag": "شرط أساسي",
-            "quote": "Remote SQL Power BI",
-            "cv": "بناء KPI Dashboard تفاعلية لمشروع أداء الطلاب (1,000+ سجل) وتدريب NTI (120 ساعة)"
-          }
-        ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-23T20:35:29Z"
-    },
     "9bd4f1885c45aca9": {
       "id": "9bd4f1885c45aca9",
       "family_id": "879e2c7fc309",
@@ -3037,8 +2805,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -3095,8 +2863,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -3370,8 +3138,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-08T21:47:58",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -3428,8 +3196,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-22",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -3481,8 +3249,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-22",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -3515,6 +3283,642 @@
       },
       "discovered_at": "2026-11-23T20:35:29Z"
     },
+    "238f80e7da3ff209": {
+      "id": "238f80e7da3ff209",
+      "family_id": "0bb840f8e8a4",
+      "probable_duplicate_of": null,
+      "company": "ELSEWEDY ELECTRIC",
+      "title": "Talent Acquisition Specialist",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/talent-acquisition-specialist-at-elsewedy-electric-4493367221"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/talent-acquisition-specialist-at-elsewedy-electric-4493367221",
+      "location": "New Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-22",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Talent Acquisition Specialist (New Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Talent Acquisition Specialist SFE",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": 52,
+        "one_way_min": 78,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "4d64eb7ddff952e2": {
+      "id": "4d64eb7ddff952e2",
+      "family_id": "ff87a865914e",
+      "probable_duplicate_of": null,
+      "company": "Schneider Electric",
+      "title": "Site Systems Quality Engineer",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/site-systems-quality-engineer-at-schneider-electric-4493515195"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/site-systems-quality-engineer-at-schneider-electric-4493515195",
+      "location": "New Heliopolis, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-22",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Site Systems Quality Engineer (New Heliopolis, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Site Systems Quality Engineer SFE",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": 80,
+        "one_way_min": 45,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: مصر الجديدة · حوالي ٤٥ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "829f781232f415fe": {
+      "id": "829f781232f415fe",
+      "family_id": "dba4f5cc8425",
+      "probable_duplicate_of": null,
+      "company": "Amazon",
+      "title": "HR Partner , MEA CHRP",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/hr-partner-mea-chrp-at-amazon-4467296794"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/hr-partner-mea-chrp-at-amazon-4467296794",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-19",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "HR Partner , MEA CHRP (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "HR Partner , MEA CHRP SFE",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "9a4e269f024e7ad3": {
+      "id": "9a4e269f024e7ad3",
+      "family_id": "1d3098b3d2a9",
+      "probable_duplicate_of": null,
+      "company": "ProService, Facility Management",
+      "title": "Chinese Speaker Helpdesk",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/chinese-speaker-helpdesk-at-proservice-facility-management-4493373855"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/chinese-speaker-helpdesk-at-proservice-facility-management-4493373855",
+      "location": "Nasr City, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-22",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Chinese Speaker Helpdesk (Nasr City, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Chinese Speaker Helpdesk SFE",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": 80,
+        "one_way_min": 52,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: مدينة نصر · حوالي ٥٢ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "d7400cc5f20eae7a": {
+      "id": "d7400cc5f20eae7a",
+      "family_id": "765c78aa3ce2",
+      "probable_duplicate_of": null,
+      "company": "Siemens EDA (Siemens Digital Industries Software)",
+      "title": "Field Application Engineer",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/field-application-engineer-at-siemens-eda-siemens-digital-industries-software-4432669180"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/field-application-engineer-at-siemens-eda-siemens-digital-industries-software-4432669180",
+      "location": "Qesm 2nd New Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-23",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Field Application Engineer (Qesm 2nd New Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Field Application Engineer SFE",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": 52,
+        "one_way_min": 78,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "23eb403665901c16": {
+      "id": "23eb403665901c16",
+      "family_id": "be0a30c2f0c5",
+      "probable_duplicate_of": null,
+      "company": "Tawzef for Recruitment & HR Consultancy",
+      "title": "Senior Payroll Specialist - SAP SuccessFactors",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/senior-payroll-specialist-sap-successfactors-at-tawzef-for-recruitment-hr-consultancy-4493338174"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/senior-payroll-specialist-sap-successfactors-at-tawzef-for-recruitment-hr-consultancy-4493338174",
+      "location": "Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-22",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Senior Payroll Specialist - SAP SuccessFactors (Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "SAP SuccessFactors SFE",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "eb5908e5685a1b77": {
+      "id": "eb5908e5685a1b77",
+      "family_id": "cd3007dc333e",
+      "probable_duplicate_of": null,
+      "company": "Siemens Healthineers",
+      "title": "Head of Strategic Partnerships and Healthcare Projects",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/head-of-strategic-partnerships-and-healthcare-projects-at-siemens-healthineers-4492360089"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/head-of-strategic-partnerships-and-healthcare-projects-at-siemens-healthineers-4492360089",
+      "location": "Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-22",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Head of Strategic Partnerships and Healthcare Projects (Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Head of Strategic Partnerships and Healthcare Projects SFE",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "bbd07d2bc72bd40d": {
+      "id": "bbd07d2bc72bd40d",
+      "family_id": "19810b8569cf",
+      "probable_duplicate_of": null,
+      "company": "Property Finder",
+      "title": "Partner Support Team Leader",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/partner-support-team-leader-at-property-finder-4461778816"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/partner-support-team-leader-at-property-finder-4461778816",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-19",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Partner Support Team Leader (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Partner Support Team Leader SFE",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "cc0b6a95b92bb5a5": {
+      "id": "cc0b6a95b92bb5a5",
+      "family_id": "8f83c78ccb3b",
+      "probable_duplicate_of": null,
+      "company": "All for One Egypt",
+      "title": "SAP Basis Technical Consultant",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/sap-basis-technical-consultant-at-all-for-one-egypt-4482203851"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/sap-basis-technical-consultant-at-all-for-one-egypt-4482203851",
+      "location": "Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-18",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "SAP Basis Technical Consultant (Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "SAP Basis Technical Consultant SFE",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "c888bb1667223f09": {
+      "id": "c888bb1667223f09",
+      "family_id": "a44d57faf5e5",
+      "probable_duplicate_of": null,
+      "company": "AESG",
+      "title": "Senior BIM Coordinator - Mechanical",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/senior-bim-coordinator-mechanical-at-aesg-4492429531"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/senior-bim-coordinator-mechanical-at-aesg-4492429531",
+      "location": "New Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-19",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Senior BIM Coordinator - Mechanical (New Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Mechanical SFE",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": 52,
+        "one_way_min": 78,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "c1e7dceb88d15102": {
+      "id": "c1e7dceb88d15102",
+      "family_id": "8d7dd2822572",
+      "probable_duplicate_of": null,
+      "company": "Salem Group",
+      "title": "Senior Transformation Manager, Programme Delivery",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/senior-transformation-manager-programme-delivery-at-salem-group-4494105548"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/senior-transformation-manager-programme-delivery-at-salem-group-4494105548",
+      "location": "Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-24",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Senior Transformation Manager, Programme Delivery (Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Senior Transformation Manager, Programme Delivery SFE",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "10858032ee84c018": {
+      "id": "10858032ee84c018",
+      "family_id": "eb5008955c68",
+      "probable_duplicate_of": null,
+      "company": "Property Finder",
+      "title": "Head of Partner Support",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/head-of-partner-support-at-property-finder-4492908851"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/head-of-partner-support-at-property-finder-4492908851",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-20",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Head of Partner Support (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Head of Partner Support SFE",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-24T11:21:06Z"
+    },
     "c546d98c6349102c": {
       "id": "c546d98c6349102c",
       "family_id": "882f19cd0789",
@@ -3534,8 +3938,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -3587,8 +3991,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -3624,7 +4028,7 @@
     "6f2bf3c05abf3b3d": {
       "id": "6f2bf3c05abf3b3d",
       "family_id": "5470abfd6fbb",
-      "probable_duplicate_of": "bf7dd41676f3ceb9",
+      "probable_duplicate_of": null,
       "company": "TP",
       "title": "Business Intelligence Analyst",
       "sources": [
@@ -3640,8 +4044,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-17",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -3693,8 +4097,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-17",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -3746,8 +4150,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-22",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -3783,7 +4187,7 @@
     "2cbc9a9580a202b8": {
       "id": "2cbc9a9580a202b8",
       "family_id": "813265f42f65",
-      "probable_duplicate_of": "9fc4096e600f26ad",
+      "probable_duplicate_of": null,
       "company": "PwC",
       "title": "ETIC, BI Engineer Associate",
       "sources": [
@@ -3799,8 +4203,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-22",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -3852,8 +4256,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-19",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -3905,8 +4309,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-19",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -3958,8 +4362,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4011,8 +4415,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4064,8 +4468,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4117,8 +4521,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4170,8 +4574,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-19",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4223,8 +4627,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4276,8 +4680,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4329,8 +4733,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-19",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4382,8 +4786,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4435,8 +4839,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-24",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4488,8 +4892,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4541,8 +4945,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4594,8 +4998,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-19",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4647,8 +5051,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-20",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4700,8 +5104,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-24",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4753,8 +5157,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4806,8 +5210,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-20",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -4946,59 +5350,6 @@
       },
       "discovered_at": "2026-11-24T11:09:58Z"
     },
-    "e260fe82a7e413c6": {
-      "id": "e260fe82a7e413c6",
-      "family_id": "81a7ea95623e",
-      "probable_duplicate_of": null,
-      "company": "Mezatech",
-      "title": "Senior Sales Operations",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/senior-sales-operations-at-mezatech-4491186355"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/senior-sales-operations-at-mezatech-4491186355",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-17",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Senior Sales Operations (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Senior Sales Operations Operations Analyst",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-24T11:09:58Z"
-    },
     "c19852e1996d53ff": {
       "id": "c19852e1996d53ff",
       "family_id": "e507d4004022",
@@ -5018,8 +5369,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-20",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -5037,7 +5388,7 @@
         "evidence_pairs": [
           {
             "tag": "شرط أساسي",
-            "quote": "Commercial Operations Specialist Operations Analyst",
+            "quote": "Commercial Operations Specialist SFE",
             "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
           }
         ],
@@ -5071,8 +5422,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-24",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -5124,8 +5475,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-19",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -5177,8 +5528,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-17",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -5210,165 +5561,6 @@
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
       "discovered_at": "2026-11-24T11:09:58Z"
-    },
-    "2cd3486f4e68cb97": {
-      "id": "2cd3486f4e68cb97",
-      "family_id": "3bf035109f04",
-      "probable_duplicate_of": null,
-      "company": "Coptic Orphans",
-      "title": "Business Process Analyst",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/business-process-analyst-at-coptic-orphans-4492280797"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/business-process-analyst-at-coptic-orphans-4492280797",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Business Process Analyst (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Business Process Analyst Operations Analyst",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-24T11:09:58Z"
-    },
-    "91cce73053204449": {
-      "id": "91cce73053204449",
-      "family_id": "da1bcbb7a333",
-      "probable_duplicate_of": null,
-      "company": "NCR Atleos",
-      "title": "Customer Management Analyst",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/customer-management-analyst-at-ncr-atleos-4465576171"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/customer-management-analyst-at-ncr-atleos-4465576171",
-      "location": "Giza, Al Jizah, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-17",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Customer Management Analyst (Giza, Al Jizah, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Customer Management Analyst Operations Analyst",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": 80,
-        "one_way_min": 38,
-        "days_per_week": null,
-        "status": "ESTIMATED",
-        "summary": "تقدير: الجيزة · حوالي ٣٨ دقيقة من شبرا (مترو خط ٢ مباشر) · أيام المكتب محتاجة تأكيد"
-      },
-      "discovered_at": "2026-11-24T04:18:02Z"
-    },
-    "93fb80903b9edb7d": {
-      "id": "93fb80903b9edb7d",
-      "family_id": "0c58e86e31e4",
-      "probable_duplicate_of": null,
-      "company": "Tagaddod",
-      "title": "Senior Traceability Analyst",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/senior-traceability-analyst-at-tagaddod-4494064826"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/senior-traceability-analyst-at-tagaddod-4494064826",
-      "location": "Qesm El Maadi, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Senior Traceability Analyst (Qesm El Maadi, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Senior Traceability Analyst Operations Analyst",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": 80,
-        "one_way_min": 55,
-        "days_per_week": null,
-        "status": "ESTIMATED",
-        "summary": "تقدير: المعادي · حوالي ٥٥ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
-      },
-      "discovered_at": "2026-11-24T04:18:02Z"
     },
     "e78b3ac511c05c19": {
       "id": "e78b3ac511c05c19",
@@ -5707,8 +5899,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -5760,8 +5952,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -5813,8 +6005,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-17",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -5866,8 +6058,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-17",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -5919,8 +6111,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-22",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -5943,112 +6135,6 @@
           }
         ],
         "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع رقمي (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-23T20:35:29Z"
-    },
-    "83d7b3dc1f0c540f": {
-      "id": "83d7b3dc1f0c540f",
-      "family_id": "0d98d439f83c",
-      "probable_duplicate_of": null,
-      "company": "LG Electronics",
-      "title": "Demand Planner",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/demand-planner-at-lg-electronics-4494004694"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/demand-planner-at-lg-electronics-4494004694",
-      "location": "New Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Demand Planner (New Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Demand Planner Operations Analyst",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": 52,
-        "one_way_min": 78,
-        "days_per_week": null,
-        "status": "ESTIMATED",
-        "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
-      },
-      "discovered_at": "2026-11-23T20:35:29Z"
-    },
-    "e728102bfb5d5868": {
-      "id": "e728102bfb5d5868",
-      "family_id": "d5a06df744bf",
-      "probable_duplicate_of": null,
-      "company": "Nestlé",
-      "title": "Supply Modeler",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/supply-modeler-at-nestl%C3%A9-4491147742"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/supply-modeler-at-nestl%C3%A9-4491147742",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-17",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Supply Modeler (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Supply Modeler Operations Analyst",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
       },
       "commute": {
         "score": null,
@@ -6131,8 +6217,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-20",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -6164,6 +6250,218 @@
         "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
       },
       "discovered_at": "2026-11-23T20:35:29Z"
+    },
+    "032eb0f529f02b80": {
+      "id": "032eb0f529f02b80",
+      "family_id": "f9ddb704cc25",
+      "probable_duplicate_of": null,
+      "company": "Deloitte",
+      "title": "Deloitte Innovation Hub | Pharma Manufacturing Technology Business Analyst, Consultant level, Cairo, Egypt.",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/deloitte-innovation-hub-pharma-manufacturing-technology-business-analyst-consultant-level-cairo-egypt-at-deloitte-4493370791"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/deloitte-innovation-hub-pharma-manufacturing-technology-business-analyst-consultant-level-cairo-egypt-at-deloitte-4493370791",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-22",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 37,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Deloitte Innovation Hub | Pharma Manufacturing Technology Business Analyst, Consultant level, Cairo, Egypt. (Cairo, Cairo, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Deloitte Innovation Hub | Pharma Manufacturing Technology Business Analyst, Consultant level, Cairo, Egypt..",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "39d14f840ea6116d": {
+      "id": "39d14f840ea6116d",
+      "family_id": "9760876b1326",
+      "probable_duplicate_of": null,
+      "company": "TAWANTECH",
+      "title": "T24 Developer",
+      "sources": [
+        "Indeed Egypt"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.indeed.com/viewjob?jk=3ae879136563efcc"
+      ],
+      "primary_url": "https://eg.indeed.com/viewjob?jk=3ae879136563efcc",
+      "location": "القاهرة, C, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-22",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 37,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "T24 Developer (القاهرة, C, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "You will work closely with business analysts, system architects, and other stakeholders to design, implement, and optimize solutions within the T24 core banking",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع رقمي (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "648aea37d5b823f4": {
+      "id": "648aea37d5b823f4",
+      "family_id": "3b5f9191557d",
+      "probable_duplicate_of": null,
+      "company": "Datamatics Global Services Ltd",
+      "title": "AI Engineer - Junior",
+      "sources": [
+        "Indeed Egypt"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.indeed.com/viewjob?jk=d0a0bbff76d56163"
+      ],
+      "primary_url": "https://eg.indeed.com/viewjob?jk=d0a0bbff76d56163",
+      "location": "القاهرة, C, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-17",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 37,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "AI Engineer - Junior (القاهرة, C, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "The role is alongside business analysts, data architects, data engineers and the Data Governance Cou **AI Engineer",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
+    },
+    "a231afa8161f93e1": {
+      "id": "a231afa8161f93e1",
+      "family_id": "3658b1681d8c",
+      "probable_duplicate_of": null,
+      "company": "Datamatics Global Services Ltd",
+      "title": "AI Engineer - Senior",
+      "sources": [
+        "Indeed Egypt"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.indeed.com/viewjob?jk=a3e5dc6105f3d23b"
+      ],
+      "primary_url": "https://eg.indeed.com/viewjob?jk=a3e5dc6105f3d23b",
+      "location": "القاهرة, C, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-17",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 37,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "AI Engineer - Senior (القاهرة, C, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "The role works alongside business analysts,  **AI Engineer",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-24T11:49:43Z"
     },
     "dad97b359a53f31a": {
       "id": "dad97b359a53f31a",
@@ -6820,8 +7118,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-22",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -6873,8 +7171,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -6926,8 +7224,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-19",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -6979,8 +7277,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -7032,8 +7330,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-24",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -7191,8 +7489,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -7297,8 +7595,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -7350,8 +7648,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -7403,8 +7701,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-22",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -7456,8 +7754,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-24",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -7509,8 +7807,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -7562,8 +7860,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -7615,8 +7913,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-22",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
+        "discovered_at": "2026-11-24T11:49:43Z",
+        "last_verified": "2026-11-24T11:49:43Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -7688,324 +7986,6 @@
           {
             "tag": "شرط أساسي",
             "quote": "Deloitte Innovation Hub I Oracle EBS and Fusion Procurement and Supply Chain, Senior Consultant, Cairo, Egypt Business Analyst",
-            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
-          }
-        ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-24T04:18:02Z"
-    },
-    "400a85b697523c03": {
-      "id": "400a85b697523c03",
-      "family_id": "0a99d6a4a78d",
-      "probable_duplicate_of": null,
-      "company": "IBM",
-      "title": "Senior SAP Ariba Supplier Management Consultant",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/senior-sap-ariba-supplier-management-consultant-at-ibm-4491302984"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/senior-sap-ariba-supplier-management-consultant-at-ibm-4491302984",
-      "location": "Giza, Al Jizah, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-18",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 37,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Senior SAP Ariba Supplier Management Consultant (Giza, Al Jizah, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Senior SAP Ariba Supplier Management Consultant Business Analyst",
-            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
-          }
-        ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
-      },
-      "commute": {
-        "score": 80,
-        "one_way_min": 38,
-        "days_per_week": null,
-        "status": "ESTIMATED",
-        "summary": "تقدير: الجيزة · حوالي ٣٨ دقيقة من شبرا (مترو خط ٢ مباشر) · أيام المكتب محتاجة تأكيد"
-      },
-      "discovered_at": "2026-11-24T04:18:02Z"
-    },
-    "854762ee7e85dd95": {
-      "id": "854762ee7e85dd95",
-      "family_id": "b5e6853eb832",
-      "probable_duplicate_of": null,
-      "company": "Tatweer Misr",
-      "title": "Oracle Financial Consultant",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/oracle-financial-consultant-at-tatweer-misr-4493500460"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/oracle-financial-consultant-at-tatweer-misr-4493500460",
-      "location": "Al Ḩamul, Kafr ash Shaykh, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-22",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 37,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Oracle Financial Consultant (Al Ḩamul, Kafr ash Shaykh, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Oracle Financial Consultant Systems Analyst",
-            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
-          }
-        ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-24T04:18:02Z"
-    },
-    "8a70e254664fd450": {
-      "id": "8a70e254664fd450",
-      "family_id": "46df4c71b438",
-      "probable_duplicate_of": null,
-      "company": "inflexion - SAP Gold Partner",
-      "title": "SAP MM Functional Consultant",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/sap-mm-functional-consultant-at-inflexion-sap-gold-partner-4492604175"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/sap-mm-functional-consultant-at-inflexion-sap-gold-partner-4492604175",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 37,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "SAP MM Functional Consultant (Cairo, Cairo, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "SAP MM Functional Consultant Systems Analyst",
-            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
-          }
-        ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-24T04:18:02Z"
-    },
-    "9eaf9517a21583ea": {
-      "id": "9eaf9517a21583ea",
-      "family_id": "b6a3b1af5e97",
-      "probable_duplicate_of": null,
-      "company": "Mobily Infotech",
-      "title": "Senior Oracle HCM Functional Consultant",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/senior-oracle-hcm-functional-consultant-at-mobily-infotech-4493625207"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/senior-oracle-hcm-functional-consultant-at-mobily-infotech-4493625207",
-      "location": "New Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-23",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 37,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Senior Oracle HCM Functional Consultant (New Cairo, Cairo, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Senior Oracle HCM Functional Consultant Systems Analyst",
-            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
-          }
-        ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
-      },
-      "commute": {
-        "score": 52,
-        "one_way_min": 78,
-        "days_per_week": null,
-        "status": "ESTIMATED",
-        "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
-      },
-      "discovered_at": "2026-11-24T04:18:02Z"
-    },
-    "e7e652efdc234041": {
-      "id": "e7e652efdc234041",
-      "family_id": "0a5f5d7c6c7d",
-      "probable_duplicate_of": null,
-      "company": "DXC Technology",
-      "title": "Senior Dynamics 365 HR Consultant",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/senior-dynamics-365-hr-consultant-at-dxc-technology-4484544221"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/senior-dynamics-365-hr-consultant-at-dxc-technology-4484544221",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-20",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 37,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Senior Dynamics 365 HR Consultant (Cairo, Cairo, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Senior Dynamics 365 HR Consultant Business Analyst",
-            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
-          }
-        ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-24T04:18:02Z"
-    },
-    "2895546f433005dc": {
-      "id": "2895546f433005dc",
-      "family_id": "710b1fe8c56b",
-      "probable_duplicate_of": null,
-      "company": "e-finance",
-      "title": "Presales Deputy Manager",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/presales-deputy-manager-at-e-finance-4491398194"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/presales-deputy-manager-at-e-finance-4491398194",
-      "location": "Al Jizah, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-19",
-        "discovered_at": "2026-11-24T11:21:06Z",
-        "last_verified": "2026-11-24T11:21:06Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 37,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Presales Deputy Manager (Al Jizah, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Presales Deputy Manager Business Analyst",
             "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
           }
         ],
@@ -8122,6 +8102,31 @@
         "Data Analytics"
       ],
       "total_evaluated": 184
+    },
+    {
+      "completed_at": "2026-11-24T11:50:08Z",
+      "published_at": "2026-11-24T11:50:08Z",
+      "queries_executed": [
+        "Data Analyst",
+        "Business Intelligence Analyst",
+        "BI Analyst",
+        "Reporting Analyst",
+        "SQL Power BI",
+        "Data Analytics Python",
+        "Business Analyst",
+        "Systems Analyst",
+        "Operations Analyst",
+        "MIS Analyst",
+        "SFE",
+        "Excel Reporting Analyst",
+        "Data Analyst",
+        "Business Intelligence Analyst",
+        "Reporting Analyst",
+        "Business Analyst",
+        "Operations Analyst",
+        "Data Analytics"
+      ],
+      "total_evaluated": 172
     }
   ]
 }
