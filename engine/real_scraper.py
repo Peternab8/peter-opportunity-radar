@@ -18,28 +18,29 @@ USER_AGENT = (
     "Chrome/129.0.0.0 Safari/537.36"
 )
 
+# CV-derived search terms (SQL, Python, Power BI, Tableau, Excel, BI, BA/SA, Reporting, MIS, SFE)
 LINKEDIN_JOB_QUERIES = [
     "Data Analyst",
     "Business Intelligence Analyst",
     "BI Analyst",
     "Reporting Analyst",
-    "MIS Analyst",
-    "SFE",
-    "Sales Force Effectiveness",
-    "Operations Analyst",
+    "SQL Power BI",
+    "Data Analytics Python",
     "Business Analyst",
     "Systems Analyst",
-    "Product Analyst",
-    "Sales Support Reporting",
+    "Operations Analyst",
+    "MIS Analyst",
+    "SFE",
+    "Excel Reporting Analyst",
 ]
 
 JOBSPY_QUERIES = [
     "Data Analyst",
     "Business Intelligence Analyst",
     "Reporting Analyst",
-    "Operations Analyst",
     "Business Analyst",
-    "MIS Analyst",
+    "Operations Analyst",
+    "Data Analytics",
 ]
 
 WORKABLE_COMPANIES = [
@@ -135,7 +136,7 @@ def scrape_linkedin_jobs_egypt(now_iso):
                         "has_apply_button": True,
                         "first_published": pub_date,
                         "discovered_at": now_iso,
-                        "required_text": title,
+                        "required_text": f"{title} {kw}",
                         "tasks": "",
                     }
                 time.sleep(0.3)
@@ -215,7 +216,7 @@ def scrape_jobspy_indeed_google(now_iso):
 
 def scrape_public_hiring_posts(now_iso):
     queries = [
-        'site:linkedin.com/posts ("Data Analyst" OR "BI Analyst" OR "SFE" OR "Commercial Excellence" OR "MIS") ("Cairo" OR "Egypt")',
+        'site:linkedin.com/posts ("Data Analyst" OR "BI Analyst" OR "SFE" OR "Reporting" OR "SQL" OR "Power BI") ("Cairo" OR "Egypt")',
         'site:linkedin.com/posts ("مطلوب فريش" OR "ابعت الـCV" OR "تحليل بيانات" OR "تقارير") ("القاهرة" OR "مصر")',
     ]
     found = {}
