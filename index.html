@@ -343,7 +343,7 @@
       border: 1px solid var(--border-soft);
       border-radius: var(--radius-md);
       padding: 10px 12px;
-      margin-bottom: 11px;
+      margin-bottom: 10px;
     }
 
     .reason-main {
@@ -366,6 +366,50 @@
 
     .fit-inline.warn {
       color: #fcd34d;
+    }
+
+    /* Clear 3-button decision row directly on card: قدّمت / مهتم / مش مهتم */
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7px;
+      margin-bottom: 8px;
+    }
+
+    .dec-btn {
+      min-height: 42px;
+      border-radius: var(--radius-md);
+      background: var(--bg-input);
+      border: 1px solid var(--border-strong);
+      color: var(--text-sub);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 8px;
+    }
+
+    .dec-btn.active-applied,
+    .dec-btn.active-interested {
+      background: var(--ok-bg);
+      border-color: var(--ok);
+      color: #6ee7b7;
+    }
+
+    .dec-btn.active-ignored {
+      background: var(--warn-bg);
+      border-color: var(--warn);
+      color: #fcd34d;
+    }
+
+    .reason-picker-box {
+      display: none;
+      margin-bottom: 8px;
+      padding: 10px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
     }
 
     .card-primary-actions {
@@ -415,35 +459,6 @@
       background: var(--muted-bg);
       color: #e2e8f0;
       border-color: #94a3b8;
-    }
-
-    .btn-more-card {
-      min-height: 44px;
-      padding: 9px 12px;
-      border-radius: var(--radius-md);
-      background: transparent;
-      color: var(--text-sub);
-      border: 1px solid var(--border-soft);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .overflow-menu-box {
-      display: none;
-      margin-top: 8px;
-      padding: 8px;
-      background: var(--bg-input);
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-md);
-    }
-
-    .reason-picker-box {
-      display: none;
-      margin-top: 8px;
-      padding: 10px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-md);
     }
 
     .details-panel {
@@ -614,7 +629,7 @@
   <div id="toastBar" class="toast-bar">
     <div class="toast-pill">
       <span id="toastMsg">تم</span>
-      <button type="button" id="toastUndoBtn" class="btn-more-card" style="min-height:34px;padding:4px 10px;display:none;" data-action="undo-last">تراجع</button>
+      <button type="button" id="toastUndoBtn" class="btn-secondary-card" style="flex:0;min-height:34px;padding:4px 10px;display:none;" data-action="undo-last">تراجع</button>
     </div>
   </div>
 
@@ -732,7 +747,7 @@
       <div class="section-card">
         <h3>الإشعارات</h3>
         <p id="notifBindingStatus">الحالة: قناة محفوظة على الجهاز فقط — تأكد من مطابقتها لسر NTFY_TOPIC في السحابة.</p>
-        <input type="password" id="ntfyChannelInput" class="field-input ltr" placeholder="اسم قناة الإشعارات الخاصة" />
+        <input type="text" id="ntfyChannelInput" class="field-input ltr" placeholder="اسم قناة الإشعارات الخاصة" />
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
           <button type="button" class="btn-refresh" style="flex:1;" data-action="save-ntfy-channel">احفظ القناة</button>
           <button type="button" class="btn-open-main" style="flex:1;" data-action="test-ntfy-channel">جرّب إشعار</button>
@@ -742,14 +757,14 @@
 
       <div class="section-card">
         <h3>تفضيلات الترشيح</h3>
-        <p>النظام بيعدّل الأولوية حسب «مش مناسب» (بعيدة · خبرة أعلى · شغل محاسبة)[cite: 20, 21].</p>
+        <p>النظام بيعدّل الأولوية حسب «مش مهتم» (بعيدة · خبرة أعلى · شغل محاسبة).</p>
         <div id="prefsPenaltySummary"></div>
         <button type="button" class="btn-refresh" style="width:100%;margin-top:8px;" data-action="reset-preferences">إعادة ضبط التفضيلات</button>
       </div>
 
       <div class="section-card">
         <h3>بيانات المحرك</h3>
-        <p>الإصدار v3.1 · بكالوريوس BIS حلوان (GPA 3.67) · نقطة الانطلاق: شبرا مصر[cite: 20, 21].</p>
+        <p>الإصدار v3.2 · بكالوريوس BIS حلوان (GPA 3.67) · نقطة الانطلاق: شبرا مصر.</p>
       </div>
     </section>
 
@@ -770,9 +785,9 @@
         try { navigator.serviceWorker.register('./sw.js').catch(function () {}); } catch (e) {}
       }
 
-      var STORE_FEED = 'radar_v31_feed';
-      var STORE_USER = 'radar_v31_user_state';
-      var STORE_PREFS = 'radar_v31_prefs';
+      var STORE_FEED = 'radar_v32_feed';
+      var STORE_USER = 'radar_v32_user_state';
+      var STORE_PREFS = 'radar_v32_prefs';
 
       function loadJson(key, fallback) {
         try { var r = window.localStorage.getItem(key); return r ? JSON.parse(r) : fallback; } catch (e) { return fallback; }
@@ -796,7 +811,6 @@
         myTab: 'applied',
         runDetailsOpen: false,
         openDetailsMap: {},
-        openMenuMap: {},
         openReasonPickerMap: {},
         pendingAddCard: null,
         undoAction: null,
@@ -804,7 +818,6 @@
           meta: { scan_completed_at: null, feed_published_at: null, source_statuses: {} },
           jobs: {}
         }),
-        /* userState per jobId: { seenAt, saved, applied, appliedAt, nextStep, dismissedReason, snapshot } */
         userState: loadJson(STORE_USER, {}),
         prefs: loadJson(STORE_PREFS, {
           ntfyTopic: '',
@@ -827,7 +840,6 @@
           .replace(/"/g, '"');
       }
 
-      /* Point 7: Egyptian Arabic times */
       function formatArTime(iso) {
         if (!iso) return 'غير مذكور';
         var d = new Date(iso);
@@ -865,7 +877,6 @@
         toastTimer = setTimeout(function () { bar.style.display = 'none'; }, undoObj ? 5000 : 2800);
       }
 
-      /* Deduplicate by canonical URL or normalized (company + title + district) */
       function getUniqueJobs() {
         var cloudJobs = (state.feed && state.feed.jobs) || {};
         var byKey = {};
@@ -887,7 +898,6 @@
           }
         });
 
-        /* Preserve saved/applied/manual items even if removed from feed */
         Object.keys(state.userState).forEach(function (id) {
           var u = state.userState[id];
           if (!u || !u.snapshot) return;
@@ -900,7 +910,6 @@
         return Object.keys(byKey).map(function (k) { return byKey[k]; });
       }
 
-      /* Point 1: "جديدة ليك" = discovered and never seen yet */
       function isNewForYou(job) {
         var u = state.userState[job.id] || {};
         return !u.seenAt;
@@ -928,14 +937,11 @@
         return Math.max(10, Math.min(99, raw + adj));
       }
 
-      /* Point 4: Specific recommendation reason grounded in role + CV evidence */
       function buildSpecificReason(job) {
         var fit = job.fit || {};
         var evList = Array.isArray(fit.evidence_pairs) ? fit.evidence_pairs : [];
         if (evList.length > 0 && evList[0].quote && evList[0].cv) {
-          var roleShort = String(evList[0].quote).slice(0, 65);
-          var cvShort = String(evList[0].cv).slice(0, 75);
-          return 'الدور فيه ' + roleShort + ' · عندك ' + cvShort;
+          return 'الدور فيه ' + String(evList[0].quote).slice(0, 65) + ' · عندك ' + String(evList[0].cv).slice(0, 75);
         }
         return fit.reason_first || 'الدور مرتبط بتحليل البيانات والتقارير · راجع التفاصيل للتأكد';
       }
@@ -979,24 +985,16 @@
         }).length;
 
         var outcomeText = 'الجولة الأخيرة جابت ' + newCnt + ' فرص جديدة ليك';
-        if (failedCount > 0) {
-          outcomeText += ' · ' + failedCount + ' مصدر تعذّر';
-        } else if (srcKeys.length > 0) {
-          outcomeText += ' · ' + okCount + ' مصادر اتفحصوا';
-        }
+        if (failedCount > 0) outcomeText += ' · ' + failedCount + ' مصدر تعذّر';
+        else if (srcKeys.length > 0) outcomeText += ' · ' + okCount + ' مصادر اتفحصوا';
 
-        if (outcomeBtn) {
-          outcomeBtn.textContent = outcomeText + (state.runDetailsOpen ? ' ▲' : ' ▼');
-        }
+        if (outcomeBtn) outcomeBtn.textContent = outcomeText + (state.runDetailsOpen ? ' ▲' : ' ▼');
         if (drawerEl) {
           drawerEl.style.display = state.runDetailsOpen ? 'block' : 'none';
-          drawerEl.innerHTML = detailLines.length
-            ? detailLines.join('<br>')
-            : 'تفاصيل الفحص تظهر بعد اكتمال جولة السحب.';
+          drawerEl.innerHTML = detailLines.length ? detailLines.join('<br>') : 'تفاصيل الفحص تظهر بعد اكتمال جولة السحب.';
         }
       }
 
-      /* Point 1, 2, 4, 5, 6: Render Opportunities View */
       function renderOpportunitiesView() {
         renderHeaderAndRunSummary();
 
@@ -1064,9 +1062,9 @@
         });
 
         filtered.sort(function (a, b) {
-          var aNew = isNewForYou(a) ? 1 : 0;
-          var bNew = isNewForYou(b) ? 1 : 0;
-          if (bNew !== aNew) return bNew - aNew;
+          var aInt = ((state.userState[a.id] || {}).interest === 'interested') ? 1 : 0;
+          var bInt = ((state.userState[b.id] || {}).interest === 'interested') ? 1 : 0;
+          if (bInt !== aInt) return bInt - aInt;
           return getEffectiveScore(b) - getEffectiveScore(a);
         });
 
@@ -1078,24 +1076,15 @@
 
         var scopeText = document.getElementById('scopeCountText');
         var clearBtn = document.getElementById('btnClearFilters');
-        if (scopeText) {
-          scopeText.textContent = 'بتشوف ' + filtered.length + ' من ' + availableList.length + ' فرصة';
-        }
-        if (clearBtn) {
-          clearBtn.style.display = hasActiveFilter ? 'inline-block' : 'none';
-        }
+        if (scopeText) scopeText.textContent = 'بتشوف ' + filtered.length + ' من ' + availableList.length + ' فرصة';
+        if (clearBtn) clearBtn.style.display = hasActiveFilter ? 'inline-block' : 'none';
 
         var container = document.getElementById('opportunitiesList');
         if (!container) return;
 
         if (filtered.length === 0) {
-          var msg = 'مفيش فرص مطابقة للفلاتر الحالية';
-          if (state.quickFilter === 'intern') msg = 'مفيش تدريب مطابق للفلاتر';
-          else if (state.quickFilter === 'new_for_you') msg = 'مفيش فرص جديدة ليك حاليًا';
-          else if (state.quickFilter === 'saved') msg = 'لسه ما حفظتش فرص';
-
           container.innerHTML = '<div class="empty-state-box">' +
-            '<h3>' + esc(msg) + '</h3>' +
+            '<h3>مفيش فرص مطابقة للفلاتر الحالية</h3>' +
             '<p style="color:var(--text-muted);">جرّب مسح الفلاتر أو تحديث القائمة.</p>' +
             '<button type="button" class="btn-refresh" data-action="reset-filters">امسح الفلاتر</button>' +
             '</div>';
@@ -1121,21 +1110,16 @@
           var timeDisplay = receipt.first_published ? formatArTime(receipt.first_published) : formatArTime(job.discovered_at);
 
           var isDetailsOpen = !!state.openDetailsMap[job.id];
-          var isMenuOpen = !!state.openMenuMap[job.id];
           var isReasonOpen = !!state.openReasonPickerMap[job.id];
+
+          var appliedCls = u.applied ? 'dec-btn active-applied' : 'dec-btn';
+          var intCls = (u.interest === 'interested') ? 'dec-btn active-interested' : 'dec-btn';
+          var ignCls = (u.interest === 'not_interested') ? 'dec-btn active-ignored' : 'dec-btn';
 
           var commuteDetail = commute.summary ? commute.summary : 'غير مذكورة';
           var daysDetail = (commute.days_per_week !== null && commute.days_per_week !== undefined)
             ? (commute.days_per_week + ' أيام/أسبوع')
             : 'غير مذكورة';
-
-          var evRows = (fit.evidence_pairs || []).map(function (ev) {
-            return '<div class="evidence-block">' +
-              '<div style="color:#fcd34d;font-size:12px;font-weight:700;">' + esc(ev.tag || 'شرط') + '</div>' +
-              '<div>الإعلان: «' + esc(ev.quote || '') + '»</div>' +
-              '<div style="color:#6ee7b7;font-size:12.5px;">الـCV: ' + esc(ev.cv || '') + '</div>' +
-            '</div>';
-          }).join('');
 
           return '<article class="opp-card ' + (isUnseen ? 'unseen-card' : '') + '">' +
             '<div class="card-header-row">' +
@@ -1156,33 +1140,30 @@
               '<span class="fit-inline ' + (score < 80 ? 'warn' : '') + '">الملاءمة: ' + score + '%</span>' +
             '</div>' +
 
+            /* Direct decision buttons: قدّمت / مهتم / مش مهتم */
+            '<div class="decision-grid">' +
+              '<button type="button" class="' + appliedCls + '" data-action="record-applied" data-id="' + esc(job.id) + '">' + (u.applied ? '✓ قدّمت' : 'قدّمت') + '</button>' +
+              '<button type="button" class="' + intCls + '" data-action="mark-interested" data-id="' + esc(job.id) + '">' + (u.interest === 'interested' ? '✓ مهتم' : 'مهتم') + '</button>' +
+              '<button type="button" class="' + ignCls + '" data-action="toggle-not-interested-picker" data-id="' + esc(job.id) + '">مش مهتم</button>' +
+            '</div>' +
+
+            '<div class="reason-picker-box" style="display:' + (isReasonOpen ? 'block' : 'none') + ';">' +
+              '<div style="font-size:12.5px;font-weight:700;margin-bottom:6px;">إيه السبب؟ (عشان الرادار يقلل اللي شبهها)</div>' +
+              '<div style="display:flex;gap:6px;flex-wrap:wrap;">' +
+                '<button type="button" class="pill-btn" data-action="dismiss-with-reason" data-id="' + esc(job.id) + '" data-reason="far_commute">بعيدة</button>' +
+                '<button type="button" class="pill-btn" data-action="dismiss-with-reason" data-id="' + esc(job.id) + '" data-reason="higher_exp">خبرة أعلى</button>' +
+                '<button type="button" class="pill-btn" data-action="dismiss-with-reason" data-id="' + esc(job.id) + '" data-reason="accounting_role">شغل محاسبة</button>' +
+              '</div>' +
+            '</div>' +
+
             '<div class="card-primary-actions">' +
               (job.primary_url
                 ? '<a href="' + esc(job.primary_url) + '" target="_blank" rel="noopener noreferrer" class="' + ctaClass + '" data-action="open-opportunity" data-id="' + esc(job.id) + '">' + esc(receipt.action_label || 'افتح التقديم') + '</a>'
-                : '<button type="button" class="' + ctaClass + '" data-action="toggle-details" data-id="' + esc(job.id) + '">تفاصيل</button>') +
+                : '') +
               '<button type="button" class="btn-secondary-card ' + (u.saved ? 'active-save' : '') + '" data-action="toggle-save" data-id="' + esc(job.id) + '">' + (u.saved ? 'محفوظة' : 'احفظ') + '</button>' +
-              '<button type="button" class="btn-more-card" data-action="toggle-menu" data-id="' + esc(job.id) + '">•••</button>' +
+              '<button type="button" class="btn-secondary-card" style="flex:0;" data-action="toggle-details" data-id="' + esc(job.id) + '">تفاصيل</button>' +
             '</div>' +
 
-            /* Overflow menu: سجّل إني قدّمت / مش مناسب / تفاصيل */
-            '<div class="overflow-menu-box" style="display:' + (isMenuOpen ? 'block' : 'none') + ';">' +
-              '<div style="display:flex;gap:6px;flex-wrap:wrap;">' +
-                '<button type="button" class="btn-secondary-card" style="flex:1;" data-action="record-applied" data-id="' + esc(job.id) + '">' + (u.applied ? 'إلغاء تسجيل التقديم' : 'سجّل إني قدّمت') + '</button>' +
-                '<button type="button" class="btn-more-card" style="flex:1;" data-action="open-reason-picker" data-id="' + esc(job.id) + '">مش مناسب</button>' +
-                '<button type="button" class="btn-more-card" data-action="toggle-details" data-id="' + esc(job.id) + '">تفاصيل</button>' +
-              '</div>' +
-
-              '<div class="reason-picker-box" style="display:' + (isReasonOpen ? 'block' : 'none') + ';">' +
-                '<div style="font-size:12.5px;font-weight:700;margin-bottom:6px;">إيه السبب؟</div>' +
-                '<div style="display:flex;gap:6px;flex-wrap:wrap;">' +
-                  '<button type="button" class="pill-btn" data-action="dismiss-with-reason" data-id="' + esc(job.id) + '" data-reason="far_commute">بعيدة</button>' +
-                  '<button type="button" class="pill-btn" data-action="dismiss-with-reason" data-id="' + esc(job.id) + '" data-reason="higher_exp">خبرة أعلى</button>' +
-                  '<button type="button" class="pill-btn" data-action="dismiss-with-reason" data-id="' + esc(job.id) + '" data-reason="accounting_role">شغل محاسبة</button>' +
-                '</div>' +
-              '</div>' +
-            '</div>' +
-
-            /* Details drawer */
             '<div class="details-panel" style="display:' + (isDetailsOpen ? 'block' : 'none') + ';">' +
               '<table class="meta-table">' +
                 '<tr><td>المصادر</td><td class="ltr">' + esc((job.mergedSources || job.sources || []).join(' · ')) + '</td></tr>' +
@@ -1192,13 +1173,11 @@
                 '<tr><td>تقدير الطريق</td><td>' + esc(commuteDetail) + '</td></tr>' +
                 '<tr><td>أيام الحضور</td><td>' + esc(daysDetail) + '</td></tr>' +
               '</table>' +
-              evRows +
             '</div>' +
           '</article>';
         }).join('');
       }
 
-      /* Point 7: "تقديماتي" daily hub */
       function renderApplicationsTab() {
         var ids = Object.keys(state.userState);
         var savedItems = [];
@@ -1210,7 +1189,7 @@
           if (!u) return;
           var live = (state.feed && state.feed.jobs && state.feed.jobs[id]) || u.snapshot;
           if (!live) return;
-          if (u.saved) savedItems.push({ id: id, u: u, job: live });
+          if (u.saved || u.interest === 'interested') savedItems.push({ id: id, u: u, job: live });
           if (u.applied) appliedItems.push({ id: id, u: u, job: live });
           if (u.applied && u.nextStep) nextStepItems.push({ id: id, u: u, job: live });
         });
@@ -1224,71 +1203,39 @@
           if (b) b.className = 'kpi-tile' + (state.myTab === t ? ' active' : '');
         });
 
-        var currentList = state.myTab === 'saved'
-          ? savedItems
-          : (state.myTab === 'next_step' ? nextStepItems : appliedItems);
-
+        var currentList = state.myTab === 'saved' ? savedItems : (state.myTab === 'next_step' ? nextStepItems : appliedItems);
         var box = document.getElementById('myApplicationsList');
         if (!box) return;
 
         if (currentList.length === 0) {
-          var emptyMsg = state.myTab === 'saved'
-            ? 'مفيش فرص محفوظة حاليًا'
-            : (state.myTab === 'next_step' ? 'مفيش اختبار أو مقابلة مسجّلة دلوقتي' : 'لسه ما سجلتش تقديمات');
-          box.innerHTML = '<div class="empty-state-box">' +
-            '<h3>' + esc(emptyMsg) + '</h3>' +
-            '<p style="color:var(--text-muted);">افتح الفرص عشان تحفظ أو تسجّل تقديمك.</p>' +
-            '<button type="button" class="btn-refresh" data-action="switch-view" data-view="opportunities">شوف الفرص</button>' +
-            '</div>';
+          var emptyMsg = state.myTab === 'saved' ? 'مفيش فرص محفوظة حاليًا' : (state.myTab === 'next_step' ? 'مفيش اختبار أو مقابلة مسجّلة دلوقتي' : 'لسه ما سجلتش تقديمات');
+          box.innerHTML = '<div class="empty-state-box"><h3>' + esc(emptyMsg) + '</h3><p style="color:var(--text-muted);">افتح الفرص عشان تحفظ أو تسجّل تقديمك.</p><button type="button" class="btn-refresh" data-action="switch-view" data-view="opportunities">شوف الفرص</button></div>';
           return;
         }
 
         box.innerHTML = currentList.map(function (entry) {
           var job = entry.job;
           var u = entry.u;
-          var isClosed = (job.receipt && job.receipt.apply_state === 'CLOSED');
           return '<div class="opp-card">' +
-            '<div class="card-header-row">' +
-              '<span class="status-pill ' + (isClosed ? 'neutral' : 'open') + '">' + (isClosed ? 'الإعلان اتقفل' : esc(u.nextStep || (u.applied ? 'قدّمت' : 'محفوظة'))) + '</span>' +
-              '<span class="time-caption">' + (u.appliedAt ? ('قدّمت: ' + formatArTime(u.appliedAt)) : 'محفوظة') + '</span>' +
-            '</div>' +
+            '<div class="card-header-row"><span class="status-pill open">' + esc(u.nextStep || (u.applied ? 'قدّمت' : 'مهتم / محفوظة')) + '</span><span class="time-caption">' + (u.appliedAt ? ('قدّمت: ' + formatArTime(u.appliedAt)) : '') + '</span></div>' +
             '<h3 class="opp-title ltr">' + esc(job.title) + '</h3>' +
             '<p class="opp-sub"><strong>' + esc(job.company) + '</strong> · ' + esc(job.location || 'غير مذكور') + '</p>' +
-
-            (u.applied
-              ? '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">' +
-                  ['اختبار', 'مقابلة'].map(function (step) {
-                    var active = u.nextStep === step;
-                    return '<button type="button" class="pill-btn ' + (active ? 'active' : '') + '" data-action="set-next-step" data-id="' + esc(entry.id) + '" data-step="' + step + '">' + step + '</button>';
-                  }).join('') +
-                '</div>'
-              : '') +
-
-            '<div class="card-primary-actions">' +
-              (job.primary_url
-                ? '<a href="' + esc(job.primary_url) + '" target="_blank" rel="noopener noreferrer" class="btn-open-main">رابط الإعلان</a>'
-                : '') +
-              (!u.applied
-                ? '<button type="button" class="btn-secondary-card" data-action="record-applied" data-id="' + esc(entry.id) + '">سجّل إني قدّمت</button>'
-                : '') +
-            '</div>' +
+            (u.applied ? '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">' + ['اختبار', 'مقابلة'].map(function (step) {
+              return '<button type="button" class="pill-btn ' + (u.nextStep === step ? 'active' : '') + '" data-action="set-next-step" data-id="' + esc(entry.id) + '" data-step="' + step + '">' + step + '</button>';
+            }).join('') + '</div>' : '') +
+            '<div class="card-primary-actions">' + (job.primary_url ? '<a href="' + esc(job.primary_url) + '" target="_blank" rel="noopener noreferrer" class="btn-open-main">رابط الإعلان</a>' : '') + '</div>' +
           '</div>';
         }).join('');
       }
 
-      /* Point 8: Quick search links inside collapsible "ابحث بنفسك" */
       function renderSelfSearchLinks() {
         var wrap = document.getElementById('quickSearchLinksWrap');
         if (!wrap) return;
         wrap.innerHTML = SELF_SEARCH_LINKS.map(function (item) {
-          return '<div class="saved-link-row">' +
-            '<strong style="font-size:13px;">' + esc(item.title) + '</strong>' +
-            '<a href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer" class="btn-open-main" style="flex:0;min-height:36px;padding:6px 12px;">افتح</a>' +
-          '</div>';
+          return '<div class="saved-link-row"><strong style="font-size:13px;">' + esc(item.title) + '</strong><a href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer" class="btn-open-main" style="flex:0;min-height:36px;padding:6px 12px;">افتح</a></div>';
         }).join('');
       }
 
-      /* Point 9: Settings with notification test result & local binding clarity */
       function renderSettingsTab() {
         var inp = document.getElementById('ntfyChannelInput');
         if (inp && state.prefs.ntfyTopic) inp.value = state.prefs.ntfyTopic;
@@ -1314,13 +1261,10 @@
           if (p.far_commute) lines.push('• تقليل أولوية المشاوير البعيدة (أكتوبر / القرية الذكية)');
           if (p.higher_exp) lines.push('• تقليل أولوية الإعلانات التي تطلب خبرة أعلى');
           if (p.accounting_role) lines.push('• تقليل أولوية أدوار المحاسبة والقيود');
-          penBox.innerHTML = lines.length
-            ? '<div style="font-size:13px;color:var(--text-sub);">' + lines.join('<br>') + '</div>'
-            : '<p style="margin:0;color:var(--text-muted);">لا توجد قيود مفعّلة حاليًا.</p>';
+          penBox.innerHTML = lines.length ? ('<div style="font-size:13px;color:var(--text-sub);">' + lines.join('<br>') + '</div>') : '<p style="margin:0;color:var(--text-muted);">لا توجد قيود مفعّلة حاليًا.</p>';
         }
       }
 
-      /* Point 1 & 2: Refresh list without wiping "جديدة ليك" */
       function refreshListFromCloud(silent) {
         fetch('./data/live_feed.json?t=' + Date.now(), { cache: 'no-store' })
           .then(function (r) { if (!r.ok) throw new Error('err'); return r.json(); })
@@ -1340,7 +1284,6 @@
       var handlers = {
         'switch-view': function (el) {
           var v = el.getAttribute('data-view');
-          if (!v) return;
           state.view = v;
           ['opportunities', 'add', 'applications', 'settings'].forEach(function (name) {
             document.getElementById('view-' + name).style.display = (name === v) ? 'block' : 'none';
@@ -1351,37 +1294,21 @@
           if (v === 'applications') renderApplicationsTab();
           if (v === 'settings') renderSettingsTab();
         },
-
-        'refresh-feed': function () {
-          refreshListFromCloud(false);
-        },
-
-        'toggle-run-details': function () {
-          state.runDetailsOpen = !state.runDetailsOpen;
-          renderHeaderAndRunSummary();
-        },
-
-        'set-quick-filter': function (el) {
-          state.quickFilter = el.getAttribute('data-filter') || 'all';
-          renderOpportunitiesView();
-        },
-
+        'refresh-feed': function () { refreshListFromCloud(false); },
+        'toggle-run-details': function () { state.runDetailsOpen = !state.runDetailsOpen; renderHeaderAndRunSummary(); },
+        'set-quick-filter': function (el) { state.quickFilter = el.getAttribute('data-filter') || 'all'; renderOpportunitiesView(); },
         'reset-filters': function () {
-          state.quickFilter = 'all';
-          state.postedFilter = 'all';
-          state.fitFilter = 'all';
+          state.quickFilter = 'all'; state.postedFilter = 'all'; state.fitFilter = 'all';
           document.getElementById('selPostedFilter').value = 'all';
           document.getElementById('selFitFilter').value = 'all';
           renderOpportunitiesView();
         },
-
         'open-opportunity': function (el) {
           var id = el.getAttribute('data-id');
           var job = getUniqueJobs().find(function (j) { return j.id === id; });
           if (job) markJobSeen(job);
           renderOpportunitiesView();
         },
-
         'toggle-save': function (el) {
           var id = el.getAttribute('data-id');
           var job = getUniqueJobs().find(function (j) { return j.id === id; });
@@ -1392,17 +1319,8 @@
           state.userState[id].saved = !state.userState[id].saved;
           persist();
           renderOpportunitiesView();
-          showToast(state.userState[id].saved ? 'اتحفظت في تقديماتي' : 'اتشالت من المحفوظة');
+          showToast(state.userState[id].saved ? 'اتحفظت' : 'اتشالت من المحفوظة');
         },
-
-        'toggle-menu': function (el) {
-          var id = el.getAttribute('data-id');
-          var job = getUniqueJobs().find(function (j) { return j.id === id; });
-          if (job) markJobSeen(job);
-          state.openMenuMap[id] = !state.openMenuMap[id];
-          renderOpportunitiesView();
-        },
-
         'toggle-details': function (el) {
           var id = el.getAttribute('data-id');
           var job = getUniqueJobs().find(function (j) { return j.id === id; });
@@ -1410,8 +1328,6 @@
           state.openDetailsMap[id] = !state.openDetailsMap[id];
           renderOpportunitiesView();
         },
-
-        /* Point 6: Explicit application logging only on user click */
         'record-applied': function (el) {
           var id = el.getAttribute('data-id');
           var job = getUniqueJobs().find(function (j) { return j.id === id; });
@@ -1423,21 +1339,29 @@
           var nextApplied = !state.userState[id].applied;
           state.userState[id].applied = nextApplied;
           state.userState[id].appliedAt = nextApplied ? new Date().toISOString() : null;
-          if (!nextApplied) state.userState[id].nextStep = null;
-          state.openMenuMap[id] = false;
           persist();
-          if (state.view === 'opportunities') renderOpportunitiesView();
-          if (state.view === 'applications') renderApplicationsTab();
+          renderOpportunitiesView();
           showToast(nextApplied ? 'اتسجل إنك قدّمت' : 'تم إلغاء تسجيل التقديم', { type: 'user_rec', id: id, prev: prev });
         },
-
-        'open-reason-picker': function (el) {
+        'mark-interested': function (el) {
+          var id = el.getAttribute('data-id');
+          var job = getUniqueJobs().find(function (j) { return j.id === id; });
+          if (!job) return;
+          markJobSeen(job);
+          var prev = state.userState[id] ? JSON.parse(JSON.stringify(state.userState[id])) : null;
+          state.userState[id] = state.userState[id] || { snapshot: job };
+          state.userState[id].snapshot = job;
+          state.userState[id].interest = (state.userState[id].interest === 'interested') ? null : 'interested';
+          state.userState[id].dismissedReason = null;
+          persist();
+          renderOpportunitiesView();
+          showToast(state.userState[id].interest === 'interested' ? 'تم التعليم: مهتم' : 'تم إلغاء الاهتمام', { type: 'user_rec', id: id, prev: prev });
+        },
+        'toggle-not-interested-picker': function (el) {
           var id = el.getAttribute('data-id');
           state.openReasonPickerMap[id] = !state.openReasonPickerMap[id];
           renderOpportunitiesView();
         },
-
-        /* Point 6: "مش مناسب" asks reason and adjusts similarity priority */
         'dismiss-with-reason': function (el) {
           var id = el.getAttribute('data-id');
           var reason = el.getAttribute('data-reason');
@@ -1446,23 +1370,20 @@
           markJobSeen(job);
           var prevUser = state.userState[id] ? JSON.parse(JSON.stringify(state.userState[id])) : null;
           var prevPen = JSON.parse(JSON.stringify(state.prefs.penalties));
-
           state.userState[id] = state.userState[id] || { snapshot: job };
           state.userState[id].dismissedReason = reason;
+          state.userState[id].interest = 'not_interested';
           state.prefs.penalties[reason] = true;
-          state.openMenuMap[id] = false;
           state.openReasonPickerMap[id] = false;
           persist();
           renderOpportunitiesView();
-          showToast('تم تسجيل السبب وتقليل المشابه', { type: 'dismiss', id: id, prevUser: prevUser, prevPen: prevPen });
+          showToast('اتسجل مش مهتم وهنقلل اللي شبهها', { type: 'dismiss', id: id, prevUser: prevUser, prevPen: prevPen });
         },
-
         'undo-last': function () {
           var u = state.undoAction;
           if (!u) return;
           if (u.type === 'user_rec') {
-            if (u.prev) state.userState[u.id] = u.prev;
-            else delete state.userState[u.id];
+            if (u.prev) state.userState[u.id] = u.prev; else delete state.userState[u.id];
           } else if (u.type === 'dismiss') {
             if (u.prevUser) state.userState[u.id] = u.prevUser;
             state.prefs.penalties = u.prevPen;
@@ -1472,12 +1393,7 @@
           renderOpportunitiesView();
           showToast('تم التراجع');
         },
-
-        'set-my-tab': function (el) {
-          state.myTab = el.getAttribute('data-tab') || 'applied';
-          renderApplicationsTab();
-        },
-
+        'set-my-tab': function (el) { state.myTab = el.getAttribute('data-tab') || 'applied'; renderApplicationsTab(); },
         'set-next-step': function (el) {
           var id = el.getAttribute('data-id');
           var step = el.getAttribute('data-step');
@@ -1486,7 +1402,6 @@
           persist();
           renderApplicationsTab();
         },
-
         'toggle-self-search': function () {
           var d = document.getElementById('selfSearchDrawer');
           var arr = document.getElementById('selfSearchArrow');
@@ -1496,91 +1411,38 @@
           if (arr) arr.textContent = open ? '▲' : '▼';
           if (open) renderSelfSearchLinks();
         },
-
-        /* Point 8: Single link input first; reveal text box if link cannot be fetched/inspected */
         'check-link-and-inspect': function () {
           var urlInp = document.getElementById('singleLinkInput');
           var url = urlInp ? urlInp.value.trim() : '';
-          var fbBox = document.getElementById('fallbackTextBox');
-          var prevBox = document.getElementById('addPreviewBox');
-          if (!url) {
-            showToast('الصق لينك بوست أو إعلان أولًا');
-            return;
-          }
+          if (!url) { showToast('الصق لينك أولًا'); return; }
           if (url.indexOf('http') !== 0) url = 'https://' + url;
-          if (urlInp) urlInp.value = url;
-
-          /* Cross-origin pages like LinkedIn cannot be read directly from browser -> prompt for text */
-          if (fbBox) fbBox.style.display = 'block';
-          if (prevBox) {
-            prevBox.innerHTML = '<div class="evidence-block">الرابط مقفول للقراءة المباشرة من المتصفح — الصق نص البوست في المربع تحت عشان نعاينه ونشوف هل هو موجود أو قدمت عليه.</div>';
-          }
+          urlInp.value = url;
+          document.getElementById('fallbackTextBox').style.display = 'block';
+          document.getElementById('addPreviewBox').innerHTML = '<div class="evidence-block">الرابط مقفول للقراءة المباشرة — الصق نص البوست تحت للمعاينة.</div>';
         },
-
         'build-preview-from-text': function () {
           var url = (document.getElementById('singleLinkInput') || {}).value.trim();
           var text = (document.getElementById('fallbackPostText') || {}).value.trim();
           var prevBox = document.getElementById('addPreviewBox');
-          if (!text) {
-            showToast('الصق نص البوست أولًا');
-            return;
-          }
+          if (!text) { showToast('الصق نص البوست أولًا'); return; }
           var firstLine = text.split('\n')[0].trim().slice(0, 80) || 'فرصة مضافة';
-          var normTarget = firstLine.toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, '');
-
-          var existingMatch = null;
-          getUniqueJobs().forEach(function (j) {
-            var k = String(j.title || '').toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, '');
-            if (k && normTarget && (k.indexOf(normTarget) !== -1 || normTarget.indexOf(k) !== -1)) {
-              existingMatch = j;
-            }
-          });
-
-          var alreadyApplied = false;
-          if (existingMatch && state.userState[existingMatch.id] && state.userState[existingMatch.id].applied) {
-            alreadyApplied = true;
-          }
-
           var card = {
-            id: existingMatch ? existingMatch.id : ('manual-' + Date.now()),
-            company: existingMatch ? existingMatch.company : 'مضاف من بوست',
-            title: existingMatch ? existingMatch.title : firstLine,
-            sources: existingMatch ? (existingMatch.sources || ['بوستات']) : ['بوست مضاف'],
-            primary_url: url || (existingMatch && existingMatch.primary_url) || '',
-            location: existingMatch ? existingMatch.location : (/cairo|القاهرة/i.test(text) ? 'القاهرة' : null),
-            work_mode: existingMatch ? existingMatch.work_mode : (/remote|ريموت/i.test(text) ? 'Remote' : null),
+            id: 'manual-' + Date.now(),
+            company: 'بوست مضاف',
+            title: firstLine,
+            sources: ['بوست مضاف'],
+            primary_url: url || '',
+            location: /cairo|القاهرة/i.test(text) ? 'القاهرة' : null,
+            work_mode: /remote|ريموت/i.test(text) ? 'Remote' : null,
             is_training: /intern|trainee|تدريب/i.test(text),
-            receipt: {
-              apply_state: 'NEEDS_VERIFICATION',
-              apply_state_ar: 'محتاج تحقق',
-              action_label: 'افتح التقديم',
-              first_published: null,
-              discovered_at: new Date().toISOString(),
-              last_verified: new Date().toISOString()
-            },
-            fit: {
-              score: existingMatch && existingMatch.fit ? existingMatch.fit.score : 84,
-              reason_first: 'بوست مضاف · ' + firstLine,
-              caveat_first: 'راجع تفاصيل الإعلان'
-            },
+            receipt: { apply_state: 'NEEDS_VERIFICATION', apply_state_ar: 'محتاج تحقق', action_label: 'افتح التقديم', first_published: null, discovered_at: new Date().toISOString(), last_verified: new Date().toISOString() },
+            fit: { score: 85, reason_first: firstLine, caveat_first: 'مضاف يدويًا' },
             commute: { summary: 'غير مذكورة' },
             discovered_at: new Date().toISOString()
           };
-
           state.pendingAddCard = card;
-          var statusNote = existingMatch
-            ? ('الوظيفة موجودة بالفعل في السجل (' + esc(existingMatch.company) + ') · ' + (alreadyApplied ? 'سبق وقدّمت عليها' : 'لم يتم التقديم عليها بعد'))
-            : 'وظيفة جديدة غير موجودة في السجل · لم يتم التقديم عليها';
-
-          prevBox.innerHTML = '<div class="evidence-block">' +
-            '<div style="font-weight:700;margin-bottom:4px;">معاينة قبل الحفظ</div>' +
-            '<div><strong>المسمى:</strong> ' + esc(card.title) + '</div>' +
-            '<div><strong>الشركة:</strong> ' + esc(card.company) + '</div>' +
-            '<div style="color:#fcd34d;margin:6px 0;">' + esc(statusNote) + '</div>' +
-            '<button type="button" class="btn-open-main" style="width:100%;" data-action="confirm-add-card">تأكيد الحفظ</button>' +
-          '</div>';
+          prevBox.innerHTML = '<div class="evidence-block"><div><strong>المسمى:</strong> ' + esc(card.title) + '</div><button type="button" class="btn-open-main" style="width:100%;margin-top:8px;" data-action="confirm-add-card">تأكيد الحفظ</button></div>';
         },
-
         'confirm-add-card': function () {
           var card = state.pendingAddCard;
           if (!card) return;
@@ -1589,6 +1451,7 @@
           state.userState[card.id] = state.userState[card.id] || {};
           state.userState[card.id].snapshot = card;
           state.userState[card.id].saved = true;
+          state.userState[card.id].interest = 'interested';
           state.pendingAddCard = null;
           persist();
           document.getElementById('singleLinkInput').value = '';
@@ -1596,23 +1459,17 @@
           document.getElementById('fallbackTextBox').style.display = 'none';
           document.getElementById('addPreviewBox').innerHTML = '';
           handlers['switch-view']({ getAttribute: function () { return 'opportunities'; } });
-          showToast('تم الحفظ في الفرص');
+          showToast('تم الحفظ');
         },
-
         'save-ntfy-channel': function () {
-          var val = (document.getElementById('ntfyChannelInput') || {}).value.trim();
-          state.prefs.ntfyTopic = val;
+          state.prefs.ntfyTopic = (document.getElementById('ntfyChannelInput') || {}).value.trim();
           persist();
           renderSettingsTab();
           showToast('تم حفظ القناة على الجهاز');
         },
-
         'test-ntfy-channel': function () {
           var topic = (document.getElementById('ntfyChannelInput') || {}).value.trim() || state.prefs.ntfyTopic;
-          if (!topic) {
-            showToast('اكتب اسم القناة أولًا');
-            return;
-          }
+          if (!topic) { showToast('اكتب اسم القناة أولًا'); return; }
           state.prefs.ntfyTopic = topic;
           fetch('https://ntfy.sh/' + encodeURIComponent(topic), {
             method: 'POST',
@@ -1620,10 +1477,7 @@
             body: 'اختبار وصول الإشعارات'
           })
             .then(function (r) {
-              state.prefs.lastNotifTest = {
-                at: new Date().toISOString(),
-                summary: r.ok ? 'الخدمة قبلت الإرسال' : ('رفضت الخدمة (' + r.status + ')')
-              };
+              state.prefs.lastNotifTest = { at: new Date().toISOString(), summary: r.ok ? 'الخدمة قبلت الإرسال' : ('رفضت الخدمة (' + r.status + ')') };
               persist();
               renderSettingsTab();
               showToast(r.ok ? 'الخدمة قبلت الإرسال' : 'تعذّر إرسال الاختبار');
@@ -1635,7 +1489,6 @@
               showToast('تعذّر الاتصال بالخدمة');
             });
         },
-
         'reset-preferences': function () {
           state.prefs.penalties = { far_commute: false, higher_exp: false, accounting_role: false };
           persist();
@@ -1654,22 +1507,14 @@
       document.addEventListener('change', function (evt) {
         var el = evt.target;
         if (!el) return;
-        if (el.id === 'selPostedFilter') {
-          state.postedFilter = el.value;
-          renderOpportunitiesView();
-        } else if (el.id === 'selFitFilter') {
-          state.fitFilter = el.value;
-          renderOpportunitiesView();
-        }
+        if (el.id === 'selPostedFilter') { state.postedFilter = el.value; renderOpportunitiesView(); }
+        else if (el.id === 'selFitFilter') { state.fitFilter = el.value; renderOpportunitiesView(); }
       });
 
       document.addEventListener('visibilitychange', function () {
-        if (document.visibilityState === 'visible') {
-          refreshListFromCloud(true);
-        }
+        if (document.visibilityState === 'visible') refreshListFromCloud(true);
       });
 
-      /* Support opening a specific job from ?job=<id> */
       (function boot() {
         renderOpportunitiesView();
         refreshListFromCloud(true);
