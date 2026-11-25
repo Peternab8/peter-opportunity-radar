@@ -1,25 +1,25 @@
 {
   "meta": {
-    "scan_completed_at": "2026-11-25T12:31:37Z",
-    "feed_published_at": "2026-11-25T12:31:37Z",
+    "scan_completed_at": "2026-11-25T12:40:01Z",
+    "feed_published_at": "2026-11-25T12:40:01Z",
     "priority_threshold": 80,
     "fresh_window_hours": 24,
-    "total_active": 17,
+    "total_active": 10,
     "source_statuses": {
       "linkedin_jobs": {
         "state": "OK",
-        "label": "نجح (140 إعلان)",
-        "count": 140
+        "label": "نجح (74 إعلان)",
+        "count": 74
       },
       "indeed_google": {
         "state": "OK",
-        "label": "نجح (21 إعلان)",
-        "count": 21
+        "label": "نجح (11 إعلان)",
+        "count": 11
       },
       "hiring_posts": {
-        "state": "FAILED",
-        "label": "تعذّر الوصول للبوستات",
-        "count": 0
+        "state": "OK",
+        "label": "نجح (1 بوست)",
+        "count": 1
       },
       "egypt_companies": {
         "state": "OK_ZERO",
@@ -28,8 +28,8 @@
       },
       "remotive": {
         "state": "OK",
-        "label": "نجح (30 وظيفة)",
-        "count": 30
+        "label": "نجح (4 وظيفة)",
+        "count": 4
       },
       "wuzzuf": {
         "state": "EMAIL_ALERT_ONLY",
@@ -44,46 +44,51 @@
     }
   },
   "jobs": {
-    "4435f17050d5a1d8": {
-      "id": "4435f17050d5a1d8",
-      "family_id": "355d3fd3dc3f",
+    "f139979ee21c3165": {
+      "id": "f139979ee21c3165",
+      "family_id": "73ce8ef564e6",
       "probable_duplicate_of": null,
-      "company": "Henkel",
-      "title": "Sales -Pharmacies Channel Developer GDP",
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "استماع و تحميل اغاني MP3 | مطبعه دوت كوم",
       "sources": [
-        "LinkedIn Jobs"
+        "بوستات التوظيف"
       ],
-      "source_category": "job_board",
+      "source_category": "hiring_posts",
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/sales-pharmacies-channel-developer-gdp-at-henkel-4488813418"
+        "https://www.matb3aa.com/"
       ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/sales-pharmacies-channel-developer-gdp-at-henkel-4488813418",
-      "location": "Cairo, Cairo, Egypt",
+      "primary_url": "https://www.matb3aa.com/",
+      "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:39:37Z",
+        "last_verified": "2026-11-25T12:39:37Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
         "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
       },
       "fit": {
         "score": 50,
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "Sales -Pharmacies Channel Developer GDP (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "reason_first": "استماع و تحميل اغاني MP3 | مطبعه دوت كوم · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "يقبل حديثي التخرج صراحة",
         "evidence_pairs": [
           {
             "tag": "شرط أساسي",
-            "quote": "Sales Support Analyst",
+            "quote": "(\"send your cv\" OR \"send cv\" OR \"hiring\") (\"junior\" OR \"entry level\" OR \"fresh\") (\"data analyst\" OR \"bi analyst\" OR \"reporting analyst\" OR \"mis analyst\" OR \"sfe",
             "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          },
+          {
+            "tag": "قبول فريش",
+            "quote": "(\"send your cv\" OR \"send cv\" OR \"hiring\") (\"junior\" OR \"entry level\" OR \"fresh\") (\"data analyst\" OR \"bi analyst\" OR \"reporting analyst\" OR \"mis analyst\" OR \"sfe",
+            "cv": "خريج حديث مع 3+ مشاريع تحليل بيانات وتدريبات CIB وبنك القاهرة والبنك المركزي"
           }
         ],
         "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
@@ -92,63 +97,10 @@
         "score": null,
         "one_way_min": null,
         "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:31:07Z"
-    },
-    "27264fb8ec923aa9": {
-      "id": "27264fb8ec923aa9",
-      "family_id": "4d3a189185b1",
-      "probable_duplicate_of": null,
-      "company": "Siemens",
-      "title": "Senior Reporting Engineer @Siemens Mobility Egypt",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/senior-reporting-engineer-%40siemens-mobility-egypt-at-siemens-4494777607"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/senior-reporting-engineer-%40siemens-mobility-egypt-at-siemens-4494777607",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 40,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Senior Reporting Engineer @Siemens Mobility Egypt (Cairo, Cairo, Egypt) · Power BI & لوحات المؤشرات",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Junior Power BI Developer",
-            "cv": "بناء KPI Dashboard تفاعلية لمشروع أداء الطلاب (1,000+ سجل) وتدريب NTI (120 ساعة)"
-          }
-        ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:31:07Z"
+      "discovered_at": "2026-11-25T12:39:37Z"
     },
     "1ed2ec5df444ca85": {
       "id": "1ed2ec5df444ca85",
@@ -169,8 +121,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
+        "discovered_at": "2026-11-25T12:39:37Z",
+        "last_verified": "2026-11-25T12:39:37Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -201,113 +153,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:31:07Z"
-    },
-    "2984a13fa4a7a500": {
-      "id": "2984a13fa4a7a500",
-      "family_id": "2af6d0c25a90",
-      "probable_duplicate_of": null,
-      "company": "EliteFm",
-      "title": "Customer Relationship Management Specialist",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/customer-relationship-management-specialist-at-elitefm-4494616988"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/customer-relationship-management-specialist-at-elitefm-4494616988",
-      "location": "Giza, Al Jizah, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Customer Relationship Management Specialist (Giza, Al Jizah, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Sales Force Effectiveness",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": 80,
-        "one_way_min": 38,
-        "days_per_week": null,
-        "status": "ESTIMATED",
-        "summary": "تقدير: الجيزة · حوالي ٣٨ دقيقة من شبرا (مترو خط ٢ مباشر) · أيام المكتب محتاجة تأكيد"
-      },
-      "discovered_at": "2026-11-25T12:31:07Z"
-    },
-    "92d53f12445647d5": {
-      "id": "92d53f12445647d5",
-      "family_id": "8b6ee69d09a1",
-      "probable_duplicate_of": null,
-      "company": "SuLinda",
-      "title": "CRM & Customer Experience Supervisor...",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/crm-customer-experience-supervisor-at-sulinda-4493407824"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/crm-customer-experience-supervisor-at-sulinda-4493407824",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "CRM & Customer Experience Supervisor... (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Sales Force Effectiveness",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:31:07Z"
+      "discovered_at": "2026-11-25T12:39:37Z"
     },
     "3f8e20785852066d": {
       "id": "3f8e20785852066d",
@@ -328,8 +174,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
+        "discovered_at": "2026-11-25T12:39:37Z",
+        "last_verified": "2026-11-25T12:39:37Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -360,188 +206,29 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:31:07Z"
+      "discovered_at": "2026-11-25T12:39:37Z"
     },
-    "7c0b8387f10f9401": {
-      "id": "7c0b8387f10f9401",
-      "family_id": "77829a490fd4",
+    "7c7cd50d1060983a": {
+      "id": "7c7cd50d1060983a",
+      "family_id": "88b650b52abf",
       "probable_duplicate_of": null,
-      "company": "Advansys",
-      "title": "Senior Oracle EBS / ERP Developer (Banking)",
-      "sources": [
-        "Indeed Egypt"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.indeed.com/viewjob?jk=9c572ccd69dc0c83"
-      ],
-      "primary_url": "https://eg.indeed.com/viewjob?jk=9c572ccd69dc0c83",
-      "location": "مدينة نصر, C, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 30,
-        "confidence": "HIGH",
-        "role_core": "SENIOR_EXPERIENCE_CONFLICT",
-        "has_mandatory_conflict": true,
-        "reason_first": "يتطلب خبرة إلزامية 6 سنوات",
-        "caveat_first": "شرط الخبرة أعلى من مستوى خريج ٢٠٢٦",
-        "evidence_pairs": [
-          {
-            "tag": "شرط إلزامي",
-            "quote": "### **Job Overview** We are looking for an experienced Senior Oracle EBS / ERP Developer with 4–6 years of relevant experience and a strong background in the Banking or Fintech industry.",
-            "cv": "خريج ٢٠٢٦ (٠–١ سنة خبرة)"
-          }
-        ],
-        "recommended_project": "—"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:31:07Z"
-    },
-    "6319df4e4fb12690": {
-      "id": "6319df4e4fb12690",
-      "family_id": "29b55e171cb8",
-      "probable_duplicate_of": null,
-      "company": "Advansys",
-      "title": "Microsoft Dynamics 365 CE / CRM Technical Lead (Banking)",
-      "sources": [
-        "Indeed Egypt"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.indeed.com/viewjob?jk=068cc8084751cec6"
-      ],
-      "primary_url": "https://eg.indeed.com/viewjob?jk=068cc8084751cec6",
-      "location": "مدينة نصر, C, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 30,
-        "confidence": "HIGH",
-        "role_core": "SENIOR_EXPERIENCE_CONFLICT",
-        "has_mandatory_conflict": true,
-        "reason_first": "يتطلب خبرة إلزامية 10 سنوات",
-        "caveat_first": "شرط الخبرة أعلى من مستوى خريج ٢٠٢٦",
-        "evidence_pairs": [
-          {
-            "tag": "شرط إلزامي",
-            "quote": "### **Job Overview** We are looking for an experienced Microsoft Dynamics 365 CE / CRM Technical Lead with 10+ years of experience in CRM development, customization, and enterprise-level implementations, preferably within the Banking or Fintech industry.",
-            "cv": "خريج ٢٠٢٦ (٠–١ سنة خبرة)"
-          }
-        ],
-        "recommended_project": "—"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:31:07Z"
-    },
-    "5adbe92576e6b804": {
-      "id": "5adbe92576e6b804",
-      "family_id": "8ec9940e07d6",
-      "probable_duplicate_of": null,
-      "company": "Advansys",
-      "title": "Senior Microsoft Dynamics 365 CE / CRM Developer (Banking)",
-      "sources": [
-        "Indeed Egypt"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.indeed.com/viewjob?jk=6f7c7317359f8c83"
-      ],
-      "primary_url": "https://eg.indeed.com/viewjob?jk=6f7c7317359f8c83",
-      "location": "مدينة نصر, C, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 30,
-        "confidence": "HIGH",
-        "role_core": "SENIOR_EXPERIENCE_CONFLICT",
-        "has_mandatory_conflict": true,
-        "reason_first": "يتطلب خبرة إلزامية 6 سنوات",
-        "caveat_first": "شرط الخبرة أعلى من مستوى خريج ٢٠٢٦",
-        "evidence_pairs": [
-          {
-            "tag": "شرط إلزامي",
-            "quote": "### **Job Overview** We are looking for an experienced Senior Microsoft Dynamics 365 CE / CRM Developer with 4–6 years of hands-on experience in CRM development, customization, and enterprise integrations.",
-            "cv": "خريج ٢٠٢٦ (٠–١ سنة خبرة)"
-          }
-        ],
-        "recommended_project": "—"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:31:07Z"
-    },
-    "23d463b8837837e2": {
-      "id": "23d463b8837837e2",
-      "family_id": "39fee63c8aae",
-      "probable_duplicate_of": null,
-      "company": "Orascom Construction PLC",
-      "title": "Senior Financial Analyst",
+      "company": "Tasaheel تساهيل",
+      "title": "SME Programs Development Specialist",
       "sources": [
         "LinkedIn Jobs"
       ],
       "source_category": "job_board",
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/senior-financial-analyst-at-orascom-construction-plc-4493095686"
+        "https://eg.linkedin.com/jobs/view/sme-programs-development-specialist-at-tasaheel-%D8%AA%D8%B3%D8%A7%D9%87%D9%8A%D9%84-4493420119"
       ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/senior-financial-analyst-at-orascom-construction-plc-4493095686",
-      "location": "Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/sme-programs-development-specialist-at-tasaheel-%D8%AA%D8%B3%D8%A7%D9%87%D9%8A%D9%84-4493420119",
+      "location": "Cairo, Cairo, Egypt",
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
+        "discovered_at": "2026-11-25T12:39:37Z",
+        "last_verified": "2026-11-25T12:39:37Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -566,29 +253,29 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:31:07Z"
+      "discovered_at": "2026-11-25T12:39:37Z"
     },
-    "308cc61eb60e7e21": {
-      "id": "308cc61eb60e7e21",
-      "family_id": "01d48fc695e4",
+    "24ae8692b5cb0555": {
+      "id": "24ae8692b5cb0555",
+      "family_id": "8a83858b454a",
       "probable_duplicate_of": null,
-      "company": "TLScontact",
-      "title": "Regional Finance Manager",
+      "company": "Amazon",
+      "title": "ACES Specialist, AMZL Trans",
       "sources": [
         "LinkedIn Jobs"
       ],
       "source_category": "job_board",
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/regional-finance-manager-at-tlscontact-4494637008"
+        "https://eg.linkedin.com/jobs/view/aces-specialist-amzl-trans-at-amazon-4494629384"
       ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/regional-finance-manager-at-tlscontact-4494637008",
-      "location": "Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/aces-specialist-amzl-trans-at-amazon-4494629384",
+      "location": "Cairo, Cairo, Egypt",
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
+        "discovered_at": "2026-11-25T12:39:37Z",
+        "last_verified": "2026-11-25T12:39:37Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -613,7 +300,148 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:31:07Z"
+      "discovered_at": "2026-11-25T12:39:37Z"
+    },
+    "2984a13fa4a7a500": {
+      "id": "2984a13fa4a7a500",
+      "family_id": "2af6d0c25a90",
+      "probable_duplicate_of": null,
+      "company": "EliteFm",
+      "title": "Customer Relationship Management Specialist",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/customer-relationship-management-specialist-at-elitefm-4494616988"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/customer-relationship-management-specialist-at-elitefm-4494616988",
+      "location": "Giza, Al Jizah, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:39:37Z",
+        "last_verified": "2026-11-25T12:39:37Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": 80,
+        "one_way_min": 38,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: الجيزة · حوالي ٣٨ دقيقة من شبرا (مترو خط ٢ مباشر) · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-25T12:39:37Z"
+    },
+    "2f37ea3df8a458a9": {
+      "id": "2f37ea3df8a458a9",
+      "family_id": "b6425f3fc494",
+      "probable_duplicate_of": null,
+      "company": "Fawry MSME Finance",
+      "title": "Microfinance Credit Analysis Supervisor",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/microfinance-credit-analysis-supervisor-at-fawry-msme-finance-4494900840"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/microfinance-credit-analysis-supervisor-at-fawry-msme-finance-4494900840",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:39:37Z",
+        "last_verified": "2026-11-25T12:39:37Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-25T12:39:37Z"
+    },
+    "4435f17050d5a1d8": {
+      "id": "4435f17050d5a1d8",
+      "family_id": "355d3fd3dc3f",
+      "probable_duplicate_of": null,
+      "company": "Henkel",
+      "title": "Sales -Pharmacies Channel Developer GDP",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/sales-pharmacies-channel-developer-gdp-at-henkel-4488813418"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/sales-pharmacies-channel-developer-gdp-at-henkel-4488813418",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:39:37Z",
+        "last_verified": "2026-11-25T12:39:37Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-25T12:39:37Z"
     },
     "fb7a6b8932775911": {
       "id": "fb7a6b8932775911",
@@ -634,8 +462,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
+        "discovered_at": "2026-11-25T12:39:37Z",
+        "last_verified": "2026-11-25T12:39:37Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -660,195 +488,7 @@
         "status": "ESTIMATED",
         "summary": "تقدير: مصر الجديدة · حوالي ٤٥ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
       },
-      "discovered_at": "2026-11-25T12:31:07Z"
-    },
-    "24ae8692b5cb0555": {
-      "id": "24ae8692b5cb0555",
-      "family_id": "8a83858b454a",
-      "probable_duplicate_of": null,
-      "company": "Amazon",
-      "title": "ACES Specialist, AMZL Trans",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/aces-specialist-amzl-trans-at-amazon-4494629384"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/aces-specialist-amzl-trans-at-amazon-4494629384",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:31:07Z"
-    },
-    "7c7cd50d1060983a": {
-      "id": "7c7cd50d1060983a",
-      "family_id": "88b650b52abf",
-      "probable_duplicate_of": null,
-      "company": "Tasaheel تساهيل",
-      "title": "SME Programs Development Specialist",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/sme-programs-development-specialist-at-tasaheel-%D8%AA%D8%B3%D8%A7%D9%87%D9%8A%D9%84-4493420119"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/sme-programs-development-specialist-at-tasaheel-%D8%AA%D8%B3%D8%A7%D9%87%D9%8A%D9%84-4493420119",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:31:07Z"
-    },
-    "cc2ab977d5090fcb": {
-      "id": "cc2ab977d5090fcb",
-      "family_id": "756d1362c4ef",
-      "probable_duplicate_of": null,
-      "company": "Vitacare",
-      "title": "Assistant Product Manager",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/assistant-product-manager-at-vitacare-4494602359"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/assistant-product-manager-at-vitacare-4494602359",
-      "location": "Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:31:07Z"
-    },
-    "26f7c032070218fc": {
-      "id": "26f7c032070218fc",
-      "family_id": "7177676abd06",
-      "probable_duplicate_of": null,
-      "company": "Areeb Technology",
-      "title": "AI Engineer",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/ai-engineer-at-areeb-technology-4494798688"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/ai-engineer-at-areeb-technology-4494798688",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:31:07Z"
+      "discovered_at": "2026-11-25T12:39:37Z"
     },
     "d01efab3fef7e718": {
       "id": "d01efab3fef7e718",
@@ -869,8 +509,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:31:07Z",
-        "last_verified": "2026-11-25T12:31:07Z",
+        "discovered_at": "2026-11-25T12:39:37Z",
+        "last_verified": "2026-11-25T12:39:37Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -895,7 +535,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:31:07Z"
+      "discovered_at": "2026-11-25T12:39:37Z"
     }
   },
   "notification_log": {},
@@ -1192,6 +832,37 @@
         "Reporting Analyst"
       ],
       "total_fresh_24h": 17
+    },
+    {
+      "completed_at": "2026-11-25T12:40:01Z",
+      "published_at": "2026-11-25T12:40:01Z",
+      "queries_executed": [
+        "Junior Reporting Analyst",
+        "Reporting Analyst",
+        "MIS Analyst",
+        "Junior BI Analyst",
+        "Business Intelligence Analyst",
+        "Junior Data Analyst",
+        "Data Analyst",
+        "Junior Business Analyst",
+        "Performance Analyst",
+        "Data Quality Analyst",
+        "Junior Systems Analyst",
+        "Operations Analyst",
+        "Sales Support Analyst",
+        "Junior SFE Analyst",
+        "Sales Force Effectiveness",
+        "Sales Analyst",
+        "Business Process Analyst",
+        "Data Management Analyst",
+        "Reporting Analyst",
+        "MIS Analyst",
+        "Junior BI Analyst",
+        "Data Analyst",
+        "Business Analyst",
+        "Operations Analyst"
+      ],
+      "total_fresh_24h": 10
     }
   ]
 }
