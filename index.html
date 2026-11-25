@@ -107,6 +107,11 @@
       white-space: nowrap;
     }
 
+    .btn-refresh:disabled {
+      opacity: 0.65;
+      cursor: wait;
+    }
+
     .workspace {
       max-width: 760px;
       margin: 0 auto;
@@ -548,7 +553,6 @@
       margin-bottom: 8px;
     }
 
-    /* Keywords Page Styles */
     .kw-group-title {
       margin: 12px 0 8px 0;
       font-size: 13.5px;
@@ -575,12 +579,6 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-    }
-
-    .kw-link-chip:hover {
-      border-color: var(--ok);
-      background: var(--ok-bg);
-      color: #6ee7b7;
     }
 
     .bottom-nav {
@@ -673,7 +671,6 @@
 
   <main class="workspace">
 
-    <!-- TAB 1: الفرص -->
     <section id="view-opportunities" class="tab-view" style="display:block;">
       <div class="summary-panel">
         <div class="run-lines">
@@ -734,17 +731,15 @@
       <div id="opportunitiesList"></div>
     </section>
 
-    <!-- TAB 2: الكلمات (LinkedIn Posts Instant Search) -->
     <section id="view-keywords" class="tab-view">
       <div class="section-card">
-        <h2>بحث بوستات LinkedIn بالأحدث</h2>
-        <p>دوس على أي كلمة تنقلك مباشرة لنتائج بوستات LinkedIn المرتّبة بالأحدث، واختر فلتر الوقت (Past 24 hours) داخل LinkedIn لمتابعة البوستات أول بأول.</p>
-        <input type="text" id="kwFilterInput" class="field-input" placeholder="فلتر الكلمات بسرعة (مثال: Reporting أو SFE أو SQL)..." />
+        <h2>بحث بوستات LinkedIn بالأحدث (مرتّب حسب ملاءمتك)</h2>
+        <p>مرتّبة من الأقوى والأقرب لملفك (BIS حلوان، SQL، Python، Excel، Power BI، Tableau، تحليل أعمال ونظم) إلى الأوسع مدى. دوس على أي كلمة تفتح نتائج البوستات المرتّبة بالأحدث.</p>
+        <input type="text" id="kwFilterInput" class="field-input" placeholder="فلتر الكلمات بسرعة..." />
         <div id="keywordsCatalogContainer"></div>
       </div>
     </section>
 
-    <!-- TAB 3: أضف فرصة -->
     <section id="view-add" class="tab-view">
       <div class="section-card">
         <h2>أضف فرصة أو بوست</h2>
@@ -753,7 +748,7 @@
         <button type="button" class="btn-refresh" style="width:100%;margin-bottom:8px;" data-action="check-link-and-inspect">افحص اللينك والمعاينة</button>
 
         <div id="fallbackTextBox" style="display:none;">
-          <textarea id="fallbackPostText" class="field-area" placeholder="تعذّر فتح الرابط تلقائيًا — الصق نص البوست أو الإعلان هنا..."></textarea>
+          <textarea id="fallbackPostText" class="field-area" placeholder="الصق نص البوست أو الإعلان هنا..."></textarea>
           <button type="button" class="btn-open-main" style="width:100%;" data-action="build-preview-from-text">عاين النص قبل الحفظ</button>
         </div>
 
@@ -771,7 +766,6 @@
       </div>
     </section>
 
-    <!-- TAB 4: تقديماتي -->
     <section id="view-applications" class="tab-view">
       <div class="kpi-row" style="margin-bottom:10px;">
         <button type="button" id="mtab-saved" class="kpi-tile" data-action="set-my-tab" data-tab="saved">
@@ -791,11 +785,17 @@
       <div id="myApplicationsList"></div>
     </section>
 
-    <!-- TAB 5: الإعدادات -->
     <section id="view-settings" class="tab-view">
       <div class="section-card">
+        <h3>تشغيل بحث سحابي فوري من الزرار</h3>
+        <p>احفظ GitHub Fine-grained Token (من إعدادات حسابك الشخصي ➔ Developer settings ➔ Fine-grained tokens بصلاحية Actions: Read & Write) على جهازك فقط ليقوم زر «حدّث القائمة» بتشغيل بحث جديد وتحديث الوقت فور الانتهاء.</p>
+        <input type="password" id="ghDispatchTokenInput" class="field-input ltr" placeholder="github_pat_... (محفوظ محليًا فقط)" />
+        <button type="button" class="btn-refresh" style="width:100%;" data-action="save-gh-token">احفظ رمز التشغيل المحلي</button>
+      </div>
+
+      <div class="section-card">
         <h3>الإشعارات</h3>
-        <p id="notifBindingStatus">الحالة: قناة محفوظة على الجهاز فقط — تأكد من مطابقتها لسر NTFY_TOPIC في السحابة.</p>
+        <p id="notifBindingStatus">الحالة: قناة محفوظة على الجهاز فقط.</p>
         <input type="text" id="ntfyChannelInput" class="field-input ltr" placeholder="اسم قناة الإشعارات الخاصة" />
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
           <button type="button" class="btn-refresh" style="flex:1;" data-action="save-ntfy-channel">احفظ القناة</button>
@@ -809,11 +809,6 @@
         <p>الأولوية مبنية على مسارات الـCV وتتحدّث من قرارك.</p>
         <div id="prefsPenaltySummary"></div>
         <button type="button" class="btn-refresh" style="width:100%;margin-top:8px;" data-action="reset-preferences">إعادة ضبط التفضيلات</button>
-      </div>
-
-      <div class="section-card">
-        <h3>بيانات المحرك</h3>
-        <p>الإصدار v3.6 · بكالوريوس BIS حلوان (GPA 3.67) · نقطة الانطلاق: شبرا مصر.</p>
       </div>
     </section>
 
@@ -835,9 +830,12 @@
         try { navigator.serviceWorker.register('./sw.js').catch(function () {}); } catch (e) {}
       }
 
-      var STORE_FEED = 'radar_v36_feed';
-      var STORE_USER = 'radar_v36_user_state';
-      var STORE_PREFS = 'radar_v36_prefs';
+      var STORE_FEED = 'radar_v38_feed';
+      var STORE_USER = 'radar_v38_user_state';
+      var STORE_PREFS = 'radar_v38_prefs';
+      var GH_OWNER = 'Peternab8';
+      var GH_REPO = 'peter-opportunity-radar';
+      var GH_WORKFLOW = 'hourly_radar.yml';
 
       function loadJson(key, fallback) {
         try { var r = window.localStorage.getItem(key); return r ? JSON.parse(r) : fallback; } catch (e) { return fallback; }
@@ -846,64 +844,64 @@
         try { window.localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
       }
 
-      /* Curated keywords tailored to Peter's CV & high-fit Egyptian market roles */
+      /* Ordered from strongest & closest to Peter's profile down to broader/entry-level terms */
       var KEYWORD_GROUPS = [
         {
-          group: '١. تقارير ومعلومات إدارية وBI (أعلى ملاءمة)',
+          group: '١. الأقوى والأقرب مباشرة لملفك (Reporting · MIS · BI · Data)',
           terms: [
             'Reporting Analyst Egypt',
             'MIS Analyst Egypt',
             'Junior BI Analyst Egypt',
             'Business Intelligence Analyst Cairo',
             'BI Analyst Egypt',
-            'Power BI Analyst Egypt',
-            'KPI Reporting Analyst',
-            'Dashboard Reporting Egypt'
+            'Junior Data Analyst Egypt',
+            'Data Analyst Cairo',
+            'Power BI Analyst Egypt'
           ]
         },
         {
-          group: '٢. تحليل البيانات والـ SQL وجودة البيانات',
+          group: '٢. تقارير ومؤشرات وSQL وPython وجودة بيانات',
           terms: [
-            'Junior Data Analyst Egypt',
-            'Data Analyst Cairo',
-            'Data Analytics Fresh Egypt',
+            'KPI Reporting Analyst',
             'SQL Data Analyst Egypt',
             'Python Data Analyst Egypt',
             'Data Quality Analyst Egypt',
-            'Data Cleansing Analyst',
-            'Tableau Analyst Egypt'
+            'Tableau Analyst Egypt',
+            'Data Analytics Fresh Egypt',
+            'Dashboard Reporting Egypt',
+            'Data Cleansing Analyst'
           ]
         },
         {
-          group: '٣. تحليل الأعمال والنظم والعمليات',
+          group: '٣. تحليل الأعمال والنظم والعمليات (BIS & FeeLink)',
           terms: [
             'Junior Business Analyst Egypt',
             'Business Analyst Cairo',
             'Junior Systems Analyst Egypt',
             'Systems Analyst Cairo',
             'Business Process Analyst Egypt',
-            'Requirements Analyst Egypt'
+            'Requirements Analyst Egypt',
+            'Operations Analyst Egypt',
+            'Business Operations Cairo'
           ]
         },
         {
-          group: '٤. SFE ودعم المبيعات والتشغيل والتجاري',
+          group: '٤. متابعة الأداء والتجاري ودعم المبيعات (SFE)',
           terms: [
+            'Performance Analyst Egypt',
+            'Sales Support Analyst Egypt',
             'SFE Egypt',
             'Sales Force Effectiveness Egypt',
             'Commercial Excellence Egypt',
-            'Sales Support Analyst Egypt',
-            'Sales Analyst Cairo',
-            'Operations Analyst Egypt',
-            'Business Operations Cairo',
-            'Performance Analyst Egypt'
+            'Sales Analyst Cairo'
           ]
         },
         {
           group: '٥. تدريب وفريش وبوستات بالعربي في مصر',
           terms: [
+            'Fresh Graduate Analyst Cairo',
             'Data Internship Egypt',
             'Business Analyst Intern Egypt',
-            'Fresh Graduate Analyst Cairo',
             'مطلوب تحليل بيانات مصر',
             'مطلوب تقارير بيانات القاهرة',
             'مطلوب Excel Power BI مصر'
@@ -918,7 +916,7 @@
       }
 
       var SELF_SEARCH_LINKS = [
-        { id: 's1', title: 'بوستات التوظيف في مصر · LinkedIn (الأحدث)', url: buildLinkedInPostsUrl('Data Analyst OR BI OR Reporting OR SFE Egypt') },
+        { id: 's1', title: 'بوستات التوظيف في مصر · LinkedIn (الأحدث)', url: buildLinkedInPostsUrl('Reporting Analyst OR MIS OR BI OR Data Analyst Egypt') },
         { id: 's2', title: 'وظائف Reporting / MIS / BI في مصر · LinkedIn (٢٤ ساعة)', url: 'https://www.linkedin.com/jobs/search/?keywords=(Reporting%20Analyst%20OR%20MIS%20Analyst%20OR%20BI%20Analyst%20OR%20Data%20Analyst)&location=Egypt&f_TPR=r86400' },
         { id: 's3', title: 'حديثي التخرج · تحليل البيانات والتقارير · WUZZUF', url: 'https://wuzzuf.net/search/jobs/?a=hpb&filters%5Bcareer_level%5D%5B0%5D=Entry%20Level&q=data%20analyst' },
         { id: 's4', title: 'تقارير وتشغيل بالقاهرة · Indeed', url: 'https://eg.indeed.com/jobs?q=reporting+analyst+OR+data+analyst+OR+business+intelligence&l=Cairo&fromage=1' }
@@ -936,12 +934,14 @@
         openReasonPickerMap: {},
         pendingAddCard: null,
         undoAction: null,
+        isRefreshing: false,
         feed: loadJson(STORE_FEED, {
           meta: { scan_completed_at: null, feed_published_at: null, source_statuses: {} },
           jobs: {}
         }),
         userState: loadJson(STORE_USER, {}),
         prefs: loadJson(STORE_PREFS, {
+          ghToken: '',
           ntfyTopic: '',
           lastNotifTest: null,
           penalties: { far_commute: false, higher_exp: false, accounting_role: false }
@@ -1003,7 +1003,125 @@
         if (btn) btn.style.display = undoObj ? 'inline-block' : 'none';
         bar.style.display = 'flex';
         clearTimeout(toastTimer);
-        toastTimer = setTimeout(function () { bar.style.display = 'none'; }, undoObj ? 5000 : 2800);
+        toastTimer = setTimeout(function () { bar.style.display = 'none'; }, undoObj ? 5000 : 3500);
+      }
+
+      function setRefreshButtonBusy(busy, labelText) {
+        state.isRefreshing = busy;
+        var btn = document.getElementById('btnRefreshList');
+        if (!btn) return;
+        btn.disabled = !!busy;
+        btn.textContent = labelText || 'حدّث القائمة';
+      }
+
+      function fetchLatestFeedOnly(showFeedbackToast, customSuccessMsg) {
+        return fetch('./data/live_feed.json?t=' + Date.now(), { cache: 'no-store' })
+          .then(function (r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json();
+          })
+          .then(function (data) {
+            var prevPub = (state.feed && state.feed.meta && state.feed.meta.feed_published_at) || '';
+            var nextPub = (data && data.meta && data.meta.feed_published_at) || '';
+            state.feed = data;
+            persist();
+            if (state.view === 'opportunities') renderOpportunitiesView();
+            if (state.view === 'applications') renderApplicationsTab();
+            if (state.view === 'settings') renderSettingsTab();
+            if (showFeedbackToast) {
+              var msg = customSuccessMsg || (nextPub && nextPub !== prevPub
+                ? ('تم التحديث · آخر تحديث للقائمة: ' + formatArTime(nextPub))
+                : 'تم فحص القائمة · آخر تحديث: ' + formatArTime(nextPub));
+              showToast(msg);
+            }
+            return data;
+          })
+          .catch(function () {
+            if (showFeedbackToast) showToast('تعذّر تحديث البيانات · بنعرّض آخر نسخة محفوظة');
+            return null;
+          });
+      }
+
+      function pollWorkflowUntilComplete(startedAtMs) {
+        var headers = {
+          'Authorization': 'Bearer ' + state.prefs.ghToken,
+          'Accept': 'application/vnd.github+json'
+        };
+        var runsUrl = 'https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO + '/actions/workflows/' + GH_WORKFLOW + '/runs?per_page=1';
+        var attempts = 0;
+
+        return new Promise(function (resolve) {
+          function checkOnce() {
+            attempts += 1;
+            setRefreshButtonBusy(true, 'جاري البحث (' + attempts + ')...');
+            fetch(runsUrl + '&_=' + Date.now(), { headers: headers, cache: 'no-store' })
+              .then(function (r) { return r.ok ? r.json() : null; })
+              .then(function (payload) {
+                var run = payload && payload.workflow_runs && payload.workflow_runs[0];
+                var runStartMs = run && run.created_at ? new Date(run.created_at).getTime() : 0;
+                if (run && run.status === 'completed' && (!startedAtMs || runStartMs >= startedAtMs - 15000)) {
+                  resolve(run.conclusion || 'success');
+                  return;
+                }
+                if (attempts >= 35) {
+                  resolve('timeout');
+                  return;
+                }
+                setTimeout(checkOnce, 6000);
+              })
+              .catch(function () {
+                if (attempts >= 35) resolve('error');
+                else setTimeout(checkOnce, 6000);
+              });
+          }
+          setTimeout(checkOnce, 4000);
+        });
+      }
+
+      function triggerFreshSearchAndRefresh() {
+        if (state.isRefreshing) return;
+        var token = (state.prefs.ghToken || '').trim();
+
+        if (!token) {
+          setRefreshButtonBusy(true, 'جاري التحديث...');
+          fetchLatestFeedOnly(true).finally(function () {
+            setRefreshButtonBusy(false, 'حدّث القائمة');
+          });
+          return;
+        }
+
+        var dispatchTimeMs = Date.now();
+        setRefreshButtonBusy(true, 'بدء البحث...');
+        showToast('تم إرسال طلب بحث جديد إلى السحابة...');
+
+        fetch('https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO + '/actions/workflows/' + GH_WORKFLOW + '/dispatches', {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + token,
+            'Accept': 'application/vnd.github+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ ref: 'main' })
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error('Dispatch HTTP ' + res.status);
+            return pollWorkflowUntilComplete(dispatchTimeMs);
+          })
+          .then(function (conclusion) {
+            return fetchLatestFeedOnly(
+              true,
+              conclusion === 'success'
+                ? 'تم إنهاء البحث وتحديث القائمة بنجاح'
+                : 'اكتملت المزامنة وعُرضت أحدث البيانات المتاحة'
+            );
+          })
+          .catch(function () {
+            showToast('تعذّر بدء البحث السحابي · تم جلب آخر نسخة منشورة');
+            return fetchLatestFeedOnly(false);
+          })
+          .finally(function () {
+            setRefreshButtonBusy(false, 'حدّث القائمة');
+          });
       }
 
       function renderKeywordsCatalog() {
@@ -1416,6 +1534,9 @@
       }
 
       function renderSettingsTab() {
+        var ghInp = document.getElementById('ghDispatchTokenInput');
+        if (ghInp && state.prefs.ghToken) ghInp.value = state.prefs.ghToken;
+
         var inp = document.getElementById('ntfyChannelInput');
         if (inp && state.prefs.ntfyTopic) inp.value = state.prefs.ntfyTopic;
 
@@ -1444,22 +1565,6 @@
         }
       }
 
-      function refreshListFromCloud(silent) {
-        fetch('./data/live_feed.json?t=' + Date.now(), { cache: 'no-store' })
-          .then(function (r) { if (!r.ok) throw new Error('err'); return r.json(); })
-          .then(function (data) {
-            state.feed = data;
-            persist();
-            if (state.view === 'opportunities') renderOpportunitiesView();
-            if (state.view === 'applications') renderApplicationsTab();
-            if (state.view === 'settings') renderSettingsTab();
-            if (!silent) showToast('تم تحديث القائمة');
-          })
-          .catch(function () {
-            if (!silent) showToast('تعذّر تحديث البيانات · بنعرّض آخر نسخة محفوظة');
-          });
-      }
-
       var handlers = {
         'switch-view': function (el) {
           var v = el.getAttribute('data-view');
@@ -1476,7 +1581,14 @@
           if (v === 'applications') renderApplicationsTab();
           if (v === 'settings') renderSettingsTab();
         },
-        'refresh-feed': function () { refreshListFromCloud(false); },
+        'refresh-feed': function () {
+          triggerFreshSearchAndRefresh();
+        },
+        'save-gh-token': function () {
+          state.prefs.ghToken = (document.getElementById('ghDispatchTokenInput') || {}).value.trim();
+          persist();
+          showToast('تم حفظ رمز التشغيل على جهازك فقط');
+        },
         'toggle-run-details': function () { state.runDetailsOpen = !state.runDetailsOpen; renderHeaderAndRunSummary(); },
         'set-quick-filter': function (el) { state.quickFilter = el.getAttribute('data-filter') || 'all'; renderOpportunitiesView(); },
         'reset-filters': function () {
@@ -1714,13 +1826,13 @@
       });
 
       document.addEventListener('visibilitychange', function () {
-        if (document.visibilityState === 'visible') refreshListFromCloud(true);
+        if (document.visibilityState === 'visible') fetchLatestFeedOnly(false);
       });
 
       (function boot() {
         renderOpportunitiesView();
         renderKeywordsCatalog();
-        refreshListFromCloud(true);
+        fetchLatestFeedOnly(false);
         var qJob = new URLSearchParams(window.location.search).get('job');
         if (qJob) {
           state.openDetailsMap[qJob] = true;
