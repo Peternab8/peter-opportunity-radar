@@ -19,17 +19,36 @@ USER_AGENT = (
     "Chrome/129.0.0.0 Safari/537.36"
 )
 
-SENIOR_EXCLUDE_RX = re.compile(
-    r"\b(senior|sr\.?|lead|principal|staff|head of|director|vp|vice president|manager|architect|4\+\s*years|5\+\s*years|6\+\s*years|7\+\s*years)\b",
+# Strict exclusion for senior/leadership/multi-year roles and non-target tracks
+UNWANTED_ROLE_RX = re.compile(
+    r"\b("
+    r"senior|sr\.?|lead|principal|staff|head\s+of|director|vp|vice\s+president|manager|mgr|"
+    r"architect|3\+\s*years?|4\+\s*years?|5\+\s*years?|6\+\s*years?|7\+\s*years?|"
+    r"3\s*-\s*5\s*years?|4\s*-\s*6\s*years?|5\s*-\s*8\s*years?|"
+    r"telesales|tele-sales|call\s+center|customer\s+service\s+representative|door\s+to\s+door|"
+    r"outdoor\s+sales|field\s+sales|real\s+estate|broker|driver|security|nurse|pharmacist|chef|"
+    r"graphic\s+designer|video\s+editor|copywriter|content\s+writer|"
+    r"frontend|front-end|backend|back-end|fullstack|full-stack|devops|sre|"
+    r"ios\s+developer|android\s+developer|flutter|react\s+native|software\s+engineer|"
+    r"accountant|bookkeeper|auditor|tax\s+specialist|payroll\s+specialist"
+    r")\b",
     re.I,
 )
 
-NOISE_EXCLUDE_RX = re.compile(
-    r"\b(telesales|tele-sales|call center|door to door|outdoor sales|field sales|real estate broker|driver|security guard|nurse|pharmacist|chef|graphic designer|video editor|frontend|backend|fullstack|ios|android|flutter|devops)\b",
+# Positive signal for Peter's CV tracks (Data, BI, Reporting, MIS, BA/SA, SFE, Operations)
+TARGET_FIT_RX = re.compile(
+    r"\b("
+    r"data\s+analyst|data\s+analytics|business\s+intelligence|\bbi\b|power\s*bi|tableau|"
+    r"reporting|mis\b|management\s+information|business\s+analyst|systems\s+analyst|"
+    r"operations\s+analyst|business\s+operations|sfe|sales\s+force\s+effectiveness|"
+    r"commercial\s+excellence|sales\s+analyst|sales\s+support|performance\s+analyst|"
+    r"data\s+quality|data\s+management|sql|excel|python|kpi|dashboard|intern|internship|trainee|junior|entry\s+level|fresh"
+    r")\b|تحليل\s+بيانات|بيانات|تقارير|مؤشرات|تشغيل|نظم|أعمال|فريش|تدريب",
     re.I,
 )
 
 LINKEDIN_JOB_QUERIES = [
+    "Junior Reporting Analyst",
     "Reporting Analyst",
     "MIS Analyst",
     "Junior BI Analyst",
@@ -41,18 +60,12 @@ LINKEDIN_JOB_QUERIES = [
     "Data Quality Analyst",
     "Junior Systems Analyst",
     "Operations Analyst",
-    "Sales Analyst",
     "Sales Support Analyst",
-    "Business Process Analyst",
     "Junior SFE Analyst",
     "Sales Force Effectiveness",
+    "Sales Analyst",
+    "Business Process Analyst",
     "Data Management Analyst",
-    "Research Insights Analyst",
-    "Junior Commercial Analyst",
-    "Junior Power BI Developer",
-    "Junior Product Analyst",
-    "Marketing Data Analyst",
-    "Master Data Specialist",
 ]
 
 JOBSPY_QUERIES = [
@@ -67,10 +80,10 @@ JOBSPY_QUERIES = [
 ]
 
 HIRING_POST_QUERIES = [
-    'site:linkedin.com/posts ("hiring" OR "we are hiring" OR "send your cv" OR "send cv" OR "dm me") ("data analyst" OR "bi analyst" OR "business intelligence" OR "reporting" OR "mis" OR "sfe") ("egypt" OR "cairo" OR "giza")',
+    'site:linkedin.com/posts ("hiring" OR "we are hiring" OR "send your cv" OR "send cv" OR "dm me") ("data analyst" OR "bi analyst" OR "business intelligence" OR "reporting" OR "mis" OR "sfe") ("junior" OR "fresh" OR "entry" OR "intern") ("egypt" OR "cairo" OR "giza")',
     'site:linkedin.com/posts ("fresh" OR "junior" OR "entry level" OR "intern" OR "internship" OR "graduate" OR "0-1") ("data" OR "bi" OR "analytics" OR "business analyst" OR "operations" OR "reporting") ("egypt" OR "cairo")',
     'site:linkedin.com/posts ("مطلوب" OR "فرصة عمل" OR "توظيف" OR "ابعت" OR "سي في" OR "cv") ("بيانات" OR "تحليل" OR "تقارير" OR "data" OR "bi" OR "excel" OR "sql") ("مصر" OR "القاهرة" OR "الجيزة")',
-    '("send your cv" OR "send cv" OR "hiring" OR "apply here") ("data analyst" OR "bi analyst" OR "reporting analyst" OR "mis analyst" OR "sfe" OR "operations analyst") ("cairo" OR "egypt")',
+    '("send your cv" OR "send cv" OR "hiring") ("junior" OR "entry level" OR "fresh") ("data analyst" OR "bi analyst" OR "reporting analyst" OR "mis analyst" OR "sfe") ("cairo" OR "egypt")',
 ]
 
 COMMUNITY_RSS_FEEDS = [
@@ -131,13 +144,13 @@ def clean_field(val):
     return s
 
 
-def is_junk_or_senior_post(text):
-    t = str(text or "")
-    if not t:
-        return True
-    if SENIOR_EXCLUDE_RX.search(t) or NOISE_EXCLUDE_RX.search(t):
-        return True
-    return False
+def should_keep_role(title, extra_text=""):
+    combined = f"{title or ''} {extra_text or ''}".strip()
+    if not combined:
+        return False
+    if UNWANTED_ROLE_RX.search(combined):
+        return False
+    return bool(TARGET_FIT_RX.search(combined))
 
 
 def extract_contact_or_apply_link(text, fallback_url):
@@ -225,6 +238,8 @@ def scrape_linkedin_jobs_egypt(now_iso):
                     if not title_m or not link_m:
                         continue
                     title = strip_tags(title_m.group(1))
+                    if not should_keep_role(title, kw):
+                        continue
                     company = strip_tags(comp_m.group(1)) if comp_m else None
                     loc = strip_tags(loc_m.group(1)) if loc_m else None
                     clean_url = link_m.group(1).strip()
@@ -283,10 +298,12 @@ def scrape_jobspy_indeed_google(now_iso):
                 job_url = clean_field(row.get("job_url"))
                 if not title or not job_url or not job_url.startswith("http"):
                     continue
+                desc = strip_tags(clean_field(row.get("description")) or "")[:700]
+                if not should_keep_role(title, f"{term} {desc}"):
+                    continue
                 company = clean_field(row.get("company")) or "جهة معلنة"
                 loc = clean_field(row.get("location"))
                 site = (clean_field(row.get("site")) or "indeed").lower()
-                desc = strip_tags(clean_field(row.get("description")) or "")[:700]
                 date_posted = clean_field(row.get("date_posted"))
                 is_remote = bool(row.get("is_remote")) if row.get("is_remote") is not None else None
 
@@ -321,12 +338,10 @@ def scrape_jobspy_indeed_google(now_iso):
 
 
 def scrape_hiring_posts(now_iso):
-    """Deep post hunter across public LinkedIn posts, search indexes, and community RSS feeds."""
     found = {}
     errors = 0
 
     for q in HIRING_POST_QUERIES:
-        # 1. DuckDuckGo HTML
         try:
             ddg_url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(q)}"
             status, body = http_request(ddg_url, timeout=15)
@@ -339,7 +354,7 @@ def scrape_hiring_posts(now_iso):
                 if not href.startswith("http"):
                     continue
                 title = strip_tags(raw_t)
-                if not title or is_junk_or_senior_post(title):
+                if not should_keep_role(title, q):
                     continue
                 loc, mode = infer_location_and_mode(title)
                 target_url, extracted_email = extract_contact_or_apply_link(title, href)
@@ -364,7 +379,6 @@ def scrape_hiring_posts(now_iso):
         except Exception:
             errors += 1
 
-        # 2. Bing RSS
         try:
             rss_url = f"https://www.bing.com/search?q={urllib.parse.quote(q)}&format=rss&cc=EG"
             status, xml_raw = http_request(rss_url, timeout=15)
@@ -374,7 +388,7 @@ def scrape_hiring_posts(now_iso):
                 raw_t = strip_tags(item.findtext("title") or "")
                 desc = strip_tags(item.findtext("description") or "")
                 combined = f"{raw_t}. {desc}"
-                if not link.startswith("http") or link in found or not raw_t or is_junk_or_senior_post(combined):
+                if not link.startswith("http") or link in found or not should_keep_role(raw_t, combined):
                     continue
                 loc, mode = infer_location_and_mode(combined)
                 target_url, extracted_email = extract_contact_or_apply_link(combined, link)
@@ -399,7 +413,6 @@ def scrape_hiring_posts(now_iso):
         except Exception:
             errors += 1
 
-    # 3. Community RSS feeds
     for src_label, feed_url in COMMUNITY_RSS_FEEDS:
         try:
             status, xml_raw = http_request(feed_url, timeout=14)
@@ -410,9 +423,7 @@ def scrape_hiring_posts(now_iso):
                 desc = strip_tags(item.findtext("description") or "")
                 pub_raw = clean_field(item.findtext("pubDate"))
                 combined = f"{raw_t}. {desc}"
-                if not link.startswith("http") or link in found or not raw_t or is_junk_or_senior_post(combined):
-                    continue
-                if not re.search(r"\b(data|bi|analyst|analytics|sql|excel|power bi|reporting|sfe|mis|intern|junior|fresh|توظيف|بيانات|تحليل|تقارير)\b", combined, re.I):
+                if not link.startswith("http") or link in found or not should_keep_role(raw_t, combined):
                     continue
                 loc, mode = infer_location_and_mode(combined)
                 target_url, extracted_email = extract_contact_or_apply_link(combined, link)
@@ -457,7 +468,7 @@ def scrape_egypt_company_boards(now_iso):
             data = json.loads(raw)
             for job in data.get("jobs", []):
                 title = clean_field(job.get("title"))
-                if not title:
+                if not title or not should_keep_role(title, company):
                     continue
                 city = clean_field(job.get("city"))
                 country = clean_field(job.get("country"))
@@ -510,6 +521,8 @@ def scrape_remotive_global(now_iso):
                     continue
                 req_loc = clean_field(job.get("candidate_required_location"))
                 desc = strip_tags(clean_field(job.get("description")) or "")[:600]
+                if not should_keep_role(title, f"{cat} {desc}"):
+                    continue
                 results.append({
                     "company": clean_field(job.get("company_name")) or "شركة ريموت",
                     "title": title,
