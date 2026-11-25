@@ -1,15 +1,15 @@
 {
   "meta": {
-    "scan_completed_at": "2026-11-25T12:43:01Z",
-    "feed_published_at": "2026-11-25T12:43:01Z",
+    "scan_completed_at": "2026-11-25T12:55:19Z",
+    "feed_published_at": "2026-11-25T12:55:19Z",
     "priority_threshold": 80,
     "fresh_window_hours": 24,
-    "total_active": 13,
+    "total_active": 8,
     "source_statuses": {
       "linkedin_jobs": {
         "state": "OK",
-        "label": "نجح (79 إعلان)",
-        "count": 79
+        "label": "نجح (68 إعلان)",
+        "count": 68
       },
       "indeed_google": {
         "state": "OK",
@@ -17,9 +17,9 @@
         "count": 11
       },
       "hiring_posts": {
-        "state": "OK",
-        "label": "نجح (1 بوست)",
-        "count": 1
+        "state": "FAILED",
+        "label": "تعذّر الوصول للبوستات",
+        "count": 0
       },
       "egypt_companies": {
         "state": "OK_ZERO",
@@ -44,59 +44,6 @@
     }
   },
   "jobs": {
-    "4435f17050d5a1d8": {
-      "id": "4435f17050d5a1d8",
-      "family_id": "355d3fd3dc3f",
-      "probable_duplicate_of": null,
-      "company": "Henkel",
-      "title": "Sales -Pharmacies Channel Developer GDP",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/sales-pharmacies-channel-developer-gdp-at-henkel-4488813418"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/sales-pharmacies-channel-developer-gdp-at-henkel-4488813418",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:42:31Z",
-        "last_verified": "2026-11-25T12:42:31Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 50,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Sales -Pharmacies Channel Developer GDP (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Sales Support Analyst",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:42:31Z"
-    },
     "1ed2ec5df444ca85": {
       "id": "1ed2ec5df444ca85",
       "family_id": "87b633a72a98",
@@ -116,8 +63,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:42:31Z",
-        "last_verified": "2026-11-25T12:42:31Z",
+        "discovered_at": "2026-11-25T12:54:59Z",
+        "last_verified": "2026-11-25T12:54:59Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -148,325 +95,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:42:31Z"
-    },
-    "2984a13fa4a7a500": {
-      "id": "2984a13fa4a7a500",
-      "family_id": "2af6d0c25a90",
-      "probable_duplicate_of": null,
-      "company": "EliteFm",
-      "title": "Customer Relationship Management Specialist",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/customer-relationship-management-specialist-at-elitefm-4494616988"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/customer-relationship-management-specialist-at-elitefm-4494616988",
-      "location": "Giza, Al Jizah, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:42:31Z",
-        "last_verified": "2026-11-25T12:42:31Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Customer Relationship Management Specialist (Giza, Al Jizah, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Sales Force Effectiveness",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": 80,
-        "one_way_min": 38,
-        "days_per_week": null,
-        "status": "ESTIMATED",
-        "summary": "تقدير: الجيزة · حوالي ٣٨ دقيقة من شبرا (مترو خط ٢ مباشر) · أيام المكتب محتاجة تأكيد"
-      },
-      "discovered_at": "2026-11-25T12:42:31Z"
-    },
-    "24ae8692b5cb0555": {
-      "id": "24ae8692b5cb0555",
-      "family_id": "8a83858b454a",
-      "probable_duplicate_of": null,
-      "company": "Amazon",
-      "title": "ACES Specialist, AMZL Trans",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/aces-specialist-amzl-trans-at-amazon-4494629384"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/aces-specialist-amzl-trans-at-amazon-4494629384",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:42:31Z",
-        "last_verified": "2026-11-25T12:42:31Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "ACES Specialist, AMZL Trans (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Operations Analyst",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:42:31Z"
-    },
-    "ba5878f4651ae05e": {
-      "id": "ba5878f4651ae05e",
-      "family_id": "e0529512a92c",
-      "probable_duplicate_of": null,
-      "company": "LEONI EGYPT",
-      "title": "Production Planning Expert",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/production-planning-expert-at-leoni-egypt-4486050583"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/production-planning-expert-at-leoni-egypt-4486050583",
-      "location": "Badr City, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:42:31Z",
-        "last_verified": "2026-11-25T12:42:31Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Production Planning Expert (Badr City, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Operations Analyst",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:42:31Z"
-    },
-    "aca78ce7c47925bf": {
-      "id": "aca78ce7c47925bf",
-      "family_id": "81401e502ed5",
-      "probable_duplicate_of": null,
-      "company": "STIPS",
-      "title": "Junior Operations- Engineer",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/junior-operations-engineer-at-stips-4494105723"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/junior-operations-engineer-at-stips-4494105723",
-      "location": "Damietta, Dumyat, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:42:31Z",
-        "last_verified": "2026-11-25T12:42:31Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Junior Operations- Engineer (Damietta, Dumyat, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Operations Analyst",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:42:31Z"
-    },
-    "92d53f12445647d5": {
-      "id": "92d53f12445647d5",
-      "family_id": "8b6ee69d09a1",
-      "probable_duplicate_of": null,
-      "company": "SuLinda",
-      "title": "CRM & Customer Experience Supervisor...",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/crm-customer-experience-supervisor-at-sulinda-4493407824"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/crm-customer-experience-supervisor-at-sulinda-4493407824",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:42:31Z",
-        "last_verified": "2026-11-25T12:42:31Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "CRM & Customer Experience Supervisor... (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Sales Force Effectiveness",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:42:31Z"
-    },
-    "451c85f4d52b945d": {
-      "id": "451c85f4d52b945d",
-      "family_id": "fad3926db76c",
-      "probable_duplicate_of": null,
-      "company": "بوست توظيف (بحث مباشر)",
-      "title": "قوالب بوربوينت مجانية (2026) — تحميل وتعديل | PPT-Design",
-      "sources": [
-        "بوستات التوظيف"
-      ],
-      "source_category": "hiring_posts",
-      "all_urls": [
-        "https://ppt-design.com/ar/free-powerpoint-templates"
-      ],
-      "primary_url": "https://ppt-design.com/ar/free-powerpoint-templates",
-      "location": null,
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": null,
-        "discovered_at": "2026-11-25T12:42:31Z",
-        "last_verified": "2026-11-25T12:42:31Z",
-        "apply_state": "NEEDS_VERIFICATION",
-        "apply_state_ar": "محتاج تحقق",
-        "action_label": "افتح الرابط",
-        "is_company_page": false,
-        "egypt_eligibility": "العنوان غير مذكور",
-        "egypt_status": "UNKNOWN"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "قوالب بوربوينت مجانية (2026) — تحميل وتعديل | PPT-Design · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "site:linkedin.com/posts (\"hiring\" OR \"we are hiring\" OR \"send your cv\" OR \"send cv\" OR \"dm me\") (\"data analyst\" OR \"bi analyst\" OR \"business intelligence\" OR \"r",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "UNKNOWN",
-        "summary": "العنوان غير مذكور"
-      },
-      "discovered_at": "2026-11-25T12:42:31Z"
+      "discovered_at": "2026-11-25T12:54:59Z"
     },
     "3f8e20785852066d": {
       "id": "3f8e20785852066d",
@@ -487,8 +116,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:42:31Z",
-        "last_verified": "2026-11-25T12:42:31Z",
+        "discovered_at": "2026-11-25T12:54:59Z",
+        "last_verified": "2026-11-25T12:54:59Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -519,7 +148,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:42:31Z"
+      "discovered_at": "2026-11-25T12:54:59Z"
     },
     "7c7cd50d1060983a": {
       "id": "7c7cd50d1060983a",
@@ -540,8 +169,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:42:31Z",
-        "last_verified": "2026-11-25T12:42:31Z",
+        "discovered_at": "2026-11-25T12:54:59Z",
+        "last_verified": "2026-11-25T12:54:59Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -566,29 +195,76 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:42:31Z"
+      "discovered_at": "2026-11-25T12:54:59Z"
     },
-    "2f37ea3df8a458a9": {
-      "id": "2f37ea3df8a458a9",
-      "family_id": "b6425f3fc494",
+    "2984a13fa4a7a500": {
+      "id": "2984a13fa4a7a500",
+      "family_id": "2af6d0c25a90",
       "probable_duplicate_of": null,
-      "company": "Fawry MSME Finance",
-      "title": "Microfinance Credit Analysis Supervisor",
+      "company": "EliteFm",
+      "title": "Customer Relationship Management Specialist",
       "sources": [
         "LinkedIn Jobs"
       ],
       "source_category": "job_board",
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/microfinance-credit-analysis-supervisor-at-fawry-msme-finance-4494900840"
+        "https://eg.linkedin.com/jobs/view/customer-relationship-management-specialist-at-elitefm-4494616988"
       ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/microfinance-credit-analysis-supervisor-at-fawry-msme-finance-4494900840",
+      "primary_url": "https://eg.linkedin.com/jobs/view/customer-relationship-management-specialist-at-elitefm-4494616988",
+      "location": "Giza, Al Jizah, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:54:59Z",
+        "last_verified": "2026-11-25T12:54:59Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": 80,
+        "one_way_min": 38,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: الجيزة · حوالي ٣٨ دقيقة من شبرا (مترو خط ٢ مباشر) · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-25T12:54:59Z"
+    },
+    "24ae8692b5cb0555": {
+      "id": "24ae8692b5cb0555",
+      "family_id": "8a83858b454a",
+      "probable_duplicate_of": null,
+      "company": "Amazon",
+      "title": "ACES Specialist, AMZL Trans",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/aces-specialist-amzl-trans-at-amazon-4494629384"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/aces-specialist-amzl-trans-at-amazon-4494629384",
       "location": "Cairo, Cairo, Egypt",
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:42:31Z",
-        "last_verified": "2026-11-25T12:42:31Z",
+        "discovered_at": "2026-11-25T12:54:59Z",
+        "last_verified": "2026-11-25T12:54:59Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -613,7 +289,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:42:31Z"
+      "discovered_at": "2026-11-25T12:54:59Z"
     },
     "f89ae0097175a53c": {
       "id": "f89ae0097175a53c",
@@ -634,8 +310,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:42:31Z",
-        "last_verified": "2026-11-25T12:42:31Z",
+        "discovered_at": "2026-11-25T12:54:59Z",
+        "last_verified": "2026-11-25T12:54:59Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -660,29 +336,29 @@
         "status": "ESTIMATED",
         "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
       },
-      "discovered_at": "2026-11-25T12:42:31Z"
+      "discovered_at": "2026-11-25T12:54:59Z"
     },
-    "d01efab3fef7e718": {
-      "id": "d01efab3fef7e718",
-      "family_id": "c9769f650590",
+    "2f37ea3df8a458a9": {
+      "id": "2f37ea3df8a458a9",
+      "family_id": "b6425f3fc494",
       "probable_duplicate_of": null,
-      "company": "PepsiCo",
-      "title": "Supply Chain Planning Assistant Analyst",
+      "company": "Fawry MSME Finance",
+      "title": "Microfinance Credit Analysis Supervisor",
       "sources": [
-        "Indeed Egypt"
+        "LinkedIn Jobs"
       ],
       "source_category": "job_board",
       "all_urls": [
-        "https://eg.indeed.com/viewjob?jk=812486f172535bbe"
+        "https://eg.linkedin.com/jobs/view/microfinance-credit-analysis-supervisor-at-fawry-msme-finance-4494900840"
       ],
-      "primary_url": "https://eg.indeed.com/viewjob?jk=812486f172535bbe",
-      "location": "القاهرة الجديدة, C, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/microfinance-credit-analysis-supervisor-at-fawry-msme-finance-4494900840",
+      "location": "Cairo, Cairo, Egypt",
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:42:31Z",
-        "last_verified": "2026-11-25T12:42:31Z",
+        "discovered_at": "2026-11-25T12:54:59Z",
+        "last_verified": "2026-11-25T12:54:59Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -707,36 +383,58 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:42:31Z"
+      "discovered_at": "2026-11-25T12:54:59Z"
+    },
+    "d01efab3fef7e718": {
+      "id": "d01efab3fef7e718",
+      "family_id": "c9769f650590",
+      "probable_duplicate_of": null,
+      "company": "PepsiCo",
+      "title": "Supply Chain Planning Assistant Analyst",
+      "sources": [
+        "Indeed Egypt"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.indeed.com/viewjob?jk=812486f172535bbe"
+      ],
+      "primary_url": "https://eg.indeed.com/viewjob?jk=812486f172535bbe",
+      "location": "القاهرة الجديدة, C, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:54:59Z",
+        "last_verified": "2026-11-25T12:54:59Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-25T12:54:59Z"
     }
   },
   "notification_log": {},
   "audit_logs": [
-    {
-      "completed_at": "2026-11-24T04:18:34Z",
-      "published_at": "2026-11-24T04:18:34Z",
-      "queries_executed": [
-        "Data Analyst",
-        "Business Intelligence Analyst",
-        "BI Analyst",
-        "Reporting Analyst",
-        "MIS Analyst",
-        "SFE",
-        "Sales Force Effectiveness",
-        "Operations Analyst",
-        "Business Analyst",
-        "Systems Analyst",
-        "Product Analyst",
-        "Sales Support Reporting",
-        "Data Analyst",
-        "Business Intelligence Analyst",
-        "Reporting Analyst",
-        "Operations Analyst",
-        "Business Analyst",
-        "MIS Analyst"
-      ],
-      "total_evaluated": 191
-    },
     {
       "completed_at": "2026-11-24T11:10:24Z",
       "published_at": "2026-11-24T11:10:24Z",
@@ -1041,6 +739,37 @@
         "Operations Analyst"
       ],
       "total_fresh_24h": 13
+    },
+    {
+      "completed_at": "2026-11-25T12:55:19Z",
+      "published_at": "2026-11-25T12:55:19Z",
+      "queries_executed": [
+        "Junior Reporting Analyst",
+        "Reporting Analyst",
+        "MIS Analyst",
+        "Junior MIS Analyst",
+        "Junior BI Analyst",
+        "Business Intelligence Analyst",
+        "Power BI Analyst",
+        "KPI Analyst",
+        "Performance Analyst",
+        "Junior Data Analyst",
+        "Data Analyst",
+        "Data Analytics",
+        "SQL Analyst",
+        "Data Quality Analyst",
+        "Data Management Analyst",
+        "Junior Business Analyst",
+        "Business Analyst",
+        "Junior Systems Analyst",
+        "Systems Analyst",
+        "Business Process Analyst",
+        "Operations Analyst",
+        "Business Operations Analyst",
+        "Junior SFE Analyst",
+        "SFE Analyst"
+      ],
+      "total_fresh_24h": 8
     }
   ]
 }
