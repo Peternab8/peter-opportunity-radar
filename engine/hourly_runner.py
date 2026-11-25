@@ -4,7 +4,7 @@ import re
 import sys
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,6 +26,7 @@ from real_scraper import scrape_all_real_sources
 
 FEED_PATH = os.path.join("data", "live_feed.json")
 PRIVATE_GMAIL_QUEUE = os.path.join("data", "gmail_queue.json")
+MAX_AGE_HOURS = 24
 
 
 def load_json(path, default):
@@ -42,6 +43,22 @@ def save_json(path, data):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+def is_within_last_24h(date_str, now_dt):
+    if not date_str:
+        return True
+    s = str(date_str).strip()
+    try:
+        if len(s) == 10 and re.match(r"^\d{4}-\d{2}-\d{2}$", s):
+            dt = datetime.strptime(s, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+        else:
+            dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+        return (now_dt - dt) <= timedelta(hours=MAX_AGE_HOURS)
+    except Exception:
+        return True
 
 
 def send_ntfy_alert(job, ntfy_topic, pwa_base_url):
@@ -181,9 +198,10 @@ def read_local_gmail_queue_if_present(now_iso):
 
 
 def main():
-    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    now_dt = datetime.now(timezone.utc)
+    now_iso = now_dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+
     existing_feed = load_json(FEED_PATH, {"meta": {}, "jobs": {}, "notification_log": {}, "audit_logs": []})
-    existing_jobs = existing_feed.get("jobs", {}) if isinstance(existing_feed, dict) else {}
     notif_log = existing_feed.get("notification_log", {}) if isinstance(existing_feed, dict) else {}
     audit_logs = existing_feed.get("audit_logs", []) if isinstance(existing_feed, dict) else []
 
@@ -194,46 +212,39 @@ def main():
     if gmail_count > 0:
         source_statuses["gmail_bridge"] = {"state": "OK", "label": f"تم استيعاب {gmail_count} تنبيه", "count": gmail_count}
 
-    incoming_cards = [build_evaluated_card(r, now_iso) for r in raw_items] + gmail_cards
-
+    # Start clean on fresh 24h jobs only
+    fresh_jobs = {}
     family_index = {}
-    for eid, ejob in existing_jobs.items():
-        fid = ejob.get("family_id")
-        if fid and fid not in family_index:
-            family_index[fid] = eid
 
-    seen_in_this_run = set()
+    for raw_item in raw_items:
+        pub_candidate = raw_item.get("first_published") or raw_item.get("discovered_at")
+        if not is_within_last_24h(pub_candidate, now_dt):
+            continue
 
-    for card in incoming_cards:
+        card = build_evaluated_card(raw_item, now_iso)
+        if card["receipt"]["apply_state"] == "CLOSED":
+            continue
+
         jid = card["id"]
-        seen_in_this_run.add(jid)
-
-        if jid in existing_jobs:
-            old = existing_jobs[jid]
-            card["discovered_at"] = old.get("discovered_at") or card["discovered_at"]
-            card["sources"] = list(dict.fromkeys((old.get("sources") or []) + card["sources"]))
-            card["all_urls"] = list(dict.fromkeys((old.get("all_urls") or []) + card["all_urls"]))
-            existing_jobs[jid] = card
+        if jid in fresh_jobs:
+            old = fresh_jobs[jid]
+            old["sources"] = list(dict.fromkeys((old.get("sources") or []) + card["sources"]))
+            old["all_urls"] = list(dict.fromkeys((old.get("all_urls") or []) + card["all_urls"]))
         else:
             fid = card.get("family_id")
             if fid and fid in family_index and family_index[fid] != jid:
                 card["probable_duplicate_of"] = family_index[fid]
             elif fid:
                 family_index[fid] = jid
-            existing_jobs[jid] = card
+            fresh_jobs[jid] = card
 
-    for jid, old in list(existing_jobs.items()):
-        if jid not in seen_in_this_run:
-            if old.get("receipt", {}).get("apply_state") == "CLOSED":
-                continue
+    for card in gmail_cards:
+        jid = card["id"]
+        fresh_jobs[jid] = card
 
     sorted_pairs = sorted(
-        existing_jobs.items(),
-        key=lambda kv: (
-            1 if kv[1].get("receipt", {}).get("apply_state") != "CLOSED" else 0,
-            kv[1].get("fit", {}).get("score") or 0,
-            kv[1].get("discovered_at", ""),
-        ),
+        fresh_jobs.items(),
+        key=lambda kv: (kv[1].get("fit", {}).get("score") or 0, kv[1].get("discovered_at", "")),
         reverse=True,
     )[:160]
     trimmed_jobs = dict(sorted_pairs)
@@ -248,8 +259,7 @@ def main():
         if (
             score is not None
             and score >= PRIORITY_THRESHOLD
-            and rec.get("apply_state") == "OPEN_VERIFIED"
-            and rec.get("egypt_status") == "CONFIRMED"
+            and rec.get("apply_state") != "CLOSED"
             and not fit.get("has_mandatory_conflict")
         ):
             alert_candidates.append(job)
@@ -266,8 +276,8 @@ def main():
     audit_logs.append({
         "completed_at": scan_completed_at,
         "published_at": feed_published_at,
-        "queries_executed": executed_queries[:18],
-        "total_evaluated": len(incoming_cards),
+        "queries_executed": executed_queries[:24],
+        "total_fresh_24h": len(trimmed_jobs),
     })
     audit_logs = audit_logs[-12:]
 
@@ -276,6 +286,7 @@ def main():
             "scan_completed_at": scan_completed_at,
             "feed_published_at": feed_published_at,
             "priority_threshold": PRIORITY_THRESHOLD,
+            "fresh_window_hours": MAX_AGE_HOURS,
             "total_active": len(trimmed_jobs),
             "source_statuses": source_statuses,
         },
@@ -298,7 +309,7 @@ def main():
 
     out_feed["notification_log"] = notif_log
     save_json(FEED_PATH, out_feed)
-    print(f"Scan finished at {scan_completed_at}, published at {feed_published_at}, total={len(trimmed_jobs)}.")
+    print(f"Fresh 24h scan finished at {scan_completed_at}, count={len(trimmed_jobs)}.")
 
 
 if __name__ == "__main__":
