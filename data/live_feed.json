@@ -1,15 +1,15 @@
 {
   "meta": {
-    "scan_completed_at": "2026-11-25T12:55:19Z",
-    "feed_published_at": "2026-11-25T12:55:19Z",
+    "scan_completed_at": "2026-11-25T12:59:30Z",
+    "feed_published_at": "2026-11-25T12:59:30Z",
     "priority_threshold": 80,
     "fresh_window_hours": 24,
-    "total_active": 8,
+    "total_active": 14,
     "source_statuses": {
       "linkedin_jobs": {
         "state": "OK",
-        "label": "نجح (68 إعلان)",
-        "count": 68
+        "label": "نجح (101 إعلان)",
+        "count": 101
       },
       "indeed_google": {
         "state": "OK",
@@ -63,8 +63,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:54:59Z",
-        "last_verified": "2026-11-25T12:54:59Z",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -95,7 +95,113 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:54:59Z"
+      "discovered_at": "2026-11-25T12:58:48Z"
+    },
+    "92d53f12445647d5": {
+      "id": "92d53f12445647d5",
+      "family_id": "8b6ee69d09a1",
+      "probable_duplicate_of": null,
+      "company": "SuLinda",
+      "title": "CRM & Customer Experience Supervisor...",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/crm-customer-experience-supervisor-at-sulinda-4493407824"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/crm-customer-experience-supervisor-at-sulinda-4493407824",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "CRM & Customer Experience Supervisor... (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Sales Force Effectiveness",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-25T12:58:48Z"
+    },
+    "4147eef6897a3c11": {
+      "id": "4147eef6897a3c11",
+      "family_id": "630ce4cadcaf",
+      "probable_duplicate_of": null,
+      "company": "inflexion - SAP Gold Partner",
+      "title": "SAP PP/QM Consultant",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/sap-pp-qm-consultant-at-inflexion-sap-gold-partner-4493404391"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/sap-pp-qm-consultant-at-inflexion-sap-gold-partner-4493404391",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 37,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "SAP PP/QM Consultant (Cairo, Cairo, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Systems Analyst",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-25T12:58:48Z"
     },
     "3f8e20785852066d": {
       "id": "3f8e20785852066d",
@@ -116,8 +222,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:54:59Z",
-        "last_verified": "2026-11-25T12:54:59Z",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -148,54 +254,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:54:59Z"
-    },
-    "7c7cd50d1060983a": {
-      "id": "7c7cd50d1060983a",
-      "family_id": "88b650b52abf",
-      "probable_duplicate_of": null,
-      "company": "Tasaheel تساهيل",
-      "title": "SME Programs Development Specialist",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/sme-programs-development-specialist-at-tasaheel-%D8%AA%D8%B3%D8%A7%D9%87%D9%8A%D9%84-4493420119"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/sme-programs-development-specialist-at-tasaheel-%D8%AA%D8%B3%D8%A7%D9%87%D9%8A%D9%84-4493420119",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:54:59Z",
-        "last_verified": "2026-11-25T12:54:59Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:54:59Z"
+      "discovered_at": "2026-11-25T12:58:48Z"
     },
     "2984a13fa4a7a500": {
       "id": "2984a13fa4a7a500",
@@ -216,8 +275,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:54:59Z",
-        "last_verified": "2026-11-25T12:54:59Z",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -242,7 +301,7 @@
         "status": "ESTIMATED",
         "summary": "تقدير: الجيزة · حوالي ٣٨ دقيقة من شبرا (مترو خط ٢ مباشر) · أيام المكتب محتاجة تأكيد"
       },
-      "discovered_at": "2026-11-25T12:54:59Z"
+      "discovered_at": "2026-11-25T12:58:48Z"
     },
     "24ae8692b5cb0555": {
       "id": "24ae8692b5cb0555",
@@ -263,8 +322,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:54:59Z",
-        "last_verified": "2026-11-25T12:54:59Z",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -289,7 +348,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:54:59Z"
+      "discovered_at": "2026-11-25T12:58:48Z"
     },
     "f89ae0097175a53c": {
       "id": "f89ae0097175a53c",
@@ -310,8 +369,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:54:59Z",
-        "last_verified": "2026-11-25T12:54:59Z",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -336,7 +395,54 @@
         "status": "ESTIMATED",
         "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
       },
-      "discovered_at": "2026-11-25T12:54:59Z"
+      "discovered_at": "2026-11-25T12:58:48Z"
+    },
+    "7c7cd50d1060983a": {
+      "id": "7c7cd50d1060983a",
+      "family_id": "88b650b52abf",
+      "probable_duplicate_of": null,
+      "company": "Tasaheel تساهيل",
+      "title": "SME Programs Development Specialist",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/sme-programs-development-specialist-at-tasaheel-%D8%AA%D8%B3%D8%A7%D9%87%D9%8A%D9%84-4493420119"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/sme-programs-development-specialist-at-tasaheel-%D8%AA%D8%B3%D8%A7%D9%87%D9%8A%D9%84-4493420119",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-25T12:58:48Z"
     },
     "2f37ea3df8a458a9": {
       "id": "2f37ea3df8a458a9",
@@ -357,8 +463,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:54:59Z",
-        "last_verified": "2026-11-25T12:54:59Z",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -383,7 +489,195 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:54:59Z"
+      "discovered_at": "2026-11-25T12:58:48Z"
+    },
+    "4435f17050d5a1d8": {
+      "id": "4435f17050d5a1d8",
+      "family_id": "355d3fd3dc3f",
+      "probable_duplicate_of": null,
+      "company": "Henkel",
+      "title": "Sales -Pharmacies Channel Developer GDP",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/sales-pharmacies-channel-developer-gdp-at-henkel-4488813418"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/sales-pharmacies-channel-developer-gdp-at-henkel-4488813418",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-25T12:58:48Z"
+    },
+    "1f38e8997d89636b": {
+      "id": "1f38e8997d89636b",
+      "family_id": "9ae6842f1b59",
+      "probable_duplicate_of": null,
+      "company": "Eclatic",
+      "title": "E-commerce Team Leader",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/e-commerce-team-leader-at-eclatic-4494623780"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/e-commerce-team-leader-at-eclatic-4494623780",
+      "location": "New Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": 52,
+        "one_way_min": 78,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-25T12:58:48Z"
+    },
+    "fb7a6b8932775911": {
+      "id": "fb7a6b8932775911",
+      "family_id": "7e9c777a3840",
+      "probable_duplicate_of": null,
+      "company": "InterMark Network",
+      "title": "𝗣𝗿𝗶𝗰𝗶𝗻𝗴 𝗠𝗮𝗻𝗮𝗴𝗲𝗿",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/%F0%9D%97%A3%F0%9D%97%BF%F0%9D%97%B6%F0%9D%97%B0%F0%9D%97%B6%F0%9D%97%BB%F0%9D%97%B4-%F0%9D%97%A0%F0%9D%97%AE%F0%9D%97%BB%F0%9D%97%AE%F0%9D%97%B4%F0%9D%97%B2%F0%9D%97%BF-at-intermark-network-4493093926"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/%F0%9D%97%A3%F0%9D%97%BF%F0%9D%97%B6%F0%9D%97%B0%F0%9D%97%B6%F0%9D%97%BB%F0%9D%97%B4-%F0%9D%97%A0%F0%9D%97%AE%F0%9D%97%BB%F0%9D%97%AE%F0%9D%97%B4%F0%9D%97%B2%F0%9D%97%BF-at-intermark-network-4493093926",
+      "location": "Heliopolis, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "SPARSE",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — النص مختصر جدًا ويحتاج فتح الإعلان الأصلي",
+        "caveat_first": "الوصف لا يكفي لحساب درجة ملاءمة",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": 80,
+        "one_way_min": 45,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: مصر الجديدة · حوالي ٤٥ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-25T12:58:48Z"
+    },
+    "0a42c1c5b82f5bd0": {
+      "id": "0a42c1c5b82f5bd0",
+      "family_id": "1c5114bb0c3f",
+      "probable_duplicate_of": null,
+      "company": "Nexus Analytica",
+      "title": "Financial Consultant",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/financial-consultant-at-nexus-analytica-4494903065"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/financial-consultant-at-nexus-analytica-4494903065",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-25T12:58:48Z"
     },
     "d01efab3fef7e718": {
       "id": "d01efab3fef7e718",
@@ -404,8 +698,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:54:59Z",
-        "last_verified": "2026-11-25T12:54:59Z",
+        "discovered_at": "2026-11-25T12:58:48Z",
+        "last_verified": "2026-11-25T12:58:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -430,36 +724,11 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:54:59Z"
+      "discovered_at": "2026-11-25T12:58:48Z"
     }
   },
   "notification_log": {},
   "audit_logs": [
-    {
-      "completed_at": "2026-11-24T11:10:24Z",
-      "published_at": "2026-11-24T11:10:24Z",
-      "queries_executed": [
-        "Data Analyst",
-        "Business Intelligence Analyst",
-        "BI Analyst",
-        "Reporting Analyst",
-        "SQL Power BI",
-        "Data Analytics Python",
-        "Business Analyst",
-        "Systems Analyst",
-        "Operations Analyst",
-        "MIS Analyst",
-        "SFE",
-        "Excel Reporting Analyst",
-        "Data Analyst",
-        "Business Intelligence Analyst",
-        "Reporting Analyst",
-        "Business Analyst",
-        "Operations Analyst",
-        "Data Analytics"
-      ],
-      "total_evaluated": 147
-    },
     {
       "completed_at": "2026-11-24T11:21:29Z",
       "published_at": "2026-11-24T11:21:29Z",
@@ -770,6 +1039,37 @@
         "SFE Analyst"
       ],
       "total_fresh_24h": 8
+    },
+    {
+      "completed_at": "2026-11-25T12:59:30Z",
+      "published_at": "2026-11-25T12:59:30Z",
+      "queries_executed": [
+        "Junior Reporting Analyst",
+        "Reporting Analyst",
+        "MIS Analyst",
+        "Junior MIS Analyst",
+        "Junior BI Analyst",
+        "Business Intelligence Analyst",
+        "Power BI Analyst",
+        "KPI Analyst",
+        "Performance Analyst",
+        "Junior Data Analyst",
+        "Data Analyst",
+        "Data Analytics",
+        "SQL Analyst",
+        "Data Quality Analyst",
+        "Data Management Analyst",
+        "Junior Business Analyst",
+        "Business Analyst",
+        "Junior Systems Analyst",
+        "Systems Analyst",
+        "Business Process Analyst",
+        "Operations Analyst",
+        "Business Operations Analyst",
+        "Junior SFE Analyst",
+        "SFE Analyst"
+      ],
+      "total_fresh_24h": 14
     }
   ]
 }
