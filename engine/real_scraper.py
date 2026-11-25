@@ -4,6 +4,7 @@ import re
 import time
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
 try:
@@ -18,9 +19,7 @@ USER_AGENT = (
     "Chrome/129.0.0.0 Safari/537.36"
 )
 
-# Tier 1 & Tier 2 & Tier 3 CV-aligned search terms across Egypt
 LINKEDIN_JOB_QUERIES = [
-    # Tier 1 (Highest priority: Reporting, MIS, BI, Data, Business/Systems Analysis, Performance, Data Quality)
     "Reporting Analyst",
     "MIS Analyst",
     "Junior BI Analyst",
@@ -31,7 +30,6 @@ LINKEDIN_JOB_QUERIES = [
     "Performance Analyst",
     "Data Quality Analyst",
     "Junior Systems Analyst",
-    # Tier 2 (Operations, Sales/Commercial, SFE, Data Management, Research & Insights)
     "Operations Analyst",
     "Sales Analyst",
     "Sales Support Analyst",
@@ -41,7 +39,6 @@ LINKEDIN_JOB_QUERIES = [
     "Data Management Analyst",
     "Research Insights Analyst",
     "Junior Commercial Analyst",
-    # Tier 3 (Selective entry roles)
     "Junior Power BI Developer",
     "Junior Product Analyst",
     "Marketing Data Analyst",
@@ -57,6 +54,13 @@ JOBSPY_QUERIES = [
     "Operations Analyst",
     "Sales Support Analyst",
     "Junior SFE Analyst",
+]
+
+HIRING_POST_QUERIES = [
+    'site:linkedin.com/posts ("hiring" OR "we are hiring" OR "send your cv" OR "dm me") ("data" OR "bi" OR "reporting" OR "analyst" OR "mis" OR "sfe") ("egypt" OR "cairo" OR "giza")',
+    'site:linkedin.com/posts ("junior" OR "fresh" OR "entry level" OR "intern" OR "internship") ("data" OR "bi" OR "business analyst" OR "operations") ("egypt" OR "cairo")',
+    'site:linkedin.com/posts ("مطلوب" OR "فرصة عمل" OR "توظيف" OR "ابعت" OR "cv") ("بيانات" OR "تحليل" OR "تقارير" OR "data" OR "bi" OR "excel") ("مصر" OR "القاهرة" OR "الجيزة")',
+    '("hiring" OR "looking for" OR "send cv") ("data analyst" OR "bi analyst" OR "reporting analyst" OR "business analyst") ("cairo" OR "egypt")',
 ]
 
 WORKABLE_COMPANIES = [
@@ -230,6 +234,90 @@ def scrape_jobspy_indeed_google(now_iso):
     return items, src_status
 
 
+def scrape_hiring_posts(now_iso):
+    """Collects public hiring posts via DuckDuckGo HTML + Bing RSS without API keys."""
+    found = {}
+    errors = 0
+
+    for q in HIRING_POST_QUERIES:
+        # 1. DuckDuckGo HTML
+        try:
+            ddg_url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(q)}"
+            status, body = http_request(ddg_url, timeout=15)
+            blocks = re.findall(r'<a[^>]*class="result__a"[^>]*href="([^"]+)"[^>]*>(.*?)</a>', body, flags=re.S)
+            for href, raw_t in blocks:
+                if "uddg=" in href:
+                    m = re.search(r"uddg=([^&]+)", href)
+                    if m:
+                        href = urllib.parse.unquote(m.group(1))
+                if not href.startswith("http"):
+                    continue
+                title = strip_tags(raw_t)
+                if not title:
+                    continue
+                low = title.lower()
+                loc = "القاهرة" if ("cairo" in low or "القاهرة" in title) else ("مصر" if ("egypt" in low or "مصر" in title) else None)
+                found[href] = {
+                    "company": "بوست توظيف (LinkedIn / ويب)",
+                    "title": title[:120],
+                    "location": loc,
+                    "work_mode": "Remote" if ("remote" in low or "عن بعد" in title or "ريموت" in title) else None,
+                    "source_name": "بوستات التوظيف",
+                    "source_category": "hiring_posts",
+                    "url": href,
+                    "http_status": status,
+                    "has_apply_button": False,
+                    "first_published": None,
+                    "discovered_at": now_iso,
+                    "required_text": f"{title}. {q}",
+                    "tasks": title,
+                }
+            time.sleep(0.4)
+        except Exception:
+            errors += 1
+
+        # 2. Bing RSS fallback/supplement for posts
+        try:
+            rss_url = f"https://www.bing.com/search?q={urllib.parse.quote(q)}&format=rss&cc=EG"
+            status, xml_raw = http_request(rss_url, timeout=15)
+            root = ET.fromstring(xml_raw)
+            for item in root.findall(".//item"):
+                link = (item.findtext("link") or "").strip()
+                raw_t = strip_tags(item.findtext("title") or "")
+                desc = strip_tags(item.findtext("description") or "")
+                if not link.startswith("http") or link in found or not raw_t:
+                    continue
+                low = f"{raw_t} {desc}".lower()
+                loc = "القاهرة" if ("cairo" in low or "القاهرة" in raw_t or "القاهرة" in desc) else ("مصر" if ("egypt" in low or "مصر" in raw_t or "مصر" in desc) else None)
+                found[link] = {
+                    "company": "بوست توظيف (بحث مباشر)",
+                    "title": raw_t[:120],
+                    "location": loc,
+                    "work_mode": "Remote" if ("remote" in low or "عن بعد" in desc or "ريموت" in desc) else None,
+                    "source_name": "بوستات التوظيف",
+                    "source_category": "hiring_posts",
+                    "url": link,
+                    "http_status": status,
+                    "has_apply_button": False,
+                    "first_published": None,
+                    "discovered_at": now_iso,
+                    "required_text": f"{raw_t}. {desc[:400]}",
+                    "tasks": desc[:400] or raw_t,
+                }
+            time.sleep(0.35)
+        except Exception:
+            errors += 1
+
+    items = list(found.values())
+    if items:
+        src_status = {"state": "OK", "label": f"نجح ({len(items)} بوست)", "count": len(items)}
+    elif errors > 0:
+        src_status = {"state": "FAILED", "label": "تعذّر الوصول للبوستات", "count": 0}
+    else:
+        src_status = {"state": "OK_ZERO", "label": "نجح وجاب ٠", "count": 0}
+    return items, src_status
+
+
 def scrape_egypt_company_boards(now_iso):
     results = []
     errors = 0
@@ -327,14 +415,16 @@ def scrape_all_real_sources():
 
     li_items, li_status = scrape_linkedin_jobs_egypt(now_iso)
     ig_items, ig_status = scrape_jobspy_indeed_google(now_iso)
+    hp_items, hp_status = scrape_hiring_posts(now_iso)
     co_items, co_status = scrape_egypt_company_boards(now_iso)
     rm_items, rm_status = scrape_remotive_global(now_iso)
 
-    raw_items = li_items + ig_items + co_items + rm_items
+    raw_items = li_items + ig_items + hp_items + co_items + rm_items
 
     source_statuses = {
         "linkedin_jobs": li_status,
         "indeed_google": ig_status,
+        "hiring_posts": hp_status,
         "egypt_companies": co_status,
         "remotive": rm_status,
         "wuzzuf": {"state": "EMAIL_ALERT_ONLY", "label": "مربوط عبر تنبيهات البريد", "count": 0},
