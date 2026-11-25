@@ -548,6 +548,41 @@
       margin-bottom: 8px;
     }
 
+    /* Keywords Page Styles */
+    .kw-group-title {
+      margin: 12px 0 8px 0;
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #6ee7b7;
+    }
+
+    .kw-chips-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .kw-link-chip {
+      min-height: 40px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-strong);
+      color: var(--text-main);
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .kw-link-chip:hover {
+      border-color: var(--ok);
+      background: var(--ok-bg);
+      color: #6ee7b7;
+    }
+
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -557,9 +592,9 @@
       background: rgba(11, 17, 32, 0.98);
       border-top: 1px solid var(--border-strong);
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      padding: 6px 8px;
-      gap: 4px;
+      grid-template-columns: repeat(5, 1fr);
+      padding: 6px 6px;
+      gap: 3px;
     }
 
     .nav-tab-btn {
@@ -567,7 +602,7 @@
       border-radius: var(--radius-md);
       background: transparent;
       color: var(--text-muted);
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -699,7 +734,17 @@
       <div id="opportunitiesList"></div>
     </section>
 
-    <!-- TAB 2: أضف فرصة -->
+    <!-- TAB 2: الكلمات (LinkedIn Posts Instant Search) -->
+    <section id="view-keywords" class="tab-view">
+      <div class="section-card">
+        <h2>بحث بوستات LinkedIn بالأحدث</h2>
+        <p>دوس على أي كلمة تنقلك مباشرة لنتائج بوستات LinkedIn المرتّبة بالأحدث، واختر فلتر الوقت (Past 24 hours) داخل LinkedIn لمتابعة البوستات أول بأول.</p>
+        <input type="text" id="kwFilterInput" class="field-input" placeholder="فلتر الكلمات بسرعة (مثال: Reporting أو SFE أو SQL)..." />
+        <div id="keywordsCatalogContainer"></div>
+      </div>
+    </section>
+
+    <!-- TAB 3: أضف فرصة -->
     <section id="view-add" class="tab-view">
       <div class="section-card">
         <h2>أضف فرصة أو بوست</h2>
@@ -717,7 +762,7 @@
 
       <div class="section-card">
         <button type="button" class="btn-refresh" style="width:100%;justify-content:space-between;display:flex;" data-action="toggle-self-search">
-          <span>ابحث بنفسك</span>
+          <span>روابط بحث سريع جاهزة</span>
           <span id="selfSearchArrow">▼</span>
         </button>
         <div id="selfSearchDrawer" style="display:none;margin-top:10px;">
@@ -726,7 +771,7 @@
       </div>
     </section>
 
-    <!-- TAB 3: تقديماتي -->
+    <!-- TAB 4: تقديماتي -->
     <section id="view-applications" class="tab-view">
       <div class="kpi-row" style="margin-bottom:10px;">
         <button type="button" id="mtab-saved" class="kpi-tile" data-action="set-my-tab" data-tab="saved">
@@ -746,7 +791,7 @@
       <div id="myApplicationsList"></div>
     </section>
 
-    <!-- TAB 4: الإعدادات -->
+    <!-- TAB 5: الإعدادات -->
     <section id="view-settings" class="tab-view">
       <div class="section-card">
         <h3>الإشعارات</h3>
@@ -768,7 +813,7 @@
 
       <div class="section-card">
         <h3>بيانات المحرك</h3>
-        <p>الإصدار v3.5 · بكالوريوس BIS حلوان (GPA 3.67) · نقطة الانطلاق: شبرا مصر.</p>
+        <p>الإصدار v3.6 · بكالوريوس BIS حلوان (GPA 3.67) · نقطة الانطلاق: شبرا مصر.</p>
       </div>
     </section>
 
@@ -776,6 +821,7 @@
 
   <nav class="bottom-nav" aria-label="الأقسام الرئيسية">
     <button type="button" id="bnav-opportunities" class="nav-tab-btn active" data-action="switch-view" data-view="opportunities"><span>الفرص</span></button>
+    <button type="button" id="bnav-keywords" class="nav-tab-btn" data-action="switch-view" data-view="keywords"><span>الكلمات</span></button>
     <button type="button" id="bnav-add" class="nav-tab-btn" data-action="switch-view" data-view="add"><span>أضف فرصة</span></button>
     <button type="button" id="bnav-applications" class="nav-tab-btn" data-action="switch-view" data-view="applications"><span>تقديماتي</span></button>
     <button type="button" id="bnav-settings" class="nav-tab-btn" data-action="switch-view" data-view="settings"><span>الإعدادات</span></button>
@@ -789,9 +835,9 @@
         try { navigator.serviceWorker.register('./sw.js').catch(function () {}); } catch (e) {}
       }
 
-      var STORE_FEED = 'radar_v35_feed';
-      var STORE_USER = 'radar_v35_user_state';
-      var STORE_PREFS = 'radar_v35_prefs';
+      var STORE_FEED = 'radar_v36_feed';
+      var STORE_USER = 'radar_v36_user_state';
+      var STORE_PREFS = 'radar_v36_prefs';
 
       function loadJson(key, fallback) {
         try { var r = window.localStorage.getItem(key); return r ? JSON.parse(r) : fallback; } catch (e) { return fallback; }
@@ -800,8 +846,79 @@
         try { window.localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
       }
 
+      /* Curated keywords tailored to Peter's CV & high-fit Egyptian market roles */
+      var KEYWORD_GROUPS = [
+        {
+          group: '١. تقارير ومعلومات إدارية وBI (أعلى ملاءمة)',
+          terms: [
+            'Reporting Analyst Egypt',
+            'MIS Analyst Egypt',
+            'Junior BI Analyst Egypt',
+            'Business Intelligence Analyst Cairo',
+            'BI Analyst Egypt',
+            'Power BI Analyst Egypt',
+            'KPI Reporting Analyst',
+            'Dashboard Reporting Egypt'
+          ]
+        },
+        {
+          group: '٢. تحليل البيانات والـ SQL وجودة البيانات',
+          terms: [
+            'Junior Data Analyst Egypt',
+            'Data Analyst Cairo',
+            'Data Analytics Fresh Egypt',
+            'SQL Data Analyst Egypt',
+            'Python Data Analyst Egypt',
+            'Data Quality Analyst Egypt',
+            'Data Cleansing Analyst',
+            'Tableau Analyst Egypt'
+          ]
+        },
+        {
+          group: '٣. تحليل الأعمال والنظم والعمليات',
+          terms: [
+            'Junior Business Analyst Egypt',
+            'Business Analyst Cairo',
+            'Junior Systems Analyst Egypt',
+            'Systems Analyst Cairo',
+            'Business Process Analyst Egypt',
+            'Requirements Analyst Egypt'
+          ]
+        },
+        {
+          group: '٤. SFE ودعم المبيعات والتشغيل والتجاري',
+          terms: [
+            'SFE Egypt',
+            'Sales Force Effectiveness Egypt',
+            'Commercial Excellence Egypt',
+            'Sales Support Analyst Egypt',
+            'Sales Analyst Cairo',
+            'Operations Analyst Egypt',
+            'Business Operations Cairo',
+            'Performance Analyst Egypt'
+          ]
+        },
+        {
+          group: '٥. تدريب وفريش وبوستات بالعربي في مصر',
+          terms: [
+            'Data Internship Egypt',
+            'Business Analyst Intern Egypt',
+            'Fresh Graduate Analyst Cairo',
+            'مطلوب تحليل بيانات مصر',
+            'مطلوب تقارير بيانات القاهرة',
+            'مطلوب Excel Power BI مصر'
+          ]
+        }
+      ];
+
+      function buildLinkedInPostsUrl(term) {
+        return 'https://www.linkedin.com/search/results/content/?keywords=' +
+          encodeURIComponent(term) +
+          '&origin=SWITCH_SEARCH_VERTICAL&sortBy=%22date_posted%22';
+      }
+
       var SELF_SEARCH_LINKS = [
-        { id: 's1', title: 'بوستات التوظيف في مصر · LinkedIn (آخر ٢٤ ساعة)', url: 'https://www.linkedin.com/search/results/content/?keywords=(hiring%20OR%20%22send%20your%20cv%22%20OR%20SFE%20OR%20%22Data%20Analyst%22%20OR%20%22BI%20Analyst%22)%20Egypt&datePosted=%22past-24h%22' },
+        { id: 's1', title: 'بوستات التوظيف في مصر · LinkedIn (الأحدث)', url: buildLinkedInPostsUrl('Data Analyst OR BI OR Reporting OR SFE Egypt') },
         { id: 's2', title: 'وظائف Reporting / MIS / BI في مصر · LinkedIn (٢٤ ساعة)', url: 'https://www.linkedin.com/jobs/search/?keywords=(Reporting%20Analyst%20OR%20MIS%20Analyst%20OR%20BI%20Analyst%20OR%20Data%20Analyst)&location=Egypt&f_TPR=r86400' },
         { id: 's3', title: 'حديثي التخرج · تحليل البيانات والتقارير · WUZZUF', url: 'https://wuzzuf.net/search/jobs/?a=hpb&filters%5Bcareer_level%5D%5B0%5D=Entry%20Level&q=data%20analyst' },
         { id: 's4', title: 'تقارير وتشغيل بالقاهرة · Indeed', url: 'https://eg.indeed.com/jobs?q=reporting+analyst+OR+data+analyst+OR+business+intelligence&l=Cairo&fromage=1' }
@@ -813,6 +930,7 @@
         postedFilter: 'all',
         fitFilter: 'all',
         myTab: 'applied',
+        kwFilterText: '',
         runDetailsOpen: false,
         openDetailsMap: {},
         openReasonPickerMap: {},
@@ -886,6 +1004,35 @@
         bar.style.display = 'flex';
         clearTimeout(toastTimer);
         toastTimer = setTimeout(function () { bar.style.display = 'none'; }, undoObj ? 5000 : 2800);
+      }
+
+      function renderKeywordsCatalog() {
+        var box = document.getElementById('keywordsCatalogContainer');
+        if (!box) return;
+        var q = (state.kwFilterText || '').trim().toLowerCase();
+
+        var htmlOut = KEYWORD_GROUPS.map(function (grp) {
+          var matches = grp.terms.filter(function (t) {
+            return !q || t.toLowerCase().indexOf(q) !== -1;
+          });
+          if (!matches.length) return '';
+
+          var chips = matches.map(function (term) {
+            var href = buildLinkedInPostsUrl(term);
+            var isAr = /[\u0600-\u06FF]/.test(term);
+            return '<a href="' + esc(href) + '" target="_blank" rel="noopener noreferrer" class="kw-link-chip ' + (isAr ? '' : 'ltr') + '">' +
+              '<span>' + esc(term) + '</span>' +
+              '<span style="font-size:11px;color:#6ee7b7;">↗</span>' +
+            '</a>';
+          }).join('');
+
+          return '<div>' +
+            '<div class="kw-group-title">' + esc(grp.group) + '</div>' +
+            '<div class="kw-chips-grid">' + chips + '</div>' +
+          '</div>';
+        }).join('');
+
+        box.innerHTML = htmlOut || '<p style="margin:8px 0 0 0;color:var(--text-muted);">مفيش كلمات مطابقة للبحث ده.</p>';
       }
 
       function isPostItem(job) {
@@ -1106,7 +1253,7 @@
         if (filtered.length === 0) {
           container.innerHTML = '<div class="empty-state-box">' +
             '<h3>مفيش نتائج تحت الفلتر ده</h3>' +
-            '<p style="color:var(--text-muted);">جرّب مسح الفلاتر أو حدّث القائمة بعد تشغيل الجولة السحابية.</p>' +
+            '<p style="color:var(--text-muted);">جرّب مسح الفلاتر أو افتح تبويب «الكلمات» لبحث بوستات LinkedIn مباشرة.</p>' +
             '<button type="button" class="btn-refresh" data-action="reset-filters">امسح الفلاتر</button>' +
             '</div>';
           return;
@@ -1317,11 +1464,14 @@
         'switch-view': function (el) {
           var v = el.getAttribute('data-view');
           state.view = v;
-          ['opportunities', 'add', 'applications', 'settings'].forEach(function (name) {
-            document.getElementById('view-' + name).style.display = (name === v) ? 'block' : 'none';
-            document.getElementById('bnav-' + name).className = 'nav-tab-btn' + (name === v ? ' active' : '');
+          ['opportunities', 'keywords', 'add', 'applications', 'settings'].forEach(function (name) {
+            var sec = document.getElementById('view-' + name);
+            var btn = document.getElementById('bnav-' + name);
+            if (sec) sec.style.display = (name === v) ? 'block' : 'none';
+            if (btn) btn.className = 'nav-tab-btn' + (name === v ? ' active' : '');
           });
           if (v === 'opportunities') renderOpportunitiesView();
+          if (v === 'keywords') renderKeywordsCatalog();
           if (v === 'add') renderSelfSearchLinks();
           if (v === 'applications') renderApplicationsTab();
           if (v === 'settings') renderSettingsTab();
@@ -1556,12 +1706,20 @@
         else if (el.id === 'selFitFilter') { state.fitFilter = el.value; renderOpportunitiesView(); }
       });
 
+      document.addEventListener('input', function (evt) {
+        if (evt.target && evt.target.id === 'kwFilterInput') {
+          state.kwFilterText = evt.target.value;
+          renderKeywordsCatalog();
+        }
+      });
+
       document.addEventListener('visibilitychange', function () {
         if (document.visibilityState === 'visible') refreshListFromCloud(true);
       });
 
       (function boot() {
         renderOpportunitiesView();
+        renderKeywordsCatalog();
         refreshListFromCloud(true);
         var qJob = new URLSearchParams(window.location.search).get('job');
         if (qJob) {
