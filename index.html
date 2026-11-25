@@ -368,7 +368,6 @@
       color: #fcd34d;
     }
 
-    /* Decision row: قدّمت / مهتم / مش مهتم + minus button (بعد اختيار مهتم أو مش مهتم) */
     .decision-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -453,12 +452,6 @@
     .btn-open-main.warn {
       background: var(--warn);
       color: #1a1002;
-    }
-
-    .btn-open-main.neutral {
-      background: var(--bg-elevated);
-      color: var(--text-sub);
-      border: 1px solid var(--border-strong);
     }
 
     .btn-secondary-card {
@@ -673,10 +666,8 @@
       <div class="filter-controls-box">
         <div class="filter-row">
           <select id="selPostedFilter" class="filter-select" aria-label="وقت النشر الأصلي">
-            <option value="all">النشر: الكل</option>
+            <option value="all">النشر: آخر ٢٤ ساعة</option>
             <option value="today">نزلت النهارده</option>
-            <option value="3d">آخر ٣ أيام</option>
-            <option value="7d">آخر ٧ أيام</option>
           </select>
 
           <select id="selFitFilter" class="filter-select" aria-label="نسبة الملاءمة">
@@ -767,15 +758,15 @@
       </div>
 
       <div class="section-card">
-        <h3>تفضيلات الترشيح</h3>
-        <p>النظام بيعدّل الأولوية حسب «مش مهتم» (بعيدة · خبرة أعلى · شغل محاسبة).</p>
+        <h3>تفضيلات الترشيح وأوزان مسارات الـCV</h3>
+        <p>الأولوية مبنية على مسارات الـCV (Reporting / MIS / BI / Data / Business & Systems / SFE / Operations) وتتحدّث من قرارك.</p>
         <div id="prefsPenaltySummary"></div>
         <button type="button" class="btn-refresh" style="width:100%;margin-top:8px;" data-action="reset-preferences">إعادة ضبط التفضيلات</button>
       </div>
 
       <div class="section-card">
         <h3>بيانات المحرك</h3>
-        <p>الإصدار v3.3 · بكالوريوس BIS حلوان (GPA 3.67) · نقطة الانطلاق: شبرا مصر[cite: 20, 21].</p>
+        <p>الإصدار v3.4 · بكالوريوس BIS حلوان (GPA 3.67) · نقطة الانطلاق: شبرا مصر.</p>
       </div>
     </section>
 
@@ -796,9 +787,10 @@
         try { navigator.serviceWorker.register('./sw.js').catch(function () {}); } catch (e) {}
       }
 
-      var STORE_FEED = 'radar_v33_feed';
-      var STORE_USER = 'radar_v33_user_state';
-      var STORE_PREFS = 'radar_v33_prefs';
+      /* Fresh v3.4 storage keys so old pre-day-filter cache is cleared on start */
+      var STORE_FEED = 'radar_v34_feed';
+      var STORE_USER = 'radar_v34_user_state';
+      var STORE_PREFS = 'radar_v34_prefs';
 
       function loadJson(key, fallback) {
         try { var r = window.localStorage.getItem(key); return r ? JSON.parse(r) : fallback; } catch (e) { return fallback; }
@@ -808,10 +800,10 @@
       }
 
       var SELF_SEARCH_LINKS = [
-        { id: 's1', title: 'وظائف Data & BI في مصر · LinkedIn (٢٤ ساعة)', url: 'https://www.linkedin.com/jobs/search/?keywords=(Data%20Analyst%20OR%20BI%20Analyst%20OR%20Reporting%20Analyst)&location=Egypt&f_TPR=r86400' },
-        { id: 's2', title: 'بوستات SFE وMIS والتوظيف · LinkedIn (٢٤ ساعة)', url: 'https://www.linkedin.com/search/results/content/?keywords=(Data%20Analyst%20OR%20BI%20OR%20MIS%20OR%20SFE)%20Egypt&datePosted=%22past-24h%22' },
-        { id: 's3', title: 'حديثي التخرج · تحليل البيانات · WUZZUF', url: 'https://wuzzuf.net/search/jobs/?a=hpb&filters%5Bcareer_level%5D%5B0%5D=Entry%20Level&q=data%20analyst' },
-        { id: 's4', title: 'تقارير وتشغيل بالقاهرة · Indeed', url: 'https://eg.indeed.com/jobs?q=data+analyst+OR+business+intelligence+OR+reporting&l=Cairo&fromage=3' }
+        { id: 's1', title: 'وظائف Reporting / MIS / BI في مصر · LinkedIn (٢٤ ساعة)', url: 'https://www.linkedin.com/jobs/search/?keywords=(Reporting%20Analyst%20OR%20MIS%20Analyst%20OR%20BI%20Analyst%20OR%20Data%20Analyst)&location=Egypt&f_TPR=r86400' },
+        { id: 's2', title: 'بوستات SFE وOperations وBusiness Analyst · LinkedIn (٢٤ ساعة)', url: 'https://www.linkedin.com/search/results/content/?keywords=(SFE%20OR%20%22Operations%20Analyst%22%20OR%20%22Business%20Analyst%22%20OR%20%22Sales%20Support%22)%20Egypt&datePosted=%22past-24h%22' },
+        { id: 's3', title: 'حديثي التخرج · تحليل البيانات والتقارير · WUZZUF', url: 'https://wuzzuf.net/search/jobs/?a=hpb&filters%5Bcareer_level%5D%5B0%5D=Entry%20Level&q=data%20analyst' },
+        { id: 's4', title: 'تقارير وتشغيل بالقاهرة · Indeed', url: 'https://eg.indeed.com/jobs?q=reporting+analyst+OR+data+analyst+OR+business+intelligence&l=Cairo&fromage=1' }
       ];
 
       var state = {
@@ -829,7 +821,6 @@
           meta: { scan_completed_at: null, feed_published_at: null, source_statuses: {} },
           jobs: {}
         }),
-        /* userState per jobId: { seenAt, saved, applied, appliedAt, nextStep, interest, removedFromMain, dismissedReason, snapshot } */
         userState: loadJson(STORE_USER, {}),
         prefs: loadJson(STORE_PREFS, {
           ntfyTopic: '',
@@ -867,6 +858,13 @@
         return new Intl.DateTimeFormat('ar-EG', { timeZone: 'Africa/Cairo', day: 'numeric', month: 'short' }).format(d) + '، ' + tFmt.format(d);
       }
 
+      function isWithin24Hours(iso) {
+        if (!iso) return true;
+        var d = new Date(iso);
+        if (isNaN(d.getTime())) return true;
+        return (Date.now() - d.getTime()) <= 24 * 3600 * 1000;
+      }
+
       function isSameCairoDay(iso) {
         if (!iso) return false;
         var d = new Date(iso);
@@ -895,6 +893,9 @@
 
         Object.keys(cloudJobs).forEach(function (id) {
           var j = cloudJobs[id];
+          var ts = (j.receipt && j.receipt.first_published) || j.discovered_at;
+          if (!isWithin24Hours(ts)) return;
+
           var locKey = String(j.location || '').toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, ' ').trim().split(' ').slice(0, 2).join('_');
           var titleKey = String(j.title || '').toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, '');
           var compKey = String(j.company || '').toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, '');
@@ -937,15 +938,22 @@
         }
       }
 
+      /* CV track weighting: Reporting/MIS/BI/Data > Business/Systems > SFE/Sales/Operations */
       function getEffectiveScore(job) {
         var raw = (job.fit && typeof job.fit.score === 'number') ? job.fit.score : 65;
         var titleLow = String(job.title || '').toLowerCase();
         var reasonLow = String((job.fit && job.fit.reason_first) || '').toLowerCase();
         var locLow = String(job.location || '').toLowerCase();
         var adj = 0;
+
+        if (/reporting|mis|\bbi\b|business intelligence|data analyst|data quality/.test(titleLow)) adj += 4;
+        else if (/business analyst|systems analyst|process/.test(titleLow)) adj += 2;
+        else if (/sfe|sales force|sales support|operations|commercial/.test(titleLow)) adj += 1;
+
         if (state.prefs.penalties.accounting_role && /account|audit|tax|محاسب|مراجع/.test(titleLow + ' ' + reasonLow)) adj -= 30;
         if (state.prefs.penalties.higher_exp && /senior|lead|manager|3\+|4\+|5\+/.test(titleLow + ' ' + reasonLow)) adj -= 25;
         if (state.prefs.penalties.far_commute && /october|smart village|أكتوبر|القرية الذكية/.test(locLow + ' ' + reasonLow)) adj -= 20;
+
         return Math.max(10, Math.min(99, raw + adj));
       }
 
@@ -996,7 +1004,7 @@
           return !u.seenAt && !u.removedFromMain && ((j.receipt && j.receipt.apply_state) !== 'CLOSED');
         }).length;
 
-        var outcomeText = 'الجولة الأخيرة جابت ' + newCnt + ' فرص جديدة ليك';
+        var outcomeText = 'الجولة الأخيرة جابت ' + newCnt + ' فرص جديدة ليك (آخر ٢٤ ساعة)';
         if (failedCount > 0) outcomeText += ' · ' + failedCount + ' مصدر تعذّر';
         else if (srcKeys.length > 0) outcomeText += ' · ' + okCount + ' مصادر اتفحصوا';
 
@@ -1044,7 +1052,6 @@
 
         var basePool = (state.quickFilter === 'removed') ? removedList : activeMainList;
         var minFit = state.fitFilter === 'all' ? 0 : parseInt(state.fitFilter, 10);
-        var nowMs = Date.now();
 
         var filtered = basePool.filter(function (job) {
           var u = state.userState[job.id] || {};
@@ -1061,15 +1068,9 @@
 
           if (minFit > 0 && score < minFit) return false;
 
-          if (state.postedFilter !== 'all') {
+          if (state.postedFilter === 'today') {
             var pubIso = (job.receipt && job.receipt.first_published) || job.discovered_at;
-            if (state.postedFilter === 'today') {
-              if (!isSameCairoDay(pubIso)) return false;
-            } else {
-              var days = state.postedFilter === '3d' ? 3 : 7;
-              var pubMs = new Date(pubIso || 0).getTime();
-              if (!pubMs || (nowMs - pubMs) > days * 86400000) return false;
-            }
+            if (!isSameCairoDay(pubIso)) return false;
           }
 
           return true;
@@ -1098,8 +1099,8 @@
 
         if (filtered.length === 0) {
           container.innerHTML = '<div class="empty-state-box">' +
-            '<h3>مفيش فرص مطابقة للفلاتر الحالية</h3>' +
-            '<p style="color:var(--text-muted);">جرّب مسح الفلاتر أو تحديث القائمة.</p>' +
+            '<h3>مفيش فرص حديثة (آخر ٢٤ ساعة) تحت الفلتر ده</h3>' +
+            '<p style="color:var(--text-muted);">جرّب مسح الفلاتر أو حدّث القائمة بعد تشغيل الجولة السحابية.</p>' +
             '<button type="button" class="btn-refresh" data-action="reset-filters">امسح الفلاتر</button>' +
             '</div>';
           return;
@@ -1130,7 +1131,6 @@
           var intCls = (u.interest === 'interested') ? 'dec-btn active-interested' : 'dec-btn';
           var ignCls = (u.interest === 'not_interested') ? 'dec-btn active-ignored' : 'dec-btn';
 
-          /* Show minus button right next to decision row once user picked مهتم or مش مهتم */
           var hasDecision = (u.interest === 'interested' || u.interest === 'not_interested');
           var decisionGridCls = hasDecision ? 'decision-grid has-minus' : 'decision-grid';
           var minusBtnHtml = hasDecision
@@ -1401,7 +1401,6 @@
           renderOpportunitiesView();
           showToast('اتسجل مش مهتم · دوس − لو عاوز تشيلها من الليستة', { type: 'dismiss', id: id, prevUser: prevUser, prevPen: prevPen });
         },
-        /* Minus button after choosing مهتم or مش مهتم: removes card from main list while keeping decision */
         'remove-from-main-list': function (el) {
           var id = el.getAttribute('data-id');
           var job = getUniqueJobs().find(function (j) { return j.id === id; });
@@ -1419,11 +1418,9 @@
           if (!u) return;
           if (u.type === 'user_rec') {
             if (u.prev) state.userState[u.id] = u.prev; else delete state.userState[u.id];
-          } else if (u.type === 'dismiss') {
+          } else if (u.type === 'dismiss' || u.type === 'remove_main') {
             if (u.prevUser) state.userState[u.id] = u.prevUser;
-            state.prefs.penalties = u.prevPen;
-          } else if (u.type === 'remove_main') {
-            if (u.prevUser) state.userState[u.id] = u.prevUser;
+            if (u.prevPen) state.prefs.penalties = u.prevPen;
           }
           state.undoAction = null;
           persist();
@@ -1472,7 +1469,7 @@
             location: /cairo|القاهرة/i.test(text) ? 'القاهرة' : null,
             work_mode: /remote|ريموت/i.test(text) ? 'Remote' : null,
             is_training: /intern|trainee|تدريب/i.test(text),
-            receipt: { apply_state: 'NEEDS_VERIFICATION', apply_state_ar: 'محتاج تحقق', action_label: url ? 'افتح التقديم' : 'تفاصيل', first_published: null, discovered_at: new Date().toISOString(), last_verified: new Date().toISOString() },
+            receipt: { apply_state: 'NEEDS_VERIFICATION', apply_state_ar: 'محتاج تحقق', action_label: url ? 'افتح التقديم' : 'تفاصيل', first_published: new Date().toISOString(), discovered_at: new Date().toISOString(), last_verified: new Date().toISOString() },
             fit: { score: 85, reason_first: firstLine, caveat_first: 'مضاف يدويًا' },
             commute: { summary: 'غير مذكورة' },
             discovered_at: new Date().toISOString()
