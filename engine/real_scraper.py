@@ -19,7 +19,47 @@ USER_AGENT = (
     "Chrome/129.0.0.0 Safari/537.36"
 )
 
-# Strict exclusion for senior/leadership/multi-year roles and non-target tracks
+# Synonym expansion map for Egyptian market & Peter's CV tracks
+ROLE_SYNONYMS = {
+    "reporting_mis_bi": [
+        "Junior Reporting Analyst",
+        "Reporting Analyst",
+        "MIS Analyst",
+        "Junior MIS Analyst",
+        "Junior BI Analyst",
+        "Business Intelligence Analyst",
+        "Power BI Analyst",
+        "KPI Analyst",
+        "Performance Analyst",
+    ],
+    "data_analytics": [
+        "Junior Data Analyst",
+        "Data Analyst",
+        "Data Analytics",
+        "SQL Analyst",
+        "Data Quality Analyst",
+        "Data Management Analyst",
+    ],
+    "ba_sa_operations": [
+        "Junior Business Analyst",
+        "Business Analyst",
+        "Junior Systems Analyst",
+        "Systems Analyst",
+        "Business Process Analyst",
+        "Operations Analyst",
+        "Business Operations Analyst",
+    ],
+    "sfe_sales_commercial": [
+        "Junior SFE Analyst",
+        "SFE Analyst",
+        "Sales Force Effectiveness",
+        "Sales Support Analyst",
+        "Sales Operations Analyst",
+        "Sales Analyst",
+        "Commercial Analyst",
+    ],
+}
+
 UNWANTED_ROLE_RX = re.compile(
     r"\b("
     r"senior|sr\.?|lead|principal|staff|head\s+of|director|vp|vice\s+president|manager|mgr|"
@@ -35,38 +75,24 @@ UNWANTED_ROLE_RX = re.compile(
     re.I,
 )
 
-# Positive signal for Peter's CV tracks (Data, BI, Reporting, MIS, BA/SA, SFE, Operations)
 TARGET_FIT_RX = re.compile(
     r"\b("
     r"data\s+analyst|data\s+analytics|business\s+intelligence|\bbi\b|power\s*bi|tableau|"
     r"reporting|mis\b|management\s+information|business\s+analyst|systems\s+analyst|"
     r"operations\s+analyst|business\s+operations|sfe|sales\s+force\s+effectiveness|"
-    r"commercial\s+excellence|sales\s+analyst|sales\s+support|performance\s+analyst|"
-    r"data\s+quality|data\s+management|sql|excel|python|kpi|dashboard|intern|internship|trainee|junior|entry\s+level|fresh"
+    r"commercial\s+analyst|commercial\s+excellence|sales\s+analyst|sales\s+support|"
+    r"sales\s+operations|performance\s+analyst|data\s+quality|data\s+management|"
+    r"sql|excel|python|kpi|dashboard|intern|internship|trainee|junior|entry\s+level|fresh"
     r")\b|تحليل\s+بيانات|بيانات|تقارير|مؤشرات|تشغيل|نظم|أعمال|فريش|تدريب",
     re.I,
 )
 
-LINKEDIN_JOB_QUERIES = [
-    "Junior Reporting Analyst",
-    "Reporting Analyst",
-    "MIS Analyst",
-    "Junior BI Analyst",
-    "Business Intelligence Analyst",
-    "Junior Data Analyst",
-    "Data Analyst",
-    "Junior Business Analyst",
-    "Performance Analyst",
-    "Data Quality Analyst",
-    "Junior Systems Analyst",
-    "Operations Analyst",
-    "Sales Support Analyst",
-    "Junior SFE Analyst",
-    "Sales Force Effectiveness",
-    "Sales Analyst",
-    "Business Process Analyst",
-    "Data Management Analyst",
-]
+LINKEDIN_JOB_QUERIES = (
+    ROLE_SYNONYMS["reporting_mis_bi"]
+    + ROLE_SYNONYMS["data_analytics"]
+    + ROLE_SYNONYMS["ba_sa_operations"]
+    + ROLE_SYNONYMS["sfe_sales_commercial"]
+)
 
 JOBSPY_QUERIES = [
     "Reporting Analyst",
@@ -81,9 +107,9 @@ JOBSPY_QUERIES = [
 
 HIRING_POST_QUERIES = [
     'site:linkedin.com/posts ("hiring" OR "we are hiring" OR "send your cv" OR "send cv" OR "dm me") ("data analyst" OR "bi analyst" OR "business intelligence" OR "reporting" OR "mis" OR "sfe") ("junior" OR "fresh" OR "entry" OR "intern") ("egypt" OR "cairo" OR "giza")',
-    'site:linkedin.com/posts ("fresh" OR "junior" OR "entry level" OR "intern" OR "internship" OR "graduate" OR "0-1") ("data" OR "bi" OR "analytics" OR "business analyst" OR "operations" OR "reporting") ("egypt" OR "cairo")',
+    'site:linkedin.com/posts ("fresh" OR "junior" OR "entry level" OR "intern" OR "internship" OR "graduate" OR "0-1") ("data" OR "bi" OR "analytics" OR "business analyst" OR "operations" OR "reporting" OR "sales support") ("egypt" OR "cairo")',
     'site:linkedin.com/posts ("مطلوب" OR "فرصة عمل" OR "توظيف" OR "ابعت" OR "سي في" OR "cv") ("بيانات" OR "تحليل" OR "تقارير" OR "data" OR "bi" OR "excel" OR "sql") ("مصر" OR "القاهرة" OR "الجيزة")',
-    '("send your cv" OR "send cv" OR "hiring") ("junior" OR "entry level" OR "fresh") ("data analyst" OR "bi analyst" OR "reporting analyst" OR "mis analyst" OR "sfe") ("cairo" OR "egypt")',
+    '("send your cv" OR "send cv" OR "hiring" OR "apply here") ("junior" OR "entry level" OR "fresh") ("data analyst" OR "bi analyst" OR "reporting analyst" OR "mis analyst" OR "sfe" OR "operations analyst") ("cairo" OR "egypt")',
 ]
 
 COMMUNITY_RSS_FEEDS = [
@@ -151,6 +177,19 @@ def should_keep_role(title, extra_text=""):
     if UNWANTED_ROLE_RX.search(combined):
         return False
     return bool(TARGET_FIT_RX.search(combined))
+
+
+def classify_track(title, text=""):
+    blob = f"{title or ''} {text or ''}".lower()
+    if re.search(r"\b(reporting|mis|management information|\bbi\b|business intelligence|power\s*bi|tableau|kpi|performance)\b", blob):
+        return "Reporting / MIS / BI"
+    if re.search(r"\b(data analyst|data analytics|sql|python|data quality|data management)\b", blob):
+        return "Data Analytics & Quality"
+    if re.search(r"\b(business analyst|systems analyst|process|operations|business operations)\b", blob):
+        return "Business / Systems / Ops"
+    if re.search(r"\b(sfe|sales force|sales support|sales operations|sales analyst|commercial)\b", blob):
+        return "SFE / Sales / Commercial"
+    return "General Fit"
 
 
 def extract_contact_or_apply_link(text, fallback_url):
@@ -248,6 +287,7 @@ def scrape_linkedin_jobs_egypt(now_iso):
                     found[clean_url] = {
                         "company": company or "جهة معلنة على LinkedIn",
                         "title": title,
+                        "track": classify_track(title, kw),
                         "location": loc,
                         "work_mode": "Remote" if (loc and "remote" in loc.lower()) else None,
                         "source_name": "LinkedIn Jobs",
@@ -310,6 +350,7 @@ def scrape_jobspy_indeed_google(now_iso):
                 found[job_url] = {
                     "company": company,
                     "title": title,
+                    "track": classify_track(title, desc),
                     "location": loc,
                     "work_mode": "Remote" if is_remote else None,
                     "source_name": "Indeed Egypt" if "indeed" in site else "Google Jobs",
@@ -361,6 +402,7 @@ def scrape_hiring_posts(now_iso):
                 found[href] = {
                     "company": "بوست توظيف (LinkedIn)",
                     "title": title[:125],
+                    "track": classify_track(title, q),
                     "location": loc,
                     "work_mode": mode,
                     "source_name": "بوستات التوظيف",
@@ -395,6 +437,7 @@ def scrape_hiring_posts(now_iso):
                 found[link] = {
                     "company": "بوست توظيف (بحث مباشر)",
                     "title": raw_t[:125],
+                    "track": classify_track(raw_t, combined),
                     "location": loc,
                     "work_mode": mode,
                     "source_name": "بوستات التوظيف",
@@ -430,6 +473,7 @@ def scrape_hiring_posts(now_iso):
                 found[link] = {
                     "company": src_label,
                     "title": raw_t[:125],
+                    "track": classify_track(raw_t, combined),
                     "location": loc,
                     "work_mode": mode,
                     "source_name": "بوستات التوظيف",
@@ -483,6 +527,7 @@ def scrape_egypt_company_boards(now_iso):
                 results.append({
                     "company": company,
                     "title": title,
+                    "track": classify_track(title, company),
                     "location": loc_str,
                     "work_mode": "Remote" if is_remote else None,
                     "source_name": f"{company} Careers",
@@ -526,6 +571,7 @@ def scrape_remotive_global(now_iso):
                 results.append({
                     "company": clean_field(job.get("company_name")) or "شركة ريموت",
                     "title": title,
+                    "track": classify_track(title, desc),
                     "location": req_loc,
                     "eligible_regions": req_loc or "",
                     "work_mode": "Remote",
