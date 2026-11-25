@@ -1,15 +1,15 @@
 {
   "meta": {
-    "scan_completed_at": "2026-11-25T12:29:05Z",
-    "feed_published_at": "2026-11-25T12:29:05Z",
+    "scan_completed_at": "2026-11-25T12:30:13Z",
+    "feed_published_at": "2026-11-25T12:30:13Z",
     "priority_threshold": 80,
     "fresh_window_hours": 24,
-    "total_active": 30,
+    "total_active": 43,
     "source_statuses": {
       "linkedin_jobs": {
         "state": "OK",
-        "label": "نجح (35 إعلان)",
-        "count": 35
+        "label": "نجح (90 إعلان)",
+        "count": 90
       },
       "indeed_google": {
         "state": "OK",
@@ -18,8 +18,8 @@
       },
       "hiring_posts": {
         "state": "OK",
-        "label": "نجح (20 بوست)",
-        "count": 20
+        "label": "نجح (28 بوست)",
+        "count": 28
       },
       "egypt_companies": {
         "state": "OK_ZERO",
@@ -44,40 +44,40 @@
     }
   },
   "jobs": {
-    "839a17798aa49082": {
-      "id": "839a17798aa49082",
-      "family_id": "3048c922fb78",
+    "7e2b65b6fdd90a8b": {
+      "id": "7e2b65b6fdd90a8b",
+      "family_id": "f01fc08b5254",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "مواقيت الصلاة في القاهرة",
+      "title": "Nouvelle imprimante - Imprimante",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://timesprayer.com/prayer-times-in-cairo.html"
+        "https://forums.commentcamarche.net/forum/affich-38271567-nouvelle-imprimante"
       ],
-      "primary_url": "https://timesprayer.com/prayer-times-in-cairo.html",
-      "location": "القاهرة",
+      "primary_url": "https://forums.commentcamarche.net/forum/affich-38271567-nouvelle-imprimante",
+      "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
         "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
       },
       "fit": {
         "score": 55,
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "مواقيت الصلاة في القاهرة (القاهرة) · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
+        "reason_first": "Nouvelle imprimante - Imprimante · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -97,45 +97,45 @@
         "score": null,
         "one_way_min": null,
         "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "8fe970646cec700c": {
-      "id": "8fe970646cec700c",
-      "family_id": "9d513e3891f8",
+    "2b35aae480bb83a6": {
+      "id": "2b35aae480bb83a6",
+      "family_id": "d06d00adc1ed",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "مواقيت الصلاة في القاهرة اليوم | أوقات الأذان اليومية",
+      "title": "Comment debloquer une liseuse Kobo aura - Forum Matériel & Système",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://timesprayers.com/prayer-times-in-cairo"
+        "https://forums.commentcamarche.net/forum/affich-38273354-comment-debloquer-une-liseuse-kobo-aura"
       ],
-      "primary_url": "https://timesprayers.com/prayer-times-in-cairo",
-      "location": "القاهرة",
+      "primary_url": "https://forums.commentcamarche.net/forum/affich-38273354-comment-debloquer-une-liseuse-kobo-aura",
+      "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
         "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
       },
       "fit": {
         "score": 55,
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "مواقيت الصلاة في القاهرة اليوم | أوقات الأذان اليومية (القاهرة) · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
+        "reason_first": "Comment debloquer une liseuse Kobo aura - Forum Matériel & Système · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -155,45 +155,45 @@
         "score": null,
         "one_way_min": null,
         "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "94711ae5e08392ef": {
-      "id": "94711ae5e08392ef",
-      "family_id": "47b015176fa1",
+    "8fbaf60b2b81db90": {
+      "id": "8fbaf60b2b81db90",
+      "family_id": "5618eed5ddc8",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "مواقيت الصلاة القاهرة - أوقات الصلاة, وقت الصلاة والأذان, مواعيد الصلاة ...",
+      "title": "powershell - Install-Module : The term 'Install-Module' is not ...",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://www.islamicfinder.org/ar/world/egypt/360630/cairo-prayer-times/"
+        "https://stackoverflow.com/questions/41585758/install-module-the-term-install-module-is-not-recognized-as-the-name-of-a-cm"
       ],
-      "primary_url": "https://www.islamicfinder.org/ar/world/egypt/360630/cairo-prayer-times/",
-      "location": "القاهرة",
+      "primary_url": "https://stackoverflow.com/questions/41585758/install-module-the-term-install-module-is-not-recognized-as-the-name-of-a-cm",
+      "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
         "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
       },
       "fit": {
         "score": 55,
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "مواقيت الصلاة القاهرة - أوقات الصلاة, وقت الصلاة والأذان, مواعيد الصلاة ... (القاهرة) · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
+        "reason_first": "powershell - Install-Module : The term 'Install-Module' is not ... · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -213,103 +213,45 @@
         "score": null,
         "one_way_min": null,
         "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "f438838dbac19b99": {
-      "id": "f438838dbac19b99",
-      "family_id": "47b015176fa1",
-      "probable_duplicate_of": "94711ae5e08392ef",
-      "company": "بوست توظيف (بحث مباشر)",
-      "title": "مواقيت الصلاة القاهرة - أوقات الصلاة, وقت الصلاة والأذان, مواعيد الصلاة ...",
-      "sources": [
-        "بوستات التوظيف"
-      ],
-      "source_category": "hiring_posts",
-      "all_urls": [
-        "https://www.islamicfinder.org/ar/world/egypt/42601677/cairo-prayer-times/"
-      ],
-      "primary_url": "https://www.islamicfinder.org/ar/world/egypt/42601677/cairo-prayer-times/",
-      "location": "القاهرة",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
-        "apply_state": "NEEDS_VERIFICATION",
-        "apply_state_ar": "محتاج تحقق",
-        "action_label": "افتح الرابط",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 55,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "مواقيت الصلاة القاهرة - أوقات الصلاة, وقت الصلاة والأذان, مواعيد الصلاة ... (القاهرة) · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "site:linkedin.com/posts (\"مطلوب\" OR \"فرصة عمل\" OR \"توظيف\" OR \"ابعت\" OR \"سي في\" OR \"cv\") (\"بيانات\" OR \"تحليل\" OR \"تقارير\" OR \"data\" OR \"bi\" OR \"excel\" OR \"sql\") ",
-            "cv": "تصميم قاعدة بيانات 6+ كيانات (ERD) في مشروع NTI + تحليل 5,000 معاملة دفع رقمي بـ SQL"
-          },
-          {
-            "tag": "شرط أساسي",
-            "quote": "site:linkedin.com/posts (\"مطلوب\" OR \"فرصة عمل\" OR \"توظيف\" OR \"ابعت\" OR \"سي في\" OR \"cv\") (\"بيانات\" OR \"تحليل\" OR \"تقارير\" OR \"data\" OR \"bi\" OR \"excel\" OR \"sql\") ",
-            "cv": "نظام حجز فعاليات فعلي بـ Excel/VBA وأتمتة رسائل التأكيد لـ 500–1,000 مشارك"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:28:50Z"
-    },
-    "b60e65242551e54c": {
-      "id": "b60e65242551e54c",
-      "family_id": "a9f10aa47b56",
+    "6c4c4d9c016f7ada": {
+      "id": "6c4c4d9c016f7ada",
+      "family_id": "dd2b928212c3",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "مواقيت الصلاة في القاهرة اليوم | Cairo | Salatpedia",
+      "title": "XCOPY still asking (F = file, D = directory) confirmation",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://salatpedia.com/egypt/cairo/"
+        "https://stackoverflow.com/questions/33752732/xcopy-still-asking-f-file-d-directory-confirmation"
       ],
-      "primary_url": "https://salatpedia.com/egypt/cairo/",
-      "location": "القاهرة",
+      "primary_url": "https://stackoverflow.com/questions/33752732/xcopy-still-asking-f-file-d-directory-confirmation",
+      "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
         "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
       },
       "fit": {
         "score": 55,
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "مواقيت الصلاة في القاهرة اليوم | Cairo | Salatpedia (القاهرة) · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
+        "reason_first": "XCOPY still asking (F = file, D = directory) confirmation · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -329,45 +271,45 @@
         "score": null,
         "one_way_min": null,
         "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "e09475c06449c892": {
-      "id": "e09475c06449c892",
-      "family_id": "e980589feadb",
+    "69c3e2c8b6a6642a": {
+      "id": "69c3e2c8b6a6642a",
+      "family_id": "cff1e7e48dbd",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "مواقيت الصلاة - دار الإفتاء المصرية",
+      "title": "Calculadora em php - Stack Overflow em Português",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://www.dar-alifta.org/ar/prayer"
+        "https://pt.stackoverflow.com/questions/11824/calculadora-em-php"
       ],
-      "primary_url": "https://www.dar-alifta.org/ar/prayer",
-      "location": "مصر",
+      "primary_url": "https://pt.stackoverflow.com/questions/11824/calculadora-em-php",
+      "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
         "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
       },
       "fit": {
         "score": 55,
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "مواقيت الصلاة - دار الإفتاء المصرية (مصر) · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
+        "reason_first": "Calculadora em php - Stack Overflow em Português · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -387,45 +329,45 @@
         "score": null,
         "one_way_min": null,
         "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "c4e088c56cc68793": {
-      "id": "c4e088c56cc68793",
-      "family_id": "6c7e42011f1e",
+    "feb11a8e4badf6a8": {
+      "id": "feb11a8e4badf6a8",
+      "family_id": "780975bb433b",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "مواقيت الصلاة في القاهرة اليوم – الفجر، الظهر، العصر، المغرب، العشاء ...",
+      "title": "Indentar código no Visual Studio Code - Stack Overflow em Português",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://www.worldclock.com/ar/mawaqit-al-salah/cairo/"
+        "https://pt.stackoverflow.com/questions/317037/indentar-c%c3%b3digo-no-visual-studio-code"
       ],
-      "primary_url": "https://www.worldclock.com/ar/mawaqit-al-salah/cairo/",
-      "location": "القاهرة",
+      "primary_url": "https://pt.stackoverflow.com/questions/317037/indentar-c%c3%b3digo-no-visual-studio-code",
+      "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
         "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
       },
       "fit": {
         "score": 55,
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "مواقيت الصلاة في القاهرة اليوم – الفجر، الظهر، العصر، المغرب، العشاء ... (القاهرة) · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
+        "reason_first": "Indentar código no Visual Studio Code - Stack Overflow em Português · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -445,50 +387,50 @@
         "score": null,
         "one_way_min": null,
         "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "44d6c25bf59cd946": {
-      "id": "44d6c25bf59cd946",
-      "family_id": "9dfe1e29102e",
+    "156aae3b0116af4e": {
+      "id": "156aae3b0116af4e",
+      "family_id": "876067523edf",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "مواقيت الصلاة للمسلمين اليوم في القاهرة مصر",
+      "title": "How to check SQL Server version - Stack Overflow",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://www.prayertimes.cc/ar/egypt/"
+        "https://stackoverflow.com/questions/20351674/how-to-check-sql-server-version"
       ],
-      "primary_url": "https://www.prayertimes.cc/ar/egypt/",
-      "location": "القاهرة",
+      "primary_url": "https://stackoverflow.com/questions/20351674/how-to-check-sql-server-version",
+      "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
         "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
       },
       "fit": {
         "score": 55,
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "مواقيت الصلاة للمسلمين اليوم في القاهرة مصر (القاهرة) · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
+        "reason_first": "How to check SQL Server version - Stack Overflow · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
             "tag": "شرط أساسي",
-            "quote": "site:linkedin.com/posts (\"مطلوب\" OR \"فرصة عمل\" OR \"توظيف\" OR \"ابعت\" OR \"سي في\" OR \"cv\") (\"بيانات\" OR \"تحليل\" OR \"تقارير\" OR \"data\" OR \"bi\" OR \"excel\" OR \"sql\") ",
+            "quote": "How to check SQL Server version",
             "cv": "تصميم قاعدة بيانات 6+ كيانات (ERD) في مشروع NTI + تحليل 5,000 معاملة دفع رقمي بـ SQL"
           },
           {
@@ -503,45 +445,45 @@
         "score": null,
         "one_way_min": null,
         "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "f1751a595cea72a1": {
-      "id": "f1751a595cea72a1",
-      "family_id": "44ec30cb41c7",
+    "690333d39fa0c809": {
+      "id": "690333d39fa0c809",
+      "family_id": "e739aed1ebc3",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "مواقيت الصلاة في القاهرة 2026 — جدول شهري كامل + PDF",
+      "title": "npm add root CA - Stack Overflow",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://www.al-adkar.com/salat/cairo"
+        "https://stackoverflow.com/questions/23788564/npm-add-root-ca"
       ],
-      "primary_url": "https://www.al-adkar.com/salat/cairo",
-      "location": "القاهرة",
+      "primary_url": "https://stackoverflow.com/questions/23788564/npm-add-root-ca",
+      "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
         "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
       },
       "fit": {
         "score": 55,
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "مواقيت الصلاة في القاهرة 2026 — جدول شهري كامل + PDF (القاهرة) · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
+        "reason_first": "npm add root CA - Stack Overflow · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -561,45 +503,45 @@
         "score": null,
         "one_way_min": null,
         "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "521893c2f0191ac2": {
-      "id": "521893c2f0191ac2",
-      "family_id": "4b0072549f6a",
+    "ce29194c46f4c36f": {
+      "id": "ce29194c46f4c36f",
+      "family_id": "575015543677",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "مواقيت الصلاة في القاهرة اليوم | الوقت",
+      "title": "Regex for string contains? - Stack Overflow",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://www.alwaqt.com/prayer-times/egypt/"
+        "https://stackoverflow.com/questions/4999064/regex-for-string-contains"
       ],
-      "primary_url": "https://www.alwaqt.com/prayer-times/egypt/",
-      "location": "القاهرة",
+      "primary_url": "https://stackoverflow.com/questions/4999064/regex-for-string-contains",
+      "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
         "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
       },
       "fit": {
         "score": 55,
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "مواقيت الصلاة في القاهرة اليوم | الوقت (القاهرة) · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
+        "reason_first": "Regex for string contains? - Stack Overflow · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -619,10 +561,648 @@
         "score": null,
         "one_way_min": null,
         "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "1b64af2fa6b8fd27": {
+      "id": "1b64af2fa6b8fd27",
+      "family_id": "bfe5b8ba4ce6",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "plsql - DBMS_OUTPUT.PUT_LINE not printing - Stack Overflow",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://stackoverflow.com/questions/10434474/dbms-output-put-line-not-printing"
+      ],
+      "primary_url": "https://stackoverflow.com/questions/10434474/dbms-output-put-line-not-printing",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 55,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "plsql - DBMS_OUTPUT.PUT_LINE not printing - Stack Overflow · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "I am using Oracle SQL Developer, In this tool, I had to enable DBMS output to view the results printed by dbms_output.put_line You can find this option in the r",
+            "cv": "تصميم قاعدة بيانات 6+ كيانات (ERD) في مشروع NTI + تحليل 5,000 معاملة دفع رقمي بـ SQL"
+          },
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"مطلوب\" OR \"فرصة عمل\" OR \"توظيف\" OR \"ابعت\" OR \"سي في\" OR \"cv\") (\"بيانات\" OR \"تحليل\" OR \"تقارير\" OR \"data\" OR \"bi\" OR \"excel\" OR \"sql\") ",
+            "cv": "نظام حجز فعاليات فعلي بـ Excel/VBA وأتمتة رسائل التأكيد لـ 500–1,000 مشارك"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "d95fa9e3512ef931": {
+      "id": "d95fa9e3512ef931",
+      "family_id": "1a79dcd0c882",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "روايات احلام المكتوبة من منتديات ليلاس - منتديات بورصات",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://forum.borsaat.com/t833090.html"
+      ],
+      "primary_url": "https://forum.borsaat.com/t833090.html",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 49,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "روايات احلام المكتوبة من منتديات ليلاس - منتديات بورصات · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "يقبل حديثي التخرج صراحة",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          },
+          {
+            "tag": "قبول فريش",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "خريج حديث مع 3+ مشاريع تحليل بيانات وتدريبات CIB وبنك القاهرة والبنك المركزي"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "fc38c7e76d3230a1": {
+      "id": "fc38c7e76d3230a1",
+      "family_id": "96af4723fb6b",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "روايات رومانسيه جريئه كامله - منتديات بورصات",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://forum.borsaat.com/t422301.html"
+      ],
+      "primary_url": "https://forum.borsaat.com/t422301.html",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 49,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "روايات رومانسيه جريئه كامله - منتديات بورصات · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "يقبل حديثي التخرج صراحة",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          },
+          {
+            "tag": "قبول فريش",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "خريج حديث مع 3+ مشاريع تحليل بيانات وتدريبات CIB وبنك القاهرة والبنك المركزي"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "199ff712504fcfe2": {
+      "id": "199ff712504fcfe2",
+      "family_id": "991f66da8cdc",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "غرام - غرام",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://forums.graaam.com/"
+      ],
+      "primary_url": "https://forums.graaam.com/",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 49,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "غرام - غرام · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "يقبل حديثي التخرج صراحة",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          },
+          {
+            "tag": "قبول فريش",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "خريج حديث مع 3+ مشاريع تحليل بيانات وتدريبات CIB وبنك القاهرة والبنك المركزي"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "0af22b772ebd9fd1": {
+      "id": "0af22b772ebd9fd1",
+      "family_id": "4a931a942ab3",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "روايات سعودية جريئة رومانسية كاملة - منتديات بورصات",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://forum.borsaat.com/t421530.html"
+      ],
+      "primary_url": "https://forum.borsaat.com/t421530.html",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 49,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "روايات سعودية جريئة رومانسية كاملة - منتديات بورصات · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "يقبل حديثي التخرج صراحة",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          },
+          {
+            "tag": "قبول فريش",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "خريج حديث مع 3+ مشاريع تحليل بيانات وتدريبات CIB وبنك القاهرة والبنك المركزي"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "c8542184cec2c274": {
+      "id": "c8542184cec2c274",
+      "family_id": "280536f6dabf",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "روايات رومانسية جريئة جدا كاملة - منتديات بورصات",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://forum.borsaat.com/t422156.html"
+      ],
+      "primary_url": "https://forum.borsaat.com/t422156.html",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 49,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "روايات رومانسية جريئة جدا كاملة - منتديات بورصات · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "يقبل حديثي التخرج صراحة",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          },
+          {
+            "tag": "قبول فريش",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "خريج حديث مع 3+ مشاريع تحليل بيانات وتدريبات CIB وبنك القاهرة والبنك المركزي"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "ddd9dfc182b24e94": {
+      "id": "ddd9dfc182b24e94",
+      "family_id": "cb06efe4dc95",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "روايات حب بعد زواج اجباري منتدى غرام - منتديات بورصات",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://forum.borsaat.com/t833072.html"
+      ],
+      "primary_url": "https://forum.borsaat.com/t833072.html",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 49,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "روايات حب بعد زواج اجباري منتدى غرام - منتديات بورصات · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "يقبل حديثي التخرج صراحة",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          },
+          {
+            "tag": "قبول فريش",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "خريج حديث مع 3+ مشاريع تحليل بيانات وتدريبات CIB وبنك القاهرة والبنك المركزي"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "6cb9842d563caa69": {
+      "id": "6cb9842d563caa69",
+      "family_id": "06d1d9f6b713",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "روايات رومنسيه سعوديه جريئه كامله بدون ردود - منتديات بورصات",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://forum.borsaat.com/t824305.html"
+      ],
+      "primary_url": "https://forum.borsaat.com/t824305.html",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 49,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "روايات رومنسيه سعوديه جريئه كامله بدون ردود - منتديات بورصات · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "يقبل حديثي التخرج صراحة",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          },
+          {
+            "tag": "قبول فريش",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "خريج حديث مع 3+ مشاريع تحليل بيانات وتدريبات CIB وبنك القاهرة والبنك المركزي"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "f22e787b0926728c": {
+      "id": "f22e787b0926728c",
+      "family_id": "94a02ce5a007",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "روايات رومانسيه جريئه كامله بدون ردود منتدى غرام - منتديات بورصات",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://forum.borsaat.com/t819150.html"
+      ],
+      "primary_url": "https://forum.borsaat.com/t819150.html",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 49,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "روايات رومانسيه جريئه كامله بدون ردود منتدى غرام - منتديات بورصات · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "يقبل حديثي التخرج صراحة",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          },
+          {
+            "tag": "قبول فريش",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "خريج حديث مع 3+ مشاريع تحليل بيانات وتدريبات CIB وبنك القاهرة والبنك المركزي"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "86f38c4a89936615": {
+      "id": "86f38c4a89936615",
+      "family_id": "a0c2ad9db4e4",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "روايات رومانسيه جريئه جدا جدا - منتديات بورصات",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://forum.borsaat.com/t422153.html"
+      ],
+      "primary_url": "https://forum.borsaat.com/t422153.html",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 49,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "روايات رومانسيه جريئه جدا جدا - منتديات بورصات · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "يقبل حديثي التخرج صراحة",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          },
+          {
+            "tag": "قبول فريش",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "خريج حديث مع 3+ مشاريع تحليل بيانات وتدريبات CIB وبنك القاهرة والبنك المركزي"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "e65718899384c06d": {
+      "id": "e65718899384c06d",
+      "family_id": "235b01fc46d8",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "فهرس روايات عبير واحلام الرومانسية الجريئة - منتديات بورصات",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://forum.borsaat.com/t834697.html"
+      ],
+      "primary_url": "https://forum.borsaat.com/t834697.html",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 49,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "فهرس روايات عبير واحلام الرومانسية الجريئة - منتديات بورصات · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "يقبل حديثي التخرج صراحة",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          },
+          {
+            "tag": "قبول فريش",
+            "quote": "site:linkedin.com/posts (\"fresh\" OR \"junior\" OR \"entry level\" OR \"intern\" OR \"internship\" OR \"graduate\" OR \"0-1\") (\"data\" OR \"bi\" OR \"analytics\" OR \"business an",
+            "cv": "خريج حديث مع 3+ مشاريع تحليل بيانات وتدريبات CIB وبنك القاهرة والبنك المركزي"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
     "1ed2ec5df444ca85": {
       "id": "1ed2ec5df444ca85",
@@ -643,8 +1223,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -675,32 +1255,32 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "49ec41f5eba81c73": {
-      "id": "49ec41f5eba81c73",
-      "family_id": "83f23050b41e",
+    "ba5878f4651ae05e": {
+      "id": "ba5878f4651ae05e",
+      "family_id": "e0529512a92c",
       "probable_duplicate_of": null,
-      "company": "بوست توظيف (بحث مباشر)",
-      "title": "مدارس بيونيرز لغات - Pioneers Language School | دليل المدارس المصرية ...",
+      "company": "LEONI EGYPT",
+      "title": "Production Planning Expert",
       "sources": [
-        "بوستات التوظيف"
+        "LinkedIn Jobs"
       ],
-      "source_category": "hiring_posts",
+      "source_category": "job_board",
       "all_urls": [
-        "https://egyptschools.info/school/%d9%85%d8%af%d8%a7%d8%b1%d8%b3-%d8%a8%d9%8a%d9%88%d9%86%d9%8a%d8%b1%d8%b2-%d9%84%d8%ba%d8%a7%d8%aa-pioneers-language-school/"
+        "https://eg.linkedin.com/jobs/view/production-planning-expert-at-leoni-egypt-4486050583"
       ],
-      "primary_url": "https://egyptschools.info/school/%d9%85%d8%af%d8%a7%d8%b1%d8%b3-%d8%a8%d9%8a%d9%88%d9%86%d9%8a%d8%b1%d8%b2-%d9%84%d8%ba%d8%a7%d8%aa-pioneers-language-school/",
-      "location": "مصر",
+      "primary_url": "https://eg.linkedin.com/jobs/view/production-planning-expert-at-leoni-egypt-4486050583",
+      "location": "Badr City, Cairo, Egypt",
       "work_mode": null,
       "is_training": false,
       "receipt": {
-        "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
-        "apply_state": "NEEDS_VERIFICATION",
-        "apply_state_ar": "محتاج تحقق",
-        "action_label": "افتح الرابط",
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
         "is_company_page": false,
         "egypt_eligibility": "مؤكد: داخل مصر",
         "egypt_status": "CONFIRMED"
@@ -710,12 +1290,12 @@
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "مدارس بيونيرز لغات - Pioneers Language School | دليل المدارس المصرية ... (مصر) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "reason_first": "Production Planning Expert (Badr City, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
             "tag": "شرط أساسي",
-            "quote": "(\"send your cv\" OR \"send cv\" OR \"hiring\" OR \"apply here\") (\"data analyst\" OR \"bi analyst\" OR \"reporting analyst\" OR \"mis analyst\" OR \"sfe\" OR \"operations analys",
+            "quote": "Operations Analyst",
             "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
           }
         ],
@@ -728,29 +1308,294 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "5036b8df217bdcbb": {
-      "id": "5036b8df217bdcbb",
-      "family_id": "abfdd02e4567",
+    "24ae8692b5cb0555": {
+      "id": "24ae8692b5cb0555",
+      "family_id": "8a83858b454a",
+      "probable_duplicate_of": null,
+      "company": "Amazon",
+      "title": "ACES Specialist, AMZL Trans",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/aces-specialist-amzl-trans-at-amazon-4494629384"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/aces-specialist-amzl-trans-at-amazon-4494629384",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "ACES Specialist, AMZL Trans (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Operations Analyst",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "dc04e4222cdd4688": {
+      "id": "dc04e4222cdd4688",
+      "family_id": "69f78bcca277",
+      "probable_duplicate_of": null,
+      "company": "LEONI EGYPT",
+      "title": "Production Planning Lead Specialist",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/production-planning-lead-specialist-at-leoni-egypt-4486059048"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/production-planning-lead-specialist-at-leoni-egypt-4486059048",
+      "location": "Badr City, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Production Planning Lead Specialist (Badr City, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Operations Analyst",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "612f08d9d0f09001": {
+      "id": "612f08d9d0f09001",
+      "family_id": "93742a302c58",
+      "probable_duplicate_of": null,
+      "company": "Abu Dhabi Islamic Bank - Egypt",
+      "title": "Corporate & SME's Credit Operations Officer/ Senior Officer",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/corporate-sme-s-credit-operations-officer-senior-officer-at-abu-dhabi-islamic-bank-egypt-4493090994"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/corporate-sme-s-credit-operations-officer-senior-officer-at-abu-dhabi-islamic-bank-egypt-4493090994",
+      "location": "Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Corporate & SME's Credit Operations Officer/ Senior Officer (Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Operations Analyst",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "aca78ce7c47925bf": {
+      "id": "aca78ce7c47925bf",
+      "family_id": "81401e502ed5",
+      "probable_duplicate_of": null,
+      "company": "STIPS",
+      "title": "Junior Operations- Engineer",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/junior-operations-engineer-at-stips-4494105723"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/junior-operations-engineer-at-stips-4494105723",
+      "location": "Damietta, Dumyat, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Junior Operations- Engineer (Damietta, Dumyat, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Operations Analyst",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "2984a13fa4a7a500": {
+      "id": "2984a13fa4a7a500",
+      "family_id": "2af6d0c25a90",
+      "probable_duplicate_of": null,
+      "company": "EliteFm",
+      "title": "Customer Relationship Management Specialist",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/customer-relationship-management-specialist-at-elitefm-4494616988"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/customer-relationship-management-specialist-at-elitefm-4494616988",
+      "location": "Giza, Al Jizah, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-25",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Customer Relationship Management Specialist (Giza, Al Jizah, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Sales Force Effectiveness",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": 80,
+        "one_way_min": 38,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: الجيزة · حوالي ٣٨ دقيقة من شبرا (مترو خط ٢ مباشر) · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "380247b1d7bcc278": {
+      "id": "380247b1d7bcc278",
+      "family_id": "0d021e2c29d5",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "مدارس بايونيرز الخاصة للغات",
+      "title": "よくある質問 - NotebookLM ヘルプ - Google Help",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://pioneers-school.com/"
+        "https://support.google.com/gemininotebook/answer/16269187?hl=ja"
       ],
-      "primary_url": "https://pioneers-school.com/",
+      "primary_url": "https://support.google.com/gemininotebook/answer/16269187?hl=ja",
       "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
@@ -763,7 +1608,7 @@
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "مدارس بايونيرز الخاصة للغات · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "reason_first": "よくある質問 - NotebookLM ヘルプ - Google Help · متابعة الأداء والتقارير التجارية (SFE / Operations)",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -781,29 +1626,29 @@
         "status": "UNKNOWN",
         "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "aa437e9757bae5ce": {
-      "id": "aa437e9757bae5ce",
-      "family_id": "1a2f1a231a55",
+    "5712d75e7dd17a19": {
+      "id": "5712d75e7dd17a19",
+      "family_id": "2841016935ae",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "عن مدارس بايونيرز",
+      "title": "مساعدة Google Translate",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://pioneers-school.com/page/about"
+        "https://support.google.com/translate/?hl=ar"
       ],
-      "primary_url": "https://pioneers-school.com/page/about",
+      "primary_url": "https://support.google.com/translate/?hl=ar",
       "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
@@ -816,7 +1661,7 @@
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "عن مدارس بايونيرز · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "reason_first": "مساعدة Google Translate · متابعة الأداء والتقارير التجارية (SFE / Operations)",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -834,135 +1679,29 @@
         "status": "UNKNOWN",
         "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "a1374751334adfaa": {
-      "id": "a1374751334adfaa",
-      "family_id": "de2edf1e3328",
+    "76da783daaf60325": {
+      "id": "76da783daaf60325",
+      "family_id": "3c5ef88a78f1",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "Elmagd Pioneers Language School مدارس المجد بايونيرز للغات",
+      "title": "مترجم قوقل نصوص فوري - منتديات بورصات",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://www.facebook.com/Elmagdpioneerslanguageschools/"
+        "https://forum.borsaat.com/t732388.html"
       ],
-      "primary_url": "https://www.facebook.com/Elmagdpioneerslanguageschools/",
-      "location": "الدقي، الجيزة",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
-        "apply_state": "NEEDS_VERIFICATION",
-        "apply_state_ar": "محتاج تحقق",
-        "action_label": "افتح الرابط",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Elmagd Pioneers Language School مدارس المجد بايونيرز للغات (الدقي، الجيزة) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "(\"send your cv\" OR \"send cv\" OR \"hiring\" OR \"apply here\") (\"data analyst\" OR \"bi analyst\" OR \"reporting analyst\" OR \"mis analyst\" OR \"sfe\" OR \"operations analys",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "UNKNOWN",
-        "summary": "الدقي، الجيزة · تقدير المشوار محتاج تأكيد"
-      },
-      "discovered_at": "2026-11-25T12:28:50Z"
-    },
-    "83e0f05514b03623": {
-      "id": "83e0f05514b03623",
-      "family_id": "7c06e11bf056",
-      "probable_duplicate_of": null,
-      "company": "بوست توظيف (بحث مباشر)",
-      "title": "Pioneers Language School, Cairo",
-      "sources": [
-        "بوستات التوظيف"
-      ],
-      "source_category": "hiring_posts",
-      "all_urls": [
-        "https://plseg.com/"
-      ],
-      "primary_url": "https://plseg.com/",
-      "location": "القاهرة",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
-        "apply_state": "NEEDS_VERIFICATION",
-        "apply_state_ar": "محتاج تحقق",
-        "action_label": "افتح الرابط",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Pioneers Language School, Cairo (القاهرة) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "(\"send your cv\" OR \"send cv\" OR \"hiring\" OR \"apply here\") (\"data analyst\" OR \"bi analyst\" OR \"reporting analyst\" OR \"mis analyst\" OR \"sfe\" OR \"operations analys",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:28:50Z"
-    },
-    "b3682b0c6c322bad": {
-      "id": "b3682b0c6c322bad",
-      "family_id": "9660bb6e1fcf",
-      "probable_duplicate_of": null,
-      "company": "بوست توظيف (بحث مباشر)",
-      "title": "مدارس بيونير المتكاملة - Pioneer Integrated School - PIS",
-      "sources": [
-        "بوستات التوظيف"
-      ],
-      "source_category": "hiring_posts",
-      "all_urls": [
-        "https://egyptschools.info/school/%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%D8%A8%D9%8A%D9%88%D9%86%D9%8A%D8%B1-%D8%A7%D9%84%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%D8%A9-pioneer-integrated-school/"
-      ],
-      "primary_url": "https://egyptschools.info/school/%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%D8%A8%D9%8A%D9%88%D9%86%D9%8A%D8%B1-%D8%A7%D9%84%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%D8%A9-pioneer-integrated-school/",
+      "primary_url": "https://forum.borsaat.com/t732388.html",
       "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
@@ -975,7 +1714,7 @@
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "مدارس بيونير المتكاملة - Pioneer Integrated School - PIS · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "reason_first": "مترجم قوقل نصوص فوري - منتديات بورصات · متابعة الأداء والتقارير التجارية (SFE / Operations)",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -993,135 +1732,29 @@
         "status": "UNKNOWN",
         "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "1adc7f3cc9b7c9ab": {
-      "id": "1adc7f3cc9b7c9ab",
-      "family_id": "d1504bc7846e",
+    "629fc38c7f27f59f": {
+      "id": "629fc38c7f27f59f",
+      "family_id": "ab722ec72cf5",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "مدرسة بايونيرز الدولية - Pioneers International School",
+      "title": "ترجمة نص في التطبيقات الأخرى",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://alexschools.info/school/pioneers-international-school/"
+        "https://support.google.com/translate/answer/6350658?hl=ar&co=GENIE.Platform%3DAndroid"
       ],
-      "primary_url": "https://alexschools.info/school/pioneers-international-school/",
-      "location": "مصر",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
-        "apply_state": "NEEDS_VERIFICATION",
-        "apply_state_ar": "محتاج تحقق",
-        "action_label": "افتح الرابط",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "مدرسة بايونيرز الدولية - Pioneers International School (مصر) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "(\"send your cv\" OR \"send cv\" OR \"hiring\" OR \"apply here\") (\"data analyst\" OR \"bi analyst\" OR \"reporting analyst\" OR \"mis analyst\" OR \"sfe\" OR \"operations analys",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:28:50Z"
-    },
-    "a549eed3061d561a": {
-      "id": "a549eed3061d561a",
-      "family_id": "c07bf3414ead",
-      "probable_duplicate_of": null,
-      "company": "بوست توظيف (بحث مباشر)",
-      "title": "مدارس بايونيرز للغات - أكتوبر | المصروفات - إيزي سكولز",
-      "sources": [
-        "بوستات التوظيف"
-      ],
-      "source_category": "hiring_posts",
-      "all_urls": [
-        "https://www.easyschools.org/ar/schoolProfile/pioneers-language-schools"
-      ],
-      "primary_url": "https://www.easyschools.org/ar/schoolProfile/pioneers-language-schools",
-      "location": "٦ أكتوبر",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
-        "apply_state": "NEEDS_VERIFICATION",
-        "apply_state_ar": "محتاج تحقق",
-        "action_label": "افتح الرابط",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "مدارس بايونيرز للغات - أكتوبر | المصروفات - إيزي سكولز (٦ أكتوبر) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "(\"send your cv\" OR \"send cv\" OR \"hiring\" OR \"apply here\") (\"data analyst\" OR \"bi analyst\" OR \"reporting analyst\" OR \"mis analyst\" OR \"sfe\" OR \"operations analys",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "UNKNOWN",
-        "summary": "٦ أكتوبر · تقدير المشوار محتاج تأكيد"
-      },
-      "discovered_at": "2026-11-25T12:28:50Z"
-    },
-    "3fe27b0577f86e1f": {
-      "id": "3fe27b0577f86e1f",
-      "family_id": "0a4fd7fd0228",
-      "probable_duplicate_of": null,
-      "company": "بوست توظيف (بحث مباشر)",
-      "title": "Pioneers Language Schools P.L.S - مدارس بايونيرز الخاصة للغات",
-      "sources": [
-        "بوستات التوظيف"
-      ],
-      "source_category": "hiring_posts",
-      "all_urls": [
-        "https://www.facebook.com/Pioneers2020/"
-      ],
-      "primary_url": "https://www.facebook.com/Pioneers2020/",
+      "primary_url": "https://support.google.com/translate/answer/6350658?hl=ar&co=GENIE.Platform%3DAndroid",
       "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
@@ -1134,7 +1767,7 @@
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "Pioneers Language Schools P.L.S - مدارس بايونيرز الخاصة للغات · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "reason_first": "ترجمة نص في التطبيقات الأخرى · متابعة الأداء والتقارير التجارية (SFE / Operations)",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -1152,42 +1785,42 @@
         "status": "UNKNOWN",
         "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
-    "629069ff7559fc00": {
-      "id": "629069ff7559fc00",
-      "family_id": "5106db38880c",
+    "6cfe2e88955631a0": {
+      "id": "6cfe2e88955631a0",
+      "family_id": "4772254e78e7",
       "probable_duplicate_of": null,
       "company": "بوست توظيف (بحث مباشر)",
-      "title": "مدارس+بايونيرز في مصر - تليفونات وعناوين | يلوبيدجز مصر",
+      "title": "ترجمة الصور",
       "sources": [
         "بوستات التوظيف"
       ],
       "source_category": "hiring_posts",
       "all_urls": [
-        "https://yellowpages.com.eg/ar/search/%D9%85%D8%AF%D8%A7%D8%B1%D8%B3+%D8%A8%D8%A7%D9%8A%D9%88%D9%86%D9%8A%D8%B1%D8%B2"
+        "https://support.google.com/translate/answer/6142483?hl=ar&co=GENIE.Platform=Android"
       ],
-      "primary_url": "https://yellowpages.com.eg/ar/search/%D9%85%D8%AF%D8%A7%D8%B1%D8%B3+%D8%A8%D8%A7%D9%8A%D9%88%D9%86%D9%8A%D8%B1%D8%B2",
-      "location": "مصر",
+      "primary_url": "https://support.google.com/translate/answer/6142483?hl=ar&co=GENIE.Platform=Android",
+      "location": null,
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": null,
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "NEEDS_VERIFICATION",
         "apply_state_ar": "محتاج تحقق",
         "action_label": "افتح الرابط",
         "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
       },
       "fit": {
         "score": 38,
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "مدارس+بايونيرز في مصر - تليفونات وعناوين | يلوبيدجز مصر (مصر) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "reason_first": "ترجمة الصور · متابعة الأداء والتقارير التجارية (SFE / Operations)",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -1202,10 +1835,169 @@
         "score": null,
         "one_way_min": null,
         "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "d20db32eb806df37": {
+      "id": "d20db32eb806df37",
+      "family_id": "e93713f8dbd6",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "تنزيل تطبيق \"ترجمة Google\" واستخدامه",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://support.google.com/translate/answer/6350850?hl=ar&co=GENIE.Platform%3DDesktop"
+      ],
+      "primary_url": "https://support.google.com/translate/answer/6350850?hl=ar&co=GENIE.Platform%3DDesktop",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "تنزيل تطبيق \"ترجمة Google\" واستخدامه · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "(\"send your cv\" OR \"send cv\" OR \"hiring\" OR \"apply here\") (\"data analyst\" OR \"bi analyst\" OR \"reporting analyst\" OR \"mis analyst\" OR \"sfe\" OR \"operations analys",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "a7fbf5bdf9eb8147": {
+      "id": "a7fbf5bdf9eb8147",
+      "family_id": "e870da50728f",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "ترجمة المستندات والمواقع الإلكترونية - جهاز الكمبيوتر - مساعدة Google ...",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://support.google.com/translate/answer/2534559?hl=ar&co=GENIE.Platform%3DDesktop"
+      ],
+      "primary_url": "https://support.google.com/translate/answer/2534559?hl=ar&co=GENIE.Platform%3DDesktop",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "ترجمة المستندات والمواقع الإلكترونية - جهاز الكمبيوتر - مساعدة Google ... · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "(\"send your cv\" OR \"send cv\" OR \"hiring\" OR \"apply here\") (\"data analyst\" OR \"bi analyst\" OR \"reporting analyst\" OR \"mis analyst\" OR \"sfe\" OR \"operations analys",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
+    },
+    "f93f17bab27ead65": {
+      "id": "f93f17bab27ead65",
+      "family_id": "0205580a4005",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "مساعدة Gmail",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://support.google.com/mail/?hl=ar"
+      ],
+      "primary_url": "https://support.google.com/mail/?hl=ar",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "مساعدة Gmail · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "(\"send your cv\" OR \"send cv\" OR \"hiring\" OR \"apply here\") (\"data analyst\" OR \"bi analyst\" OR \"reporting analyst\" OR \"mis analyst\" OR \"sfe\" OR \"operations analys",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
     "3f8e20785852066d": {
       "id": "3f8e20785852066d",
@@ -1226,8 +2018,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -1258,7 +2050,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
     "7c0b8387f10f9401": {
       "id": "7c0b8387f10f9401",
@@ -1279,8 +2071,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -1311,7 +2103,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
     "6319df4e4fb12690": {
       "id": "6319df4e4fb12690",
@@ -1332,8 +2124,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -1364,7 +2156,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
     "5adbe92576e6b804": {
       "id": "5adbe92576e6b804",
@@ -1385,8 +2177,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -1417,7 +2209,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
     "27264fb8ec923aa9": {
       "id": "27264fb8ec923aa9",
@@ -1438,8 +2230,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -1464,7 +2256,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
     "23d463b8837837e2": {
       "id": "23d463b8837837e2",
@@ -1485,8 +2277,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -1511,7 +2303,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
     "f89ae0097175a53c": {
       "id": "f89ae0097175a53c",
@@ -1532,8 +2324,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -1558,54 +2350,7 @@
         "status": "ESTIMATED",
         "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
-    },
-    "4435f17050d5a1d8": {
-      "id": "4435f17050d5a1d8",
-      "family_id": "355d3fd3dc3f",
-      "probable_duplicate_of": null,
-      "company": "Henkel",
-      "title": "Sales -Pharmacies Channel Developer GDP",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/sales-pharmacies-channel-developer-gdp-at-henkel-4488813418"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/sales-pharmacies-channel-developer-gdp-at-henkel-4488813418",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     },
     "d01efab3fef7e718": {
       "id": "d01efab3fef7e718",
@@ -1626,8 +2371,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T12:28:50Z",
-        "last_verified": "2026-11-25T12:28:50Z",
+        "discovered_at": "2026-11-25T12:29:48Z",
+        "last_verified": "2026-11-25T12:29:48Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -1652,7 +2397,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-25T12:28:50Z"
+      "discovered_at": "2026-11-25T12:29:48Z"
     }
   },
   "notification_log": {},
@@ -1887,6 +2632,37 @@
         "Reporting Analyst"
       ],
       "total_fresh_24h": 30
+    },
+    {
+      "completed_at": "2026-11-25T12:30:13Z",
+      "published_at": "2026-11-25T12:30:13Z",
+      "queries_executed": [
+        "Reporting Analyst",
+        "MIS Analyst",
+        "Junior BI Analyst",
+        "Business Intelligence Analyst",
+        "Junior Data Analyst",
+        "Data Analyst",
+        "Junior Business Analyst",
+        "Performance Analyst",
+        "Data Quality Analyst",
+        "Junior Systems Analyst",
+        "Operations Analyst",
+        "Sales Analyst",
+        "Sales Support Analyst",
+        "Business Process Analyst",
+        "Junior SFE Analyst",
+        "Sales Force Effectiveness",
+        "Data Management Analyst",
+        "Research Insights Analyst",
+        "Junior Commercial Analyst",
+        "Junior Power BI Developer",
+        "Junior Product Analyst",
+        "Marketing Data Analyst",
+        "Master Data Specialist",
+        "Reporting Analyst"
+      ],
+      "total_fresh_24h": 43
     }
   ]
 }
