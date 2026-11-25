@@ -19,6 +19,16 @@ USER_AGENT = (
     "Chrome/129.0.0.0 Safari/537.36"
 )
 
+SENIOR_EXCLUDE_RX = re.compile(
+    r"\b(senior|sr\.?|lead|principal|staff|head of|director|vp|vice president|manager|architect|4\+\s*years|5\+\s*years|6\+\s*years|7\+\s*years)\b",
+    re.I,
+)
+
+NOISE_EXCLUDE_RX = re.compile(
+    r"\b(telesales|tele-sales|call center|door to door|outdoor sales|field sales|real estate broker|driver|security guard|nurse|pharmacist|chef|graphic designer|video editor|frontend|backend|fullstack|ios|android|flutter|devops)\b",
+    re.I,
+)
+
 LINKEDIN_JOB_QUERIES = [
     "Reporting Analyst",
     "MIS Analyst",
@@ -57,10 +67,16 @@ JOBSPY_QUERIES = [
 ]
 
 HIRING_POST_QUERIES = [
-    'site:linkedin.com/posts ("hiring" OR "we are hiring" OR "send your cv" OR "dm me") ("data" OR "bi" OR "reporting" OR "analyst" OR "mis" OR "sfe") ("egypt" OR "cairo" OR "giza")',
-    'site:linkedin.com/posts ("junior" OR "fresh" OR "entry level" OR "intern" OR "internship") ("data" OR "bi" OR "business analyst" OR "operations") ("egypt" OR "cairo")',
-    'site:linkedin.com/posts ("مطلوب" OR "فرصة عمل" OR "توظيف" OR "ابعت" OR "cv") ("بيانات" OR "تحليل" OR "تقارير" OR "data" OR "bi" OR "excel") ("مصر" OR "القاهرة" OR "الجيزة")',
-    '("hiring" OR "looking for" OR "send cv") ("data analyst" OR "bi analyst" OR "reporting analyst" OR "business analyst") ("cairo" OR "egypt")',
+    'site:linkedin.com/posts ("hiring" OR "we are hiring" OR "send your cv" OR "send cv" OR "dm me") ("data analyst" OR "bi analyst" OR "business intelligence" OR "reporting" OR "mis" OR "sfe") ("egypt" OR "cairo" OR "giza")',
+    'site:linkedin.com/posts ("fresh" OR "junior" OR "entry level" OR "intern" OR "internship" OR "graduate" OR "0-1") ("data" OR "bi" OR "analytics" OR "business analyst" OR "operations" OR "reporting") ("egypt" OR "cairo")',
+    'site:linkedin.com/posts ("مطلوب" OR "فرصة عمل" OR "توظيف" OR "ابعت" OR "سي في" OR "cv") ("بيانات" OR "تحليل" OR "تقارير" OR "data" OR "bi" OR "excel" OR "sql") ("مصر" OR "القاهرة" OR "الجيزة")',
+    '("send your cv" OR "send cv" OR "hiring" OR "apply here") ("data analyst" OR "bi analyst" OR "reporting analyst" OR "mis analyst" OR "sfe" OR "operations analyst") ("cairo" OR "egypt")',
+]
+
+COMMUNITY_RSS_FEEDS = [
+    ("بوستات المجتمع (Reddit Egypt)", "https://www.reddit.com/r/Egypt/search.rss?q=hiring+OR+job+OR+data+OR+analyst+OR+%D8%AA%D9%88%D8%B8%D9%8A%D9%81+OR+%D8%B4%D8%BA%D9%84&restrict_sr=on&sort=new"),
+    ("بوستات البيانات (Reddit Data)", "https://www.reddit.com/r/dataanalysis/search.rss?q=junior+OR+entry+OR+intern+OR+hiring+OR+reporting&restrict_sr=on&sort=new"),
+    ("بوستات BI (Reddit BI)", "https://www.reddit.com/r/BusinessIntelligence/search.rss?q=junior+OR+entry+OR+intern+OR+hiring+OR+power+bi&restrict_sr=on&sort=new"),
 ]
 
 WORKABLE_COMPANIES = [
@@ -113,6 +129,76 @@ def clean_field(val):
     if not s or s.lower() in ("nan", "none", "null", "unknown"):
         return None
     return s
+
+
+def is_junk_or_senior_post(text):
+    t = str(text or "")
+    if not t:
+        return True
+    if SENIOR_EXCLUDE_RX.search(t) or NOISE_EXCLUDE_RX.search(t):
+        return True
+    return False
+
+
+def extract_contact_or_apply_link(text, fallback_url):
+    txt = str(text or "")
+    email_m = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", txt)
+    if email_m:
+        email_addr = email_m.group(0)
+        return f"mailto:{email_addr}", email_addr
+    form_m = re.search(
+        r"https?://(?:forms\.gle|docs\.google\.com/forms|airtable\.com|typeform\.com|lnkd\.in)/\S+",
+        txt,
+    )
+    if form_m:
+        return form_m.group(0).rstrip(").,;"), None
+    return fallback_url, None
+
+
+def infer_location_and_mode(text):
+    t = str(text or "")
+    low = t.lower()
+
+    loc = None
+    for place, ar_name in [
+        ("maadi", "المعادي، القاهرة"),
+        ("dokki", "الدقي، الجيزة"),
+        ("new cairo", "القاهرة الجديدة"),
+        ("fifth settlement", "التجمع الخامس"),
+        ("smart village", "القرية الذكية"),
+        ("october", "٦ أكتوبر"),
+        ("cairo", "القاهرة"),
+        ("giza", "الجيزة"),
+        ("egypt", "مصر"),
+    ]:
+        if place in low:
+            loc = ar_name
+            break
+
+    if not loc:
+        for ar_place, ar_label in [
+            ("المعادي", "المعادي، القاهرة"),
+            ("الدقي", "الدقي، الجيزة"),
+            ("التجمع", "التجمع الخامس"),
+            ("القاهرة الجديدة", "القاهرة الجديدة"),
+            ("أكتوبر", "٦ أكتوبر"),
+            ("القاهرة", "القاهرة"),
+            ("الجيزة", "الجيزة"),
+            ("مصر", "مصر"),
+        ]:
+            if ar_place in t:
+                loc = ar_label
+                break
+
+    mode = None
+    if "remote" in low or "عن بعد" in t or "ريموت" in t:
+        mode = "Remote"
+    elif "hybrid" in low or "هايبرد" in t:
+        mode = "Hybrid"
+    elif "onsite" in low or "on-site" in low or "من المقر" in t:
+        mode = "On-site"
+
+    return loc, mode
 
 
 def scrape_linkedin_jobs_egypt(now_iso):
@@ -235,7 +321,7 @@ def scrape_jobspy_indeed_google(now_iso):
 
 
 def scrape_hiring_posts(now_iso):
-    """Collects public hiring posts via DuckDuckGo HTML + Bing RSS without API keys."""
+    """Deep post hunter across public LinkedIn posts, search indexes, and community RSS feeds."""
     found = {}
     errors = 0
 
@@ -253,30 +339,32 @@ def scrape_hiring_posts(now_iso):
                 if not href.startswith("http"):
                     continue
                 title = strip_tags(raw_t)
-                if not title:
+                if not title or is_junk_or_senior_post(title):
                     continue
-                low = title.lower()
-                loc = "القاهرة" if ("cairo" in low or "القاهرة" in title) else ("مصر" if ("egypt" in low or "مصر" in title) else None)
+                loc, mode = infer_location_and_mode(title)
+                target_url, extracted_email = extract_contact_or_apply_link(title, href)
                 found[href] = {
-                    "company": "بوست توظيف (LinkedIn / ويب)",
-                    "title": title[:120],
+                    "company": "بوست توظيف (LinkedIn)",
+                    "title": title[:125],
                     "location": loc,
-                    "work_mode": "Remote" if ("remote" in low or "عن بعد" in title or "ريموت" in title) else None,
+                    "work_mode": mode,
                     "source_name": "بوستات التوظيف",
                     "source_category": "hiring_posts",
-                    "url": href,
+                    "url": target_url,
+                    "post_url": href,
+                    "apply_email": extracted_email,
                     "http_status": status,
-                    "has_apply_button": False,
+                    "has_apply_button": bool(extracted_email or target_url != href),
                     "first_published": None,
                     "discovered_at": now_iso,
                     "required_text": f"{title}. {q}",
                     "tasks": title,
                 }
-            time.sleep(0.4)
+            time.sleep(0.35)
         except Exception:
             errors += 1
 
-        # 2. Bing RSS fallback/supplement for posts
+        # 2. Bing RSS
         try:
             rss_url = f"https://www.bing.com/search?q={urllib.parse.quote(q)}&format=rss&cc=EG"
             status, xml_raw = http_request(rss_url, timeout=15)
@@ -285,26 +373,67 @@ def scrape_hiring_posts(now_iso):
                 link = (item.findtext("link") or "").strip()
                 raw_t = strip_tags(item.findtext("title") or "")
                 desc = strip_tags(item.findtext("description") or "")
-                if not link.startswith("http") or link in found or not raw_t:
+                combined = f"{raw_t}. {desc}"
+                if not link.startswith("http") or link in found or not raw_t or is_junk_or_senior_post(combined):
                     continue
-                low = f"{raw_t} {desc}".lower()
-                loc = "القاهرة" if ("cairo" in low or "القاهرة" in raw_t or "القاهرة" in desc) else ("مصر" if ("egypt" in low or "مصر" in raw_t or "مصر" in desc) else None)
+                loc, mode = infer_location_and_mode(combined)
+                target_url, extracted_email = extract_contact_or_apply_link(combined, link)
                 found[link] = {
                     "company": "بوست توظيف (بحث مباشر)",
-                    "title": raw_t[:120],
+                    "title": raw_t[:125],
                     "location": loc,
-                    "work_mode": "Remote" if ("remote" in low or "عن بعد" in desc or "ريموت" in desc) else None,
+                    "work_mode": mode,
                     "source_name": "بوستات التوظيف",
                     "source_category": "hiring_posts",
-                    "url": link,
+                    "url": target_url,
+                    "post_url": link,
+                    "apply_email": extracted_email,
                     "http_status": status,
-                    "has_apply_button": False,
+                    "has_apply_button": bool(extracted_email or target_url != link),
                     "first_published": None,
                     "discovered_at": now_iso,
-                    "required_text": f"{raw_t}. {desc[:400]}",
+                    "required_text": f"{combined[:450]}. {q}",
                     "tasks": desc[:400] or raw_t,
                 }
-            time.sleep(0.35)
+            time.sleep(0.3)
+        except Exception:
+            errors += 1
+
+    # 3. Community RSS feeds
+    for src_label, feed_url in COMMUNITY_RSS_FEEDS:
+        try:
+            status, xml_raw = http_request(feed_url, timeout=14)
+            root = ET.fromstring(xml_raw)
+            for item in root.findall(".//item"):
+                link = (item.findtext("link") or "").strip()
+                raw_t = strip_tags(item.findtext("title") or "")
+                desc = strip_tags(item.findtext("description") or "")
+                pub_raw = clean_field(item.findtext("pubDate"))
+                combined = f"{raw_t}. {desc}"
+                if not link.startswith("http") or link in found or not raw_t or is_junk_or_senior_post(combined):
+                    continue
+                if not re.search(r"\b(data|bi|analyst|analytics|sql|excel|power bi|reporting|sfe|mis|intern|junior|fresh|توظيف|بيانات|تحليل|تقارير)\b", combined, re.I):
+                    continue
+                loc, mode = infer_location_and_mode(combined)
+                target_url, extracted_email = extract_contact_or_apply_link(combined, link)
+                found[link] = {
+                    "company": src_label,
+                    "title": raw_t[:125],
+                    "location": loc,
+                    "work_mode": mode,
+                    "source_name": "بوستات التوظيف",
+                    "source_category": "hiring_posts",
+                    "url": target_url,
+                    "post_url": link,
+                    "apply_email": extracted_email,
+                    "http_status": status,
+                    "has_apply_button": bool(extracted_email or target_url != link),
+                    "first_published": pub_raw,
+                    "discovered_at": now_iso,
+                    "required_text": combined[:450],
+                    "tasks": desc[:400] or raw_t,
+                }
+            time.sleep(0.25)
         except Exception:
             errors += 1
 
