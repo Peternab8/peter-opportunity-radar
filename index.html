@@ -734,7 +734,7 @@
     <section id="view-keywords" class="tab-view">
       <div class="section-card">
         <h2>بحث بوستات LinkedIn بالأحدث (مرتّب حسب ملاءمتك)</h2>
-        <p>مرتّبة من الأقوى والأقرب لملفك (BIS حلوان، SQL، Python، Excel، Power BI، Tableau، تحليل أعمال ونظم) إلى الأوسع مدى. دوس على أي كلمة تفتح نتائج البوستات المرتّبة بالأحدث.</p>
+        <p>مرتّبة من الأقوى والأقرب لملفك (BIS حلوان، SQL، Python، Excel، Power BI، Tableau، تحليل أعمال ونظم، SFE، تشغيل) إلى الأوسع مدى.</p>
         <input type="text" id="kwFilterInput" class="field-input" placeholder="فلتر الكلمات بسرعة..." />
         <div id="keywordsCatalogContainer"></div>
       </div>
@@ -788,7 +788,7 @@
     <section id="view-settings" class="tab-view">
       <div class="section-card">
         <h3>تشغيل بحث سحابي فوري من الزرار</h3>
-        <p>احفظ GitHub Fine-grained Token (من إعدادات حسابك الشخصي ➔ Developer settings ➔ Fine-grained tokens بصلاحية Actions: Read & Write) على جهازك فقط ليقوم زر «حدّث القائمة» بتشغيل بحث جديد وتحديث الوقت فور الانتهاء.</p>
+        <p>احفظ Fine-grained Token بصلاحية Actions: Read &amp; Write على جهازك فقط ليقوم زر «حدّث القائمة» بتشغيل بحث جديد وتحديث الوقت فور الانتهاء.</p>
         <input type="password" id="ghDispatchTokenInput" class="field-input ltr" placeholder="github_pat_... (محفوظ محليًا فقط)" />
         <button type="button" class="btn-refresh" style="width:100%;" data-action="save-gh-token">احفظ رمز التشغيل المحلي</button>
       </div>
@@ -830,9 +830,9 @@
         try { navigator.serviceWorker.register('./sw.js').catch(function () {}); } catch (e) {}
       }
 
-      var STORE_FEED = 'radar_v38_feed';
-      var STORE_USER = 'radar_v38_user_state';
-      var STORE_PREFS = 'radar_v38_prefs';
+      var STORE_FEED = 'radar_v39_feed';
+      var STORE_USER = 'radar_v39_user_state';
+      var STORE_PREFS = 'radar_v39_prefs';
       var GH_OWNER = 'Peternab8';
       var GH_REPO = 'peter-opportunity-radar';
       var GH_WORKFLOW = 'hourly_radar.yml';
@@ -844,67 +844,43 @@
         try { window.localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
       }
 
-      /* Ordered from strongest & closest to Peter's profile down to broader/entry-level terms */
       var KEYWORD_GROUPS = [
         {
           group: '١. الأقوى والأقرب مباشرة لملفك (Reporting · MIS · BI · Data)',
           terms: [
-            'Reporting Analyst Egypt',
-            'MIS Analyst Egypt',
-            'Junior BI Analyst Egypt',
-            'Business Intelligence Analyst Cairo',
-            'BI Analyst Egypt',
-            'Junior Data Analyst Egypt',
-            'Data Analyst Cairo',
-            'Power BI Analyst Egypt'
+            'Reporting Analyst Egypt', 'MIS Analyst Egypt', 'Junior BI Analyst Egypt',
+            'Business Intelligence Analyst Cairo', 'BI Analyst Egypt', 'Junior Data Analyst Egypt',
+            'Data Analyst Cairo', 'Power BI Analyst Egypt'
           ]
         },
         {
           group: '٢. تقارير ومؤشرات وSQL وPython وجودة بيانات',
           terms: [
-            'KPI Reporting Analyst',
-            'SQL Data Analyst Egypt',
-            'Python Data Analyst Egypt',
-            'Data Quality Analyst Egypt',
-            'Tableau Analyst Egypt',
-            'Data Analytics Fresh Egypt',
-            'Dashboard Reporting Egypt',
-            'Data Cleansing Analyst'
+            'KPI Reporting Analyst', 'SQL Data Analyst Egypt', 'Python Data Analyst Egypt',
+            'Data Quality Analyst Egypt', 'Tableau Analyst Egypt', 'Data Analytics Fresh Egypt',
+            'Dashboard Reporting Egypt', 'Data Cleansing Analyst'
           ]
         },
         {
           group: '٣. تحليل الأعمال والنظم والعمليات (BIS & FeeLink)',
           terms: [
-            'Junior Business Analyst Egypt',
-            'Business Analyst Cairo',
-            'Junior Systems Analyst Egypt',
-            'Systems Analyst Cairo',
-            'Business Process Analyst Egypt',
-            'Requirements Analyst Egypt',
-            'Operations Analyst Egypt',
-            'Business Operations Cairo'
+            'Junior Business Analyst Egypt', 'Business Analyst Cairo', 'Junior Systems Analyst Egypt',
+            'Systems Analyst Cairo', 'Business Process Analyst Egypt', 'Requirements Analyst Egypt',
+            'Operations Analyst Egypt', 'Business Operations Cairo'
           ]
         },
         {
           group: '٤. متابعة الأداء والتجاري ودعم المبيعات (SFE)',
           terms: [
-            'Performance Analyst Egypt',
-            'Sales Support Analyst Egypt',
-            'SFE Egypt',
-            'Sales Force Effectiveness Egypt',
-            'Commercial Excellence Egypt',
-            'Sales Analyst Cairo'
+            'Performance Analyst Egypt', 'Sales Support Analyst Egypt', 'SFE Egypt',
+            'Sales Force Effectiveness Egypt', 'Commercial Excellence Egypt', 'Sales Analyst Cairo'
           ]
         },
         {
           group: '٥. تدريب وفريش وبوستات بالعربي في مصر',
           terms: [
-            'Fresh Graduate Analyst Cairo',
-            'Data Internship Egypt',
-            'Business Analyst Intern Egypt',
-            'مطلوب تحليل بيانات مصر',
-            'مطلوب تقارير بيانات القاهرة',
-            'مطلوب Excel Power BI مصر'
+            'Fresh Graduate Analyst Cairo', 'Data Internship Egypt', 'Business Analyst Intern Egypt',
+            'مطلوب تحليل بيانات مصر', 'مطلوب تقارير بيانات القاهرة', 'مطلوب Excel Power BI مصر'
           ]
         }
       ];
@@ -916,7 +892,7 @@
       }
 
       var SELF_SEARCH_LINKS = [
-        { id: 's1', title: 'بوستات التوظيف في مصر · LinkedIn (الأحدث)', url: buildLinkedInPostsUrl('Reporting Analyst OR MIS OR BI OR Data Analyst Egypt') },
+        { id: 's1', title: 'بوستات التوظيف في مصر · LinkedIn (الأحدث)', url: buildLinkedInPostsUrl('Data Analyst OR BI OR Reporting OR SFE Egypt') },
         { id: 's2', title: 'وظائف Reporting / MIS / BI في مصر · LinkedIn (٢٤ ساعة)', url: 'https://www.linkedin.com/jobs/search/?keywords=(Reporting%20Analyst%20OR%20MIS%20Analyst%20OR%20BI%20Analyst%20OR%20Data%20Analyst)&location=Egypt&f_TPR=r86400' },
         { id: 's3', title: 'حديثي التخرج · تحليل البيانات والتقارير · WUZZUF', url: 'https://wuzzuf.net/search/jobs/?a=hpb&filters%5Bcareer_level%5D%5B0%5D=Entry%20Level&q=data%20analyst' },
         { id: 's4', title: 'تقارير وتشغيل بالقاهرة · Indeed', url: 'https://eg.indeed.com/jobs?q=reporting+analyst+OR+data+analyst+OR+business+intelligence&l=Cairo&fromage=1' }
@@ -956,10 +932,10 @@
 
       function esc(s) {
         return String(s == null ? '' : s)
-          .replace(/&/g, '&')
-          .replace(/</g, '<')
-          .replace(/>/g, '>')
-          .replace(/"/g, '"');
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
       }
 
       function formatArTime(iso) {
@@ -1238,6 +1214,8 @@
       function buildReviewNote(job) {
         var fit = job.fit || {};
         var parts = [];
+        if (job.track) parts.push('المسار: ' + job.track);
+        if (job.apply_email) parts.push('إيميل: ' + job.apply_email);
         if (fit.caveat_first) parts.push(fit.caveat_first);
         if (!job.location) parts.push('المكان غير مذكور');
         return parts.length ? parts.join(' · ') : 'راجع شروط الإعلان قبل التقديم';
@@ -1455,7 +1433,7 @@
 
             '<div class="card-primary-actions">' +
               (job.primary_url
-                ? '<a href="' + esc(job.primary_url) + '" target="_blank" rel="noopener noreferrer" class="' + ctaClass + '" data-action="open-opportunity" data-id="' + esc(job.id) + '">' + esc(receipt.action_label || 'افتح التقديم') + '</a>'
+                ? '<a href="' + esc(job.primary_url) + '" target="_blank" rel="noopener noreferrer" class="' + ctaClass + '" data-action="open-opportunity" data-id="' + esc(job.id) + '">' + esc(job.apply_email ? ('إيميل: ' + job.apply_email) : (receipt.action_label || 'افتح التقديم')) + '</a>'
                 : '') +
               '<button type="button" class="btn-secondary-card ' + (u.saved ? 'active-save' : '') + '" data-action="toggle-save" data-id="' + esc(job.id) + '">' + (u.saved ? 'محفوظة' : 'احفظ') + '</button>' +
               '<button type="button" class="btn-secondary-card" style="flex:0;" data-action="toggle-details" data-id="' + esc(job.id) + '">تفاصيل</button>' +
@@ -1464,6 +1442,7 @@
             '<div class="details-panel" style="display:' + (isDetailsOpen ? 'block' : 'none') + ';">' +
               '<table class="meta-table">' +
                 '<tr><td>المصادر</td><td class="ltr">' + esc((job.mergedSources || job.sources || []).join(' · ')) + '</td></tr>' +
+                (job.post_url ? '<tr><td>رابط البوست</td><td class="ltr"><a href="' + esc(job.post_url) + '" target="_blank" rel="noopener noreferrer" style="color:#6ee7b7;">فتح البوست الأصلي</a></td></tr>' : '') +
                 '<tr><td>اتنشرت</td><td>' + esc(formatArTime(receipt.first_published)) + '</td></tr>' +
                 '<tr><td>الرادار لقطها</td><td>' + esc(formatArTime(job.discovered_at)) + '</td></tr>' +
                 '<tr><td>آخر تأكيد للتقديم</td><td>' + esc(formatArTime(receipt.last_verified)) + '</td></tr>' +
@@ -1520,7 +1499,7 @@
             (u.applied ? '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">' + ['اختبار', 'مقابلة'].map(function (step) {
               return '<button type="button" class="pill-btn ' + (u.nextStep === step ? 'active' : '') + '" data-action="set-next-step" data-id="' + esc(entry.id) + '" data-step="' + step + '">' + step + '</button>';
             }).join('') + '</div>' : '') +
-            '<div class="card-primary-actions">' + (job.primary_url ? '<a href="' + esc(job.primary_url) + '" target="_blank" rel="noopener noreferrer" class="btn-open-main">رابط الإعلان</a>' : '') + '</div>' +
+            '<div class="card-primary-actions">' + (job.primary_url ? '<a href="' + esc(job.primary_url) + '" target="_blank" rel="noopener noreferrer" class="btn-open-main">رابط التقديم</a>' : '') + '</div>' +
           '</div>';
         }).join('');
       }
@@ -1732,23 +1711,30 @@
           var prevBox = document.getElementById('addPreviewBox');
           if (!text) { showToast('الصق نص البوست أولًا'); return; }
           var firstLine = text.split('\n')[0].trim().slice(0, 80) || 'فرصة مضافة';
+          var emailMatch = text.match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/);
+          var extractedEmail = emailMatch ? emailMatch[0] : null;
+          var primaryUrl = extractedEmail ? ('mailto:' + extractedEmail) : (url || '');
+
           var card = {
             id: 'manual-' + Date.now(),
             company: 'بوست مضاف',
             title: firstLine,
+            track: 'مضاف يدويًا',
             sources: ['بوست مضاف'],
             source_category: 'manual_post',
-            primary_url: url || '',
+            primary_url: primaryUrl,
+            post_url: url || '',
+            apply_email: extractedEmail,
             location: /cairo|القاهرة/i.test(text) ? 'القاهرة' : null,
             work_mode: /remote|ريموت/i.test(text) ? 'Remote' : null,
             is_training: /intern|trainee|تدريب/i.test(text),
-            receipt: { apply_state: 'NEEDS_VERIFICATION', apply_state_ar: 'محتاج تحقق', action_label: url ? 'افتح الرابط' : 'تفاصيل', first_published: new Date().toISOString(), discovered_at: new Date().toISOString(), last_verified: new Date().toISOString() },
+            receipt: { apply_state: 'NEEDS_VERIFICATION', apply_state_ar: 'محتاج تحقق', action_label: extractedEmail ? ('إيميل: ' + extractedEmail) : (url ? 'افتح الرابط' : 'تفاصيل'), first_published: new Date().toISOString(), discovered_at: new Date().toISOString(), last_verified: new Date().toISOString() },
             fit: { score: 85, reason_first: firstLine, caveat_first: 'مضاف يدويًا' },
             commute: { summary: 'غير مذكورة' },
             discovered_at: new Date().toISOString()
           };
           state.pendingAddCard = card;
-          prevBox.innerHTML = '<div class="evidence-block"><div><strong>المسمى:</strong> ' + esc(card.title) + '</div><button type="button" class="btn-open-main" style="width:100%;margin-top:8px;" data-action="confirm-add-card">تأكيد الحفظ</button></div>';
+          prevBox.innerHTML = '<div class="evidence-block"><div><strong>المسمى:</strong> ' + esc(card.title) + '</div>' + (extractedEmail ? ('<div><strong>إيميل مستخرج:</strong> <span class="ltr">' + esc(extractedEmail) + '</span></div>') : '') + '<button type="button" class="btn-open-main" style="width:100%;margin-top:8px;" data-action="confirm-add-card">تأكيد الحفظ</button></div>';
         },
         'confirm-add-card': function () {
           var card = state.pendingAddCard;
