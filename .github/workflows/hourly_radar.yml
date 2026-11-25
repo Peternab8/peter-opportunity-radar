@@ -2,7 +2,7 @@ name: Peter Opportunity Radar - Hourly Cloud Scan
 
 on:
   schedule:
-    - cron: '15 * * * *'
+    - cron: "0 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -11,26 +11,35 @@ permissions:
 jobs:
   verify-and-scan:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Run matcher verification gate before scraping
-        run: python engine/matcher.py --self-test
+        run: python -c "import sys; sys.path.insert(0, 'engine'); from matcher import run_self_tests; run_self_tests()"
 
       - name: Install scraping engine
-        run: pip install --quiet python-jobspy
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f engine/requirements.txt ]; then
+            pip install -r engine/requirements.txt
+          else
+            pip install python-jobspy pandas requests beautifulsoup4
+          fi
 
       - name: Run hourly opportunity radar
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           PWA_BASE_URL: ${{ secrets.PWA_BASE_URL }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GMAIL_BRIDGE_WEBHOOK_URL: ${{ secrets.GMAIL_BRIDGE_WEBHOOK_URL }}
         run: python engine/hourly_runner.py
 
       - name: Publish public feed only (excluding private queues)
@@ -38,4 +47,17 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/live_feed.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(radar): publish verified opportunity feed" && git push)
+          if git diff --staged --quiet; then
+            echo "No public feed changes to publish."
+            exit 0
+          fi
+          git commit -m "chore(radar): publish verified opportunity feed"
+          for attempt in 1 2 3; do
+            if git push origin main; then
+              echo "Published successfully."
+              exit 0
+            fi
+            echo "Push conflict detected, rebasing onto latest main (attempt $attempt)..."
+            git pull --rebase --autostash origin main || exit 1
+          done
+          git push origin main
