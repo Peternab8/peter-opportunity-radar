@@ -1,15 +1,15 @@
 {
   "meta": {
-    "scan_completed_at": "2026-11-25T22:10:24Z",
-    "feed_published_at": "2026-11-25T22:10:24Z",
+    "scan_completed_at": "2026-11-26T04:37:33Z",
+    "feed_published_at": "2026-11-26T04:37:33Z",
     "priority_threshold": 80,
     "fresh_window_hours": 24,
-    "total_active": 7,
+    "total_active": 1,
     "source_statuses": {
       "linkedin_jobs": {
         "state": "OK",
-        "label": "نجح (18 إعلان)",
-        "count": 18
+        "label": "نجح (78 إعلان)",
+        "count": 78
       },
       "indeed_google": {
         "state": "OK",
@@ -44,27 +44,27 @@
     }
   },
   "jobs": {
-    "1ed2ec5df444ca85": {
-      "id": "1ed2ec5df444ca85",
-      "family_id": "87b633a72a98",
+    "8e574f357d32c902": {
+      "id": "8e574f357d32c902",
+      "family_id": "803fd19c72c1",
       "probable_duplicate_of": null,
-      "company": "Advansys",
-      "title": "Mid Oracle EBS / ERP Developer (Banking)",
+      "company": "DataFlow Group",
+      "title": "Application Support Specialist",
       "sources": [
-        "Indeed Egypt"
+        "LinkedIn Jobs"
       ],
       "source_category": "job_board",
       "all_urls": [
-        "https://eg.indeed.com/viewjob?jk=bd59318d78d8d83e"
+        "https://eg.linkedin.com/jobs/view/application-support-specialist-at-dataflow-group-4493462898"
       ],
-      "primary_url": "https://eg.indeed.com/viewjob?jk=bd59318d78d8d83e",
-      "location": "مدينة نصر, C, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/application-support-specialist-at-dataflow-group-4493462898",
+      "location": "Giza, Al Jizah, Egypt",
       "work_mode": null,
       "is_training": false,
       "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T22:10:10Z",
-        "last_verified": "2026-11-25T22:10:10Z",
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T04:36:02Z",
+        "last_verified": "2026-11-26T04:36:02Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -73,346 +73,33 @@
         "egypt_status": "CONFIRMED"
       },
       "fit": {
-        "score": 39,
+        "score": 38,
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "Mid Oracle EBS / ERP Developer (Banking) (مدينة نصر, C, Egypt) · SQL & قواعد البيانات العلائقية",
+        "reason_first": "Application Support Specialist (Giza, Al Jizah, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
             "tag": "شرط أساسي",
-            "quote": "The ideal candidate will have hands-on experience in Oracle ERP development, PL/SQL programming, Oracle Forms & Reports, and database integration, with a solid ",
-            "cv": "تصميم قاعدة بيانات 6+ كيانات (ERD) في مشروع NTI + تحليل 5,000 معاملة دفع رقمي بـ SQL"
+            "quote": "SFE Analyst",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
           }
         ],
-        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع رقمي (Python, SQL, Tableau)"
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
       },
       "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T22:10:10Z"
-    },
-    "3f8e20785852066d": {
-      "id": "3f8e20785852066d",
-      "family_id": "b022fe8d37be",
-      "probable_duplicate_of": null,
-      "company": "Advansys",
-      "title": "Mid Microsoft Dynamics 365 CE / CRM Developer (Banking)",
-      "sources": [
-        "Indeed Egypt"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.indeed.com/viewjob?jk=fb72b6891c30485f"
-      ],
-      "primary_url": "https://eg.indeed.com/viewjob?jk=fb72b6891c30485f",
-      "location": "مدينة نصر, C, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T22:10:10Z",
-        "last_verified": "2026-11-25T22:10:10Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 30,
-        "confidence": "HIGH",
-        "role_core": "SENIOR_EXPERIENCE_CONFLICT",
-        "has_mandatory_conflict": true,
-        "reason_first": "يتطلب خبرة إلزامية 5 سنوات",
-        "caveat_first": "شرط الخبرة أعلى من مستوى خريج ٢٠٢٦",
-        "evidence_pairs": [
-          {
-            "tag": "شرط إلزامي",
-            "quote": "### **Job Overview** We are looking for a skilled Mid-Level Microsoft Dynamics 365 CE / CRM Developer with 3–5 years of hands-on experience in CRM development, customization, and integration.",
-            "cv": "خريج ٢٠٢٦ (٠–١ سنة خبرة)"
-          }
-        ],
-        "recommended_project": "—"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T22:10:10Z"
-    },
-    "4b51bc4cf0d3bf77": {
-      "id": "4b51bc4cf0d3bf77",
-      "family_id": "86a52c2478c9",
-      "probable_duplicate_of": null,
-      "company": "Vodafone",
-      "title": "E-Commerce Control Tower Specialist",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/e-commerce-control-tower-specialist-at-vodafone-4493427819"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/e-commerce-control-tower-specialist-at-vodafone-4493427819",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T22:10:10Z",
-        "last_verified": "2026-11-25T22:10:10Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T22:10:10Z"
-    },
-    "57dea0f2a53ca717": {
-      "id": "57dea0f2a53ca717",
-      "family_id": "5cfd367c38bd",
-      "probable_duplicate_of": null,
-      "company": "Amazon",
-      "title": "Supply Chain Analyst, Supply Chain Execution",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/supply-chain-analyst-supply-chain-execution-at-amazon-4478559919"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/supply-chain-analyst-supply-chain-execution-at-amazon-4478559919",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T22:10:10Z",
-        "last_verified": "2026-11-25T22:10:10Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T22:10:10Z"
-    },
-    "f89ae0097175a53c": {
-      "id": "f89ae0097175a53c",
-      "family_id": "fdd10ed24516",
-      "probable_duplicate_of": null,
-      "company": "dubizzle Egypt",
-      "title": "Performance Marketing Specialist",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/performance-marketing-specialist-at-dubizzle-egypt-4494498503"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/performance-marketing-specialist-at-dubizzle-egypt-4494498503",
-      "location": "New Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T22:10:10Z",
-        "last_verified": "2026-11-25T22:10:10Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": 52,
-        "one_way_min": 78,
+        "score": 80,
+        "one_way_min": 38,
         "days_per_week": null,
         "status": "ESTIMATED",
-        "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
+        "summary": "تقدير: الجيزة · حوالي ٣٨ دقيقة من شبرا (مترو خط ٢ مباشر) · أيام المكتب محتاجة تأكيد"
       },
-      "discovered_at": "2026-11-25T22:10:10Z"
-    },
-    "8c35b20bea908a77": {
-      "id": "8c35b20bea908a77",
-      "family_id": "f04cbba88afe",
-      "probable_duplicate_of": null,
-      "company": "البنك التجاري الدولي",
-      "title": "CONSUMER CREDIT ASSESSMENT ANALYST",
-      "sources": [
-        "Indeed Egypt"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.indeed.com/viewjob?jk=2fcd55c9c694e8b1"
-      ],
-      "primary_url": "https://eg.indeed.com/viewjob?jk=2fcd55c9c694e8b1",
-      "location": "القاهرة, C, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T22:10:10Z",
-        "last_verified": "2026-11-25T22:10:10Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T22:10:10Z"
-    },
-    "d01efab3fef7e718": {
-      "id": "d01efab3fef7e718",
-      "family_id": "c9769f650590",
-      "probable_duplicate_of": null,
-      "company": "PepsiCo",
-      "title": "Supply Chain Planning Assistant Analyst",
-      "sources": [
-        "Indeed Egypt"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.indeed.com/viewjob?jk=812486f172535bbe"
-      ],
-      "primary_url": "https://eg.indeed.com/viewjob?jk=812486f172535bbe",
-      "location": "القاهرة الجديدة, C, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-25",
-        "discovered_at": "2026-11-25T22:10:10Z",
-        "last_verified": "2026-11-25T22:10:10Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-25T22:10:10Z"
+      "discovered_at": "2026-11-26T04:36:02Z"
     }
   },
   "notification_log": {},
   "audit_logs": [
-    {
-      "completed_at": "2026-11-25T09:51:45Z",
-      "published_at": "2026-11-25T09:51:45Z",
-      "queries_executed": [
-        "Data Analyst",
-        "Business Intelligence Analyst",
-        "BI Analyst",
-        "Reporting Analyst",
-        "SQL Power BI",
-        "Data Analytics Python",
-        "Business Analyst",
-        "Systems Analyst",
-        "Operations Analyst",
-        "MIS Analyst",
-        "SFE",
-        "Excel Reporting Analyst",
-        "Data Analyst",
-        "Business Intelligence Analyst",
-        "Reporting Analyst",
-        "Business Analyst",
-        "Operations Analyst",
-        "Data Analytics"
-      ],
-      "total_evaluated": 130
-    },
     {
       "completed_at": "2026-11-25T12:29:05Z",
       "published_at": "2026-11-25T12:29:05Z",
@@ -753,6 +440,37 @@
         "SFE Analyst"
       ],
       "total_fresh_24h": 7
+    },
+    {
+      "completed_at": "2026-11-26T04:37:33Z",
+      "published_at": "2026-11-26T04:37:33Z",
+      "queries_executed": [
+        "Junior Reporting Analyst",
+        "Reporting Analyst",
+        "MIS Analyst",
+        "Junior MIS Analyst",
+        "Junior BI Analyst",
+        "Business Intelligence Analyst",
+        "Power BI Analyst",
+        "KPI Analyst",
+        "Performance Analyst",
+        "Junior Data Analyst",
+        "Data Analyst",
+        "Data Analytics",
+        "SQL Analyst",
+        "Data Quality Analyst",
+        "Data Management Analyst",
+        "Junior Business Analyst",
+        "Business Analyst",
+        "Junior Systems Analyst",
+        "Systems Analyst",
+        "Business Process Analyst",
+        "Operations Analyst",
+        "Business Operations Analyst",
+        "Junior SFE Analyst",
+        "SFE Analyst"
+      ],
+      "total_fresh_24h": 1
     }
   ]
 }
