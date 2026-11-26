@@ -1,25 +1,25 @@
 {
   "meta": {
-    "scan_completed_at": "2026-11-26T07:59:51Z",
-    "feed_published_at": "2026-11-26T07:59:51Z",
+    "scan_completed_at": "2026-11-26T14:37:19Z",
+    "feed_published_at": "2026-11-26T14:37:19Z",
     "priority_threshold": 80,
     "fresh_window_hours": 24,
-    "total_active": 13,
+    "total_active": 25,
     "source_statuses": {
       "linkedin_jobs": {
         "state": "OK",
-        "label": "نجح (134 إعلان)",
-        "count": 134
+        "label": "نجح (105 إعلان)",
+        "count": 105
       },
       "indeed_google": {
         "state": "OK",
-        "label": "نجح (10 إعلان)",
-        "count": 10
+        "label": "نجح (11 إعلان)",
+        "count": 11
       },
       "hiring_posts": {
-        "state": "FAILED",
-        "label": "تعذّر الوصول للبوستات",
-        "count": 0
+        "state": "OK",
+        "label": "نجح (2 بوست)",
+        "count": 2
       },
       "egypt_companies": {
         "state": "OK_ZERO",
@@ -44,27 +44,143 @@
     }
   },
   "jobs": {
-    "f17cdf3fd4545ac1": {
-      "id": "f17cdf3fd4545ac1",
-      "family_id": "f111bfd7fec3",
+    "c7b7a3594a406bd5": {
+      "id": "c7b7a3594a406bd5",
+      "family_id": "8d489a6983a8",
       "probable_duplicate_of": null,
-      "company": "Hannibal Power and Technology - Istanbul Branch",
-      "title": "Technical Sales and Support Engineer",
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "مستشفى الجمهورية العام في الاسكندرية - تليفونات وعناوين | يلوبيدجز مصر",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://yellowpages.com.eg/ar/search/%D8%A7%D9%84%D8%A7%D8%B3%D9%83%D9%86%D8%AF%D8%B1%D9%8A%D8%A9-%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89-%D8%A7%D9%84%D8%AC%D9%85%D9%87%D9%88%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85/24"
+      ],
+      "primary_url": "https://yellowpages.com.eg/ar/search/%D8%A7%D9%84%D8%A7%D8%B3%D9%83%D9%86%D8%AF%D8%B1%D9%8A%D8%A9-%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89-%D8%A7%D9%84%D8%AC%D9%85%D9%87%D9%88%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85/24",
+      "location": "مصر",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 55,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "مستشفى الجمهورية العام في الاسكندرية - تليفونات وعناوين | يلوبيدجز مصر (مصر) · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"مطلوب\" OR \"فرصة عمل\" OR \"توظيف\" OR \"ابعت\" OR \"سي في\" OR \"cv\") (\"بيانات\" OR \"تحليل\" OR \"تقارير\" OR \"data\" OR \"bi\" OR \"excel\" OR \"sql\") ",
+            "cv": "تصميم قاعدة بيانات 6+ كيانات (ERD) في مشروع NTI + تحليل 5,000 معاملة دفع رقمي بـ SQL"
+          },
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"مطلوب\" OR \"فرصة عمل\" OR \"توظيف\" OR \"ابعت\" OR \"سي في\" OR \"cv\") (\"بيانات\" OR \"تحليل\" OR \"تقارير\" OR \"data\" OR \"bi\" OR \"excel\" OR \"sql\") ",
+            "cv": "نظام حجز فعاليات فعلي بـ Excel/VBA وأتمتة رسائل التأكيد لـ 500–1,000 مشارك"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "abb40462b2a6ef97": {
+      "id": "abb40462b2a6ef97",
+      "family_id": "9d5fb8e01912",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "مستشفى الجمهورية العام, راغب الاسكندرية",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://addarea.com/addarea/page/52521/%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89-%D8%A7%D9%84%D8%AC%D9%85%D9%87%D9%88%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85/"
+      ],
+      "primary_url": "https://addarea.com/addarea/page/52521/%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89-%D8%A7%D9%84%D8%AC%D9%85%D9%87%D9%88%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85/",
+      "location": "مصر",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 55,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "مستشفى الجمهورية العام, راغب الاسكندرية (مصر) · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"مطلوب\" OR \"فرصة عمل\" OR \"توظيف\" OR \"ابعت\" OR \"سي في\" OR \"cv\") (\"بيانات\" OR \"تحليل\" OR \"تقارير\" OR \"data\" OR \"bi\" OR \"excel\" OR \"sql\") ",
+            "cv": "تصميم قاعدة بيانات 6+ كيانات (ERD) في مشروع NTI + تحليل 5,000 معاملة دفع رقمي بـ SQL"
+          },
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"مطلوب\" OR \"فرصة عمل\" OR \"توظيف\" OR \"ابعت\" OR \"سي في\" OR \"cv\") (\"بيانات\" OR \"تحليل\" OR \"تقارير\" OR \"data\" OR \"bi\" OR \"excel\" OR \"sql\") ",
+            "cv": "نظام حجز فعاليات فعلي بـ Excel/VBA وأتمتة رسائل التأكيد لـ 500–1,000 مشارك"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "b428254b9b5d2281": {
+      "id": "b428254b9b5d2281",
+      "family_id": "f0026f54027b",
+      "probable_duplicate_of": null,
+      "company": "Bosch Africa",
+      "title": "Sales Support – Back Office Specialist (Power Tools) | Outsourced",
       "sources": [
         "LinkedIn Jobs"
       ],
       "source_category": "job_board",
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/technical-sales-and-support-engineer-at-hannibal-power-and-technology-istanbul-branch-4493487771"
+        "https://eg.linkedin.com/jobs/view/sales-support-%E2%80%93-back-office-specialist-power-tools-outsourced-at-bosch-africa-4495262937"
       ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/technical-sales-and-support-engineer-at-hannibal-power-and-technology-istanbul-branch-4493487771",
-      "location": "Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/sales-support-%E2%80%93-back-office-specialist-power-tools-outsourced-at-bosch-africa-4495262937",
+      "location": "El Matar, Cairo, Egypt",
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T07:58:52Z",
-        "last_verified": "2026-11-26T07:58:52Z",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -77,7 +193,60 @@
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "Technical Sales and Support Engineer (Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "reason_first": "Sales Support – Back Office Specialist (Power Tools) | Outsourced (El Matar, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Sales Support",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "eea1cf7553ea8a09": {
+      "id": "eea1cf7553ea8a09",
+      "family_id": "e33759725e1f",
+      "probable_duplicate_of": null,
+      "company": "Sustainable Cooling Solutions",
+      "title": "Quotation engineer",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/quotation-engineer-at-sustainable-cooling-solutions-4495264821"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/quotation-engineer-at-sustainable-cooling-solutions-4495264821",
+      "location": "Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 50,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Quotation engineer (Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
@@ -95,7 +264,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-26T07:58:52Z"
+      "discovered_at": "2026-11-26T14:36:29Z"
     },
     "1d3787703eea9ae0": {
       "id": "1d3787703eea9ae0",
@@ -116,8 +285,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T07:58:52Z",
-        "last_verified": "2026-11-26T07:58:52Z",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -148,29 +317,29 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-26T07:58:52Z"
+      "discovered_at": "2026-11-26T14:36:29Z"
     },
-    "e48e779d7e799528": {
-      "id": "e48e779d7e799528",
-      "family_id": "8b6ee69d09a1",
+    "768efd6ff2a21490": {
+      "id": "768efd6ff2a21490",
+      "family_id": "6d64ba091eed",
       "probable_duplicate_of": null,
-      "company": "SuLinda",
-      "title": "CRM & Customer Experience Supervisor....",
+      "company": "Tabby | تابي",
+      "title": "Data Analyst (Regulatory Reporting)",
       "sources": [
         "LinkedIn Jobs"
       ],
       "source_category": "job_board",
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/crm-customer-experience-supervisor-at-sulinda-4493495571"
+        "https://eg.linkedin.com/jobs/view/data-analyst-regulatory-reporting-at-tabby-%D8%AA%D8%A7%D8%A8%D9%8A-4495277282"
       ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/crm-customer-experience-supervisor-at-sulinda-4493495571",
+      "primary_url": "https://eg.linkedin.com/jobs/view/data-analyst-regulatory-reporting-at-tabby-%D8%AA%D8%A7%D8%A8%D9%8A-4495277282",
       "location": "Cairo, Cairo, Egypt",
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T07:58:52Z",
-        "last_verified": "2026-11-26T07:58:52Z",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -183,12 +352,12 @@
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "CRM & Customer Experience Supervisor.... (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "reason_first": "Data Analyst (Regulatory Reporting) (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
             "tag": "شرط أساسي",
-            "quote": "Sales Force Effectiveness",
+            "quote": "Junior SFE Analyst",
             "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
           }
         ],
@@ -201,29 +370,29 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-26T07:58:52Z"
+      "discovered_at": "2026-11-26T14:36:29Z"
     },
-    "c43074d9ea73a4cf": {
-      "id": "c43074d9ea73a4cf",
-      "family_id": "7ccd9e056917",
-      "probable_duplicate_of": null,
-      "company": "Shezlong",
-      "title": "Client Engagement Team Leader – CVM",
+    "525ac19f31d8ae38": {
+      "id": "525ac19f31d8ae38",
+      "family_id": "6d64ba091eed",
+      "probable_duplicate_of": "768efd6ff2a21490",
+      "company": "Tabby | تابي",
+      "title": "Data Analyst (Regulatory Reporting)",
       "sources": [
         "LinkedIn Jobs"
       ],
       "source_category": "job_board",
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/client-engagement-team-leader-%E2%80%93-cvm-at-shezlong-4495227701"
+        "https://eg.linkedin.com/jobs/view/data-analyst-regulatory-reporting-at-tabby-%D8%AA%D8%A7%D8%A8%D9%8A-4495291182"
       ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/client-engagement-team-leader-%E2%80%93-cvm-at-shezlong-4495227701",
-      "location": "Giza, Al Jizah, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/data-analyst-regulatory-reporting-at-tabby-%D8%AA%D8%A7%D8%A8%D9%8A-4495291182",
+      "location": "Egypt",
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T07:58:52Z",
-        "last_verified": "2026-11-26T07:58:52Z",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -236,12 +405,118 @@
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "Client Engagement Team Leader – CVM (Giza, Al Jizah, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "reason_first": "Data Analyst (Regulatory Reporting) (Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
             "tag": "شرط أساسي",
-            "quote": "Sales Force Effectiveness",
+            "quote": "Junior SFE Analyst",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "91aff2ee61e0071d": {
+      "id": "91aff2ee61e0071d",
+      "family_id": "8d0cd0f4d482",
+      "probable_duplicate_of": null,
+      "company": "Manpower Egypt",
+      "title": "Customer Supply Chain Analyst",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/customer-supply-chain-analyst-at-manpower-egypt-4493829322"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/customer-supply-chain-analyst-at-manpower-egypt-4493829322",
+      "location": "El Obour, Al Qalyubiyah, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Customer Supply Chain Analyst (El Obour, Al Qalyubiyah, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Sales Operations Analyst",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "84cb530d7c851082": {
+      "id": "84cb530d7c851082",
+      "family_id": "cf582c790ae6",
+      "probable_duplicate_of": null,
+      "company": "Grupo AJE",
+      "title": "Export Sales Executive",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/export-sales-executive-at-grupo-aje-4493499807"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/export-sales-executive-at-grupo-aje-4493499807",
+      "location": "Giza, Al Jizah, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Export Sales Executive (Giza, Al Jizah, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Sales Operations Analyst",
             "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
           }
         ],
@@ -254,60 +529,7 @@
         "status": "ESTIMATED",
         "summary": "تقدير: الجيزة · حوالي ٣٨ دقيقة من شبرا (مترو خط ٢ مباشر) · أيام المكتب محتاجة تأكيد"
       },
-      "discovered_at": "2026-11-26T07:58:52Z"
-    },
-    "f7e2a10d9d1db9a1": {
-      "id": "f7e2a10d9d1db9a1",
-      "family_id": "5229e5584fbf",
-      "probable_duplicate_of": null,
-      "company": "GetBuilder",
-      "title": "Business Research & Special Projects Associate",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/business-research-special-projects-associate-at-getbuilder-4495250760"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/business-research-special-projects-associate-at-getbuilder-4495250760",
-      "location": "Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T07:58:52Z",
-        "last_verified": "2026-11-26T07:58:52Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 37,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Business Research & Special Projects Associate (Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Junior Business Analyst",
-            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
-          }
-        ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-26T07:58:52Z"
+      "discovered_at": "2026-11-26T14:36:29Z"
     },
     "57c299f4d5261c61": {
       "id": "57c299f4d5261c61",
@@ -328,8 +550,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T07:58:52Z",
-        "last_verified": "2026-11-26T07:58:52Z",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -347,7 +569,7 @@
         "evidence_pairs": [
           {
             "tag": "شرط أساسي",
-            "quote": "Systems Analyst",
+            "quote": "Business Analyst",
             "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
           }
         ],
@@ -360,82 +582,29 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-26T07:58:52Z"
+      "discovered_at": "2026-11-26T14:36:29Z"
     },
-    "afc8a33b9996f0bb": {
-      "id": "afc8a33b9996f0bb",
-      "family_id": "aaf608a1e7fe",
-      "probable_duplicate_of": null,
-      "company": "Namaa Global",
-      "title": "SCM Consultant",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/scm-consultant-at-namaa-global-4495265586"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/scm-consultant-at-namaa-global-4495265586",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T07:58:52Z",
-        "last_verified": "2026-11-26T07:58:52Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 37,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "SCM Consultant (Cairo, Cairo, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Systems Analyst",
-            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
-          }
-        ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-26T07:58:52Z"
-    },
-    "d2e84f81254ce064": {
-      "id": "d2e84f81254ce064",
-      "family_id": "630ce4cadcaf",
+    "f67fc7c1dbea3288": {
+      "id": "f67fc7c1dbea3288",
+      "family_id": "46df4c71b438",
       "probable_duplicate_of": null,
       "company": "inflexion - SAP Gold Partner",
-      "title": "SAP PP/QM Consultant",
+      "title": "SAP MM Functional Consultant",
       "sources": [
         "LinkedIn Jobs"
       ],
       "source_category": "job_board",
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/sap-pp-qm-consultant-at-inflexion-sap-gold-partner-4493493645"
+        "https://eg.linkedin.com/jobs/view/sap-mm-functional-consultant-at-inflexion-sap-gold-partner-4493488991"
       ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/sap-pp-qm-consultant-at-inflexion-sap-gold-partner-4493493645",
+      "primary_url": "https://eg.linkedin.com/jobs/view/sap-mm-functional-consultant-at-inflexion-sap-gold-partner-4493488991",
       "location": "Cairo, Cairo, Egypt",
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T07:58:52Z",
-        "last_verified": "2026-11-26T07:58:52Z",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -448,12 +617,12 @@
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "SAP PP/QM Consultant (Cairo, Cairo, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "reason_first": "SAP MM Functional Consultant (Cairo, Cairo, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
             "tag": "شرط أساسي",
-            "quote": "Systems Analyst",
+            "quote": "Business Analyst",
             "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
           }
         ],
@@ -466,29 +635,29 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-26T07:58:52Z"
+      "discovered_at": "2026-11-26T14:36:29Z"
     },
-    "e1c036e87518617c": {
-      "id": "e1c036e87518617c",
-      "family_id": "ab52693330ab",
+    "16dca61fa34d38b0": {
+      "id": "16dca61fa34d38b0",
+      "family_id": "d1f209000840",
       "probable_duplicate_of": null,
-      "company": "Coca-Cola HBC",
-      "title": "SAP BASIS Engineer",
+      "company": "Mashreq",
+      "title": "Digital Product Expert.Egypt- Sphynx - NEO.Retail Banking",
       "sources": [
         "LinkedIn Jobs"
       ],
       "source_category": "job_board",
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/sap-basis-engineer-at-coca-cola-hbc-4459159546"
+        "https://eg.linkedin.com/jobs/view/digital-product-expert-egypt-sphynx-neo-retail-banking-at-mashreq-4479535845"
       ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/sap-basis-engineer-at-coca-cola-hbc-4459159546",
-      "location": "New Cairo, Cairo, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/digital-product-expert-egypt-sphynx-neo-retail-banking-at-mashreq-4479535845",
+      "location": "Egypt",
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T07:58:52Z",
-        "last_verified": "2026-11-26T07:58:52Z",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -501,25 +670,25 @@
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "SAP BASIS Engineer (New Cairo, Cairo, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "reason_first": "Digital Product Expert.Egypt- Sphynx - NEO.Retail Banking (Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
             "tag": "شرط أساسي",
-            "quote": "Junior Systems Analyst",
+            "quote": "Business Analyst",
             "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
           }
         ],
-        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع رقمي (Python, SQL, Tableau)"
       },
       "commute": {
-        "score": 52,
-        "one_way_min": 78,
+        "score": null,
+        "one_way_min": null,
         "days_per_week": null,
-        "status": "ESTIMATED",
-        "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-26T07:58:52Z"
+      "discovered_at": "2026-11-26T14:36:29Z"
     },
     "95e0fd9ce4df689c": {
       "id": "95e0fd9ce4df689c",
@@ -540,8 +709,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T07:58:52Z",
-        "last_verified": "2026-11-26T07:58:52Z",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -572,7 +741,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-26T07:58:52Z"
+      "discovered_at": "2026-11-26T14:36:29Z"
     },
     "81628c2434999304": {
       "id": "81628c2434999304",
@@ -593,8 +762,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T07:58:52Z",
-        "last_verified": "2026-11-26T07:58:52Z",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -625,76 +794,29 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-26T07:58:52Z"
+      "discovered_at": "2026-11-26T14:36:29Z"
     },
-    "d1aac0de8b9d99df": {
-      "id": "d1aac0de8b9d99df",
-      "family_id": "ac45bbe10a45",
+    "e9106e13303e9c3d": {
+      "id": "e9106e13303e9c3d",
+      "family_id": "91ca4bbf399d",
       "probable_duplicate_of": null,
-      "company": "Aventus",
-      "title": "Data analytics Fraud detection",
+      "company": "PepsiCo",
+      "title": "Control & Reporting Associate",
       "sources": [
         "LinkedIn Jobs"
       ],
       "source_category": "job_board",
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/data-analytics-fraud-detection-at-aventus-4493483824"
+        "https://eg.linkedin.com/jobs/view/control-reporting-associate-at-pepsico-4485810928"
       ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/data-analytics-fraud-detection-at-aventus-4493483824",
-      "location": "Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T07:58:52Z",
-        "last_verified": "2026-11-26T07:58:52Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-26T07:58:52Z"
-    },
-    "d5c5e98901817a22": {
-      "id": "d5c5e98901817a22",
-      "family_id": "062c1283707d",
-      "probable_duplicate_of": null,
-      "company": "Coca-Cola HBC",
-      "title": "Data Engineer",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/data-engineer-at-coca-cola-hbc-4449601286"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/data-engineer-at-coca-cola-hbc-4449601286",
+      "primary_url": "https://eg.linkedin.com/jobs/view/control-reporting-associate-at-pepsico-4485810928",
       "location": "New Cairo, Cairo, Egypt",
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T07:58:52Z",
-        "last_verified": "2026-11-26T07:58:52Z",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -719,42 +841,481 @@
         "status": "ESTIMATED",
         "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
       },
-      "discovered_at": "2026-11-26T07:58:52Z"
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "4a3610c7d6308f69": {
+      "id": "4a3610c7d6308f69",
+      "family_id": "7e59dcfb28d6",
+      "probable_duplicate_of": null,
+      "company": "rockdal Construction",
+      "title": "مهندس مراقبة النفقات الرأسمالية",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/%D9%85%D9%87%D9%86%D8%AF%D8%B3-%D9%85%D8%B1%D8%A7%D9%82%D8%A8%D8%A9-%D8%A7%D9%84%D9%86%D9%81%D9%82%D8%A7%D8%AA-%D8%A7%D9%84%D8%B1%D8%A3%D8%B3%D9%85%D8%A7%D9%84%D9%8A%D8%A9-at-rockdal-construction-4494607311"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/%D9%85%D9%87%D9%86%D8%AF%D8%B3-%D9%85%D8%B1%D8%A7%D9%82%D8%A8%D8%A9-%D8%A7%D9%84%D9%86%D9%81%D9%82%D8%A7%D8%AA-%D8%A7%D9%84%D8%B1%D8%A3%D8%B3%D9%85%D8%A7%D9%84%D9%8A%D8%A9-at-rockdal-construction-4494607311",
+      "location": "Qesm 2nd 6 October, Al Jizah, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "6a753fea19d2b16f": {
+      "id": "6a753fea19d2b16f",
+      "family_id": "75c573d224e2",
+      "probable_duplicate_of": null,
+      "company": "Phoenix Training & Development",
+      "title": "Accounting and Administration Officer",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/accounting-and-administration-officer-at-phoenix-training-development-4495277506"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/accounting-and-administration-officer-at-phoenix-training-development-4495277506",
+      "location": "New Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": 52,
+        "one_way_min": 78,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "a070cfcd6f1cf34b": {
+      "id": "a070cfcd6f1cf34b",
+      "family_id": "2887ddc65a1e",
+      "probable_duplicate_of": null,
+      "company": "Publicis Groupe Middle East",
+      "title": "Media Operations",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/media-operations-at-publicis-groupe-middle-east-4495277219"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/media-operations-at-publicis-groupe-middle-east-4495277219",
+      "location": "Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "0fd65c9e5ba42b95": {
+      "id": "0fd65c9e5ba42b95",
+      "family_id": "eda6c29eddda",
+      "probable_duplicate_of": null,
+      "company": "Namaa Global",
+      "title": "SaaS (Reports) Consultant",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/saas-reports-consultant-at-namaa-global-4495296159"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/saas-reports-consultant-at-namaa-global-4495296159",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "512f2e5a8023b3df": {
+      "id": "512f2e5a8023b3df",
+      "family_id": "5eab02d8520c",
+      "probable_duplicate_of": null,
+      "company": "onebank",
+      "title": "CBE Reporting Data Engineer",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/cbe-reporting-data-engineer-at-onebank-4495270844"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/cbe-reporting-data-engineer-at-onebank-4495270844",
+      "location": "Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "d1aac0de8b9d99df": {
+      "id": "d1aac0de8b9d99df",
+      "family_id": "ac45bbe10a45",
+      "probable_duplicate_of": null,
+      "company": "Aventus",
+      "title": "Data analytics Fraud detection",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/data-analytics-fraud-detection-at-aventus-4493483824"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/data-analytics-fraud-detection-at-aventus-4493483824",
+      "location": "Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "d5c5e98901817a22": {
+      "id": "d5c5e98901817a22",
+      "family_id": "062c1283707d",
+      "probable_duplicate_of": null,
+      "company": "Coca-Cola HBC",
+      "title": "Data Engineer",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/data-engineer-at-coca-cola-hbc-4449601286"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/data-engineer-at-coca-cola-hbc-4449601286",
+      "location": "New Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": 52,
+        "one_way_min": 78,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "2014ad23dacfcc72": {
+      "id": "2014ad23dacfcc72",
+      "family_id": "ca804f2421fd",
+      "probable_duplicate_of": null,
+      "company": "WPP Media",
+      "title": "Associate, Performance, Egypt",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/associate-performance-egypt-at-wpp-media-4493800658"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/associate-performance-egypt-at-wpp-media-4493800658",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "76d4eea3d1d7feea": {
+      "id": "76d4eea3d1d7feea",
+      "family_id": "c50b31b89089",
+      "probable_duplicate_of": null,
+      "company": "TP",
+      "title": "Business Intelligence Developer",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/business-intelligence-developer-at-tp-4495277670"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/business-intelligence-developer-at-tp-4495277670",
+      "location": "Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
+    },
+    "54207dd875cf6271": {
+      "id": "54207dd875cf6271",
+      "family_id": "e3db84dd96c7",
+      "probable_duplicate_of": null,
+      "company": "TP",
+      "title": "Pricing Analyst",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/pricing-analyst-at-tp-4495287351"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/pricing-analyst-at-tp-4495287351",
+      "location": "Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T14:36:29Z",
+        "last_verified": "2026-11-26T14:36:29Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T14:36:29Z"
     }
   },
   "notification_log": {},
   "audit_logs": [
-    {
-      "completed_at": "2026-11-25T12:30:13Z",
-      "published_at": "2026-11-25T12:30:13Z",
-      "queries_executed": [
-        "Reporting Analyst",
-        "MIS Analyst",
-        "Junior BI Analyst",
-        "Business Intelligence Analyst",
-        "Junior Data Analyst",
-        "Data Analyst",
-        "Junior Business Analyst",
-        "Performance Analyst",
-        "Data Quality Analyst",
-        "Junior Systems Analyst",
-        "Operations Analyst",
-        "Sales Analyst",
-        "Sales Support Analyst",
-        "Business Process Analyst",
-        "Junior SFE Analyst",
-        "Sales Force Effectiveness",
-        "Data Management Analyst",
-        "Research Insights Analyst",
-        "Junior Commercial Analyst",
-        "Junior Power BI Developer",
-        "Junior Product Analyst",
-        "Marketing Data Analyst",
-        "Master Data Specialist",
-        "Reporting Analyst"
-      ],
-      "total_fresh_24h": 43
-    },
     {
       "completed_at": "2026-11-25T12:31:37Z",
       "published_at": "2026-11-25T12:31:37Z",
@@ -1095,6 +1656,37 @@
         "SFE Analyst"
       ],
       "total_fresh_24h": 13
+    },
+    {
+      "completed_at": "2026-11-26T14:37:19Z",
+      "published_at": "2026-11-26T14:37:19Z",
+      "queries_executed": [
+        "Junior Reporting Analyst",
+        "Reporting Analyst",
+        "MIS Analyst",
+        "Junior MIS Analyst",
+        "Junior BI Analyst",
+        "Business Intelligence Analyst",
+        "Power BI Analyst",
+        "KPI Analyst",
+        "Performance Analyst",
+        "Junior Data Analyst",
+        "Data Analyst",
+        "Data Analytics",
+        "SQL Analyst",
+        "Data Quality Analyst",
+        "Data Management Analyst",
+        "Junior Business Analyst",
+        "Business Analyst",
+        "Junior Systems Analyst",
+        "Systems Analyst",
+        "Business Process Analyst",
+        "Operations Analyst",
+        "Business Operations Analyst",
+        "Junior SFE Analyst",
+        "SFE Analyst"
+      ],
+      "total_fresh_24h": 25
     }
   ]
 }
