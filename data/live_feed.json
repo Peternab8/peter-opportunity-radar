@@ -1,20 +1,20 @@
 {
   "meta": {
-    "scan_completed_at": "2026-11-26T04:37:33Z",
-    "feed_published_at": "2026-11-26T04:37:33Z",
+    "scan_completed_at": "2026-11-26T07:59:51Z",
+    "feed_published_at": "2026-11-26T07:59:51Z",
     "priority_threshold": 80,
     "fresh_window_hours": 24,
-    "total_active": 1,
+    "total_active": 13,
     "source_statuses": {
       "linkedin_jobs": {
         "state": "OK",
-        "label": "نجح (78 إعلان)",
-        "count": 78
+        "label": "نجح (134 إعلان)",
+        "count": 134
       },
       "indeed_google": {
         "state": "OK",
-        "label": "نجح (9 إعلان)",
-        "count": 9
+        "label": "نجح (10 إعلان)",
+        "count": 10
       },
       "hiring_posts": {
         "state": "FAILED",
@@ -44,27 +44,133 @@
     }
   },
   "jobs": {
-    "8e574f357d32c902": {
-      "id": "8e574f357d32c902",
-      "family_id": "803fd19c72c1",
+    "f17cdf3fd4545ac1": {
+      "id": "f17cdf3fd4545ac1",
+      "family_id": "f111bfd7fec3",
       "probable_duplicate_of": null,
-      "company": "DataFlow Group",
-      "title": "Application Support Specialist",
+      "company": "Hannibal Power and Technology - Istanbul Branch",
+      "title": "Technical Sales and Support Engineer",
       "sources": [
         "LinkedIn Jobs"
       ],
       "source_category": "job_board",
       "all_urls": [
-        "https://eg.linkedin.com/jobs/view/application-support-specialist-at-dataflow-group-4493462898"
+        "https://eg.linkedin.com/jobs/view/technical-sales-and-support-engineer-at-hannibal-power-and-technology-istanbul-branch-4493487771"
       ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/application-support-specialist-at-dataflow-group-4493462898",
-      "location": "Giza, Al Jizah, Egypt",
+      "primary_url": "https://eg.linkedin.com/jobs/view/technical-sales-and-support-engineer-at-hannibal-power-and-technology-istanbul-branch-4493487771",
+      "location": "Egypt",
       "work_mode": null,
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-26",
-        "discovered_at": "2026-11-26T04:36:02Z",
-        "last_verified": "2026-11-26T04:36:02Z",
+        "discovered_at": "2026-11-26T07:58:52Z",
+        "last_verified": "2026-11-26T07:58:52Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 50,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Technical Sales and Support Engineer (Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Sales Support Analyst",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T07:58:52Z"
+    },
+    "1d3787703eea9ae0": {
+      "id": "1d3787703eea9ae0",
+      "family_id": "86241ed7788d",
+      "probable_duplicate_of": null,
+      "company": "Advansys ME",
+      "title": "Mid Oracle EBS / ERP Developer (Banking)",
+      "sources": [
+        "Indeed Egypt"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.indeed.com/viewjob?jk=149402b1727bc229"
+      ],
+      "primary_url": "https://eg.indeed.com/viewjob?jk=149402b1727bc229",
+      "location": "مدينة نصر, C, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T07:58:52Z",
+        "last_verified": "2026-11-26T07:58:52Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 39,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Mid Oracle EBS / ERP Developer (Banking) (مدينة نصر, C, Egypt) · SQL & قواعد البيانات العلائقية",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "The ideal candidate will have hands-on experience in Oracle ERP development, PL/SQL programming, Oracle Forms & Reports, and database integration, with a solid ",
+            "cv": "تصميم قاعدة بيانات 6+ كيانات (ERD) في مشروع NTI + تحليل 5,000 معاملة دفع رقمي بـ SQL"
+          }
+        ],
+        "recommended_project": "مشروع DEPI لتحليل 5,000 معاملة دفع رقمي (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T07:58:52Z"
+    },
+    "e48e779d7e799528": {
+      "id": "e48e779d7e799528",
+      "family_id": "8b6ee69d09a1",
+      "probable_duplicate_of": null,
+      "company": "SuLinda",
+      "title": "CRM & Customer Experience Supervisor....",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/crm-customer-experience-supervisor-at-sulinda-4493495571"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/crm-customer-experience-supervisor-at-sulinda-4493495571",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T07:58:52Z",
+        "last_verified": "2026-11-26T07:58:52Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -77,12 +183,65 @@
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
-        "reason_first": "Application Support Specialist (Giza, Al Jizah, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "reason_first": "CRM & Customer Experience Supervisor.... (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
         "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
         "evidence_pairs": [
           {
             "tag": "شرط أساسي",
-            "quote": "SFE Analyst",
+            "quote": "Sales Force Effectiveness",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T07:58:52Z"
+    },
+    "c43074d9ea73a4cf": {
+      "id": "c43074d9ea73a4cf",
+      "family_id": "7ccd9e056917",
+      "probable_duplicate_of": null,
+      "company": "Shezlong",
+      "title": "Client Engagement Team Leader – CVM",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/client-engagement-team-leader-%E2%80%93-cvm-at-shezlong-4495227701"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/client-engagement-team-leader-%E2%80%93-cvm-at-shezlong-4495227701",
+      "location": "Giza, Al Jizah, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T07:58:52Z",
+        "last_verified": "2026-11-26T07:58:52Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Client Engagement Team Leader – CVM (Giza, Al Jizah, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Sales Force Effectiveness",
             "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
           }
         ],
@@ -95,42 +254,476 @@
         "status": "ESTIMATED",
         "summary": "تقدير: الجيزة · حوالي ٣٨ دقيقة من شبرا (مترو خط ٢ مباشر) · أيام المكتب محتاجة تأكيد"
       },
-      "discovered_at": "2026-11-26T04:36:02Z"
+      "discovered_at": "2026-11-26T07:58:52Z"
+    },
+    "f7e2a10d9d1db9a1": {
+      "id": "f7e2a10d9d1db9a1",
+      "family_id": "5229e5584fbf",
+      "probable_duplicate_of": null,
+      "company": "GetBuilder",
+      "title": "Business Research & Special Projects Associate",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/business-research-special-projects-associate-at-getbuilder-4495250760"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/business-research-special-projects-associate-at-getbuilder-4495250760",
+      "location": "Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T07:58:52Z",
+        "last_verified": "2026-11-26T07:58:52Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 37,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Business Research & Special Projects Associate (Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Junior Business Analyst",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T07:58:52Z"
+    },
+    "57c299f4d5261c61": {
+      "id": "57c299f4d5261c61",
+      "family_id": "1138209be13c",
+      "probable_duplicate_of": null,
+      "company": "DataSoft",
+      "title": "Erpnext Implementer",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/erpnext-implementer-at-datasoft-4495268457"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/erpnext-implementer-at-datasoft-4495268457",
+      "location": "Qesm 1st 6 October, Al Jizah, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T07:58:52Z",
+        "last_verified": "2026-11-26T07:58:52Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 37,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Erpnext Implementer (Qesm 1st 6 October, Al Jizah, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Systems Analyst",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T07:58:52Z"
+    },
+    "afc8a33b9996f0bb": {
+      "id": "afc8a33b9996f0bb",
+      "family_id": "aaf608a1e7fe",
+      "probable_duplicate_of": null,
+      "company": "Namaa Global",
+      "title": "SCM Consultant",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/scm-consultant-at-namaa-global-4495265586"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/scm-consultant-at-namaa-global-4495265586",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T07:58:52Z",
+        "last_verified": "2026-11-26T07:58:52Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 37,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "SCM Consultant (Cairo, Cairo, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Systems Analyst",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T07:58:52Z"
+    },
+    "d2e84f81254ce064": {
+      "id": "d2e84f81254ce064",
+      "family_id": "630ce4cadcaf",
+      "probable_duplicate_of": null,
+      "company": "inflexion - SAP Gold Partner",
+      "title": "SAP PP/QM Consultant",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/sap-pp-qm-consultant-at-inflexion-sap-gold-partner-4493493645"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/sap-pp-qm-consultant-at-inflexion-sap-gold-partner-4493493645",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T07:58:52Z",
+        "last_verified": "2026-11-26T07:58:52Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 37,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "SAP PP/QM Consultant (Cairo, Cairo, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Systems Analyst",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T07:58:52Z"
+    },
+    "e1c036e87518617c": {
+      "id": "e1c036e87518617c",
+      "family_id": "ab52693330ab",
+      "probable_duplicate_of": null,
+      "company": "Coca-Cola HBC",
+      "title": "SAP BASIS Engineer",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/sap-basis-engineer-at-coca-cola-hbc-4459159546"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/sap-basis-engineer-at-coca-cola-hbc-4459159546",
+      "location": "New Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T07:58:52Z",
+        "last_verified": "2026-11-26T07:58:52Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 37,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "SAP BASIS Engineer (New Cairo, Cairo, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Junior Systems Analyst",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": 52,
+        "one_way_min": 78,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-26T07:58:52Z"
+    },
+    "95e0fd9ce4df689c": {
+      "id": "95e0fd9ce4df689c",
+      "family_id": "4e31b058fb63",
+      "probable_duplicate_of": null,
+      "company": "Advansys ME",
+      "title": "Mid Microsoft Dynamics 365 CE / CRM Developer (Banking)",
+      "sources": [
+        "Indeed Egypt"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.indeed.com/viewjob?jk=44d6a00ffc3c715b"
+      ],
+      "primary_url": "https://eg.indeed.com/viewjob?jk=44d6a00ffc3c715b",
+      "location": "مدينة نصر, C, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T07:58:52Z",
+        "last_verified": "2026-11-26T07:58:52Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 30,
+        "confidence": "HIGH",
+        "role_core": "SENIOR_EXPERIENCE_CONFLICT",
+        "has_mandatory_conflict": true,
+        "reason_first": "يتطلب خبرة إلزامية 5 سنوات",
+        "caveat_first": "شرط الخبرة أعلى من مستوى خريج ٢٠٢٦",
+        "evidence_pairs": [
+          {
+            "tag": "شرط إلزامي",
+            "quote": "### **Job Overview** We are looking for a skilled Mid-Level Microsoft Dynamics 365 CE / CRM Developer with 3–5 years of hands-on experience in CRM development, customization, and integration.",
+            "cv": "خريج ٢٠٢٦ (٠–١ سنة خبرة)"
+          }
+        ],
+        "recommended_project": "—"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T07:58:52Z"
+    },
+    "81628c2434999304": {
+      "id": "81628c2434999304",
+      "family_id": "12b9e52cfed7",
+      "probable_duplicate_of": null,
+      "company": "Advansys ME",
+      "title": "Mid-Level Newgen Developer (Banking)",
+      "sources": [
+        "Indeed Egypt"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.indeed.com/viewjob?jk=58fa966610d36df7"
+      ],
+      "primary_url": "https://eg.indeed.com/viewjob?jk=58fa966610d36df7",
+      "location": "مدينة نصر, C, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T07:58:52Z",
+        "last_verified": "2026-11-26T07:58:52Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 30,
+        "confidence": "HIGH",
+        "role_core": "SENIOR_EXPERIENCE_CONFLICT",
+        "has_mandatory_conflict": true,
+        "reason_first": "يتطلب خبرة إلزامية 5 سنوات",
+        "caveat_first": "شرط الخبرة أعلى من مستوى خريج ٢٠٢٦",
+        "evidence_pairs": [
+          {
+            "tag": "شرط إلزامي",
+            "quote": "### **Ideal Candidate Profile** The ideal candidate **with 3–5 years of hans-on Newgen experience** in a bank or fintech, They: * Have delivered **multiple end-to-end lending or SME fina We are looking for an experienced **Mid-Level Newgen Developer** to join our Newgen Application Development Center (ADC) team supporting lending and SME financing platforms.",
+            "cv": "خريج ٢٠٢٦ (٠–١ سنة خبرة)"
+          }
+        ],
+        "recommended_project": "—"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T07:58:52Z"
+    },
+    "d1aac0de8b9d99df": {
+      "id": "d1aac0de8b9d99df",
+      "family_id": "ac45bbe10a45",
+      "probable_duplicate_of": null,
+      "company": "Aventus",
+      "title": "Data analytics Fraud detection",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/data-analytics-fraud-detection-at-aventus-4493483824"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/data-analytics-fraud-detection-at-aventus-4493483824",
+      "location": "Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T07:58:52Z",
+        "last_verified": "2026-11-26T07:58:52Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-26T07:58:52Z"
+    },
+    "d5c5e98901817a22": {
+      "id": "d5c5e98901817a22",
+      "family_id": "062c1283707d",
+      "probable_duplicate_of": null,
+      "company": "Coca-Cola HBC",
+      "title": "Data Engineer",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/data-engineer-at-coca-cola-hbc-4449601286"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/data-engineer-at-coca-cola-hbc-4449601286",
+      "location": "New Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-26",
+        "discovered_at": "2026-11-26T07:58:52Z",
+        "last_verified": "2026-11-26T07:58:52Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": null,
+        "confidence": "LOW_EVIDENCE",
+        "role_core": "UNVERIFIED",
+        "has_mandatory_conflict": false,
+        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
+        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
+        "evidence_pairs": [],
+        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
+      },
+      "commute": {
+        "score": 52,
+        "one_way_min": 78,
+        "days_per_week": null,
+        "status": "ESTIMATED",
+        "summary": "تقدير: القاهرة الجديدة · حوالي ٧٨ دقيقة من شبرا · أيام المكتب محتاجة تأكيد"
+      },
+      "discovered_at": "2026-11-26T07:58:52Z"
     }
   },
   "notification_log": {},
   "audit_logs": [
-    {
-      "completed_at": "2026-11-25T12:29:05Z",
-      "published_at": "2026-11-25T12:29:05Z",
-      "queries_executed": [
-        "Reporting Analyst",
-        "MIS Analyst",
-        "Junior BI Analyst",
-        "Business Intelligence Analyst",
-        "Junior Data Analyst",
-        "Data Analyst",
-        "Junior Business Analyst",
-        "Performance Analyst",
-        "Data Quality Analyst",
-        "Junior Systems Analyst",
-        "Operations Analyst",
-        "Sales Analyst",
-        "Sales Support Analyst",
-        "Business Process Analyst",
-        "Junior SFE Analyst",
-        "Sales Force Effectiveness",
-        "Data Management Analyst",
-        "Research Insights Analyst",
-        "Junior Commercial Analyst",
-        "Junior Power BI Developer",
-        "Junior Product Analyst",
-        "Marketing Data Analyst",
-        "Master Data Specialist",
-        "Reporting Analyst"
-      ],
-      "total_fresh_24h": 30
-    },
     {
       "completed_at": "2026-11-25T12:30:13Z",
       "published_at": "2026-11-25T12:30:13Z",
@@ -471,6 +1064,37 @@
         "SFE Analyst"
       ],
       "total_fresh_24h": 1
+    },
+    {
+      "completed_at": "2026-11-26T07:59:51Z",
+      "published_at": "2026-11-26T07:59:51Z",
+      "queries_executed": [
+        "Junior Reporting Analyst",
+        "Reporting Analyst",
+        "MIS Analyst",
+        "Junior MIS Analyst",
+        "Junior BI Analyst",
+        "Business Intelligence Analyst",
+        "Power BI Analyst",
+        "KPI Analyst",
+        "Performance Analyst",
+        "Junior Data Analyst",
+        "Data Analyst",
+        "Data Analytics",
+        "SQL Analyst",
+        "Data Quality Analyst",
+        "Data Management Analyst",
+        "Junior Business Analyst",
+        "Business Analyst",
+        "Junior Systems Analyst",
+        "Systems Analyst",
+        "Business Process Analyst",
+        "Operations Analyst",
+        "Business Operations Analyst",
+        "Junior SFE Analyst",
+        "SFE Analyst"
+      ],
+      "total_fresh_24h": 13
     }
   ]
 }
