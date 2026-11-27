@@ -1,15 +1,15 @@
 {
   "meta": {
-    "scan_completed_at": "2026-11-27T15:49:15Z",
-    "feed_published_at": "2026-11-27T15:49:15Z",
+    "scan_completed_at": "2026-11-27T23:50:30Z",
+    "feed_published_at": "2026-11-27T23:50:30Z",
     "priority_threshold": 80,
     "fresh_window_hours": 24,
-    "total_active": 6,
+    "total_active": 3,
     "source_statuses": {
       "linkedin_jobs": {
         "state": "OK",
-        "label": "نجح (60 إعلان)",
-        "count": 60
+        "label": "نجح (34 إعلان)",
+        "count": 34
       },
       "indeed_google": {
         "state": "OK",
@@ -63,8 +63,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-27",
-        "discovered_at": "2026-11-27T15:48:45Z",
-        "last_verified": "2026-11-27T15:48:45Z",
+        "discovered_at": "2026-11-27T23:50:13Z",
+        "last_verified": "2026-11-27T23:50:13Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -73,7 +73,7 @@
         "egypt_status": "CONFIRMED"
       },
       "fit": {
-        "score": 38,
+        "score": 50,
         "confidence": "HIGH",
         "role_core": "DATA_BI_TARGET",
         "has_mandatory_conflict": false,
@@ -95,154 +95,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-27T15:48:45Z"
-    },
-    "e78b3ac511c05c19": {
-      "id": "e78b3ac511c05c19",
-      "family_id": "7b3de8963ee2",
-      "probable_duplicate_of": null,
-      "company": "ALPLA Group",
-      "title": "Demand Planner",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/demand-planner-at-alpla-group-4492416791"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/demand-planner-at-alpla-group-4492416791",
-      "location": "10th of Ramadan, Sharkia, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-27",
-        "discovered_at": "2026-11-27T15:48:45Z",
-        "last_verified": "2026-11-27T15:48:45Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 38,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Demand Planner (10th of Ramadan, Sharkia, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Operations Analyst",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-27T15:48:45Z"
-    },
-    "d542e6ac1a6b5448": {
-      "id": "d542e6ac1a6b5448",
-      "family_id": "bb2531f7f2a1",
-      "probable_duplicate_of": null,
-      "company": "Floward",
-      "title": "Inventory Officer",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/inventory-officer-at-floward-4495595631"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/inventory-officer-at-floward-4495595631",
-      "location": "Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-27",
-        "discovered_at": "2026-11-27T15:48:45Z",
-        "last_verified": "2026-11-27T15:48:45Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-27T15:48:45Z"
-    },
-    "5ab36f2bba33b770": {
-      "id": "5ab36f2bba33b770",
-      "family_id": "65887af73809",
-      "probable_duplicate_of": null,
-      "company": "Property Finder",
-      "title": "Professional Data Engineer",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/professional-data-engineer-at-property-finder-4473293724"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/professional-data-engineer-at-property-finder-4473293724",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-27",
-        "discovered_at": "2026-11-27T15:48:45Z",
-        "last_verified": "2026-11-27T15:48:45Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-27T15:48:45Z"
+      "discovered_at": "2026-11-27T23:50:13Z"
     },
     "ea74ba65dc14c4d8": {
       "id": "ea74ba65dc14c4d8",
@@ -263,8 +116,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-27",
-        "discovered_at": "2026-11-27T15:48:45Z",
-        "last_verified": "2026-11-27T15:48:45Z",
+        "discovered_at": "2026-11-27T23:50:13Z",
+        "last_verified": "2026-11-27T23:50:13Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -289,7 +142,7 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-27T15:48:45Z"
+      "discovered_at": "2026-11-27T23:50:13Z"
     },
     "fc4e3f38bca2802b": {
       "id": "fc4e3f38bca2802b",
@@ -310,8 +163,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-27",
-        "discovered_at": "2026-11-27T15:48:45Z",
-        "last_verified": "2026-11-27T15:48:45Z",
+        "discovered_at": "2026-11-27T23:50:13Z",
+        "last_verified": "2026-11-27T23:50:13Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -336,42 +189,11 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-27T15:48:45Z"
+      "discovered_at": "2026-11-27T23:50:13Z"
     }
   },
   "notification_log": {},
   "audit_logs": [
-    {
-      "completed_at": "2026-11-25T12:59:30Z",
-      "published_at": "2026-11-25T12:59:30Z",
-      "queries_executed": [
-        "Junior Reporting Analyst",
-        "Reporting Analyst",
-        "MIS Analyst",
-        "Junior MIS Analyst",
-        "Junior BI Analyst",
-        "Business Intelligence Analyst",
-        "Power BI Analyst",
-        "KPI Analyst",
-        "Performance Analyst",
-        "Junior Data Analyst",
-        "Data Analyst",
-        "Data Analytics",
-        "SQL Analyst",
-        "Data Quality Analyst",
-        "Data Management Analyst",
-        "Junior Business Analyst",
-        "Business Analyst",
-        "Junior Systems Analyst",
-        "Systems Analyst",
-        "Business Process Analyst",
-        "Operations Analyst",
-        "Business Operations Analyst",
-        "Junior SFE Analyst",
-        "SFE Analyst"
-      ],
-      "total_fresh_24h": 14
-    },
     {
       "completed_at": "2026-11-25T13:02:19Z",
       "published_at": "2026-11-25T13:02:19Z",
@@ -712,6 +534,37 @@
         "SFE Analyst"
       ],
       "total_fresh_24h": 6
+    },
+    {
+      "completed_at": "2026-11-27T23:50:30Z",
+      "published_at": "2026-11-27T23:50:30Z",
+      "queries_executed": [
+        "Junior Reporting Analyst",
+        "Reporting Analyst",
+        "MIS Analyst",
+        "Junior MIS Analyst",
+        "Junior BI Analyst",
+        "Business Intelligence Analyst",
+        "Power BI Analyst",
+        "KPI Analyst",
+        "Performance Analyst",
+        "Junior Data Analyst",
+        "Data Analyst",
+        "Data Analytics",
+        "SQL Analyst",
+        "Data Quality Analyst",
+        "Data Management Analyst",
+        "Junior Business Analyst",
+        "Business Analyst",
+        "Junior Systems Analyst",
+        "Systems Analyst",
+        "Business Process Analyst",
+        "Operations Analyst",
+        "Business Operations Analyst",
+        "Junior SFE Analyst",
+        "SFE Analyst"
+      ],
+      "total_fresh_24h": 3
     }
   ]
 }
