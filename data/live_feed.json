@@ -1,15 +1,15 @@
 {
   "meta": {
-    "scan_completed_at": "2026-11-27T05:02:19Z",
-    "feed_published_at": "2026-11-27T05:02:19Z",
+    "scan_completed_at": "2026-11-27T05:50:12Z",
+    "feed_published_at": "2026-11-27T05:50:12Z",
     "priority_threshold": 80,
     "fresh_window_hours": 24,
-    "total_active": 1,
+    "total_active": 3,
     "source_statuses": {
       "linkedin_jobs": {
         "state": "OK",
-        "label": "نجح (99 إعلان)",
-        "count": 99
+        "label": "نجح (63 إعلان)",
+        "count": 63
       },
       "indeed_google": {
         "state": "OK",
@@ -17,9 +17,9 @@
         "count": 12
       },
       "hiring_posts": {
-        "state": "FAILED",
-        "label": "تعذّر الوصول للبوستات",
-        "count": 0
+        "state": "OK",
+        "label": "نجح (2 بوست)",
+        "count": 2
       },
       "egypt_companies": {
         "state": "OK_ZERO",
@@ -44,6 +44,117 @@
     }
   },
   "jobs": {
+    "847aa9388f54f43f": {
+      "id": "847aa9388f54f43f",
+      "family_id": "1cf033d57d13",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "جهاز حماية المستهلك | أرقام تهمك",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://cpa.gov.eg/ar-eg/%D8%A3%D8%B1%D9%82%D8%A7%D9%85-%D8%AA%D9%87%D9%85%D9%83"
+      ],
+      "primary_url": "https://cpa.gov.eg/ar-eg/%D8%A3%D8%B1%D9%82%D8%A7%D9%85-%D8%AA%D9%87%D9%85%D9%83",
+      "location": "مصر",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-27T05:49:46Z",
+        "last_verified": "2026-11-27T05:49:46Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 55,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "جهاز حماية المستهلك | أرقام تهمك (مصر) · SQL & قواعد البيانات العلائقية · Excel المتقدم وPower Query وVBA",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"مطلوب\" OR \"فرصة عمل\" OR \"توظيف\" OR \"ابعت\" OR \"سي في\" OR \"cv\") (\"بيانات\" OR \"تحليل\" OR \"تقارير\" OR \"data\" OR \"bi\" OR \"excel\" OR \"sql\") ",
+            "cv": "تصميم قاعدة بيانات 6+ كيانات (ERD) في مشروع NTI + تحليل 5,000 معاملة دفع رقمي بـ SQL"
+          },
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"مطلوب\" OR \"فرصة عمل\" OR \"توظيف\" OR \"ابعت\" OR \"سي في\" OR \"cv\") (\"بيانات\" OR \"تحليل\" OR \"تقارير\" OR \"data\" OR \"bi\" OR \"excel\" OR \"sql\") ",
+            "cv": "نظام حجز فعاليات فعلي بـ Excel/VBA وأتمتة رسائل التأكيد لـ 500–1,000 مشارك"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-27T05:49:46Z"
+    },
+    "cdb5bb8980e41ce6": {
+      "id": "cdb5bb8980e41ce6",
+      "family_id": "fcd98accdd20",
+      "probable_duplicate_of": null,
+      "company": "بوست توظيف (بحث مباشر)",
+      "title": "تحميل قراند الحياة الواقعية PC للكمبيوتر مجاناً - عرب جيمرز",
+      "sources": [
+        "بوستات التوظيف"
+      ],
+      "source_category": "hiring_posts",
+      "all_urls": [
+        "https://arabgamerz.com/guides/expert-tips/gta-real-life-edition-pc-guide/"
+      ],
+      "primary_url": "https://arabgamerz.com/guides/expert-tips/gta-real-life-edition-pc-guide/",
+      "location": null,
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": null,
+        "discovered_at": "2026-11-27T05:49:46Z",
+        "last_verified": "2026-11-27T05:49:46Z",
+        "apply_state": "NEEDS_VERIFICATION",
+        "apply_state_ar": "محتاج تحقق",
+        "action_label": "افتح الرابط",
+        "is_company_page": false,
+        "egypt_eligibility": "العنوان غير مذكور",
+        "egypt_status": "UNKNOWN"
+      },
+      "fit": {
+        "score": 38,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "تحميل قراند الحياة الواقعية PC للكمبيوتر مجاناً - عرب جيمرز · متابعة الأداء والتقارير التجارية (SFE / Operations)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "site:linkedin.com/posts (\"hiring\" OR \"we are hiring\" OR \"send your cv\" OR \"send cv\" OR \"dm me\") (\"data analyst\" OR \"bi analyst\" OR \"business intelligence\" OR \"r",
+            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
+          }
+        ],
+        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "UNKNOWN",
+        "summary": "العنوان غير مذكور"
+      },
+      "discovered_at": "2026-11-27T05:49:46Z"
+    },
     "fc4e3f38bca2802b": {
       "id": "fc4e3f38bca2802b",
       "family_id": "674f70263eff",
@@ -63,8 +174,8 @@
       "is_training": false,
       "receipt": {
         "first_published": "2026-11-27",
-        "discovered_at": "2026-11-27T05:01:38Z",
-        "last_verified": "2026-11-27T05:01:38Z",
+        "discovered_at": "2026-11-27T05:49:46Z",
+        "last_verified": "2026-11-27T05:49:46Z",
         "apply_state": "OPEN_VERIFIED",
         "apply_state_ar": "مفتوح بدليل",
         "action_label": "افتح التقديم",
@@ -89,42 +200,11 @@
         "status": "NEEDS_DISTRICT",
         "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
       },
-      "discovered_at": "2026-11-27T05:01:38Z"
+      "discovered_at": "2026-11-27T05:49:46Z"
     }
   },
   "notification_log": {},
   "audit_logs": [
-    {
-      "completed_at": "2026-11-25T12:43:01Z",
-      "published_at": "2026-11-25T12:43:01Z",
-      "queries_executed": [
-        "Junior Reporting Analyst",
-        "Reporting Analyst",
-        "MIS Analyst",
-        "Junior BI Analyst",
-        "Business Intelligence Analyst",
-        "Junior Data Analyst",
-        "Data Analyst",
-        "Junior Business Analyst",
-        "Performance Analyst",
-        "Data Quality Analyst",
-        "Junior Systems Analyst",
-        "Operations Analyst",
-        "Sales Support Analyst",
-        "Junior SFE Analyst",
-        "Sales Force Effectiveness",
-        "Sales Analyst",
-        "Business Process Analyst",
-        "Data Management Analyst",
-        "Reporting Analyst",
-        "MIS Analyst",
-        "Junior BI Analyst",
-        "Data Analyst",
-        "Business Analyst",
-        "Operations Analyst"
-      ],
-      "total_fresh_24h": 13
-    },
     {
       "completed_at": "2026-11-25T12:55:19Z",
       "published_at": "2026-11-25T12:55:19Z",
@@ -465,6 +545,37 @@
         "SFE Analyst"
       ],
       "total_fresh_24h": 1
+    },
+    {
+      "completed_at": "2026-11-27T05:50:12Z",
+      "published_at": "2026-11-27T05:50:12Z",
+      "queries_executed": [
+        "Junior Reporting Analyst",
+        "Reporting Analyst",
+        "MIS Analyst",
+        "Junior MIS Analyst",
+        "Junior BI Analyst",
+        "Business Intelligence Analyst",
+        "Power BI Analyst",
+        "KPI Analyst",
+        "Performance Analyst",
+        "Junior Data Analyst",
+        "Data Analyst",
+        "Data Analytics",
+        "SQL Analyst",
+        "Data Quality Analyst",
+        "Data Management Analyst",
+        "Junior Business Analyst",
+        "Business Analyst",
+        "Junior Systems Analyst",
+        "Systems Analyst",
+        "Business Process Analyst",
+        "Operations Analyst",
+        "Business Operations Analyst",
+        "Junior SFE Analyst",
+        "SFE Analyst"
+      ],
+      "total_fresh_24h": 3
     }
   ]
 }
