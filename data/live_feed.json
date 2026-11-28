@@ -1,20 +1,20 @@
 {
   "meta": {
-    "scan_completed_at": "2026-11-28T05:29:33Z",
-    "feed_published_at": "2026-11-28T05:29:33Z",
+    "scan_completed_at": "2026-11-28T14:45:06Z",
+    "feed_published_at": "2026-11-28T14:45:06Z",
     "priority_threshold": 80,
     "fresh_window_hours": 24,
-    "total_active": 0,
+    "total_active": 1,
     "source_statuses": {
       "linkedin_jobs": {
         "state": "OK",
-        "label": "نجح (87 إعلان)",
-        "count": 87
+        "label": "نجح (29 إعلان)",
+        "count": 29
       },
       "indeed_google": {
         "state": "OK",
-        "label": "نجح (13 إعلان)",
-        "count": 13
+        "label": "نجح (14 إعلان)",
+        "count": 14
       },
       "hiring_posts": {
         "state": "FAILED",
@@ -43,40 +43,63 @@
       }
     }
   },
-  "jobs": {},
+  "jobs": {
+    "c7db8738198bbb99": {
+      "id": "c7db8738198bbb99",
+      "family_id": "18d43d716ae2",
+      "probable_duplicate_of": null,
+      "company": "McKinsey & Company",
+      "title": "Knowledge Analyst - Procurement",
+      "sources": [
+        "LinkedIn Jobs"
+      ],
+      "source_category": "job_board",
+      "all_urls": [
+        "https://eg.linkedin.com/jobs/view/knowledge-analyst-procurement-at-mckinsey-company-4480108033"
+      ],
+      "primary_url": "https://eg.linkedin.com/jobs/view/knowledge-analyst-procurement-at-mckinsey-company-4480108033",
+      "location": "Cairo, Cairo, Egypt",
+      "work_mode": null,
+      "is_training": false,
+      "receipt": {
+        "first_published": "2026-11-28",
+        "discovered_at": "2026-11-28T14:44:43Z",
+        "last_verified": "2026-11-28T14:44:43Z",
+        "apply_state": "OPEN_VERIFIED",
+        "apply_state_ar": "مفتوح بدليل",
+        "action_label": "افتح التقديم",
+        "is_company_page": false,
+        "egypt_eligibility": "مؤكد: داخل مصر",
+        "egypt_status": "CONFIRMED"
+      },
+      "fit": {
+        "score": 37,
+        "confidence": "HIGH",
+        "role_core": "DATA_BI_TARGET",
+        "has_mandatory_conflict": false,
+        "reason_first": "Knowledge Analyst - Procurement (Cairo, Cairo, Egypt) · تحليل الأعمال والنظم (Business & Systems Analysis)",
+        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
+        "evidence_pairs": [
+          {
+            "tag": "شرط أساسي",
+            "quote": "Junior Business Analyst",
+            "cv": "قائد تحليل النظم والبيانات بمشروع التخرج BIS حلوان (امتياز A+) + منصة FeeLink"
+          }
+        ],
+        "recommended_project": "مشروع التخرج BIS حلوان (امتياز A+) + قاعدة بيانات NTI"
+      },
+      "commute": {
+        "score": null,
+        "one_way_min": null,
+        "days_per_week": null,
+        "status": "NEEDS_DISTRICT",
+        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
+      },
+      "discovered_at": "2026-11-28T14:44:43Z"
+    }
+  },
   "notification_log": {},
   "audit_logs": [
-    {
-      "completed_at": "2026-11-25T14:11:08Z",
-      "published_at": "2026-11-25T14:11:08Z",
-      "queries_executed": [
-        "Junior Reporting Analyst",
-        "Reporting Analyst",
-        "MIS Analyst",
-        "Junior MIS Analyst",
-        "Junior BI Analyst",
-        "Business Intelligence Analyst",
-        "Power BI Analyst",
-        "KPI Analyst",
-        "Performance Analyst",
-        "Junior Data Analyst",
-        "Data Analyst",
-        "Data Analytics",
-        "SQL Analyst",
-        "Data Quality Analyst",
-        "Data Management Analyst",
-        "Junior Business Analyst",
-        "Business Analyst",
-        "Junior Systems Analyst",
-        "Systems Analyst",
-        "Business Process Analyst",
-        "Operations Analyst",
-        "Business Operations Analyst",
-        "Junior SFE Analyst",
-        "SFE Analyst"
-      ],
-      "total_fresh_24h": 7
-    },
     {
       "completed_at": "2026-11-25T16:01:18Z",
       "published_at": "2026-11-25T16:01:18Z",
@@ -417,6 +440,37 @@
         "SFE Analyst"
       ],
       "total_fresh_24h": 0
+    },
+    {
+      "completed_at": "2026-11-28T14:45:06Z",
+      "published_at": "2026-11-28T14:45:06Z",
+      "queries_executed": [
+        "Junior Reporting Analyst",
+        "Reporting Analyst",
+        "MIS Analyst",
+        "Junior MIS Analyst",
+        "Junior BI Analyst",
+        "Business Intelligence Analyst",
+        "Power BI Analyst",
+        "KPI Analyst",
+        "Performance Analyst",
+        "Junior Data Analyst",
+        "Data Analyst",
+        "Data Analytics",
+        "SQL Analyst",
+        "Data Quality Analyst",
+        "Data Management Analyst",
+        "Junior Business Analyst",
+        "Business Analyst",
+        "Junior Systems Analyst",
+        "Systems Analyst",
+        "Business Process Analyst",
+        "Operations Analyst",
+        "Business Operations Analyst",
+        "Junior SFE Analyst",
+        "SFE Analyst"
+      ],
+      "total_fresh_24h": 1
     }
   ]
 }
