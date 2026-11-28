@@ -1,15 +1,15 @@
 {
   "meta": {
-    "scan_completed_at": "2026-11-27T23:50:30Z",
-    "feed_published_at": "2026-11-27T23:50:30Z",
+    "scan_completed_at": "2026-11-28T05:29:33Z",
+    "feed_published_at": "2026-11-28T05:29:33Z",
     "priority_threshold": 80,
     "fresh_window_hours": 24,
-    "total_active": 3,
+    "total_active": 0,
     "source_statuses": {
       "linkedin_jobs": {
         "state": "OK",
-        "label": "نجح (34 إعلان)",
-        "count": 34
+        "label": "نجح (87 إعلان)",
+        "count": 87
       },
       "indeed_google": {
         "state": "OK",
@@ -43,188 +43,9 @@
       }
     }
   },
-  "jobs": {
-    "7e3fa443ab130efa": {
-      "id": "7e3fa443ab130efa",
-      "family_id": "63b8af009d7e",
-      "probable_duplicate_of": null,
-      "company": "Property Finder",
-      "title": "Commercial Strategy & Operations Analyst",
-      "sources": [
-        "LinkedIn Jobs"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.linkedin.com/jobs/view/commercial-strategy-operations-analyst-at-property-finder-4484003942"
-      ],
-      "primary_url": "https://eg.linkedin.com/jobs/view/commercial-strategy-operations-analyst-at-property-finder-4484003942",
-      "location": "Cairo, Cairo, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-27",
-        "discovered_at": "2026-11-27T23:50:13Z",
-        "last_verified": "2026-11-27T23:50:13Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": 50,
-        "confidence": "HIGH",
-        "role_core": "DATA_BI_TARGET",
-        "has_mandatory_conflict": false,
-        "reason_first": "Commercial Strategy & Operations Analyst (Cairo, Cairo, Egypt) · متابعة الأداء والتقارير التجارية (SFE / Operations)",
-        "caveat_first": "مستوى الخبرة غير محدد بدقة في النص",
-        "evidence_pairs": [
-          {
-            "tag": "شرط أساسي",
-            "quote": "Commercial Strategy & Operations Analyst.",
-            "cv": "خبرة في إعداد تقارير الأداء ولوحات KPIs وأتمتة الجداول التشغيلية"
-          }
-        ],
-        "recommended_project": "لوحة مؤشرات أداء الطلاب (Power BI) + نظام حجز الفعاليات (Excel/VBA)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-27T23:50:13Z"
-    },
-    "ea74ba65dc14c4d8": {
-      "id": "ea74ba65dc14c4d8",
-      "family_id": "90e0984d06e3",
-      "probable_duplicate_of": null,
-      "company": "LSEG (London Stock Exchange Group)",
-      "title": "Capital Markets Reporter, ZAWYA",
-      "sources": [
-        "Indeed Egypt"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.indeed.com/viewjob?jk=b14ef04987eaf9ac"
-      ],
-      "primary_url": "https://eg.indeed.com/viewjob?jk=b14ef04987eaf9ac",
-      "location": "القاهرة, C, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-27",
-        "discovered_at": "2026-11-27T23:50:13Z",
-        "last_verified": "2026-11-27T23:50:13Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-27T23:50:13Z"
-    },
-    "fc4e3f38bca2802b": {
-      "id": "fc4e3f38bca2802b",
-      "family_id": "674f70263eff",
-      "probable_duplicate_of": null,
-      "company": "PepsiCo",
-      "title": "Proc Op Excellence Assoc Analyst",
-      "sources": [
-        "Indeed Egypt"
-      ],
-      "source_category": "job_board",
-      "all_urls": [
-        "https://eg.indeed.com/viewjob?jk=f71d86104fa4f3da"
-      ],
-      "primary_url": "https://eg.indeed.com/viewjob?jk=f71d86104fa4f3da",
-      "location": "القاهرة الجديدة, C, Egypt",
-      "work_mode": null,
-      "is_training": false,
-      "receipt": {
-        "first_published": "2026-11-27",
-        "discovered_at": "2026-11-27T23:50:13Z",
-        "last_verified": "2026-11-27T23:50:13Z",
-        "apply_state": "OPEN_VERIFIED",
-        "apply_state_ar": "مفتوح بدليل",
-        "action_label": "افتح التقديم",
-        "is_company_page": false,
-        "egypt_eligibility": "مؤكد: داخل مصر",
-        "egypt_status": "CONFIRMED"
-      },
-      "fit": {
-        "score": null,
-        "confidence": "LOW_EVIDENCE",
-        "role_core": "UNVERIFIED",
-        "has_mandatory_conflict": false,
-        "reason_first": "الأدلة قليلة — لم يذكر الإعلان مهارات أو مهام واضحة",
-        "caveat_first": "راجع نص الإعلان الأصلي قبل التقديم",
-        "evidence_pairs": [],
-        "recommended_project": "مشروع DEPI لتحليل المدفوعات الرقمية (Python, SQL, Tableau)"
-      },
-      "commute": {
-        "score": null,
-        "one_way_min": null,
-        "days_per_week": null,
-        "status": "NEEDS_DISTRICT",
-        "summary": "القاهرة · الحي غير مذكور (تقدير المشوار محتاج تأكيد)"
-      },
-      "discovered_at": "2026-11-27T23:50:13Z"
-    }
-  },
+  "jobs": {},
   "notification_log": {},
   "audit_logs": [
-    {
-      "completed_at": "2026-11-25T13:02:19Z",
-      "published_at": "2026-11-25T13:02:19Z",
-      "queries_executed": [
-        "Junior Reporting Analyst",
-        "Reporting Analyst",
-        "MIS Analyst",
-        "Junior MIS Analyst",
-        "Junior BI Analyst",
-        "Business Intelligence Analyst",
-        "Power BI Analyst",
-        "KPI Analyst",
-        "Performance Analyst",
-        "Junior Data Analyst",
-        "Data Analyst",
-        "Data Analytics",
-        "SQL Analyst",
-        "Data Quality Analyst",
-        "Data Management Analyst",
-        "Junior Business Analyst",
-        "Business Analyst",
-        "Junior Systems Analyst",
-        "Systems Analyst",
-        "Business Process Analyst",
-        "Operations Analyst",
-        "Business Operations Analyst",
-        "Junior SFE Analyst",
-        "SFE Analyst"
-      ],
-      "total_fresh_24h": 7
-    },
     {
       "completed_at": "2026-11-25T14:11:08Z",
       "published_at": "2026-11-25T14:11:08Z",
@@ -565,6 +386,37 @@
         "SFE Analyst"
       ],
       "total_fresh_24h": 3
+    },
+    {
+      "completed_at": "2026-11-28T05:29:33Z",
+      "published_at": "2026-11-28T05:29:33Z",
+      "queries_executed": [
+        "Junior Reporting Analyst",
+        "Reporting Analyst",
+        "MIS Analyst",
+        "Junior MIS Analyst",
+        "Junior BI Analyst",
+        "Business Intelligence Analyst",
+        "Power BI Analyst",
+        "KPI Analyst",
+        "Performance Analyst",
+        "Junior Data Analyst",
+        "Data Analyst",
+        "Data Analytics",
+        "SQL Analyst",
+        "Data Quality Analyst",
+        "Data Management Analyst",
+        "Junior Business Analyst",
+        "Business Analyst",
+        "Junior Systems Analyst",
+        "Systems Analyst",
+        "Business Process Analyst",
+        "Operations Analyst",
+        "Business Operations Analyst",
+        "Junior SFE Analyst",
+        "SFE Analyst"
+      ],
+      "total_fresh_24h": 0
     }
   ]
 }
